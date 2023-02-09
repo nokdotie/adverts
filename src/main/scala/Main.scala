@@ -7,8 +7,7 @@ import java.nio.file.Paths
 
   val playwright = Playwright.create()
   val browser = playwright.webkit().launch()
-  val page = browser.newPage()
-  page.navigate("http://whatsmyuseragent.org/")
-  page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("example.png")))
+
+  ie.sherryfitz.scrape(browser)
 
 def msg = "I was compiled by Scala 3. :)"
