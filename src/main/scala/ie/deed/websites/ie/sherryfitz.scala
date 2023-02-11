@@ -15,22 +15,34 @@ import org.jsoup.Jsoup
 
 private case class FeatureCollection(features: List[Feature])
 object FeatureCollection {
-  implicit val decoder: JsonDecoder[FeatureCollection] = DeriveJsonDecoder.gen[FeatureCollection]
+  implicit val decoder: JsonDecoder[FeatureCollection] =
+    DeriveJsonDecoder.gen[FeatureCollection]
 }
 private case class Feature(properties: Property)
 object Feature {
   implicit val decoder: JsonDecoder[Feature] = DeriveJsonDecoder.gen[Feature]
 }
-private case class Property( price: String, address: String, link: String, image: String, ber: String, beds: String, baths: String, size: String)
+private case class Property(
+    price: String,
+    address: String,
+    link: String,
+    image: String,
+    ber: String,
+    beds: String,
+    baths: String,
+    size: String
+)
 object Property {
   implicit val decoder: JsonDecoder[Property] = DeriveJsonDecoder.gen[Property]
 }
 
 private def getPropertyList(page: Int): ZIO[Client, Object, List[Feature]] =
-  val url = s"https://www.sherryfitz.ie/sfdev/api/properties/?type=all&sort=created_at&order=desc&page=$page"
+  val url =
+    s"https://www.sherryfitz.ie/sfdev/api/properties/?type=all&sort=created_at&order=desc&page=$page"
   val refererHeader = Headers("Referer", "https://www.sherryfitz.ie/")
 
-  Client.request(url, headers = refererHeader)
+  Client
+    .request(url, headers = refererHeader)
     .flatMap { _.body.asString }
     .flatMap { _.fromJson[FeatureCollection].pipe(ZIO.fromEither) }
     .map { _.features }
@@ -38,19 +50,27 @@ private def getPropertyList(page: Int): ZIO[Client, Object, List[Feature]] =
 private def getProperty(path: String) =
   val url = s"https://www.sherryfitz.ie/$path"
 
-  Client.request(url)
+  Client
+    .request(url)
     .flatMap { _.body.asString }
     .flatMap { html => ZIO.attempt { Jsoup.parse(html) } }
     .map { doc =>
-      val agentName = doc.select(".agent-card-details-name").text.trim.replaceAll("\\s+", " ")
-      val agentPhone = doc.select(".agent-card-details-contact-phone a").text.trim.replaceAll("\\s+", " ")
-      val images = doc.select(".property-image-element img").map { _.attr("src") }
+      val agentName =
+        doc.select(".agent-card-details-name").text.trim.replaceAll("\\s+", " ")
+      val agentPhone = doc
+        .select(".agent-card-details-contact-phone a")
+        .text
+        .trim
+        .replaceAll("\\s+", " ")
+      val images =
+        doc.select(".property-image-element img").map { _.attr("src") }
 
       (agentName, agentPhone, images)
     }
 
 def scrape() =
-  val foo = ZStream.iterate(1)(_ + 1)
+  val foo = ZStream
+    .iterate(1)(_ + 1)
     .mapZIOPar(5) { getPropertyList }
     .takeWhile { _.nonEmpty }
     .flattenIterables
