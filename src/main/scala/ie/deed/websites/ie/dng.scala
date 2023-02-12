@@ -1,26 +1,11 @@
 package ie.deed.websites.ie.dng
 
 import scala.util.chaining.scalaUtilChainingOps
-import zio.ZIO
 import zio.stream.ZStream
-import zio.http.Client
 import zio.json._
 import zio._
 import zio.http.model.Headers
-import zio.http.*
-import org.jsoup.Jsoup
-import collection.convert.ImplicitConversions.*
-import scala.util.Using
-import util.chaining.scalaUtilChainingOps
-import zio.ZIO
-import zio.stream.ZStream
-import zio.http.Client
-import zio.json._
-import zio._
-import zio.http.model.Headers
-import zio.http.netty.client.{NettyClientDriver, NettyConnectionPool}
-import zio.http.*
-import org.jsoup.Jsoup
+import zio.http.{Client, ZClient, Body, Response}
 
 case class PropertyList(hits: List[PropertyListHit])
 object PropertyList {
@@ -70,17 +55,10 @@ private def getPropertyList(
     .flatMap { _.fromJson[PropertyList].pipe(ZIO.fromEither) }
     .map { _.hits }
 
-def scrape() =
-  val foo = ZStream
+def scrape(): ZIO[ZClient[Any, Body, Throwable, Response], Object, Unit] =
+  ZStream
     .iterate(0)(_ + 1)
     .mapZIOPar(5) { getPropertyList }
     .takeWhile { _.nonEmpty }
     .flattenIterables
     .foreach(zio.Console.printLine(_))
-
-  zio.Unsafe.unsafe { implicit unsafe =>
-    val config = ClientConfig.empty.requestDecompression(true)
-    val run = foo.provide(ClientConfig.live(config), Client.fromConfig)
-
-    zio.Runtime.default.unsafe.run(run).pipe(println)
-  }

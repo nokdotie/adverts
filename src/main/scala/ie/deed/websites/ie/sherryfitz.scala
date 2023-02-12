@@ -1,16 +1,12 @@
 package ie.deed.websites.ie.sherryfitz
 
 import collection.convert.ImplicitConversions.*
-import scala.util.Using
 import util.chaining.scalaUtilChainingOps
 import zio.ZIO
 import zio.stream.ZStream
-import zio.http.Client
 import zio.json._
-import zio._
 import zio.http.model.Headers
-import zio.http.netty.client.{NettyClientDriver, NettyConnectionPool}
-import zio.http.*
+import zio.http.{Client, ZClient, Body, Response}
 import org.jsoup.Jsoup
 
 private case class FeatureCollection(features: List[Feature])
@@ -68,8 +64,8 @@ private def getProperty(path: String) =
       (agentName, agentPhone, images)
     }
 
-def scrape() =
-  val foo = ZStream
+def scrape(): ZIO[ZClient[Any, Body, Throwable, Response], Object, Unit] =
+  ZStream
     .iterate(1)(_ + 1)
     .mapZIOPar(5) { getPropertyList }
     .takeWhile { _.nonEmpty }
@@ -79,10 +75,3 @@ def scrape() =
         .map { (property, _) }
     }
     .foreach(zio.Console.printLine(_))
-
-  zio.Unsafe.unsafe { implicit unsafe =>
-    val config = ClientConfig.empty.requestDecompression(true)
-    val run = foo.provide(ClientConfig.live(config), Client.fromConfig)
-
-    zio.Runtime.default.unsafe.run(run).pipe(println)
-  }
