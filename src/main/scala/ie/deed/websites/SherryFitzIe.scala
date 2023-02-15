@@ -54,7 +54,9 @@ object SherryFitzIe extends Scraper:
           .pipe(ZIO.fromEither)
       }
 
-  private def getPropertyHtmlLink(feature: PropertiesApiResponseFeature): String =
+  private def getPropertyHtmlLink(
+      feature: PropertiesApiResponseFeature
+  ): String =
     s"https://www.sherryfitz.ie/${feature.properties.link}"
 
   private def getPropertyFromHtml(
@@ -86,12 +88,14 @@ object SherryFitzIe extends Scraper:
           .toList
 
         val contactName = doc.select(".agent-card-details-name a").text
-        val contactPhone = doc.select(".agent-card-details-contact-phone a").text
-        val contactEmail = doc.select(".agent-card-details-contact-email a").text
+        val contactPhone =
+          doc.select(".agent-card-details-contact-phone a").text
+        val contactEmail =
+          doc.select(".agent-card-details-contact-email a").text
 
         advertPrice
           .zip(propertyEircode)
-          .map { (advertPrice, propertyEircode ) =>
+          .map { (advertPrice, propertyEircode) =>
             Record(
               at = Instant.now(),
               advertUrl = advertUrl,

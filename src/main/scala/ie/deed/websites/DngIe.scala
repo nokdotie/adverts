@@ -16,43 +16,47 @@ object DngIe extends Scraper:
     implicit val decoder: JsonDecoder[PropertiesApiResponse] =
       DeriveJsonDecoder.gen[PropertiesApiResponse]
   }
-  case class PropertiesApiResponseData(properties: List[PropertiesApiResponseDataProperty])
+  case class PropertiesApiResponseData(
+      properties: List[PropertiesApiResponseDataProperty]
+  )
   object PropertiesApiResponseData {
     implicit val decoder: JsonDecoder[PropertiesApiResponseData] =
       DeriveJsonDecoder.gen[PropertiesApiResponseData]
   }
   case class PropertiesApiResponseDataProperty(
-    id: String,
-    price: Option[Int],
-    address: PropertiesApiResponseDataPropertyAddress,
-    images: Option[List[PropertiesApiResponseDataPropertyImage]],
-    crm_negotiator_id: Option[PropertiesApiResponseDataPropertyNegotiator],
+      id: String,
+      price: Option[Int],
+      address: PropertiesApiResponseDataPropertyAddress,
+      images: Option[List[PropertiesApiResponseDataPropertyImage]],
+      crm_negotiator_id: Option[PropertiesApiResponseDataPropertyNegotiator]
   )
   object PropertiesApiResponseDataProperty {
     implicit val decoder: JsonDecoder[PropertiesApiResponseDataProperty] =
       DeriveJsonDecoder.gen[PropertiesApiResponseDataProperty]
   }
   case class PropertiesApiResponseDataPropertyAddress(
-    postcode: Option[String],
+      postcode: Option[String]
   )
   object PropertiesApiResponseDataPropertyAddress {
-    implicit val decoder: JsonDecoder[PropertiesApiResponseDataPropertyAddress] =
+    implicit val decoder
+        : JsonDecoder[PropertiesApiResponseDataPropertyAddress] =
       DeriveJsonDecoder.gen[PropertiesApiResponseDataPropertyAddress]
   }
   case class PropertiesApiResponseDataPropertyImage(
-    url: Option[String],
-    srcUrl: Option[String],
-    order: Option[Int],
+      url: Option[String],
+      srcUrl: Option[String],
+      order: Option[Int]
   )
   object PropertiesApiResponseDataPropertyImage {
     implicit val decoder: JsonDecoder[PropertiesApiResponseDataPropertyImage] =
       DeriveJsonDecoder.gen[PropertiesApiResponseDataPropertyImage]
   }
   case class PropertiesApiResponseDataPropertyNegotiator(
-    Email: Option[String],
+      Email: Option[String]
   )
   object PropertiesApiResponseDataPropertyNegotiator {
-    implicit val decoder: JsonDecoder[PropertiesApiResponseDataPropertyNegotiator] =
+    implicit val decoder
+        : JsonDecoder[PropertiesApiResponseDataPropertyNegotiator] =
       DeriveJsonDecoder.gen[PropertiesApiResponseDataPropertyNegotiator]
   }
 
@@ -61,16 +65,18 @@ object DngIe extends Scraper:
     implicit val decoder: JsonDecoder[NegotiatorApiResponse] =
       DeriveJsonDecoder.gen[NegotiatorApiResponse]
   }
-  case class NegotiatorApiResponseData(teams: List[NegotiatorApiResponseDataTeam])
+  case class NegotiatorApiResponseData(
+      teams: List[NegotiatorApiResponseDataTeam]
+  )
   object NegotiatorApiResponseData {
     implicit val decoder: JsonDecoder[NegotiatorApiResponseData] =
       DeriveJsonDecoder.gen[NegotiatorApiResponseData]
   }
   case class NegotiatorApiResponseDataTeam(
-    Name: String,
-    Email: String,
-    Phone: Option[String],
-    Mobile_No: Option[String],
+      Name: String,
+      Email: String,
+      Phone: Option[String],
+      Mobile_No: Option[String]
   )
   object NegotiatorApiResponseDataTeam {
     implicit val decoder: JsonDecoder[NegotiatorApiResponseDataTeam] =
@@ -78,7 +84,10 @@ object DngIe extends Scraper:
   }
 
   val apiUrl = "https://dng-strapi.q.starberry.com/graphql"
-  val apiAuthorizationHeader = Headers("authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjNlMjJkODA2NjIyMGQ0ZGM5N2Q0NCIsImlhdCI6MTYzMzkzNjQ2MywiZXhwIjoxOTQ5NTEyNDYzfQ.f8Wr84jf6zocohajraKkkca-STteDDZUrmZvTrQ479Y")
+  val apiAuthorizationHeader = Headers(
+    "authorization",
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjNlMjJkODA2NjIyMGQ0ZGM5N2Q0NCIsImlhdCI6MTYzMzkzNjQ2MywiZXhwIjoxOTQ5NTEyNDYzfQ.f8Wr84jf6zocohajraKkkca-STteDDZUrmZvTrQ479Y"
+  )
   val apiContentTypeHeader = Headers("content-type", "application/json")
 
   private val getPropertiesApiQueries: ZStream[Any, Nothing, String] =
@@ -89,36 +98,57 @@ object DngIe extends Scraper:
         s"""{ "query": "query { properties ( where: { status: \\"For Sale\\", publish: true }, start: $start, limit: $limit) { id, price, address, images, crm_negotiator_id } }"}"""
       }
 
-  private def getPropertiesFromApi(query: String): ZIO[Client, Throwable, PropertiesApiResponse] =
+  private def getPropertiesFromApi(
+      query: String
+  ): ZIO[Client, Throwable, PropertiesApiResponse] =
     Client
-      .request(apiUrl, Method.POST, headers = apiAuthorizationHeader ++ apiContentTypeHeader, content = Body.fromString(query))
+      .request(
+        apiUrl,
+        Method.POST,
+        headers = apiAuthorizationHeader ++ apiContentTypeHeader,
+        content = Body.fromString(query)
+      )
       .retryN(3)
       .flatMap { _.body.asString }
       .flatMap {
-        _.fromJson[PropertiesApiResponse]
-          .left
+        _.fromJson[PropertiesApiResponse].left
           .map(Throwable(_))
           .pipe(ZIO.fromEither)
       }
 
-  private def getNegotiatorApiQuery(email: String): String = s"""{ "query": "query { teams ( where: { Email: \\"$email\\" }, limit: 1) { Name, Email, Phone } }"}"""
+  private def getNegotiatorApiQuery(email: String): String =
+    s"""{ "query": "query { teams ( where: { Email: \\"$email\\" }, limit: 1) { Name, Email, Phone } }"}"""
 
-  private def getNegotiatorFromApi(query: String): ZIO[Client, Throwable, NegotiatorApiResponse] =
+  private def getNegotiatorFromApi(
+      query: String
+  ): ZIO[Client, Throwable, NegotiatorApiResponse] =
     Client
-      .request(apiUrl, Method.POST, headers = apiAuthorizationHeader ++ apiContentTypeHeader, content = Body.fromString(query))
+      .request(
+        apiUrl,
+        Method.POST,
+        headers = apiAuthorizationHeader ++ apiContentTypeHeader,
+        content = Body.fromString(query)
+      )
       .retryN(3)
       .flatMap { _.body.asString }
       .flatMap {
-        _.fromJson[NegotiatorApiResponse]
-          .left
+        _.fromJson[NegotiatorApiResponse].left
           .map(Throwable(_))
           .pipe(ZIO.fromEither)
       }
 
-  private def buildRecord(property: PropertiesApiResponseDataProperty, negotiator: NegotiatorApiResponseDataTeam): Option[Record] =
-    (property.price, property.address.postcode, negotiator.Phone.orElse(negotiator.Mobile_No))
+  private def buildRecord(
+      property: PropertiesApiResponseDataProperty,
+      negotiator: NegotiatorApiResponseDataTeam
+  ): Option[Record] =
+    (
+      property.price,
+      property.address.postcode,
+      negotiator.Phone.orElse(negotiator.Mobile_No)
+    )
       .pipe {
-        case (Some(price), Some(postcode), Some(phone)) => Some((price, postcode, phone))
+        case (Some(price), Some(postcode), Some(phone)) =>
+          Some((price, postcode, phone))
         case _ => None
       }
       .map { (price, postcode, phone) =>
@@ -127,10 +157,13 @@ object DngIe extends Scraper:
           advertUrl = s"https://www.dng.ie/property-for-sale/-${property.id}",
           advertPrice = price,
           propertyEircode = postcode,
-          propertyImageUrls = property.images.getOrElse(List.empty).sortBy {_.order}.flatMap { image => image.url.orElse(image.srcUrl) },
+          propertyImageUrls =
+            property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
+              image => image.url.orElse(image.srcUrl)
+            },
           contactName = negotiator.Name,
           contactPhone = phone,
-          contactEmail = negotiator.Email,
+          contactEmail = negotiator.Email
         )
       }
 
@@ -153,10 +186,3 @@ object DngIe extends Scraper:
     .collectSome
     .map { buildRecord.tupled }
     .collectSome
-
-
-
-  // val query = s"""{ "query": "query { properties ( where: { status: \\"For Sale\\", publish: true }, start: 2, limit: 2) { id, price, address, images, crm_negotiator_id } }"}"""
-  // // val query = s"""{"query":"query {__schema { queryType { fields{ name, args { name, defaultValue } } } } }"}"""
-  // // val query = s"""{"query":"query { __type(name: \\"Property\\") { name, fields { name } } }"}"""
-  // // val query = s"""{ "query": "query { teams { crm_id, Name, Email, Phone, Mobile_No, Content, Text } }"}""" //price, address, images, crm_negotiator_id, office_crm_id } }"}"""
