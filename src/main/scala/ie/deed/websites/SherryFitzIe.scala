@@ -1,6 +1,6 @@
 package ie.deed.websites
 
-import ie.deed.{Scraper, Record, eircodeRegex}
+import ie.deed.{Scraper, Record, Eircode}
 import collection.convert.ImplicitConversions.*
 import util.chaining.scalaUtilChainingOps
 import zio.{ZIO, Console}
@@ -79,7 +79,7 @@ object SherryFitzIe extends Scraper:
         val propertyEircode = doc
           .select(".property-address h1")
           .text
-          .pipe(eircodeRegex.findFirstIn)
+          .pipe(Eircode.regex.findFirstIn)
           .map(_.filter(_.isLetterOrDigit))
 
         val propertyImageUrls = doc

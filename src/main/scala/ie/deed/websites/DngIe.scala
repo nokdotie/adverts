@@ -1,6 +1,6 @@
 package ie.deed.websites
 
-import _root_.ie.deed.{Scraper, Record, eircodeRegex}
+import _root_.ie.deed.{Scraper, Record}
 import scala.util.chaining.scalaUtilChainingOps
 import zio.stream.ZStream
 import zio.json._
