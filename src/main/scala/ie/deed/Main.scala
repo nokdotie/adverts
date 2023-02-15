@@ -1,6 +1,6 @@
 package ie.deed
 
-import ie.deed.websites.SherryFitzIe
+import ie.deed.websites.*
 import zio.http.*
 import scala.util.chaining.scalaUtilChainingOps
 
@@ -10,7 +10,10 @@ import scala.util.chaining.scalaUtilChainingOps
 
   zio.Unsafe.unsafe { implicit unsafe =>
     val config = ClientConfig.empty.requestDecompression(true)
-    val run = SherryFitzIe.scrape.runCount
+    val run = SherryFitzIe.scrape
+      .concat(DngIe.scrape)
+      .debug
+      .runCount
       .provide(ClientConfig.live(config), Client.fromConfig)
 
     zio.Runtime.default.unsafe.run(run).pipe(println)
