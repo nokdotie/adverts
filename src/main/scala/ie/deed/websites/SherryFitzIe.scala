@@ -1,7 +1,7 @@
 package ie.deed.websites
 
 import ie.deed.{Scraper, Record, Eircode}
-import collection.convert.ImplicitConversions.*
+import collection.convert.ImplicitConversions._
 import util.chaining.scalaUtilChainingOps
 import zio.{ZIO, Console}
 import zio.stream.ZStream
