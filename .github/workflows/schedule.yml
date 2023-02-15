@@ -23,6 +23,8 @@ jobs:
 
       - name: Run
         run: sbt -v run
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
       - name: Send notification on failure
         if: ${{ failure() }}
