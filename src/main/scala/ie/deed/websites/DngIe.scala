@@ -1,16 +1,18 @@
 package ie.deed.websites
 
-import _root_.ie.deed.{Scraper, Record}
+import _root_.ie.deed.{Record, Scraper, ScraperConfig}
+
 import scala.util.chaining.scalaUtilChainingOps
 import zio.stream.ZStream
-import zio.json._
-import zio._
+import zio.json.*
+import zio.*
 import zio.http.model.Headers
-import zio.http.{Client, ZClient, Body, Response}
+import zio.http.{Body, Client, Response, ZClient}
+
 import java.time.Instant
 import zio.http.model.Method
 
-object DngIe extends Scraper:
+class DngIe(private val scraperConfig: ScraperConfig) extends Scraper:
   case class PropertiesApiResponse(data: PropertiesApiResponseData)
   object PropertiesApiResponse {
     implicit val decoder: JsonDecoder[PropertiesApiResponse] =
@@ -108,7 +110,7 @@ object DngIe extends Scraper:
         headers = apiAuthorizationHeader ++ apiContentTypeHeader,
         content = Body.fromString(query)
       )
-      .retryN(3)
+      .retryN(scraperConfig.numberOfRetries)
       .flatMap { _.body.asString }
       .flatMap {
         _.fromJson[PropertiesApiResponse].left
@@ -129,7 +131,7 @@ object DngIe extends Scraper:
         headers = apiAuthorizationHeader ++ apiContentTypeHeader,
         content = Body.fromString(query)
       )
-      .retryN(3)
+      .retryN(scraperConfig.numberOfRetries)
       .flatMap { _.body.asString }
       .flatMap {
         _.fromJson[NegotiatorApiResponse].left
@@ -168,7 +170,7 @@ object DngIe extends Scraper:
       }
 
   val scrape = getPropertiesApiQueries
-    .mapZIOPar(5) { getPropertiesFromApi }
+    .mapZIOPar(scraperConfig.numberOfPar) { getPropertiesFromApi }
     .map { _.data.properties }
     .takeWhile { _.nonEmpty }
     .flattenIterables
@@ -178,7 +180,7 @@ object DngIe extends Scraper:
         .map { (property, _) }
     }
     .collectSome
-    .mapZIOPar(5) { (property, negotiatorEmail) =>
+    .mapZIOPar(scraperConfig.numberOfPar) { (property, negotiatorEmail) =>
       getNegotiatorApiQuery(negotiatorEmail)
         .pipe { getNegotiatorFromApi }
         .map { _.data.teams.headOption.map { (property, _) } }

@@ -1,17 +1,19 @@
 package ie.deed.websites
 
-import ie.deed.{Scraper, Record, Eircode}
-import collection.convert.ImplicitConversions._
+import ie.deed.{Eircode, Record, Scraper, ScraperConfig}
+
+import collection.convert.ImplicitConversions.*
 import util.chaining.scalaUtilChainingOps
-import zio.{ZIO, Console}
+import zio.{Console, ZIO}
 import zio.stream.ZStream
-import zio.json._
+import zio.json.*
 import zio.http.model.Headers
-import zio.http.{Client, ZClient, Body, Response}
+import zio.http.{Body, Client, Response, ZClient}
 import org.jsoup.Jsoup
+
 import java.time.Instant
 
-object SherryFitzIe extends Scraper:
+class SherryFitzIe(private val scraperConfig: ScraperConfig) extends Scraper:
   case class PropertiesApiResponse(
       features: List[PropertiesApiResponseFeature]
   )
@@ -46,7 +48,7 @@ object SherryFitzIe extends Scraper:
 
     Client
       .request(url, headers = refererHeader)
-      .retryN(3)
+      .retryN(scraperConfig.numberOfRetries)
       .flatMap { _.body.asString }
       .flatMap {
         _.fromJson[PropertiesApiResponse].left
@@ -64,7 +66,7 @@ object SherryFitzIe extends Scraper:
   ): ZIO[Client, Throwable, Option[Record]] =
     Client
       .request(url)
-      .retryN(3)
+      .retryN(scraperConfig.numberOfRetries)
       .flatMap { _.body.asString }
       .flatMap { html => ZIO.attempt { Jsoup.parse(html) } }
       .map { doc =>
@@ -109,13 +111,13 @@ object SherryFitzIe extends Scraper:
           }
       }
 
-  val scrape = getPropertiesApiLinks
-    .mapZIOPar(5) { getPropertiesFromApi }
+  val scrape: ZStream[Client, Throwable, Record] = getPropertiesApiLinks
+    .mapZIOPar(scraperConfig.numberOfPar) { getPropertiesFromApi }
     .map { _.features }
     .takeWhile { _.nonEmpty }
     .flattenIterables
     .map { getPropertyHtmlLink }
-    .mapZIOPar(5) { url =>
+    .mapZIOPar(scraperConfig.numberOfPar) { url =>
       getPropertyFromHtml(url)
         .tapSome { case None =>
           Console.printLineError(s"Failed to parse SherryFitzIe: $url")
