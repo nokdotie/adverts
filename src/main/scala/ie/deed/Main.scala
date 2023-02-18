@@ -15,7 +15,9 @@ import com.google.cloud.storage.{Blob, BlobId, BlobInfo, StorageOptions}
 
 object Main extends ZIOAppDefault:
 
-  def writeToFile(stream: ZStream[Client, Throwable, Record]): ZIO[Client, Throwable, File] = {
+  def writeToFile(
+      stream: ZStream[Client, Throwable, Record]
+  ): ZIO[Client, Throwable, File] = {
     val file = File.createTempFile("deed_", ".json")
     json.writeJsonLinesAs(file, stream).map { _ => file }
   }
