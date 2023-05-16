@@ -14,7 +14,7 @@ object GoogleCloudStorage {
       .ofPattern("yyyyMMddHHmmss")
       .withZone(ZoneOffset.UTC)
       .format(Instant.now)
-      .pipe { instant => s"$prefix/$instant.jsonl" }
+      .pipe { instant => s"adverts/$prefix/$instant.jsonl" }
 
   private def getStorageOptions(): ZIO[Any, Throwable, StorageOptions] =
     GoogleCredentials.applicationDefault
@@ -30,7 +30,7 @@ object GoogleCloudStorage {
       storage <- getStorageOptions().map { _.getService() }
       filePath = getFilePath(prefix)
       blobInfo = BlobId
-        .of("deed-ie-scraper", filePath)
+        .of("deed-ie", filePath)
         .pipe(BlobInfo.newBuilder)
         .build()
       _ <- ZIO.attempt { storage.createFrom(blobInfo, file.toPath) }
