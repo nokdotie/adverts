@@ -1,0 +1,12 @@
+name: Continuous Integration
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scala:
+    uses: deed-ie/github-workflows/.github/workflows/scala-test.yml@main

@@ -1,4 +1,4 @@
-package ie.deed
+package ie.deed.adverts.utils
 
 object Eircode {
   // https://www.citizensinformation.ie/en/consumer/phone_internet_tv_and_postal_services/eircode.html

@@ -1,4 +1,4 @@
-package ie.deed
+package ie.deed.adverts
 
 import java.time.Instant
 import zio.json._
@@ -15,5 +15,5 @@ case class Record(
 )
 
 object Record {
-  implicit val encoder: JsonEncoder[Record] = DeriveJsonEncoder.gen[Record]
+  given JsonEncoder[Record] = DeriveJsonEncoder.gen[Record]
 }
