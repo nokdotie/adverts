@@ -15,6 +15,7 @@ jobs:
         project:
           - 'daft'
           - 'douglasNewmanGood'
+          - 'myHome'
           - 'sherryFitzGerald'
 
     steps:
