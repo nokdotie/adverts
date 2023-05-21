@@ -5,7 +5,9 @@ lazy val root = project
   .in(file("."))
   .aggregate(
     common,
+    daft,
     douglasNewmanGood,
+    myHome,
     sherryFitzGerald
   )
 
