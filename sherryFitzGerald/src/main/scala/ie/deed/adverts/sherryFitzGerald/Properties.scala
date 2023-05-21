@@ -77,8 +77,8 @@ object Properties {
           propertyEircode = propertyEircode,
           propertyImageUrls = propertyImageUrls,
           contactName = contactName,
-          contactPhone = contactPhone,
-          contactEmail = contactEmail
+          contactPhone = Option(contactPhone),
+          contactEmail = Option(contactEmail)
         )
       }
   }

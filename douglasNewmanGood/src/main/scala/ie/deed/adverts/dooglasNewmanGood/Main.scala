@@ -12,17 +12,9 @@ def toRecord(
     property: Properties.ResponseDataProperty,
     negotiator: Negotiators.ResponseDataTeam
 ): Option[Record] =
-  (
-    property.price,
-    property.address.postcode,
-    negotiator.Phone.orElse(negotiator.Mobile_No)
-  )
-    .pipe {
-      case (Some(price), Some(postcode), Some(phone)) =>
-        Some((price, postcode, phone))
-      case _ => None
-    }
-    .map { (price, postcode, phone) =>
+  property.price
+    .zip(property.address.postcode)
+    .map { (price, postcode) =>
       Record(
         at = Instant.now(),
         advertUrl = s"https://www.dng.ie/property-for-sale/-${property.id}",
@@ -33,8 +25,8 @@ def toRecord(
             image => image.url.orElse(image.srcUrl)
           },
         contactName = negotiator.Name,
-        contactPhone = phone,
-        contactEmail = negotiator.Email
+        contactPhone = negotiator.Phone.orElse(negotiator.Mobile_No),
+        contactEmail = Option(negotiator.Email)
       )
     }
 

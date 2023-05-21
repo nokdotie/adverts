@@ -10,8 +10,8 @@ case class Record(
     propertyEircode: String,
     propertyImageUrls: List[String],
     contactName: String,
-    contactPhone: String,
-    contactEmail: String
+    contactPhone: Option[String],
+    contactEmail: Option[String]
 )
 
 object Record {

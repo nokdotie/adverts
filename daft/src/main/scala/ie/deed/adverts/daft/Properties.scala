@@ -88,8 +88,8 @@ object Properties {
                 propertyEircode = eircode,
                 propertyImageUrls= listing.media.images.getOrElse(List.empty).map { _.size720x480 },
                 contactName= listing.seller.name,
-                contactPhone= phone,
-                contactEmail= ""
+                contactPhone= Option(phone),
+                contactEmail= Option.empty,
             )
         }
     }
