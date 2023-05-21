@@ -25,12 +25,20 @@ object GoogleCloudStorage {
           .build()
       }
 
+  private def getBucket() =
+    sys.env
+      .get("ENV")
+      .pipe {
+        case Some("production") => "nok-ie"
+        case _                  => "nok-ie-dev"
+      }
+
   def upload(prefix: String, file: File): ZIO[Any, Throwable, Unit] =
     for {
       storage <- getStorageOptions().map { _.getService() }
       filePath = getFilePath(prefix)
       blobInfo = BlobId
-        .of("nok-ie", filePath)
+        .of(getBucket(), filePath)
         .pipe(BlobInfo.newBuilder)
         .build()
       _ <- ZIO.attempt { storage.createFrom(blobInfo, file.toPath) }

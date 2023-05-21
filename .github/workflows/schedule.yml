@@ -32,4 +32,5 @@ jobs:
       - name: Run
         run: sbt -v "${{ matrix.project }}/run"
         env:
+          ENV: production
           GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
