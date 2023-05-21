@@ -22,6 +22,9 @@ lazy val common = project
     )
   )
 
+lazy val daft = project
+  .dependsOn(common % "compile->compile;test->test")
+
 lazy val douglasNewmanGood = project
   .dependsOn(common % "compile->compile;test->test")
 

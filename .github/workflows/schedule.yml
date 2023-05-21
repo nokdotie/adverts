@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - 'daft'
           - 'douglasNewmanGood'
           - 'sherryFitzGerald'
 
