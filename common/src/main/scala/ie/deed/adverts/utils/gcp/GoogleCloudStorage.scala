@@ -1,7 +1,7 @@
-package ie.deed.adverts.utils.gcp
+package ie.nok.adverts.utils.gcp
 
 import com.google.cloud.storage.{BlobId, BlobInfo, StorageOptions}
-import ie.deed.adverts.utils.gcp.GoogleCredentials
+import ie.nok.adverts.utils.gcp.GoogleCredentials
 import java.io.{ByteArrayInputStream, File}
 import java.time.{Instant, ZoneOffset}
 import java.time.format.DateTimeFormatter
@@ -30,7 +30,7 @@ object GoogleCloudStorage {
       storage <- getStorageOptions().map { _.getService() }
       filePath = getFilePath(prefix)
       blobInfo = BlobId
-        .of("deed-ie", filePath)
+        .of("nok-ie", filePath)
         .pipe(BlobInfo.newBuilder)
         .build()
       _ <- ZIO.attempt { storage.createFrom(blobInfo, file.toPath) }

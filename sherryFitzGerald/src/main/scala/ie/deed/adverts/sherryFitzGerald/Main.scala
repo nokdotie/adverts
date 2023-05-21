@@ -1,7 +1,7 @@
-package ie.deed.adverts.sherryFitzGerald
+package ie.nok.adverts.sherryFitzGerald
 
-import ie.deed.adverts.utils.gcp.GoogleCloudStorage
-import ie.deed.adverts.utils.zio.File
+import ie.nok.adverts.utils.gcp.GoogleCloudStorage
+import ie.nok.adverts.utils.zio.File
 import scala.util.chaining._
 import zio.{ZIO, ZIOAppDefault}
 import zio.http.{Client, ClientConfig}

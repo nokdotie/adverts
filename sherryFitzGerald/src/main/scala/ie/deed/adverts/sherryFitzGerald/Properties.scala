@@ -1,8 +1,8 @@
-package ie.deed.adverts.sherryFitzGerald
+package ie.nok.adverts.sherryFitzGerald
 
-import ie.deed.adverts.Record
-import ie.deed.adverts.utils.Eircode
-import ie.deed.adverts.utils.zio.Client
+import ie.nok.adverts.Record
+import ie.nok.adverts.utils.Eircode
+import ie.nok.adverts.utils.zio.Client
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
 import scala.util.chaining.scalaUtilChainingOps

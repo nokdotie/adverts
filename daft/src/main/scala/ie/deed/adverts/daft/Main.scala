@@ -1,8 +1,8 @@
-package ie.deed.adverts.daft
+package ie.nok.adverts.daft
 
-import ie.deed.adverts.Record
-import ie.deed.adverts.utils.gcp.GoogleCloudStorage
-import ie.deed.adverts.utils.zio.File
+import ie.nok.adverts.Record
+import ie.nok.adverts.utils.gcp.GoogleCloudStorage
+import ie.nok.adverts.utils.zio.File
 import java.time.Instant
 import scala.util.chaining._
 import zio.{ZIO, ZIOAppDefault}

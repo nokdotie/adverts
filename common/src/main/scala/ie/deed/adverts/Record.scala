@@ -1,4 +1,4 @@
-package ie.deed.adverts
+package ie.nok.adverts
 
 import java.time.Instant
 import zio.json._

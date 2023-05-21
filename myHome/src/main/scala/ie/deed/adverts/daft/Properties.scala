@@ -1,8 +1,8 @@
-package ie.deed.adverts.daft
+package ie.nok.adverts.daft
 
-import ie.deed.adverts.Record
-import ie.deed.adverts.utils.Eircode
-import ie.deed.adverts.utils.zio.Client
+import ie.nok.adverts.Record
+import ie.nok.adverts.utils.Eircode
+import ie.nok.adverts.utils.zio.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}

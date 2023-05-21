@@ -9,4 +9,4 @@ concurrency:
 
 jobs:
   scala:
-    uses: deed-ie/github-workflows/.github/workflows/scala-test.yml@main
+    uses: nok-ie/github-workflows/.github/workflows/scala-test.yml@main

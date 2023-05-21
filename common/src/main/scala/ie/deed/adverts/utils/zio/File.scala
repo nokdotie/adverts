@@ -1,4 +1,4 @@
-package ie.deed.adverts.utils.zio
+package ie.nok.adverts.utils.zio
 
 import java.io.{File => JavaFile}
 import _root_.zio.ZIO
