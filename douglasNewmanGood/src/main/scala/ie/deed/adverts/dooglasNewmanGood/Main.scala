@@ -38,7 +38,7 @@ object Main extends ZIOAppDefault {
           .zip(Properties.getNegotiatorEmail(property))
       }
       .collectSome
-      .mapZIOPar(5) { (property, negotiatorEmail) =>
+      .mapZIOParUnordered(5) { (property, negotiatorEmail) =>
         Negotiators
           .getByEmail(negotiatorEmail)
           .map { Option(property).zip }

@@ -46,7 +46,7 @@ object Properties {
       .map { start =>
         s"""{ "query": "query { properties ( where: { status: \\"For Sale\\", publish: true }, start: $start, limit: $limit) { id, price, address, images, crm_negotiator_id } }"}"""
       }
-      .mapZIOPar(5) { GraphQl.query[Response] }
+      .mapZIOParUnordered(5) { GraphQl.query[Response] }
       .map { _.data.properties }
       .takeWhile { _.nonEmpty }
       .flattenIterables

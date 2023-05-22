@@ -89,14 +89,14 @@ object Properties {
       .map { page =>
         s"https://www.sherryfitz.ie/sfdev/api/properties/?type=all&sort=created_at&order=desc&page=$page"
       }
-      .mapZIOPar(5) { getApiResponse }
+      .mapZIOParUnordered(5) { getApiResponse }
       .map { _.features }
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { feature =>
         s"https://www.sherryfitz.ie/${feature.properties.link}"
       }
-      .mapZIOPar(5) { url => getHtmlResponse(url).map { (url, _) } }
+      .mapZIOParUnordered(5) { url => getHtmlResponse(url).map { (url, _) } }
       .map { parseHtmlResponse.tupled }
       .collectSome
 

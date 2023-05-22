@@ -104,7 +104,7 @@ object Properties {
 
   val stream: ZStream[ZioClient, Throwable, Record] =
     streamApiRequestContent
-      .mapZIOPar(5) { getApiResponse }
+      .mapZIOParUnordered(5) { getApiResponse }
       .map { _.listings }
       .takeWhile { _.nonEmpty }
       .flattenIterables
