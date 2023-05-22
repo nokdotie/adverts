@@ -1,4 +1,4 @@
-package ie.nok.adverts.daft
+package ie.nok.adverts.myhome
 
 import ie.nok.adverts.Record
 import ie.nok.adverts.utils.gcp.GoogleCloudStorage

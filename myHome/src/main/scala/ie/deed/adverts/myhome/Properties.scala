@@ -1,4 +1,4 @@
-package ie.nok.adverts.daft
+package ie.nok.adverts.myhome
 
 import ie.nok.adverts.Record
 import ie.nok.adverts.utils.Eircode
@@ -86,7 +86,7 @@ object Properties {
 
   val stream: ZStream[ZioClient, Throwable, Record] =
     streamApiRequestContent
-      .mapZIOPar(5) { getApiResponse }
+      .mapZIOParUnordered(5) { getApiResponse }
       .map { _.SearchResults }
       .takeWhile { _.nonEmpty }
       .flattenIterables
