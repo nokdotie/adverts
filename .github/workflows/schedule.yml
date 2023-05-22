@@ -16,6 +16,7 @@ jobs:
           - 'daft'
           - 'douglasNewmanGood'
           - 'myHome'
+          - 'propertyPal'
           - 'sherryFitzGerald'
 
     steps:
