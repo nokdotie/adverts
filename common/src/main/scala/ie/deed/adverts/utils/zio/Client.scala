@@ -1,4 +1,4 @@
-package ie.deed.adverts.utils.zio
+package ie.nok.adverts.utils.zio
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document

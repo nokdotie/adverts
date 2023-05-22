@@ -1,4 +1,4 @@
-package ie.deed.adverts.dooglasNewmanGood
+package ie.nok.adverts.dooglasNewmanGood
 
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.http.Client

@@ -1,4 +1,4 @@
-package ie.deed.adverts.utils.gcp
+package ie.nok.adverts.utils.gcp
 
 import com.google.auth.oauth2.{GoogleCredentials => OfficialGoogleCredentials}
 import java.io.{ByteArrayInputStream, IOException}

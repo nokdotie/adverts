@@ -1,8 +1,8 @@
-package ie.deed.adverts.sherryFitzGerald
+package ie.nok.adverts.sherryFitzGerald
 
-import ie.deed.adverts.Record
-import ie.deed.adverts.utils.Eircode
-import ie.deed.adverts.utils.zio.Client
+import ie.nok.adverts.Record
+import ie.nok.adverts.utils.Eircode
+import ie.nok.adverts.utils.zio.Client
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
 import scala.util.chaining.scalaUtilChainingOps
@@ -77,8 +77,8 @@ object Properties {
           propertyEircode = propertyEircode,
           propertyImageUrls = propertyImageUrls,
           contactName = contactName,
-          contactPhone = contactPhone,
-          contactEmail = contactEmail
+          contactPhone = Option(contactPhone),
+          contactEmail = Option(contactEmail)
         )
       }
   }
@@ -89,14 +89,14 @@ object Properties {
       .map { page =>
         s"https://www.sherryfitz.ie/sfdev/api/properties/?type=all&sort=created_at&order=desc&page=$page"
       }
-      .mapZIOPar(5) { getApiResponse }
+      .mapZIOParUnordered(5) { getApiResponse }
       .map { _.features }
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { feature =>
         s"https://www.sherryfitz.ie/${feature.properties.link}"
       }
-      .mapZIOPar(5) { url => getHtmlResponse(url).map { (url, _) } }
+      .mapZIOParUnordered(5) { url => getHtmlResponse(url).map { (url, _) } }
       .map { parseHtmlResponse.tupled }
       .collectSome
 

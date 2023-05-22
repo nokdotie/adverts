@@ -5,7 +5,9 @@ lazy val root = project
   .in(file("."))
   .aggregate(
     common,
+    daft,
     douglasNewmanGood,
+    myHome,
     sherryFitzGerald
   )
 
@@ -22,7 +24,16 @@ lazy val common = project
     )
   )
 
+lazy val daft = project
+  .dependsOn(common % "compile->compile;test->test")
+
 lazy val douglasNewmanGood = project
+  .dependsOn(common % "compile->compile;test->test")
+
+lazy val myHome = project
+  .dependsOn(common % "compile->compile;test->test")
+
+lazy val propertyPal = project
   .dependsOn(common % "compile->compile;test->test")
 
 lazy val sherryFitzGerald = project
