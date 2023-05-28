@@ -7,7 +7,7 @@ lazy val root = project
     version := "0.1.0-SNAPSHOT",
     scalaVersion := scala3Version,
     libraryDependencies ++= List(
-      "com.google.cloud" % "google-cloud-storage" % "2.22.2",
+      "com.google.cloud" % "google-cloud-storage" % "2.18.0",
       "dev.zio" %% "zio" % "2.0.6",
       "dev.zio" %% "zio-http" % "0.0.4",
       "dev.zio" %% "zio-json" % "0.4.2",
