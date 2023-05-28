@@ -1,6 +1,6 @@
-package ie.deed.adverts.dooglasNewmanGood
+package ie.nok.adverts.dooglasNewmanGood
 
-import ie.deed.adverts.utils.zio.Client
+import ie.nok.adverts.utils.zio.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}

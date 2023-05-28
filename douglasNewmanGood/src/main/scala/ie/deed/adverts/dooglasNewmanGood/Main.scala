@@ -1,8 +1,8 @@
-package ie.deed.adverts.dooglasNewmanGood
+package ie.nok.adverts.dooglasNewmanGood
 
-import ie.deed.adverts.Record
-import ie.deed.adverts.utils.gcp.GoogleCloudStorage
-import ie.deed.adverts.utils.zio.File
+import ie.nok.adverts.Record
+import ie.nok.adverts.utils.gcp.GoogleCloudStorage
+import ie.nok.adverts.utils.zio.File
 import java.time.Instant
 import scala.util.chaining._
 import zio.{ZIO, ZIOAppDefault}
@@ -12,17 +12,9 @@ def toRecord(
     property: Properties.ResponseDataProperty,
     negotiator: Negotiators.ResponseDataTeam
 ): Option[Record] =
-  (
-    property.price,
-    property.address.postcode,
-    negotiator.Phone.orElse(negotiator.Mobile_No)
-  )
-    .pipe {
-      case (Some(price), Some(postcode), Some(phone)) =>
-        Some((price, postcode, phone))
-      case _ => None
-    }
-    .map { (price, postcode, phone) =>
+  property.price
+    .zip(property.address.postcode)
+    .map { (price, postcode) =>
       Record(
         at = Instant.now(),
         advertUrl = s"https://www.dng.ie/property-for-sale/-${property.id}",
@@ -33,8 +25,8 @@ def toRecord(
             image => image.url.orElse(image.srcUrl)
           },
         contactName = negotiator.Name,
-        contactPhone = phone,
-        contactEmail = negotiator.Email
+        contactPhone = negotiator.Phone.orElse(negotiator.Mobile_No),
+        contactEmail = Option(negotiator.Email)
       )
     }
 
@@ -46,7 +38,7 @@ object Main extends ZIOAppDefault {
           .zip(Properties.getNegotiatorEmail(property))
       }
       .collectSome
-      .mapZIOPar(5) { (property, negotiatorEmail) =>
+      .mapZIOParUnordered(5) { (property, negotiatorEmail) =>
         Negotiators
           .getByEmail(negotiatorEmail)
           .map { Option(property).zip }
