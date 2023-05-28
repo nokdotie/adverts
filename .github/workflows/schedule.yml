@@ -10,6 +10,15 @@ jobs:
     name: Schedule
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        project:
+          - 'daft'
+          - 'douglasNewmanGood'
+          - 'myHome'
+          - 'propertyPal'
+          - 'sherryFitzGerald'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,18 +31,7 @@ jobs:
           cache: sbt
 
       - name: Run
-        run: sbt -v run
+        run: sbt -v "${{ matrix.project }}/run"
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-
-      - name: Send notification on failure
-        if: ${{ failure() }}
-        uses: twilio-labs/actions-sms@v1
-        with:
-          fromPhoneNumber: ${{ secrets.FROM_NUMBER }}
-          toPhoneNumber: ${{ secrets.TO_NUMBER }}
-          message: ${{ github.job }} job of ${{ github.repository }} has a ${{ job.status }}
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
-          TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
+          ENV: production
+          GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
