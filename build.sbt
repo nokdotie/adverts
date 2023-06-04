@@ -14,7 +14,7 @@ lazy val root = project
 lazy val common = project
   .settings(
     libraryDependencies ++= List(
-      "com.google.cloud" % "google-cloud-storage" % "2.18.0",
+      "com.google.cloud" % "google-cloud-storage" % "2.22.3",
       "dev.zio" %% "zio" % "2.0.13",
       "dev.zio" %% "zio-http" % "0.0.4",
       "dev.zio" %% "zio-json" % "0.4.2",
