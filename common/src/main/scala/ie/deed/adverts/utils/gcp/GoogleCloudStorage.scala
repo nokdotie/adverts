@@ -1,7 +1,7 @@
 package ie.nok.adverts.utils.gcp
 
 import com.google.cloud.storage.{BlobId, BlobInfo, StorageOptions}
-import ie.nok.adverts.utils.gcp.GoogleCredentials
+import ie.nok.gcp.auth.GoogleCredentials
 import java.io.{ByteArrayInputStream, File}
 import java.time.{Instant, ZoneOffset}
 import java.time.format.DateTimeFormatter
