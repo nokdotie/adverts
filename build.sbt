@@ -1,5 +1,12 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+import java.time.format.DateTimeFormatter
+import java.time.{Instant, ZoneOffset}
+
 ThisBuild / scalaVersion := "3.3.0"
+ThisBuild / organization := "ie.nok"
+ThisBuild / version := DateTimeFormatter
+  .ofPattern("yyyyMMdd.HHmmss.n")
+  .withZone(ZoneOffset.UTC)
+  .format(Instant.now())
 
 lazy val root = project
   .in(file("."))
@@ -26,17 +33,24 @@ lazy val common = project
     )
   )
 
-lazy val daft = project
+lazy val adverts = project
   .dependsOn(common % "compile->compile;test->test")
+  .settings(
+    githubOwner := "nok-ie",
+    githubRepository := "adverts"
+  )
+
+lazy val daft = project
+  .dependsOn(adverts, common % "compile->compile;test->test")
 
 lazy val douglasNewmanGood = project
-  .dependsOn(common % "compile->compile;test->test")
+  .dependsOn(adverts, common % "compile->compile;test->test")
 
 lazy val myHome = project
-  .dependsOn(common % "compile->compile;test->test")
+  .dependsOn(adverts, common % "compile->compile;test->test")
 
 lazy val propertyPal = project
-  .dependsOn(common % "compile->compile;test->test")
+  .dependsOn(adverts, common % "compile->compile;test->test")
 
 lazy val sherryFitzGerald = project
-  .dependsOn(common % "compile->compile;test->test")
+  .dependsOn(adverts, common % "compile->compile;test->test")
