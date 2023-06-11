@@ -1,6 +1,6 @@
 package ie.nok.adverts.sherryFitzGerald
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.Eircode
 import ie.nok.adverts.utils.zio.Client
 import org.jsoup.nodes.Document
@@ -42,7 +42,7 @@ object Properties {
       .requestHtml(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def parseHtmlResponse(url: String, html: Document): Option[Record] = {
+  private def parseHtmlResponse(url: String, html: Document): Option[Advert] = {
     val advertUrl = url
 
     val advertPrice = html
@@ -70,7 +70,7 @@ object Properties {
     advertPrice
       .zip(propertyEircode)
       .map { (advertPrice, propertyEircode) =>
-        Record(
+        Advert(
           at = Instant.now(),
           advertUrl = advertUrl,
           advertPrice = advertPrice,
@@ -83,7 +83,7 @@ object Properties {
       }
   }
 
-  val stream: ZStream[ZioClient, Throwable, Record] =
+  val stream: ZStream[ZioClient, Throwable, Advert] =
     ZStream
       .iterate(1)(_ + 1)
       .map { page =>

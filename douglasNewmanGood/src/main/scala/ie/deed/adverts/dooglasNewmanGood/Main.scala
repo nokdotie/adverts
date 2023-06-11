@@ -1,6 +1,6 @@
 package ie.nok.adverts.dooglasNewmanGood
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.gcp.GoogleCloudStorage
 import ie.nok.adverts.utils.zio.File
 import java.time.Instant
@@ -8,14 +8,14 @@ import scala.util.chaining._
 import zio.{ZIO, ZIOAppDefault}
 import zio.http.{Client, ClientConfig}
 
-def toRecord(
+def toAdvert(
     property: Properties.ResponseDataProperty,
     negotiator: Negotiators.ResponseDataTeam
-): Option[Record] =
+): Option[Advert] =
   property.price
     .zip(property.address.postcode)
     .map { (price, postcode) =>
-      Record(
+      Advert(
         at = Instant.now(),
         advertUrl = s"https://www.dng.ie/property-for-sale/-${property.id}",
         advertPrice = price,
@@ -44,7 +44,7 @@ object Main extends ZIOAppDefault {
           .map { Option(property).zip }
       }
       .collectSome
-      .map { toRecord.tupled }
+      .map { toAdvert.tupled }
       .collectSome
       .debug("Property")
       .pipe { File.createTempJsonLinesFile(_) }

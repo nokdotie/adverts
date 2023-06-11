@@ -1,6 +1,6 @@
 package ie.nok.adverts.myhome
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.Eircode
 import ie.nok.adverts.utils.zio.Client
 import scala.util.chaining.scalaUtilChainingOps
@@ -56,9 +56,9 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toRecordOption(
+  private def toAdvertOption(
       searchResul: ResponseSearchResult
-  ): Option[Record] = {
+  ): Option[Advert] = {
     val price =
       searchResul.PriceAsString.getOrElse("").filter(_.isDigit).toIntOption
     val eircode = searchResul.DisplayAddress
@@ -71,7 +71,7 @@ object Properties {
         Some((price, eircode, negotiator))
       case _ => None
     }).map { (price, eircode, negotiator) =>
-      Record(
+      Advert(
         at = Instant.now,
         advertUrl = s"https://www.myhome.ie${searchResul.BrochureUrl}",
         advertPrice = price,
@@ -84,13 +84,13 @@ object Properties {
     }
   }
 
-  val stream: ZStream[ZioClient, Throwable, Record] =
+  val stream: ZStream[ZioClient, Throwable, Advert] =
     streamApiRequestContent
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.SearchResults }
       .takeWhile { _.nonEmpty }
       .flattenIterables
-      .map { toRecordOption }
+      .map { toAdvertOption }
       .collectSome
 
 }

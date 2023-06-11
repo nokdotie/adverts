@@ -1,6 +1,6 @@
 package ie.nok.adverts.myhome
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.gcp.GoogleCloudStorage
 import ie.nok.adverts.utils.zio.File
 import java.time.Instant

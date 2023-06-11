@@ -1,7 +1,7 @@
 
 package ie.nok.adverts.propertypal
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.Eircode
 import ie.nok.adverts.utils.zio.Client
 import scala.util.chaining.scalaUtilChainingOps
@@ -63,9 +63,9 @@ object Property {
       .requestJson(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def toRecordOption(
+  private def toAdvertOption(
       property: ResponsePagePropsProperty
-  ): Option[Record] = {
+  ): Option[Advert] = {
     val price = property.price.price
     val eircode = property.postcode.pipe { postcode =>
       Option.when(postcode.nonEmpty)(postcode)
@@ -73,7 +73,7 @@ object Property {
 
     price.zip(eircode)
     .map { (price, eircode) =>
-      Record(
+      Advert(
         at = Instant.now,
         advertUrl = property.shareURL,
         advertPrice = price,
@@ -86,12 +86,12 @@ object Property {
     }
   }
 
-  val pipeline: ZPipeline[ZioClient, Throwable, PropertyIdAndAddress, Record] =
+  val pipeline: ZPipeline[ZioClient, Throwable, PropertyIdAndAddress, Advert] =
     ZPipeline
       .map { getApiRequestUrl }
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.pageProps.property }
-      .map { toRecordOption }
+      .map { toAdvertOption }
       .collectSome
 
 }

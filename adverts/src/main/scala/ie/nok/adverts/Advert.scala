@@ -3,7 +3,7 @@ package ie.nok.adverts
 import java.time.Instant
 import zio.json._
 
-case class Record(
+case class Advert(
     at: Instant,
     advertUrl: String,
     advertPrice: Int,
@@ -14,6 +14,6 @@ case class Record(
     contactEmail: Option[String]
 )
 
-object Record {
-  given JsonEncoder[Record] = DeriveJsonEncoder.gen[Record]
+object Advert {
+  given JsonEncoder[Advert] = DeriveJsonEncoder.gen[Advert]
 }

@@ -1,6 +1,6 @@
 package ie.nok.adverts.daft
 
-import ie.nok.adverts.Record
+import ie.nok.adverts.Advert
 import ie.nok.adverts.utils.Eircode
 import ie.nok.adverts.utils.zio.Client
 import scala.util.chaining.scalaUtilChainingOps
@@ -74,9 +74,9 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toRecordOption(
+  private def toAdvertOption(
       listing: ResponseListingListing
-  ): Option[Record] = {
+  ): Option[Advert] = {
     val price = listing.price.filter(_.isDigit).toIntOption
     val eircode = listing.title
       .pipe(Eircode.regex.findFirstIn)
@@ -88,7 +88,7 @@ object Properties {
         Some((price, eircode, phone))
       case _ => None
     }).map { (price, eircode, phone) =>
-      Record(
+      Advert(
         at = Instant.now,
         advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
         advertPrice = price,
@@ -102,14 +102,14 @@ object Properties {
     }
   }
 
-  val stream: ZStream[ZioClient, Throwable, Record] =
+  val stream: ZStream[ZioClient, Throwable, Advert] =
     streamApiRequestContent
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.listings }
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
-      .map { toRecordOption }
+      .map { toAdvertOption }
       .collectSome
 
 }
