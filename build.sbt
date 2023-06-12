@@ -19,7 +19,15 @@ lazy val root = project
     sherryFitzGerald
   )
 
+lazy val adverts = project
+  .settings(
+    githubOwner := "nok-ie",
+    githubRepository := "adverts",
+    libraryDependencies += "dev.zio" %% "zio-json" % "0.4.2"
+  )
+
 lazy val common = project
+  .dependsOn(adverts)
   .settings(
     resolvers += Resolver.githubPackages("nok-ie"),
     libraryDependencies ++= List(
@@ -34,24 +42,17 @@ lazy val common = project
     )
   )
 
-lazy val adverts = project
-  .dependsOn(common % "compile->compile;test->test")
-  .settings(
-    githubOwner := "nok-ie",
-    githubRepository := "adverts"
-  )
-
 lazy val daft = project
-  .dependsOn(adverts, common % "compile->compile;test->test")
+  .dependsOn(common % "compile->compile;test->test")
 
 lazy val douglasNewmanGood = project
-  .dependsOn(adverts, common % "compile->compile;test->test")
+  .dependsOn(common % "compile->compile;test->test")
 
 lazy val myHome = project
-  .dependsOn(adverts, common % "compile->compile;test->test")
+  .dependsOn(common % "compile->compile;test->test")
 
 lazy val propertyPal = project
-  .dependsOn(adverts, common % "compile->compile;test->test")
+  .dependsOn(common % "compile->compile;test->test")
 
 lazy val sherryFitzGerald = project
-  .dependsOn(adverts, common % "compile->compile;test->test")
+  .dependsOn(common % "compile->compile;test->test")
