@@ -9,8 +9,9 @@ import zio.http.{Client, ClientConfig}
 object Main extends ZIOAppDefault {
   def run =
     Properties.stream
+      .via(Property.pipeline)
       .debug("Property")
-      .pipe { File.createTempJsonLinesFile(_) }
+      .pipe { File.createTempJsonLinesFile }
       .flatMap { file =>
         GoogleCloudStorage
           .upload("sherryfitz.ie", file)

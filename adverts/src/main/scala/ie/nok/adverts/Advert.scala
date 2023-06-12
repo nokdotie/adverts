@@ -4,14 +4,14 @@ import java.time.Instant
 import zio.json._
 
 case class Advert(
-    at: Instant,
     advertUrl: String,
     advertPrice: Int,
-    propertyEircode: String,
+    propertyAddress: String,
     propertyImageUrls: List[String],
-    contactName: String,
-    contactPhone: Option[String],
-    contactEmail: Option[String]
+    propertySizeinSqtMtr: BigDecimal,
+    propertyBedroomsCount: Int,
+    propertyBathroomsCount: Int,
+    createdAt: Instant
 )
 
 object Advert {

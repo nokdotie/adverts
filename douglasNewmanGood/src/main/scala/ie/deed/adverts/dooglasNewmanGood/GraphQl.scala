@@ -17,12 +17,20 @@ object GraphQl {
   val contentTypeHeader = Headers("content-type", "application/json")
 
   def query[A: JsonDecoder](query: String): ZIO[ZioClient, Throwable, A] =
-    Client
-      .requestJson[A](
+    ZioClient
+      .request(
         url,
         Method.POST,
         authorizationHeader ++ contentTypeHeader,
         Body.fromString(query)
       )
       .retry(recurs(3) && fixed(1.second))
+      .flatMap { _.body.asString }
+      .flatMap { b =>
+        b.fromJson[A]
+          .left
+          .map(Throwable(_))
+          .pipe(ZIO.fromEither)
+      }
+
 }

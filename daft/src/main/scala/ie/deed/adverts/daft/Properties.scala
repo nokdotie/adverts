@@ -13,40 +13,43 @@ import zio.json.{JsonDecoder, DeriveJsonDecoder}
 import java.time.Instant
 
 object Properties {
-  case class Response(listings: List[ResponseListing])
-  given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  private case class Response(listings: List[ResponseListing])
+  private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
-  case class ResponseListing(listing: ResponseListingListing)
-  given JsonDecoder[ResponseListing] = DeriveJsonDecoder.gen[ResponseListing]
+  private case class ResponseListing(listing: ResponseListingListing)
+  private given JsonDecoder[ResponseListing] =
+    DeriveJsonDecoder.gen[ResponseListing]
 
-  case class ResponseListingListing(
+  private case class ResponseListingListing(
+      floorArea: Option[ResponseListingListingFloorArea],
       media: ResponseListingListingMedia,
+      numBathrooms: Option[String],
+      numBedrooms: Option[String],
       price: String,
-      seller: ResponseListingListingSeller,
       seoFriendlyPath: String,
       title: String
   )
-  given JsonDecoder[ResponseListingListing] =
+  private given JsonDecoder[ResponseListingListing] =
     DeriveJsonDecoder.gen[ResponseListingListing]
 
-  case class ResponseListingListingMedia(
+  private case class ResponseListingListingFloorArea(
+      unit: String,
+      value: String
+  )
+  private given JsonDecoder[ResponseListingListingFloorArea] =
+    DeriveJsonDecoder.gen[ResponseListingListingFloorArea]
+
+  private case class ResponseListingListingMedia(
       images: Option[List[ResponseListingListingMediaImage]]
   )
-  given JsonDecoder[ResponseListingListingMedia] =
+  private given JsonDecoder[ResponseListingListingMedia] =
     DeriveJsonDecoder.gen[ResponseListingListingMedia]
 
-  case class ResponseListingListingMediaImage(
+  private case class ResponseListingListingMediaImage(
       size720x480: String
   )
-  given JsonDecoder[ResponseListingListingMediaImage] =
+  private given JsonDecoder[ResponseListingListingMediaImage] =
     DeriveJsonDecoder.gen[ResponseListingListingMediaImage]
-
-  case class ResponseListingListingSeller(
-      name: String,
-      phone: Option[String]
-  )
-  given JsonDecoder[ResponseListingListingSeller] =
-    DeriveJsonDecoder.gen[ResponseListingListingSeller]
 
   private val streamApiRequestContent = {
     val pageSize = 100
@@ -74,32 +77,44 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toAdvertOption(
+  private def toAdvert(
       listing: ResponseListingListing
-  ): Option[Advert] = {
-    val price = listing.price.filter(_.isDigit).toIntOption
-    val eircode = listing.title
-      .pipe(Eircode.regex.findFirstIn)
-      .map(_.filter(_.isLetterOrDigit))
-    val phone = listing.seller.phone
+  ): Advert = {
+    val price = listing.price.filter(_.isDigit).toIntOption.getOrElse(0)
+    val propertySize = listing.floorArea
+      .map { floorArea =>
+        (floorArea.unit, floorArea.value.pipe(BigDecimal.apply))
+      }
+      .map {
 
-    ((price, eircode, phone) match {
-      case (Some(price), Some(eircode), Some(phone)) =>
-        Some((price, eircode, phone))
-      case _ => None
-    }).map { (price, eircode, phone) =>
-      Advert(
-        at = Instant.now,
-        advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
-        advertPrice = price,
-        propertyEircode = eircode,
-        propertyImageUrls =
-          listing.media.images.getOrElse(List.empty).map { _.size720x480 },
-        contactName = listing.seller.name,
-        contactPhone = Option(phone),
-        contactEmail = Option.empty
-      )
-    }
+        case ("METRES_SQUARED", value) => value
+        case ("ACRES", value)          => value * 4046.86
+        case (other, _) => throw new Exception(s"Unknown unit $other")
+      }
+      .getOrElse(BigDecimal(0))
+
+    val bedroomCount = listing.numBedrooms
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+      .getOrElse(0)
+    val bathroomCount = listing.numBathrooms
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+      .getOrElse(0)
+
+    Advert(
+      advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
+      advertPrice = price,
+      propertyAddress = listing.title,
+      propertyImageUrls =
+        listing.media.images.getOrElse(List.empty).map { _.size720x480 },
+      propertySizeinSqtMtr = propertySize,
+      propertyBedroomsCount = bedroomCount,
+      propertyBathroomsCount = bathroomCount,
+      createdAt = Instant.now()
+    )
   }
 
   val stream: ZStream[ZioClient, Throwable, Advert] =
@@ -109,7 +124,6 @@ object Properties {
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
-      .map { toAdvertOption }
-      .collectSome
+      .map { toAdvert }
 
 }

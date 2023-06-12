@@ -34,7 +34,7 @@ object Properties {
   private case class ResponsePagePropsInitialStatePropertiesDataResult(path: String)
   private given JsonDecoder[ResponsePagePropsInitialStatePropertiesDataResult] = DeriveJsonDecoder.gen[ResponsePagePropsInitialStatePropertiesDataResult]
 
-  private val streamApiRequestUrl =
+  private def streamApiRequestUrl(buildId: String) =
     ZStream
       .iterate(1)(_ + 1)
       .map {
@@ -42,7 +42,7 @@ object Properties {
         case page => s"args=page-$page"
       }
       .map { args =>
-        s"https://www.propertypal.com/_next/data/ijabnC9g5QxxQMjkdO83R/en/search.json?preset=property-for-sale&args=republic-of-ireland&$args"
+        s"https://www.propertypal.com/_next/data/$buildId/en/search.json?preset=property-for-sale&args=republic-of-ireland&$args"
       }
 
   private def getApiResponse(
@@ -63,8 +63,8 @@ object Properties {
     })
     .map { PropertyIdAndAddress.apply.tupled }
 
-  val stream: ZStream[ZioClient, Throwable, PropertyIdAndAddress] =
-    streamApiRequestUrl
+  def stream(buildId: String): ZStream[ZioClient, Throwable, PropertyIdAndAddress] =
+    streamApiRequestUrl(buildId)
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.pageProps.initialState.properties.data.results }
       .takeWhile { _.nonEmpty }

@@ -19,10 +19,15 @@ object Client {
     ZioClient
       .request(url, method, headers, content)
       .flatMap { _.body.asString }
-      .flatMap {
-        _.fromJson[A].left
+      .flatMap { b =>
+        b.fromJson[A]
+          .left
           .map(Throwable(_))
           .pipe(ZIO.fromEither)
+          .tapError { e =>
+            println(s"Error parsing JSON: $e, $b")
+            ZIO.fail(e)
+          }
       }
 
   def requestHtml(
