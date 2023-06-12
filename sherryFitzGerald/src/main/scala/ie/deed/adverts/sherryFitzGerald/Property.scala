@@ -1,7 +1,7 @@
 package ie.nok.adverts.sherryFitzGerald
 
 import ie.nok.adverts.Advert
-import ie.nok.adverts.utils.zio.Client
+import ie.nok.http.Client
 import java.time.Instant
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
@@ -20,7 +20,7 @@ object Property {
       url: String
   ): ZIO[ZioClient, Throwable, Document] =
     Client
-      .requestHtml(url)
+      .requestBodyAsHtml(url)
       .retry(recurs(3) && fixed(1.second))
 
   private def parseResponse(url: String, html: Document): Advert = {

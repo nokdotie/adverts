@@ -1,8 +1,7 @@
 package ie.nok.adverts.myhome
 
 import ie.nok.adverts.Advert
-import ie.nok.adverts.utils.Eircode
-import ie.nok.adverts.utils.zio.Client
+import ie.nok.http.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -41,7 +40,7 @@ object Properties {
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
-      .requestJson[Response](
+      .requestBodyAsJson[Response](
         "https://api.myhome.ie/search",
         method = Method.POST,
         headers = contentTypeHeader,

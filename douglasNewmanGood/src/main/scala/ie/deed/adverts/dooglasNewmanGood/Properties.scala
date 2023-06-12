@@ -1,10 +1,14 @@
 package ie.nok.adverts.dooglasNewmanGood
 
 import ie.nok.adverts.Advert
+import ie.nok.http.Client
 import java.time.Instant
+import zio.{durationInt, ZIO}
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
-import zio.http.Client
+import zio.http.{Body, Client => ZioClient}
+import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
+import zio.Schedule.{recurs, fixed}
 
 object Properties {
 
@@ -36,6 +40,45 @@ object Properties {
   )
   private given JsonDecoder[ResponseDataPropertyImage] =
     DeriveJsonDecoder.gen[ResponseDataPropertyImage]
+
+  private def getRequestQuery(start: Int, limit: Int): String =
+    s"""{ "query": "query {
+      properties (
+        where: {
+          status: \\"For Sale\\",
+          publish: true
+        },
+        start: $start,
+        limit: $limit
+      ) {
+        bathroom
+        bedroom
+        display_address
+        floorarea_min
+        floorarea_type
+        images
+        price
+        property_url
+      }
+    }"}""".replaceAll("\n", " ")
+
+  private val requestUrl = "https://dng-strapi.q.starberry.com/graphql"
+  private val requestAuthorizationHeader = Headers(
+    "authorization",
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjNlMjJkODA2NjIyMGQ0ZGM5N2Q0NCIsImlhdCI6MTYzMzkzNjQ2MywiZXhwIjoxOTQ5NTEyNDYzfQ.f8Wr84jf6zocohajraKkkca-STteDDZUrmZvTrQ479Y"
+  )
+  private val requestContentTypeHeader =
+    Headers("content-type", "application/json")
+
+  private def getResponse(query: String): ZIO[ZioClient, Throwable, Response] =
+    Client
+      .requestBodyAsJson[Response](
+        requestUrl,
+        Method.POST,
+        requestAuthorizationHeader ++ requestContentTypeHeader,
+        Body.fromString(query)
+      )
+      .retry(recurs(3) && fixed(1.second))
 
   private def toAdvert(
       property: ResponseDataProperty
@@ -69,33 +112,13 @@ object Properties {
     )
   }
 
-  val stream: ZStream[Client, Throwable, Advert] =
+  val stream: ZStream[ZioClient, Throwable, Advert] =
     val limit = 25
 
     ZStream
       .iterate(0)(_ + limit)
-      .map { start =>
-        s"""{ "query": "query {
-          properties (
-            where: {
-              status: \\"For Sale\\",
-              publish: true
-            },
-            start: $start,
-            limit: $limit
-          ) {
-            bathroom
-            bedroom
-            display_address
-            floorarea_min
-            floorarea_type
-            images
-            price
-            property_url
-          }
-        }"}""".replaceAll("\n", " ")
-      }
-      .mapZIOParUnordered(5) { GraphQl.query[Response] }
+      .map { start => getRequestQuery(start, limit) }
+      .mapZIOParUnordered(5) { getResponse }
       .map { _.data.properties.flatten }
       .takeWhile { _.nonEmpty }
       .flattenIterables

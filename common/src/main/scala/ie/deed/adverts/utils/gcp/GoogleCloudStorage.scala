@@ -1,6 +1,9 @@
 package ie.nok.adverts.utils.gcp
 
-import com.google.cloud.storage.{BlobId, BlobInfo, StorageOptions}
+import ie.nok.env.Environment
+import ie.nok.gcp.storage
+import ie.nok.gcp.storage.Storage
+import com.google.cloud.storage.{BlobId, BlobInfo}
 import ie.nok.gcp.auth.GoogleCredentials
 import java.io.{ByteArrayInputStream, File}
 import java.time.{Instant, ZoneOffset}
@@ -16,32 +19,21 @@ object GoogleCloudStorage {
       .format(Instant.now)
       .pipe { instant => s"adverts/$prefix/$instant.jsonl" }
 
-  private def getStorageOptions(): ZIO[Any, Throwable, StorageOptions] =
-    GoogleCredentials.applicationDefault
-      .map { credentials =>
-        StorageOptions
-          .newBuilder()
-          .setCredentials(credentials)
-          .build()
+  private val bucket: ZIO[Any, Throwable, String] =
+    Environment.get
+      .map {
+        case Environment.Production => "nok-ie"
+        case Environment.Other      => "nok-ie-dev"
       }
 
-  private def getBucket() =
-    sys.env
-      .get("ENV")
-      .pipe {
-        case Some("production") => "nok-ie"
-        case _                  => "nok-ie-dev"
-      }
-
-  def upload(prefix: String, file: File): ZIO[Any, Throwable, Unit] =
+  def upload(prefix: String, file: File): ZIO[Storage, Throwable, Unit] =
     for {
-      storage <- getStorageOptions().map { _.getService() }
+      bucket <- bucket
       filePath = getFilePath(prefix)
       blobInfo = BlobId
-        .of(getBucket(), filePath)
+        .of(bucket, filePath)
         .pipe(BlobInfo.newBuilder)
         .build()
-      _ <- ZIO.attempt { storage.createFrom(blobInfo, file.toPath) }
+      _ <- storage.createFrom(blobInfo, file.toPath(), List.empty)
     } yield ()
-
 }

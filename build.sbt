@@ -15,6 +15,7 @@ lazy val root = project
     daft,
     douglasNewmanGood,
     myHome,
+    propertyPal,
     sherryFitzGerald
   )
 
@@ -27,7 +28,7 @@ lazy val common = project
       "dev.zio" %% "zio-http" % "0.0.4",
       "dev.zio" %% "zio-json" % "0.4.2",
       "dev.zio" %% "zio-streams" % "2.0.13",
-      "ie.nok" %% "scala-libraries" % "20230610.102516.252288962",
+      "ie.nok" %% "scala-libraries" % "20230612.164325.430534301",
       "org.jsoup" % "jsoup" % "1.15.3",
       "org.scalameta" %% "munit" % "0.7.29" % Test
     )

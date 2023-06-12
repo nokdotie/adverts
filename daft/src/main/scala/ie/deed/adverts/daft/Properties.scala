@@ -1,8 +1,7 @@
 package ie.nok.adverts.daft
 
 import ie.nok.adverts.Advert
-import ie.nok.adverts.utils.Eircode
-import ie.nok.adverts.utils.zio.Client
+import ie.nok.http.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -68,7 +67,7 @@ object Properties {
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
-      .requestJson[Response](
+      .requestBodyAsJson[Response](
         "https://gateway.daft.ie/old/v1/listings",
         method = Method.POST,
         headers = brandHeader ++ platformHeader ++ contentTypeHeader,
