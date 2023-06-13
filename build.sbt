@@ -35,6 +35,7 @@ lazy val common = project
       "dev.zio" %% "zio" % "2.0.13",
       "dev.zio" %% "zio-http" % "0.0.4",
       "dev.zio" %% "zio-json" % "0.4.2",
+      "dev.zio" %% "zio-nio" % "2.0.1",
       "dev.zio" %% "zio-streams" % "2.0.13",
       "ie.nok" %% "scala-libraries" % "20230612.164325.430534301",
       "org.jsoup" % "jsoup" % "1.15.3",
