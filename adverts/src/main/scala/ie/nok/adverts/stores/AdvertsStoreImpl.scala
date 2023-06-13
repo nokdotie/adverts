@@ -1,4 +1,4 @@
-package ie.nok.adverts.store
+package ie.nok.adverts.stores
 
 import ie.nok.adverts.Advert
 import ie.nok.json.JsonDecoder
