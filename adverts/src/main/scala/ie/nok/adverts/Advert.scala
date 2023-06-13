@@ -1,7 +1,7 @@
 package ie.nok.adverts
 
 import java.time.Instant
-import zio.json._
+import zio.json.{JsonCodec, DeriveJsonCodec}
 
 case class Advert(
     advertUrl: String,
@@ -15,5 +15,5 @@ case class Advert(
 )
 
 object Advert {
-  given JsonEncoder[Advert] = DeriveJsonEncoder.gen[Advert]
+  given JsonCodec[Advert] = DeriveJsonCodec.gen[Advert]
 }

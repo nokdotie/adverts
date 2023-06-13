@@ -1,22 +1,15 @@
 package ie.nok.adverts
 
 import com.google.cloud.storage.{BlobId, BlobInfo}
-import ie.nok.env.Environment
+import ie.nok.adverts.store.AdvertsStoreImpl
 import ie.nok.gcp.storage.{createFrom, Storage}
 import java.time.{Instant, ZoneOffset}
 import java.time.format.DateTimeFormatter
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{Scope, ZIO}
-import zio.json.{writeJsonLinesAs, JsonEncoder}
+import zio.json.writeJsonLinesAs
 import zio.nio.file.Files
 import zio.stream.ZStream
-
-private val bucket: ZIO[Any, Throwable, String] =
-  Environment.get
-    .map {
-      case Environment.Production => "nok-ie"
-      case Environment.Other      => "nok-ie-dev"
-    }
 
 private def getBlobName(prefix: String): String =
   DateTimeFormatter
@@ -31,7 +24,7 @@ def writeToGcpStorate[R](
 ): ZIO[R & Scope & Storage, Throwable, Unit] = for {
   path <- Files.createTempFileScoped()
   _ <- writeJsonLinesAs(path.toFile, stream)
-  bucket <- bucket
+  bucket <- AdvertsStoreImpl.bucket
   blobName = getBlobName(prefix)
   blobInfo = BlobId
     .of(bucket, blobName)
