@@ -1,7 +1,7 @@
 package ie.nok.adverts
 
 import com.google.cloud.storage.{BlobId, BlobInfo}
-import ie.nok.adverts.stores.AdvertsStoreImpl
+import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.{createFrom, Storage}
 import java.time.{Instant, ZoneOffset}
 import java.time.format.DateTimeFormatter
@@ -24,7 +24,7 @@ def writeToGcpStorate[R](
 ): ZIO[R & Scope & Storage, Throwable, Unit] = for {
   path <- Files.createTempFileScoped()
   _ <- writeJsonLinesAs(path.toFile, stream)
-  bucket <- AdvertsStoreImpl.bucket
+  bucket <- AdvertStoreImpl.bucket
   blobName = getBlobName(prefix)
   blobInfo = BlobId
     .of(bucket, blobName)

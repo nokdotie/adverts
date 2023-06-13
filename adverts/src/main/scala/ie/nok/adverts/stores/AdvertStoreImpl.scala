@@ -8,7 +8,7 @@ import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{ZIO, ZLayer}
 
-object AdvertsStoreImpl {
+object AdvertStoreImpl {
   val bucket: ZIO[Any, Throwable, String] =
     Environment.get
         .map {
@@ -16,7 +16,7 @@ object AdvertsStoreImpl {
         case Environment.Other      => "nok-ie-dev"
         }
 
-  val live: ZLayer[Storage, Throwable, AdvertsStore] = ZLayer.fromZIO {
+  val live: ZLayer[Storage, Throwable, AdvertStore] = ZLayer.fromZIO {
     for {
         bucket <- bucket
         allBytes <- readAllBytes(bucket, "adverts/daft.ie/20230613010810.jsonl", List.empty)
@@ -26,13 +26,13 @@ object AdvertsStoreImpl {
             .map { JsonDecoder.decode[Advert] }
             .toList
             .pipe { ZIO.collectAll }
-    } yield new AdvertsStoreImpl(all)
+    } yield new AdvertStoreImpl(all)
   }
 }
 
-class AdvertsStoreImpl(all: List[Advert]) extends AdvertsStore {
+class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
 
-  def getPage(first: Int, after: AdvertsStoreCursor): ZIO[Any, Throwable, List[Advert]] =
+  def getPage(first: Int, after: AdvertStoreCursor): ZIO[Any, Throwable, List[Advert]] =
     all.drop(after.index).take(first).pipe(ZIO.succeed)
 
 }
