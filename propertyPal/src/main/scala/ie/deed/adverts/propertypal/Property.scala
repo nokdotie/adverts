@@ -1,9 +1,7 @@
-
 package ie.nok.adverts.propertypal
 
-import ie.nok.adverts.Record
-import ie.nok.adverts.utils.Eircode
-import ie.nok.adverts.utils.zio.Client
+import ie.nok.adverts.Advert
+import ie.nok.http.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -20,78 +18,86 @@ object Property {
   private case class ResponsePageProps(
       property: ResponsePagePropsProperty
   )
-  private given JsonDecoder[ResponsePageProps] = DeriveJsonDecoder.gen[ResponsePageProps]
+  private given JsonDecoder[ResponsePageProps] =
+    DeriveJsonDecoder.gen[ResponsePageProps]
 
   private case class ResponsePagePropsProperty(
-      shareURL: String,
-      price: ResponsePagePropsPropertyPrice,
-      postcode: String,
+      displayAddress: String,
       images: List[ResponsePagePropsPropertyImage],
-      contacts: ResponsePagePropsPropertyContacts,
+      keyInfo: List[ResponsePagePropsPropertyKeyInfo],
+      shareURL: String
   )
-  private given JsonDecoder[ResponsePagePropsProperty] = DeriveJsonDecoder.gen[ResponsePagePropsProperty]
+  private given JsonDecoder[ResponsePagePropsProperty] =
+    DeriveJsonDecoder.gen[ResponsePagePropsProperty]
 
-  private case class ResponsePagePropsPropertyPrice(price: Option[Int])
-  private given JsonDecoder[ResponsePagePropsPropertyPrice] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyPrice]
+  private case class ResponsePagePropsPropertyKeyInfo(
+      key: String,
+      text: Option[String]
+  )
+  private given JsonDecoder[ResponsePagePropsPropertyKeyInfo] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyKeyInfo]
 
   private case class ResponsePagePropsPropertyImage(url: String)
-  private given JsonDecoder[ResponsePagePropsPropertyImage] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
+  private given JsonDecoder[ResponsePagePropsPropertyImage] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
 
-  private case class ResponsePagePropsPropertyContacts(
-    default: ResponsePagePropsPropertyContactsDefault,
-  )
-  private given JsonDecoder[ResponsePagePropsPropertyContacts] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContacts]
-
-  private case class ResponsePagePropsPropertyContactsDefault(
-      organisation: String,
-      phoneNumber: ResponsePagePropsPropertyContactsDefaultPhoneNumber,
-  )
-  private given JsonDecoder[ResponsePagePropsPropertyContactsDefault] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefault]
-
-  private case class ResponsePagePropsPropertyContactsDefaultPhoneNumber(
-    international: String
-  )
-  private given JsonDecoder[ResponsePagePropsPropertyContactsDefaultPhoneNumber] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefaultPhoneNumber]
-
-  private def getApiRequestUrl(propertyIdAndAddress: PropertyIdAndAddress): String =
-    s"https://www.propertypal.com/_next/data/ijabnC9g5QxxQMjkdO83R/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
+  private def getApiRequestUrl(
+      buildId: String,
+      propertyIdAndAddress: PropertyIdAndAddress
+  ): String =
+    s"https://www.propertypal.com/_next/data/27_Z-wFGdZnrht9FIv1jT/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
 
   private def getApiResponse(
       url: String
   ): ZIO[ZioClient, Throwable, Response] =
     Client
-      .requestJson(url)
+      .requestBodyAsJson(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def toRecordOption(
+  private def toAdvert(
       property: ResponsePagePropsProperty
-  ): Option[Record] = {
-    val price = property.price.price
-    val eircode = property.postcode.pipe { postcode =>
-      Option.when(postcode.nonEmpty)(postcode)
-    }
+  ): Advert = {
+    val price = property.keyInfo
+      .find { _.key == "PRICE" }
+      .flatMap { _.text }
+      .flatMap { _.filter(_.isDigit).toIntOption }
+      .getOrElse(0)
+    val sizeInSqtMtr = property.keyInfo
+      .find { _.key == "SIZE" }
+      .flatMap { _.text }
+      .flatMap { "[0-9]+\\.?[0-9]*".r.findFirstIn }
+      .fold(BigDecimal(0)) { BigDecimal.apply }
 
-    price.zip(eircode)
-    .map { (price, eircode) =>
-      Record(
-        at = Instant.now,
-        advertUrl = property.shareURL,
-        advertPrice = price,
-        propertyEircode = eircode,
-        propertyImageUrls = property.images.map(_.url),
-        contactName = property.contacts.default.organisation,
-        contactPhone = property.contacts.default.phoneNumber.international.pipe(Option.apply),
-        contactEmail = Option.empty
-      )
-    }
+    val bedroomsCount = property.keyInfo
+      .find { _.key == "BEDROOMS" }
+      .flatMap { _.text }
+      .flatMap { _.filter(_.isDigit).toIntOption }
+      .getOrElse(0)
+    val bathroomsCount = property.keyInfo
+      .find { _.key == "BATHROOMS" }
+      .flatMap { _.text }
+      .flatMap { _.filter(_.isDigit).toIntOption }
+      .getOrElse(0)
+
+    Advert(
+      advertUrl = property.shareURL,
+      advertPrice = price,
+      propertyAddress = property.displayAddress,
+      propertyImageUrls = property.images.map(_.url),
+      propertySizeinSqtMtr = sizeInSqtMtr,
+      propertyBedroomsCount = bedroomsCount,
+      propertyBathroomsCount = bathroomsCount,
+      createdAt = Instant.now
+    )
   }
 
-  val pipeline: ZPipeline[ZioClient, Throwable, PropertyIdAndAddress, Record] =
+  def pipeline(
+      buildId: String
+  ): ZPipeline[ZioClient, Throwable, PropertyIdAndAddress, Advert] =
     ZPipeline
-      .map { getApiRequestUrl }
+      .map { getApiRequestUrl(buildId, _) }
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.pageProps.property }
-      .map { toRecordOption }
-      .collectSome
+      .map { toAdvert }
 
 }
