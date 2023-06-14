@@ -38,7 +38,7 @@ lazy val common = project
       "dev.zio" %% "zio-http" % "0.0.5",
       "dev.zio" %% "zio-nio" % "2.0.1",
       "dev.zio" %% "zio-streams" % "2.0.15",
-      "org.jsoup" % "jsoup" % "1.15.4",
+      "org.jsoup" % "jsoup" % "1.16.1",
       "org.scalameta" %% "munit" % "0.7.29" % Test
     )
   )
