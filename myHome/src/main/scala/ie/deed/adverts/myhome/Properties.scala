@@ -1,8 +1,7 @@
 package ie.nok.adverts.myhome
 
-import ie.nok.adverts.Record
-import ie.nok.adverts.utils.Eircode
-import ie.nok.adverts.utils.zio.Client
+import ie.nok.adverts.Advert
+import ie.nok.http.Client
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -18,21 +17,15 @@ object Properties {
 
   private case class ResponseSearchResult(
       PriceAsString: Option[String],
+      BathString: Option[String],
+      BedsString: String,
+      SizeStringMeters: Option[Float],
       DisplayAddress: String,
       BrochureUrl: String,
-      Photos: List[String],
-      Negotiator: Option[ResponseSearchResultNegotiator]
+      Photos: List[String]
   )
   private given JsonDecoder[ResponseSearchResult] =
     DeriveJsonDecoder.gen[ResponseSearchResult]
-
-  private case class ResponseSearchResultNegotiator(
-      Name: String,
-      Phone: Option[String],
-      Email: Option[String]
-  )
-  private given JsonDecoder[ResponseSearchResultNegotiator] =
-    DeriveJsonDecoder.gen[ResponseSearchResultNegotiator]
 
   private val streamApiRequestContent =
     ZStream
@@ -47,7 +40,7 @@ object Properties {
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
-      .requestJson[Response](
+      .requestBodyAsJson[Response](
         "https://api.myhome.ie/search",
         method = Method.POST,
         headers = contentTypeHeader,
@@ -56,41 +49,45 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toRecordOption(
-      searchResul: ResponseSearchResult
-  ): Option[Record] = {
-    val price =
-      searchResul.PriceAsString.getOrElse("").filter(_.isDigit).toIntOption
-    val eircode = searchResul.DisplayAddress
-      .pipe(Eircode.regex.findFirstIn)
-      .map(_.filter(_.isLetterOrDigit))
+  private def toAdvert(
+      searchResult: ResponseSearchResult
+  ): Advert = {
+    val price = searchResult.PriceAsString
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+      .getOrElse(0)
 
-    ((price, eircode, searchResul.Negotiator) match {
-      case (Some(price), Some(eircode), Some(negotiator))
-          if negotiator.Email.nonEmpty || negotiator.Phone.nonEmpty =>
-        Some((price, eircode, negotiator))
-      case _ => None
-    }).map { (price, eircode, negotiator) =>
-      Record(
-        at = Instant.now,
-        advertUrl = s"https://www.myhome.ie${searchResul.BrochureUrl}",
-        advertPrice = price,
-        propertyEircode = eircode,
-        propertyImageUrls = searchResul.Photos,
-        contactName = negotiator.Name,
-        contactPhone = negotiator.Phone,
-        contactEmail = negotiator.Email
-      )
-    }
+    val bathroomsCount = searchResult.BathString
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+      .getOrElse(0)
+
+    val bedsString = searchResult.BedsString
+      .filter(_.isDigit)
+      .toIntOption
+      .getOrElse(0)
+
+    Advert(
+      advertUrl = s"https://www.myhome.ie${searchResult.BrochureUrl}",
+      advertPrice = price,
+      propertyAddress = searchResult.DisplayAddress,
+      propertyImageUrls = searchResult.Photos,
+      propertySizeinSqtMtr =
+        searchResult.SizeStringMeters.fold(BigDecimal(0))(BigDecimal.apply),
+      propertyBedroomsCount = bedsString,
+      propertyBathroomsCount = bathroomsCount,
+      createdAt = Instant.now
+    )
   }
 
-  val stream: ZStream[ZioClient, Throwable, Record] =
+  val stream: ZStream[ZioClient, Throwable, Advert] =
     streamApiRequestContent
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.SearchResults }
       .takeWhile { _.nonEmpty }
       .flattenIterables
-      .map { toRecordOption }
-      .collectSome
+      .map { toAdvert }
 
 }
