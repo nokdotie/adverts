@@ -1,3 +1,4 @@
+
 package ie.nok.adverts.propertypal
 
 import ie.nok.adverts.Record
@@ -19,50 +20,40 @@ object Property {
   private case class ResponsePageProps(
       property: ResponsePagePropsProperty
   )
-  private given JsonDecoder[ResponsePageProps] =
-    DeriveJsonDecoder.gen[ResponsePageProps]
+  private given JsonDecoder[ResponsePageProps] = DeriveJsonDecoder.gen[ResponsePageProps]
 
   private case class ResponsePagePropsProperty(
       shareURL: String,
       price: ResponsePagePropsPropertyPrice,
       postcode: String,
       images: List[ResponsePagePropsPropertyImage],
-      contacts: ResponsePagePropsPropertyContacts
+      contacts: ResponsePagePropsPropertyContacts,
   )
-  private given JsonDecoder[ResponsePagePropsProperty] =
-    DeriveJsonDecoder.gen[ResponsePagePropsProperty]
+  private given JsonDecoder[ResponsePagePropsProperty] = DeriveJsonDecoder.gen[ResponsePagePropsProperty]
 
   private case class ResponsePagePropsPropertyPrice(price: Option[Int])
-  private given JsonDecoder[ResponsePagePropsPropertyPrice] =
-    DeriveJsonDecoder.gen[ResponsePagePropsPropertyPrice]
+  private given JsonDecoder[ResponsePagePropsPropertyPrice] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyPrice]
 
   private case class ResponsePagePropsPropertyImage(url: String)
-  private given JsonDecoder[ResponsePagePropsPropertyImage] =
-    DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
+  private given JsonDecoder[ResponsePagePropsPropertyImage] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
 
   private case class ResponsePagePropsPropertyContacts(
-      default: ResponsePagePropsPropertyContactsDefault
+    default: ResponsePagePropsPropertyContactsDefault,
   )
-  private given JsonDecoder[ResponsePagePropsPropertyContacts] =
-    DeriveJsonDecoder.gen[ResponsePagePropsPropertyContacts]
+  private given JsonDecoder[ResponsePagePropsPropertyContacts] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContacts]
 
   private case class ResponsePagePropsPropertyContactsDefault(
       organisation: String,
-      phoneNumber: ResponsePagePropsPropertyContactsDefaultPhoneNumber
+      phoneNumber: ResponsePagePropsPropertyContactsDefaultPhoneNumber,
   )
-  private given JsonDecoder[ResponsePagePropsPropertyContactsDefault] =
-    DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefault]
+  private given JsonDecoder[ResponsePagePropsPropertyContactsDefault] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefault]
 
   private case class ResponsePagePropsPropertyContactsDefaultPhoneNumber(
-      international: String
+    international: String
   )
-  private given JsonDecoder[
-    ResponsePagePropsPropertyContactsDefaultPhoneNumber
-  ] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefaultPhoneNumber]
+  private given JsonDecoder[ResponsePagePropsPropertyContactsDefaultPhoneNumber] = DeriveJsonDecoder.gen[ResponsePagePropsPropertyContactsDefaultPhoneNumber]
 
-  private def getApiRequestUrl(
-      propertyIdAndAddress: PropertyIdAndAddress
-  ): String =
+  private def getApiRequestUrl(propertyIdAndAddress: PropertyIdAndAddress): String =
     s"https://www.propertypal.com/_next/data/ijabnC9g5QxxQMjkdO83R/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
 
   private def getApiResponse(
@@ -80,21 +71,19 @@ object Property {
       Option.when(postcode.nonEmpty)(postcode)
     }
 
-    price
-      .zip(eircode)
-      .map { (price, eircode) =>
-        Record(
-          at = Instant.now,
-          advertUrl = property.shareURL,
-          advertPrice = price,
-          propertyEircode = eircode,
-          propertyImageUrls = property.images.map(_.url),
-          contactName = property.contacts.default.organisation,
-          contactPhone = property.contacts.default.phoneNumber.international
-            .pipe(Option.apply),
-          contactEmail = Option.empty
-        )
-      }
+    price.zip(eircode)
+    .map { (price, eircode) =>
+      Record(
+        at = Instant.now,
+        advertUrl = property.shareURL,
+        advertPrice = price,
+        propertyEircode = eircode,
+        propertyImageUrls = property.images.map(_.url),
+        contactName = property.contacts.default.organisation,
+        contactPhone = property.contacts.default.phoneNumber.international.pipe(Option.apply),
+        contactEmail = Option.empty
+      )
+    }
   }
 
   val pipeline: ZPipeline[ZioClient, Throwable, PropertyIdAndAddress, Record] =

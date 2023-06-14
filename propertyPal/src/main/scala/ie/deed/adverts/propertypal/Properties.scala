@@ -12,40 +12,33 @@ object Properties {
   private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
   private case class ResponsePageProps(
-      initialState: ResponsePagePropsInitialState
+    initialState: ResponsePagePropsInitialState
   )
-  private given JsonDecoder[ResponsePageProps] =
-    DeriveJsonDecoder.gen[ResponsePageProps]
+  private given JsonDecoder[ResponsePageProps] = DeriveJsonDecoder.gen[ResponsePageProps]
 
   private case class ResponsePagePropsInitialState(
-      properties: ResponsePagePropsInitialStateProperties
+    properties: ResponsePagePropsInitialStateProperties
   )
-  private given JsonDecoder[ResponsePagePropsInitialState] =
-    DeriveJsonDecoder.gen[ResponsePagePropsInitialState]
+  private given JsonDecoder[ResponsePagePropsInitialState] = DeriveJsonDecoder.gen[ResponsePagePropsInitialState]
 
   private case class ResponsePagePropsInitialStateProperties(
-      data: ResponsePagePropsInitialStatePropertiesData
+    data: ResponsePagePropsInitialStatePropertiesData
   )
-  private given JsonDecoder[ResponsePagePropsInitialStateProperties] =
-    DeriveJsonDecoder.gen[ResponsePagePropsInitialStateProperties]
+  private given JsonDecoder[ResponsePagePropsInitialStateProperties] = DeriveJsonDecoder.gen[ResponsePagePropsInitialStateProperties]
 
   private case class ResponsePagePropsInitialStatePropertiesData(
-      results: List[ResponsePagePropsInitialStatePropertiesDataResult]
+    results: List[ResponsePagePropsInitialStatePropertiesDataResult]
   )
-  private given JsonDecoder[ResponsePagePropsInitialStatePropertiesData] =
-    DeriveJsonDecoder.gen[ResponsePagePropsInitialStatePropertiesData]
+  private given JsonDecoder[ResponsePagePropsInitialStatePropertiesData] = DeriveJsonDecoder.gen[ResponsePagePropsInitialStatePropertiesData]
 
-  private case class ResponsePagePropsInitialStatePropertiesDataResult(
-      path: String
-  )
-  private given JsonDecoder[ResponsePagePropsInitialStatePropertiesDataResult] =
-    DeriveJsonDecoder.gen[ResponsePagePropsInitialStatePropertiesDataResult]
+  private case class ResponsePagePropsInitialStatePropertiesDataResult(path: String)
+  private given JsonDecoder[ResponsePagePropsInitialStatePropertiesDataResult] = DeriveJsonDecoder.gen[ResponsePagePropsInitialStatePropertiesDataResult]
 
   private val streamApiRequestUrl =
     ZStream
       .iterate(1)(_ + 1)
       .map {
-        case 1    => ""
+        case 1 => ""
         case page => s"args=page-$page"
       }
       .map { args =>
@@ -63,14 +56,12 @@ object Properties {
         ZIO.unit
       }
 
-  private def getIdAndAddress(
-      result: ResponsePagePropsInitialStatePropertiesDataResult
-  ): Option[PropertyIdAndAddress] =
+  private def getIdAndAddress(result: ResponsePagePropsInitialStatePropertiesDataResult): Option[PropertyIdAndAddress] =
     (result.path.split('/').toList match {
       case "" :: address :: id :: Nil => Option((id, address))
-      case _                          => None
+      case _ => None
     })
-      .map { PropertyIdAndAddress.apply.tupled }
+    .map { PropertyIdAndAddress.apply.tupled }
 
   val stream: ZStream[ZioClient, Throwable, PropertyIdAndAddress] =
     streamApiRequestUrl
