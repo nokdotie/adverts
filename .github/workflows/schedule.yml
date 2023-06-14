@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         project:
           - 'daft'
@@ -34,4 +35,5 @@ jobs:
         run: sbt -v "${{ matrix.project }}/run"
         env:
           ENV: production
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
           GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
