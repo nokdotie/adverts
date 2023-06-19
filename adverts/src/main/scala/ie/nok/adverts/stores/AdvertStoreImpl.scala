@@ -37,9 +37,14 @@ object AdvertStoreImpl {
 class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
 
   def getPage(
+      filter: AdvertFilter,
       first: Int,
       after: AdvertStoreCursor
   ): ZIO[Any, Throwable, List[Advert]] =
-    all.drop(after.index).take(first).pipe(ZIO.succeed)
+    all
+      .filter(filter.filter)
+      .drop(after.index)
+      .take(first)
+      .pipe(ZIO.succeed)
 
 }
