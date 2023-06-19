@@ -45,7 +45,7 @@ object Property {
       buildId: String,
       propertyIdAndAddress: PropertyIdAndAddress
   ): String =
-    s"https://www.propertypal.com/_next/data/27_Z-wFGdZnrht9FIv1jT/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
+    s"https://www.propertypal.com/_next/data/$buildId/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
 
   private def getApiResponse(
       url: String
