@@ -11,6 +11,7 @@ ThisBuild / version := DateTimeFormatter
 lazy val root = project
   .in(file("."))
   .aggregate(
+    adverts,
     common,
     daft,
     douglasNewmanGood,
@@ -24,7 +25,9 @@ lazy val adverts = project
     githubOwner := "nok-ie",
     githubRepository := "adverts",
     libraryDependencies ++= List(
-      "ie.nok" %% "scala-libraries" % "20230613.144229.725738162"
+      "ie.nok" %% "scala-libraries" % "20230614.143350.651178744",
+      "org.scalameta" %% "munit" % "0.7.29" % Test,
+      "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test
     )
   )
 
@@ -38,8 +41,7 @@ lazy val common = project
       "dev.zio" %% "zio-http" % "0.0.5",
       "dev.zio" %% "zio-nio" % "2.0.1",
       "dev.zio" %% "zio-streams" % "2.0.15",
-      "org.jsoup" % "jsoup" % "1.16.1",
-      "org.scalameta" %% "munit" % "0.7.29" % Test
+      "org.jsoup" % "jsoup" % "1.16.1"
     )
   )
 
