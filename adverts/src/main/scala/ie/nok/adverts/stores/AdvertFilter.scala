@@ -19,7 +19,7 @@ enum AdvertFilter {
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case PriceInEur(filter)          => filter.filter(value.advertPriceInEur)
+    case PriceInEur(filter)     => filter.filter(value.advertPriceInEur)
     case Address(filter)        => filter.filter(value.propertyAddress)
     case SizeInSqtMtr(filter)   => filter.filter(value.propertySizeInSqtMtr)
     case BedroomsCount(filter)  => filter.filter(value.propertyBedroomsCount)
