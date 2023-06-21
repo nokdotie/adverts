@@ -61,7 +61,7 @@ enum NumericFilter[A: Numeric] {
 
     case Equals(filter)      => value == filter
     case GreaterThan(filter) => value > filter
-    case LessThan(filter)    => value > filter
+    case LessThan(filter)    => value < filter
   }
 }
 
