@@ -21,7 +21,7 @@ object AdvertStoreImpl {
       bucket <- bucket
       allBytes <- readAllBytes(
         bucket,
-        "adverts/daft.ie/20230613010810.jsonl",
+        "adverts/daft.ie/20230621135322.jsonl",
         List.empty
       )
       all <- allBytes
