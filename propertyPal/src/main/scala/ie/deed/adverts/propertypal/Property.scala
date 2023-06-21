@@ -81,10 +81,10 @@ object Property {
 
     Advert(
       advertUrl = property.shareURL,
-      advertPrice = price,
+      advertPriceInEur = price,
       propertyAddress = property.displayAddress,
       propertyImageUrls = property.images.map(_.url),
-      propertySizeinSqtMtr = sizeInSqtMtr,
+      propertySizeInSqtMtr = sizeInSqtMtr,
       propertyBedroomsCount = bedroomsCount,
       propertyBathroomsCount = bathroomsCount,
       createdAt = Instant.now

@@ -99,13 +99,13 @@ object Properties {
 
     Advert(
       advertUrl = property.property_url,
-      advertPrice = property.price.getOrElse(0),
+      advertPriceInEur = property.price.getOrElse(0),
       propertyAddress = property.display_address,
       propertyImageUrls =
         property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
           image => image.url.orElse(image.srcUrl)
         },
-      propertySizeinSqtMtr = sizeInSqtMtr,
+      propertySizeInSqtMtr = sizeInSqtMtr,
       propertyBedroomsCount = property.bedroom.getOrElse(0),
       propertyBathroomsCount = property.bathroom.getOrElse(0),
       createdAt = Instant.now()

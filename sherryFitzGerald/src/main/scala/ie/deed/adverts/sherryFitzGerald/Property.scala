@@ -70,10 +70,10 @@ object Property {
 
     Advert(
       advertUrl = url,
-      advertPrice = price,
+      advertPriceInEur = price,
       propertyAddress = address,
       propertyImageUrls = imageUrls,
-      propertySizeinSqtMtr = sizeinSqtMtr,
+      propertySizeInSqtMtr = sizeinSqtMtr,
       propertyBedroomsCount = bedroomsCount,
       propertyBathroomsCount = bathroomsCount,
       createdAt = Instant.now()

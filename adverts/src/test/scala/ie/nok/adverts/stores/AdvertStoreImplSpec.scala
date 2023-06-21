@@ -25,7 +25,7 @@ class AdvertStoreImplSuite extends ScalaCheckSuite {
       val store = new AdvertStoreImpl(adverts)
       val result = store
         .getPage(
-          AdvertFilter.Price(NumericFilter.GreaterThan(threshold)),
+          AdvertFilter.PriceInEur(NumericFilter.GreaterThan(threshold)),
           adverts.size,
           AdvertStoreCursor(0)
         )
@@ -33,7 +33,7 @@ class AdvertStoreImplSuite extends ScalaCheckSuite {
         .toEither
         .fold(_ => 0, _.size)
 
-      val expected = adverts.count { _.advertPrice > threshold }
+      val expected = adverts.count { _.advertPriceInEur > threshold }
 
       assertEquals(expected, result)
     }

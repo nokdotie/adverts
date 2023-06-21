@@ -8,9 +8,9 @@ enum AdvertFilter {
   case And(head: AdvertFilter, tail: AdvertFilter*)
   case Or(head: AdvertFilter, tail: AdvertFilter*)
 
-  case Price(filter: NumericFilter[Int])
+  case PriceInEur(filter: NumericFilter[Int])
   case Address(filter: StringFilter)
-  case SizeinSqtMtr(filter: NumericFilter[BigDecimal])
+  case SizeInSqtMtr(filter: NumericFilter[BigDecimal])
   case BedroomsCount(filter: NumericFilter[Int])
   case BathroomsCount(filter: NumericFilter[Int])
 
@@ -19,9 +19,9 @@ enum AdvertFilter {
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case Price(filter)          => filter.filter(value.advertPrice)
+    case PriceInEur(filter)          => filter.filter(value.advertPriceInEur)
     case Address(filter)        => filter.filter(value.propertyAddress)
-    case SizeinSqtMtr(filter)   => filter.filter(value.propertySizeinSqtMtr)
+    case SizeInSqtMtr(filter)   => filter.filter(value.propertySizeInSqtMtr)
     case BedroomsCount(filter)  => filter.filter(value.propertyBedroomsCount)
     case BathroomsCount(filter) => filter.filter(value.propertyBathroomsCount)
   }

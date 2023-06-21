@@ -5,10 +5,10 @@ import zio.json.{JsonCodec, DeriveJsonCodec}
 
 case class Advert(
     advertUrl: String,
-    advertPrice: Int,
+    advertPriceInEur: Int,
     propertyAddress: String,
     propertyImageUrls: List[String],
-    propertySizeinSqtMtr: BigDecimal,
+    propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,
     createdAt: Instant

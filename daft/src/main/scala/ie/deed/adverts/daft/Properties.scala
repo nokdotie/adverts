@@ -105,11 +105,11 @@ object Properties {
 
     Advert(
       advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
-      advertPrice = price,
+      advertPriceInEur = price,
       propertyAddress = listing.title,
       propertyImageUrls =
         listing.media.images.getOrElse(List.empty).map { _.size720x480 },
-      propertySizeinSqtMtr = propertySize,
+      propertySizeInSqtMtr = propertySize,
       propertyBedroomsCount = bedroomCount,
       propertyBathroomsCount = bathroomCount,
       createdAt = Instant.now()

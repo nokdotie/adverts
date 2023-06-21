@@ -71,10 +71,10 @@ object Properties {
 
     Advert(
       advertUrl = s"https://www.myhome.ie${searchResult.BrochureUrl}",
-      advertPrice = price,
+      advertPriceInEur = price,
       propertyAddress = searchResult.DisplayAddress,
       propertyImageUrls = searchResult.Photos,
-      propertySizeinSqtMtr =
+      propertySizeInSqtMtr =
         searchResult.SizeStringMeters.fold(BigDecimal(0))(BigDecimal.apply),
       propertyBedroomsCount = bedsString,
       propertyBathroomsCount = bathroomsCount,
