@@ -36,7 +36,7 @@ lazy val common = project
   .settings(
     resolvers += Resolver.githubPackages("nok-ie"),
     libraryDependencies ++= List(
-      "com.google.cloud" % "google-cloud-storage" % "2.22.4",
+      "com.google.cloud" % "google-cloud-storage" % "2.22.5",
       "dev.zio" %% "zio" % "2.0.15",
       "dev.zio" %% "zio-http" % "0.0.5",
       "dev.zio" %% "zio-nio" % "2.0.1",
