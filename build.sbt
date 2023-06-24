@@ -25,7 +25,7 @@ lazy val adverts = project
     githubOwner := "nok-ie",
     githubRepository := "adverts",
     libraryDependencies ++= List(
-      "ie.nok" %% "scala-libraries" % "20230614.143350.651178744",
+      "ie.nok" %% "scala-libraries" % "20230623.135456.596599875",
       "org.scalameta" %% "munit" % "0.7.29" % Test,
       "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test
     )
