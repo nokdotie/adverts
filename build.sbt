@@ -59,3 +59,6 @@ lazy val propertyPal = project
 
 lazy val sherryFitzGerald = project
   .dependsOn(common % "compile->compile;test->test")
+
+lazy val aggregate = project
+  .dependsOn(daft, douglasNewmanGood, myHome, propertyPal, sherryFitzGerald)
