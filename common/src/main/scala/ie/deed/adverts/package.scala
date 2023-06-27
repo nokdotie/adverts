@@ -8,27 +8,49 @@ import java.time.format.DateTimeFormatter
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{Scope, ZIO}
 import zio.json.writeJsonLinesAs
-import zio.nio.file.Files
+import zio.nio.file.{Files, Path}
 import zio.stream.ZStream
 
-private def getBlobName(prefix: String): String =
+private def getBlobName(
+    service: String,
+    fileNameWithoutExtension: String
+): String =
+  s"adverts/$service/$fileNameWithoutExtension.jsonl"
+
+private def getTimestampBlobName(service: String): String =
   DateTimeFormatter
     .ofPattern("yyyyMMddHHmmss")
     .withZone(ZoneOffset.UTC)
     .format(Instant.now)
-    .pipe { instant => s"adverts/$prefix/$instant.jsonl" }
+    .pipe { getBlobName(service, _) }
 
-def writeToGcpStorate[R](
-    prefix: String,
+private def getLatestBlobName(service: String): String =
+  getBlobName(service: String, "latest")
+
+private def writeToTempFileScoped[R](
     stream: ZStream[R, Throwable, Advert]
-): ZIO[R & Scope & Storage, Throwable, Unit] = for {
+): ZIO[R & Scope, Throwable, Path] = for {
   path <- Files.createTempFileScoped()
   _ <- writeJsonLinesAs(path.toFile, stream)
+} yield path
+
+def writeToGcpStorate[R](
+    service: String,
+    stream: ZStream[R, Throwable, Advert]
+): ZIO[R & Scope & Storage, Throwable, Unit] = for {
+  path <- writeToTempFileScoped(stream)
+
   bucket <- AdvertStoreImpl.bucket
-  blobName = getBlobName(prefix)
-  blobInfo = BlobId
-    .of(bucket, blobName)
+
+  _ <- BlobId
+    .of(bucket, getLatestBlobName(service))
     .pipe(BlobInfo.newBuilder)
     .build()
-  _ <- createFrom(blobInfo, path.toFile.toPath, List.empty)
+    .pipe { createFrom(_, path.toFile.toPath, List.empty) }
+
+  _ <- BlobId
+    .of(bucket, getTimestampBlobName(service))
+    .pipe(BlobInfo.newBuilder)
+    .build()
+    .pipe { createFrom(_, path.toFile.toPath, List.empty) }
 } yield ()
