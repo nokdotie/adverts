@@ -6,8 +6,8 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  schedule:
-    name: Schedule
+  scrape:
+    name: Scrape
     runs-on: ubuntu-latest
 
     strategy:
@@ -50,3 +50,27 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
           TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
+
+  aggregate:
+    needs: scrape
+
+    name: Aggregate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: sbt
+
+      - name: Run
+        run: sbt -v aggregate/run
+        env:
+          ENV: production
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
+          GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
