@@ -1,6 +1,6 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import java.time.Instant
@@ -11,7 +11,7 @@ import zio.stream.ZStream
 
 object Main extends ZIOAppDefault {
   val latest: ZIO[Storage, Throwable, List[Advert]] =
-    List("daft.ie", "dng.ie", "myhome.ie", "propertypal.com", "sherryfitz.ie")
+    AdvertService.values.toList
       .map { AdvertStoreImpl.readAndDecodeLatestForService }
       .pipe { ZIO.collectAll }
       .map { _.flatten }

@@ -1,5 +1,6 @@
 package ie.nok.adverts.propertypal
 
+import ie.nok.adverts.AdvertService.PropertyPalCom
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
@@ -14,7 +15,7 @@ object Main extends ZIOAppDefault {
           .stream(buildId)
           .via(Property.pipeline(buildId))
           .pipe {
-            AdvertStoreImpl.encodeAndWriteForService(_, "propertypal.com")
+            AdvertStoreImpl.encodeAndWriteForService(PropertyPalCom, _)
           }
       }
       .provide(

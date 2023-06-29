@@ -1,7 +1,7 @@
 package ie.nok.adverts.stores
 
 import com.google.cloud.storage.BlobInfo
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.json.JsonDecoder
 import ie.nok.env.Environment
 import ie.nok.gcp.storage.{createFrom, readAllBytes, Storage}
@@ -22,14 +22,14 @@ object AdvertStoreImpl {
       }
 
   private val blobNameLatest: String = "adverts/latest.jsonl"
-  private def blobNameLatestForService(service: String): String =
-    s"adverts/$service/latest.jsonl"
-  private def blobNameVersionedForService(service: String): String =
+  private def blobNameLatestForService(service: AdvertService): String =
+    s"adverts/${service.host}/latest.jsonl"
+  private def blobNameVersionedForService(service: AdvertService): String =
     DateTimeFormatter
       .ofPattern("yyyyMMddHHmmss")
       .withZone(ZoneOffset.UTC)
       .format(Instant.now)
-      .pipe { timestamp => s"adverts/$service/$timestamp.jsonl" }
+      .pipe { timestamp => s"adverts/${service.host}/$timestamp.jsonl" }
 
   private def encodeAndWrite[R](
       stream: ZStream[R, Throwable, Advert],
@@ -51,8 +51,8 @@ object AdvertStoreImpl {
     encodeAndWrite(stream, List(blobNameLatest))
 
   protected[adverts] def encodeAndWriteForService[R](
-      stream: ZStream[R, Throwable, Advert],
-      service: String
+      service: AdvertService,
+      stream: ZStream[R, Throwable, Advert]
   ): ZIO[R & Scope & Storage, Throwable, Unit] = {
     val latest = blobNameLatestForService(service)
     val versioned = blobNameVersionedForService(service)
@@ -78,7 +78,7 @@ object AdvertStoreImpl {
     readAndDecode(blobNameLatest)
 
   protected[adverts] def readAndDecodeLatestForService(
-      service: String
+      service: AdvertService
   ): ZIO[Storage, Throwable, List[Advert]] =
     readAndDecode(blobNameLatestForService(service))
 

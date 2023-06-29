@@ -1,5 +1,6 @@
 package ie.nok.adverts.sherryFitzGerald
 
+import ie.nok.adverts.AdvertService.SherryFitzgeraldIe
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
@@ -11,7 +12,7 @@ object Main extends ZIOAppDefault {
     Properties.stream
       .via(Property.pipeline)
       .debug("Property")
-      .pipe { AdvertStoreImpl.encodeAndWriteForService(_, "sherryfitz.ie") }
+      .pipe { AdvertStoreImpl.encodeAndWriteForService(SherryFitzgeraldIe, _) }
       .provide(
         ClientConfig.default,
         Client.fromConfig,

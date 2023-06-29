@@ -1,5 +1,6 @@
 package ie.nok.adverts.myhome
 
+import ie.nok.adverts.AdvertService.MyHomeIe
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
@@ -10,7 +11,7 @@ object Main extends ZIOAppDefault {
   def run =
     Properties.stream
       .debug("Property")
-      .pipe { AdvertStoreImpl.encodeAndWriteForService(_, "myhome.ie") }
+      .pipe { AdvertStoreImpl.encodeAndWriteForService(MyHomeIe, _) }
       .provide(
         ClientConfig.default,
         Client.fromConfig,
