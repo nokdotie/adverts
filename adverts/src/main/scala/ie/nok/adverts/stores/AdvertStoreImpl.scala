@@ -83,20 +83,22 @@ object AdvertStoreImpl {
     readAndDecode(blobNameLatestForService(service))
 
   val live: ZLayer[Storage, Throwable, AdvertStore] =
-    ZLayer.fromFunction(AdvertStoreImpl(_))
+    readAndDecodeLatest
+      .map { new AdvertStoreImpl(_) }
+      .pipe { ZLayer.fromZIO }
 }
 
-class AdvertStoreImpl(storage: Storage) extends AdvertStore {
-  val readAndDecodeLatestCached = AdvertStoreImpl.readAndDecodeLatest
-    .cached(1.hour)
-    .provideLayer(ZLayer.succeed(storage))
+class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
 
   def getPage(
       filter: AdvertFilter,
       first: Int,
       after: AdvertStoreCursor
   ): ZIO[Any, Throwable, List[Advert]] =
-    readAndDecodeLatestCached.flatten
-      .map { _.filter(filter.filter).drop(after.index).take(first) }
+    all
+      .filter(filter.filter)
+      .drop(after.index)
+      .take(first)
+      .pipe { ZIO.succeed }
 
 }
