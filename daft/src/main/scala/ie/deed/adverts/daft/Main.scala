@@ -1,6 +1,6 @@
 package ie.nok.adverts.daft
 
-import ie.nok.adverts.writeToGcpStorate
+import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
 import zio.{Scope, ZIO, ZIOAppDefault}
@@ -10,7 +10,7 @@ object Main extends ZIOAppDefault {
   def run =
     Properties.stream
       .debug("Property")
-      .pipe { writeToGcpStorate("daft.ie", _) }
+      .pipe { AdvertStoreImpl.encodeAndWriteForService(_, "daft.ie") }
       .provide(
         ClientConfig.default,
         Client.fromConfig,

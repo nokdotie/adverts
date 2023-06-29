@@ -1,6 +1,6 @@
 package ie.nok.adverts.propertypal
 
-import ie.nok.adverts.writeToGcpStorate
+import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
 import zio.{Scope, ZIO, ZIOAppDefault}
@@ -13,7 +13,9 @@ object Main extends ZIOAppDefault {
         Properties
           .stream(buildId)
           .via(Property.pipeline(buildId))
-          .pipe { writeToGcpStorate("propertypal.com", _) }
+          .pipe {
+            AdvertStoreImpl.encodeAndWriteForService(_, "propertypal.com")
+          }
       }
       .provide(
         ClientConfig.default,

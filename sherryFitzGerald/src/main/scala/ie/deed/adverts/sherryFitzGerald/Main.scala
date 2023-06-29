@@ -1,6 +1,6 @@
 package ie.nok.adverts.sherryFitzGerald
 
-import ie.nok.adverts.writeToGcpStorate
+import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import scala.util.chaining._
 import zio.{Scope, ZIO, ZIOAppDefault}
@@ -11,7 +11,7 @@ object Main extends ZIOAppDefault {
     Properties.stream
       .via(Property.pipeline)
       .debug("Property")
-      .pipe { writeToGcpStorate("sherryfitz.ie", _) }
+      .pipe { AdvertStoreImpl.encodeAndWriteForService(_, "sherryfitz.ie") }
       .provide(
         ClientConfig.default,
         Client.fromConfig,
