@@ -31,7 +31,7 @@ jobs:
           java-version: 17
           cache: sbt
 
-      - name: Set production environment
+      - name: Set environment to production
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           echo "ENV=production" >> $GITHUB_ENV
@@ -60,7 +60,7 @@ jobs:
           java-version: 17
           cache: sbt
 
-      - name: Set production environment
+      - name: Set environment to production
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           echo "ENV=production" >> $GITHUB_ENV
