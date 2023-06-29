@@ -87,18 +87,16 @@ object AdvertStoreImpl {
 }
 
 class AdvertStoreImpl(storage: Storage) extends AdvertStore {
+  val readAndDecodeLatestCached = AdvertStoreImpl.readAndDecodeLatest
+    .cached(1.hour)
+    .provideLayer(ZLayer.succeed(storage))
 
   def getPage(
       filter: AdvertFilter,
       first: Int,
       after: AdvertStoreCursor
   ): ZIO[Any, Throwable, List[Advert]] =
-    for {
-      cached <- AdvertStoreImpl.readAndDecodeLatest
-        .cached(1.hour)
-        .provideLayer(ZLayer.succeed(storage))
-      all <- cached
-      page = all.filter(filter.filter).drop(after.index).take(first)
-    } yield page
+    readAndDecodeLatestCached.flatten
+      .map { _.filter(filter.filter).drop(after.index).take(first) }
 
 }
