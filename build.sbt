@@ -12,12 +12,8 @@ lazy val root = project
   .in(file("."))
   .aggregate(
     adverts,
-    daft,
-    douglasNewmanGood,
-    myHome,
-    propertyPal,
-    sherryFitzGerald,
-    aggregate
+    aggregate,
+    scraper
   )
 
 lazy val adverts = project
@@ -37,20 +33,8 @@ lazy val adverts = project
     )
   )
 
-lazy val daft = project
-  .dependsOn(adverts % "compile->compile;test->test")
-
-lazy val douglasNewmanGood = project
-  .dependsOn(adverts % "compile->compile;test->test")
-
-lazy val myHome = project
-  .dependsOn(adverts % "compile->compile;test->test")
-
-lazy val propertyPal = project
-  .dependsOn(adverts % "compile->compile;test->test")
-
-lazy val sherryFitzGerald = project
-  .dependsOn(adverts % "compile->compile;test->test")
-
 lazy val aggregate = project
+  .dependsOn(adverts % "compile->compile;test->test")
+
+lazy val scraper = project
   .dependsOn(adverts % "compile->compile;test->test")
