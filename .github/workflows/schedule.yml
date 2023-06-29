@@ -36,7 +36,7 @@ jobs:
         env:
           ENV: production
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
-          GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
 
   aggregate:
     needs: scrape
@@ -60,4 +60,4 @@ jobs:
         env:
           ENV: production
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
-          GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
