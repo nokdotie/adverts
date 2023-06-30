@@ -6,19 +6,19 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  schedule:
-    name: Schedule
+  scrape:
+    name: Scrape
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         project:
-          - 'daft'
-          - 'douglasNewmanGood'
-          - 'myHome'
-          - 'propertyPal'
-          - 'sherryFitzGerald'
+          - DaftIe
+          - DngIe
+          - MyHomeIe
+          - PropertyPalCom
+          - SherryFitzIe
 
     steps:
       - name: Checkout
@@ -31,22 +31,43 @@ jobs:
           java-version: 17
           cache: sbt
 
+      - name: Set environment to production
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "ENV=production" >> $GITHUB_ENV
+
       - name: Run
-        run: sbt -v "${{ matrix.project }}/run"
+        run: sbt -v "scraper/run ${{ matrix.project }}"
         env:
-          ENV: production
+          ENV: ${{ env.ENV }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
-          GCP_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
 
-      - name: Send notification on failure
-        if: ${{ failure() }}
-        uses: twilio-labs/actions-sms@v1
+  aggregate:
+    needs: scrape
+
+    name: Aggregate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
         with:
-          fromPhoneNumber: ${{ secrets.FROM_NUMBER }}
-          toPhoneNumber: ${{ secrets.TO_NUMBER }}
-          message: ${{ matrix.project }}/run failed
+          distribution: temurin
+          java-version: 17
+          cache: sbt
 
+      - name: Set environment to production
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "ENV=production" >> $GITHUB_ENV
+
+      - name: Run
+        run: sbt -v aggregate/run
         env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
-          TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
+          ENV: ${{ env.ENV }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}

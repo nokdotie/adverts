@@ -12,50 +12,29 @@ lazy val root = project
   .in(file("."))
   .aggregate(
     adverts,
-    common,
-    daft,
-    douglasNewmanGood,
-    myHome,
-    propertyPal,
-    sherryFitzGerald
+    aggregate,
+    scraper
   )
 
 lazy val adverts = project
   .settings(
     githubOwner := "nok-ie",
     githubRepository := "adverts",
+    resolvers += Resolver.githubPackages("nok-ie"),
     libraryDependencies ++= List(
+      "dev.zio" %% "zio" % "2.0.15",
+      "dev.zio" %% "zio-http" % "0.0.5",
+      "dev.zio" %% "zio-nio" % "2.0.1",
+      "dev.zio" %% "zio-streams" % "2.0.15",
       "ie.nok" %% "scala-libraries" % "20230626.202745.858342324",
+      "org.jsoup" % "jsoup" % "1.16.1",
       "org.scalameta" %% "munit" % "0.7.29" % Test,
       "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test
     )
   )
 
-lazy val common = project
-  .dependsOn(adverts)
-  .settings(
-    resolvers += Resolver.githubPackages("nok-ie"),
-    libraryDependencies ++= List(
-      "com.google.cloud" % "google-cloud-storage" % "2.23.0",
-      "dev.zio" %% "zio" % "2.0.15",
-      "dev.zio" %% "zio-http" % "0.0.5",
-      "dev.zio" %% "zio-nio" % "2.0.1",
-      "dev.zio" %% "zio-streams" % "2.0.15",
-      "org.jsoup" % "jsoup" % "1.16.1"
-    )
-  )
+lazy val aggregate = project
+  .dependsOn(adverts % "compile->compile;test->test")
 
-lazy val daft = project
-  .dependsOn(common % "compile->compile;test->test")
-
-lazy val douglasNewmanGood = project
-  .dependsOn(common % "compile->compile;test->test")
-
-lazy val myHome = project
-  .dependsOn(common % "compile->compile;test->test")
-
-lazy val propertyPal = project
-  .dependsOn(common % "compile->compile;test->test")
-
-lazy val sherryFitzGerald = project
-  .dependsOn(common % "compile->compile;test->test")
+lazy val scraper = project
+  .dependsOn(adverts % "compile->compile;test->test")
