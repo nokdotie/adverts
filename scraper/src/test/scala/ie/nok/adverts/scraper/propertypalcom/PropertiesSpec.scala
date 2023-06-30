@@ -8,7 +8,8 @@ import zio.json.readJsonLinesAs
 class PropertySuite extends FunSuite {
   test("Parse property sizes in sq. feet") {
     val expected = BigDecimal(118.451325)
-    val result = "scraper/src/test/resourses/propertypalcom/8-sea-breeze-heights-clonakilty.json"
+    val result =
+      "scraper/src/test/resourses/propertypalcom/8-sea-breeze-heights-clonakilty.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
         .map { Property.toAdvert }
@@ -23,7 +24,8 @@ class PropertySuite extends FunSuite {
 
   test("Parse property sizes in sq. metres") {
     val expected = BigDecimal(271)
-    val result = "scraper/src/test/resourses/propertypalcom/the-riggins-dunshaughlin.json"
+    val result =
+      "scraper/src/test/resourses/propertypalcom/the-riggins-dunshaughlin.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
         .map { Property.toAdvert }
@@ -38,7 +40,8 @@ class PropertySuite extends FunSuite {
 
   test("Parse property sizes in acres") {
     val expected = BigDecimal(315655.08)
-    val result = "scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json"
+    val result =
+      "scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
         .map { Property.toAdvert }

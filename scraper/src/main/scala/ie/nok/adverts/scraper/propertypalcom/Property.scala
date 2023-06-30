@@ -13,7 +13,8 @@ import zio.stream.ZPipeline
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
-  protected[propertypalcom] given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  protected[propertypalcom] given JsonDecoder[Response] =
+    DeriveJsonDecoder.gen[Response]
 
   protected[propertypalcom] case class ResponsePageProps(
       property: ResponsePagePropsProperty
@@ -34,10 +35,14 @@ object Property {
       key: String,
       text: Option[String]
   )
-  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyKeyInfo] =
+  protected[propertypalcom] given JsonDecoder[
+    ResponsePagePropsPropertyKeyInfo
+  ] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyKeyInfo]
 
-  protected[propertypalcom] case class ResponsePagePropsPropertyImage(url: String)
+  protected[propertypalcom] case class ResponsePagePropsPropertyImage(
+      url: String
+  )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyImage] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
 
@@ -67,12 +72,14 @@ object Property {
       .find { _.key == "SIZE" }
       .flatMap { _.text }
       .map { _.replaceFirst(",", "") }
-      .flatMap { "([0-9]+\\.?[0-9]*) (sq\\. metres|sq\\. feet|acres)".r.findFirstMatchIn }
+      .flatMap {
+        "([0-9]+\\.?[0-9]*) (sq\\. metres|sq\\. feet|acres)".r.findFirstMatchIn
+      }
       .map { found => (found.group(1), found.group(2)) }
       .map {
         case (value, "sq. metres") => BigDecimal(value)
-        case (value, "sq. feet") => BigDecimal(value) * 0.092903
-        case (value, "acres") => BigDecimal(value) * 4046.86
+        case (value, "sq. feet")   => BigDecimal(value) * 0.092903
+        case (value, "acres")      => BigDecimal(value) * 4046.86
         case (value, other) =>
           throw new Exception(
             s"Unknown unit: $other, $value, ${property.shareURL}"
