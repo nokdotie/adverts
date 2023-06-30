@@ -1,0 +1,1252 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 805819,
+      "pathId": "807019",
+      "path": "/8-sea-breeze-heights-clonakilty/807019",
+      "shareURL": "https://www.propertypal.com/807019",
+      "account": {
+        "accountNumber": "ST0419229",
+        "organisation": "Martin Kelleher Property Ltd",
+        "organisationBranch": "",
+        "displayAddress": "Faxbridge Roundabout, Clonakilty, P85 C439",
+        "officePhone": {
+          "international": "+353 23 885 9111",
+          "national": "(023) 885 9111",
+          "uk": "+353 23 885 9111",
+          "displayNumber": "(023) 885 9111",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "004347",
+        "websiteUrl": "http://www.martinkelleher.ie",
+        "landingPageUrl": "/estate-agents/martin-kelleher-property-ltd",
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": true,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/210519153159/400x400/ST0419229/master.png",
+          "standardBackgroundColour": "#120c0e",
+          "alternative": "https://media.propertypal.com/logo/210519153235/400x400/ST0419229/master_alt.png",
+          "alternativeBackgroundColour": "#120c0e",
+          "premier": "https://media.propertypal.com/logo/210519153214/400x400/ST0419229/master_premier.png",
+          "premierBackgroundColour": "#120c0e"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          }
+        ],
+        "propertypalAwards": [],
+        "missingAccreditations": null
+      },
+      "displayAddress": "8 Sea Breeze Heights, Clonakilty, P85W882",
+      "displayAddressLine1": "8 Sea Breeze Heights",
+      "displayAddressLine2": "Clonakilty, P85W882",
+      "addressLine1": "8 Sea Breeze Heights",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "8",
+      "street": "Sea Breeze Heights",
+      "addressLine2": "",
+      "town": "Clonakilty",
+      "region": "Cork",
+      "postcode": "P85W882",
+      "countryCode": "IRL",
+      "coordinate": {
+        "latitude": 51.6247956,
+        "longitude": -8.8956136,
+        "accuracy": "exactlyRight",
+        "mapZoomLevel": 15,
+        "showStreetView": true
+      },
+      "numBedrooms": 3,
+      "numBathrooms": 3,
+      "numReceptionRooms": 1,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "detached",
+        "text": "Detached Houses",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 1,
+          "key": "property",
+          "text": "Properties"
+        },
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 8,
+          "key": "detached",
+          "text": "Detached houses"
+        },
+        {
+          "id": 33,
+          "key": "detachedExBungalow",
+          "text": "Detached Houses"
+        },
+        {
+          "id": 45,
+          "key": "housesExBungalow",
+          "text": "Houses (Ex. Bungalows)"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2023-02-22T16:05:14+0000",
+      "listingTime": null,
+      "activationTime": "2023-02-22T16:05:14+0000",
+      "listingUpdatedTime": "2023-06-23T16:57:08+0100",
+      "price": {
+        "priceType": "OFFERS_OVER",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": 430000,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": false,
+        "pricePrefix": "Offers over",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": false
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/805819/34700621.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700621.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700621.jpg"
+          }
+        },
+        {
+          "imageType": "FloorPlan",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/805819/34700644.jpg",
+          "width": 779,
+          "height": 1665,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700644.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700644.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/805819/34700622.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700622.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700622.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/805819/34700623.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700623.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700623.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/805819/34700624.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700624.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700624.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/805819/34700625.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700625.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700625.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/805819/34700626.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700626.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700626.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/805819/34700627.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700627.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700627.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/805819/34700628.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700628.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700628.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/805819/34700629.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700629.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700629.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/805819/34700630.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700630.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700630.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/805819/34700631.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700631.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700631.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/805819/34700632.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700632.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700632.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/805819/34700633.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700633.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700633.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/805819/34700635.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700635.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700635.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/805819/34700636.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700636.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700636.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/805819/34700637.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700637.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700637.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/805819/34700638.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700638.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700638.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 19,
+          "url": "https://media.propertypal.com/large/p/805819/34700639.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700639.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700639.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 20,
+          "url": "https://media.propertypal.com/large/p/805819/34700640.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700640.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700640.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 21,
+          "url": "https://media.propertypal.com/large/p/805819/34700641.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700641.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700641.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 22,
+          "url": "https://media.propertypal.com/large/p/805819/34700642.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700642.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700642.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 23,
+          "url": "https://media.propertypal.com/large/p/805819/34700643.jpg",
+          "width": 1024,
+          "height": 768,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/805819/34700643.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/805819/34700643.jpg"
+          }
+        }
+      ],
+      "brochures": [
+        {
+          "sizeDescription": "1MB",
+          "title": "View Marketing Brochure",
+          "publicFilename": "marketing-brochure-8-Sea-Breeze-Heights.pdf-3078342.pdf",
+          "contentType": "application/pdf",
+          "fileType": "pdfBrochure",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/f/p/805819/3078342/marketing-brochure-8-Sea-Breeze-Heights.pdf"
+        }
+      ],
+      "videos": [],
+      "history": [
+        {
+          "pricePrefix": "Offers over",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "saleAgreed",
+            "text": "Sale agreed"
+          },
+          "previousPrice": 425000,
+          "previousPublished": true,
+          "statusChange": true,
+          "priceChange": true,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "difference": 5000,
+          "differencePercentage": 0.011764705882352941,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 430000,
+          "timeModified": "2023-06-23T16:57:08+0100",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Offers over",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "previousPrice": 425000,
+          "previousPublished": true,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "difference": 0,
+          "differencePercentage": 0,
+          "status": {
+            "key": "saleAgreed",
+            "text": "Sale agreed"
+          },
+          "published": true,
+          "price": 425000,
+          "timeModified": "2023-06-09T10:46:28+0100",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Offers over",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "saleAgreed",
+            "text": "Sale agreed"
+          },
+          "previousPrice": 390000,
+          "previousPublished": true,
+          "statusChange": true,
+          "priceChange": true,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "difference": 35000,
+          "differencePercentage": 0.08974358974358974,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 425000,
+          "timeModified": "2023-05-17T14:55:07+0100",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Offers over",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "previousPrice": 390000,
+          "previousPublished": true,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "difference": 0,
+          "differencePercentage": 0,
+          "status": {
+            "key": "saleAgreed",
+            "text": "Sale agreed"
+          },
+          "published": true,
+          "price": 390000,
+          "timeModified": "2023-04-11T10:59:49+0100",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Offers over",
+          "priceSuffix": null,
+          "previousStatus": null,
+          "previousPrice": null,
+          "previousPublished": false,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": true,
+          "publishedOnAwpChange": true,
+          "difference": null,
+          "differencePercentage": null,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 390000,
+          "timeModified": "2023-02-22T16:05:14+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        }
+      ],
+      "agents": [
+        {
+          "accountNumber": "ST0419229",
+          "organisation": "Martin Kelleher Property Ltd",
+          "organisationBranch": "",
+          "displayAddress": "Faxbridge Roundabout, Clonakilty, P85 C439",
+          "officePhone": {
+            "international": "+353 23 885 9111",
+            "national": "(023) 885 9111",
+            "uk": "+353 23 885 9111",
+            "displayNumber": "(023) 885 9111",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "004347",
+          "websiteUrl": "http://www.martinkelleher.ie",
+          "landingPageUrl": "/estate-agents/martin-kelleher-property-ltd",
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": true,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/210519153159/400x400/ST0419229/master.png",
+            "standardBackgroundColour": "#120c0e",
+            "alternative": "https://media.propertypal.com/logo/210519153235/400x400/ST0419229/master_alt.png",
+            "alternativeBackgroundColour": "#120c0e",
+            "premier": "https://media.propertypal.com/logo/210519153214/400x400/ST0419229/master_premier.png",
+            "premierBackgroundColour": "#120c0e"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            }
+          ],
+          "propertypalAwards": [],
+          "missingAccreditations": null
+        }
+      ],
+      "contacts": {
+        "default": {
+          "accountNumber": "ST0419229",
+          "organisation": "Martin Kelleher Property Ltd",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "phoneNumber": {
+            "international": "+353 23 885 9111",
+            "national": "(023) 885 9111",
+            "uk": "+353 23 885 9111",
+            "displayNumber": "(023) 885 9111",
+            "countryCode": 353
+          },
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/210519153159/400x400/ST0419229/master.png",
+            "standardBackgroundColour": "#120c0e",
+            "alternative": "https://media.propertypal.com/logo/210519153235/400x400/ST0419229/master_alt.png",
+            "alternativeBackgroundColour": "#120c0e",
+            "premier": "https://media.propertypal.com/logo/210519153214/400x400/ST0419229/master_premier.png",
+            "premierBackgroundColour": "#120c0e"
+          },
+          "landingPageUrl": "/estate-agents/martin-kelleher-property-ltd",
+          "psrLicenceNumber": "004347"
+        },
+        "showAllContactsOption": true,
+        "all": [
+          {
+            "accountNumber": "ST0419229",
+            "organisation": "Martin Kelleher Property Ltd",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "phoneNumber": {
+              "international": "+353 23 885 9111",
+              "national": "(023) 885 9111",
+              "uk": "+353 23 885 9111",
+              "displayNumber": "(023) 885 9111",
+              "countryCode": 353
+            },
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/210519153159/400x400/ST0419229/master.png",
+              "standardBackgroundColour": "#120c0e",
+              "alternative": "https://media.propertypal.com/logo/210519153235/400x400/ST0419229/master_alt.png",
+              "alternativeBackgroundColour": "#120c0e",
+              "premier": "https://media.propertypal.com/logo/210519153214/400x400/ST0419229/master_premier.png",
+              "premierBackgroundColour": "#120c0e"
+            },
+            "landingPageUrl": "/estate-agents/martin-kelleher-property-ltd",
+            "psrLicenceNumber": "004347"
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "3 Bed Detached House",
+      "description": "<h2>Features</h2><ul><li>Location, Location, Location just 250 metres from the main street in Clonakilty</li><li>Quiet and exclusive estate privately situated on a safe, no through road</li><li>Elevated setting with superb views over Clonakilty town</li><li>3-bedroom 1275 Sqft house with generous private plot size</li><li>Large split-level garden beautifully maintained</li></ul><p>Privately situated Sea Breeze Heights estate, is exclusive, quiet, with no through road yet situated just 250 metres from the main street of Clonakilty.  <br/>This beautifully maintained estate is so close to all town amenities yet enjoys a very low key almost countryside feel to it. <br/>The elevated setting enhances the light filled interior of this impeccably presented property.  <br/>In absolute walk-in condition this 1275 ft&sup2; house has a practical layout of 3 double bedrooms/2 bathrooms/2 receptions and storage space. <br/>The residence is privately set back on its own leafy grounds which are well stocked with an array of trees and colourful shrubs.  <br/>Viewing highly recommended.  <br/><br/>Centrally located in multi-award winning, cosmopolitan and welcoming seaside town of Clonakilty at the heart of West Cork which boast 12 beaches within 12 miles.<br/><br/>The Irish Times Best Place to Live in Ireland contest &ndash; Top 5 (September 2021) <br/><br/>Clonakilty was nominated as one of the Top 5 best places to live in Ireland:<br/>&ldquo;2,400 members of the public nominated 470 locations in every county in Ireland. While the number of nominations was a factor in our original selection, the judges have now visited all locations to determine for themselves the quality of each one.&rdquo; Excerpt from Irish Times 18th September 2021</p><p><strong>Accommodation c. 118m²/ 1275 ft²</strong></p><p><strong>Porch 3.2 m x 1.1 m</strong></p><p>Sliding doors lead to a light-filled, tiled porch</p><p><strong>Entrance Hall 2 m x 3 m</strong></p><p>Wide welcoming entrance hall, tiled throughout.  Lovely ceiling coving.</p><p><strong>Utility Room</strong></p><p>Fitted units & plumbed for washing & drying machine. Door leading to the east side of the house.        </p><p><strong>Kitchen 2.92 m x 3.67 m</strong></p><p>Fully fitted attractive kitchen with plenty of storage space and integrated appliances incl. cooker, extractor fan, oven and microwave.  There is a lovely island with granite worktop.  Kitchen is beautifully tiled throughout and the worktops are also granite.  Door connecting to the dining area, utility room and there is a useful closet storage space here also.  Lovely ceiling coving.</p><p><strong>Dining Area 3.13 m x 4 m</strong></p><p>Bright and spacious dining room with large window.  Tiled throughout with double doors to the sitting room allowing for great flexibility of use.  Lovely ceiling rose and coving.</p><p><strong>Sitting Room 4 m x 4.77 m</strong></p><p>Spacious, light filled room with large south facing window views.  Large solid fuel stove with elegant fire surround and granite hearth. Timber floors and lovely ceiling coving.</p><p><strong>Storage Closet</strong></p><p><strong>Guest Toilet</strong></p><p>Guest toilet with WC and wash hand basin.  Tiled flooring.</p><p>Solid wood stairs to first floor landing, airing closet/hot press and handy pull downstairs to attic space overhead.</p><p><strong>Bedroom One 3.1 m x 4.3 m</strong></p><p>Spacious ensuite double bedroom. Light filled bedroom with stunning, panoramic views over Clonakilty town. Fitted slide robes. Lovely ceiling rose and coving. Wooden floors.</p><p><strong>Ensuite 2.2 m x 1.6 m</strong></p><p>WC, wash hand basin & shower.</p><p><strong>Bedroom Two 3.4 m x 3.9 m</strong></p><p>Spacious double bedroom with large, fitted wardrobe. Lovely ceiling rose and coving. Wooden floors.</p><p><strong>Bedroom Three 3.8 m x 3.4 m</strong></p><p>Spacious double bedroom with timber floors. Light filled, south facing bedroom with two windows and stunning, panoramic views over Clonakilty town.  Lovely ceiling rose and coving. Wooden floors.</p><p><strong>Bathroom 2.5 m x 3.2 m</strong></p><p>Bright and spacious, the bathroom with bath, wash hand basin & WC. </p><p><strong>Services</strong></p><p>The property is connected to all the main services incl. water, sewerage, telephone & electricity services. Heating electric heaters and there is a large solid fuel stove in the sitting room. All windows & doors are uPVC double glazed throughout. </p><p><strong>Outside</strong></p><p>The fantastic split-level garden which is immaculately maintained has a lovely viewing area to the rear and is well stocked with mature plants and hedging.  A tarmac drive leads up from the estate road to a car parking area to the front of the house.</p><h2>Directions</h2><p>For directions type Eircode P85 W882 into smart phone.&nbsp; From main street Clonakilty turn right up the hill at Mick Finns pub.&nbsp; At the top of the hill turn left.&nbsp; C. 250 metres turn left into Sea Breeze estate.</p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": null,
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "Offers over €430,000",
+          "textHtml": "<span class=\"price-prefix\">Offers over</span> <span class=\"price-text\">€430,000</span>",
+          "subtext": "Est. Offers over £369,011",
+          "image": null,
+          "link": null,
+          "beforePrice": "Offers over",
+          "price": "€430,000",
+          "afterPrice": ""
+        },
+        {
+          "key": "STAMP_DUTY_SIMPLE",
+          "name": "Stamp Duty",
+          "text": "€4,300",
+          "textHtml": "€4,300",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "Detached House",
+          "textHtml": "Detached House",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "RECEPTIONROOMS",
+          "name": "Receptions",
+          "text": "1",
+          "textHtml": "1",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "HEATING_TYPE",
+          "name": "Heating",
+          "text": "Electric Heating",
+          "textHtml": "Electric Heating",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "SIZE",
+          "name": "Size",
+          "text": "1,275 sq. feet",
+          "textHtml": "1,275 sq. feet",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 632,
+        "history": [
+          {
+            "date": "2023-06-29T00:00:00+0100",
+            "totalUniqueViews": 15,
+            "totalViews": 15,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-28T00:00:00+0100",
+            "totalUniqueViews": 4,
+            "totalViews": 4,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-27T00:00:00+0100",
+            "totalUniqueViews": 7,
+            "totalViews": 7,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-26T00:00:00+0100",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-25T00:00:00+0100",
+            "totalUniqueViews": 7,
+            "totalViews": 7,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-24T00:00:00+0100",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-23T00:00:00+0100",
+            "totalUniqueViews": 15,
+            "totalViews": 15,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-22T00:00:00+0100",
+            "totalUniqueViews": 2,
+            "totalViews": 2,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-21T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-20T00:00:00+0100",
+            "totalUniqueViews": 1,
+            "totalViews": 1,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-19T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-18T00:00:00+0100",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-17T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-16T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-15T00:00:00+0100",
+            "totalUniqueViews": 2,
+            "totalViews": 2,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-14T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-13T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-12T00:00:00+0100",
+            "totalUniqueViews": 1,
+            "totalViews": 1,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-11T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-10T00:00:00+0100",
+            "totalUniqueViews": 1,
+            "totalViews": 1,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-09T00:00:00+0100",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-08T00:00:00+0100",
+            "totalUniqueViews": 9,
+            "totalViews": 9,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-07T00:00:00+0100",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-06T00:00:00+0100",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-05T00:00:00+0100",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-04T00:00:00+0100",
+            "totalUniqueViews": 4,
+            "totalViews": 4,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-03T00:00:00+0100",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-02T00:00:00+0100",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-01T00:00:00+0100",
+            "totalUniqueViews": 4,
+            "totalViews": 4,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-05-31T00:00:00+0100",
+            "totalUniqueViews": 2,
+            "totalViews": 2,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          }
+        ]
+      },
+      "shortlisted": false,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-cork",
+          "label": "County Cork"
+        },
+        {
+          "url": "/property-for-sale/clonakilty",
+          "label": "Clonakilty"
+        },
+        {
+          "url": "/8-sea-breeze-heights-clonakilty/807019",
+          "label": "8 Sea Breeze Heights"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in P85W882": "/property-for-sale/p85w882",
+        "Property For Sale in P85": "/property-for-sale/p85",
+        "Property For Sale in County Cork": "/property-for-sale/county-cork",
+        "Property For Sale in Clonakilty": "/property-for-sale/clonakilty",
+        "Martin Kelleher Property Ltd": "/estate-agents/martin-kelleher-property-ltd"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2023-06-30T00:00:00+0100",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "8 Sea Breeze Heights, Clonakilty",
+        "description": "This 3 Bed Detached House Sale Is Located At 8 Sea Breeze Heights, Clonakilty. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "Offers over €430,000",
+          "Details": "3 Bed Detached House"
+        }
+      },
+      "requestValuation": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/210519153159/400x400/ST0419229/master.png",
+          "standardBackgroundColour": "#120c0e",
+          "alternative": "https://media.propertypal.com/logo/210519153235/400x400/ST0419229/master_alt.png",
+          "alternativeBackgroundColour": "#120c0e",
+          "premier": "https://media.propertypal.com/logo/210519153214/400x400/ST0419229/master_premier.png",
+          "premierBackgroundColour": "#120c0e"
+        }
+      ],
+      "timeLastUnpublishedOnPP": null,
+      "premiumListing": false
+    },
+    "token": {
+      "authToken": "681c5d0f-280f-4d6a-94c5-1162a4a91e87",
+      "authTokenExpires": "2023-06-30T17:45:36+0100",
+      "currency": "GBP",
+      "loggedIn": false,
+      "emailHashes": null
+    },
+    "deviceId": "916630a8-7ba7-4b1e-ae2f-51a68ac84884",
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "geoTermType": null,
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}

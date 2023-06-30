@@ -1,0 +1,1106 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 808554,
+      "pathId": "809754",
+      "path": "/aughaweena-ardlougher-ballyconnell/809754",
+      "shareURL": "https://www.propertypal.com/809754",
+      "account": {
+        "accountNumber": "ST1013208",
+        "organisation": "REA Donohoe Spring (Ballyconnell)",
+        "organisationBranch": "",
+        "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+        "officePhone": {
+          "international": "+353 49 952 7560",
+          "national": "(049) 952 7560",
+          "uk": "+353 49 952 7560",
+          "displayNumber": "(049) 952 7560",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "003483",
+        "websiteUrl": "http://www.peterdonohoe.ie",
+        "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": false,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          }
+        ],
+        "propertypalAwards": [],
+        "missingAccreditations": null
+      },
+      "displayAddress": "Aughaweena, Ardlougher, Ballyconnell, H14XF88",
+      "displayAddressLine1": "Aughaweena",
+      "displayAddressLine2": "Ardlougher, Ballyconnell, H14XF88",
+      "addressLine1": "Aughaweena",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "",
+      "street": "Aughaweena",
+      "addressLine2": "Ardlougher",
+      "town": "Ballyconnell",
+      "region": "Cavan",
+      "postcode": "H14XF88",
+      "countryCode": "IRL",
+      "coordinate": {
+        "latitude": 54.0794061,
+        "longitude": -7.5838401,
+        "accuracy": "exactlyRight",
+        "mapZoomLevel": 15,
+        "showStreetView": true
+      },
+      "numBedrooms": 3,
+      "numBathrooms": 1,
+      "numReceptionRooms": 2,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "detachedBungalowAndLand",
+        "text": "Detached Bungalow and Lands",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 1,
+          "key": "property",
+          "text": "Properties"
+        },
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 8,
+          "key": "detached",
+          "text": "Detached houses"
+        },
+        {
+          "id": 10,
+          "key": "bungalow",
+          "text": "Bungalows"
+        },
+        {
+          "id": 37,
+          "key": "detachedBungalow",
+          "text": "Detached Bungalows"
+        },
+        {
+          "id": 43,
+          "key": "houseAndLand",
+          "text": "Houses and Land"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2023-03-09T10:46:30+0000",
+      "listingTime": null,
+      "activationTime": "2023-03-09T10:46:30+0000",
+      "listingUpdatedTime": "2023-03-20T16:48:48+0000",
+      "price": {
+        "priceType": "OFFERS_OVER",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": null,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": true,
+        "pricePrefix": "",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": true
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/808554/34757236.jpg",
+          "width": 747,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757236.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757236.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/808554/34757238.jpg",
+          "width": 600,
+          "height": 800,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757238.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757238.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/808554/34757240.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757240.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757240.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/808554/34757242.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757242.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757242.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/808554/34757244.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757244.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757244.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/808554/34757247.jpg",
+          "width": 600,
+          "height": 800,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757247.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757247.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/808554/34757248.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757248.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757248.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/808554/34757249.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757249.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757249.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/808554/34757250.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757250.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757250.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/808554/34757251.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757251.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757251.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/808554/34757252.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757252.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757252.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/808554/34757253.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757253.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757253.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/808554/34757254.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757254.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757254.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/808554/34757255.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757255.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757255.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/808554/34757256.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757256.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757256.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/808554/34757257.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757257.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757257.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/808554/34757258.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757258.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757258.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/808554/34757259.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757259.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757259.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 19,
+          "url": "https://media.propertypal.com/large/p/808554/34757260.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34757260.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34757260.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 20,
+          "url": "https://media.propertypal.com/large/p/808554/34795887.jpg",
+          "width": 1198,
+          "height": 738,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34795887.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34795887.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 21,
+          "url": "https://media.propertypal.com/large/p/808554/34795888.jpg",
+          "width": 800,
+          "height": 600,
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/808554/34795888.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/808554/34795888.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": null,
+      "agents": [
+        {
+          "accountNumber": "ST1013208",
+          "organisation": "REA Donohoe Spring (Ballyconnell)",
+          "organisationBranch": "",
+          "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+          "officePhone": {
+            "international": "+353 49 952 7560",
+            "national": "(049) 952 7560",
+            "uk": "+353 49 952 7560",
+            "displayNumber": "(049) 952 7560",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "003483",
+          "websiteUrl": "http://www.peterdonohoe.ie",
+          "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": false,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            }
+          ],
+          "propertypalAwards": [],
+          "missingAccreditations": null
+        }
+      ],
+      "contacts": {
+        "default": {
+          "accountNumber": "ST1013208",
+          "organisation": "REA Donohoe Spring (Ballyconnell)",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "phoneNumber": {
+            "international": "+353 49 952 7560",
+            "national": "(049) 952 7560",
+            "uk": "+353 49 952 7560",
+            "displayNumber": "(049) 952 7560",
+            "countryCode": 353
+          },
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+          "psrLicenceNumber": "003483"
+        },
+        "showAllContactsOption": true,
+        "all": [
+          {
+            "accountNumber": "ST1013208",
+            "organisation": "REA Donohoe Spring (Ballyconnell)",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "phoneNumber": {
+              "international": "+353 49 952 7560",
+              "national": "(049) 952 7560",
+              "uk": "+353 49 952 7560",
+              "displayNumber": "(049) 952 7560",
+              "countryCode": 353
+            },
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+              "standardBackgroundColour": "#ffffff",
+              "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+              "alternativeBackgroundColour": "#ffffff",
+              "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+              "premierBackgroundColour": "#ffffff"
+            },
+            "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+            "psrLicenceNumber": "003483"
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "3 Bed Detached Bungalow and Land",
+      "description": "<p>78 acre Residential Farm: C. 46 acres of Mixed Meadow/Grazing, C. 30.5 acres Planted Forestry Lands & 3 Bed Bungalow with Yard & Outbuildings on C. 1.5 Acres. Private Setting, Located Within a Short Drive to Local Amenities in Ballyconnell & Killeshandra. Part Folio: CN24228.</p><p>FOR SALE BY PRIVATE TREATY IN 1 OR MORE LOTS.</p><p>This diverse residential farm represents an excellent opportunity for anyone looking for a head start in farming, forestry or wishing to enlarge their existing farm. It also offers the opportunity for a secluded home in a private, peaceful & mature setting.</p><p> </p><p>The living accommodation in this traditional bungalow style farmhouse extends to C. 80 sqm /861 sqft. & comprises: Entrance Hall (1.6 x 3.8), Living room (3.8 x 3.2) with an open fireplace & bay window, Central sitting room (3.8 x 4.2) with an range stove, Kitchen (3.8 x 3.2), Back Hall (1.1 x 2.9), Bathroom/Utility (2.6 x 2.1), W. C. (2.6 x 1.0), Bedroom 1 (3.7 x 3.3) with O.F.P. & bay window, Bedroom 2 (3.8 x 2.1) with O.F.P., Bedroom 3 (3.7 x 2.2) with hot press.  </p><p>Its layout lends itself to a range of remodelling ideas & can be extended to the rear, a further C.17 sqm without planning permission.</p><p> </p><p>The property is serviced by; Oil Fired Central Heating, On-site waste treatment</p><p>System (Septic tank), a Private Well & Connection to Kildallan Group Water Scheme.</p><p>High Speed Broadband is available with excellent 4/5G coverage.</p><p> </p><p>Built of traditional construction with dash & plaster exterior wall finish, slate roof (flat roof on rear extension), mix of uPVC double glazed & single glazed timber frame windows. Requiring renovation throughout, this property could make an ideal family home or rural hideaway. Would qualify for both SEAI & Property Refurbishment Grants. BER: G.</p><p> </p><p>There primary access is a 1km road & lane branching off from the public road (The last 400 metres of which is private to the property). There is also an ROW access from the West of the holding linking to the public road.</p><p> </p><p>The C. 46 acres of agricultural lands are of typical quality for the locality and are a good mix of meadow & grazing. The balance is made up of primarily spruce forestry planted in 2016 & with 12 annual premiums left to claim.</p><p> </p><p> The residence & outbuildings are located on an elevated site at the end of a private cul-de-sac laneway. There is a spacious concrete yard which provides ample off-street parking. The outbuildings include a hay/ machinery shed, general purpose shed, a C.200 sqm partly slatted Cubicle house & silage pit.</p><p>There is also a traditional 2 storey stone built barn with a tin roof in the large meadow.              </p><p>Ideally located less than 10 minutes to the thriving town of Ballyconnell with amenities including; schools, crèche, shops, restaurants, pubs & the Shannon Erne Blueway. A short drive to the Slieve Russell Hotel & Golf Club & many fishing lakes in the locality. Under 15 minute drive to Killeshandra, C. 30 mins to Cavan & under 40 minutes drive to Enniskillen. GPS: 54.07932630, -7.583877139. EIRCODE: H14 XF88.</p><p> </p><p>Viewing By Appointment & Very Highly Recommended.</p><p>                                 </p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": {
+        "alphanumericRating": "G",
+        "energyPerformanceIndicator": null
+      },
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "POA",
+          "textHtml": "<span class=\"price-text\">POA</span>",
+          "subtext": null,
+          "image": null,
+          "link": null,
+          "beforePrice": "",
+          "price": "POA",
+          "afterPrice": ""
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "Detached Bungalow and Land",
+          "textHtml": "Detached Bungalow and Land",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "RECEPTIONROOMS",
+          "name": "Receptions",
+          "text": "2",
+          "textHtml": "2",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "1",
+          "textHtml": "1",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "HEATING_TYPE",
+          "name": "Heating",
+          "text": "Oil",
+          "textHtml": "Oil",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "G",
+          "textHtml": "G",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "SIZE",
+          "name": "Size",
+          "text": "78 acres",
+          "textHtml": "78 acres",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 1429,
+        "history": [
+          {
+            "date": "2023-06-29T00:00:00+0100",
+            "totalUniqueViews": 18,
+            "totalViews": 18,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-28T00:00:00+0100",
+            "totalUniqueViews": 24,
+            "totalViews": 24,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-27T00:00:00+0100",
+            "totalUniqueViews": 7,
+            "totalViews": 7,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-26T00:00:00+0100",
+            "totalUniqueViews": 9,
+            "totalViews": 9,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-25T00:00:00+0100",
+            "totalUniqueViews": 40,
+            "totalViews": 40,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-24T00:00:00+0100",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-23T00:00:00+0100",
+            "totalUniqueViews": 15,
+            "totalViews": 15,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-22T00:00:00+0100",
+            "totalUniqueViews": 11,
+            "totalViews": 11,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-21T00:00:00+0100",
+            "totalUniqueViews": 11,
+            "totalViews": 11,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-20T00:00:00+0100",
+            "totalUniqueViews": 10,
+            "totalViews": 10,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-19T00:00:00+0100",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-18T00:00:00+0100",
+            "totalUniqueViews": 31,
+            "totalViews": 31,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-17T00:00:00+0100",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-16T00:00:00+0100",
+            "totalUniqueViews": 14,
+            "totalViews": 14,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-15T00:00:00+0100",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-14T00:00:00+0100",
+            "totalUniqueViews": 11,
+            "totalViews": 11,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-13T00:00:00+0100",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-12T00:00:00+0100",
+            "totalUniqueViews": 11,
+            "totalViews": 11,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-11T00:00:00+0100",
+            "totalUniqueViews": 7,
+            "totalViews": 7,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-10T00:00:00+0100",
+            "totalUniqueViews": 24,
+            "totalViews": 24,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-09T00:00:00+0100",
+            "totalUniqueViews": 2,
+            "totalViews": 2,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-08T00:00:00+0100",
+            "totalUniqueViews": 7,
+            "totalViews": 7,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-07T00:00:00+0100",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-06T00:00:00+0100",
+            "totalUniqueViews": 1,
+            "totalViews": 1,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-05T00:00:00+0100",
+            "totalUniqueViews": 9,
+            "totalViews": 9,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-04T00:00:00+0100",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-03T00:00:00+0100",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-02T00:00:00+0100",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-06-01T00:00:00+0100",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2023-05-31T00:00:00+0100",
+            "totalUniqueViews": 4,
+            "totalViews": 4,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          }
+        ]
+      },
+      "shortlisted": false,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-cavan",
+          "label": "County Cavan"
+        },
+        {
+          "url": "/property-for-sale/ballyconnell-county-cavan",
+          "label": "Ballyconnell"
+        },
+        {
+          "url": "/aughaweena-ardlougher-ballyconnell/809754",
+          "label": "Aughaweena"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in H14XF88": "/property-for-sale/h14xf88",
+        "Property For Sale in H14": "/property-for-sale/h14",
+        "Property For Sale in County Cavan": "/property-for-sale/county-cavan",
+        "Property For Sale in Ardlougher": "/property-for-sale/ardlougher",
+        "Property For Sale in Ballyconnell, County Cavan": "/property-for-sale/ballyconnell-county-cavan",
+        "REA Donohoe Spring (Ballyconnell)": "/estate-agents/rea-donohoe-spring-ballyconnell"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2023-06-30T00:00:00+0100",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "Aughaweena, Ardlougher, Ballyconnell",
+        "description": "This 3 Bed Detached Bungalow And Land Sale Is Located At Aughaweena, Ardlougher, Ballyconnell. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "POA",
+          "Details": "3 Bed Detached Bungalow and Land"
+        }
+      },
+      "requestValuation": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        }
+      ],
+      "timeLastUnpublishedOnPP": null,
+      "premiumListing": false
+    },
+    "token": {
+      "authToken": "3c3e745b-906e-43ce-808a-af9f41164c89",
+      "authTokenExpires": "2023-06-30T18:43:36+0100",
+      "currency": "GBP",
+      "loggedIn": false,
+      "emailHashes": null
+    },
+    "deviceId": "916630a8-7ba7-4b1e-ae2f-51a68ac84884",
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "geoTermType": null,
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}

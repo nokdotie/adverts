@@ -12,49 +12,49 @@ import java.time.Instant
 import zio.stream.ZPipeline
 
 object Property {
-  private case class Response(pageProps: ResponsePageProps)
-  private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
+  protected[propertypalcom] given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
-  private case class ResponsePageProps(
+  protected[propertypalcom] case class ResponsePageProps(
       property: ResponsePagePropsProperty
   )
-  private given JsonDecoder[ResponsePageProps] =
+  protected[propertypalcom] given JsonDecoder[ResponsePageProps] =
     DeriveJsonDecoder.gen[ResponsePageProps]
 
-  private case class ResponsePagePropsProperty(
+  protected[propertypalcom] case class ResponsePagePropsProperty(
       displayAddress: String,
-      images: List[ResponsePagePropsPropertyImage],
+      images: Option[List[ResponsePagePropsPropertyImage]],
       keyInfo: List[ResponsePagePropsPropertyKeyInfo],
       shareURL: String
   )
-  private given JsonDecoder[ResponsePagePropsProperty] =
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
 
-  private case class ResponsePagePropsPropertyKeyInfo(
+  protected[propertypalcom] case class ResponsePagePropsPropertyKeyInfo(
       key: String,
       text: Option[String]
   )
-  private given JsonDecoder[ResponsePagePropsPropertyKeyInfo] =
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyKeyInfo] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyKeyInfo]
 
-  private case class ResponsePagePropsPropertyImage(url: String)
-  private given JsonDecoder[ResponsePagePropsPropertyImage] =
+  protected[propertypalcom] case class ResponsePagePropsPropertyImage(url: String)
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyImage] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
 
-  private def getApiRequestUrl(
+  protected[propertypalcom] def getApiRequestUrl(
       buildId: String,
       propertyIdAndAddress: PropertyIdAndAddress
   ): String =
     s"https://www.propertypal.com/_next/data/$buildId/en/property.json?address=${propertyIdAndAddress.address}&id=${propertyIdAndAddress.id}"
 
-  private def getApiResponse(
+  protected[propertypalcom] def getApiResponse(
       url: String
   ): ZIO[ZioClient, Throwable, Response] =
     Client
       .requestBodyAsJson(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def toAdvert(
+  protected[propertypalcom] def toAdvert(
       property: ResponsePagePropsProperty
   ): Advert = {
     val price = property.keyInfo
@@ -62,17 +62,30 @@ object Property {
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
       .getOrElse(0)
+
     val sizeInSqtMtr = property.keyInfo
       .find { _.key == "SIZE" }
       .flatMap { _.text }
-      .flatMap { "[0-9]+\\.?[0-9]*".r.findFirstIn }
-      .fold(BigDecimal(0)) { BigDecimal.apply }
+      .map { _.replaceFirst(",", "") }
+      .flatMap { "([0-9]+\\.?[0-9]*) (sq\\. metres|sq\\. feet|acres)".r.findFirstMatchIn }
+      .map { found => (found.group(1), found.group(2)) }
+      .map {
+        case (value, "sq. metres") => BigDecimal(value)
+        case (value, "sq. feet") => BigDecimal(value) * 0.092903
+        case (value, "acres") => BigDecimal(value) * 4046.86
+        case (value, other) =>
+          throw new Exception(
+            s"Unknown unit: $other, $value, ${property.shareURL}"
+          )
+      }
+      .getOrElse(BigDecimal(0))
 
     val bedroomsCount = property.keyInfo
       .find { _.key == "BEDROOMS" }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
       .getOrElse(0)
+
     val bathroomsCount = property.keyInfo
       .find { _.key == "BATHROOMS" }
       .flatMap { _.text }
@@ -83,7 +96,7 @@ object Property {
       advertUrl = property.shareURL,
       advertPriceInEur = price,
       propertyAddress = property.displayAddress,
-      propertyImageUrls = property.images.map(_.url),
+      propertyImageUrls = property.images.getOrElse(List.empty).map(_.url),
       propertySizeInSqtMtr = sizeInSqtMtr,
       propertyBedroomsCount = bedroomsCount,
       propertyBathroomsCount = bathroomsCount,
