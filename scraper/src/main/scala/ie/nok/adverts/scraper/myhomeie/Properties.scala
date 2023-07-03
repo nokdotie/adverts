@@ -10,6 +10,7 @@ import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
 import java.time.Instant
+import ie.nok.unit.{Area, AreaUnit}
 
 object Properties {
   private case class Response(SearchResults: List[ResponseSearchResult])
@@ -58,6 +59,10 @@ object Properties {
       .toIntOption
       .getOrElse(0)
 
+    val size = searchResult.SizeStringMeters
+      .map { BigDecimal(_) }
+      .fold(Area.empty) { Area(_, AreaUnit.SquareMetres) }
+
     val bathroomsCount = searchResult.BathString
       .getOrElse("")
       .filter(_.isDigit)
@@ -74,8 +79,8 @@ object Properties {
       advertPriceInEur = price,
       propertyAddress = searchResult.DisplayAddress,
       propertyImageUrls = searchResult.Photos,
-      propertySizeInSqtMtr =
-        searchResult.SizeStringMeters.fold(BigDecimal(0))(BigDecimal.apply),
+      propertySize = size,
+      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
       propertyBedroomsCount = bedsString,
       propertyBathroomsCount = bathroomsCount,
       createdAt = Instant.now
