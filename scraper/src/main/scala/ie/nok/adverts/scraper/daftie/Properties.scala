@@ -10,6 +10,7 @@ import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
 import java.time.Instant
+import ie.nok.unit.{Area, AreaUnit}
 
 object Properties {
   private case class Response(listings: List[ResponseListing])
@@ -80,17 +81,17 @@ object Properties {
       listing: ResponseListingListing
   ): Advert = {
     val price = listing.price.filter(_.isDigit).toIntOption.getOrElse(0)
-    val propertySize = listing.floorArea
-      .map { floorArea =>
-        (floorArea.unit, floorArea.value.pipe(BigDecimal.apply))
-      }
-      .map {
 
-        case ("METRES_SQUARED", value) => value
-        case ("ACRES", value)          => value * 4046.86
-        case (other, _) => throw new Exception(s"Unknown unit $other")
-      }
-      .getOrElse(BigDecimal(0))
+    val propertySizeValue =
+      listing.floorArea.map { _.value }.map { BigDecimal(_) }
+    val propertySizeUnit = listing.floorArea.map { _.unit }.map {
+      case "METRES_SQUARED" => AreaUnit.SquareMetres
+      case "ACRES"          => AreaUnit.Acres
+      case other            => throw new Exception(s"Unknown unit: $other")
+    }
+
+    val propertySize =
+      propertySizeValue.zip(propertySizeUnit).fold(Area.empty) { Area(_, _) }
 
     val bedroomCount = listing.numBedrooms
       .getOrElse("")
@@ -109,7 +110,8 @@ object Properties {
       propertyAddress = listing.title,
       propertyImageUrls =
         listing.media.images.getOrElse(List.empty).map { _.size720x480 },
-      propertySizeInSqtMtr = propertySize,
+      propertySize = propertySize,
+      propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value,
       propertyBedroomsCount = bedroomCount,
       propertyBathroomsCount = bathroomCount,
       createdAt = Instant.now()

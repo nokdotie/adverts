@@ -10,6 +10,7 @@ import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Client => ZioClient}
 import zio.stream.ZPipeline
+import ie.nok.unit.{Area, AreaUnit}
 
 object Property {
 
@@ -47,12 +48,13 @@ object Property {
       .map { _.attr("src") }
       .toList
 
-    val sizeinSqtMtr = html
+    val size = html
       .select(".property-stat:contains(sqm)")
       .text
       .filter(_.isDigit)
       .toIntOption
-      .getOrElse(0)
+      .map { BigDecimal.apply }
+      .fold(Area.empty) { Area(_, AreaUnit.SquareMetres) }
 
     val bedroomsCount = html
       .select(".property-stat:contains(bed)")
@@ -73,7 +75,8 @@ object Property {
       advertPriceInEur = price,
       propertyAddress = address,
       propertyImageUrls = imageUrls,
-      propertySizeInSqtMtr = sizeinSqtMtr,
+      propertySize = size,
+      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
       propertyBedroomsCount = bedroomsCount,
       propertyBathroomsCount = bathroomsCount,
       createdAt = Instant.now()

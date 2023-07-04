@@ -10,6 +10,7 @@ import zio.http.model.{Headers, Method}
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
 import java.time.Instant
 import zio.stream.ZPipeline
+import ie.nok.unit.{Area, AreaUnit}
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
@@ -68,7 +69,7 @@ object Property {
       .flatMap { _.filter(_.isDigit).toIntOption }
       .getOrElse(0)
 
-    val sizeInSqtMtr = property.keyInfo
+    val size = property.keyInfo
       .find { _.key == "SIZE" }
       .flatMap { _.text }
       .map { _.replaceFirst(",", "") }
@@ -77,15 +78,16 @@ object Property {
       }
       .map { found => (found.group(1), found.group(2)) }
       .map {
-        case (value, "sq. metres") => BigDecimal(value)
-        case (value, "sq. feet")   => BigDecimal(value) * 0.092903
-        case (value, "acres")      => BigDecimal(value) * 4046.86
+        case (value, "sq. metres") =>
+          Area(BigDecimal(value), AreaUnit.SquareMetres)
+        case (value, "sq. feet") => Area(BigDecimal(value), AreaUnit.SquareFeet)
+        case (value, "acres")    => Area(BigDecimal(value), AreaUnit.Acres)
         case (value, other) =>
           throw new Exception(
-            s"Unknown unit: $other, $value, ${property.shareURL}"
+            s"Unknown unit: $other, ${property.shareURL}"
           )
       }
-      .getOrElse(BigDecimal(0))
+      .getOrElse(Area.empty)
 
     val bedroomsCount = property.keyInfo
       .find { _.key == "BEDROOMS" }
@@ -104,7 +106,8 @@ object Property {
       advertPriceInEur = price,
       propertyAddress = property.displayAddress,
       propertyImageUrls = property.images.getOrElse(List.empty).map(_.url),
-      propertySizeInSqtMtr = sizeInSqtMtr,
+      propertySize = size,
+      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
       propertyBedroomsCount = bedroomsCount,
       propertyBathroomsCount = bathroomsCount,
       createdAt = Instant.now

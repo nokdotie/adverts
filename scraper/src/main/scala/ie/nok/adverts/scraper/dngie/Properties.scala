@@ -9,6 +9,7 @@ import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.Schedule.{recurs, fixed}
+import ie.nok.unit.{Area, AreaUnit}
 
 object Properties {
 
@@ -83,19 +84,22 @@ object Properties {
   private def toAdvert(
       property: ResponseDataProperty
   ): Advert = {
-    val sizeInSqtMtr = property.floorarea_type
-      .map {
-        case "squareMetres" => BigDecimal(property.floorarea_min)
-        case "squareFeet"   => BigDecimal(property.floorarea_min) * 0.092903
-        case "Acres"        => BigDecimal(property.floorarea_min) * 4046.86
-        case "Hectares"     => BigDecimal(property.floorarea_min) * 10000
-        case "" | "3" | "4" => BigDecimal(0)
+    val sizeUnit = property.floorarea_type
+      .flatMap {
+        case "squareMetres" => Option(AreaUnit.SquareMetres)
+        case "squareFeet"   => Option(AreaUnit.SquareFeet)
+        case "Acres"        => Option(AreaUnit.Acres)
+        case "Hectares"     => Option(AreaUnit.Hectares)
+        case "" | "3" | "4" => Option.empty
         case other =>
           throw new Exception(
-            s"Unknown floorarea_type: $other, ${property.floorarea_min}, ${property.property_url}"
+            s"Unknown floorarea_type: $other, ${property.property_url}"
           )
       }
-      .getOrElse(BigDecimal(0))
+
+    val size = sizeUnit.fold { Area.empty } { unit =>
+      Area(BigDecimal(property.floorarea_min), unit)
+    }
 
     Advert(
       advertUrl = property.property_url,
@@ -105,7 +109,8 @@ object Properties {
         property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
           image => image.url.orElse(image.srcUrl)
         },
-      propertySizeInSqtMtr = sizeInSqtMtr,
+      propertySize = size,
+      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
       propertyBedroomsCount = property.bedroom.getOrElse(0),
       propertyBathroomsCount = property.bathroom.getOrElse(0),
       createdAt = Instant.now()

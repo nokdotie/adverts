@@ -1,5 +1,6 @@
 package ie.nok.adverts
 
+import ie.nok.unit.Area
 import java.time.Instant
 import zio.json.{JsonCodec, DeriveJsonCodec}
 
@@ -8,6 +9,7 @@ case class Advert(
     advertPriceInEur: Int,
     propertyAddress: String,
     propertyImageUrls: List[String],
+    propertySize: Area,
     propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,

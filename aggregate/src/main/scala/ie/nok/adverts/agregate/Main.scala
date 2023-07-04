@@ -3,6 +3,7 @@ package ie.nok.adverts.aggregate
 import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
+import ie.nok.unit.Area
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.Random
@@ -29,7 +30,12 @@ object Main extends ZIOAppDefault {
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyAddress = adverts.head.propertyAddress,
             propertyImageUrls = adverts.head.propertyImageUrls,
-            propertySizeInSqtMtr = adverts.map { _.propertySizeInSqtMtr }.max,
+            propertySize = adverts.map { _.propertySize }.maxBy { _.value },
+            propertySizeInSqtMtr = adverts
+              .map { _.propertySize }
+              .maxBy { _.value }
+              .pipe { Area.toSquareMetres }
+              .value,
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
             propertyBathroomsCount =
               adverts.map { _.propertyBathroomsCount }.max,
