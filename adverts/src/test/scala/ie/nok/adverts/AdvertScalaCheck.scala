@@ -3,12 +3,13 @@ package ie.nok.adverts
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
-import ie.nok.unit.{Area, arbArea}
+import ie.nok.unit.{Area, arbArea, Coordinates, arbCoordinates}
 
 val genAdvert: Gen[Advert] = for {
   advertUrl <- arbitrary[String]
   advertPriceInEur <- arbitrary[Int]
   propertyAddress <- arbitrary[String]
+  propertyCoordinates <- arbitrary[Coordinates]
   propertyImageUrls <- arbitrary[List[String]]
   propertySize <- arbitrary[Area]
   propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value
@@ -19,6 +20,7 @@ val genAdvert: Gen[Advert] = for {
     advertUrl = advertUrl,
     advertPriceInEur = advertPriceInEur,
     propertyAddress = propertyAddress,
+    propertyCoordinates = propertyCoordinates,
     propertyImageUrls = propertyImageUrls,
     propertySize = propertySize,
     propertySizeInSqtMtr = propertySizeInSqtMtr,
