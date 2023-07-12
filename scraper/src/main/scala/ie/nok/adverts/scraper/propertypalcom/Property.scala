@@ -2,15 +2,15 @@ package ie.nok.adverts.scraper.propertypalcom
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
+import ie.nok.unit.{Area, AreaUnit, Coordinates}
+import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
-import java.time.Instant
 import zio.stream.ZPipeline
-import ie.nok.unit.{Area, AreaUnit}
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
@@ -27,7 +27,8 @@ object Property {
       displayAddress: String,
       images: Option[List[ResponsePagePropsPropertyImage]],
       keyInfo: List[ResponsePagePropsPropertyKeyInfo],
-      shareURL: String
+      shareURL: String,
+      coordinate: ResponsePagePropsPropertyCoordinate
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
@@ -46,6 +47,15 @@ object Property {
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyImage] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
+
+  protected[propertypalcom] case class ResponsePagePropsPropertyCoordinate(
+      latitude: BigDecimal,
+      longitude: BigDecimal
+  )
+  protected[propertypalcom] given JsonDecoder[
+    ResponsePagePropsPropertyCoordinate
+  ] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyCoordinate]
 
   protected[propertypalcom] def getApiRequestUrl(
       buildId: String,
@@ -105,6 +115,13 @@ object Property {
       advertUrl = property.shareURL,
       advertPriceInEur = price,
       propertyAddress = property.displayAddress,
+      propertyCoordinates = property.coordinate
+        .pipe { c =>
+          Coordinates(
+            latitude = c.latitude,
+            longitude = c.longitude
+          )
+        },
       propertyImageUrls = property.images.getOrElse(List.empty).map(_.url),
       propertySize = size,
       propertySizeInSqtMtr = Area.toSquareMetres(size).value,

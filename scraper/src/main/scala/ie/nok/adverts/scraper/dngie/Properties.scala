@@ -2,14 +2,15 @@ package ie.nok.adverts.scraper.dngie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
+import ie.nok.unit.{Area, AreaUnit, Coordinates}
 import java.time.Instant
+import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.Schedule.{recurs, fixed}
-import ie.nok.unit.{Area, AreaUnit}
 
 object Properties {
 
@@ -29,7 +30,9 @@ object Properties {
       floorarea_type: Option[String],
       images: Option[List[ResponseDataPropertyImage]],
       price: Option[Int],
-      property_url: String
+      property_url: String,
+      latitude: BigDecimal,
+      longitude: BigDecimal
   )
   private given JsonDecoder[ResponseDataProperty] =
     DeriveJsonDecoder.gen[ResponseDataProperty]
@@ -60,6 +63,8 @@ object Properties {
         images
         price
         property_url
+        latitude
+        longitude
       }
     }"}""".replaceAll("\n", " ")
 
@@ -105,6 +110,10 @@ object Properties {
       advertUrl = property.property_url,
       advertPriceInEur = property.price.getOrElse(0),
       propertyAddress = property.display_address,
+      propertyCoordinates = Coordinates(
+        latitude = property.latitude,
+        longitude = property.longitude
+      ),
       propertyImageUrls =
         property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
           image => image.url.orElse(image.srcUrl)

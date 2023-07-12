@@ -2,6 +2,7 @@ package ie.nok.adverts.scraper.sherryfitzie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
+import ie.nok.unit.{Area, AreaUnit, Coordinates}
 import java.time.Instant
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
@@ -10,7 +11,6 @@ import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Client => ZioClient}
 import zio.stream.ZPipeline
-import ie.nok.unit.{Area, AreaUnit}
 
 object Property {
 
@@ -24,7 +24,11 @@ object Property {
       .requestBodyAsHtml(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def parseResponse(url: String, html: Document): Advert = {
+  private def parseResponse(
+      url: String,
+      coordinate: Coordinates,
+      html: Document
+  ): Advert = {
     val price = html
       .select(".property-price")
       .text
@@ -74,6 +78,7 @@ object Property {
       advertUrl = url,
       advertPriceInEur = price,
       propertyAddress = address,
+      propertyCoordinates = coordinate,
       propertyImageUrls = imageUrls,
       propertySize = size,
       propertySizeInSqtMtr = Area.toSquareMetres(size).value,
@@ -83,10 +88,14 @@ object Property {
     )
   }
 
-  val pipeline: ZPipeline[ZioClient, Throwable, String, Advert] =
+  val pipeline: ZPipeline[ZioClient, Throwable, (String, Coordinates), Advert] =
     ZPipeline
-      .map { getRequestUrl }
-      .mapZIOParUnordered(5) { url => getResponse(url).map { (url, _) } }
+      .map[(String, Coordinates), (String, Coordinates)] { (link, coordinate) =>
+        (getRequestUrl(link), coordinate)
+      }
+      .mapZIOParUnordered(5) { (url, coordinate) =>
+        getResponse(url).map { (url, coordinate, _) }
+      }
       .map { parseResponse.tupled }
 
 }
