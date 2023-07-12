@@ -2,56 +2,64 @@ package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
+import ie.nok.unit.{Area, AreaUnit, Coordinates}
 import scala.util.chaining.scalaUtilChainingOps
+import java.time.Instant
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
-import java.time.Instant
-import ie.nok.unit.{Area, AreaUnit}
 
 object Properties {
-  private case class Response(listings: List[ResponseListing])
-  private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  protected[daftie] case class Response(listings: List[ResponseListing])
+  protected[daftie] given JsonDecoder[Response] =
+    DeriveJsonDecoder.gen[Response]
 
-  private case class ResponseListing(listing: ResponseListingListing)
-  private given JsonDecoder[ResponseListing] =
+  protected[daftie] case class ResponseListing(listing: ResponseListingListing)
+  protected[daftie] given JsonDecoder[ResponseListing] =
     DeriveJsonDecoder.gen[ResponseListing]
 
-  private case class ResponseListingListing(
+  protected[daftie] case class ResponseListingListing(
       floorArea: Option[ResponseListingListingFloorArea],
       media: ResponseListingListingMedia,
       numBathrooms: Option[String],
       numBedrooms: Option[String],
       price: String,
       seoFriendlyPath: String,
-      title: String
+      title: String,
+      point: ResponseListingListingPoint
   )
-  private given JsonDecoder[ResponseListingListing] =
+  protected[daftie] given JsonDecoder[ResponseListingListing] =
     DeriveJsonDecoder.gen[ResponseListingListing]
 
-  private case class ResponseListingListingFloorArea(
+  protected[daftie] case class ResponseListingListingFloorArea(
       unit: String,
       value: String
   )
-  private given JsonDecoder[ResponseListingListingFloorArea] =
+  protected[daftie] given JsonDecoder[ResponseListingListingFloorArea] =
     DeriveJsonDecoder.gen[ResponseListingListingFloorArea]
 
-  private case class ResponseListingListingMedia(
+  protected[daftie] case class ResponseListingListingMedia(
       images: Option[List[ResponseListingListingMediaImage]]
   )
-  private given JsonDecoder[ResponseListingListingMedia] =
+  protected[daftie] given JsonDecoder[ResponseListingListingMedia] =
     DeriveJsonDecoder.gen[ResponseListingListingMedia]
 
-  private case class ResponseListingListingMediaImage(
+  protected[daftie] case class ResponseListingListingMediaImage(
       size720x480: String
   )
-  private given JsonDecoder[ResponseListingListingMediaImage] =
+  protected[daftie] given JsonDecoder[ResponseListingListingMediaImage] =
     DeriveJsonDecoder.gen[ResponseListingListingMediaImage]
 
-  private val streamApiRequestContent = {
+  protected[daftie] case class ResponseListingListingPoint(
+      coordinates: List[BigDecimal]
+  )
+  protected[daftie] given JsonDecoder[ResponseListingListingPoint] =
+    DeriveJsonDecoder.gen[ResponseListingListingPoint]
+
+  protected[daftie] val streamApiRequestContent = {
     val pageSize = 100
     ZStream
       .iterate(0)(_ + pageSize)
@@ -60,7 +68,7 @@ object Properties {
       }
   }
 
-  private def getApiResponse(
+  protected[daftie] def getApiResponse(
       content: String
   ): ZIO[ZioClient, Throwable, Response] = {
     val brandHeader = Headers("brand", "daft")
@@ -77,7 +85,7 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toAdvert(
+  protected[daftie] def toAdvert(
       listing: ResponseListingListing
   ): Advert = {
     val price = listing.price.filter(_.isDigit).toIntOption.getOrElse(0)
@@ -98,6 +106,7 @@ object Properties {
       .filter(_.isDigit)
       .toIntOption
       .getOrElse(0)
+
     val bathroomCount = listing.numBathrooms
       .getOrElse("")
       .filter(_.isDigit)
@@ -108,6 +117,10 @@ object Properties {
       advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
       advertPriceInEur = price,
       propertyAddress = listing.title,
+      propertyCoordinates = Coordinates(
+        latitude = listing.point.coordinates(1),
+        longitude = listing.point.coordinates(0)
+      ),
       propertyImageUrls =
         listing.media.images.getOrElse(List.empty).map { _.size720x480 },
       propertySize = propertySize,
