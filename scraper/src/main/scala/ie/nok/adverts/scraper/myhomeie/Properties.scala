@@ -2,6 +2,9 @@ package ie.nok.adverts.scraper.myhomeie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
+import ie.nok.geographic.Coordinates
+import ie.nok.unit.{Area, AreaUnit}
+import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -9,8 +12,6 @@ import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
 import zio.json.{JsonDecoder, DeriveJsonDecoder}
-import java.time.Instant
-import ie.nok.unit.{Area, AreaUnit, Coordinates}
 
 object Properties {
   private case class Response(SearchResults: List[ResponseSearchResult])

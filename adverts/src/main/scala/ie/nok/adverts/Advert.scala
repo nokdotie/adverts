@@ -1,6 +1,7 @@
 package ie.nok.adverts
 
-import ie.nok.unit.{Area, Coordinates}
+import ie.nok.geographic.Coordinates
+import ie.nok.unit.Area
 import java.time.Instant
 import zio.json.{JsonCodec, DeriveJsonCodec}
 

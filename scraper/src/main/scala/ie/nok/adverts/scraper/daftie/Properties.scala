@@ -2,7 +2,8 @@ package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.unit.{Area, AreaUnit, Coordinates}
+import ie.nok.geographic.Coordinates
+import ie.nok.unit.{Area, AreaUnit}
 import scala.util.chaining.scalaUtilChainingOps
 import java.time.Instant
 import zio.{durationInt, ZIO}

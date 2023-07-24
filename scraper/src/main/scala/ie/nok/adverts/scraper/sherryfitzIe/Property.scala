@@ -2,7 +2,8 @@ package ie.nok.adverts.scraper.sherryfitzie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.unit.{Area, AreaUnit, Coordinates}
+import ie.nok.geographic.Coordinates
+import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
