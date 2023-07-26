@@ -14,7 +14,7 @@ import zio.nio.file.Files
 import zio.stream.ZStream
 
 object AdvertStoreImpl {
-  private val bucket: ZIO[Any, Throwable, String] =
+  protected[stores] val bucket: ZIO[Any, Throwable, String] =
     Environment.get
       .map {
         case Environment.Production => "nok-ie"

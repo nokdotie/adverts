@@ -3,7 +3,8 @@ package ie.nok.adverts
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
-import ie.nok.unit.{Area, arbArea, Coordinates, arbCoordinates}
+import ie.nok.geographic.{Coordinates, given}
+import ie.nok.unit.{Area, given}
 
 val genAdvert: Gen[Advert] = for {
   advertUrl <- arbitrary[String]

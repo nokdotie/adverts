@@ -1,7 +1,7 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
 import ie.nok.http.Client
-import ie.nok.unit.Coordinates
+import ie.nok.geographic.Coordinates
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
