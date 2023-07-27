@@ -21,10 +21,4 @@ case class Advert(
 
 object Advert {
   given JsonCodec[Advert] = DeriveJsonCodec.gen[Advert]
-
-  def toGeoJsonFeature(advert: Advert): Feature[Advert] =
-    Feature(
-      geometry = Coordinates.toGeoJsonGeometry(advert.propertyCoordinates),
-      properties = advert
-    )
 }
