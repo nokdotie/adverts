@@ -30,6 +30,7 @@ object Main extends ZIOAppDefault {
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyAddress = adverts.head.propertyAddress,
             propertyCoordinates = adverts.head.propertyCoordinates,
+            propertyGeoHash = adverts.head.propertyGeoHash,
             propertyImageUrls = adverts.head.propertyImageUrls,
             propertySize = adverts.map { _.propertySize }.maxBy { _.value },
             propertySizeInSqtMtr = adverts

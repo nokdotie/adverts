@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.myhomeie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.geographic.Coordinates
+import ie.nok.geographic.{Coordinates, GeoHash}
 import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
@@ -84,14 +84,17 @@ object Properties {
         .toIntOption
         .getOrElse(0)
 
+      val coordinates = Coordinates(
+        latitude = bm.latitude,
+        longitude = bm.longitude
+      )
+
       Advert(
         advertUrl = s"https://www.myhome.ie${searchResult.BrochureUrl}",
         advertPriceInEur = price,
         propertyAddress = searchResult.DisplayAddress,
-        propertyCoordinates = Coordinates(
-          latitude = bm.latitude,
-          longitude = bm.longitude
-        ),
+        propertyCoordinates = coordinates,
+        propertyGeoHash = GeoHash.fromCoordinates(coordinates),
         propertyImageUrls = searchResult.Photos,
         propertySize = size,
         propertySizeInSqtMtr = Area.toSquareMetres(size).value,

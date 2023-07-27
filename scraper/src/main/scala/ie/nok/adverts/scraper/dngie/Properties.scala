@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.dngie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.geographic.Coordinates
+import ie.nok.geographic.{Coordinates, GeoHash}
 import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
@@ -107,14 +107,17 @@ object Properties {
       Area(BigDecimal(property.floorarea_min), unit)
     }
 
+    val coordinates = Coordinates(
+      latitude = property.latitude,
+      longitude = property.longitude
+    )
+
     Advert(
       advertUrl = property.property_url,
       advertPriceInEur = property.price.getOrElse(0),
       propertyAddress = property.display_address,
-      propertyCoordinates = Coordinates(
-        latitude = property.latitude,
-        longitude = property.longitude
-      ),
+      propertyCoordinates = coordinates,
+      propertyGeoHash = GeoHash.fromCoordinates(coordinates),
       propertyImageUrls =
         property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
           image => image.url.orElse(image.srcUrl)
