@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.sherryfitzie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.geographic.Coordinates
+import ie.nok.geographic.{Coordinates, GeoHash}
 import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import org.jsoup.nodes.Document
@@ -27,7 +27,7 @@ object Property {
 
   private def parseResponse(
       url: String,
-      coordinate: Coordinates,
+      coordinates: Coordinates,
       html: Document
   ): Advert = {
     val price = html
@@ -79,7 +79,8 @@ object Property {
       advertUrl = url,
       advertPriceInEur = price,
       propertyAddress = address,
-      propertyCoordinates = coordinate,
+      propertyCoordinates = coordinates,
+      propertyGeoHash = GeoHash.fromCoordinates(coordinates),
       propertyImageUrls = imageUrls,
       propertySize = size,
       propertySizeInSqtMtr = Area.toSquareMetres(size).value,

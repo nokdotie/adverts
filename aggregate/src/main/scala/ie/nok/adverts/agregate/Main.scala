@@ -1,7 +1,7 @@
 package ie.nok.adverts.aggregate
 
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.adverts.stores.{AdvertStoreImpl, AdvertGeoJsonStoreImpl}
+import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.gcp.storage.Storage
 import ie.nok.unit.Area
 import java.time.Instant
@@ -30,6 +30,7 @@ object Main extends ZIOAppDefault {
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyAddress = adverts.head.propertyAddress,
             propertyCoordinates = adverts.head.propertyCoordinates,
+            propertyGeoHash = adverts.head.propertyGeoHash,
             propertyImageUrls = adverts.head.propertyImageUrls,
             propertySize = adverts.map { _.propertySize }.maxBy { _.value },
             propertySizeInSqtMtr = adverts
@@ -49,16 +50,7 @@ object Main extends ZIOAppDefault {
       .map { merge }
       .map { Random.shuffle }
       .pipe { ZStream.fromIterableZIO }
-      .broadcast(2, 5)
-      .flatMap { streams =>
-        for {
-          out1 <- streams(0).pipe { AdvertStoreImpl.encodeAndWriteLatest }.fork
-          out2 <- streams(1).pipe {
-            AdvertGeoJsonStoreImpl.encodeAndWriteLatest
-          }.fork
-          _ <- out1.join.zipPar(out2.join)
-        } yield ()
-      }
+      .pipe { AdvertStoreImpl.encodeAndWriteLatest }
       .provide(
         Storage.live,
         Scope.default
