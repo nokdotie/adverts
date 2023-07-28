@@ -86,14 +86,14 @@ enum CoordinatesFilter {
   case And(head: CoordinatesFilter, tail: CoordinatesFilter*)
   case Or(head: CoordinatesFilter, tail: CoordinatesFilter*)
 
-  case WithinSquare(northEast: Coordinates, southWest: Coordinates)
+  case WithinRectangle(northEast: Coordinates, southWest: Coordinates)
 
   def filter(value: Coordinates): Boolean = this match {
     case Empty                => true
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case WithinSquare(northEast, southWest) =>
+    case WithinRectangle(northEast, southWest) =>
       value.latitude <= northEast.latitude && value.latitude >= southWest.latitude &&
       value.longitude <= northEast.longitude && value.longitude >= southWest.longitude
   }
