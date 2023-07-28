@@ -10,7 +10,6 @@ enum AdvertFilter {
 
   case PriceInEur(filter: NumericFilter[Int])
   case Address(filter: StringFilter)
-  case GeoHash(filter: StringFilter)
   case SizeInSqtMtr(filter: NumericFilter[BigDecimal])
   case BedroomsCount(filter: NumericFilter[Int])
   case BathroomsCount(filter: NumericFilter[Int])
@@ -22,7 +21,6 @@ enum AdvertFilter {
 
     case PriceInEur(filter)     => filter.filter(value.advertPriceInEur)
     case Address(filter)        => filter.filter(value.propertyAddress)
-    case GeoHash(filter)        => filter.filter(value.propertyGeoHash)
     case SizeInSqtMtr(filter)   => filter.filter(value.propertySizeInSqtMtr)
     case BedroomsCount(filter)  => filter.filter(value.propertyBedroomsCount)
     case BathroomsCount(filter) => filter.filter(value.propertyBathroomsCount)

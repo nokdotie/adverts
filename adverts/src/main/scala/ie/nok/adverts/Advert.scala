@@ -11,7 +11,6 @@ case class Advert(
     advertPriceInEur: Int,
     propertyAddress: String,
     propertyCoordinates: Coordinates,
-    propertyGeoHash: String,
     propertyImageUrls: List[String],
     propertySize: Area,
     propertySizeInSqtMtr: BigDecimal,

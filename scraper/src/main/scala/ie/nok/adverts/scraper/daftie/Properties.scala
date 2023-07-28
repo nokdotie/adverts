@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts.Advert
 import ie.nok.http.Client
-import ie.nok.geographic.{Coordinates, GeoHash}
+import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import scala.util.chaining.scalaUtilChainingOps
 import java.time.Instant
@@ -124,7 +124,6 @@ object Properties {
       advertPriceInEur = price,
       propertyAddress = listing.title,
       propertyCoordinates = coordinates,
-      propertyGeoHash = GeoHash.fromCoordinates(coordinates),
       propertyImageUrls =
         listing.media.images.getOrElse(List.empty).map { _.size720x480 },
       propertySize = propertySize,
