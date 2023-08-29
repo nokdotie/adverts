@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.dngie
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -90,6 +90,16 @@ object Properties {
   private def toAdvert(
       property: ResponseDataProperty
   ): Advert = {
+    val coordinates = Coordinates(
+      latitude = property.latitude,
+      longitude = property.longitude
+    )
+
+    val imageUrls =
+      property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
+        image => image.url.orElse(image.srcUrl)
+      }
+
     val sizeUnit = property.floorarea_type
       .flatMap {
         case "squareMetres" => Option(AreaUnit.SquareMetres)
@@ -103,28 +113,37 @@ object Properties {
           )
       }
 
-    val size = sizeUnit.fold { Area.empty } { unit =>
+    val size = sizeUnit.map { unit =>
       Area(BigDecimal(property.floorarea_min), unit)
     }
 
-    val coordinates = Coordinates(
-      latitude = property.latitude,
-      longitude = property.longitude
+    val sizeInSqtMtr = size.map { Area.toSquareMetres(_).value }
+
+    val source = AdvertSource(
+      service = AdvertService.DngIe,
+      url = property.property_url
     )
+
+    val attributes = List(
+      AdvertAttribute.Address(property.display_address, source),
+      AdvertAttribute.Coordinates(coordinates, source)
+    ) ++ property.price.map { AdvertAttribute.PriceInEur(_, source) }
+      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
+      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
+      ++ property.bedroom.map { AdvertAttribute.BedroomsCount(_, source) }
+      ++ property.bathroom.map { AdvertAttribute.BathroomsCount(_, source) }
 
     Advert(
       advertUrl = property.property_url,
       advertPriceInEur = property.price.getOrElse(0),
       propertyAddress = property.display_address,
       propertyCoordinates = coordinates,
-      propertyImageUrls =
-        property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
-          image => image.url.orElse(image.srcUrl)
-        },
-      propertySize = size,
-      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
+      propertyImageUrls = imageUrls,
+      propertySize = size.getOrElse(Area.empty),
+      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = property.bedroom.getOrElse(0),
       propertyBathroomsCount = property.bathroom.getOrElse(0),
+      attributes = attributes,
       createdAt = Instant.now()
     )
   }

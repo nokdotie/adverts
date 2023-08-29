@@ -16,6 +16,7 @@ val genAdvert: Gen[Advert] = for {
   propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value
   propertyBedroomsCount <- arbitrary[Int]
   propertyBathroomsCount <- arbitrary[Int]
+  attributes <- arbitrary[List[AdvertAttribute]]
   createdAt <- arbitrary[Instant]
   advert = Advert(
     advertUrl = advertUrl,
@@ -27,6 +28,7 @@ val genAdvert: Gen[Advert] = for {
     propertySizeInSqtMtr = propertySizeInSqtMtr,
     propertyBedroomsCount = propertyBedroomsCount,
     propertyBathroomsCount = propertyBathroomsCount,
+    attributes = attributes,
     createdAt = createdAt
   )
 } yield advert

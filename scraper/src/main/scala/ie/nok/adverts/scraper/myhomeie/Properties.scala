@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.myhomeie
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -63,42 +63,55 @@ object Properties {
       searchResult: ResponseSearchResult
   ): Option[Advert] =
     searchResult.BrochureMap.map { bm =>
+      val url = s"https://www.myhome.ie${searchResult.BrochureUrl}"
       val price = searchResult.PriceAsString
         .getOrElse("")
         .filter(_.isDigit)
         .toIntOption
-        .getOrElse(0)
-
-      val size = searchResult.SizeStringMeters
-        .map { BigDecimal(_) }
-        .fold(Area.empty) { Area(_, AreaUnit.SquareMetres) }
-
-      val bathroomsCount = searchResult.BathString
-        .getOrElse("")
-        .filter(_.isDigit)
-        .toIntOption
-        .getOrElse(0)
-
-      val bedsString = searchResult.BedsString
-        .filter(_.isDigit)
-        .toIntOption
-        .getOrElse(0)
 
       val coordinates = Coordinates(
         latitude = bm.latitude,
         longitude = bm.longitude
       )
 
+      val size = searchResult.SizeStringMeters
+        .map { BigDecimal(_) }
+        .map { Area(_, AreaUnit.SquareMetres) }
+
+      val bedroomsCount = searchResult.BedsString
+        .filter(_.isDigit)
+        .toIntOption
+
+      val bathroomsCount = searchResult.BathString
+        .getOrElse("")
+        .filter(_.isDigit)
+        .toIntOption
+
+      val source = AdvertSource(
+        service = AdvertService.MyHomeIe,
+        url = url
+      )
+
+      val attributes = List(
+        AdvertAttribute.Address(searchResult.DisplayAddress, source),
+        AdvertAttribute.Coordinates(coordinates, source)
+      ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
+        ++ searchResult.Photos.map { AdvertAttribute.ImageUrl(_, source) }
+        ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
+        ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
+        ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
+
       Advert(
-        advertUrl = s"https://www.myhome.ie${searchResult.BrochureUrl}",
-        advertPriceInEur = price,
+        advertUrl = url,
+        advertPriceInEur = price.getOrElse(0),
         propertyAddress = searchResult.DisplayAddress,
         propertyCoordinates = coordinates,
         propertyImageUrls = searchResult.Photos,
-        propertySize = size,
-        propertySizeInSqtMtr = Area.toSquareMetres(size).value,
-        propertyBedroomsCount = bedsString,
-        propertyBathroomsCount = bathroomsCount,
+        propertySize = size.getOrElse(Area.empty),
+        propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
+        propertyBedroomsCount = bedroomsCount.getOrElse(0),
+        propertyBathroomsCount = bathroomsCount.getOrElse(0),
+        attributes = attributes,
         createdAt = Instant.now
       )
     }
