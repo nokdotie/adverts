@@ -5,6 +5,7 @@ import ie.nok.geographic.geojson.Feature
 import ie.nok.unit.Area
 import java.time.Instant
 import zio.json.{JsonCodec, DeriveJsonCodec}
+import ie.nok.adverts.Advert
 
 case class Advert(
     advertUrl: String,
@@ -16,6 +17,7 @@ case class Advert(
     propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,
+    attributes: List[AdvertAttribute],
     createdAt: Instant
 )
 

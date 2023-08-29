@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -35,7 +35,6 @@ object Property {
       .text
       .filter(_.isDigit)
       .toIntOption
-      .getOrElse(0)
 
     val address = html
       .select(".property-address h1")
@@ -59,32 +58,45 @@ object Property {
       .filter(_.isDigit)
       .toIntOption
       .map { BigDecimal.apply }
-      .fold(Area.empty) { Area(_, AreaUnit.SquareMetres) }
+      .map { Area(_, AreaUnit.SquareMetres) }
 
     val bedroomsCount = html
       .select(".property-stat:contains(bed)")
       .text
       .filter(_.isDigit)
       .toIntOption
-      .getOrElse(0)
 
     val bathroomsCount = html
       .select(".property-stat:contains(bath)")
       .text
       .filter(_.isDigit)
       .toIntOption
-      .getOrElse(0)
+
+    val source = AdvertSource(
+      service = AdvertService.SherryFitzIe,
+      url = url
+    )
+
+    val attributes = List(
+      AdvertAttribute.Address(address, source),
+      AdvertAttribute.Coordinates(coordinates, source)
+    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
+      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
+      ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
+      ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
+      ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
 
     Advert(
       advertUrl = url,
-      advertPriceInEur = price,
+      advertPriceInEur = price.getOrElse(0),
       propertyAddress = address,
       propertyCoordinates = coordinates,
       propertyImageUrls = imageUrls,
-      propertySize = size,
-      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
-      propertyBedroomsCount = bedroomsCount,
-      propertyBathroomsCount = bathroomsCount,
+      propertySize = size.getOrElse(Area.empty),
+      propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
+      propertyBedroomsCount = bedroomsCount.getOrElse(0),
+      propertyBathroomsCount = bathroomsCount.getOrElse(0),
+      attributes = attributes,
       createdAt = Instant.now()
     )
   }
