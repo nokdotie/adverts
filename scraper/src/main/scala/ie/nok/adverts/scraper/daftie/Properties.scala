@@ -122,7 +122,7 @@ object Properties {
       .toIntOption
 
     val source = AdvertSource(
-      service = AdvertService.DngIe,
+      service = AdvertService.DaftIe,
       url = url
     )
 
