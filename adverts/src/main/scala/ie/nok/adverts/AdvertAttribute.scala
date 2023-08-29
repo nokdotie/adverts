@@ -14,6 +14,12 @@ enum AdvertAttribute {
   case SizeInSqtMtr(value: BigDecimal, source: AdvertSource)
   case BedroomsCount(value: Int, source: AdvertSource)
   case BathroomsCount(value: Int, source: AdvertSource)
+  case BuildingEnergyRating(value: String, source: AdvertSource)
+  case BuildingEnergyRatingCertificateNumber(value: Int, source: AdvertSource)
+  case BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
+      value: Float,
+      source: AdvertSource
+  )
 }
 
 object AdvertAttribute {
