@@ -29,7 +29,7 @@ object Property {
       images: Option[List[ResponsePagePropsPropertyImage]],
       keyInfo: List[ResponsePagePropsPropertyKeyInfo],
       shareURL: String,
-      coordinate: ResponsePagePropsPropertyCoordinate
+      coordinate: Option[ResponsePagePropsPropertyCoordinate]
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
@@ -79,10 +79,12 @@ object Property {
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
 
-    val coordinates = Coordinates(
-      latitude = property.coordinate.latitude,
-      longitude = property.coordinate.longitude
-    )
+    val coordinates = property.coordinate.map { coordinate =>
+      Coordinates(
+        latitude = coordinate.latitude,
+        longitude = coordinate.longitude
+      )
+    }
 
     val imageUrls = property.images.getOrElse(List.empty).map(_.url)
 
@@ -123,9 +125,9 @@ object Property {
     )
 
     val attributes = List(
-      AdvertAttribute.Address(property.displayAddress, source),
-      AdvertAttribute.Coordinates(coordinates, source)
+      AdvertAttribute.Address(property.displayAddress, source)
     ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
+      ++ coordinates.map { AdvertAttribute.Coordinates(_, source) }
       ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
       ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
       ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
@@ -135,9 +137,9 @@ object Property {
       advertUrl = property.shareURL,
       advertPriceInEur = price.getOrElse(0),
       propertyAddress = property.displayAddress,
-      propertyCoordinates = coordinates,
+      propertyCoordinates = coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.empty),
+      propertySize = size.getOrElse(Area.zero),
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = bedroomsCount.getOrElse(0),
       propertyBathroomsCount = bathroomsCount.getOrElse(0),

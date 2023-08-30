@@ -92,7 +92,7 @@ object Property {
       propertyAddress = address,
       propertyCoordinates = coordinates,
       propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.empty),
+      propertySize = size.getOrElse(Area.zero),
       propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
       propertyBedroomsCount = bedroomsCount.getOrElse(0),
       propertyBathroomsCount = bathroomsCount.getOrElse(0),
