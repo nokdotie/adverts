@@ -107,7 +107,7 @@ object Properties {
         propertyAddress = searchResult.DisplayAddress,
         propertyCoordinates = coordinates,
         propertyImageUrls = searchResult.Photos,
-        propertySize = size.getOrElse(Area.empty),
+        propertySize = size.getOrElse(Area.zero),
         propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
         propertyBedroomsCount = bedroomsCount.getOrElse(0),
         propertyBathroomsCount = bathroomsCount.getOrElse(0),

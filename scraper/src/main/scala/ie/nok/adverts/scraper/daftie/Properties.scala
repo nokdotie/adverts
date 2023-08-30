@@ -141,7 +141,7 @@ object Properties {
       propertyAddress = listing.title,
       propertyCoordinates = coordinates,
       propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.empty),
+      propertySize = size.getOrElse(Area.zero),
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = bedroomCount.getOrElse(0),
       propertyBathroomsCount = bathroomCount.getOrElse(0),

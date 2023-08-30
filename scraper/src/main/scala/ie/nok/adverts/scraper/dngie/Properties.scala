@@ -139,7 +139,7 @@ object Properties {
       propertyAddress = property.display_address,
       propertyCoordinates = coordinates,
       propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.empty),
+      propertySize = size.getOrElse(Area.zero),
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = property.bedroom.getOrElse(0),
       propertyBathroomsCount = property.bathroom.getOrElse(0),
