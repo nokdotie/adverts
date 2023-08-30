@@ -51,7 +51,7 @@ private val genAdvertAttribute: Gen[AdvertAttribute] = {
   } yield AdvertAttribute.BuildingEnergyRatingCertificateNumber(value, source)
 
   val getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = for {
-    value <- arbitrary[Float]
+    value <- arbitrary[BigDecimal]
     source <- arbitrary[AdvertSource]
   } yield AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
     value,

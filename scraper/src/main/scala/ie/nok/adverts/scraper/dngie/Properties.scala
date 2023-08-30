@@ -1,13 +1,16 @@
 package ie.nok.adverts.scraper.dngie
 
+import ie.nok.ber.Rating
 import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
+import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
+import zio.json.ast.Json
 import zio.http.{Body, Client => ZioClient}
 import zio.http.model.{Headers, Method}
 import zio.stream.ZStream
@@ -33,7 +36,8 @@ object Properties {
       price: Option[Int],
       property_url: String,
       latitude: BigDecimal,
-      longitude: BigDecimal
+      longitude: BigDecimal,
+      extras: Option[ResponseDataPropertyExtras]
   )
   private given JsonDecoder[ResponseDataProperty] =
     DeriveJsonDecoder.gen[ResponseDataProperty]
@@ -45,6 +49,20 @@ object Properties {
   )
   private given JsonDecoder[ResponseDataPropertyImage] =
     DeriveJsonDecoder.gen[ResponseDataPropertyImage]
+
+  private case class ResponseDataPropertyExtras(
+      extrasField: Option[ResponseDataPropertyExtrasField]
+  )
+  private given JsonDecoder[ResponseDataPropertyExtras] =
+    DeriveJsonDecoder.gen[ResponseDataPropertyExtras]
+
+  private case class ResponseDataPropertyExtrasField(
+      pBERNumber: Option[Json],
+      pBERRating: Option[String],
+      pEPI: Option[Json]
+  )
+  private given JsonDecoder[ResponseDataPropertyExtrasField] =
+    DeriveJsonDecoder.gen[ResponseDataPropertyExtrasField]
 
   private def getRequestQuery(start: Int, limit: Int): String =
     s"""{ "query": "query {
@@ -66,6 +84,7 @@ object Properties {
         property_url
         latitude
         longitude
+        extras
       }
     }"}""".replaceAll("\n", " ")
 
@@ -132,6 +151,42 @@ object Properties {
       ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
       ++ property.bedroom.map { AdvertAttribute.BedroomsCount(_, source) }
       ++ property.bathroom.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ property.extras
+        .flatMap { _.extrasField }
+        .flatMap { _.pBERNumber }
+        .flatMap {
+          case Json.Str(value) => value.toIntOption
+          case Json.Num(value) => Option(value.intValue())
+          case other =>
+            throw Throwable(s"Unexpected type for pBERNumber: $other")
+        }
+        .map {
+          AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
+        }
+      ++ property.extras
+        .flatMap { _.extrasField }
+        .flatMap { _.pBERRating }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map {
+          AdvertAttribute.BuildingEnergyRating(_, source)
+        }
+      ++ property.extras
+        .flatMap { _.extrasField }
+        .flatMap { _.pEPI }
+        .flatMap {
+          case Json.Str(value) =>
+            value.trim
+              .takeWhile { char => char.isDigit || char == '.' }
+              .pipe { value => Try { BigDecimal(value) } }
+              .toOption
+          case Json.Num(value) => Option(BigDecimal(value))
+          case other => throw Throwable(s"Unexpected type for pEPI: $other")
+        }
+        .map {
+          AdvertAttribute
+            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
+        }
 
     Advert(
       advertUrl = property.property_url,

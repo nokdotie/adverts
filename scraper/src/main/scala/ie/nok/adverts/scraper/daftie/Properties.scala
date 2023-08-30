@@ -5,8 +5,9 @@ import ie.nok.ber.Rating
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
-import scala.util.chaining.scalaUtilChainingOps
 import java.time.Instant
+import scala.util.Try
+import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
@@ -157,8 +158,8 @@ object Properties {
       }
       ++ listing.ber
         .flatMap { _.epi }
-        .map { _.takeWhile { !_.isWhitespace } }
-        .flatMap { _.toFloatOption }
+        .map { _.takeWhile { char => char.isDigit || char == '.' } }
+        .flatMap { value => Try { BigDecimal(value) }.toOption }
         .map {
           AdvertAttribute
             .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)

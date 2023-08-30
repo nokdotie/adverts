@@ -17,7 +17,7 @@ enum AdvertAttribute {
   case BuildingEnergyRating(value: String, source: AdvertSource)
   case BuildingEnergyRatingCertificateNumber(value: Int, source: AdvertSource)
   case BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
-      value: Float,
+      value: BigDecimal,
       source: AdvertSource
   )
 }
