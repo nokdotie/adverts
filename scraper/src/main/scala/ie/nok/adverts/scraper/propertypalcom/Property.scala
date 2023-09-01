@@ -61,8 +61,8 @@ object Property {
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyCoordinate]
 
   protected[propertypalcom] case class ResponsePagePropsPropertyBer(
-        alphanumericRating: Option[String],
-        energyPerformanceIndicator: Option[BigDecimal],
+      alphanumericRating: Option[String],
+      energyPerformanceIndicator: Option[BigDecimal]
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyBer] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyBer]
@@ -148,7 +148,12 @@ object Property {
         .map { AdvertAttribute.BuildingEnergyRating(_, source) }
       ++ property.ber
         .flatMap { _.energyPerformanceIndicator }
-        .map { AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source) }
+        .map {
+          AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
+            _,
+            source
+          )
+        }
 
     Advert(
       advertUrl = property.shareURL,
