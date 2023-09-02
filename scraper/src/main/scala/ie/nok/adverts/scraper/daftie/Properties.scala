@@ -1,11 +1,13 @@
 package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts._
+import ie.nok.ber.Rating
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
-import scala.util.chaining.scalaUtilChainingOps
 import java.time.Instant
+import scala.util.Try
+import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
@@ -30,7 +32,8 @@ object Properties {
       price: String,
       seoFriendlyPath: String,
       title: String,
-      point: ResponseListingListingPoint
+      point: ResponseListingListingPoint,
+      ber: Option[ResponseListingListingBer]
   )
   protected[daftie] given JsonDecoder[ResponseListingListing] =
     DeriveJsonDecoder.gen[ResponseListingListing]
@@ -59,6 +62,15 @@ object Properties {
   )
   protected[daftie] given JsonDecoder[ResponseListingListingPoint] =
     DeriveJsonDecoder.gen[ResponseListingListingPoint]
+
+  protected[daftie] case class ResponseListingListingBer(
+      rating: String,
+      code: Option[String],
+      epi: Option[String]
+  )
+
+  protected[daftie] given JsonDecoder[ResponseListingListingBer] =
+    DeriveJsonDecoder.gen[ResponseListingListingBer]
 
   protected[daftie] val streamApiRequestContent = {
     val pageSize = 100
@@ -134,6 +146,24 @@ object Properties {
       ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
       ++ bedroomCount.map { AdvertAttribute.BedroomsCount(_, source) }
       ++ bathroomCount.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ listing.ber
+        .map { _.rating }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map {
+          AdvertAttribute.BuildingEnergyRating(_, source)
+        }
+      ++ listing.ber.flatMap { _.code }.flatMap { _.toIntOption }.map {
+        AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
+      }
+      ++ listing.ber
+        .flatMap { _.epi }
+        .map { _.takeWhile { char => char.isDigit || char == '.' } }
+        .flatMap { value => Try { BigDecimal(value) }.toOption }
+        .map {
+          AdvertAttribute
+            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
+        }
 
     Advert(
       advertUrl = url,

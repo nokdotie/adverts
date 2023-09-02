@@ -1,5 +1,6 @@
 package ie.nok.adverts.scraper.propertypalcom
 
+import ie.nok.ber.Rating
 import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
@@ -29,7 +30,8 @@ object Property {
       images: Option[List[ResponsePagePropsPropertyImage]],
       keyInfo: List[ResponsePagePropsPropertyKeyInfo],
       shareURL: String,
-      coordinate: Option[ResponsePagePropsPropertyCoordinate]
+      coordinate: Option[ResponsePagePropsPropertyCoordinate],
+      ber: Option[ResponsePagePropsPropertyBer]
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
@@ -57,6 +59,13 @@ object Property {
     ResponsePagePropsPropertyCoordinate
   ] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyCoordinate]
+
+  protected[propertypalcom] case class ResponsePagePropsPropertyBer(
+      alphanumericRating: Option[String],
+      energyPerformanceIndicator: Option[BigDecimal]
+  )
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyBer] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyBer]
 
   protected[propertypalcom] def getApiRequestUrl(
       buildId: String,
@@ -132,6 +141,19 @@ object Property {
       ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
       ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
       ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ property.ber
+        .flatMap { _.alphanumericRating }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map { AdvertAttribute.BuildingEnergyRating(_, source) }
+      ++ property.ber
+        .flatMap { _.energyPerformanceIndicator }
+        .map {
+          AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
+            _,
+            source
+          )
+        }
 
     Advert(
       advertUrl = property.shareURL,

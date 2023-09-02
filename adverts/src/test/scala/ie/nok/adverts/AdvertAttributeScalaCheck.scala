@@ -40,6 +40,24 @@ private val genAdvertAttribute: Gen[AdvertAttribute] = {
     source <- arbitrary[AdvertSource]
   } yield AdvertAttribute.BathroomsCount(value, source)
 
+  val genBuildingEnergyRating = for {
+    value <- arbitrary[String]
+    source <- arbitrary[AdvertSource]
+  } yield AdvertAttribute.BuildingEnergyRating(value, source)
+
+  val genBuildingEnergyRatingCertificateNumber = for {
+    value <- arbitrary[Int]
+    source <- arbitrary[AdvertSource]
+  } yield AdvertAttribute.BuildingEnergyRatingCertificateNumber(value, source)
+
+  val getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = for {
+    value <- arbitrary[BigDecimal]
+    source <- arbitrary[AdvertSource]
+  } yield AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
+    value,
+    source
+  )
+
   Gen.oneOf(
     genPriceInEur,
     genAddress,
@@ -47,7 +65,10 @@ private val genAdvertAttribute: Gen[AdvertAttribute] = {
     genImageUrl,
     genSizeInSqtMtr,
     genBedroomsCount,
-    genBathroomsCount
+    genBathroomsCount,
+    genBuildingEnergyRating,
+    genBuildingEnergyRatingCertificateNumber,
+    getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
   )
 }
 

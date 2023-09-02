@@ -1,5 +1,6 @@
 package ie.nok.adverts.scraper.myhomeie
 
+import ie.nok.ber.Rating
 import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
@@ -25,7 +26,8 @@ object Properties {
       DisplayAddress: String,
       BrochureUrl: String,
       Photos: List[String],
-      BrochureMap: Option[ResponseSearchResultBrochureMap]
+      BrochureMap: Option[ResponseSearchResultBrochureMap],
+      BerRating: Option[String]
   )
   private given JsonDecoder[ResponseSearchResult] =
     DeriveJsonDecoder.gen[ResponseSearchResult]
@@ -100,6 +102,10 @@ object Properties {
         ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
         ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
         ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
+        ++ searchResult.BerRating
+          .flatMap { Rating.tryFromString(_).toOption }
+          .map { _.toString }
+          .map { AdvertAttribute.BuildingEnergyRating(_, source) }
 
       Advert(
         advertUrl = url,
