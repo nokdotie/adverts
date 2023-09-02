@@ -1,5 +1,6 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
+import ie.nok.ber.Rating
 import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
@@ -7,6 +8,7 @@ import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import org.jsoup.nodes.Document
 import scala.collection.JavaConverters.asScalaBufferConverter
+import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
@@ -24,6 +26,43 @@ object Property {
     Client
       .requestBodyAsHtml(url)
       .retry(recurs(3) && fixed(1.second))
+
+  private val parseResponseBuildingEnergyRating
+      : (Document, AdvertSource) => Iterable[AdvertAttribute] = {
+    val cssQuery =
+      ".property-full-description-container:contains(BER) .property-description"
+    val berRegex = "BER: ([A-G][1-3]?)".r
+    val berCertificateNumberRegex = "BER Number: ([0-9]+)".r
+    val berEnergyRatingRegex =
+      "Energy Performance Indicator: ([0-9]+\\.?[0-9]+)".r
+
+    (html, source) => {
+      val text = html
+        .select(cssQuery)
+        .text
+
+      berRegex
+        .findFirstMatchIn(text)
+        .map { _.group(1) }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map { AdvertAttribute.BuildingEnergyRating(_, source) }
+        ++ berCertificateNumberRegex
+          .findFirstMatchIn(text)
+          .flatMap { _.group(1).toIntOption }
+          .map {
+            AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
+          }
+        ++ berEnergyRatingRegex
+          .findFirstMatchIn(text)
+          .map { _.group(1) }
+          .flatMap { value => Try { BigDecimal(value) }.toOption }
+          .map {
+            AdvertAttribute
+              .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
+          }
+    }
+  }
 
   private def parseResponse(
       url: String,
@@ -85,6 +124,7 @@ object Property {
       ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
       ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
       ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ parseResponseBuildingEnergyRating(html, source)
 
     Advert(
       advertUrl = url,
