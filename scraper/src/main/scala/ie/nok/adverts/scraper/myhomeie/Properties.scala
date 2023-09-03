@@ -89,24 +89,6 @@ object Properties {
         .filter(_.isDigit)
         .toIntOption
 
-      val source = AdvertSource(
-        service = AdvertService.MyHomeIe,
-        url = url
-      )
-
-      val attributes = List(
-        AdvertAttribute.Address(searchResult.DisplayAddress, source),
-        AdvertAttribute.Coordinates(coordinates, source)
-      ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
-        ++ searchResult.Photos.map { AdvertAttribute.ImageUrl(_, source) }
-        ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
-        ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
-        ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
-        ++ searchResult.BerRating
-          .flatMap { Rating.tryFromString(_).toOption }
-          .map { _.toString }
-          .map { AdvertAttribute.BuildingEnergyRating(_, source) }
-
       Advert(
         advertUrl = url,
         advertPriceInEur = price.getOrElse(0),
@@ -117,7 +99,6 @@ object Properties {
         propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
         propertyBedroomsCount = bedroomsCount.getOrElse(0),
         propertyBathroomsCount = bathroomsCount.getOrElse(0),
-        attributes = attributes,
         createdAt = Instant.now
       )
     }

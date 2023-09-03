@@ -138,56 +138,6 @@ object Properties {
 
     val sizeInSqtMtr = size.map { Area.toSquareMetres(_).value }
 
-    val source = AdvertSource(
-      service = AdvertService.DngIe,
-      url = property.property_url
-    )
-
-    val attributes = List(
-      AdvertAttribute.Address(property.display_address, source),
-      AdvertAttribute.Coordinates(coordinates, source)
-    ) ++ property.price.map { AdvertAttribute.PriceInEur(_, source) }
-      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
-      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
-      ++ property.bedroom.map { AdvertAttribute.BedroomsCount(_, source) }
-      ++ property.bathroom.map { AdvertAttribute.BathroomsCount(_, source) }
-      ++ property.extras
-        .flatMap { _.extrasField }
-        .flatMap { _.pBERNumber }
-        .flatMap {
-          case Json.Str(value) => value.toIntOption
-          case Json.Num(value) => Option(value.intValue())
-          case other =>
-            throw Throwable(s"Unexpected type for pBERNumber: $other")
-        }
-        .map {
-          AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
-        }
-      ++ property.extras
-        .flatMap { _.extrasField }
-        .flatMap { _.pBERRating }
-        .flatMap { Rating.tryFromString(_).toOption }
-        .map { _.toString }
-        .map {
-          AdvertAttribute.BuildingEnergyRating(_, source)
-        }
-      ++ property.extras
-        .flatMap { _.extrasField }
-        .flatMap { _.pEPI }
-        .flatMap {
-          case Json.Str(value) =>
-            value.trim
-              .takeWhile { char => char.isDigit || char == '.' }
-              .pipe { value => Try { BigDecimal(value) } }
-              .toOption
-          case Json.Num(value) => Option(BigDecimal(value))
-          case other => throw Throwable(s"Unexpected type for pEPI: $other")
-        }
-        .map {
-          AdvertAttribute
-            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
-        }
-
     Advert(
       advertUrl = property.property_url,
       advertPriceInEur = property.price.getOrElse(0),
@@ -198,7 +148,6 @@ object Properties {
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = property.bedroom.getOrElse(0),
       propertyBathroomsCount = property.bathroom.getOrElse(0),
-      attributes = attributes,
       createdAt = Instant.now()
     )
   }

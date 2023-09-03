@@ -40,7 +40,6 @@ object Main extends ZIOAppDefault {
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
             propertyBathroomsCount =
               adverts.map { _.propertyBathroomsCount }.max,
-            attributes = adverts.flatMap { _.attributes },
             createdAt = Instant.now
           )
       }

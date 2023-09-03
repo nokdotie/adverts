@@ -128,33 +128,6 @@ object Property {
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
 
-    val source = AdvertSource(
-      service = AdvertService.PropertyPalCom,
-      url = property.shareURL
-    )
-
-    val attributes = List(
-      AdvertAttribute.Address(property.displayAddress, source)
-    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
-      ++ coordinates.map { AdvertAttribute.Coordinates(_, source) }
-      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
-      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
-      ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
-      ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
-      ++ property.ber
-        .flatMap { _.alphanumericRating }
-        .flatMap { Rating.tryFromString(_).toOption }
-        .map { _.toString }
-        .map { AdvertAttribute.BuildingEnergyRating(_, source) }
-      ++ property.ber
-        .flatMap { _.energyPerformanceIndicator }
-        .map {
-          AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
-            _,
-            source
-          )
-        }
-
     Advert(
       advertUrl = property.shareURL,
       advertPriceInEur = price.getOrElse(0),
@@ -165,7 +138,6 @@ object Property {
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = bedroomsCount.getOrElse(0),
       propertyBathroomsCount = bathroomsCount.getOrElse(0),
-      attributes = attributes,
       createdAt = Instant.now
     )
   }

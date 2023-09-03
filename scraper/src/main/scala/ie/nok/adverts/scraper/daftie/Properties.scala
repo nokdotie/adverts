@@ -133,38 +133,6 @@ object Properties {
       .filter(_.isDigit)
       .toIntOption
 
-    val source = AdvertSource(
-      service = AdvertService.DaftIe,
-      url = url
-    )
-
-    val attributes = List(
-      AdvertAttribute.Address(listing.title, source),
-      AdvertAttribute.Coordinates(coordinates, source)
-    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
-      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
-      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
-      ++ bedroomCount.map { AdvertAttribute.BedroomsCount(_, source) }
-      ++ bathroomCount.map { AdvertAttribute.BathroomsCount(_, source) }
-      ++ listing.ber
-        .map { _.rating }
-        .flatMap { Rating.tryFromString(_).toOption }
-        .map { _.toString }
-        .map {
-          AdvertAttribute.BuildingEnergyRating(_, source)
-        }
-      ++ listing.ber.flatMap { _.code }.flatMap { _.toIntOption }.map {
-        AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
-      }
-      ++ listing.ber
-        .flatMap { _.epi }
-        .map { _.takeWhile { char => char.isDigit || char == '.' } }
-        .flatMap { value => Try { BigDecimal(value) }.toOption }
-        .map {
-          AdvertAttribute
-            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
-        }
-
     Advert(
       advertUrl = url,
       advertPriceInEur = price.getOrElse(0),
@@ -175,7 +143,6 @@ object Properties {
       propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
       propertyBedroomsCount = bedroomCount.getOrElse(0),
       propertyBathroomsCount = bathroomCount.getOrElse(0),
-      attributes = attributes,
       createdAt = Instant.now()
     )
   }
