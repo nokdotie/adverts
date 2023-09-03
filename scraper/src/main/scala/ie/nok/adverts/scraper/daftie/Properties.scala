@@ -1,11 +1,13 @@
 package ie.nok.adverts.scraper.daftie
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts._
+import ie.nok.ber.Rating
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
-import scala.util.chaining.scalaUtilChainingOps
 import java.time.Instant
+import scala.util.Try
+import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
@@ -30,7 +32,8 @@ object Properties {
       price: String,
       seoFriendlyPath: String,
       title: String,
-      point: ResponseListingListingPoint
+      point: ResponseListingListingPoint,
+      ber: Option[ResponseListingListingBer]
   )
   protected[daftie] given JsonDecoder[ResponseListingListing] =
     DeriveJsonDecoder.gen[ResponseListingListing]
@@ -59,6 +62,15 @@ object Properties {
   )
   protected[daftie] given JsonDecoder[ResponseListingListingPoint] =
     DeriveJsonDecoder.gen[ResponseListingListingPoint]
+
+  protected[daftie] case class ResponseListingListingBer(
+      rating: String,
+      code: Option[String],
+      epi: Option[String]
+  )
+
+  protected[daftie] given JsonDecoder[ResponseListingListingBer] =
+    DeriveJsonDecoder.gen[ResponseListingListingBer]
 
   protected[daftie] val streamApiRequestContent = {
     val pageSize = 100
@@ -89,47 +101,81 @@ object Properties {
   protected[daftie] def toAdvert(
       listing: ResponseListingListing
   ): Advert = {
-    val price = listing.price.filter(_.isDigit).toIntOption.getOrElse(0)
-
-    val propertySizeValue =
-      listing.floorArea.map { _.value }.map { BigDecimal(_) }
-    val propertySizeUnit = listing.floorArea.map { _.unit }.map {
-      case "METRES_SQUARED" => AreaUnit.SquareMetres
-      case "ACRES"          => AreaUnit.Acres
-      case other            => throw new Exception(s"Unknown unit: $other")
-    }
-
-    val propertySize =
-      propertySizeValue.zip(propertySizeUnit).fold(Area.empty) { Area(_, _) }
-
-    val bedroomCount = listing.numBedrooms
-      .getOrElse("")
-      .filter(_.isDigit)
-      .toIntOption
-      .getOrElse(0)
-
-    val bathroomCount = listing.numBathrooms
-      .getOrElse("")
-      .filter(_.isDigit)
-      .toIntOption
-      .getOrElse(0)
+    val url = s"https://www.daft.ie${listing.seoFriendlyPath}"
+    val price = listing.price.filter(_.isDigit).toIntOption
 
     val coordinates = Coordinates(
       latitude = listing.point.coordinates(1),
       longitude = listing.point.coordinates(0)
     )
 
+    val imageUrls =
+      listing.media.images.getOrElse(List.empty).map { _.size720x480 }
+
+    val sizeValue = listing.floorArea.map { _.value }.map { BigDecimal(_) }
+    val sizeUnit = listing.floorArea.map { _.unit }.map {
+      case "METRES_SQUARED" => AreaUnit.SquareMetres
+      case "ACRES"          => AreaUnit.Acres
+      case other            => throw new Exception(s"Unknown unit: $other")
+    }
+
+    val size = sizeValue.zip(sizeUnit).map { Area(_, _) }
+
+    val sizeInSqtMtr = size.map { Area.toSquareMetres(_).value }
+
+    val bedroomCount = listing.numBedrooms
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+
+    val bathroomCount = listing.numBathrooms
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+
+    val source = AdvertSource(
+      service = AdvertService.DaftIe,
+      url = url
+    )
+
+    val attributes = List(
+      AdvertAttribute.Address(listing.title, source),
+      AdvertAttribute.Coordinates(coordinates, source)
+    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
+      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
+      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
+      ++ bedroomCount.map { AdvertAttribute.BedroomsCount(_, source) }
+      ++ bathroomCount.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ listing.ber
+        .map { _.rating }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map {
+          AdvertAttribute.BuildingEnergyRating(_, source)
+        }
+      ++ listing.ber.flatMap { _.code }.flatMap { _.toIntOption }.map {
+        AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
+      }
+      ++ listing.ber
+        .flatMap { _.epi }
+        .map { _.takeWhile { char => char.isDigit || char == '.' } }
+        .flatMap { value => Try { BigDecimal(value) }.toOption }
+        .map {
+          AdvertAttribute
+            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
+        }
+
     Advert(
-      advertUrl = s"https://www.daft.ie${listing.seoFriendlyPath}",
-      advertPriceInEur = price,
+      advertUrl = url,
+      advertPriceInEur = price.getOrElse(0),
       propertyAddress = listing.title,
       propertyCoordinates = coordinates,
-      propertyImageUrls =
-        listing.media.images.getOrElse(List.empty).map { _.size720x480 },
-      propertySize = propertySize,
-      propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value,
-      propertyBedroomsCount = bedroomCount,
-      propertyBathroomsCount = bathroomCount,
+      propertyImageUrls = imageUrls,
+      propertySize = size.getOrElse(Area.zero),
+      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
+      propertyBedroomsCount = bedroomCount.getOrElse(0),
+      propertyBathroomsCount = bathroomCount.getOrElse(0),
+      attributes = attributes,
       createdAt = Instant.now()
     )
   }

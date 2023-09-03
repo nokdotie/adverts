@@ -1,6 +1,7 @@
 package ie.nok.adverts.scraper.propertypalcom
 
-import ie.nok.adverts.Advert
+import ie.nok.ber.Rating
+import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -29,7 +30,8 @@ object Property {
       images: Option[List[ResponsePagePropsPropertyImage]],
       keyInfo: List[ResponsePagePropsPropertyKeyInfo],
       shareURL: String,
-      coordinate: ResponsePagePropsPropertyCoordinate
+      coordinate: Option[ResponsePagePropsPropertyCoordinate],
+      ber: Option[ResponsePagePropsPropertyBer]
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
@@ -58,6 +60,13 @@ object Property {
   ] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyCoordinate]
 
+  protected[propertypalcom] case class ResponsePagePropsPropertyBer(
+      alphanumericRating: Option[String],
+      energyPerformanceIndicator: Option[BigDecimal]
+  )
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyBer] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyBer]
+
   protected[propertypalcom] def getApiRequestUrl(
       buildId: String,
       propertyIdAndAddress: PropertyIdAndAddress
@@ -78,7 +87,15 @@ object Property {
       .find { _.key == "PRICE" }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
-      .getOrElse(0)
+
+    val coordinates = property.coordinate.map { coordinate =>
+      Coordinates(
+        latitude = coordinate.latitude,
+        longitude = coordinate.longitude
+      )
+    }
+
+    val imageUrls = property.images.getOrElse(List.empty).map(_.url)
 
     val size = property.keyInfo
       .find { _.key == "SIZE" }
@@ -98,35 +115,57 @@ object Property {
             s"Unknown unit: $other, ${property.shareURL}"
           )
       }
-      .getOrElse(Area.empty)
+
+    val sizeInSqtMtr = size.map { Area.toSquareMetres(_) }.map { _.value }
 
     val bedroomsCount = property.keyInfo
       .find { _.key == "BEDROOMS" }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
-      .getOrElse(0)
 
     val bathroomsCount = property.keyInfo
       .find { _.key == "BATHROOMS" }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
-      .getOrElse(0)
 
-    val coordinates = Coordinates(
-      latitude = property.coordinate.latitude,
-      longitude = property.coordinate.longitude
+    val source = AdvertSource(
+      service = AdvertService.PropertyPalCom,
+      url = property.shareURL
     )
+
+    val attributes = List(
+      AdvertAttribute.Address(property.displayAddress, source)
+    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
+      ++ coordinates.map { AdvertAttribute.Coordinates(_, source) }
+      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
+      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
+      ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
+      ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
+      ++ property.ber
+        .flatMap { _.alphanumericRating }
+        .flatMap { Rating.tryFromString(_).toOption }
+        .map { _.toString }
+        .map { AdvertAttribute.BuildingEnergyRating(_, source) }
+      ++ property.ber
+        .flatMap { _.energyPerformanceIndicator }
+        .map {
+          AdvertAttribute.BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(
+            _,
+            source
+          )
+        }
 
     Advert(
       advertUrl = property.shareURL,
-      advertPriceInEur = price,
+      advertPriceInEur = price.getOrElse(0),
       propertyAddress = property.displayAddress,
-      propertyCoordinates = coordinates,
-      propertyImageUrls = property.images.getOrElse(List.empty).map(_.url),
-      propertySize = size,
-      propertySizeInSqtMtr = Area.toSquareMetres(size).value,
-      propertyBedroomsCount = bedroomsCount,
-      propertyBathroomsCount = bathroomsCount,
+      propertyCoordinates = coordinates.getOrElse(Coordinates.zero),
+      propertyImageUrls = imageUrls,
+      propertySize = size.getOrElse(Area.zero),
+      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
+      propertyBedroomsCount = bedroomsCount.getOrElse(0),
+      propertyBathroomsCount = bathroomsCount.getOrElse(0),
+      attributes = attributes,
       createdAt = Instant.now
     )
   }
