@@ -1,7 +1,10 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.{Advert, AdvertService}
+import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.adverts.stores.AdvertStoreImpl
+import ie.nok.ber.CertificateNumber
+import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
+import ie.nok.gcp.firestore.Firestore
 import ie.nok.gcp.storage.Storage
 import ie.nok.unit.Area
 import java.time.Instant
@@ -40,9 +43,52 @@ object Main extends ZIOAppDefault {
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
             propertyBathroomsCount =
               adverts.map { _.propertyBathroomsCount }.max,
-            attributes = adverts.flatMap { _.attributes },
+            propertyBuildingEnergyRating =
+              adverts.head.propertyBuildingEnergyRating,
+            propertyBuildingEnergyRatingCertificateNumber =
+              adverts.head.propertyBuildingEnergyRatingCertificateNumber,
+            propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+              adverts.head.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+            sources = adverts.flatMap { _.sources },
             createdAt = Instant.now
           )
+      }
+
+  def appendBuildingEnergyRating(
+      adverts: Advert
+  ): ZIO[CertificateStore, Throwable, Advert] =
+    adverts.sources
+      .flatMap {
+        case InformationSource.DaftIeAdvert(daftIeAdvert) =>
+          daftIeAdvert.buildingEnergyRatingCertificateNumber
+        case InformationSource.DngIeAdvert(dngIeAdvert) =>
+          dngIeAdvert.buildingEnergyRatingCertificateNumber
+        case InformationSource.SherryFitzIeAdvert(sherryFitzIeAdvert) =>
+          sherryFitzIeAdvert.buildingEnergyRatingCertificateNumber
+        case InformationSource.MyHomeIeAdvert(_) |
+            InformationSource.PropertyPalComAdvert(_) |
+            InformationSource.BuildingEnergyRatingCertificate(_) =>
+          None
+      }
+      .distinct
+      .map { CertificateNumber.apply }
+      .map { CertificateStore.getByNumber }
+      .pipe { ZIO.collectAll }
+      .map { _.flatten }
+      .map { certificates =>
+        val certificatesAsSources = certificates
+          .map { InformationSource.BuildingEnergyRatingCertificate.apply }
+
+        adverts.copy(
+          propertyBuildingEnergyRating = certificates.headOption.map(_.rating),
+          propertyBuildingEnergyRatingCertificateNumber =
+            certificates.headOption.map(_.number.value),
+          propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+            certificates.headOption
+              .map(_.energyRating.value)
+              .map(BigDecimal(_)),
+          sources = adverts.sources ++ certificatesAsSources
+        )
       }
 
   def run =
@@ -50,8 +96,11 @@ object Main extends ZIOAppDefault {
       .map { merge }
       .map { Random.shuffle }
       .pipe { ZStream.fromIterableZIO }
+      .mapZIOParUnordered(5) { appendBuildingEnergyRating }
       .pipe { AdvertStoreImpl.encodeAndWriteLatest }
       .provide(
+        Firestore.live,
+        GoogleFirestoreCertificateStore.layer,
         Storage.live,
         Scope.default
       )

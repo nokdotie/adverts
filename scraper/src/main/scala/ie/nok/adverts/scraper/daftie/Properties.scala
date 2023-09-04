@@ -1,6 +1,7 @@
 package ie.nok.adverts.scraper.daftie
 
-import ie.nok.adverts._
+import ie.nok.adverts.Advert
+import ie.nok.adverts.services.daftie.DaftIeAdvert
 import ie.nok.ber.Rating
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
@@ -98,9 +99,37 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  protected[daftie] def toAdvert(
+  protected[daftie] def size(listing: ResponseListingListing): Option[Area] = {
+    val value = listing.floorArea.map { _.value }.map { BigDecimal(_) }
+    val unit = listing.floorArea.map { _.unit }.map {
+      case "METRES_SQUARED" => AreaUnit.SquareMetres
+      case "ACRES"          => AreaUnit.Acres
+      case other            => throw new Exception(s"Unknown unit: $other")
+    }
+
+    value.zip(unit).map { Area(_, _) }
+  }
+
+  protected[daftie] def ber(
       listing: ResponseListingListing
-  ): Advert = {
+  ): (Option[Rating], Option[Int], Option[BigDecimal]) =
+    listing.ber
+      .fold((None, None, None)) { ber =>
+        val rating = ber.rating.pipe { Rating.tryFromString }.toOption
+
+        val certificateNumber = ber.code
+          .flatMap { _.toIntOption }
+
+        val energyRatingInKWhPerSqtMtrPerYear = ber.epi
+          .map { _.takeWhile { char => char.isDigit || char == '.' } }
+          .flatMap { value => Try { BigDecimal(value) }.toOption }
+
+        (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
+      }
+
+  protected[daftie] def toDaftIeAdvert(
+      listing: ResponseListingListing
+  ): DaftIeAdvert = {
     val url = s"https://www.daft.ie${listing.seoFriendlyPath}"
     val price = listing.price.filter(_.isDigit).toIntOption
 
@@ -112,17 +141,6 @@ object Properties {
     val imageUrls =
       listing.media.images.getOrElse(List.empty).map { _.size720x480 }
 
-    val sizeValue = listing.floorArea.map { _.value }.map { BigDecimal(_) }
-    val sizeUnit = listing.floorArea.map { _.unit }.map {
-      case "METRES_SQUARED" => AreaUnit.SquareMetres
-      case "ACRES"          => AreaUnit.Acres
-      case other            => throw new Exception(s"Unknown unit: $other")
-    }
-
-    val size = sizeValue.zip(sizeUnit).map { Area(_, _) }
-
-    val sizeInSqtMtr = size.map { Area.toSquareMetres(_).value }
-
     val bedroomCount = listing.numBedrooms
       .getOrElse("")
       .filter(_.isDigit)
@@ -133,50 +151,27 @@ object Properties {
       .filter(_.isDigit)
       .toIntOption
 
-    val source = AdvertSource(
-      service = AdvertService.DaftIe,
-      url = url
-    )
+    val (
+      buildingEnergyRating,
+      buildingEnergyRatingCertificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
+    ) = ber(listing)
 
-    val attributes = List(
-      AdvertAttribute.Address(listing.title, source),
-      AdvertAttribute.Coordinates(coordinates, source)
-    ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
-      ++ imageUrls.map { AdvertAttribute.ImageUrl(_, source) }
-      ++ sizeInSqtMtr.map { AdvertAttribute.SizeInSqtMtr(_, source) }
-      ++ bedroomCount.map { AdvertAttribute.BedroomsCount(_, source) }
-      ++ bathroomCount.map { AdvertAttribute.BathroomsCount(_, source) }
-      ++ listing.ber
-        .map { _.rating }
-        .flatMap { Rating.tryFromString(_).toOption }
-        .map { _.toString }
-        .map {
-          AdvertAttribute.BuildingEnergyRating(_, source)
-        }
-      ++ listing.ber.flatMap { _.code }.flatMap { _.toIntOption }.map {
-        AdvertAttribute.BuildingEnergyRatingCertificateNumber(_, source)
-      }
-      ++ listing.ber
-        .flatMap { _.epi }
-        .map { _.takeWhile { char => char.isDigit || char == '.' } }
-        .flatMap { value => Try { BigDecimal(value) }.toOption }
-        .map {
-          AdvertAttribute
-            .BuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(_, source)
-        }
-
-    Advert(
-      advertUrl = url,
-      advertPriceInEur = price.getOrElse(0),
-      propertyAddress = listing.title,
-      propertyCoordinates = coordinates,
-      propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.zero),
-      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
-      propertyBedroomsCount = bedroomCount.getOrElse(0),
-      propertyBathroomsCount = bathroomCount.getOrElse(0),
-      attributes = attributes,
-      createdAt = Instant.now()
+    DaftIeAdvert(
+      url = url,
+      priceInEur = price,
+      address = listing.title,
+      coordinates = coordinates,
+      imageUrls = imageUrls,
+      size = size(listing),
+      bedroomsCount = bedroomCount,
+      bathroomsCount = bathroomCount,
+      buildingEnergyRating = buildingEnergyRating,
+      buildingEnergyRatingCertificateNumber =
+        buildingEnergyRatingCertificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      createdAt = Instant.now
     )
   }
 
@@ -187,6 +182,7 @@ object Properties {
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
-      .map { toAdvert }
+      .map { toDaftIeAdvert }
+      .map { DaftIeAdvert.toAdvert }
 
 }

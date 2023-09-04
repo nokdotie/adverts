@@ -1,7 +1,8 @@
 package ie.nok.adverts.scraper.myhomeie
 
 import ie.nok.ber.Rating
-import ie.nok.adverts._
+import ie.nok.adverts.Advert
+import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -61,66 +62,51 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toAdvertOption(
+  private def toMyHomeIeAdvert(
       searchResult: ResponseSearchResult
-  ): Option[Advert] =
-    searchResult.BrochureMap.map { bm =>
-      val url = s"https://www.myhome.ie${searchResult.BrochureUrl}"
-      val price = searchResult.PriceAsString
-        .getOrElse("")
-        .filter(_.isDigit)
-        .toIntOption
+  ): MyHomeIeAdvert = {
+    val url = s"https://www.myhome.ie${searchResult.BrochureUrl}"
+    val price = searchResult.PriceAsString
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
 
-      val coordinates = Coordinates(
+    val coordinates = searchResult.BrochureMap.map { bm =>
+      Coordinates(
         latitude = bm.latitude,
         longitude = bm.longitude
       )
-
-      val size = searchResult.SizeStringMeters
-        .map { BigDecimal(_) }
-        .map { Area(_, AreaUnit.SquareMetres) }
-
-      val bedroomsCount = searchResult.BedsString
-        .filter(_.isDigit)
-        .toIntOption
-
-      val bathroomsCount = searchResult.BathString
-        .getOrElse("")
-        .filter(_.isDigit)
-        .toIntOption
-
-      val source = AdvertSource(
-        service = AdvertService.MyHomeIe,
-        url = url
-      )
-
-      val attributes = List(
-        AdvertAttribute.Address(searchResult.DisplayAddress, source),
-        AdvertAttribute.Coordinates(coordinates, source)
-      ) ++ price.map { AdvertAttribute.PriceInEur(_, source) }
-        ++ searchResult.Photos.map { AdvertAttribute.ImageUrl(_, source) }
-        ++ size.map(_.value).map { AdvertAttribute.SizeInSqtMtr(_, source) }
-        ++ bedroomsCount.map { AdvertAttribute.BedroomsCount(_, source) }
-        ++ bathroomsCount.map { AdvertAttribute.BathroomsCount(_, source) }
-        ++ searchResult.BerRating
-          .flatMap { Rating.tryFromString(_).toOption }
-          .map { _.toString }
-          .map { AdvertAttribute.BuildingEnergyRating(_, source) }
-
-      Advert(
-        advertUrl = url,
-        advertPriceInEur = price.getOrElse(0),
-        propertyAddress = searchResult.DisplayAddress,
-        propertyCoordinates = coordinates,
-        propertyImageUrls = searchResult.Photos,
-        propertySize = size.getOrElse(Area.zero),
-        propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
-        propertyBedroomsCount = bedroomsCount.getOrElse(0),
-        propertyBathroomsCount = bathroomsCount.getOrElse(0),
-        attributes = attributes,
-        createdAt = Instant.now
-      )
     }
+
+    val size = searchResult.SizeStringMeters
+      .map { BigDecimal(_) }
+      .map { Area(_, AreaUnit.SquareMetres) }
+
+    val bedroomsCount = searchResult.BedsString
+      .filter(_.isDigit)
+      .toIntOption
+
+    val bathroomsCount = searchResult.BathString
+      .getOrElse("")
+      .filter(_.isDigit)
+      .toIntOption
+
+    val buildingEnergyRating = searchResult.BerRating
+      .flatMap { Rating.tryFromString(_).toOption }
+
+    MyHomeIeAdvert(
+      url = url,
+      priceInEur = price,
+      address = searchResult.DisplayAddress,
+      coordinates = coordinates,
+      imageUrls = searchResult.Photos,
+      size = size,
+      bedroomsCount = bedroomsCount,
+      bathroomsCount = bathroomsCount,
+      buildingEnergyRating = buildingEnergyRating,
+      createdAt = Instant.now
+    )
+  }
 
   val stream: ZStream[ZioClient, Throwable, Advert] =
     streamApiRequestContent
@@ -128,7 +114,7 @@ object Properties {
       .map { _.SearchResults }
       .takeWhile { _.nonEmpty }
       .flattenIterables
-      .map { toAdvertOption }
-      .collectSome
+      .map { toMyHomeIeAdvert }
+      .map { MyHomeIeAdvert.toAdvert }
 
 }

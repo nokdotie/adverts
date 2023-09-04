@@ -3,6 +3,7 @@ package ie.nok.adverts
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
+import ie.nok.ber.{Rating, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
@@ -16,7 +17,11 @@ val genAdvert: Gen[Advert] = for {
   propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value
   propertyBedroomsCount <- arbitrary[Int]
   propertyBathroomsCount <- arbitrary[Int]
-  attributes <- arbitrary[List[AdvertAttribute]]
+  propertyBuildingEnergyRating = None // <- arbitrary[Option[Rating]]
+  propertyBuildingEnergyRatingCertificateNumber <- arbitrary[Option[Int]]
+  propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
+    arbitrary[Option[BigDecimal]]
+  sources = List.empty
   createdAt <- arbitrary[Instant]
   advert = Advert(
     advertUrl = advertUrl,
@@ -28,7 +33,12 @@ val genAdvert: Gen[Advert] = for {
     propertySizeInSqtMtr = propertySizeInSqtMtr,
     propertyBedroomsCount = propertyBedroomsCount,
     propertyBathroomsCount = propertyBathroomsCount,
-    attributes = attributes,
+    propertyBuildingEnergyRating = propertyBuildingEnergyRating,
+    propertyBuildingEnergyRatingCertificateNumber =
+      propertyBuildingEnergyRatingCertificateNumber,
+    propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+    sources = sources,
     createdAt = createdAt
   )
 } yield advert

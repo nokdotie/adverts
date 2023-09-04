@@ -12,7 +12,7 @@ class PropertySuite extends FunSuite {
         .pipe { readJsonLinesAs[Properties.Response](_) }
         .mapConcat { _.listings }
         .map { _.listing }
-        .map { Properties.toAdvert }
+        .map { Properties.toDaftIeAdvert }
         .runCollect
         .pipe { ZIO.unsafeRun(_) }
         .getOrElse { _ => fail("Unsafe run failed") }
