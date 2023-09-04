@@ -1,5 +1,6 @@
 package ie.nok.adverts
 
+import ie.nok.ber.Certificate
 import zio.json.{JsonCodec, DeriveJsonCodec}
 
 enum InformationSource {
@@ -8,6 +9,7 @@ enum InformationSource {
   case MyHomeIeAdvert(value: services.myhomeie.MyHomeIeAdvert)
   case PropertyPalComAdvert(value: services.propertypalcom.PropertyPalComAdvert)
   case SherryFitzIeAdvert(value: services.sherryfitzie.SherryFitzIeAdvert)
+  case BuildingEnergyRatingCertificate(value: Certificate)
 }
 
 object InformationSource {
