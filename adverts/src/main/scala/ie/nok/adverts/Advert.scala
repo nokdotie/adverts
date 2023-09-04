@@ -1,5 +1,6 @@
 package ie.nok.adverts
 
+import ie.nok.ber.Rating
 import ie.nok.geographic.Coordinates
 import ie.nok.geographic.geojson.Feature
 import ie.nok.unit.Area
@@ -16,6 +17,11 @@ case class Advert(
     propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,
+    propertyBuildingEnergyRating: Option[Rating],
+    propertyBuildingEnergyRatingCertificateNumber: Option[Int],
+    propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear: Option[
+      BigDecimal
+    ],
     sources: List[InformationSource],
     createdAt: Instant
 )

@@ -35,6 +35,10 @@ object PropertyPalComAdvert {
         .fold(BigDecimal(0)) { _.value },
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
+      propertyBuildingEnergyRating = self.buildingEnergyRating,
+      propertyBuildingEnergyRatingCertificateNumber = None,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.PropertyPalComAdvert(self)),
       createdAt = self.createdAt
     )

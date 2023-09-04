@@ -43,6 +43,12 @@ object Main extends ZIOAppDefault {
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
             propertyBathroomsCount =
               adverts.map { _.propertyBathroomsCount }.max,
+            propertyBuildingEnergyRating =
+              adverts.head.propertyBuildingEnergyRating,
+            propertyBuildingEnergyRatingCertificateNumber =
+              adverts.head.propertyBuildingEnergyRatingCertificateNumber,
+            propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+              adverts.head.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
             sources = adverts.flatMap { _.sources },
             createdAt = Instant.now
           )
@@ -68,11 +74,21 @@ object Main extends ZIOAppDefault {
       .map { CertificateNumber.apply }
       .map { CertificateStore.getByNumber }
       .pipe { ZIO.collectAll }
+      .map { _.flatten }
       .map { certificates =>
-        val certificatesAsSources = certificates.flatten
+        val certificatesAsSources = certificates
           .map { InformationSource.BuildingEnergyRatingCertificate.apply }
 
-        adverts.copy(sources = adverts.sources ++ certificatesAsSources)
+        adverts.copy(
+          propertyBuildingEnergyRating = certificates.headOption.map(_.rating),
+          propertyBuildingEnergyRatingCertificateNumber =
+            certificates.headOption.map(_.number.value),
+          propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+            certificates.headOption
+              .map(_.energyRating.value)
+              .map(BigDecimal(_)),
+          sources = adverts.sources ++ certificatesAsSources
+        )
       }
 
   def run =

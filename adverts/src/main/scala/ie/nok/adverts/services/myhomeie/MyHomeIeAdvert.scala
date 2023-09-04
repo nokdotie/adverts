@@ -34,6 +34,9 @@ object MyHomeIeAdvert {
         .fold(BigDecimal(0)) { _.value },
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
+      propertyBuildingEnergyRating = self.buildingEnergyRating,
+      propertyBuildingEnergyRatingCertificateNumber = None,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
       sources = List(InformationSource.MyHomeIeAdvert(self)),
       createdAt = self.createdAt
     )

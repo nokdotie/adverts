@@ -36,6 +36,11 @@ object DngIeAdvert {
         .fold(BigDecimal(0)) { _.value },
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
+      propertyBuildingEnergyRating = self.buildingEnergyRating,
+      propertyBuildingEnergyRatingCertificateNumber =
+        self.buildingEnergyRatingCertificateNumber,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.DngIeAdvert(self)),
       createdAt = self.createdAt
     )
