@@ -1,7 +1,8 @@
 package ie.nok.adverts.scraper.dngie
 
+import ie.nok.adverts.Advert
+import ie.nok.adverts.services.dngie.DngIeAdvert
 import ie.nok.ber.Rating
-import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -106,20 +107,8 @@ object Properties {
       )
       .retry(recurs(3) && fixed(1.second))
 
-  private def toAdvert(
-      property: ResponseDataProperty
-  ): Advert = {
-    val coordinates = Coordinates(
-      latitude = property.latitude,
-      longitude = property.longitude
-    )
-
-    val imageUrls =
-      property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
-        image => image.url.orElse(image.srcUrl)
-      }
-
-    val sizeUnit = property.floorarea_type
+  private def size(property: ResponseDataProperty): Option[Area] =
+    property.floorarea_type
       .flatMap {
         case "squareMetres" => Option(AreaUnit.SquareMetres)
         case "squareFeet"   => Option(AreaUnit.SquareFeet)
@@ -131,23 +120,72 @@ object Properties {
             s"Unknown floorarea_type: $other, ${property.property_url}"
           )
       }
+      .map { unit =>
+        Area(BigDecimal(property.floorarea_min), unit)
+      }
 
-    val size = sizeUnit.map { unit =>
-      Area(BigDecimal(property.floorarea_min), unit)
-    }
+  private def ber(
+      property: ResponseDataProperty
+  ): (Option[Rating], Option[Int], Option[BigDecimal]) =
+    property.extras
+      .flatMap { _.extrasField }
+      .fold((None, None, None)) { extrasField =>
+        val rating = extrasField.pBERRating
+          .flatMap { Rating.tryFromString(_).toOption }
 
-    val sizeInSqtMtr = size.map { Area.toSquareMetres(_).value }
+        val certificateNumber = extrasField.pBERNumber
+          .flatMap {
+            case Json.Str(value) => value.toIntOption
+            case Json.Num(value) => Option(value.intValue)
+            case other =>
+              throw Throwable(s"Unexpected type for pBERNumber: $other")
+          }
 
-    Advert(
-      advertUrl = property.property_url,
-      advertPriceInEur = property.price.getOrElse(0),
-      propertyAddress = property.display_address,
-      propertyCoordinates = coordinates,
-      propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.zero),
-      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
-      propertyBedroomsCount = property.bedroom.getOrElse(0),
-      propertyBathroomsCount = property.bathroom.getOrElse(0),
+        val energyRatingInKWhPerSqtMtrPerYear = extrasField.pEPI
+          .flatMap {
+            case Json.Str(value) =>
+              value.trim
+                .takeWhile { char => char.isDigit || char == '.' }
+                .pipe { value => Try { BigDecimal(value) } }
+                .toOption
+            case Json.Num(value) => Option(BigDecimal(value))
+            case other =>
+              throw Throwable(s"Unexpected type for pEPI: $other")
+          }
+
+        (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
+      }
+
+  private def toDngIeAdvert(
+      property: ResponseDataProperty
+  ): DngIeAdvert = {
+    val coordinates = Coordinates(
+      latitude = property.latitude,
+      longitude = property.longitude
+    )
+
+    val imageUrls =
+      property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
+        image => image.url.orElse(image.srcUrl)
+      }
+
+    val (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear) = ber(
+      property
+    )
+
+    DngIeAdvert(
+      url = property.property_url,
+      priceInEur = property.price,
+      address = property.display_address,
+      coordinates = coordinates,
+      imageUrls = imageUrls,
+      size = size(property),
+      bedroomsCount = property.bedroom,
+      bathroomsCount = property.bathroom,
+      buildingEnergyRating = rating,
+      buildingEnergyRatingCertificateNumber = certificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        energyRatingInKWhPerSqtMtrPerYear,
       createdAt = Instant.now()
     )
   }
@@ -162,5 +200,6 @@ object Properties {
       .map { _.data.properties.flatten }
       .takeWhile { _.nonEmpty }
       .flattenIterables
-      .map { toAdvert }
+      .map { toDngIeAdvert }
+      .map { DngIeAdvert.toAdvert }
 }

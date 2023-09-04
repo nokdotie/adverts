@@ -1,7 +1,8 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
+import ie.nok.adverts.Advert
+import ie.nok.adverts.services.sherryfitzie.SherryFitzIeAdvert
 import ie.nok.ber.Rating
-import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -27,18 +28,18 @@ object Property {
       .requestBodyAsHtml(url)
       .retry(recurs(3) && fixed(1.second))
 
-  private def parseResponse(
-      url: String,
-      coordinates: Coordinates,
-      html: Document
-  ): Advert = {
-    val price = html
-      .select(".property-price")
+  private def documentToIntOption(
+      html: Document,
+      cssQuery: String
+  ): Option[Int] =
+    html
+      .select(cssQuery)
       .text
       .filter(_.isDigit)
       .toIntOption
 
-    val address = html
+  private def address(html: Document): String =
+    html
       .select(".property-address h1")
       .first
       .pipe { Option.apply }
@@ -48,13 +49,8 @@ object Property {
       .filter { _.nonEmpty }
       .mkString(", ")
 
-    val imageUrls = html
-      .select(".property-image-element img")
-      .asScala
-      .map { _.attr("src") }
-      .toList
-
-    val size = html
+  private def size(html: Document): Option[Area] =
+    html
       .select(".property-stat:contains(sqm)")
       .text
       .filter(_.isDigit)
@@ -62,28 +58,62 @@ object Property {
       .map { BigDecimal.apply }
       .map { Area(_, AreaUnit.SquareMetres) }
 
-    val bedroomsCount = html
-      .select(".property-stat:contains(bed)")
-      .text
-      .filter(_.isDigit)
-      .toIntOption
+  private val ber
+      : Document => (Option[Rating], Option[Int], Option[BigDecimal]) = {
+    val cssQuery =
+      ".property-full-description-container:contains(BER) .property-description"
+    val berRegex = "BER: ([A-G][1-3]?)".r
+    val berCertificateNumberRegex = "BER Number: ([0-9]+)".r
+    val berEnergyRatingRegex =
+      "Energy Performance Indicator: ([0-9]+\\.?[0-9]+)".r
 
-    val bathroomsCount = html
-      .select(".property-stat:contains(bath)")
-      .text
-      .filter(_.isDigit)
-      .toIntOption
+    html => {
+      val text = html
+        .select(cssQuery)
+        .text
 
-    Advert(
-      advertUrl = url,
-      advertPriceInEur = price.getOrElse(0),
-      propertyAddress = address,
-      propertyCoordinates = coordinates,
-      propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.zero),
-      propertySizeInSqtMtr = size.map(_.value).getOrElse(0),
-      propertyBedroomsCount = bedroomsCount.getOrElse(0),
-      propertyBathroomsCount = bathroomsCount.getOrElse(0),
+      (
+        berRegex
+          .findFirstMatchIn(text)
+          .map { _.group(1) }
+          .flatMap { Rating.tryFromString(_).toOption },
+        berCertificateNumberRegex
+          .findFirstMatchIn(text)
+          .flatMap { _.group(1).toIntOption },
+        berEnergyRatingRegex
+          .findFirstMatchIn(text)
+          .map { _.group(1) }
+          .flatMap { value => Try { BigDecimal(value) }.toOption }
+      )
+    }
+  }
+
+  private def toSherryFitzIeAdvert(
+      url: String,
+      coordinates: Coordinates,
+      html: Document
+  ): SherryFitzIeAdvert = {
+    val imageUrls = html
+      .select(".property-image-element img")
+      .asScala
+      .map { _.attr("src") }
+      .toList
+
+    val (rating, certificateNumber, energyRating) = ber(html)
+
+    SherryFitzIeAdvert(
+      url = url,
+      priceInEur = documentToIntOption(html, ".property-price"),
+      address = address(html),
+      coordinates = coordinates,
+      imageUrls = imageUrls,
+      size = size(html),
+      bedroomsCount = documentToIntOption(html, ".property-stat:contains(bed)"),
+      bathroomsCount =
+        documentToIntOption(html, ".property-stat:contains(bath)"),
+      buildingEnergyRating = rating,
+      buildingEnergyRatingCertificateNumber = certificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = energyRating,
       createdAt = Instant.now()
     )
   }
@@ -96,6 +126,7 @@ object Property {
       .mapZIOParUnordered(5) { (url, coordinate) =>
         getResponse(url).map { (url, coordinate, _) }
       }
-      .map { parseResponse.tupled }
+      .map { toSherryFitzIeAdvert.tupled }
+      .map { SherryFitzIeAdvert.toAdvert }
 
 }

@@ -1,6 +1,7 @@
 package ie.nok.adverts.scraper.propertypalcom
 
 import ie.nok.zio.ZIO
+import ie.nok.unit.Area
 import munit.FunSuite
 import scala.util.chaining.scalaUtilChainingOps
 import zio.json.readJsonLinesAs
@@ -12,8 +13,11 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/8-sea-breeze-heights-clonakilty.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toAdvert }
-        .map { _.propertySizeInSqtMtr }
+        .map { Property.toPropertyPalComAdvert }
+        .map { _.size }
+        .collectSome
+        .map { Area.toSquareMetres }
+        .map { _.value }
         .runHead
         .someOrFailException
         .pipe { ZIO.unsafeRun(_) }
@@ -28,8 +32,11 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/the-riggins-dunshaughlin.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toAdvert }
-        .map { _.propertySizeInSqtMtr }
+        .map { Property.toPropertyPalComAdvert }
+        .map { _.size }
+        .collectSome
+        .map { Area.toSquareMetres }
+        .map { _.value }
         .runHead
         .someOrFailException
         .pipe { ZIO.unsafeRun(_) }
@@ -44,8 +51,11 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toAdvert }
-        .map { _.propertySizeInSqtMtr }
+        .map { Property.toPropertyPalComAdvert }
+        .map { _.size }
+        .collectSome
+        .map { Area.toSquareMetres }
+        .map { _.value }
         .runHead
         .someOrFailException
         .pipe { ZIO.unsafeRun(_) }

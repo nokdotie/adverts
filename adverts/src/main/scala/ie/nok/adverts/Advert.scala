@@ -16,6 +16,7 @@ case class Advert(
     propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,
+    sources: List[InformationSource],
     createdAt: Instant
 )
 

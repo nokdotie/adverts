@@ -1,7 +1,8 @@
 package ie.nok.adverts.scraper.propertypalcom
 
+import ie.nok.adverts.Advert
+import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
 import ie.nok.ber.Rating
-import ie.nok.adverts._
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -80,24 +81,19 @@ object Property {
       .requestBodyAsJson(url)
       .retry(recurs(3) && fixed(1.second))
 
-  protected[propertypalcom] def toAdvert(
-      property: ResponsePagePropsProperty
-  ): Advert = {
-    val price = property.keyInfo
-      .find { _.key == "PRICE" }
+  protected[propertypalcom] def keyInfoTextToInt(
+      property: ResponsePagePropsProperty,
+      key: String
+  ): Option[Int] =
+    property.keyInfo
+      .find { _.key == key }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
 
-    val coordinates = property.coordinate.map { coordinate =>
-      Coordinates(
-        latitude = coordinate.latitude,
-        longitude = coordinate.longitude
-      )
-    }
-
-    val imageUrls = property.images.getOrElse(List.empty).map(_.url)
-
-    val size = property.keyInfo
+  protected[propertypalcom] def size(
+      property: ResponsePagePropsProperty
+  ): Option[Area] =
+    property.keyInfo
       .find { _.key == "SIZE" }
       .flatMap { _.text }
       .map { _.replaceFirst(",", "") }
@@ -116,28 +112,48 @@ object Property {
           )
       }
 
-    val sizeInSqtMtr = size.map { Area.toSquareMetres(_) }.map { _.value }
+  protected[propertypalcom] def ber(
+      property: ResponsePagePropsProperty
+  ): (Option[Rating], Option[BigDecimal]) =
+    property.ber
+      .fold((None, None)) { ber =>
+        (
+          ber.alphanumericRating.flatMap { Rating.tryFromString(_).toOption },
+          ber.energyPerformanceIndicator
+        )
+      }
 
-    val bedroomsCount = property.keyInfo
-      .find { _.key == "BEDROOMS" }
-      .flatMap { _.text }
-      .flatMap { _.filter(_.isDigit).toIntOption }
+  protected[propertypalcom] def toPropertyPalComAdvert(
+      property: ResponsePagePropsProperty
+  ): PropertyPalComAdvert = {
+    val price = keyInfoTextToInt(property, "PRICE")
 
-    val bathroomsCount = property.keyInfo
-      .find { _.key == "BATHROOMS" }
-      .flatMap { _.text }
-      .flatMap { _.filter(_.isDigit).toIntOption }
+    val coordinates = property.coordinate.map { coordinate =>
+      Coordinates(
+        latitude = coordinate.latitude,
+        longitude = coordinate.longitude
+      )
+    }
 
-    Advert(
-      advertUrl = property.shareURL,
-      advertPriceInEur = price.getOrElse(0),
-      propertyAddress = property.displayAddress,
-      propertyCoordinates = coordinates.getOrElse(Coordinates.zero),
-      propertyImageUrls = imageUrls,
-      propertySize = size.getOrElse(Area.zero),
-      propertySizeInSqtMtr = sizeInSqtMtr.getOrElse(0),
-      propertyBedroomsCount = bedroomsCount.getOrElse(0),
-      propertyBathroomsCount = bathroomsCount.getOrElse(0),
+    val imageUrls = property.images.getOrElse(List.empty).map(_.url)
+
+    val bedroomsCount = keyInfoTextToInt(property, "BEDROOMS")
+    val bathroomsCount = keyInfoTextToInt(property, "BATHROOMS")
+
+    val (rating, energyRatingInKWhPerSqtMtrPerYear) = ber(property)
+
+    PropertyPalComAdvert(
+      url = property.shareURL,
+      priceInEur = price,
+      address = property.displayAddress,
+      coordinates = coordinates,
+      imageUrls = imageUrls,
+      size = size(property),
+      bedroomsCount = bedroomsCount,
+      bathroomsCount = bathroomsCount,
+      buildingEnergyRating = rating,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        energyRatingInKWhPerSqtMtrPerYear,
       createdAt = Instant.now
     )
   }
@@ -149,6 +165,7 @@ object Property {
       .map { getApiRequestUrl(buildId, _) }
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.pageProps.property }
-      .map { toAdvert }
+      .map { toPropertyPalComAdvert }
+      .map { PropertyPalComAdvert.toAdvert }
 
 }
