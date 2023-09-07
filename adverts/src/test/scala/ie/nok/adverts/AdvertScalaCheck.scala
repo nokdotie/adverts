@@ -7,7 +7,7 @@ import ie.nok.ber.{Rating, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
-val genAdvert: Gen[Advert] = for {
+private val genAdvert: Gen[Advert] = for {
   advertUrl <- arbitrary[String]
   advertPriceInEur <- arbitrary[Int]
   propertyAddress <- arbitrary[String]
@@ -17,11 +17,11 @@ val genAdvert: Gen[Advert] = for {
   propertySizeInSqtMtr = Area.toSquareMetres(propertySize).value
   propertyBedroomsCount <- arbitrary[Int]
   propertyBathroomsCount <- arbitrary[Int]
-  propertyBuildingEnergyRating = None // <- arbitrary[Option[Rating]]
+  propertyBuildingEnergyRating <- arbitrary[Rating].map { Some(_) }
   propertyBuildingEnergyRatingCertificateNumber <- arbitrary[Option[Int]]
   propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
-  sources = List.empty
+  sources <- arbitrary[List[InformationSource]]
   createdAt <- arbitrary[Instant]
   advert = Advert(
     advertUrl = advertUrl,
@@ -43,5 +43,5 @@ val genAdvert: Gen[Advert] = for {
   )
 } yield advert
 
-implicit val arbArbitrary: Arbitrary[Advert] =
+given Arbitrary[Advert] =
   Arbitrary(genAdvert)
