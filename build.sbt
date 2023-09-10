@@ -1,7 +1,7 @@
 import java.time.format.DateTimeFormatter
 import java.time.{Instant, ZoneOffset}
 
-ThisBuild / scalaVersion := "3.3.0"
+ThisBuild / scalaVersion := "3.3.1"
 ThisBuild / organization := "ie.nok"
 ThisBuild / version := DateTimeFormatter
   .ofPattern("yyyyMMdd.HHmmss.n")
@@ -24,7 +24,7 @@ lazy val adverts = project
     libraryDependencies ++= List(
       "dev.zio" %% "zio" % "2.0.16",
       "dev.zio" %% "zio-http" % "0.0.5",
-      "dev.zio" %% "zio-nio" % "2.0.1",
+      "dev.zio" %% "zio-nio" % "2.0.2",
       "dev.zio" %% "zio-streams" % "2.0.16",
       "ie.nok" %% "scala-libraries" % "20230904.194604.281871280" % "compile->compile;test->test",
       "ie.nok" %% "building-energy-rating" % "20230907.170740.490055653" % "compile->compile;test->test",
