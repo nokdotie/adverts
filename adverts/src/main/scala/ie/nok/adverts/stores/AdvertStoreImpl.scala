@@ -89,7 +89,6 @@ object AdvertStoreImpl {
 }
 
 class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
-
   def getPage(
       filter: AdvertFilter,
       first: Int,

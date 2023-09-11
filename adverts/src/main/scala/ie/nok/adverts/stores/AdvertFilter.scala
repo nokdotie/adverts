@@ -9,24 +9,29 @@ enum AdvertFilter {
   case And(head: AdvertFilter, tail: AdvertFilter*)
   case Or(head: AdvertFilter, tail: AdvertFilter*)
 
-  case PriceInEur(filter: NumericFilter[Int])
-  case Address(filter: StringFilter)
-  case Coordinates(filter: CoordinatesFilter)
-  case SizeInSqtMtr(filter: NumericFilter[BigDecimal])
-  case BedroomsCount(filter: NumericFilter[Int])
-  case BathroomsCount(filter: NumericFilter[Int])
+  case AdvertPriceInEur(filter: NumericFilter[Int])
+  case PropertyIdentifier(filter: StringFilter)
+  case PropertyAddress(filter: StringFilter)
+  case PropertyCoordinates(filter: CoordinatesFilter)
+  case PropertySizeInSqtMtr(filter: NumericFilter[BigDecimal])
+  case PropertyBedroomsCount(filter: NumericFilter[Int])
+  case PropertyBathroomsCount(filter: NumericFilter[Int])
 
   def filter(value: Advert): Boolean = this match {
     case Empty                => true
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case PriceInEur(filter)     => filter.filter(value.advertPriceInEur)
-    case Address(filter)        => filter.filter(value.propertyAddress)
-    case Coordinates(filter)    => filter.filter(value.propertyCoordinates)
-    case SizeInSqtMtr(filter)   => filter.filter(value.propertySizeInSqtMtr)
-    case BedroomsCount(filter)  => filter.filter(value.propertyBedroomsCount)
-    case BathroomsCount(filter) => filter.filter(value.propertyBathroomsCount)
+    case AdvertPriceInEur(filter)    => filter.filter(value.advertPriceInEur)
+    case PropertyIdentifier(filter)  => filter.filter(value.propertyIdentifier)
+    case PropertyAddress(filter)     => filter.filter(value.propertyAddress)
+    case PropertyCoordinates(filter) => filter.filter(value.propertyCoordinates)
+    case PropertySizeInSqtMtr(filter) =>
+      filter.filter(value.propertySizeInSqtMtr)
+    case PropertyBedroomsCount(filter) =>
+      filter.filter(value.propertyBedroomsCount)
+    case PropertyBathroomsCount(filter) =>
+      filter.filter(value.propertyBathroomsCount)
   }
 }
 
@@ -35,16 +40,19 @@ enum StringFilter {
   case And(head: StringFilter, tail: StringFilter*)
   case Or(head: StringFilter, tail: StringFilter*)
 
-  case Contains(filter: String)
-  case StartsWith(filter: String)
+  case Equals(filter: String)
+  case ContainsCaseInsensitive(filter: String)
+  case StartsWithCaseInsensitive(filter: String)
 
   def filter(value: String): Boolean = this match {
     case Empty                => true
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case Contains(filter) => value.toLowerCase().contains(filter.toLowerCase())
-    case StartsWith(filter) =>
+    case Equals(filter) => value == filter
+    case ContainsCaseInsensitive(filter) =>
+      value.toLowerCase().contains(filter.toLowerCase())
+    case StartsWithCaseInsensitive(filter) =>
       value.toLowerCase().startsWith(filter.toLowerCase())
   }
 }

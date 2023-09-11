@@ -6,11 +6,14 @@ import ie.nok.ber.CertificateNumber
 import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
 import ie.nok.gcp.firestore.Firestore
 import ie.nok.gcp.storage.Storage
+import ie.nok.geographic.Coordinates
+import ie.nok.hash.Hasher
 import ie.nok.unit.Area
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.Random
 import zio.{Scope, ZIO, ZIOAppDefault}
+import zio.json.EncoderOps
 import zio.stream.ZStream
 
 object Main extends ZIOAppDefault {
@@ -28,28 +31,36 @@ object Main extends ZIOAppDefault {
         case Nil           => ???
         case advert :: Nil => advert
         case adverts =>
+          val size = adverts
+            .map { _.propertySize }
+            .maxBy { size => Area.toSquareMetres(size).value }
+
           Advert(
             advertUrl = adverts.head.advertUrl,
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
+            propertyIdentifier = adverts.head.propertyIdentifier,
             propertyAddress = adverts.head.propertyAddress,
-            propertyCoordinates = adverts.head.propertyCoordinates,
-            propertyImageUrls = adverts.head.propertyImageUrls,
-            propertySize = adverts.map { _.propertySize }.maxBy { _.value },
-            propertySizeInSqtMtr = adverts
-              .map { _.propertySize }
-              .maxBy { _.value }
-              .pipe { Area.toSquareMetres }
-              .value,
+            propertyCoordinates = adverts
+              .map { _.propertyCoordinates }
+              .find { _ != Coordinates.zero }
+              .getOrElse(Coordinates.zero),
+            propertyImageUrls =
+              adverts.map { _.propertyImageUrls }.maxBy { _.length },
+            propertySize = size,
+            propertySizeInSqtMtr = Area.toSquareMetres(size).value,
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
             propertyBathroomsCount =
               adverts.map { _.propertyBathroomsCount }.max,
             propertyBuildingEnergyRating =
-              adverts.head.propertyBuildingEnergyRating,
-            propertyBuildingEnergyRatingCertificateNumber =
-              adverts.head.propertyBuildingEnergyRatingCertificateNumber,
+              adverts.flatMap { _.propertyBuildingEnergyRating }.headOption,
+            propertyBuildingEnergyRatingCertificateNumber = adverts.flatMap {
+              _.propertyBuildingEnergyRatingCertificateNumber
+            }.headOption,
             propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-              adverts.head.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-            sources = adverts.flatMap { _.sources },
+              adverts.flatMap {
+                _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
+              }.headOption,
+            sources = adverts.flatMap { _.sources }.distinct,
             createdAt = Instant.now
           )
       }

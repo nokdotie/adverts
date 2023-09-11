@@ -10,6 +10,7 @@ import ie.nok.unit.{Area, given}
 private val genAdvert: Gen[Advert] = for {
   advertUrl <- arbitrary[String]
   advertPriceInEur <- arbitrary[Int]
+  propertyIdentifier <- arbitrary[String]
   propertyAddress <- arbitrary[String]
   propertyCoordinates <- arbitrary[Coordinates]
   propertyImageUrls <- arbitrary[List[String]]
@@ -26,6 +27,7 @@ private val genAdvert: Gen[Advert] = for {
   advert = Advert(
     advertUrl = advertUrl,
     advertPriceInEur = advertPriceInEur,
+    propertyIdentifier = propertyIdentifier,
     propertyAddress = propertyAddress,
     propertyCoordinates = propertyCoordinates,
     propertyImageUrls = propertyImageUrls,
