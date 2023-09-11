@@ -6,11 +6,13 @@ import ie.nok.ber.CertificateNumber
 import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
 import ie.nok.gcp.firestore.Firestore
 import ie.nok.gcp.storage.Storage
+import ie.nok.hash.Hasher
 import ie.nok.unit.Area
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.Random
 import zio.{Scope, ZIO, ZIOAppDefault}
+import zio.json.EncoderOps
 import zio.stream.ZStream
 
 object Main extends ZIOAppDefault {
@@ -28,7 +30,10 @@ object Main extends ZIOAppDefault {
         case Nil           => ???
         case advert :: Nil => advert
         case adverts =>
+          val sources = adverts.flatMap { _.sources }.distinct
+
           Advert(
+            identifier = sources.toJson.pipe { Hasher.hash },
             advertUrl = adverts.head.advertUrl,
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyAddress = adverts.head.propertyAddress,
@@ -49,7 +54,7 @@ object Main extends ZIOAppDefault {
               adverts.head.propertyBuildingEnergyRatingCertificateNumber,
             propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
               adverts.head.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-            sources = adverts.flatMap { _.sources },
+            sources = sources,
             createdAt = Instant.now
           )
       }

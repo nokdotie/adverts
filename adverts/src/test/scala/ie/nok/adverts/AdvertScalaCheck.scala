@@ -8,6 +8,7 @@ import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
 private val genAdvert: Gen[Advert] = for {
+  identifier <- arbitrary[String]
   advertUrl <- arbitrary[String]
   advertPriceInEur <- arbitrary[Int]
   propertyAddress <- arbitrary[String]
@@ -24,6 +25,7 @@ private val genAdvert: Gen[Advert] = for {
   sources <- arbitrary[List[InformationSource]]
   createdAt <- arbitrary[Instant]
   advert = Advert(
+    identifier = identifier,
     advertUrl = advertUrl,
     advertPriceInEur = advertPriceInEur,
     propertyAddress = propertyAddress,
