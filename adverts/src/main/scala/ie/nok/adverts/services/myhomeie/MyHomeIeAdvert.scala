@@ -26,7 +26,7 @@ case class MyHomeIeAdvert(
 object MyHomeIeAdvert {
   def toAdvert(self: MyHomeIeAdvert): Advert =
     Advert(
-      identifier = self.toJson.pipe { Hasher.hash },
+      identifier = self.address.pipe { Hasher.hash },
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyAddress = self.address,
