@@ -28,9 +28,9 @@ case class SherryFitzIeAdvert(
 object SherryFitzIeAdvert {
   def toAdvert(self: SherryFitzIeAdvert): Advert =
     Advert(
-      identifier = self.address.pipe { Hasher.hash },
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
+      propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyAddress = self.address,
       propertyCoordinates = self.coordinates,
       propertyImageUrls = self.imageUrls,

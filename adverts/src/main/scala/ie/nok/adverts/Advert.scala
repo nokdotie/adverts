@@ -8,9 +8,9 @@ import java.time.Instant
 import zio.json.{JsonCodec, DeriveJsonCodec}
 
 case class Advert(
-    identifier: String,
     advertUrl: String,
     advertPriceInEur: Int,
+    propertyIdentifier: String,
     propertyAddress: String,
     propertyCoordinates: Coordinates,
     propertyImageUrls: List[String],

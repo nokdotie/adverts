@@ -36,9 +36,9 @@ object Main extends ZIOAppDefault {
             .maxBy { size => Area.toSquareMetres(size).value }
 
           Advert(
-            identifier = adverts.head.identifier,
             advertUrl = adverts.head.advertUrl,
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
+            propertyIdentifier = adverts.head.propertyIdentifier,
             propertyAddress = adverts.head.propertyAddress,
             propertyCoordinates = adverts
               .map { _.propertyCoordinates }

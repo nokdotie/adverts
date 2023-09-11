@@ -26,9 +26,9 @@ case class MyHomeIeAdvert(
 object MyHomeIeAdvert {
   def toAdvert(self: MyHomeIeAdvert): Advert =
     Advert(
-      identifier = self.address.pipe { Hasher.hash },
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
+      propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyAddress = self.address,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = self.imageUrls,
