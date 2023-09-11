@@ -89,11 +89,6 @@ object AdvertStoreImpl {
 }
 
 class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
-  def get(identifier: String): ZIO[Any, Throwable, Option[Advert]] =
-    all
-      .find { _.identifier == identifier }
-      .pipe { ZIO.succeed }
-
   def getPage(
       filter: AdvertFilter,
       first: Int,

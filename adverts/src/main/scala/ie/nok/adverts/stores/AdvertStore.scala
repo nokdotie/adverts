@@ -6,8 +6,6 @@ import zio.{ZIO, ZLayer}
 
 case class AdvertStoreCursor(index: Int)
 trait AdvertStore {
-  def get(identifier: String): ZIO[Any, Throwable, Option[Advert]]
-
   def getPage(
       filter: AdvertFilter,
       first: Int,
@@ -16,9 +14,6 @@ trait AdvertStore {
 }
 
 object AdvertStore {
-  def get(identifier: String): ZIO[AdvertStore, Throwable, Option[Advert]] =
-    ZIO.serviceWithZIO[AdvertStore](_.get(identifier))
-
   def getPage(
       filter: AdvertFilter,
       first: Int,
