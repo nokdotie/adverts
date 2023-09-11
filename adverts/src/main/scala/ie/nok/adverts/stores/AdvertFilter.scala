@@ -9,6 +9,7 @@ enum AdvertFilter {
   case And(head: AdvertFilter, tail: AdvertFilter*)
   case Or(head: AdvertFilter, tail: AdvertFilter*)
 
+  case Identifier(filter: StringFilter)
   case PriceInEur(filter: NumericFilter[Int])
   case Address(filter: StringFilter)
   case Coordinates(filter: CoordinatesFilter)
@@ -21,6 +22,7 @@ enum AdvertFilter {
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
+    case Identifier(filter)     => filter.filter(value.identifier)
     case PriceInEur(filter)     => filter.filter(value.advertPriceInEur)
     case Address(filter)        => filter.filter(value.propertyAddress)
     case Coordinates(filter)    => filter.filter(value.propertyCoordinates)
@@ -35,16 +37,19 @@ enum StringFilter {
   case And(head: StringFilter, tail: StringFilter*)
   case Or(head: StringFilter, tail: StringFilter*)
 
-  case Contains(filter: String)
-  case StartsWith(filter: String)
+  case Equals(filter: String)
+  case ContainsCaseInsensitive(filter: String)
+  case StartsWithCaseInsensitive(filter: String)
 
   def filter(value: String): Boolean = this match {
     case Empty                => true
     case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
 
-    case Contains(filter) => value.toLowerCase().contains(filter.toLowerCase())
-    case StartsWith(filter) =>
+    case Equals(filter) => value == filter
+    case ContainsCaseInsensitive(filter) =>
+      value.toLowerCase().contains(filter.toLowerCase())
+    case StartsWithCaseInsensitive(filter) =>
       value.toLowerCase().startsWith(filter.toLowerCase())
   }
 }
