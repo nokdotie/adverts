@@ -22,7 +22,7 @@ lazy val adverts = project
     githubRepository := "adverts",
     resolvers += Resolver.githubPackages("nok-ie"),
     libraryDependencies ++= List(
-      "dev.zio" %% "zio" % "2.0.16",
+      "dev.zio" %% "zio" % "2.0.17",
       "dev.zio" %% "zio-http" % "0.0.5",
       "dev.zio" %% "zio-nio" % "2.0.2",
       "dev.zio" %% "zio-streams" % "2.0.16",
