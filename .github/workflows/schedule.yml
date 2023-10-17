@@ -10,8 +10,6 @@ jobs:
     name: Scrape
     runs-on: ubuntu-latest
 
-    continue-on-error: true
-
     strategy:
       fail-fast: false
       matrix:
@@ -46,6 +44,7 @@ jobs:
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
 
   aggregate:
+    if: ${{ always() }}
     needs: scrape
 
     name: Aggregate
