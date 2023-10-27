@@ -66,7 +66,7 @@ object Properties {
     DeriveJsonDecoder.gen[ResponseListingListingPoint]
 
   protected[daftie] case class ResponseListingListingBer(
-      rating: String,
+      rating: Option[String],
       code: Option[String],
       epi: Option[String]
   )
@@ -116,7 +116,7 @@ object Properties {
   ): (Option[Rating], Option[Int], Option[BigDecimal]) =
     listing.ber
       .fold((None, None, None)) { ber =>
-        val rating = ber.rating.pipe { Rating.tryFromString }.toOption
+        val rating = ber.rating.flatMap { Rating.tryFromString(_).toOption }
 
         val certificateNumber = ber.code
           .flatMap { _.toIntOption }
