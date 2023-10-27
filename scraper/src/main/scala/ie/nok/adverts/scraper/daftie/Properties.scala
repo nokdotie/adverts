@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.daftie
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.daftie.DaftIeAdvert
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -157,10 +158,13 @@ object Properties {
       buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
     ) = ber(listing)
 
+    val (address, eircode) = Eircode.unzip(listing.title)
+
     DaftIeAdvert(
       url = url,
       priceInEur = price,
-      address = listing.title,
+      address = address,
+      eircode = eircode,
       coordinates = coordinates,
       imageUrls = imageUrls,
       size = size(listing),

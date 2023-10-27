@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.propertypalcom
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}

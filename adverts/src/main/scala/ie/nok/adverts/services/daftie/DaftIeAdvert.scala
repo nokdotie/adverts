@@ -3,6 +3,7 @@ package ie.nok.adverts.services.daftie
 import ie.nok.adverts.{Advert, InformationSource}
 import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
@@ -14,6 +15,7 @@ case class DaftIeAdvert(
     url: String,
     priceInEur: Option[Int],
     address: String,
+    eircode: Option[Eircode],
     coordinates: Coordinates,
     imageUrls: List[String],
     size: Option[Area],
@@ -32,6 +34,7 @@ object DaftIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyAddress = self.address,
+      propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,
       propertyImageUrls = self.imageUrls,
       propertySize = self.size.getOrElse(Area(0, AreaUnit.SquareMetres)),
