@@ -13,7 +13,8 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/8-sea-breeze-heights-clonakilty.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvert }
+        .map { Property.toPropertyPalComAdvertOption }
+        .collectSome
         .map { _.size }
         .collectSome
         .map { Area.toSquareMetres }
@@ -32,7 +33,8 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/the-riggins-dunshaughlin.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvert }
+        .map { Property.toPropertyPalComAdvertOption }
+        .collectSome
         .map { _.size }
         .collectSome
         .map { Area.toSquareMetres }
@@ -51,7 +53,8 @@ class PropertySuite extends FunSuite {
       "scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
         .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvert }
+        .map { Property.toPropertyPalComAdvertOption }
+        .collectSome
         .map { _.size }
         .collectSome
         .map { Area.toSquareMetres }

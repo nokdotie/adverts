@@ -132,14 +132,15 @@ object Property {
     val price = keyInfoTextToIntOption(property, "PRICE")
 
     val coordinates = property.coordinate
-    .flatMap { coordinate =>
-      coordinate.latitude.zip(coordinate.longitude) }
-    .map { (latitude, longitude) =>
-      Coordinates(
-        latitude = latitude,
-        longitude = longitude
-      )
-    }
+      .flatMap { coordinate =>
+        coordinate.latitude.zip(coordinate.longitude)
+      }
+      .map { (latitude, longitude) =>
+        Coordinates(
+          latitude = latitude,
+          longitude = longitude
+        )
+      }
 
     val imageUrls = property.images.getOrElse(List.empty).map(_.url)
 
