@@ -3,6 +3,7 @@ package ie.nok.adverts
 import ie.nok.ber.Rating
 import ie.nok.geographic.Coordinates
 import ie.nok.geographic.geojson.Feature
+import ie.nok.ecad.Eircode
 import ie.nok.unit.Area
 import java.time.Instant
 import zio.json.{JsonCodec, DeriveJsonCodec}
@@ -12,6 +13,7 @@ case class Advert(
     advertPriceInEur: Int,
     propertyIdentifier: String,
     propertyAddress: String,
+    propertyEircode: Option[Eircode],
     propertyCoordinates: Coordinates,
     propertyImageUrls: List[String],
     propertySize: Area,

@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.dngie
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.dngie.DngIeAdvert
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -173,10 +174,13 @@ object Properties {
       property
     )
 
+    val (address, eircode) = Eircode.unzip(property.display_address)
+
     DngIeAdvert(
       url = property.property_url,
       priceInEur = property.price,
-      address = property.display_address,
+      address = address,
+      eircode = eircode,
       coordinates = coordinates,
       imageUrls = imageUrls,
       size = size(property),

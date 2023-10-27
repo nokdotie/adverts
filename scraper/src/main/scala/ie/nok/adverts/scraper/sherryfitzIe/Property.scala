@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.sherryfitzie
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.sherryfitzie.SherryFitzIeAdvert
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -38,7 +39,7 @@ object Property {
       .filter(_.isDigit)
       .toIntOption
 
-  private def address(html: Document): String =
+  private def addressAndEircode(html: Document): (String, Option[Eircode]) =
     html
       .select(".property-address h1")
       .first
@@ -48,6 +49,7 @@ object Property {
       .map { _.trim }
       .filter { _.nonEmpty }
       .mkString(", ")
+      .pipe(Eircode.unzip)
 
   private def size(html: Document): Option[Area] =
     html
@@ -101,10 +103,13 @@ object Property {
 
     val (rating, certificateNumber, energyRating) = ber(html)
 
+    val (address, eircode) = addressAndEircode(html)
+
     SherryFitzIeAdvert(
       url = url,
       priceInEur = documentToIntOption(html, ".property-price"),
-      address = address(html),
+      address = address,
+      eircode = eircode,
       coordinates = coordinates,
       imageUrls = imageUrls,
       size = size(html),

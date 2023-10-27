@@ -30,6 +30,7 @@ object MyHomeIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyAddress = self.address,
+      propertyEircode = None,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = self.imageUrls,
       propertySize = self.size.getOrElse(Area(0, AreaUnit.SquareMetres)),

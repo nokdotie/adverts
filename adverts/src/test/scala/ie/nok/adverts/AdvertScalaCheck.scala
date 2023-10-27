@@ -4,6 +4,7 @@ import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
 import ie.nok.ber.{Rating, given}
+import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
@@ -12,6 +13,7 @@ private val genAdvert: Gen[Advert] = for {
   advertPriceInEur <- arbitrary[Int]
   propertyIdentifier <- arbitrary[String]
   propertyAddress <- arbitrary[String]
+  propertyEircode <- arbitrary[Option[Eircode]]
   propertyCoordinates <- arbitrary[Coordinates]
   propertyImageUrls <- arbitrary[List[String]]
   propertySize <- arbitrary[Area]
@@ -29,6 +31,7 @@ private val genAdvert: Gen[Advert] = for {
     advertPriceInEur = advertPriceInEur,
     propertyIdentifier = propertyIdentifier,
     propertyAddress = propertyAddress,
+    propertyEircode = propertyEircode,
     propertyCoordinates = propertyCoordinates,
     propertyImageUrls = propertyImageUrls,
     propertySize = propertySize,
