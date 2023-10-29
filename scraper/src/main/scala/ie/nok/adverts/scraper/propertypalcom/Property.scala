@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.propertypalcom
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
 import ie.nok.ber.Rating
+import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
@@ -29,8 +30,8 @@ object Property {
   protected[propertypalcom] case class ResponsePagePropsProperty(
       displayAddress: String,
       images: Option[List[ResponsePagePropsPropertyImage]],
-      keyInfo: List[ResponsePagePropsPropertyKeyInfo],
-      shareURL: String,
+      keyInfo: Option[List[ResponsePagePropsPropertyKeyInfo]],
+      shareURL: Option[String],
       coordinate: Option[ResponsePagePropsPropertyCoordinate],
       ber: Option[ResponsePagePropsPropertyBer]
   )
@@ -53,8 +54,8 @@ object Property {
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyImage]
 
   protected[propertypalcom] case class ResponsePagePropsPropertyCoordinate(
-      latitude: BigDecimal,
-      longitude: BigDecimal
+      latitude: Option[BigDecimal],
+      longitude: Option[BigDecimal]
   )
   protected[propertypalcom] given JsonDecoder[
     ResponsePagePropsPropertyCoordinate
@@ -81,11 +82,12 @@ object Property {
       .requestBodyAsJson(url)
       .retry(recurs(3) && fixed(1.second))
 
-  protected[propertypalcom] def keyInfoTextToInt(
+  protected[propertypalcom] def keyInfoTextToIntOption(
       property: ResponsePagePropsProperty,
       key: String
   ): Option[Int] =
     property.keyInfo
+      .getOrElse(List.empty)
       .find { _.key == key }
       .flatMap { _.text }
       .flatMap { _.filter(_.isDigit).toIntOption }
@@ -94,6 +96,7 @@ object Property {
       property: ResponsePagePropsProperty
   ): Option[Area] =
     property.keyInfo
+      .getOrElse(List.empty)
       .find { _.key == "SIZE" }
       .flatMap { _.text }
       .map { _.replaceFirst(",", "") }
@@ -123,39 +126,48 @@ object Property {
         )
       }
 
-  protected[propertypalcom] def toPropertyPalComAdvert(
+  protected[propertypalcom] def toPropertyPalComAdvertOption(
       property: ResponsePagePropsProperty
-  ): PropertyPalComAdvert = {
-    val price = keyInfoTextToInt(property, "PRICE")
+  ): Option[PropertyPalComAdvert] = {
+    val price = keyInfoTextToIntOption(property, "PRICE")
 
-    val coordinates = property.coordinate.map { coordinate =>
-      Coordinates(
-        latitude = coordinate.latitude,
-        longitude = coordinate.longitude
-      )
-    }
+    val coordinates = property.coordinate
+      .flatMap { coordinate =>
+        coordinate.latitude.zip(coordinate.longitude)
+      }
+      .map { (latitude, longitude) =>
+        Coordinates(
+          latitude = latitude,
+          longitude = longitude
+        )
+      }
 
     val imageUrls = property.images.getOrElse(List.empty).map(_.url)
 
-    val bedroomsCount = keyInfoTextToInt(property, "BEDROOMS")
-    val bathroomsCount = keyInfoTextToInt(property, "BATHROOMS")
+    val bedroomsCount = keyInfoTextToIntOption(property, "BEDROOMS")
+    val bathroomsCount = keyInfoTextToIntOption(property, "BATHROOMS")
 
     val (rating, energyRatingInKWhPerSqtMtrPerYear) = ber(property)
 
-    PropertyPalComAdvert(
-      url = property.shareURL,
-      priceInEur = price,
-      address = property.displayAddress,
-      coordinates = coordinates,
-      imageUrls = imageUrls,
-      size = size(property),
-      bedroomsCount = bedroomsCount,
-      bathroomsCount = bathroomsCount,
-      buildingEnergyRating = rating,
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        energyRatingInKWhPerSqtMtrPerYear,
-      createdAt = Instant.now
-    )
+    val (address, eircode) = Eircode.unzip(property.displayAddress)
+
+    property.shareURL.map { url =>
+      PropertyPalComAdvert(
+        url = url,
+        priceInEur = price,
+        address = address,
+        eircode = eircode,
+        coordinates = coordinates,
+        imageUrls = imageUrls,
+        size = size(property),
+        bedroomsCount = bedroomsCount,
+        bathroomsCount = bathroomsCount,
+        buildingEnergyRating = rating,
+        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+          energyRatingInKWhPerSqtMtrPerYear,
+        createdAt = Instant.now
+      )
+    }
   }
 
   def pipeline(
@@ -165,7 +177,8 @@ object Property {
       .map { getApiRequestUrl(buildId, _) }
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.pageProps.property }
-      .map { toPropertyPalComAdvert }
+      .map { toPropertyPalComAdvertOption }
+      .collectSome
       .map { PropertyPalComAdvert.toAdvert }
 
 }
