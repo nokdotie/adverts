@@ -18,9 +18,9 @@ lazy val root = project
 
 lazy val adverts = project
   .settings(
-    githubOwner := "nok-ie",
+    githubOwner := "nokdotie",
     githubRepository := "adverts",
-    resolvers += Resolver.githubPackages("nok-ie"),
+    resolvers += Resolver.githubPackages("nokdotie"),
     libraryDependencies ++= List(
       "dev.zio" %% "zio" % "2.0.18",
       "dev.zio" %% "zio-http" % "0.0.5",
