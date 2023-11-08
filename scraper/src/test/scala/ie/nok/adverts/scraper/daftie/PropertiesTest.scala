@@ -5,19 +5,21 @@ import munit.FunSuite
 import scala.util.chaining.scalaUtilChainingOps
 import zio.json.readJsonLinesAs
 
-class PropertySuite extends FunSuite {
+class PropertiesTest extends FunSuite {
+  
   test("Parse properties") {
     val result =
-      "scraper/src/test/resourses/daftie/listing.json"
+      getClass.getResource("/daftie/listing.json")
         .pipe { readJsonLinesAs[Properties.Response](_) }
         .mapConcat { _.listings }
         .map { _.listing }
         .map { Properties.toDaftIeAdvert }
         .runCollect
-        .pipe { ZIO.unsafeRun(_) }
+        .pipe { ZIO.unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
-    assert(result.nonEmpty)
+    // println(result.toList.mkString("\n"))
+    assertEquals(result.size, 20)
   }
 
 }
