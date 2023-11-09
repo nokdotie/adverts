@@ -19,18 +19,14 @@ import scala.util.Try
 
 object DaftProperties {
 
-  private val streamApiRequestContent = {
-    val pageSize = 100
+  protected[daftie] def streamApiRequestContent(pageSize: Int = 100): ZStream[Any, Nothing, String] =
     ZStream
       .iterate(0)(_ + pageSize)
       .map { from =>
         s"""{"section":"residential-for-sale","filters":[{"name":"adState","values":["published"]}],"andFilters":[],"ranges":[],"paging":{"from":"$from","pageSize":"$pageSize"},"geoFilter":{},"terms":""}"""
       }
-  }
 
-  private def getApiResponse(
-      content: String
-  ): ZIO[ZioClient, Throwable, DaftResponse] = {
+  protected[daftie] def getApiResponse(content: String): ZIO[ZioClient, Throwable, DaftResponse] = {
 
     val brandHeader       = Headers("brand", "daft")
     val platformHeader    = Headers("platform", "web")
@@ -45,6 +41,19 @@ object DaftProperties {
       )
       .retry(recurs(3) && fixed(1.second))
   }
+
+  protected[daftie] val httpStream: ZStream[ZioClient, Throwable, DaftResponse] =
+    streamApiRequestContent()
+      .mapZIOParUnordered(5) { getApiResponse }
+      .takeWhile { _.listings.nonEmpty }
+
+  protected[daftie] def toAdvert(daftResponse: DaftResponse): List[AdvertV2] =
+    daftResponse.listings
+      .map { _.listing }
+      .map { toDaftIeAdvert }
+      .map { DaftIeAdvertV2.toAdvert }
+
+  val stream: ZStream[ZioClient, Throwable, AdvertV2] = httpStream.mapConcat(toAdvert)
 
   private def size(listing: Listing): Option[Area] = {
     val value = listing.floorArea
@@ -66,7 +75,7 @@ object DaftProperties {
   ): (Option[Rating], Option[Int], Option[BigDecimal]) =
     listing.ber
       .fold((None, None, None)) { ber =>
-        val rating = ber.rating.flatMap {Rating.tryFromString(_).toOption}
+        val rating            = ber.rating.flatMap { Rating.tryFromString(_).toOption }
         val certificateNumber = ber.code.flatMap { _.toIntOption }
         val energyRatingInKWhPerSqtMtrPerYear = ber.epi
           .map { _.takeWhile { char => char.isDigit || char == '.' } }
@@ -124,14 +133,4 @@ object DaftProperties {
       createdAt = Instant.now
     )
   }
-
-  val stream: ZStream[ZioClient, Throwable, AdvertV2] =
-    streamApiRequestContent
-      .mapZIOParUnordered(5) { getApiResponse }
-      .map { _.listings }
-      .takeWhile { _.nonEmpty }
-      .flattenIterables
-      .map { _.listing }
-      .map { toDaftIeAdvert }
-      .map { DaftIeAdvertV2.toAdvert }
 }
