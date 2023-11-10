@@ -22,9 +22,7 @@ object DaftProperties {
   protected[daftie] def streamApiRequestContent(pageSize: Int = 100): ZStream[Any, Nothing, String] =
     ZStream
       .iterate(0)(_ + pageSize)
-      .map { from =>
-        s"""{"section":"residential-for-sale","filters":[{"name":"adState","values":["published"]}],"andFilters":[],"ranges":[],"paging":{"from":"$from","pageSize":"$pageSize"},"geoFilter":{},"terms":""}"""
-      }
+      .map { from => DaftPropertyRequestBody.paginatedStr(from, pageSize) }
 
   protected[daftie] def getApiResponse(content: String): ZIO[ZioClient, Throwable, DaftResponse] = {
 

@@ -11,8 +11,9 @@ import scala.util.chaining.scalaUtilChainingOps
 class DaftPropertiesHttpTest extends FunSuite {
 
   private def httpStream(): ZStream[ZioClient, Throwable, AdvertV2] = DaftProperties
-    .streamApiRequestContent(pageSize = 10)
+    .streamApiRequestContent(pageSize = 2)
     .mapZIO { DaftProperties.getApiResponse }
+    .takeWhile(_.listings.nonEmpty)
     .take(2) // take specific number of pages for testing
     .mapConcat(DaftProperties.toAdvert)
 
@@ -27,6 +28,6 @@ class DaftPropertiesHttpTest extends FunSuite {
       .getOrElse { cause => fail(s"Unsafe run failed: $cause.") }
 
     // println(result.mkString("\n"))
-    assertEquals(result.size, 20)
+    assertEquals(result.size, 4)
   }
 }
