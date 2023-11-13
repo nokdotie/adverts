@@ -19,7 +19,6 @@ case class AdvertV2(
     propertyCoordinates: Coordinates,
     propertyImageUrls: List[String],
     propertySize: Area,
-    propertySizeInSqtMtr: BigDecimal,
     propertyBedroomsCount: Int,
     propertyBathroomsCount: Int,
     propertyBuildingEnergyRating: Option[Rating],

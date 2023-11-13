@@ -7,8 +7,6 @@ import munit.FunSuite
 import zio.Chunk
 import zio.json.readJsonLinesAs
 import zio.stream.ZStream
-import zio.http.{Body, Client as ZioClient}
-import munit.Clue.generate
 
 import scala.util.chaining.scalaUtilChainingOps
 

@@ -40,7 +40,6 @@ object DaftIeAdvertV2 {
       propertyCoordinates = self.coordinates,
       propertyImageUrls = self.imageUrls,
       propertySize = self.size.getOrElse(Area(0, AreaUnit.SquareMetres)),
-      propertySizeInSqtMtr = self.size.map { Area.toSquareMetres }.fold(BigDecimal(0)) { _.value },
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
       propertyBuildingEnergyRating = self.buildingEnergyRating,

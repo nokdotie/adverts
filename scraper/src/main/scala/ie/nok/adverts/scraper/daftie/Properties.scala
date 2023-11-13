@@ -86,8 +86,8 @@ object Properties {
   protected[daftie] def getApiResponse(
       content: String
   ): ZIO[ZioClient, Throwable, Response] = {
-    val brandHeader = Headers("brand", "daft")
-    val platformHeader = Headers("platform", "web")
+    val brandHeader       = Headers("brand", "daft")
+    val platformHeader    = Headers("platform", "web")
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
@@ -131,7 +131,7 @@ object Properties {
   protected[daftie] def toDaftIeAdvert(
       listing: ResponseListingListing
   ): DaftIeAdvert = {
-    val url = s"https://www.daft.ie${listing.seoFriendlyPath}"
+    val url   = s"https://www.daft.ie${listing.seoFriendlyPath}"
     val price = listing.price.filter(_.isDigit).toIntOption
 
     val coordinates = Coordinates(
@@ -171,10 +171,8 @@ object Properties {
       bedroomsCount = bedroomCount,
       bathroomsCount = bathroomCount,
       buildingEnergyRating = buildingEnergyRating,
-      buildingEnergyRatingCertificateNumber =
-        buildingEnergyRatingCertificateNumber,
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      buildingEnergyRatingCertificateNumber = buildingEnergyRatingCertificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       createdAt = Instant.now
     )
   }

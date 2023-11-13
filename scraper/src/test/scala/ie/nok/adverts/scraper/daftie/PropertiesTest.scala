@@ -6,7 +6,7 @@ import scala.util.chaining.scalaUtilChainingOps
 import zio.json.readJsonLinesAs
 
 class PropertiesTest extends FunSuite {
-  
+
   test("Parse properties") {
     val result =
       "scraper/src/test/resourses/daftie/listing.json"

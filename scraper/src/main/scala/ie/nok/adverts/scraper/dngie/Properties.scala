@@ -166,8 +166,8 @@ object Properties {
     )
 
     val imageUrls =
-      property.images.getOrElse(List.empty).sortBy { _.order }.flatMap {
-        image => image.url.orElse(image.srcUrl)
+      property.images.getOrElse(List.empty).sortBy { _.order }.flatMap { image =>
+        image.url.orElse(image.srcUrl)
       }
 
     val (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear) = ber(
@@ -188,8 +188,7 @@ object Properties {
       bathroomsCount = property.bathroom,
       buildingEnergyRating = rating,
       buildingEnergyRatingCertificateNumber = certificateNumber,
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        energyRatingInKWhPerSqtMtrPerYear,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = energyRatingInKWhPerSqtMtrPerYear,
       createdAt = Instant.now()
     )
   }
