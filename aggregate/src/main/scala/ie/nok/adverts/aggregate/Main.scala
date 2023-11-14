@@ -1,23 +1,22 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.adverts.stores.AdvertStoreImpl
+import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.ber.CertificateNumber
 import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
 import ie.nok.gcp.firestore.Firestore
 import ie.nok.gcp.storage.Storage
 import ie.nok.geographic.Coordinates
-import ie.nok.hash.Hasher
 import ie.nok.unit.Area
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import scala.util.Random
-import zio.{Scope, ZIO, ZIOAppDefault}
-import zio.json.EncoderOps
 import zio.stream.ZStream
+import zio.{Scope, ZIO, ZIOAppDefault}
+
+import java.time.Instant
+import scala.util.Random
+import scala.util.chaining.scalaUtilChainingOps
 
 object Main extends ZIOAppDefault {
-  val latest: ZIO[Storage, Throwable, List[Advert]] =
+  private val latest: ZIO[Storage, Throwable, List[Advert]] =
     AdvertService.values.toList
       .map { AdvertStoreImpl.readAndDecodeLatestForService }
       .pipe { ZIO.collectAll }
@@ -62,6 +61,7 @@ object Main extends ZIOAppDefault {
                 _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
               }.headOption,
             sources = adverts.flatMap { _.sources }.distinct,
+            seller = adverts.flatMap(_.seller).headOption, // taking first not null seller
             createdAt = Instant.now
           )
       }

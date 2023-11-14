@@ -7,6 +7,7 @@ import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
+import ie.nok.adverts.{Seller, given}
 
 private val genAdvert: Gen[Advert] = for {
   advertUrl <- arbitrary[String]
@@ -25,6 +26,7 @@ private val genAdvert: Gen[Advert] = for {
   propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
   sources <- arbitrary[List[InformationSource]]
+  seller <- arbitrary[Option[Seller]]
   createdAt <- arbitrary[Instant]
   advert = Advert(
     advertUrl = advertUrl,
@@ -44,6 +46,7 @@ private val genAdvert: Gen[Advert] = for {
     propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
     sources = sources,
+    seller = seller,
     createdAt = createdAt
   )
 } yield advert
