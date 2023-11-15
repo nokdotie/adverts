@@ -90,7 +90,8 @@ object Properties {
   protected[daftie] given JsonDecoder[ResponseListingListingBer] =
     DeriveJsonDecoder.gen[ResponseListingListingBer]
 
-  protected[daftie] val streamApiRequestContent: ZStream[Any, Nothing, String] = {
+  protected[daftie] val streamApiRequestContent
+      : ZStream[Any, Nothing, String] = {
     val pageSize = 100
     ZStream
       .iterate(0)(_ + pageSize)
