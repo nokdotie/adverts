@@ -47,6 +47,7 @@ object PropertyPalComAdvert {
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
         self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.PropertyPalComAdvert(self)),
+      seller = None,
       createdAt = self.createdAt
     )
 
