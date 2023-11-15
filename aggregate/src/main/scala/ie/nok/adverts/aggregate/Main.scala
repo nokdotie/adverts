@@ -61,10 +61,9 @@ object Main extends ZIOAppDefault {
                 _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
               }.headOption,
             sources = adverts.flatMap { _.sources }.distinct,
-            seller =
-              adverts
-                .flatMap(_.seller)
-                .headOption, // taking first not null seller
+            seller = adverts
+              .flatMap(_.seller)
+              .headOption, // taking first not null seller
             createdAt = Instant.now
           )
       }
