@@ -68,7 +68,7 @@ object Properties {
   protected[daftie] case class ResponseListingListingSeller(
       sellerId: Int,
       name: String,
-      phone: String,
+      phone: Option[String],
       alternativePhone: Option[String],
       address: Option[String],
       branch: Option[String],
