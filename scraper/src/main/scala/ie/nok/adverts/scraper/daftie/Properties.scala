@@ -152,7 +152,7 @@ object Properties {
   ): Option[Seller] = {
     listing.seller.map { seller =>
       Seller(
-        sellerId = Hasher.hash(seller.licenceNumber.getOrElse(UUID.randomUUID().toString)),
+        sellerId = Hasher.hash(seller.licenceNumber.getOrElse(seller.name)),
         name = seller.name,
         phone = seller.phone,
         alternativePhone = seller.alternativePhone,
