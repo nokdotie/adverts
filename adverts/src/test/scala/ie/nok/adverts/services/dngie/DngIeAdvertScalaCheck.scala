@@ -9,16 +9,16 @@ import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
 private val genDngIeAdvert: Gen[DngIeAdvert] = for {
-  url <- arbitrary[String]
-  priceInEur <- arbitrary[Option[Int]]
-  address <- arbitrary[String]
-  eircode <- arbitrary[Option[Eircode]]
-  coordinates <- arbitrary[Coordinates]
-  imageUrls <- arbitrary[List[String]]
-  size <- arbitrary[Option[Area]]
-  bedroomsCount <- arbitrary[Option[Int]]
-  bathroomsCount <- arbitrary[Option[Int]]
-  buildingEnergyRating <- arbitrary[Option[Rating]]
+  url                                   <- arbitrary[String]
+  priceInEur                            <- arbitrary[Option[Int]]
+  address                               <- arbitrary[String]
+  eircode                               <- arbitrary[Option[Eircode]]
+  coordinates                           <- arbitrary[Coordinates]
+  imageUrls                             <- arbitrary[List[String]]
+  size                                  <- arbitrary[Option[Area]]
+  bedroomsCount                         <- arbitrary[Option[Int]]
+  bathroomsCount                        <- arbitrary[Option[Int]]
+  buildingEnergyRating                  <- arbitrary[Option[Rating]]
   buildingEnergyRatingCertificateNumber <- arbitrary[Option[Int]]
   buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
@@ -34,10 +34,8 @@ private val genDngIeAdvert: Gen[DngIeAdvert] = for {
     bedroomsCount = bedroomsCount,
     bathroomsCount = bathroomsCount,
     buildingEnergyRating = buildingEnergyRating,
-    buildingEnergyRatingCertificateNumber =
-      buildingEnergyRatingCertificateNumber,
-    buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+    buildingEnergyRatingCertificateNumber = buildingEnergyRatingCertificateNumber,
+    buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
     createdAt = createdAt
   )
 } yield dngIeAdvert

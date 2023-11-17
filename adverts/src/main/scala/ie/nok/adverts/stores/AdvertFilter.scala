@@ -18,9 +18,9 @@ enum AdvertFilter {
   case PropertyBathroomsCount(filter: NumericFilter[Int])
 
   def filter(value: Advert): Boolean = this match {
-    case Empty                => true
-    case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
+    case Empty            => true
+    case And(head, tail*) => (head +: tail).forall(_.filter(value))
+    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 
     case AdvertPriceInEur(filter)    => filter.filter(value.advertPriceInEur)
     case PropertyIdentifier(filter)  => filter.filter(value.propertyIdentifier)
@@ -45,9 +45,9 @@ enum StringFilter {
   case StartsWithCaseInsensitive(filter: String)
 
   def filter(value: String): Boolean = this match {
-    case Empty                => true
-    case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
+    case Empty            => true
+    case And(head, tail*) => (head +: tail).forall(_.filter(value))
+    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 
     case Equals(filter) => value == filter
     case ContainsCaseInsensitive(filter) =>
@@ -58,20 +58,18 @@ enum StringFilter {
 }
 
 enum NumericFilter[A: Numeric] {
-  case Empty[A: Numeric]() extends NumericFilter[A]
-  case And[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*)
-      extends NumericFilter[A]
-  case Or[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*)
-      extends NumericFilter[A]
+  case Empty[A: Numeric]()                                              extends NumericFilter[A]
+  case And[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*) extends NumericFilter[A]
+  case Or[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*)  extends NumericFilter[A]
 
-  case Equals[A: Numeric](filter: A) extends NumericFilter[A]
+  case Equals[A: Numeric](filter: A)      extends NumericFilter[A]
   case GreaterThan[A: Numeric](filter: A) extends NumericFilter[A]
-  case LessThan[A: Numeric](filter: A) extends NumericFilter[A]
+  case LessThan[A: Numeric](filter: A)    extends NumericFilter[A]
 
   def filter(value: A): Boolean = this match {
-    case Empty()              => true
-    case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
+    case Empty()          => true
+    case And(head, tail*) => (head +: tail).forall(_.filter(value))
+    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 
     case Equals(filter)      => value == filter
     case GreaterThan(filter) => value > filter
@@ -97,9 +95,9 @@ enum CoordinatesFilter {
   case WithinRectangle(northEast: Coordinates, southWest: Coordinates)
 
   def filter(value: Coordinates): Boolean = this match {
-    case Empty                => true
-    case And(head, tail @ _*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail @ _*)  => (head +: tail).exists(_.filter(value))
+    case Empty            => true
+    case And(head, tail*) => (head +: tail).forall(_.filter(value))
+    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 
     case WithinRectangle(northEast, southWest) =>
       value.latitude <= northEast.latitude && value.latitude >= southWest.latitude &&

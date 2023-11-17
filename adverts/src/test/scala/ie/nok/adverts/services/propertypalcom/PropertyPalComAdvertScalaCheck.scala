@@ -9,15 +9,15 @@ import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
 private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
-  url <- arbitrary[String]
-  priceInEur <- arbitrary[Option[Int]]
-  address <- arbitrary[String]
-  eircode <- arbitrary[Option[Eircode]]
-  coordinates <- arbitrary[Option[Coordinates]]
-  imageUrls <- arbitrary[List[String]]
-  size <- arbitrary[Option[Area]]
-  bedroomsCount <- arbitrary[Option[Int]]
-  bathroomsCount <- arbitrary[Option[Int]]
+  url                  <- arbitrary[String]
+  priceInEur           <- arbitrary[Option[Int]]
+  address              <- arbitrary[String]
+  eircode              <- arbitrary[Option[Eircode]]
+  coordinates          <- arbitrary[Option[Coordinates]]
+  imageUrls            <- arbitrary[List[String]]
+  size                 <- arbitrary[Option[Area]]
+  bedroomsCount        <- arbitrary[Option[Int]]
+  bathroomsCount       <- arbitrary[Option[Int]]
   buildingEnergyRating <- arbitrary[Option[Rating]]
   buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
@@ -33,8 +33,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
     bedroomsCount = bedroomsCount,
     bathroomsCount = bathroomsCount,
     buildingEnergyRating = buildingEnergyRating,
-    buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+    buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
     createdAt = createdAt
   )
 } yield propertyPalComAdvert

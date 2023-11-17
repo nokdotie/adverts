@@ -144,7 +144,7 @@ object Property {
 
     val imageUrls = property.images.getOrElse(List.empty).map(_.url)
 
-    val bedroomsCount = keyInfoTextToIntOption(property, "BEDROOMS")
+    val bedroomsCount  = keyInfoTextToIntOption(property, "BEDROOMS")
     val bathroomsCount = keyInfoTextToIntOption(property, "BATHROOMS")
 
     val (rating, energyRatingInKWhPerSqtMtrPerYear) = ber(property)
@@ -163,8 +163,7 @@ object Property {
         bedroomsCount = bedroomsCount,
         bathroomsCount = bathroomsCount,
         buildingEnergyRating = rating,
-        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-          energyRatingInKWhPerSqtMtrPerYear,
+        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = energyRatingInKWhPerSqtMtrPerYear,
         createdAt = Instant.now
       )
     }
