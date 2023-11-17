@@ -2,7 +2,7 @@ package ie.nok.adverts
 import zio.json.{DeriveJsonCodec, JsonCodec}
 
 case class Seller(
-    sellerId: Int,
+    sellerId: String,
     name: String,
     phone: Option[String],
     alternativePhone: Option[String],

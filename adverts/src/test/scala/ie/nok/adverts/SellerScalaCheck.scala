@@ -3,7 +3,7 @@ import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen}
 
 val genSeller: Gen[Seller] = for {
-  sellerId <- arbitrary[Int]
+  sellerId <- arbitrary[String]
   name <- arbitrary[String]
   phone <- arbitrary[Option[String]]
   alternativePhone <- arbitrary[Option[String]]

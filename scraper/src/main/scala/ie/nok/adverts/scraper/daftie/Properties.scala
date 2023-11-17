@@ -13,8 +13,10 @@ import zio.http.{Body, Client as ZioClient}
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZStream
 import zio.{ZIO, durationInt}
+import ie.nok.hash.Hasher
 
 import java.time.Instant
+import java.util.UUID
 import scala.util.Try
 
 object Properties {
@@ -150,7 +152,7 @@ object Properties {
   ): Option[Seller] = {
     listing.seller.map { seller =>
       Seller(
-        sellerId = seller.sellerId,
+        sellerId = Hasher.hash(seller.licenceNumber.getOrElse(UUID.randomUUID().toString)),
         name = seller.name,
         phone = seller.phone,
         alternativePhone = seller.alternativePhone,

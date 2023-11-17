@@ -2,16 +2,17 @@ package ie.nok.adverts.stores
 
 import com.google.cloud.storage.BlobInfo
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.json.JsonDecoder
 import ie.nok.env.Environment
-import ie.nok.gcp.storage.{createFrom, readAllBytes, Storage}
-import java.time.{Instant, ZoneOffset}
-import java.time.format.DateTimeFormatter
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, Scope, ZIO, ZLayer}
+import ie.nok.gcp.storage.{Storage, createFrom, readAllBytes}
+import ie.nok.json.JsonDecoder
 import zio.json.writeJsonLinesAs
 import zio.nio.file.Files
 import zio.stream.ZStream
+import zio.{Scope, ZIO, ZLayer}
+
+import java.time.format.DateTimeFormatter
+import java.time.{Instant, ZoneOffset}
+import scala.util.chaining.scalaUtilChainingOps
 
 object AdvertStoreImpl {
   private val bucket: ZIO[Any, Throwable, String] =
@@ -96,8 +97,7 @@ class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
   ): ZIO[Any, Throwable, List[Advert]] =
     all
       .filter(filter.filter)
-      .drop(after.index)
-      .take(first)
+      .slice(after.index, after.index + first)
       .pipe { ZIO.succeed }
 
 }
