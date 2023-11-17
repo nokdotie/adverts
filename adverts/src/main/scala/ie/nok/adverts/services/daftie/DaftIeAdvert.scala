@@ -45,10 +45,8 @@ object DaftIeAdvert {
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
       propertyBuildingEnergyRating = self.buildingEnergyRating,
-      propertyBuildingEnergyRatingCertificateNumber =
-        self.buildingEnergyRatingCertificateNumber,
-      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.DaftIeAdvert(self)),
       seller = self.seller,
       createdAt = self.createdAt

@@ -37,7 +37,7 @@ object AdvertStoreImpl {
       blobNames: List[String]
   ): ZIO[R & Scope & Storage, Throwable, Unit] = for {
     path <- Files.createTempFileScoped()
-    _ <- writeJsonLinesAs(path.toFile, stream)
+    _    <- writeJsonLinesAs(path.toFile, stream)
 
     bucket <- bucket
     _ <- blobNames
@@ -55,7 +55,7 @@ object AdvertStoreImpl {
       service: AdvertService,
       stream: ZStream[R, Throwable, Advert]
   ): ZIO[R & Scope & Storage, Throwable, Unit] = {
-    val latest = blobNameLatestForService(service)
+    val latest    = blobNameLatestForService(service)
     val versioned = blobNameVersionedForService(service)
 
     encodeAndWrite(stream, List(latest, versioned))
@@ -64,7 +64,7 @@ object AdvertStoreImpl {
   private def readAndDecode(
       blobName: String
   ): ZIO[Storage, Throwable, List[Advert]] = for {
-    bucket <- bucket
+    bucket   <- bucket
     allBytes <- readAllBytes(bucket, blobName, List.empty)
     all <- allBytes
       .pipe { new String(_) }
@@ -74,8 +74,7 @@ object AdvertStoreImpl {
       .pipe { ZIO.collectAll }
   } yield all
 
-  protected[adverts] val readAndDecodeLatest
-      : ZIO[Storage, Throwable, List[Advert]] =
+  protected[adverts] val readAndDecodeLatest: ZIO[Storage, Throwable, List[Advert]] =
     readAndDecode(blobNameLatest)
 
   protected[adverts] def readAndDecodeLatestForService(
