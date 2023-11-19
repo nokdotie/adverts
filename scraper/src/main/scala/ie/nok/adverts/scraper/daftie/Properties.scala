@@ -1,7 +1,7 @@
 package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts.services.daftie.DaftIeAdvert
-import ie.nok.adverts.{Advert, Seller}
+import ie.nok.adverts.Advert
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -18,6 +18,8 @@ import ie.nok.hash.Hasher
 import java.time.Instant
 import java.util.UUID
 import scala.util.Try
+import ie.nok.advertisers.stores.AdvertiserStore
+import ie.nok.advertisers.Advertiser
 
 object Properties {
   protected[daftie] case class Response(listings: List[ResponseListing])
@@ -68,15 +70,6 @@ object Properties {
   protected[daftie] given JsonDecoder[ResponseListingListingPoint] =
     DeriveJsonDecoder.gen[ResponseListingListingPoint]
   protected[daftie] case class ResponseListingListingSeller(
-      sellerId: Int,
-      name: String,
-      phone: Option[String],
-      alternativePhone: Option[String],
-      address: Option[String],
-      branch: Option[String],
-      profileImage: Option[String],
-      standardLogo: Option[String],
-      squareLogo: Option[String],
       licenceNumber: Option[String]
   )
 
@@ -146,25 +139,14 @@ object Properties {
         (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
       }
 
-  protected[daftie] def seller(
+  protected[daftie] def advertiser(
       listing: ResponseListingListing
-  ): Option[Seller] = {
-    listing.seller.map { seller =>
-      Seller(
-        sellerId = Hasher.hash(seller.licenceNumber.getOrElse(seller.name)),
-        name = seller.name,
-        phoneNumbers = List(
-          seller.phone,
-          seller.alternativePhone
-        ).flatten,
-        physicalAddress = seller.address,
-        propertyServicesRegulatoryAuthorityLicenceNumber = seller.licenceNumber
-      )
-    }
-  }
+  ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
+    listing.seller.flatMap { _.licenceNumber }.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber(_) }
 
   protected[daftie] def toDaftIeAdvert(
-      listing: ResponseListingListing
+      listing: ResponseListingListing,
+      advertiser: Option[Advertiser]
   ): DaftIeAdvert = {
     val url   = s"https://www.daft.ie${listing.seoFriendlyPath}"
     val price = listing.price.filter(_.isDigit).toIntOption
@@ -208,18 +190,19 @@ object Properties {
       buildingEnergyRating = buildingEnergyRating,
       buildingEnergyRatingCertificateNumber = buildingEnergyRatingCertificateNumber,
       buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-      seller = seller(listing),
+      advertiser = advertiser,
       createdAt = Instant.now
     )
   }
 
-  val stream: ZStream[ZioClient, Throwable, Advert] =
+  val stream: ZStream[ZioClient & AdvertiserStore, Throwable, Advert] =
     streamApiRequestContent
       .mapZIOParUnordered(5) { getApiResponse }
       .map { _.listings }
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
+      .mapZIO { listing => advertiser(listing).map { (listing, _) } }
       .map { toDaftIeAdvert }
       .map { DaftIeAdvert.toAdvert }
 

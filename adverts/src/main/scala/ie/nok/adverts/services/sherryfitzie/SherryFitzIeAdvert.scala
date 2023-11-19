@@ -48,7 +48,7 @@ object SherryFitzIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.SherryFitzIeAdvert(self)),
-      seller = None,
+      advertiser = None,
       createdAt = self.createdAt
     )
 

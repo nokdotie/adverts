@@ -1,14 +1,14 @@
 package ie.nok.adverts.services.daftie
 
-import ie.nok.adverts.{Seller, given}
+import ie.nok.advertisers.{Advertiser, given}
+import ie.nok.adverts.given
 import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
+import java.time.Instant
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen}
-
-import java.time.Instant
 
 private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   url                                   <- arbitrary[String]
@@ -25,8 +25,8 @@ private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <- arbitrary[Option[
     BigDecimal
   ]]
-  seller    <- arbitrary[Seller]
-  createdAt <- arbitrary[Instant]
+  advertiser <- arbitrary[Option[Advertiser]]
+  createdAt  <- arbitrary[Instant]
   daftIeAdvert = DaftIeAdvert(
     url = url,
     priceInEur = priceInEur,
@@ -40,7 +40,7 @@ private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
     buildingEnergyRating = buildingEnergyRating,
     buildingEnergyRatingCertificateNumber = buildingEnergyRatingCertificateNumber,
     buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-    seller = Some(seller),
+    advertiser = advertiser,
     createdAt = createdAt
   )
 } yield daftIeAdvert

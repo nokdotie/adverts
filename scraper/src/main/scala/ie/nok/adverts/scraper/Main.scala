@@ -1,6 +1,7 @@
 package ie.nok.adverts.scraper
 
 import ie.nok.adverts.{Advert, AdvertService}
+import ie.nok.advertisers.stores.{AdvertiserStore, AdvertiserStoreInMemory}
 import ie.nok.adverts.stores.AdvertStoreImpl.encodeAndWriteForService
 import ie.nok.gcp.storage.Storage
 import java.time.Instant
@@ -20,7 +21,7 @@ object Main extends ZIOAppDefault {
 
   def getAdvertStream(
       advertService: AdvertService
-  ): ZStream[Client, Throwable, Advert] =
+  ): ZStream[Client & AdvertiserStore, Throwable, Advert] =
     advertService match {
       case AdvertService.DaftIe         => daftie.advertStream
       case AdvertService.DngIe          => dngie.advertStream
@@ -36,7 +37,8 @@ object Main extends ZIOAppDefault {
       .provide(
         Client.default,
         Scope.default,
-        Storage.live
+        Storage.live,
+        AdvertiserStoreInMemory.live
       )
   } yield ()
 

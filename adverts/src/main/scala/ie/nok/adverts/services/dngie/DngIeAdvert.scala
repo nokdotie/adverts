@@ -47,7 +47,7 @@ object DngIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.DngIeAdvert(self)),
-      seller = None,
+      advertiser = None,
       createdAt = self.createdAt
     )
 

@@ -13,13 +13,12 @@ class PropertiesTest extends FunSuite {
         .pipe { readJsonLinesAs[Properties.Response](_) }
         .mapConcat { _.listings }
         .map { _.listing }
-        .map { Properties.toDaftIeAdvert }
+        .map { Properties.toDaftIeAdvert(_, None) }
         .runCollect
         .pipe { ZIO.unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
     assertEquals(result.size, 20)
-    assert(result.forall(_.seller.isDefined))
   }
 
 }

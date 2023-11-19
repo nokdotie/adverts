@@ -1,15 +1,15 @@
 package ie.nok.adverts.services.daftie
 
-import ie.nok.adverts.{Advert, InformationSource, Seller}
+import ie.nok.advertisers.Advertiser
+import ie.nok.adverts.{Advert, InformationSource}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
-import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
-
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
+import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 
 case class DaftIeAdvert(
     url: String,
@@ -24,7 +24,7 @@ case class DaftIeAdvert(
     buildingEnergyRating: Option[Rating],
     buildingEnergyRatingCertificateNumber: Option[Int],
     buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear: Option[BigDecimal],
-    seller: Option[Seller],
+    advertiser: Option[Advertiser],
     createdAt: Instant
 )
 
@@ -48,7 +48,7 @@ object DaftIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.DaftIeAdvert(self)),
-      seller = self.seller,
+      advertiser = self.advertiser,
       createdAt = self.createdAt
     )
 
