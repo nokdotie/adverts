@@ -1,21 +1,23 @@
 package ie.nok.adverts.scraper.daftie
 
-import ie.nok.adverts.Advert
 import ie.nok.adverts.services.daftie.DaftIeAdvert
+import ie.nok.adverts.{Advert, Seller}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
-import scala.util.Try
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.Schedule.{recurs, fixed}
-import zio.http.{Body, Client => ZioClient}
+import zio.Schedule.{fixed, recurs}
 import zio.http.model.{Headers, Method}
+import zio.http.{Body, Client as ZioClient}
+import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZStream
-import zio.json.{JsonDecoder, DeriveJsonDecoder}
+import zio.{ZIO, durationInt}
+import ie.nok.hash.Hasher
+
+import java.time.Instant
+import java.util.UUID
+import scala.util.Try
 
 object Properties {
   protected[daftie] case class Response(listings: List[ResponseListing])
@@ -35,7 +37,8 @@ object Properties {
       seoFriendlyPath: String,
       title: String,
       point: ResponseListingListingPoint,
-      ber: Option[ResponseListingListingBer]
+      ber: Option[ResponseListingListingBer],
+      seller: Option[ResponseListingListingSeller]
   )
   protected[daftie] given JsonDecoder[ResponseListingListing] =
     DeriveJsonDecoder.gen[ResponseListingListing]
@@ -64,6 +67,21 @@ object Properties {
   )
   protected[daftie] given JsonDecoder[ResponseListingListingPoint] =
     DeriveJsonDecoder.gen[ResponseListingListingPoint]
+  protected[daftie] case class ResponseListingListingSeller(
+      sellerId: Int,
+      name: String,
+      phone: Option[String],
+      alternativePhone: Option[String],
+      address: Option[String],
+      branch: Option[String],
+      profileImage: Option[String],
+      standardLogo: Option[String],
+      squareLogo: Option[String],
+      licenceNumber: Option[String]
+  )
+
+  protected[daftie] given JsonDecoder[ResponseListingListingSeller] =
+    DeriveJsonDecoder.gen[ResponseListingListingSeller]
 
   protected[daftie] case class ResponseListingListingBer(
       rating: Option[String],
@@ -74,7 +92,7 @@ object Properties {
   protected[daftie] given JsonDecoder[ResponseListingListingBer] =
     DeriveJsonDecoder.gen[ResponseListingListingBer]
 
-  protected[daftie] val streamApiRequestContent = {
+  protected[daftie] val streamApiRequestContent: ZStream[Any, Nothing, String] = {
     val pageSize = 100
     ZStream
       .iterate(0)(_ + pageSize)
@@ -86,8 +104,8 @@ object Properties {
   protected[daftie] def getApiResponse(
       content: String
   ): ZIO[ZioClient, Throwable, Response] = {
-    val brandHeader = Headers("brand", "daft")
-    val platformHeader = Headers("platform", "web")
+    val brandHeader       = Headers("brand", "daft")
+    val platformHeader    = Headers("platform", "web")
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
@@ -128,15 +146,30 @@ object Properties {
         (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
       }
 
+  protected[daftie] def seller(
+      listing: ResponseListingListing
+  ): Option[Seller] = {
+    listing.seller.map { seller =>
+      Seller(
+        sellerId = Hasher.hash(seller.licenceNumber.getOrElse(seller.name)),
+        name = seller.name,
+        phone = seller.phone,
+        alternativePhone = seller.alternativePhone,
+        address = seller.address,
+        licenceNumber = seller.licenceNumber
+      )
+    }
+  }
+
   protected[daftie] def toDaftIeAdvert(
       listing: ResponseListingListing
   ): DaftIeAdvert = {
-    val url = s"https://www.daft.ie${listing.seoFriendlyPath}"
+    val url   = s"https://www.daft.ie${listing.seoFriendlyPath}"
     val price = listing.price.filter(_.isDigit).toIntOption
 
     val coordinates = Coordinates(
       latitude = listing.point.coordinates(1),
-      longitude = listing.point.coordinates(0)
+      longitude = listing.point.coordinates.head
     )
 
     val imageUrls =
@@ -171,10 +204,9 @@ object Properties {
       bedroomsCount = bedroomCount,
       bathroomsCount = bathroomCount,
       buildingEnergyRating = buildingEnergyRating,
-      buildingEnergyRatingCertificateNumber =
-        buildingEnergyRatingCertificateNumber,
-      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      buildingEnergyRatingCertificateNumber = buildingEnergyRatingCertificateNumber,
+      buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      seller = seller(listing),
       createdAt = Instant.now
     )
   }

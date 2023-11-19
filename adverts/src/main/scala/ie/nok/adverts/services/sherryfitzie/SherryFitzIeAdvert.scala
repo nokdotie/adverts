@@ -1,15 +1,16 @@
 package ie.nok.adverts.services.sherryfitzie
 
 import ie.nok.adverts.{Advert, InformationSource}
-import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
+import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
+import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
+
 import java.time.Instant
 import java.util.UUID
 import scala.util.chaining.scalaUtilChainingOps
-import zio.json.{JsonCodec, DeriveJsonCodec, EncoderOps}
 
 case class SherryFitzIeAdvert(
     url: String,
@@ -44,11 +45,10 @@ object SherryFitzIeAdvert {
       propertyBedroomsCount = self.bedroomsCount.getOrElse(0),
       propertyBathroomsCount = self.bathroomsCount.getOrElse(0),
       propertyBuildingEnergyRating = self.buildingEnergyRating,
-      propertyBuildingEnergyRatingCertificateNumber =
-        self.buildingEnergyRatingCertificateNumber,
-      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-        self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+      propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.SherryFitzIeAdvert(self)),
+      seller = None,
       createdAt = self.createdAt
     )
 

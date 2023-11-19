@@ -43,6 +43,7 @@ object MyHomeIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
       sources = List(InformationSource.MyHomeIeAdvert(self)),
+      seller = None,
       createdAt = self.createdAt
     )
 

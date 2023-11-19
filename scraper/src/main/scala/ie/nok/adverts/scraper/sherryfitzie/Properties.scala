@@ -52,7 +52,7 @@ object Properties {
           feature.properties.link,
           Coordinates(
             latitude = feature.geometry.coordinates(1),
-            longitude = feature.geometry.coordinates(0)
+            longitude = feature.geometry.coordinates.head
           )
         )
       }

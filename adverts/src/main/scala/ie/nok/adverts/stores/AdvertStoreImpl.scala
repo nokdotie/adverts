@@ -2,16 +2,17 @@ package ie.nok.adverts.stores
 
 import com.google.cloud.storage.BlobInfo
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.json.JsonDecoder
 import ie.nok.env.Environment
-import ie.nok.gcp.storage.{createFrom, readAllBytes, Storage}
-import java.time.{Instant, ZoneOffset}
-import java.time.format.DateTimeFormatter
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, Scope, ZIO, ZLayer}
+import ie.nok.gcp.storage.{Storage, createFrom, readAllBytes}
+import ie.nok.json.JsonDecoder
 import zio.json.writeJsonLinesAs
 import zio.nio.file.Files
 import zio.stream.ZStream
+import zio.{Scope, ZIO, ZLayer}
+
+import java.time.format.DateTimeFormatter
+import java.time.{Instant, ZoneOffset}
+import scala.util.chaining.scalaUtilChainingOps
 
 object AdvertStoreImpl {
   private val bucket: ZIO[Any, Throwable, String] =
@@ -36,7 +37,7 @@ object AdvertStoreImpl {
       blobNames: List[String]
   ): ZIO[R & Scope & Storage, Throwable, Unit] = for {
     path <- Files.createTempFileScoped()
-    _ <- writeJsonLinesAs(path.toFile, stream)
+    _    <- writeJsonLinesAs(path.toFile, stream)
 
     bucket <- bucket
     _ <- blobNames
@@ -54,7 +55,7 @@ object AdvertStoreImpl {
       service: AdvertService,
       stream: ZStream[R, Throwable, Advert]
   ): ZIO[R & Scope & Storage, Throwable, Unit] = {
-    val latest = blobNameLatestForService(service)
+    val latest    = blobNameLatestForService(service)
     val versioned = blobNameVersionedForService(service)
 
     encodeAndWrite(stream, List(latest, versioned))
@@ -63,7 +64,7 @@ object AdvertStoreImpl {
   private def readAndDecode(
       blobName: String
   ): ZIO[Storage, Throwable, List[Advert]] = for {
-    bucket <- bucket
+    bucket   <- bucket
     allBytes <- readAllBytes(bucket, blobName, List.empty)
     all <- allBytes
       .pipe { new String(_) }
@@ -73,8 +74,7 @@ object AdvertStoreImpl {
       .pipe { ZIO.collectAll }
   } yield all
 
-  protected[adverts] val readAndDecodeLatest
-      : ZIO[Storage, Throwable, List[Advert]] =
+  protected[adverts] val readAndDecodeLatest: ZIO[Storage, Throwable, List[Advert]] =
     readAndDecode(blobNameLatest)
 
   protected[adverts] def readAndDecodeLatestForService(
@@ -96,8 +96,7 @@ class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
   ): ZIO[Any, Throwable, List[Advert]] =
     all
       .filter(filter.filter)
-      .drop(after.index)
-      .take(first)
+      .slice(after.index, after.index + first)
       .pipe { ZIO.succeed }
 
 }

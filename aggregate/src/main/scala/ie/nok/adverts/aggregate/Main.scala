@@ -1,23 +1,22 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.adverts.stores.AdvertStoreImpl
+import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.ber.CertificateNumber
 import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
 import ie.nok.gcp.firestore.Firestore
 import ie.nok.gcp.storage.Storage
 import ie.nok.geographic.Coordinates
-import ie.nok.hash.Hasher
 import ie.nok.unit.Area
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import scala.util.Random
-import zio.{Scope, ZIO, ZIOAppDefault}
-import zio.json.EncoderOps
 import zio.stream.ZStream
+import zio.{Scope, ZIO, ZIOAppDefault}
+
+import java.time.Instant
+import scala.util.Random
+import scala.util.chaining.scalaUtilChainingOps
 
 object Main extends ZIOAppDefault {
-  val latest: ZIO[Storage, Throwable, List[Advert]] =
+  private val latest: ZIO[Storage, Throwable, List[Advert]] =
     AdvertService.values.toList
       .map { AdvertStoreImpl.readAndDecodeLatestForService }
       .pipe { ZIO.collectAll }
@@ -45,23 +44,22 @@ object Main extends ZIOAppDefault {
               .map { _.propertyCoordinates }
               .find { _ != Coordinates.zero }
               .getOrElse(Coordinates.zero),
-            propertyImageUrls =
-              adverts.map { _.propertyImageUrls }.maxBy { _.length },
+            propertyImageUrls = adverts.map { _.propertyImageUrls }.maxBy { _.length },
             propertySize = size,
             propertySizeInSqtMtr = Area.toSquareMetres(size).value,
             propertyBedroomsCount = adverts.map { _.propertyBedroomsCount }.max,
-            propertyBathroomsCount =
-              adverts.map { _.propertyBathroomsCount }.max,
-            propertyBuildingEnergyRating =
-              adverts.flatMap { _.propertyBuildingEnergyRating }.headOption,
+            propertyBathroomsCount = adverts.map { _.propertyBathroomsCount }.max,
+            propertyBuildingEnergyRating = adverts.flatMap { _.propertyBuildingEnergyRating }.headOption,
             propertyBuildingEnergyRatingCertificateNumber = adverts.flatMap {
               _.propertyBuildingEnergyRatingCertificateNumber
             }.headOption,
-            propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-              adverts.flatMap {
-                _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
-              }.headOption,
+            propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = adverts.flatMap {
+              _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
+            }.headOption,
             sources = adverts.flatMap { _.sources }.distinct,
+            seller = adverts
+              .flatMap(_.seller)
+              .headOption, // taking first not null seller
             createdAt = Instant.now
           )
       }
@@ -77,9 +75,7 @@ object Main extends ZIOAppDefault {
           dngIeAdvert.buildingEnergyRatingCertificateNumber
         case InformationSource.SherryFitzIeAdvert(sherryFitzIeAdvert) =>
           sherryFitzIeAdvert.buildingEnergyRatingCertificateNumber
-        case InformationSource.MyHomeIeAdvert(_) |
-            InformationSource.PropertyPalComAdvert(_) |
-            InformationSource.BuildingEnergyRatingCertificate(_) =>
+        case InformationSource.MyHomeIeAdvert(_) | InformationSource.PropertyPalComAdvert(_) | InformationSource.BuildingEnergyRatingCertificate(_) =>
           None
       }
       .distinct
@@ -93,12 +89,10 @@ object Main extends ZIOAppDefault {
 
         adverts.copy(
           propertyBuildingEnergyRating = certificates.headOption.map(_.rating),
-          propertyBuildingEnergyRatingCertificateNumber =
-            certificates.headOption.map(_.number.value),
-          propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
-            certificates.headOption
-              .map(_.energyRating.value)
-              .map(BigDecimal(_)),
+          propertyBuildingEnergyRatingCertificateNumber = certificates.headOption.map(_.number.value),
+          propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = certificates.headOption
+            .map(_.energyRating.value)
+            .map(BigDecimal(_)),
           sources = adverts.sources ++ certificatesAsSources
         )
       }

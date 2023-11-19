@@ -8,16 +8,16 @@ import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
 
 private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
-  url <- arbitrary[String]
-  priceInEur <- arbitrary[Option[Int]]
-  address <- arbitrary[String]
-  coordinates <- arbitrary[Option[Coordinates]]
-  imageUrls <- arbitrary[List[String]]
-  size <- arbitrary[Option[Area]]
-  bedroomsCount <- arbitrary[Option[Int]]
-  bathroomsCount <- arbitrary[Option[Int]]
+  url                  <- arbitrary[String]
+  priceInEur           <- arbitrary[Option[Int]]
+  address              <- arbitrary[String]
+  coordinates          <- arbitrary[Option[Coordinates]]
+  imageUrls            <- arbitrary[List[String]]
+  size                 <- arbitrary[Option[Area]]
+  bedroomsCount        <- arbitrary[Option[Int]]
+  bathroomsCount       <- arbitrary[Option[Int]]
   buildingEnergyRating <- arbitrary[Option[Rating]]
-  createdAt <- arbitrary[Instant]
+  createdAt            <- arbitrary[Instant]
   myHomeIeAdvert = MyHomeIeAdvert(
     url = url,
     priceInEur = priceInEur,
