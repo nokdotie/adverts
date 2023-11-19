@@ -28,7 +28,7 @@ lazy val adverts = project
       "dev.zio"       %% "zio-streams"              % "2.0.19",
       "ie.nok"        %% "scala-libraries"          % "20231012.185102.393149873" % "compile->compile;test->test",
       "ie.nok"        %% "building-energy-rating"   % "20231108.094613.551868231" % "compile->compile;test->test",
-      "ie.nok"        %% "eircode-address-database" % "20231027.201525.876120335" % "compile->compile;test->test",
+      "ie.nok"        %% "eircode-address-database" % "20231029.200503.950433847" % "compile->compile;test->test",
       "org.jsoup"      % "jsoup"                    % "1.16.2",
       "org.scalameta" %% "munit"                    % "0.7.29"                    % Test,
       "org.scalameta" %% "munit-scalacheck"         % "0.7.29"                    % Test
