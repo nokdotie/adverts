@@ -4,10 +4,9 @@ import zio.json.{DeriveJsonCodec, JsonCodec}
 case class Seller(
     sellerId: String,
     name: String,
-    phone: Option[String],
-    alternativePhone: Option[String],
-    address: Option[String],
-    licenceNumber: Option[String]
+    phoneNumbers: List[String],
+    physicalAddress: Option[String],
+    propertyServicesRegulatoryAuthorityLicenceNumber: Option[String]
 )
 
 object Seller {

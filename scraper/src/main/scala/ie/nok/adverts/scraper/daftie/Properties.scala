@@ -153,10 +153,12 @@ object Properties {
       Seller(
         sellerId = Hasher.hash(seller.licenceNumber.getOrElse(seller.name)),
         name = seller.name,
-        phone = seller.phone,
-        alternativePhone = seller.alternativePhone,
-        address = seller.address,
-        licenceNumber = seller.licenceNumber
+        phoneNumbers = List(
+          seller.phone,
+          seller.alternativePhone
+        ).flatten,
+        physicalAddress = seller.address,
+        propertyServicesRegulatoryAuthorityLicenceNumber = seller.licenceNumber
       )
     }
   }
