@@ -112,7 +112,7 @@ object Properties {
   }
 
   val advertiser: ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber("002231")
+    AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber("003837")
 
   val stream: ZStream[ZioClient & AdvertiserStore, Throwable, Advert] =
     ZStream
