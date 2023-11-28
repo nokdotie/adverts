@@ -19,6 +19,7 @@ jobs:
           - MyHomeIe
           - PropertyPalCom
           - SherryFitzIe
+          - MaherPropertyIe
 
     steps:
       - name: Checkout
