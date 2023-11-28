@@ -28,6 +28,7 @@ object Main extends ZIOAppDefault {
       case AdvertService.MyHomeIe       => myhomeie.advertStream
       case AdvertService.PropertyPalCom => propertypalcom.advertStream
       case AdvertService.SherryFitzIe   => sherryfitzie.advertStream
+      case AdvertService.MaherPropertyIe => maherpropertyie.advertStream
     }
 
   def run = for {
