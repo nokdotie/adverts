@@ -61,7 +61,7 @@ object Properties {
       .pipe { Eircode.unzip }
 
     val imageUrls = document
-      .select(".property-detail-flexslider .flexslider img")
+      .select("#property-detail-flexslider .flexslider img")
       .asScala
       .map { _.attr("src") }
       .toList
