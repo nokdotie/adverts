@@ -3,19 +3,20 @@ package ie.nok.adverts.stores
 import ie.nok.adverts.Advert
 import ie.nok.geographic.Coordinates
 import math.Ordered.orderingToOrdered
+import zio.json.{DeriveJsonCodec, JsonCodec}
 
 enum AdvertFilter {
   case Empty
   case And(head: AdvertFilter, tail: AdvertFilter*)
   case Or(head: AdvertFilter, tail: AdvertFilter*)
 
-  case AdvertPriceInEur(filter: NumericFilter[Int])
+  case AdvertPriceInEur(filter: IntFilter)
   case PropertyIdentifier(filter: StringFilter)
   case PropertyAddress(filter: StringFilter)
   case PropertyCoordinates(filter: CoordinatesFilter)
-  case PropertySizeInSqtMtr(filter: NumericFilter[BigDecimal])
-  case PropertyBedroomsCount(filter: NumericFilter[Int])
-  case PropertyBathroomsCount(filter: NumericFilter[Int])
+  case PropertySizeInSqtMtr(filter: IntFilter)
+  case PropertyBedroomsCount(filter: IntFilter)
+  case PropertyBathroomsCount(filter: IntFilter)
 
   def filter(value: Advert): Boolean = this match {
     case Empty            => true
@@ -27,12 +28,16 @@ enum AdvertFilter {
     case PropertyAddress(filter)     => filter.filter(value.propertyAddress)
     case PropertyCoordinates(filter) => filter.filter(value.propertyCoordinates)
     case PropertySizeInSqtMtr(filter) =>
-      filter.filter(value.propertySizeInSqtMtr)
+      filter.filter(value.propertySizeInSqtMtr.toInt)
     case PropertyBedroomsCount(filter) =>
       filter.filter(value.propertyBedroomsCount)
     case PropertyBathroomsCount(filter) =>
       filter.filter(value.propertyBathroomsCount)
   }
+}
+
+object AdvertFilter {
+  given JsonCodec[AdvertFilter] = DeriveJsonCodec.gen[AdvertFilter]
 }
 
 enum StringFilter {
@@ -57,17 +62,21 @@ enum StringFilter {
   }
 }
 
-enum NumericFilter[A: Numeric] {
-  case Empty[A: Numeric]()                                              extends NumericFilter[A]
-  case And[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*) extends NumericFilter[A]
-  case Or[A: Numeric](head: NumericFilter[A], tail: NumericFilter[A]*)  extends NumericFilter[A]
+object StringFilter {
+  given JsonCodec[StringFilter] = DeriveJsonCodec.gen[StringFilter]
+}
 
-  case Equals[A: Numeric](filter: A)      extends NumericFilter[A]
-  case GreaterThan[A: Numeric](filter: A) extends NumericFilter[A]
-  case LessThan[A: Numeric](filter: A)    extends NumericFilter[A]
+enum IntFilter {
+  case Empty
+  case And(head: IntFilter, tail: IntFilter*)
+  case Or(head: IntFilter, tail: IntFilter*)
 
-  def filter(value: A): Boolean = this match {
-    case Empty()          => true
+  case Equals(filter: Int)
+  case GreaterThan(filter: Int)
+  case LessThan(filter: Int)
+
+  def filter(value: Int): Boolean = this match {
+    case Empty          => true
     case And(head, tail*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 
@@ -77,14 +86,16 @@ enum NumericFilter[A: Numeric] {
   }
 }
 
-object NumericFilter {
-  def GreaterThanOrEqual[A: Numeric](filter: A): NumericFilter[A] =
-    NumericFilter.Or(
-      NumericFilter.GreaterThan(filter),
-      NumericFilter.Equals(filter)
+object IntFilter {
+  given JsonCodec[IntFilter] = DeriveJsonCodec.gen[IntFilter]
+
+  def GreaterThanOrEqual(filter: Int): IntFilter =
+    IntFilter.Or(
+      IntFilter.GreaterThan(filter),
+      IntFilter.Equals(filter)
     )
-  def LessThanOrEqual[A: Numeric](filter: A): NumericFilter[A] = NumericFilter
-    .Or(NumericFilter.LessThan(filter), NumericFilter.Equals(filter))
+  def LessThanOrEqual(filter: Int): IntFilter = IntFilter
+    .Or(IntFilter.LessThan(filter), IntFilter.Equals(filter))
 }
 
 enum CoordinatesFilter {
@@ -103,4 +114,8 @@ enum CoordinatesFilter {
       value.latitude <= northEast.latitude && value.latitude >= southWest.latitude &&
       value.longitude <= northEast.longitude && value.longitude >= southWest.longitude
   }
+}
+
+object CoordinatesFilter {
+  given JsonCodec[CoordinatesFilter] = DeriveJsonCodec.gen[CoordinatesFilter]
 }
