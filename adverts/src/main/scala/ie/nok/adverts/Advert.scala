@@ -13,6 +13,7 @@ case class Advert(
     advertUrl: String,
     advertPriceInEur: Int,
     propertyIdentifier: String,
+    propertyDescription: Option[String],
     propertyAddress: String,
     propertyEircode: Option[Eircode],
     propertyCoordinates: Coordinates,

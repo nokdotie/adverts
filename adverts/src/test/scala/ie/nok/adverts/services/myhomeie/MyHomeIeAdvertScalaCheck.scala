@@ -10,6 +10,7 @@ import ie.nok.unit.{Area, given}
 private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   url                  <- arbitrary[String]
   priceInEur           <- arbitrary[Option[Int]]
+  description          <- arbitrary[Option[String]]
   address              <- arbitrary[String]
   coordinates          <- arbitrary[Option[Coordinates]]
   imageUrls            <- arbitrary[List[String]]
@@ -21,6 +22,7 @@ private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   myHomeIeAdvert = MyHomeIeAdvert(
     url = url,
     priceInEur = priceInEur,
+    description = description,
     address = address,
     coordinates = coordinates,
     imageUrls = imageUrls,

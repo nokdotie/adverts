@@ -45,14 +45,20 @@ object Properties {
   }
 
   private def selectAdvert(url: String, document: Document, advertiser: Option[Advertiser]): Advert = {
-    println("Processing advert: " + url)
-
     val price = document
       .selectFirst(".price-and-type")
       .pipe { Option(_) }
       .map { _.text.filter(_.isDigit) }
       .flatMap { _.toIntOption }
       .getOrElse(0)
+
+    val description = document
+      .selectFirst(".property-item .content")
+      .children()
+      .asScala
+      .takeWhile { _.tagName != "h3" }
+      .map { _.text }
+      .mkString("\n")
 
     val (address, eircode) = document
       .selectFirst("#property-featured-image img")
@@ -94,6 +100,7 @@ object Properties {
       advertUrl = url,
       advertPriceInEur = price,
       propertyIdentifier = Hasher.hash(address),
+      propertyDescription = Some(description),
       propertyAddress = address,
       propertyEircode = eircode,
       propertyCoordinates = Coordinates.zero,

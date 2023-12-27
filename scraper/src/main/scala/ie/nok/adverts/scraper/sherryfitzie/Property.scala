@@ -94,6 +94,13 @@ object Property {
       coordinates: Coordinates,
       html: Document
   ): SherryFitzIeAdvert = {
+    val description = html
+      .select(".property-description")
+      .tap { _.select("br").after("\\n"); }
+      .text
+      .replaceAll("\\\\n", "\n")
+      .replace("*** Please register on www.mysherryfitz.ie to bid on this property***", "")
+
     val imageUrls = html
       .select(".property-image-element img")
       .asScala
@@ -107,6 +114,7 @@ object Property {
     SherryFitzIeAdvert(
       url = url,
       priceInEur = documentToIntOption(html, ".property-price"),
+      description = description,
       address = address,
       eircode = eircode,
       coordinates = coordinates,

@@ -14,6 +14,7 @@ private val genAdvert: Gen[Advert] = for {
   advertUrl           <- arbitrary[String]
   advertPriceInEur    <- arbitrary[Int]
   propertyIdentifier  <- arbitrary[String]
+  propertyDescription <- arbitrary[Option[String]]
   propertyAddress     <- arbitrary[String]
   propertyEircode     <- arbitrary[Option[Eircode]]
   propertyCoordinates <- arbitrary[Coordinates]
@@ -33,6 +34,7 @@ private val genAdvert: Gen[Advert] = for {
     advertUrl = advertUrl,
     advertPriceInEur = advertPriceInEur,
     propertyIdentifier = propertyIdentifier,
+    propertyDescription = propertyDescription,
     propertyAddress = propertyAddress,
     propertyEircode = propertyEircode,
     propertyCoordinates = propertyCoordinates,

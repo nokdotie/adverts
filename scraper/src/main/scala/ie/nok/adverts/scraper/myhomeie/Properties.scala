@@ -1,13 +1,6 @@
 package ie.nok.adverts.scraper.myhomeie
 
-import ie.nok.ber.Rating
-import ie.nok.adverts.Advert
-import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
 import ie.nok.http.Client
-import ie.nok.geographic.Coordinates
-import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
 import zio.{durationInt, ZIO}
 import zio.Schedule.{recurs, fixed}
 import zio.http.{Body, Client => ZioClient}
@@ -20,25 +13,10 @@ object Properties {
   private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
   private case class ResponseSearchResult(
-      PriceAsString: Option[String],
-      BathString: Option[String],
-      BedsString: String,
-      SizeStringMeters: Option[Float],
-      DisplayAddress: String,
-      BrochureUrl: String,
-      Photos: List[String],
-      BrochureMap: Option[ResponseSearchResultBrochureMap],
-      BerRating: Option[String]
+      PropertyId: Int
   )
   private given JsonDecoder[ResponseSearchResult] =
     DeriveJsonDecoder.gen[ResponseSearchResult]
-
-  private case class ResponseSearchResultBrochureMap(
-      longitude: BigDecimal,
-      latitude: BigDecimal
-  )
-  private given JsonDecoder[ResponseSearchResultBrochureMap] =
-    DeriveJsonDecoder.gen[ResponseSearchResultBrochureMap]
 
   private val streamApiRequestContent =
     ZStream
@@ -62,59 +40,12 @@ object Properties {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toMyHomeIeAdvert(
-      searchResult: ResponseSearchResult
-  ): MyHomeIeAdvert = {
-    val url = s"https://www.myhome.ie${searchResult.BrochureUrl}"
-    val price = searchResult.PriceAsString
-      .getOrElse("")
-      .filter(_.isDigit)
-      .toIntOption
-
-    val coordinates = searchResult.BrochureMap.map { bm =>
-      Coordinates(
-        latitude = bm.latitude,
-        longitude = bm.longitude
-      )
-    }
-
-    val size = searchResult.SizeStringMeters
-      .map { BigDecimal(_) }
-      .map { Area(_, AreaUnit.SquareMetres) }
-
-    val bedroomsCount = searchResult.BedsString
-      .filter(_.isDigit)
-      .toIntOption
-
-    val bathroomsCount = searchResult.BathString
-      .getOrElse("")
-      .filter(_.isDigit)
-      .toIntOption
-
-    val buildingEnergyRating = searchResult.BerRating
-      .flatMap { Rating.tryFromString(_).toOption }
-
-    MyHomeIeAdvert(
-      url = url,
-      priceInEur = price,
-      address = searchResult.DisplayAddress,
-      coordinates = coordinates,
-      imageUrls = searchResult.Photos,
-      size = size,
-      bedroomsCount = bedroomsCount,
-      bathroomsCount = bathroomsCount,
-      buildingEnergyRating = buildingEnergyRating,
-      createdAt = Instant.now
-    )
-  }
-
-  val stream: ZStream[ZioClient, Throwable, Advert] =
+  val stream: ZStream[ZioClient, Throwable, Int] =
     streamApiRequestContent
       .mapZIOPar(5) { getApiResponse }
       .map { _.SearchResults }
       .takeWhile { _.nonEmpty }
       .flattenIterables
-      .map { toMyHomeIeAdvert }
-      .map { MyHomeIeAdvert.toAdvert }
+      .map { _.PropertyId }
 
 }

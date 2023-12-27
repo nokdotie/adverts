@@ -14,6 +14,7 @@ import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 case class DaftIeAdvert(
     url: String,
     priceInEur: Option[Int],
+    description: String,
     address: String,
     eircode: Option[Eircode],
     coordinates: Coordinates,
@@ -34,6 +35,7 @@ object DaftIeAdvert {
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
+      propertyDescription = Some(self.description),
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,

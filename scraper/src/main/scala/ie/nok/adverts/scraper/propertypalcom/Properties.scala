@@ -58,10 +58,6 @@ object Properties {
     Client
       .requestBodyAsJson(url)
       .retry(recurs(3) && fixed(1.second))
-      .tapError { _ =>
-        println(s"Failed: $url")
-        ZIO.unit
-      }
 
   private def getIdAndAddress(
       result: ResponsePagePropsInitialStatePropertiesDataResult

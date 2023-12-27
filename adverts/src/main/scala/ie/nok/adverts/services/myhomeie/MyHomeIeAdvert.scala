@@ -13,6 +13,7 @@ import zio.json.{JsonCodec, DeriveJsonCodec, EncoderOps}
 case class MyHomeIeAdvert(
     url: String,
     priceInEur: Option[Int],
+    description: Option[String],
     address: String,
     coordinates: Option[Coordinates],
     imageUrls: List[String],
@@ -29,6 +30,7 @@ object MyHomeIeAdvert {
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
+      propertyDescription = self.description,
       propertyAddress = self.address,
       propertyEircode = None,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
