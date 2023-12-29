@@ -125,7 +125,7 @@ object Properties {
           .flattenIterables
           .map { selectAdvertUrls }
           .collectSome
-          .mapZIOPar(5) { url =>
+          .mapZIOParUnordered(5) { url =>
             getResponse(url).map { selectAdvert(url, _, advertiser) }
           }
       }

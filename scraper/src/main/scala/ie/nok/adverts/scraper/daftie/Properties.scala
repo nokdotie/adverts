@@ -202,7 +202,7 @@ object Properties {
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
-      .mapZIO { listing => advertiser(listing).map { (listing, _) } }
+      .mapZIOParUnordered(5) { listing => advertiser(listing).map { (listing, _) } }
       .map { toDaftIeAdvert }
       .map { DaftIeAdvert.toAdvert }
 
