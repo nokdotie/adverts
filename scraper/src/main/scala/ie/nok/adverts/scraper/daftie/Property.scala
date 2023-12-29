@@ -170,8 +170,20 @@ object Property {
   def pipeline(apiKey: String): ZPipeline[ZioClient & AdvertiserStore, Throwable, Int, Advert] =
     ZPipeline
       .map { getRequestUrl(apiKey, _) }
-      .mapZIO { getApiResponse }
-      .mapZIO { listing => advertiser(listing).map { (listing, _) } }
+      .mapZIOParUnordered(5) {
+        getApiResponse(_)
+          .fold(
+            (throwable) => {
+              println(s"Failure: ${throwable.getMessage()}")
+              throwable.printStackTrace()
+
+              None
+            },
+            Option.apply(_)
+          )
+      }
+      .collectSome
+      .mapZIOParUnordered(5) { listing => advertiser(listing).map { (listing, _) } }
       .map { toDaftIeAdvert }
       .map { DaftIeAdvert.toAdvert }
 
