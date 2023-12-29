@@ -44,7 +44,7 @@ object Property {
   protected[daftie] given JsonDecoder[ResponsePagePropsListing] = DeriveJsonDecoder.gen[ResponsePagePropsListing]
 
   protected[daftie] case class ResponsePagePropsListingMedia(
-      images: List[ResponsePagePropsListingMediaImage]
+      images: Option[List[ResponsePagePropsListingMediaImage]]
   )
   protected[daftie] given JsonDecoder[ResponsePagePropsListingMedia] = DeriveJsonDecoder.gen[ResponsePagePropsListingMedia]
 
@@ -155,7 +155,7 @@ object Property {
       address = address,
       eircode = eircode,
       coordinates = coordinates,
-      imageUrls = response.pageProps.listing.media.images.map { _.size1440x960 },
+      imageUrls = response.pageProps.listing.media.images.getOrElse(List.empty).map { _.size1440x960 },
       size = size(response),
       bedroomsCount = bedroomsCount,
       bathroomsCount = bathroomsCount,
