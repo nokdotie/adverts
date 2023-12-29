@@ -199,7 +199,7 @@ object Properties {
     ZStream
       .iterate(0)(_ + limit)
       .map { start => getRequestQuery(start, limit) }
-      .mapZIOParUnordered(5) { getResponse }
+      .mapZIOPar(5) { getResponse }
       .map { _.data.properties.flatten }
       .takeWhile { _.nonEmpty }
       .flattenIterables

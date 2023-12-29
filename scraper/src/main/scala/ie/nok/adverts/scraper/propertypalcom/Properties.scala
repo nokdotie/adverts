@@ -76,7 +76,7 @@ object Properties {
       buildId: String
   ): ZStream[ZioClient, Throwable, PropertyIdAndAddress] =
     streamApiRequestUrl(buildId)
-      .mapZIOParUnordered(5) { getApiResponse }
+      .mapZIOPar(5) { getApiResponse }
       .map { _.pageProps.initialState.properties.data.results }
       .takeWhile { _.nonEmpty }
       .flattenIterables

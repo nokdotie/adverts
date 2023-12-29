@@ -197,12 +197,12 @@ object Properties {
 
   val stream: ZStream[ZioClient & AdvertiserStore, Throwable, Advert] =
     streamApiRequestContent
-      .mapZIOParUnordered(5) { getApiResponse }
+      .mapZIOPar(5) { getApiResponse }
       .map { _.listings }
       .takeWhile { _.nonEmpty }
       .flattenIterables
       .map { _.listing }
-      .mapZIO { listing => advertiser(listing).map { (listing, _) } }
+      .mapZIOParUnordered(5) { listing => advertiser(listing).map { (listing, _) } }
       .map { toDaftIeAdvert }
       .map { DaftIeAdvert.toAdvert }
 
