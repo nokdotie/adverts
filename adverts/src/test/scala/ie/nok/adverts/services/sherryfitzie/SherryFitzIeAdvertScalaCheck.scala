@@ -11,6 +11,7 @@ import ie.nok.unit.{Area, given}
 private val genSherryFitzIeAdvert: Gen[SherryFitzIeAdvert] = for {
   url                                   <- arbitrary[String]
   priceInEur                            <- arbitrary[Option[Int]]
+  description                           <- arbitrary[String]
   address                               <- arbitrary[String]
   eircode                               <- arbitrary[Option[Eircode]]
   coordinates                           <- arbitrary[Coordinates]
@@ -26,6 +27,7 @@ private val genSherryFitzIeAdvert: Gen[SherryFitzIeAdvert] = for {
   sherryFitzIeAdvert = SherryFitzIeAdvert(
     url = url,
     priceInEur = priceInEur,
+    description = description,
     address = address,
     eircode = eircode,
     coordinates = coordinates,

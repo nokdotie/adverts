@@ -13,6 +13,7 @@ import org.scalacheck.{Arbitrary, Gen}
 private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   url                                   <- arbitrary[String]
   priceInEur                            <- arbitrary[Option[Int]]
+  description                           <- arbitrary[String]
   address                               <- arbitrary[String]
   eircode                               <- arbitrary[Option[Eircode]]
   coordinates                           <- arbitrary[Coordinates]
@@ -30,6 +31,7 @@ private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   daftIeAdvert = DaftIeAdvert(
     url = url,
     priceInEur = priceInEur,
+    description = description,
     address = address,
     eircode = eircode,
     coordinates = coordinates,

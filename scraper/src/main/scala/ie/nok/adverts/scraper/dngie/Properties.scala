@@ -29,9 +29,11 @@ object Properties {
   private given JsonDecoder[ResponseData] = DeriveJsonDecoder.gen[ResponseData]
 
   private case class ResponseDataProperty(
+      description: String,
       bathroom: Option[Int],
       bedroom: Option[Int],
       display_address: String,
+      post_code: Option[String],
       floorarea_min: Float,
       floorarea_type: Option[String],
       images: Option[List[ResponseDataPropertyImage]],
@@ -76,9 +78,11 @@ object Properties {
         start: $start,
         limit: $limit
       ) {
+        description
         bathroom
         bedroom
         display_address
+        post_code
         floorarea_min
         floorarea_type
         images
@@ -160,6 +164,10 @@ object Properties {
   private def toDngIeAdvert(
       property: ResponseDataProperty
   ): DngIeAdvert = {
+    val description = property.description.linesIterator
+      .mkString("\n")
+      .trim
+
     val coordinates = Coordinates(
       latitude = property.latitude,
       longitude = property.longitude
@@ -174,14 +182,16 @@ object Properties {
       property
     )
 
-    val (address, eircode) = Eircode.unzip(property.display_address)
+    val eircode                     = property.post_code.flatMap { Eircode.findFirstIn }
+    val (address, eircodeInAddress) = Eircode.unzip(property.display_address)
 
     DngIeAdvert(
       url = property.property_url,
       priceInEur = property.price,
       address = address,
-      eircode = eircode,
+      eircode = eircode.orElse(eircodeInAddress),
       coordinates = coordinates,
+      description = description,
       imageUrls = imageUrls,
       size = size(property),
       bedroomsCount = property.bedroom,
