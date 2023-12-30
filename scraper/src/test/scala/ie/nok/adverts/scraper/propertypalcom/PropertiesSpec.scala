@@ -12,8 +12,7 @@ class PropertySuite extends FunSuite {
     val result =
       "scraper/src/test/resourses/propertypalcom/8-sea-breeze-heights-clonakilty.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
-        .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvertOption }
+        .map { Property.toPropertyPalComAdvertOption(_, None) }
         .collectSome
         .map { _.size }
         .collectSome
@@ -32,8 +31,7 @@ class PropertySuite extends FunSuite {
     val result =
       "scraper/src/test/resourses/propertypalcom/the-riggins-dunshaughlin.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
-        .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvertOption }
+        .map { Property.toPropertyPalComAdvertOption(_, None) }
         .collectSome
         .map { _.size }
         .collectSome
@@ -52,8 +50,7 @@ class PropertySuite extends FunSuite {
     val result =
       "scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json"
         .pipe { readJsonLinesAs[Property.Response](_) }
-        .map { _.pageProps.property }
-        .map { Property.toPropertyPalComAdvertOption }
+        .map { Property.toPropertyPalComAdvertOption(_, None) }
         .collectSome
         .map { _.size }
         .collectSome

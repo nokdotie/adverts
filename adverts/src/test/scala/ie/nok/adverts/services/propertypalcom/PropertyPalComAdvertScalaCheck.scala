@@ -1,5 +1,6 @@
 package ie.nok.adverts.services.propertypalcom
 
+import ie.nok.advertisers.{Advertiser, given}
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
@@ -21,7 +22,8 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
   buildingEnergyRating <- arbitrary[Option[Rating]]
   buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
-  createdAt <- arbitrary[Instant]
+  advertiser <- arbitrary[Option[Advertiser]]
+  createdAt  <- arbitrary[Instant]
   propertyPalComAdvert = PropertyPalComAdvert(
     url = url,
     priceInEur = priceInEur,
@@ -34,6 +36,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
     bathroomsCount = bathroomsCount,
     buildingEnergyRating = buildingEnergyRating,
     buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
+    advertiser = advertiser,
     createdAt = createdAt
   )
 } yield propertyPalComAdvert
