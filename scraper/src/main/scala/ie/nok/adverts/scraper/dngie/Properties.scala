@@ -164,6 +164,10 @@ object Properties {
   private def toDngIeAdvert(
       property: ResponseDataProperty
   ): DngIeAdvert = {
+    val description = property.description.linesIterator
+      .mkString("\n")
+      .trim
+
     val coordinates = Coordinates(
       latitude = property.latitude,
       longitude = property.longitude
@@ -187,7 +191,7 @@ object Properties {
       address = address,
       eircode = eircode.orElse(eircodeInAddress),
       coordinates = coordinates,
-      description = property.description,
+      description = description,
       imageUrls = imageUrls,
       size = size(property),
       bedroomsCount = property.bedroom,

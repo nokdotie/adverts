@@ -75,7 +75,11 @@ object Property {
 
     val description = response.Brochure.Property.BrochureContent
       .find(_.ContentType == "Description")
-      .map(_.Content)
+      .map {
+        _.Content.linesIterator
+          .mkString("\n")
+          .trim
+      }
 
     val coordinates = response.Brochure.Property.BrochureMap.map { bm =>
       Coordinates(

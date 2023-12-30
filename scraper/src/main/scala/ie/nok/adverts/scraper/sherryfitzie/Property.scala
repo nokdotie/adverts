@@ -96,10 +96,14 @@ object Property {
   ): SherryFitzIeAdvert = {
     val description = html
       .select(".property-description")
-      .tap { _.select("br").after("\\n"); }
+      .tap { _.select("br").before("\\n") }
+      .tap { _.select("p").before("\\n") }
       .text
       .replaceAll("\\\\n", "\n")
       .replace("*** Please register on www.mysherryfitz.ie to bid on this property***", "")
+      .linesIterator
+      .mkString("\n")
+      .trim
 
     val imageUrls = html
       .select(".property-image-element img")

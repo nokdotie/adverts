@@ -124,7 +124,12 @@ object Property {
     response.pageProps.listing.seller.licenceNumber.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber(_) }
 
   protected[daftie] def toDaftIeAdvert(response: Response, advertiser: Option[Advertiser]): DaftIeAdvert = {
-    val price              = response.pageProps.listing.price.filter(_.isDigit).toIntOption
+    val price = response.pageProps.listing.price.filter(_.isDigit).toIntOption
+
+    val description = response.pageProps.listing.description.linesIterator
+      .mkString("\n")
+      .trim
+
     val (address, eircode) = Eircode.unzip(response.pageProps.listing.title)
 
     val coordinates = Coordinates(
@@ -151,7 +156,7 @@ object Property {
     DaftIeAdvert(
       url = response.pageProps.canonicalUrl,
       priceInEur = price,
-      description = response.pageProps.listing.description,
+      description = description,
       address = address,
       eircode = eircode,
       coordinates = coordinates,

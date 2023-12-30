@@ -59,6 +59,7 @@ object Properties {
       .takeWhile { _.tagName != "h3" }
       .map { _.text }
       .mkString("\n")
+      .trim
 
     val (address, eircode) = document
       .selectFirst("#property-featured-image img")
