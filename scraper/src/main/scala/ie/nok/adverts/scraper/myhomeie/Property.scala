@@ -1,5 +1,7 @@
 package ie.nok.adverts.scraper.myhomeie
 
+import ie.nok.advertisers.Advertiser
+import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.Advert
 import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
 import ie.nok.ber.Rating
@@ -21,9 +23,15 @@ object Property {
   private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
   private case class ResponseBrochure(
+      Group: ResponseBrochureGroup,
       Property: ResponseBrochureProperty
   )
   private given JsonDecoder[ResponseBrochure] = DeriveJsonDecoder.gen[ResponseBrochure]
+
+  private case class ResponseBrochureGroup(
+      SalesLicense: Option[String]
+  )
+  private given JsonDecoder[ResponseBrochureGroup] = DeriveJsonDecoder.gen[ResponseBrochureGroup]
 
   private case class ResponseBrochureProperty(
       PropertyId: Int,
@@ -66,7 +74,12 @@ object Property {
       .retry(recurs(3) && fixed(1.second))
   }
 
-  private def toMyHomeIeAdvert(response: Response): MyHomeIeAdvert = {
+  private def advertiser(
+      response: Response
+  ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
+    response.Brochure.Group.SalesLicense.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber }
+
+  private def toMyHomeIeAdvert(response: Response, advertiser: Option[Advertiser]): MyHomeIeAdvert = {
     val url = s"https://www.myhome.ie/${response.Brochure.Property.PropertyId}"
     val price = response.Brochure.Property.PriceAsString
       //   .getOrElse("")
@@ -115,11 +128,12 @@ object Property {
       bedroomsCount = bedroomsCount,
       bathroomsCount = bathroomsCount,
       buildingEnergyRating = buildingEnergyRating,
+      advertiser = advertiser,
       createdAt = Instant.now
     )
   }
 
-  def pipeline(apiKey: String): ZPipeline[ZioClient, Throwable, Int, Advert] =
+  def pipeline(apiKey: String): ZPipeline[ZioClient & AdvertiserStore, Throwable, Int, Advert] =
     ZPipeline
       .map { getRequestUrl(apiKey, _) }
       .mapZIOParUnordered(5) {
@@ -135,6 +149,7 @@ object Property {
           )
       }
       .collectSome
+      .mapZIOParUnordered(5) { listing => advertiser(listing).map { (listing, _) } }
       .map { toMyHomeIeAdvert }
       .map { MyHomeIeAdvert.toAdvert }
 
