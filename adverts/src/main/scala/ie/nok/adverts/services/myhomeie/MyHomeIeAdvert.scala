@@ -1,5 +1,6 @@
 package ie.nok.adverts.services.myhomeie
 
+import ie.nok.advertisers.Advertiser
 import ie.nok.adverts.{Advert, InformationSource}
 import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
@@ -21,6 +22,7 @@ case class MyHomeIeAdvert(
     bedroomsCount: Option[Int],
     bathroomsCount: Option[Int],
     buildingEnergyRating: Option[Rating],
+    advertiser: Option[Advertiser],
     createdAt: Instant
 )
 
@@ -45,7 +47,7 @@ object MyHomeIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
       sources = List(InformationSource.MyHomeIeAdvert(self)),
-      advertiser = None,
+      advertiser = self.advertiser,
       createdAt = self.createdAt
     )
 

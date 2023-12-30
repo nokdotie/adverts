@@ -1,5 +1,6 @@
 package ie.nok.adverts.services.propertypalcom
 
+import ie.nok.advertisers.Advertiser
 import ie.nok.adverts.{Advert, InformationSource}
 import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
@@ -23,6 +24,7 @@ case class PropertyPalComAdvert(
     bathroomsCount: Option[Int],
     buildingEnergyRating: Option[Rating],
     buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear: Option[BigDecimal],
+    advertiser: Option[Advertiser],
     createdAt: Instant
 )
 
@@ -47,7 +49,7 @@ object PropertyPalComAdvert {
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.PropertyPalComAdvert(self)),
-      advertiser = None,
+      advertiser = self.advertiser,
       createdAt = self.createdAt
     )
 

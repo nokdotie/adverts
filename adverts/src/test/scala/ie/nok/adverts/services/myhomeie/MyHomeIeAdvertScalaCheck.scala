@@ -1,5 +1,6 @@
 package ie.nok.adverts.services.myhomeie
 
+import ie.nok.advertisers.{Advertiser, given}
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import java.time.Instant
@@ -18,6 +19,7 @@ private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   bedroomsCount        <- arbitrary[Option[Int]]
   bathroomsCount       <- arbitrary[Option[Int]]
   buildingEnergyRating <- arbitrary[Option[Rating]]
+  advertiser           <- arbitrary[Option[Advertiser]]
   createdAt            <- arbitrary[Instant]
   myHomeIeAdvert = MyHomeIeAdvert(
     url = url,
@@ -30,6 +32,7 @@ private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
     bedroomsCount = bedroomsCount,
     bathroomsCount = bathroomsCount,
     buildingEnergyRating = buildingEnergyRating,
+    advertiser = advertiser,
     createdAt = createdAt
   )
 } yield myHomeIeAdvert
