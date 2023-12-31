@@ -76,7 +76,7 @@ enum IntFilter {
   case LessThan(filter: Int)
 
   def filter(value: Int): Boolean = this match {
-    case Empty          => true
+    case Empty            => true
     case And(head, tail*) => (head +: tail).forall(_.filter(value))
     case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
 

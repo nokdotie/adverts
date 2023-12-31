@@ -6,7 +6,7 @@ import zio.json.{DeriveJsonCodec, JsonCodec}
 case class AdvertList(
     identifier: String,
     label: String,
-    filter: AdvertFilter,
+    filter: AdvertFilter
 )
 
 object AdvertList {

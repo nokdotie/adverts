@@ -16,15 +16,14 @@ object AdvertListStoreInMemory {
       .getDayOfYear()
       .pipe { Random(_) }
 
-
   val live: ZLayer[Any, Nothing, AdvertListStore] =
     List(
-      ("1 Beds", AdvertFilter.PropertyBedroomsCount(IntFilter.Equals(1))),
+      ("1 Beds", AdvertFilter.PropertyBedroomsCount(IntFilter.Equals(1)))
     )
-    .map { (label, filter) => AdvertList(Hasher.hash(label), label, filter) }
-    .pipe { randomWithDayOfYearSeed.shuffle(_) }
-    .pipe { new AdvertListStoreInMemory(_) }
-    .pipe { ZLayer.succeed }
+      .map { (label, filter) => AdvertList(Hasher.hash(label), label, filter) }
+      .pipe { randomWithDayOfYearSeed.shuffle(_) }
+      .pipe { new AdvertListStoreInMemory(_) }
+      .pipe { ZLayer.succeed }
 
 }
 
