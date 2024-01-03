@@ -26,12 +26,14 @@ object Property {
       Group: ResponseBrochureGroup,
       Property: ResponseBrochureProperty
   )
-  private given JsonDecoder[ResponseBrochure] = DeriveJsonDecoder.gen[ResponseBrochure]
+  private given JsonDecoder[ResponseBrochure] =
+    DeriveJsonDecoder.gen[ResponseBrochure]
 
   private case class ResponseBrochureGroup(
       SalesLicense: Option[String]
   )
-  private given JsonDecoder[ResponseBrochureGroup] = DeriveJsonDecoder.gen[ResponseBrochureGroup]
+  private given JsonDecoder[ResponseBrochureGroup] =
+    DeriveJsonDecoder.gen[ResponseBrochureGroup]
 
   private case class ResponseBrochureProperty(
       PropertyId: Int,
@@ -46,24 +48,29 @@ object Property {
       BrochureContent: List[ResponseBrochurePropertyBrochureContent],
       BrochureMap: Option[ResponseBrochurePropertyBrochureMap]
   )
-  private given JsonDecoder[ResponseBrochureProperty] = DeriveJsonDecoder.gen[ResponseBrochureProperty]
+  private given JsonDecoder[ResponseBrochureProperty] =
+    DeriveJsonDecoder.gen[ResponseBrochureProperty]
 
   private case class ResponseBrochurePropertyBrochureContent(
       ContentType: String,
       Content: String
   )
-  private given JsonDecoder[ResponseBrochurePropertyBrochureContent] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureContent]
+  private given JsonDecoder[ResponseBrochurePropertyBrochureContent] =
+    DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureContent]
 
   private case class ResponseBrochurePropertyBrochureMap(
       longitude: BigDecimal,
       latitude: BigDecimal
   )
-  private given JsonDecoder[ResponseBrochurePropertyBrochureMap] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureMap]
+  private given JsonDecoder[ResponseBrochurePropertyBrochureMap] =
+    DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureMap]
 
   private def getRequestUrl(apiKey: String, propertyId: Int): String =
     s"https://api.myhome.ie/brochure/$propertyId?ApiKey=$apiKey&format=json"
 
-  private def getApiResponse(url: String): ZIO[ZioClient, Throwable, Response] = {
+  private def getApiResponse(
+      url: String
+  ): ZIO[ZioClient, Throwable, Response] = {
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client
@@ -77,9 +84,14 @@ object Property {
   private def advertiser(
       response: Response
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    response.Brochure.Group.SalesLicense.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber }
+    response.Brochure.Group.SalesLicense.fold(ZIO.succeed(None)) {
+      AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber
+    }
 
-  private def toMyHomeIeAdvert(response: Response, advertiser: Option[Advertiser]): MyHomeIeAdvert = {
+  private def toMyHomeIeAdvert(
+      response: Response,
+      advertiser: Option[Advertiser]
+  ): MyHomeIeAdvert = {
     val url = s"https://www.myhome.ie/${response.Brochure.Property.PropertyId}"
     val price = response.Brochure.Property.PriceAsString
       //   .getOrElse("")
@@ -133,7 +145,9 @@ object Property {
     )
   }
 
-  def pipeline(apiKey: String): ZPipeline[ZioClient & AdvertiserStore, Throwable, Int, Advert] =
+  def pipeline(
+      apiKey: String
+  ): ZPipeline[ZioClient & AdvertiserStore, Throwable, Int, Advert] =
     ZPipeline
       .map { getRequestUrl(apiKey, _) }
       .mapZIOParUnordered(5) {
@@ -149,7 +163,9 @@ object Property {
           )
       }
       .collectSome
-      .mapZIOParUnordered(5) { listing => advertiser(listing).map { (listing, _) } }
+      .mapZIOParUnordered(5) { listing =>
+        advertiser(listing).map { (listing, _) }
+      }
       .map { toMyHomeIeAdvert }
       .map { MyHomeIeAdvert.toAdvert }
 

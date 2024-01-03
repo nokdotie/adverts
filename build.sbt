@@ -28,7 +28,7 @@ lazy val root = project
 
 lazy val adverts = project
   .settings(
-    githubOwner      := "nokdotie",
+    githubOwner := "nokdotie",
     githubRepository := "adverts",
     resolvers += Resolver.githubPackages("nokdotie"),
     libraryDependencies ++= List(

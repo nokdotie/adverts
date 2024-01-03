@@ -36,8 +36,8 @@ object Properties {
   private def getApiResponse(
       content: String
   ): ZIO[ZioClient, Throwable, Response] = {
-    val brandHeader       = Headers("brand", "daft")
-    val platformHeader    = Headers("platform", "web")
+    val brandHeader = Headers("brand", "daft")
+    val platformHeader = Headers("platform", "web")
     val contentTypeHeader = Headers("content-type", "application/json")
 
     Client

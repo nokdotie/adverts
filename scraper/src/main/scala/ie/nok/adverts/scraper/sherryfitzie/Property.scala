@@ -60,10 +60,11 @@ object Property {
       .map { BigDecimal.apply }
       .map { Area(_, AreaUnit.SquareMetres) }
 
-  private val ber: Document => (Option[Rating], Option[Int], Option[BigDecimal]) = {
+  private val ber
+      : Document => (Option[Rating], Option[Int], Option[BigDecimal]) = {
     val cssQuery =
       ".property-full-description-container:contains(BER) .property-description"
-    val berRegex                  = "BER: ([A-G][1-3]?)".r
+    val berRegex = "BER: ([A-G][1-3]?)".r
     val berCertificateNumberRegex = "BER Number: ([0-9]+)".r
     val berEnergyRatingRegex =
       "Energy Performance Indicator: ([0-9]+\\.?[0-9]+)".r
@@ -100,7 +101,10 @@ object Property {
       .tap { _.select("p").before("\\n") }
       .text
       .replaceAll("\\\\n", "\n")
-      .replace("*** Please register on www.mysherryfitz.ie to bid on this property***", "")
+      .replace(
+        "*** Please register on www.mysherryfitz.ie to bid on this property***",
+        ""
+      )
       .linesIterator
       .mkString("\n")
       .trim
@@ -125,7 +129,8 @@ object Property {
       imageUrls = imageUrls,
       size = size(html),
       bedroomsCount = documentToIntOption(html, ".property-stat:contains(bed)"),
-      bathroomsCount = documentToIntOption(html, ".property-stat:contains(bath)"),
+      bathroomsCount =
+        documentToIntOption(html, ".property-stat:contains(bath)"),
       buildingEnergyRating = rating,
       buildingEnergyRatingCertificateNumber = certificateNumber,
       buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = energyRating,

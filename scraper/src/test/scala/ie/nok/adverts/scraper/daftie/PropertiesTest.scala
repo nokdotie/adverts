@@ -30,6 +30,9 @@ class PropertiesTest extends FunSuite {
         .pipe { ZIO.unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
-    assertEquals(result.address, "121 The Laurels, Tullow Road, Carlow Town, Co. Carlow")
+    assertEquals(
+      result.address,
+      "121 The Laurels, Tullow Road, Carlow Town, Co. Carlow"
+    )
   }
 }

@@ -13,5 +13,9 @@ object AdvertiserStore {
   def getByPropertyServicesRegulatoryAuthorityLicenceNumber(
       propertyServicesRegulatoryAuthorityLicenceNumber: String
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    ZIO.serviceWithZIO[AdvertiserStore](_.getByPropertyServicesRegulatoryAuthorityLicenceNumber(propertyServicesRegulatoryAuthorityLicenceNumber))
+    ZIO.serviceWithZIO[AdvertiserStore](
+      _.getByPropertyServicesRegulatoryAuthorityLicenceNumber(
+        propertyServicesRegulatoryAuthorityLicenceNumber
+      )
+    )
 }

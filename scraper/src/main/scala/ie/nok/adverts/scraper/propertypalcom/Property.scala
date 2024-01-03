@@ -75,7 +75,9 @@ object Property {
   protected[propertypalcom] case class ResponsePagePropsPropertyAccount(
       psrLicenceNumber: Option[String]
   )
-  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyAccount] =
+  protected[propertypalcom] given JsonDecoder[
+    ResponsePagePropsPropertyAccount
+  ] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyAccount]
 
   protected[propertypalcom] def getApiRequestUrl(
@@ -138,9 +140,11 @@ object Property {
   private def advertiser(
       response: Response
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    response.pageProps.property.account.flatMap { _.psrLicenceNumber }.fold(ZIO.succeed(None)) {
-      AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber
-    }
+    response.pageProps.property.account
+      .flatMap { _.psrLicenceNumber }
+      .fold(ZIO.succeed(None)) {
+        AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber
+      }
 
   protected[propertypalcom] def toPropertyPalComAdvertOption(
       response: Response,
@@ -159,14 +163,20 @@ object Property {
         )
       }
 
-    val imageUrls = response.pageProps.property.images.getOrElse(List.empty).map(_.url)
+    val imageUrls =
+      response.pageProps.property.images.getOrElse(List.empty).map(_.url)
 
-    val bedroomsCount  = keyInfoTextToIntOption(response.pageProps.property, "BEDROOMS")
-    val bathroomsCount = keyInfoTextToIntOption(response.pageProps.property, "BATHROOMS")
+    val bedroomsCount =
+      keyInfoTextToIntOption(response.pageProps.property, "BEDROOMS")
+    val bathroomsCount =
+      keyInfoTextToIntOption(response.pageProps.property, "BATHROOMS")
 
-    val (rating, energyRatingInKWhPerSqtMtrPerYear) = ber(response.pageProps.property)
+    val (rating, energyRatingInKWhPerSqtMtrPerYear) = ber(
+      response.pageProps.property
+    )
 
-    val (address, eircode) = Eircode.unzip(response.pageProps.property.displayAddress)
+    val (address, eircode) =
+      Eircode.unzip(response.pageProps.property.displayAddress)
 
     response.pageProps.property.shareURL.map { url =>
       PropertyPalComAdvert(
@@ -180,7 +190,8 @@ object Property {
         bedroomsCount = bedroomsCount,
         bathroomsCount = bathroomsCount,
         buildingEnergyRating = rating,
-        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = energyRatingInKWhPerSqtMtrPerYear,
+        buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+          energyRatingInKWhPerSqtMtrPerYear,
         advertiser = advertiser,
         createdAt = Instant.now
       )
@@ -189,11 +200,18 @@ object Property {
 
   def pipeline(
       buildId: String
-  ): ZPipeline[ZioClient & AdvertiserStore, Throwable, PropertyIdAndAddress, Advert] =
+  ): ZPipeline[
+    ZioClient & AdvertiserStore,
+    Throwable,
+    PropertyIdAndAddress,
+    Advert
+  ] =
     ZPipeline
       .map { getApiRequestUrl(buildId, _) }
       .mapZIOParUnordered(5) { getApiResponse }
-      .mapZIOParUnordered(5) { response => advertiser(response).map { (response, _) } }
+      .mapZIOParUnordered(5) { response =>
+        advertiser(response).map { (response, _) }
+      }
       .map { toPropertyPalComAdvertOption }
       .collectSome
       .map { PropertyPalComAdvert.toAdvert }

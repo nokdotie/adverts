@@ -39,12 +39,16 @@ object Properties {
 
   private def selectAdvertUrls(element: Element): Option[String] = {
     val figCation = element.selectFirst("figure figcaption").text
-    val url       = element.selectFirst(".detail a.more-details").attr("href")
+    val url = element.selectFirst(".detail a.more-details").attr("href")
 
     Option.when(figCation == "Residential Sales")(url)
   }
 
-  private def selectAdvert(url: String, document: Document, advertiser: Option[Advertiser]): Advert = {
+  private def selectAdvert(
+      url: String,
+      document: Document,
+      advertiser: Option[Advertiser]
+  ): Advert = {
     val price = document
       .selectFirst(".price-and-type")
       .pipe { Option(_) }
@@ -112,7 +116,8 @@ object Properties {
       propertyBathroomsCount = bathroomsCount,
       propertyBuildingEnergyRating = Option.empty,
       propertyBuildingEnergyRatingCertificateNumber = Option.empty,
-      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Option.empty,
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        Option.empty,
       sources = List.empty,
       advertiser = advertiser,
       createdAt = Instant.now()
@@ -120,7 +125,9 @@ object Properties {
   }
 
   val advertiser: ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber("003837")
+    AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber(
+      "003837"
+    )
 
   val stream: ZStream[ZioClient & AdvertiserStore, Throwable, Advert] =
     ZStream
