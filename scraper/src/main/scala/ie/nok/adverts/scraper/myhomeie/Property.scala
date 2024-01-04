@@ -139,13 +139,13 @@ object Property {
       .mapZIOParUnordered(5) {
         getApiResponse(_)
           .fold(
-            (throwable) => {
-              println(s"Failure: ${throwable.getMessage()}")
+            throwable => {
+              println(s"Failure: ${throwable.getMessage}")
               throwable.printStackTrace()
 
               None
             },
-            Option.apply(_)
+            Option.apply
           )
       }
       .collectSome

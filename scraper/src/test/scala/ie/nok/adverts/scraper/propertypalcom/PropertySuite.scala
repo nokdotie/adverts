@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.propertypalcom
 
-import ie.nok.zio.ZIO
+import ie.nok.zio.ZIOOps.unsafeRun
 import ie.nok.unit.Area
 import munit.FunSuite
 import scala.util.chaining.scalaUtilChainingOps
@@ -20,7 +20,7 @@ class PropertySuite extends FunSuite {
         .map { _.value }
         .runHead
         .someOrFailException
-        .pipe { ZIO.unsafeRun(_) }
+        .pipe { unsafeRun }
         .getOrElse { _ => fail("Missing property size") }
 
     assertEquals(expected, result)
@@ -39,7 +39,7 @@ class PropertySuite extends FunSuite {
         .map { _.value }
         .runHead
         .someOrFailException
-        .pipe { ZIO.unsafeRun(_) }
+        .pipe { unsafeRun }
         .getOrElse { _ => fail("Missing property size") }
 
     assertEquals(expected, result)
@@ -58,7 +58,7 @@ class PropertySuite extends FunSuite {
         .map { _.value }
         .runHead
         .someOrFailException
-        .pipe { ZIO.unsafeRun(_) }
+        .pipe { unsafeRun }
         .getOrElse { _ => fail("Missing property size") }
 
     assertEquals(expected, result)

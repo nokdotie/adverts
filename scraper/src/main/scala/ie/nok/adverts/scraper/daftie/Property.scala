@@ -134,7 +134,7 @@ object Property {
 
     val coordinates = Coordinates(
       latitude = response.pageProps.listing.point.coordinates(1),
-      longitude = response.pageProps.listing.point.coordinates(0)
+      longitude = response.pageProps.listing.point.coordinates.head
     )
 
     val bedroomsCount = response.pageProps.listing.numBedrooms
@@ -178,13 +178,13 @@ object Property {
       .mapZIOParUnordered(5) {
         getApiResponse(_)
           .fold(
-            (throwable) => {
-              println(s"Failure: ${throwable.getMessage()}")
+            throwable => {
+              println(s"Failure: ${throwable.getMessage}")
               throwable.printStackTrace()
 
               None
             },
-            Option.apply(_)
+            Option.apply
           )
       }
       .collectSome

@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.daftie
 
-import ie.nok.zio.ZIO
+import ie.nok.zio.ZIOOps.unsafeRun
 import munit.FunSuite
 import zio.json.readJsonLinesAs
 
@@ -14,7 +14,7 @@ class PropertiesTest extends FunSuite {
         .mapConcat { _.listings }
         .map { _.listing.id }
         .runCollect
-        .pipe { ZIO.unsafeRun }
+        .pipe { unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
     assertEquals(result.size, 20)
@@ -27,7 +27,7 @@ class PropertiesTest extends FunSuite {
         .runHead
         .map { _.get }
         .map { Property.toDaftIeAdvert(_, None) }
-        .pipe { ZIO.unsafeRun }
+        .pipe { unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
     assertEquals(result.address, "121 The Laurels, Tullow Road, Carlow Town, Co. Carlow")
