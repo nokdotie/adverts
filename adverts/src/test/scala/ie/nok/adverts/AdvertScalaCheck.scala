@@ -7,7 +7,7 @@ import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
-import ie.nok.adverts.{given}
+import ie.nok.adverts.given
 import ie.nok.advertisers.{Advertiser, given}
 
 private val genAdvert: Gen[Advert] = for {

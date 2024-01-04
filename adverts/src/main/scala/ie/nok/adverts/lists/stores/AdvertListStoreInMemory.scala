@@ -13,7 +13,7 @@ object AdvertListStoreInMemory {
   private def randomWithDayOfYearSeed: Random =
     LocalDate
       .now(ZoneOffset.UTC)
-      .getDayOfYear()
+      .getDayOfYear
       .pipe { Random(_) }
 
   val live: ZLayer[Any, Nothing, AdvertListStore] =
