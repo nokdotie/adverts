@@ -1,15 +1,16 @@
 package ie.nok.adverts.services.dngie
 
 import ie.nok.adverts.{Advert, InformationSource}
-import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
+import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
+import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
+
 import java.time.Instant
 import java.util.UUID
 import scala.util.chaining.scalaUtilChainingOps
-import zio.json.{JsonCodec, DeriveJsonCodec, EncoderOps}
 
 case class DngIeAdvert(
     url: String,
@@ -35,6 +36,7 @@ object DngIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = Option(self.description),
+      propertyType = None,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,

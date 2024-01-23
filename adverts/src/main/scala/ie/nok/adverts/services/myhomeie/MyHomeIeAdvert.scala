@@ -34,6 +34,7 @@ object MyHomeIeAdvert {
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = self.description,
       propertyAddress = self.address,
+      propertyType = None,
       propertyEircode = None,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = self.imageUrls,
