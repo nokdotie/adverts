@@ -1,21 +1,22 @@
 package ie.nok.adverts.scraper.maherpropertyie
 
-import ie.nok.adverts.Advert
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
+import ie.nok.adverts.Advert
 import ie.nok.ecad.Eircode
+import ie.nok.geographic.Coordinates
 import ie.nok.hash.Hasher
 import ie.nok.http.Client
-import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
 import org.jsoup.nodes.{Document, Element}
-import scala.jdk.CollectionConverters._
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, Console, ZIO}
-import zio.http.{Client => ZioClient}
-import zio.Schedule.{recurs, fixed}
+import zio.Schedule.{fixed, recurs}
+import zio.http.Client as ZioClient
 import zio.stream.ZStream
+import zio.{Console, ZIO, durationInt}
+
+import java.time.Instant
+import scala.jdk.CollectionConverters.*
+import scala.util.chaining.scalaUtilChainingOps
 
 object Properties {
   private val getUrls: ZStream[Any, Nothing, String] =
@@ -102,6 +103,7 @@ object Properties {
       advertPriceInEur = price,
       propertyIdentifier = Hasher.hash(address),
       propertyDescription = Some(description),
+      propertyType = None,
       propertyAddress = address,
       propertyEircode = eircode,
       propertyCoordinates = Coordinates.zero,

@@ -1,23 +1,23 @@
 package ie.nok.adverts.scraper.daftie
 
-import ie.nok.adverts.Advert
+import ie.nok.advertisers.Advertiser
+import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.services.daftie.DaftIeAdvert
+import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.Schedule.{recurs, fixed}
-import zio.http.{Client => ZioClient}
+import zio.Schedule.{fixed, recurs}
+import zio.http.Client as ZioClient
 import zio.http.model.Headers
-import zio.json.{JsonDecoder, DeriveJsonDecoder}
+import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZPipeline
+import zio.{ZIO, durationInt}
+
+import java.time.Instant
 import scala.util.Try
-import ie.nok.advertisers.stores.AdvertiserStore
-import ie.nok.advertisers.Advertiser
 
 object Property {
   protected[daftie] case class Response(pageProps: ResponsePageProps)
@@ -39,6 +39,7 @@ object Property {
       floorArea: Option[ResponsePagePropsListingFloorArea],
       point: ResponsePagePropsListingPoint,
       description: String,
+      propertyType: String,
       seller: ResponsePagePropsListingSeller
   )
   protected[daftie] given JsonDecoder[ResponsePagePropsListing] = DeriveJsonDecoder.gen[ResponsePagePropsListing]
@@ -153,10 +154,13 @@ object Property {
       buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
     ) = ber(response)
 
+    val propertyType = PropertyType.tryFromString(response.pageProps.listing.propertyType).toOption
+
     DaftIeAdvert(
       url = response.pageProps.canonicalUrl,
       priceInEur = price,
       description = description,
+      propertyType = propertyType,
       address = address,
       eircode = eircode,
       coordinates = coordinates,

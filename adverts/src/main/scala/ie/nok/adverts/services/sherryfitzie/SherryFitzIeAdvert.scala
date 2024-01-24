@@ -36,6 +36,7 @@ object SherryFitzIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = Option(self.description),
+      propertyType = None,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,

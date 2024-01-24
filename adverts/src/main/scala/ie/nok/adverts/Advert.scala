@@ -14,6 +14,7 @@ case class Advert(
     advertPriceInEur: Int,
     propertyIdentifier: String,
     propertyDescription: Option[String],
+    propertyType: Option[PropertyType],
     propertyAddress: String,
     propertyEircode: Option[Eircode],
     propertyCoordinates: Coordinates,

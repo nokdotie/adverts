@@ -39,6 +39,7 @@ object Main extends ZIOAppDefault {
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyIdentifier = adverts.head.propertyIdentifier,
             propertyDescription = adverts.flatMap { _.propertyDescription }.headOption,
+            propertyType = adverts.flatMap { _.propertyType }.headOption,
             propertyAddress = adverts.head.propertyAddress,
             propertyEircode = adverts.flatMap { _.propertyEircode }.headOption,
             propertyCoordinates = adverts

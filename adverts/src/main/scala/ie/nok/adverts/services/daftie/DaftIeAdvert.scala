@@ -1,12 +1,13 @@
 package ie.nok.adverts.services.daftie
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, InformationSource}
+import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
+
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
@@ -15,6 +16,7 @@ case class DaftIeAdvert(
     url: String,
     priceInEur: Option[Int],
     description: String,
+    propertyType: Option[PropertyType],
     address: String,
     eircode: Option[Eircode],
     coordinates: Coordinates,
@@ -36,6 +38,7 @@ object DaftIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = Some(self.description),
+      propertyType = self.propertyType,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,

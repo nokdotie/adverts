@@ -35,6 +35,7 @@ object PropertyPalComAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = None,
+      propertyType = None,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),

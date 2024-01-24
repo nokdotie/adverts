@@ -1,20 +1,22 @@
 package ie.nok.adverts
 
-import org.scalacheck.{Arbitrary, Gen}
-import org.scalacheck.Arbitrary.arbitrary
-import java.time.Instant
+import ie.nok.advertisers.{Advertiser, given}
+import ie.nok.adverts.given
 import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
-import ie.nok.adverts.given
-import ie.nok.advertisers.{Advertiser, given}
+import org.scalacheck.Arbitrary.arbitrary
+import org.scalacheck.{Arbitrary, Gen}
+
+import java.time.Instant
 
 private val genAdvert: Gen[Advert] = for {
   advertUrl           <- arbitrary[String]
   advertPriceInEur    <- arbitrary[Int]
   propertyIdentifier  <- arbitrary[String]
   propertyDescription <- arbitrary[Option[String]]
+  propertyType        <- arbitrary[PropertyType].map(Some(_))
   propertyAddress     <- arbitrary[String]
   propertyEircode     <- arbitrary[Option[Eircode]]
   propertyCoordinates <- arbitrary[Coordinates]
@@ -35,6 +37,7 @@ private val genAdvert: Gen[Advert] = for {
     advertPriceInEur = advertPriceInEur,
     propertyIdentifier = propertyIdentifier,
     propertyDescription = propertyDescription,
+    propertyType = propertyType,
     propertyAddress = propertyAddress,
     propertyEircode = propertyEircode,
     propertyCoordinates = propertyCoordinates,
