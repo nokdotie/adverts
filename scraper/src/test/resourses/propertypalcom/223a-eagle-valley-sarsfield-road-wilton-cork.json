@@ -1,0 +1,1443 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 927161,
+      "pathId": "928361",
+      "path": "/223a-eagle-valley-sarsfield-road-wilton-cork/928361",
+      "shareURL": "https://www.propertypal.com/928361",
+      "account": {
+        "accountNumber": "ST0419242",
+        "organisation": "REA O'Donoghue & Clarke (Cork)",
+        "organisationBranch": "",
+        "displayAddress": "16 Cook Street, Cork, T12 WFF8",
+        "officePhone": {
+          "national": "(021) 425 1010",
+          "uk": "+353 21 425 1010",
+          "displayNumber": "(021) 425 1010",
+          "international": "+353 21 425 1010",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "002428",
+        "websiteUrl": "http://reaodonoghueclarke.ie",
+        "landingPageUrl": "/estate-agents/rea-odonoghue-clarke-cork",
+        "groupLandingPageUrl": null,
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": false,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "standardBackgroundColour": "#40525c",
+          "alternative": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "alternativeBackgroundColour": "#40525c",
+          "premier": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "premierBackgroundColour": "#40525c"
+        },
+        "agentLogos": [
+          {
+            "logoType": "STANDARD",
+            "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "width": 600,
+            "height": 375,
+            "backgroundColour": "#40525c",
+            "accountNumber": "ST0419242"
+          },
+          {
+            "logoType": "ALTERNATIVE",
+            "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "width": 600,
+            "height": 375,
+            "backgroundColour": "#40525c",
+            "accountNumber": "ST0419242"
+          },
+          {
+            "logoType": "PREMIER",
+            "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "width": 600,
+            "height": 375,
+            "backgroundColour": "#40525c",
+            "accountNumber": "ST0419242"
+          }
+        ],
+        "colours": {
+          "secondary": "#353535",
+          "primary": "#FFFFFF"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          },
+          {
+            "id": 31,
+            "label": "Society of Chartered Surveyors (SCSI)",
+            "textKey": "surveyor",
+            "url": "https://www.scsi.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+            "type": "PREFERRED",
+            "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+          }
+        ],
+        "missingAccreditations": null,
+        "propertypalAwards": [],
+        "openingTimes": [
+          {
+            "openTime": "2019-12-30T09:30:00+0000",
+            "closeTime": "2019-12-30T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-31T09:30:00+0000",
+            "closeTime": "2019-12-31T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-01T09:30:00+0000",
+            "closeTime": "2020-01-01T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-02T09:30:00+0000",
+            "closeTime": "2020-01-02T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-03T09:30:00+0000",
+            "closeTime": "2020-01-03T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          }
+        ],
+        "tier": "STANDARD",
+        "enhancedBranding": false,
+        "searchUrl": "/search?radius=8.0467&runit=km&rlat=51.8735076&rlng=-8.514987&sta=forSale&st=sale&pt=residential&min=250000&max=375000&currency=GBP&term=3821132",
+        "searchParams": {
+          "radius": 8.0467,
+          "runit": "km",
+          "rlat": 51.8735076,
+          "rlng": -8.514987,
+          "status": [
+            "forSale"
+          ],
+          "saleType": [
+            "sale"
+          ],
+          "category": [
+            "residential"
+          ],
+          "minPrice": 250000,
+          "maxPrice": 375000,
+          "currency": "GBP",
+          "term": [
+            "3821132"
+          ]
+        }
+      },
+      "displayAddress": "223a Eagle Valley, Sarsfield Road, Wilton, Cork, T12R9WT",
+      "displayAddressLine1": "223a Eagle Valley",
+      "displayAddressLine2": "Sarsfield Road, Wilton, Cork, T12R9WT",
+      "addressLine1": "223a Eagle Valley",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "223a",
+      "street": "Eagle Valley",
+      "addressLine2": "Sarsfield Road, Wilton",
+      "town": "Cork",
+      "region": "Cork",
+      "postcode": "T12R9WT",
+      "countryCode": "IRL",
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "coordinate": {
+        "latitude": 51.8735076,
+        "longitude": -8.514987,
+        "accuracy": "unsure",
+        "mapZoomLevel": 10,
+        "showStreetView": true
+      },
+      "numBedrooms": 4,
+      "numBathrooms": 4,
+      "numReceptionRooms": null,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "endTerrace",
+        "text": "End-terrace Houses",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 1,
+          "key": "property",
+          "text": "Properties"
+        },
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 6,
+          "key": "terraced",
+          "text": "Terraced houses"
+        },
+        {
+          "id": 29,
+          "key": "endTerraced",
+          "text": "End Terraced Houses"
+        },
+        {
+          "id": 35,
+          "key": "endTerracedExBungalow",
+          "text": "End Terraced Houses"
+        },
+        {
+          "id": 41,
+          "key": "terracedExcludingBungalow",
+          "text": "Terraced Houses"
+        },
+        {
+          "id": 45,
+          "key": "housesExBungalow",
+          "text": "Houses (Ex. Bungalows)"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2024-01-31T16:53:00+0000",
+      "listingTime": null,
+      "activationTime": "2024-01-31T16:53:00+0000",
+      "listingUpdatedTime": "2024-02-09T16:36:57+0000",
+      "price": {
+        "priceType": "FIXED_PRICE",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": 325000,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": false,
+        "pricePrefix": "Price",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": false
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 0,
+          "url": "https://media.propertypal.com/large/p/927161/36015568.jpg",
+          "width": 642,
+          "height": 479,
+          "blurhash": "UVDS?:NdIpoJyZa#j[WBtTn$oIa}xtV?axj[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015568.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015568.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/927161/36015569.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UDFFQt~q00M{IUW.eTnh%LaeD*X9%LofNGR*",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015569.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015569.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/927161/36015574.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UKH_G9D*0g?GXnjFxBM}}+RlI=s+_3aeofkD",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015574.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015574.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/927161/36015567.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UOJtu3R;%zWYxYo|IARQ~UxCIpoyxv-oIVkB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015567.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015567.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/927161/36015572.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "U8FOx{Md00x]~9kDxvxC4Txu.RM{_3WVIUx[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015572.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015572.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/927161/36015576.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UIHxTd-VyYtmD$NHDOaI~8xWE5NH?bt8R*of",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015576.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015576.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/927161/36015580.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UCG[TT~V01x]X.D%v|V@+@IVOZ%M_3-;ozD%",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015580.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015580.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/927161/36015575.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UFGbVE_2K6E29ERPDiRjeRt6x^t7~q%MMxjF",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015575.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015575.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/927161/36015577.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "U6FYV_9Y01?IY6~qMJR*009wTeVW9b00M{.8",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015577.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015577.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/927161/36015578.jpg",
+          "width": 640,
+          "height": 480,
+          "blurhash": "UnGv37WBWCt7?wNHkBoftlkCRkkBt8t7WAf6",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927161/36015578.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927161/36015578.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": [
+        {
+          "pricePrefix": "Price",
+          "priceSuffix": null,
+          "previousStatus": null,
+          "difference": null,
+          "previousPrice": null,
+          "previousPublished": false,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": true,
+          "publishedOnAwpChange": true,
+          "differencePercentage": null,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 325000,
+          "timeModified": "2024-01-31T16:53:00+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        }
+      ],
+      "agents": [
+        {
+          "accountNumber": "ST0419242",
+          "organisation": "REA O'Donoghue & Clarke (Cork)",
+          "organisationBranch": "",
+          "displayAddress": "16 Cook Street, Cork, T12 WFF8",
+          "officePhone": {
+            "national": "(021) 425 1010",
+            "uk": "+353 21 425 1010",
+            "displayNumber": "(021) 425 1010",
+            "international": "+353 21 425 1010",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "002428",
+          "websiteUrl": "http://reaodonoghueclarke.ie",
+          "landingPageUrl": "/estate-agents/rea-odonoghue-clarke-cork",
+          "groupLandingPageUrl": null,
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": false,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "standardBackgroundColour": "#40525c",
+            "alternative": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "alternativeBackgroundColour": "#40525c",
+            "premier": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "premierBackgroundColour": "#40525c"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            },
+            {
+              "id": 31,
+              "label": "Society of Chartered Surveyors (SCSI)",
+              "textKey": "surveyor",
+              "url": "https://www.scsi.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+              "type": "PREFERRED",
+              "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+            }
+          ],
+          "missingAccreditations": null,
+          "propertypalAwards": [],
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:30:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:30:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:30:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:30:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:30:00+0000",
+              "closeTime": "2020-01-03T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=51.8735076&rlng=-8.514987&sta=forSale&st=sale&pt=residential&min=250000&max=375000&currency=GBP&term=3821132",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 51.8735076,
+            "rlng": -8.514987,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 250000,
+            "maxPrice": 375000,
+            "currency": "GBP",
+            "term": [
+              "3821132"
+            ]
+          }
+        }
+      ],
+      "contacts": {
+        "showAllContactsOption": true,
+        "default": {
+          "accountNumber": "ST0419242",
+          "organisation": "REA O'Donoghue & Clarke (Cork)",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "showAddress": true,
+          "phoneNumber": {
+            "national": "(021) 425 1010",
+            "uk": "+353 21 425 1010",
+            "displayNumber": "(021) 425 1010",
+            "international": "+353 21 425 1010",
+            "countryCode": 353
+          },
+          "displayAddress": "16 Cook Street, Cork, T12 WFF8",
+          "psrLicenceNumber": "002428",
+          "landingPageUrl": "/estate-agents/rea-odonoghue-clarke-cork",
+          "groupLandingPageUrl": null,
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "standardBackgroundColour": "#40525c",
+            "alternative": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "alternativeBackgroundColour": "#40525c",
+            "premier": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+            "premierBackgroundColour": "#40525c"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "width": 600,
+              "height": 375,
+              "backgroundColour": "#40525c",
+              "accountNumber": "ST0419242"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:30:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:30:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:30:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:30:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:30:00+0000",
+              "closeTime": "2020-01-03T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=51.8735076&rlng=-8.514987&sta=forSale&st=sale&pt=residential&min=250000&max=375000&currency=GBP&term=3821132",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 51.8735076,
+            "rlng": -8.514987,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 250000,
+            "maxPrice": 375000,
+            "currency": "GBP",
+            "term": [
+              "3821132"
+            ]
+          }
+        },
+        "all": [
+          {
+            "accountNumber": "ST0419242",
+            "organisation": "REA O'Donoghue & Clarke (Cork)",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "showAddress": true,
+            "phoneNumber": {
+              "national": "(021) 425 1010",
+              "uk": "+353 21 425 1010",
+              "displayNumber": "(021) 425 1010",
+              "international": "+353 21 425 1010",
+              "countryCode": 353
+            },
+            "displayAddress": "16 Cook Street, Cork, T12 WFF8",
+            "psrLicenceNumber": "002428",
+            "landingPageUrl": "/estate-agents/rea-odonoghue-clarke-cork",
+            "groupLandingPageUrl": null,
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "standardBackgroundColour": "#40525c",
+              "alternative": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "alternativeBackgroundColour": "#40525c",
+              "premier": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+              "premierBackgroundColour": "#40525c"
+            },
+            "agentLogos": [
+              {
+                "logoType": "STANDARD",
+                "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+                "width": 600,
+                "height": 375,
+                "backgroundColour": "#40525c",
+                "accountNumber": "ST0419242"
+              },
+              {
+                "logoType": "ALTERNATIVE",
+                "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+                "width": 600,
+                "height": 375,
+                "backgroundColour": "#40525c",
+                "accountNumber": "ST0419242"
+              },
+              {
+                "logoType": "PREMIER",
+                "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+                "width": 600,
+                "height": 375,
+                "backgroundColour": "#40525c",
+                "accountNumber": "ST0419242"
+              }
+            ],
+            "colours": {
+              "secondary": "#353535",
+              "primary": "#FFFFFF"
+            },
+            "openingTimes": [
+              {
+                "openTime": "2019-12-30T09:30:00+0000",
+                "closeTime": "2019-12-30T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-31T09:30:00+0000",
+                "closeTime": "2019-12-31T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-01T09:30:00+0000",
+                "closeTime": "2020-01-01T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-02T09:30:00+0000",
+                "closeTime": "2020-01-02T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-03T09:30:00+0000",
+                "closeTime": "2020-01-03T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              }
+            ],
+            "tier": "STANDARD",
+            "enhancedBranding": false,
+            "searchUrl": "/search?radius=8.0467&runit=km&rlat=51.8735076&rlng=-8.514987&sta=forSale&st=sale&pt=residential&min=250000&max=375000&currency=GBP&term=3821132",
+            "searchParams": {
+              "radius": 8.0467,
+              "runit": "km",
+              "rlat": 51.8735076,
+              "rlng": -8.514987,
+              "status": [
+                "forSale"
+              ],
+              "saleType": [
+                "sale"
+              ],
+              "category": [
+                "residential"
+              ],
+              "minPrice": 250000,
+              "maxPrice": 375000,
+              "currency": "GBP",
+              "term": [
+                "3821132"
+              ]
+            }
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "4 Bed End-terrace House",
+      "description": "<h2>Features</h2><ul><li>Wilton</li><li>Cork</li><li>C1</li></ul><br/>Description<br/>REA O’Donoghue & Clarke are delighted to place on the market this 4 bedroom end of terrace house situated in this mature and much sought after location. Whilst in need of some upgrading and re-decoration it is bright and spacious and will make for an ideal family home or investment opportunity. The property is situated in close proximity to the south ring road network and all amenities in the area to include the Wilton Shopping Centre, CUH, UCC & MTU, local schools, bars & restaurants and sports facilities.<br/><br/>BER Details<br/>BER: C1 BER No.116731324<br/><br/>Accommodation<br/>GROUND FLOOR<br/>HALLWAY <br/>Ceramic Tiled Floor, Downstairs W.C, Understairs Storage, Radiator, Power Points, Telephone Point. <br/>LIVING ROOM 13.70 X 11.70<br/>Laminate Wood Floor, Fireplace, Radiator, Power Points, TV Point. <br/>LOUNGE/BEDROOM 1 15.90 X 8.90<br/>Laminate Wood Floor, Radiator, Telephone Point, TV Point, Double Door To Rear Garden. <br/>Ensuite: W. C., W.H.B., Shower Unit, Tiled.<br/>KITCHEN/DINING ROOM 19.40 X 9.00<br/>Ceramic Tile Floor, Wall & Floor Units, Cooker Point, Extractor Fan, Plumbed For Washing Machine/Dryer,<br/>Dishwasher, Power Points, Double Door To Rear Garden.<br/>STAIRS & LANDING<br/>Carpet, Hot Press.<br/> <br/>FIRST FLOOR<br/>BEDROOM 2 11.7 X 11.5 <br/>Wood Floor, Fitted Wardrobes, Radiator, Power Points, TV Point, Telephone Point.<br/>Ensuite: W.C., W.H.B, Shower, Tiled. <br/>BEDROOM 3 12.0 X 10.00<br/>Wood Floor, Fitted Wardrobes, Radiator, Power Points, TV Point, Telephone Point.<br/>Ensuite: W.C. W.H.B., Shower Unit, Tiled. <br/>BEDROOM 4 8.70 X 7.6<br/>Wood Floor, Fitted Wardrobes, Radiator, Power Points, TV Point, Telephone Point.<br/>Ensuite: W.C., W.H.B., Shower Unit, Tiled. <br/> <br/>SERVICES<br/>Mains Water/Drainage, E.S.B, Telephone<br/>HEATING<br/>Gas Fired Central Heating System<br/>WINDOWS<br/>PVC Double Glazed Windows<br/>OUTSIDE/OTHER<br/>Total Floor Area 104 Sq Mtrs (1120 Sq Ft)<br/>Driveway to Front.<br/>Mature Garden to Rear.<br/>Alarm System.<br/>Fire Alarm System.<br/>Outside Power Points & Tap.<br/>BER: C1 BER NO: 116731324<br/>Eircode: T12 R9WT<br/><br/>Method of Sale<br/>For Sale By Online Private Treaty<br/>Register to bid on bidnow.ie or reaodonoghueclarke.ie<br/><h2>BER Details</h2><p><strong>BER Rating:</strong> C1</p><p><strong>BER No.:</strong> 116731324</p><p><strong>Energy Performance Indicator:</strong> Not provided</p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": {
+        "alphanumericRating": "C1",
+        "energyPerformanceIndicator": null
+      },
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "€325,000",
+          "textHtml": "<span class=\"price-text\">€325,000</span>",
+          "subtext": "Est. £277,541",
+          "image": null,
+          "link": null,
+          "beforePrice": "",
+          "price": "€325,000",
+          "afterPrice": ""
+        },
+        {
+          "key": "RATES",
+          "name": "Rates",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STAMP_DUTY_SIMPLE",
+          "name": "Stamp Duty",
+          "text": "€3,250",
+          "textHtml": "€3,250",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "TENURE",
+          "name": "Tenure",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "End-terrace House",
+          "textHtml": "End-terrace House",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "4",
+          "textHtml": "4",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "4",
+          "textHtml": "4",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "C1",
+          "textHtml": "C1",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "SIZE",
+          "name": "Size",
+          "text": "104 sq. metres",
+          "textHtml": "104 sq. metres",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 80,
+        "history": [
+          {
+            "date": "2024-02-08T00:00:00+0000",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-07T00:00:00+0000",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-06T00:00:00+0000",
+            "totalUniqueViews": 4,
+            "totalViews": 4,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-05T00:00:00+0000",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-04T00:00:00+0000",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-03T00:00:00+0000",
+            "totalUniqueViews": 10,
+            "totalViews": 10,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-02T00:00:00+0000",
+            "totalUniqueViews": 8,
+            "totalViews": 8,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-01T00:00:00+0000",
+            "totalUniqueViews": 13,
+            "totalViews": 13,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-31T00:00:00+0000",
+            "totalUniqueViews": 23,
+            "totalViews": 23,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-30T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-29T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-28T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-27T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-26T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-25T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-24T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-23T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-22T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-21T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-20T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-19T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-18T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-17T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-16T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-15T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-14T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-13T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-12T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-11T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-10T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          }
+        ]
+      },
+      "shortlisted": false,
+      "featuredDevelopmentContent": null,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-cork",
+          "label": "County Cork"
+        },
+        {
+          "url": "/property-for-sale/cork",
+          "label": "Cork"
+        },
+        {
+          "url": "/223a-eagle-valley-sarsfield-road-wilton-cork/928361",
+          "label": "223a Eagle Valley"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in T12R9WT": "/property-for-sale/t12r9wt",
+        "Property For Sale in T12": "/property-for-sale/t12",
+        "Property For Sale in County Cork": "/property-for-sale/county-cork",
+        "Property For Sale in Cork": "/property-for-sale/cork",
+        "REA O'Donoghue & Clarke (Cork)": "/estate-agents/rea-odonoghue-clarke-cork"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premiumListing": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2024-02-09T00:00:00+0000",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "coOwnershipEligible": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "standardBackgroundColour": "#40525c",
+          "alternative": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "alternativeBackgroundColour": "#40525c",
+          "premier": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "premierBackgroundColour": "#40525c"
+        }
+      ],
+      "agentLogos": [
+        {
+          "logoType": "STANDARD",
+          "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "width": 600,
+          "height": 375,
+          "backgroundColour": "#40525c",
+          "accountNumber": "ST0419242"
+        },
+        {
+          "logoType": "ALTERNATIVE",
+          "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "width": 600,
+          "height": 375,
+          "backgroundColour": "#40525c",
+          "accountNumber": "ST0419242"
+        },
+        {
+          "logoType": "PREMIER",
+          "url": "https://media.propertypal.com/logo/200330152223/400x400/ST0419242/master.png",
+          "width": 600,
+          "height": 375,
+          "backgroundColour": "#40525c",
+          "accountNumber": "ST0419242"
+        }
+      ],
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "223a Eagle Valley, Sarsfield Road, Wilton, Cork",
+        "description": "This 4 Bed End-Terrace House Sale Is Located At 223a Eagle Valley, Sarsfield Road, Wilton, Cork. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "€325,000",
+          "Details": "4 Bed End-terrace House"
+        }
+      },
+      "requestValuation": false,
+      "timeLastUnpublishedOnPP": null
+    },
+    "emailHashes": null,
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "expand": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null,
+          "coOwnership": false
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}

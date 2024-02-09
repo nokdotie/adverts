@@ -1,0 +1,1606 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 911341,
+      "pathId": "912541",
+      "path": "/ballykillowen-laghey/912541",
+      "shareURL": "https://www.propertypal.com/912541",
+      "account": {
+        "accountNumber": "ST0815201",
+        "organisation": "Anderson Auctioneers",
+        "organisationBranch": "",
+        "displayAddress": "Main Street, Donegal Town, F94 ETC2",
+        "officePhone": {
+          "national": "(074) 972 2888",
+          "uk": "+353 74 972 2888",
+          "displayNumber": "(074) 972 2888",
+          "international": "+353 74 972 2888",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "001425",
+        "websiteUrl": "https://www.anderson.ie/",
+        "landingPageUrl": "/estate-agents/anderson-auctioneers",
+        "groupLandingPageUrl": null,
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": true,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "standardBackgroundColour": "#192f78",
+          "alternative": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "alternativeBackgroundColour": "#192f78",
+          "premier": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "premierBackgroundColour": "#192f78"
+        },
+        "agentLogos": [
+          {
+            "logoType": "STANDARD",
+            "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "width": 600,
+            "height": 302,
+            "backgroundColour": "#192f78",
+            "accountNumber": "ST0815201"
+          },
+          {
+            "logoType": "ALTERNATIVE",
+            "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "width": 600,
+            "height": 302,
+            "backgroundColour": "#192f78",
+            "accountNumber": "ST0815201"
+          },
+          {
+            "logoType": "PREMIER",
+            "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "width": 600,
+            "height": 302,
+            "backgroundColour": "#192f78",
+            "accountNumber": "ST0815201"
+          }
+        ],
+        "colours": {
+          "secondary": "#353535",
+          "primary": "#FFFFFF"
+        },
+        "accreditations": [
+          {
+            "id": 29,
+            "label": "IPAV",
+            "textKey": "ipav",
+            "url": "https://www.ipav.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/ipav.png",
+            "type": "PREFERRED",
+            "tooltip": "IPAV promotes the public interest in the professional competence of its members and protects the interest of its members between themselves, non-members and the general public."
+          },
+          {
+            "id": 31,
+            "label": "Society of Chartered Surveyors (SCSI)",
+            "textKey": "surveyor",
+            "url": "https://www.scsi.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+            "type": "PREFERRED",
+            "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+          },
+          {
+            "id": 30,
+            "label": "Tegova",
+            "textKey": "tegova",
+            "url": "https://www.tegova.org",
+            "imageUrl": "https://www.propertypal.com/accreditations/tegova.png",
+            "type": "PREFERRED",
+            "tooltip": "TEGOVA unites 70 national valuers’ associations from 38 countries representing 70 000 qualified valuers either self-employed or employed by specialist consultancies, private sector companies, government departments or financial institutions both local and"
+          }
+        ],
+        "missingAccreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          }
+        ],
+        "propertypalAwards": [],
+        "openingTimes": [
+          {
+            "openTime": "2019-12-30T09:30:00+0000",
+            "closeTime": "2019-12-30T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-31T09:30:00+0000",
+            "closeTime": "2019-12-31T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-01T09:30:00+0000",
+            "closeTime": "2020-01-01T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-02T09:30:00+0000",
+            "closeTime": "2020-01-02T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-03T09:30:00+0000",
+            "closeTime": "2020-01-03T16:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-06T13:00:00+0000",
+            "closeTime": "2020-01-06T14:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": true
+          }
+        ],
+        "tier": "STANDARD",
+        "enhancedBranding": false,
+        "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.6345223&rlng=-8.0528133&sta=forSale&st=sale&pt=residential&min=130000&max=200000&currency=GBP&term=1341788",
+        "searchParams": {
+          "radius": 8.0467,
+          "runit": "km",
+          "rlat": 54.6345223,
+          "rlng": -8.0528133,
+          "status": [
+            "forSale"
+          ],
+          "saleType": [
+            "sale"
+          ],
+          "category": [
+            "residential"
+          ],
+          "minPrice": 130000,
+          "maxPrice": 200000,
+          "currency": "GBP",
+          "term": [
+            "1341788"
+          ]
+        }
+      },
+      "displayAddress": "Ballykillowen, Laghey, F94KXC2",
+      "displayAddressLine1": "Ballykillowen",
+      "displayAddressLine2": "Laghey, F94KXC2",
+      "addressLine1": "Ballykillowen",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "",
+      "street": "Ballykillowen",
+      "addressLine2": "",
+      "town": "Laghey",
+      "region": "Donegal",
+      "postcode": "F94KXC2",
+      "countryCode": "IRL",
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "coordinate": {
+        "latitude": 54.6345223,
+        "longitude": -8.0528133,
+        "accuracy": "exactlyRight",
+        "mapZoomLevel": 15,
+        "showStreetView": true
+      },
+      "numBedrooms": 4,
+      "numBathrooms": 1,
+      "numReceptionRooms": 1,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "houseAndLand",
+        "text": "House and Lands",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 8,
+          "key": "detached",
+          "text": "Detached houses"
+        },
+        {
+          "id": 26,
+          "key": "land",
+          "text": "Land"
+        },
+        {
+          "id": 33,
+          "key": "detachedExBungalow",
+          "text": "Detached Houses"
+        },
+        {
+          "id": 43,
+          "key": "houseAndLand",
+          "text": "Houses and Land"
+        },
+        {
+          "id": 45,
+          "key": "housesExBungalow",
+          "text": "Houses (Ex. Bungalows)"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2023-10-04T16:17:36+0100",
+      "listingTime": null,
+      "activationTime": "2023-10-04T16:17:36+0100",
+      "listingUpdatedTime": "2023-10-25T14:17:16+0100",
+      "price": {
+        "priceType": "GUIDE_PRICE",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": 175000,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": false,
+        "pricePrefix": "Guide price",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": false
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/911341/35599292.jpg",
+          "width": 1170,
+          "height": 866,
+          "blurhash": "USFZ4p%y4-jqtpxvRNRiS~tRn#RixwogV?Wm",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35599292.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35599292.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/911341/35600917.jpg",
+          "width": 1024,
+          "height": 473,
+          "blurhash": "UCC?u_~W009W-?%MD$IT9YR%-;%MW*k7xvfU",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35600917.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35600917.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/911341/35597158.jpg",
+          "width": 473,
+          "height": 341,
+          "blurhash": "UdFPp0?baxM{?d%NWBRi.8xbaeWB?at6V[a#",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597158.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597158.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/911341/35674143.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "UUF6OH%LDiIU?KkDImM{x]a$RkR%%Ls:V]ae",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35674143.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35674143.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/911341/35597154.jpg",
+          "width": 1585,
+          "height": 772,
+          "blurhash": "U04yy6-m0NC$_N*D.l4VUFS1}^8wHBEc.7or",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597154.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597154.jpg"
+          }
+        },
+        {
+          "imageType": "FloorPlan",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/911341/35597166.jpg",
+          "width": 2291,
+          "height": 1666,
+          "blurhash": "UpRV@At7oft7%Mj[fQj[_4j]axofs.j@ayfR",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597166.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597166.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/911341/35597160.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "U7F=Q[=^9Y~VqZ%M58E2_2IA9#xa00?bw[n$",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597160.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597160.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/911341/35597159.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "UGFO.HRi58s:_MRii_WC%1oz9FxuI]ozxabb",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597159.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597159.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/911341/35597161.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "U8HL0a00L0_NTw?v#7D%vL-pKj0K9abI^k$*",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597161.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597161.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/911341/35597162.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "UFFFNi~pEN^*t+W.w]j=?GWUIo%ME3xat7NH",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597162.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597162.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/911341/35597163.jpg",
+          "width": 473,
+          "height": 348,
+          "blurhash": "U_HyN_jdWBof-@oyk9of%Oocj?j[xuWBj]oL",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597163.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597163.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/911341/35597164.jpg",
+          "width": 473,
+          "height": 353,
+          "blurhash": "UaF?I8MxE1%M%QRiIUt8-=j;M{t7%eWER*WV",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597164.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597164.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/911341/35597165.jpg",
+          "width": 473,
+          "height": 344,
+          "blurhash": "U#J8tLtQa#of?dofj[j]-?jIj@kB?bocfPj[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597165.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597165.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/911341/35597167.jpg",
+          "width": 473,
+          "height": 381,
+          "blurhash": "UBEMglDiNES1?KsFNFjY%wtQxbRkM$jcxbR+",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35597167.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35597167.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/911341/35599293.jpg",
+          "width": 1170,
+          "height": 866,
+          "blurhash": "UQFPf}o{9Dk8x|xuM^jYOExvi^IntSs;Rht3",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35599293.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35599293.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/911341/35674141.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "UUEyuW?bD$V?-@x]M_M{kWt8a#M_t7WCRjoI",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35674141.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35674141.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/911341/35674142.jpg",
+          "width": 2221,
+          "height": 1666,
+          "blurhash": "UbEffsShn3xv.AWXi]t8JFoJjDkDtPWBjER-",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/911341/35674142.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/911341/35674142.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": [
+        {
+          "pricePrefix": "Guide price",
+          "priceSuffix": null,
+          "previousStatus": null,
+          "previousPrice": null,
+          "previousPublished": false,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": true,
+          "publishedOnAwpChange": true,
+          "difference": null,
+          "differencePercentage": null,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "price": 175000,
+          "published": true,
+          "timeModified": "2023-10-04T16:17:36+0100",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        }
+      ],
+      "agents": [
+        {
+          "accountNumber": "ST0815201",
+          "organisation": "Anderson Auctioneers",
+          "organisationBranch": "",
+          "displayAddress": "Main Street, Donegal Town, F94 ETC2",
+          "officePhone": {
+            "national": "(074) 972 2888",
+            "uk": "+353 74 972 2888",
+            "displayNumber": "(074) 972 2888",
+            "international": "+353 74 972 2888",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "001425",
+          "websiteUrl": "https://www.anderson.ie/",
+          "landingPageUrl": "/estate-agents/anderson-auctioneers",
+          "groupLandingPageUrl": null,
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": true,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "standardBackgroundColour": "#192f78",
+            "alternative": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "alternativeBackgroundColour": "#192f78",
+            "premier": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "premierBackgroundColour": "#192f78"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "accreditations": [
+            {
+              "id": 29,
+              "label": "IPAV",
+              "textKey": "ipav",
+              "url": "https://www.ipav.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/ipav.png",
+              "type": "PREFERRED",
+              "tooltip": "IPAV promotes the public interest in the professional competence of its members and protects the interest of its members between themselves, non-members and the general public."
+            },
+            {
+              "id": 31,
+              "label": "Society of Chartered Surveyors (SCSI)",
+              "textKey": "surveyor",
+              "url": "https://www.scsi.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+              "type": "PREFERRED",
+              "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+            },
+            {
+              "id": 30,
+              "label": "Tegova",
+              "textKey": "tegova",
+              "url": "https://www.tegova.org",
+              "imageUrl": "https://www.propertypal.com/accreditations/tegova.png",
+              "type": "PREFERRED",
+              "tooltip": "TEGOVA unites 70 national valuers’ associations from 38 countries representing 70 000 qualified valuers either self-employed or employed by specialist consultancies, private sector companies, government departments or financial institutions both local and"
+            }
+          ],
+          "missingAccreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            }
+          ],
+          "propertypalAwards": [],
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:30:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:30:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:30:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:30:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:30:00+0000",
+              "closeTime": "2020-01-03T16:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-06T13:00:00+0000",
+              "closeTime": "2020-01-06T14:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": true
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.6345223&rlng=-8.0528133&sta=forSale&st=sale&pt=residential&min=130000&max=200000&currency=GBP&term=1341788",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 54.6345223,
+            "rlng": -8.0528133,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 130000,
+            "maxPrice": 200000,
+            "currency": "GBP",
+            "term": [
+              "1341788"
+            ]
+          }
+        }
+      ],
+      "contacts": {
+        "showAllContactsOption": true,
+        "default": {
+          "accountNumber": "ST0815201",
+          "organisation": "Anderson Auctioneers",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "showAddress": true,
+          "phoneNumber": {
+            "national": "(074) 972 2888",
+            "uk": "+353 74 972 2888",
+            "displayNumber": "(074) 972 2888",
+            "international": "+353 74 972 2888",
+            "countryCode": 353
+          },
+          "displayAddress": "Main Street, Donegal Town, F94 ETC2",
+          "psrLicenceNumber": "001425",
+          "landingPageUrl": "/estate-agents/anderson-auctioneers",
+          "groupLandingPageUrl": null,
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "standardBackgroundColour": "#192f78",
+            "alternative": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "alternativeBackgroundColour": "#192f78",
+            "premier": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+            "premierBackgroundColour": "#192f78"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "width": 600,
+              "height": 302,
+              "backgroundColour": "#192f78",
+              "accountNumber": "ST0815201"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:30:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:30:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:30:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:30:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:30:00+0000",
+              "closeTime": "2020-01-03T16:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-06T13:00:00+0000",
+              "closeTime": "2020-01-06T14:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": true
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.6345223&rlng=-8.0528133&sta=forSale&st=sale&pt=residential&min=130000&max=200000&currency=GBP&term=1341788",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 54.6345223,
+            "rlng": -8.0528133,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 130000,
+            "maxPrice": 200000,
+            "currency": "GBP",
+            "term": [
+              "1341788"
+            ]
+          }
+        },
+        "all": [
+          {
+            "accountNumber": "ST0815201",
+            "organisation": "Anderson Auctioneers",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "showAddress": true,
+            "phoneNumber": {
+              "national": "(074) 972 2888",
+              "uk": "+353 74 972 2888",
+              "displayNumber": "(074) 972 2888",
+              "international": "+353 74 972 2888",
+              "countryCode": 353
+            },
+            "displayAddress": "Main Street, Donegal Town, F94 ETC2",
+            "psrLicenceNumber": "001425",
+            "landingPageUrl": "/estate-agents/anderson-auctioneers",
+            "groupLandingPageUrl": null,
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "standardBackgroundColour": "#192f78",
+              "alternative": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "alternativeBackgroundColour": "#192f78",
+              "premier": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+              "premierBackgroundColour": "#192f78"
+            },
+            "agentLogos": [
+              {
+                "logoType": "STANDARD",
+                "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+                "width": 600,
+                "height": 302,
+                "backgroundColour": "#192f78",
+                "accountNumber": "ST0815201"
+              },
+              {
+                "logoType": "ALTERNATIVE",
+                "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+                "width": 600,
+                "height": 302,
+                "backgroundColour": "#192f78",
+                "accountNumber": "ST0815201"
+              },
+              {
+                "logoType": "PREMIER",
+                "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+                "width": 600,
+                "height": 302,
+                "backgroundColour": "#192f78",
+                "accountNumber": "ST0815201"
+              }
+            ],
+            "colours": {
+              "secondary": "#353535",
+              "primary": "#FFFFFF"
+            },
+            "openingTimes": [
+              {
+                "openTime": "2019-12-30T09:30:00+0000",
+                "closeTime": "2019-12-30T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-31T09:30:00+0000",
+                "closeTime": "2019-12-31T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-01T09:30:00+0000",
+                "closeTime": "2020-01-01T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-02T09:30:00+0000",
+                "closeTime": "2020-01-02T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-03T09:30:00+0000",
+                "closeTime": "2020-01-03T16:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-06T13:00:00+0000",
+                "closeTime": "2020-01-06T14:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": true
+              }
+            ],
+            "tier": "STANDARD",
+            "enhancedBranding": false,
+            "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.6345223&rlng=-8.0528133&sta=forSale&st=sale&pt=residential&min=130000&max=200000&currency=GBP&term=1341788",
+            "searchParams": {
+              "radius": 8.0467,
+              "runit": "km",
+              "rlat": 54.6345223,
+              "rlng": -8.0528133,
+              "status": [
+                "forSale"
+              ],
+              "saleType": [
+                "sale"
+              ],
+              "category": [
+                "residential"
+              ],
+              "minPrice": 130000,
+              "maxPrice": 200000,
+              "currency": "GBP",
+              "term": [
+                "1341788"
+              ]
+            }
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "4 Bed House and Land",
+      "description": "<h3>Ballykillowen,  Laghey, South Donegal F94 KXC2</h3><h3> </h3><h3>Traditional Farm House on 3.65 Acres</h3><h3> </h3><h3>Requires Refurbishment</h3><h3> </h3><p> </p><p> </p><p>Situate adjoining the Laghey / Copany Road, 3 km from Laghey Village and 5km from Donegal Town.</p><p> </p><p>Constructed in 1897 and extending to 98.42 sq m. The property may qualify with the new Vacant Property Refurbishment Grant. Surrounding by mature trees, the property which has been vacant for 20 years comprises -</p><p> </p><p>Ground Floor. Living Room,  Lounge,  Kitchen, Pantry, Toilet;</p><p>First Floor 4 No. Bedrooms</p><p>*Traditional Stone Barn at rear</p><p> </p><p>Excellent Grazing Field included at rear  </p><p> </p><p><strong>Sitting Room</strong> 3.64 m  x  3.61 m</p><p>Open fireplace</p><p> </p><p><strong>Living Room</strong>  3.68 m  x  3.46 m</p><p>Tiled Floor; “Wellstood” Solid fuel range</p><p> </p><p><strong>Kitchen</strong> 3.68 m  x  1.60 m</p><p> </p><p><strong>Pantry </strong></p><p> </p><p>Toilet & Wash Basin </p><p> </p><p>First Floor.</p><p> </p><p><strong>Bedroom No.1</strong> 3.14 m  x  2.77 m fireplace</p><p> </p><p><strong>Bedroom No.2</strong> 3.65 m  x  3.35 m fireplace</p><p> </p><p><strong>Bedroom No.3</strong> 3.32 m  x  2.64 m</p><p> </p><p><strong>Bedroom No.4</strong> 3.67 m  x  2.03 m ( Ideal for conversion to Bathroom )</p><p> </p><p>   </p><p> </p><p>Septic Tank within Site</p><p> </p><p>Electricity and Telephone - Currently cut off</p><p> </p><p>Farm Lands Comprised in Folio DL 4482 and extending to 1.48 hectares ( 3.65 Acres )</p><p> </p><p>To rear and and included in sale is an excellent grazing field extending to approximately 2.5 Acres. There is also a garden to front and rear of dwelling together with a stone barn.</p><p> </p><p>        </p><p> </p><p>  </p><p> </p><p> </p><p> </p><p> </p><p> </p><p>Directions. From Laghey Village, travel over bridge opposite “7 Arches” Pub and continue for just 0.1 mile, turn right and continue for 1.8 miles; property for sale on left.</p><p> </p><p>Anderson Auctioneers for itself and as agent for the vendor gives notice that:</p><p>These particulars are only a general outline for the guidance of intending purchasers or lessees and donot constitute in whole or in part an offer or a Contract.Reasonable endeavourhave been made to ensure that the information given in these particulars ismaterially correct but any intending purchaser or lessee should satisfy themself by inspection, searches, enquiries and survey as to the correctness of each statement.</p><p><br/>[OR] Whilst every care has been taken in the preparation of these particulars, and they are believed to be correct, they are not warranted and intending purchasers/lessees should satisfy themselves as to the correctness of the information given.</p><p> </p><p>All statements in these particulars are made on the without responsibility part of Anderson Auctioneersorthe vendorNo statement in these particulars is to be relied upon as a statement or representation of fact.Neither Anderson Auctioneers nor anyone in its employment or acting on its behalf has authority to makeany representation or warranty in relation to this property.Nothing in these particulars shall be deemed to be a statement that the property is in good repair orcondition or otherwise nor that any services or facilities are in good working order.Photographs may show only certain parts and aspects of the property at the time when the photographswere taken and you should rely upon actual inspection.No assumption should be made in respect of parts of the property not shown in photographs.Any areas, measurements or distances are only approximate.Any reference to alterations or use is not intended to be a statement that any necessary planning,building regulation, listed building or any other consent has been obtained.</p><p> </p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": {
+        "alphanumericRating": "G",
+        "energyPerformanceIndicator": 1
+      },
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "Guide price €175,000",
+          "textHtml": "<span class=\"price-prefix\">Guide price</span> <span class=\"price-text\">€175,000</span>",
+          "subtext": "Est. Guide price £149,445",
+          "image": null,
+          "link": null,
+          "beforePrice": "Guide price",
+          "price": "€175,000",
+          "afterPrice": ""
+        },
+        {
+          "key": "RATES",
+          "name": "Rates",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STAMP_DUTY_SIMPLE",
+          "name": "Stamp Duty",
+          "text": "€1,750",
+          "textHtml": "€1,750",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "TENURE",
+          "name": "Tenure",
+          "text": "Freehold",
+          "textHtml": "Freehold",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "House and Land",
+          "textHtml": "House and Land",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "4",
+          "textHtml": "4",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "RECEPTIONROOMS",
+          "name": "Receptions",
+          "text": "1",
+          "textHtml": "1",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "1",
+          "textHtml": "1",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "HEATING_TYPE",
+          "name": "Heating",
+          "text": "Open Fire Only",
+          "textHtml": "Open Fire Only",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "G",
+          "textHtml": "G",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "SIZE",
+          "name": "Size",
+          "text": "98.42 sq. metres",
+          "textHtml": "98.42 sq. metres",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 6023,
+        "history": [
+          {
+            "date": "2024-02-08T00:00:00+0000",
+            "totalUniqueViews": 22,
+            "totalViews": 22,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-07T00:00:00+0000",
+            "totalUniqueViews": 16,
+            "totalViews": 16,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-06T00:00:00+0000",
+            "totalUniqueViews": 28,
+            "totalViews": 28,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-05T00:00:00+0000",
+            "totalUniqueViews": 34,
+            "totalViews": 34,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-04T00:00:00+0000",
+            "totalUniqueViews": 28,
+            "totalViews": 28,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-03T00:00:00+0000",
+            "totalUniqueViews": 31,
+            "totalViews": 31,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-02T00:00:00+0000",
+            "totalUniqueViews": 26,
+            "totalViews": 26,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-01T00:00:00+0000",
+            "totalUniqueViews": 30,
+            "totalViews": 30,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-31T00:00:00+0000",
+            "totalUniqueViews": 26,
+            "totalViews": 26,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-30T00:00:00+0000",
+            "totalUniqueViews": 31,
+            "totalViews": 31,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-29T00:00:00+0000",
+            "totalUniqueViews": 27,
+            "totalViews": 27,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-28T00:00:00+0000",
+            "totalUniqueViews": 39,
+            "totalViews": 39,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-27T00:00:00+0000",
+            "totalUniqueViews": 61,
+            "totalViews": 61,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-26T00:00:00+0000",
+            "totalUniqueViews": 13,
+            "totalViews": 13,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-25T00:00:00+0000",
+            "totalUniqueViews": 40,
+            "totalViews": 40,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-24T00:00:00+0000",
+            "totalUniqueViews": 31,
+            "totalViews": 31,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-23T00:00:00+0000",
+            "totalUniqueViews": 40,
+            "totalViews": 40,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-22T00:00:00+0000",
+            "totalUniqueViews": 32,
+            "totalViews": 32,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-21T00:00:00+0000",
+            "totalUniqueViews": 17,
+            "totalViews": 17,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-20T00:00:00+0000",
+            "totalUniqueViews": 36,
+            "totalViews": 36,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-19T00:00:00+0000",
+            "totalUniqueViews": 25,
+            "totalViews": 25,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-18T00:00:00+0000",
+            "totalUniqueViews": 25,
+            "totalViews": 25,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-17T00:00:00+0000",
+            "totalUniqueViews": 24,
+            "totalViews": 24,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-16T00:00:00+0000",
+            "totalUniqueViews": 40,
+            "totalViews": 40,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-15T00:00:00+0000",
+            "totalUniqueViews": 40,
+            "totalViews": 40,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-14T00:00:00+0000",
+            "totalUniqueViews": 65,
+            "totalViews": 65,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-13T00:00:00+0000",
+            "totalUniqueViews": 37,
+            "totalViews": 37,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-12T00:00:00+0000",
+            "totalUniqueViews": 57,
+            "totalViews": 57,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-11T00:00:00+0000",
+            "totalUniqueViews": 23,
+            "totalViews": 23,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-10T00:00:00+0000",
+            "totalUniqueViews": 46,
+            "totalViews": 46,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          }
+        ]
+      },
+      "shortlisted": false,
+      "featuredDevelopmentContent": null,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-donegal",
+          "label": "County Donegal"
+        },
+        {
+          "url": "/property-for-sale/laghy",
+          "label": "Laghy"
+        },
+        {
+          "url": "/ballykillowen-laghey/912541",
+          "label": "Ballykillowen"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in F94KXC2": "/property-for-sale/f94kxc2",
+        "Property For Sale in F94": "/property-for-sale/f94",
+        "Property For Sale in County Donegal": "/property-for-sale/county-donegal",
+        "Property For Sale in Laghy": "/property-for-sale/laghy",
+        "Anderson Auctioneers": "/estate-agents/anderson-auctioneers"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premiumListing": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2024-02-09T00:00:00+0000",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "coOwnershipEligible": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "standardBackgroundColour": "#192f78",
+          "alternative": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "alternativeBackgroundColour": "#192f78",
+          "premier": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "premierBackgroundColour": "#192f78"
+        }
+      ],
+      "agentLogos": [
+        {
+          "logoType": "STANDARD",
+          "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "width": 600,
+          "height": 302,
+          "backgroundColour": "#192f78",
+          "accountNumber": "ST0815201"
+        },
+        {
+          "logoType": "ALTERNATIVE",
+          "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "width": 600,
+          "height": 302,
+          "backgroundColour": "#192f78",
+          "accountNumber": "ST0815201"
+        },
+        {
+          "logoType": "PREMIER",
+          "url": "https://media.propertypal.com/logo/160816205354/400x400/ST0815201/master.png",
+          "width": 600,
+          "height": 302,
+          "backgroundColour": "#192f78",
+          "accountNumber": "ST0815201"
+        }
+      ],
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "Ballykillowen, Laghey",
+        "description": "This 4 Bed House And Land Sale Is Located At Ballykillowen, Laghey. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "Guide price €175,000",
+          "Details": "4 Bed House and Land"
+        }
+      },
+      "requestValuation": false,
+      "timeLastUnpublishedOnPP": null
+    },
+    "emailHashes": null,
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "expand": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null,
+          "coOwnership": false
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}

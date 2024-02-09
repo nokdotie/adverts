@@ -1,0 +1,1571 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 928608,
+      "pathId": "929808",
+      "path": "/1-forest-view-rooskey-carrick-on-shannon/929808",
+      "shareURL": "https://www.propertypal.com/929808",
+      "account": {
+        "accountNumber": "ST0619216",
+        "organisation": "REA Brady (Carrick-on-Shannon)",
+        "organisationBranch": "",
+        "displayAddress": "1 Castlequay House, Carrick-On-Shannon, N41 DE48",
+        "officePhone": {
+          "national": "(071) 962 2444",
+          "uk": "+353 71 962 2444",
+          "displayNumber": "(071) 962 2444",
+          "international": "+353 71 962 2444",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "002457",
+        "websiteUrl": "http://www.reabrady.ie",
+        "landingPageUrl": "/estate-agents/rea-brady-carrick-on-shannon",
+        "groupLandingPageUrl": null,
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": false,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+          "standardBackgroundColour": "#41525c",
+          "alternative": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+          "alternativeBackgroundColour": "#41525c",
+          "premier": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+          "premierBackgroundColour": "#41525c"
+        },
+        "agentLogos": [
+          {
+            "logoType": "STANDARD",
+            "url": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+            "width": 600,
+            "height": 378,
+            "backgroundColour": "#41525c",
+            "accountNumber": "ST0619216"
+          },
+          {
+            "logoType": "ALTERNATIVE",
+            "url": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+            "width": 600,
+            "height": 378,
+            "backgroundColour": "#41525c",
+            "accountNumber": "ST0619216"
+          },
+          {
+            "logoType": "PREMIER",
+            "url": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+            "width": 600,
+            "height": 378,
+            "backgroundColour": "#41525c",
+            "accountNumber": "ST0619216"
+          }
+        ],
+        "colours": {
+          "secondary": "#353535",
+          "primary": "#FFFFFF"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          },
+          {
+            "id": 31,
+            "label": "Society of Chartered Surveyors (SCSI)",
+            "textKey": "surveyor",
+            "url": "https://www.scsi.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+            "type": "PREFERRED",
+            "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+          }
+        ],
+        "missingAccreditations": null,
+        "propertypalAwards": [],
+        "openingTimes": [
+          {
+            "openTime": "2019-12-30T09:00:00+0000",
+            "closeTime": "2019-12-30T17:30:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-31T09:00:00+0000",
+            "closeTime": "2019-12-31T17:30:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-01T09:00:00+0000",
+            "closeTime": "2020-01-01T17:30:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-02T09:00:00+0000",
+            "closeTime": "2020-01-02T17:30:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-03T09:00:00+0000",
+            "closeTime": "2020-01-03T17:30:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-04T00:00:00+0000",
+            "closeTime": "2020-01-04T00:00:00+0000",
+            "byAppointment": false,
+            "closed": true,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-29T00:00:00+0000",
+            "closeTime": "2019-12-29T00:00:00+0000",
+            "byAppointment": false,
+            "closed": true,
+            "lunchBreak": false
+          }
+        ],
+        "tier": "STANDARD",
+        "enhancedBranding": false,
+        "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.859229&rlng=-7.993212&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3821811",
+        "searchParams": {
+          "radius": 8.0467,
+          "runit": "km",
+          "rlat": 53.859229,
+          "rlng": -7.993212,
+          "status": [
+            "forSale"
+          ],
+          "saleType": [
+            "sale"
+          ],
+          "category": [
+            "residential"
+          ],
+          "minPrice": 190000,
+          "maxPrice": 275000,
+          "currency": "GBP",
+          "term": [
+            "3821811"
+          ]
+        }
+      },
+      "displayAddress": "1 Forest View, Rooskey, Carrick-On-Shannon, N41F228",
+      "displayAddressLine1": "1 Forest View",
+      "displayAddressLine2": "Rooskey, Carrick-On-Shannon, N41F228",
+      "addressLine1": "1 Forest View",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "1",
+      "street": "Forest View",
+      "addressLine2": "Rooskey",
+      "town": "Carrick-On-Shannon",
+      "region": "Roscommon",
+      "postcode": "N41F228",
+      "countryCode": "IRL",
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "coordinate": {
+        "latitude": 53.859229,
+        "longitude": -7.993212,
+        "accuracy": "unsure",
+        "mapZoomLevel": 10,
+        "showStreetView": true
+      },
+      "numBedrooms": 3,
+      "numBathrooms": 2,
+      "numReceptionRooms": null,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "detached",
+        "text": "Detached Houses",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 1,
+          "key": "property",
+          "text": "Properties"
+        },
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 8,
+          "key": "detached",
+          "text": "Detached houses"
+        },
+        {
+          "id": 33,
+          "key": "detachedExBungalow",
+          "text": "Detached Houses"
+        },
+        {
+          "id": 45,
+          "key": "housesExBungalow",
+          "text": "Houses (Ex. Bungalows)"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2024-02-08T17:55:26+0000",
+      "listingTime": {
+        "type": "added",
+        "timeText": "1 day ago",
+        "typeText": "Added"
+      },
+      "activationTime": "2024-02-08T17:55:26+0000",
+      "listingUpdatedTime": "2024-02-09T15:23:05+0000",
+      "price": {
+        "priceType": "FIXED_PRICE",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": 245000,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": false,
+        "pricePrefix": "Price",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": false
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/928608/36046371.jpg",
+          "width": 2499,
+          "height": 1666,
+          "blurhash": "ULGu?Z=y4oITE;EKD%IV.8MyxZNG~oRjIpWC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046371.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046371.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/928608/36046368.jpg",
+          "width": 2954,
+          "height": 1666,
+          "blurhash": "UaGlU+tSMg?axz%2oZt9%Ns,M{t7%fRkM|tP",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046368.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046368.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/928608/36046365.jpg",
+          "width": 2499,
+          "height": 1666,
+          "blurhash": "U.Dm:et7aykC%%kCayj[T2a#f6a}tRodj?j@",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046365.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046365.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/928608/36046366.jpg",
+          "width": 2499,
+          "height": 1666,
+          "blurhash": "UvEXCCtiogof~Xnjoeoe?boJjZj[-pofazay",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046366.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046366.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/928608/36046363.jpg",
+          "width": 932,
+          "height": 1666,
+          "blurhash": "UYG[m1xuS4%2%%xaR*WW%$ozsnWB_3offlkC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046363.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046363.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/928608/36046369.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UCF=Kz4mWYJW~Ue+D+?bxo4:NHni={xZM{NI",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046369.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046369.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/928608/36046370.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UIF#m%Mc0eOH~U9aaKt8-jo#V?s:xZoLNGR+",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046370.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046370.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/928608/36046367.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UEFF4_yZoz%#~nNyv}gN~UXTnhX9?c-;OGtT",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046367.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046367.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/928608/36046373.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UIG[D.~qWrog9@IqrqV@?YoxR-k9$xxso#t7",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046373.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046373.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/928608/36046372.jpg",
+          "width": 921,
+          "height": 1666,
+          "blurhash": "U8K1j$H;00-o_CIA-=xvRq8^o~D*A1tSjDtR",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046372.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046372.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/928608/36046374.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UEG8fd^jtQxZ_LtQxaxa?DkCE2IVs8RkNGjs",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046374.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046374.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/928608/36046383.jpg",
+          "width": 2457,
+          "height": 1666,
+          "blurhash": "UAGkzYR2JA-=_L00NMIp-Q9GIUt7Mx%gITs,",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046383.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046383.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/928608/36046382.jpg",
+          "width": 2795,
+          "height": 1666,
+          "blurhash": "URGt{A0hNFib~WM}xCR5-.RkRkniW-t6M}og",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046382.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046382.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/928608/36046381.jpg",
+          "width": 942,
+          "height": 1666,
+          "blurhash": "UJGkj=V@I9-:~WxtaKog9}9akCoz4:adx[Rj",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046381.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046381.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/928608/36046385.jpg",
+          "width": 2960,
+          "height": 1480,
+          "blurhash": "UYHUUe4pxYVr~WE2a{r=XTtQaeaKoyofs.Rj",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046385.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046385.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/928608/36046375.jpg",
+          "width": 2960,
+          "height": 1519,
+          "blurhash": "URH1rHJCD*bw~pnjIoxtx[xCM|oIRPkB%0V@",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046375.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046375.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/928608/36046393.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UKG8M-IVIpDi~V$%IBM{SO%0eoR-RPR,xuxa",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046393.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046393.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/928608/36046388.jpg",
+          "width": 2960,
+          "height": 1468,
+          "blurhash": "UKGb0AicMy%L~pIoW.t6R-kCofn$V[RkxtkC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046388.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046388.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 19,
+          "url": "https://media.propertypal.com/large/p/928608/36046390.jpg",
+          "width": 2960,
+          "height": 1522,
+          "blurhash": "UQHd+@4;RjVr~p9at6r=.7R.adVskBt7WBaL",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046390.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046390.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 20,
+          "url": "https://media.propertypal.com/large/p/928608/36046389.jpg",
+          "width": 2960,
+          "height": 1464,
+          "blurhash": "UJGRVKrXD*x[~pIoNGs:I;R+xasCr]V[oyS2",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046389.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046389.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 21,
+          "url": "https://media.propertypal.com/large/p/928608/36046386.jpg",
+          "width": 923,
+          "height": 1666,
+          "blurhash": "UPIN]m}l9F9_.5m*sppJ9bIVWAxZD$x^x]iu",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046386.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046386.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 22,
+          "url": "https://media.propertypal.com/large/p/928608/36046376.jpg",
+          "width": 2493,
+          "height": 1666,
+          "blurhash": "UFG*+n9a00RO_3bdv{NGt3bcs+Rl~TM}I=V@",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046376.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046376.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 23,
+          "url": "https://media.propertypal.com/large/p/928608/36046364.jpg",
+          "width": 1317,
+          "height": 1666,
+          "blurhash": "UMGl0B_NROt7x@oct7t7ITV?RjadxYWUtQfk",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046364.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046364.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 24,
+          "url": "https://media.propertypal.com/large/p/928608/36046387.jpg",
+          "width": 973,
+          "height": 1666,
+          "blurhash": "UaEfydxuIUo#.At7WAogD,WEt6fQI8Rjozae",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046387.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046387.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 25,
+          "url": "https://media.propertypal.com/large/p/928608/36046392.jpg",
+          "width": 2960,
+          "height": 1404,
+          "blurhash": "ULI49F5Y0f?H~pEQMy%fNGozt7oe9Gt5W-M{",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046392.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046392.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 26,
+          "url": "https://media.propertypal.com/large/p/928608/36046391.jpg",
+          "width": 861,
+          "height": 1666,
+          "blurhash": "UiM6-P-:${xs~VR+s:oKM{Wrt8j[%Nt6WAWB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046391.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046391.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 27,
+          "url": "https://media.propertypal.com/large/p/928608/36046395.jpg",
+          "width": 2960,
+          "height": 1550,
+          "blurhash": "UCJaQ2%MvJVVEI$~,UxvM^WrD*M{.ARjt7nh",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046395.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046395.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 28,
+          "url": "https://media.propertypal.com/large/p/928608/36046394.jpg",
+          "width": 901,
+          "height": 1666,
+          "blurhash": "UDLDMf~Wh{ib3YJA|:ad4Tw?DiRl-A$+Fet7",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046394.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046394.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 29,
+          "url": "https://media.propertypal.com/large/p/928608/36046396.jpg",
+          "width": 2960,
+          "height": 1464,
+          "blurhash": "UEG[D=Y89E[ltj9urprVg4x]NJMwNMxuozt7",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046396.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046396.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 30,
+          "url": "https://media.propertypal.com/large/p/928608/36046399.jpg",
+          "width": 2930,
+          "height": 1666,
+          "blurhash": "U9MGU}-@?]00$rRND%05xJH=yE_2p0O^wGvx",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046399.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046399.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 31,
+          "url": "https://media.propertypal.com/large/p/928608/36046398.jpg",
+          "width": 2960,
+          "height": 1490,
+          "blurhash": "UFHUnC?b00MH~T9Zt7?bRhSjx]nM%Lt7IVsl",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046398.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046398.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 32,
+          "url": "https://media.propertypal.com/large/p/928608/36046397.jpg",
+          "width": 2960,
+          "height": 1367,
+          "blurhash": "UAF5md0i00%M*wIpyZaJ.SD*Mxx[%Mt7MxjX",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046397.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046397.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 33,
+          "url": "https://media.propertypal.com/large/p/928608/36046384.jpg",
+          "width": 2960,
+          "height": 1499,
+          "blurhash": "UJIEOlK,4TVW8wrV~px^-:xut7n~xvtRM{nh",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046384.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046384.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 34,
+          "url": "https://media.propertypal.com/large/p/928608/36046377.jpg",
+          "width": 2960,
+          "height": 1555,
+          "blurhash": "UIG*.%~q4TDNR3xBkXXT=;xttmXA%NozMwIA",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046377.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046377.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 35,
+          "url": "https://media.propertypal.com/large/p/928608/36046378.jpg",
+          "width": 885,
+          "height": 1666,
+          "blurhash": "UtKA$a%2j[xt~Vt6j@s:R-j[oLae%2ofj[WB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046378.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046378.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 36,
+          "url": "https://media.propertypal.com/large/p/928608/36046379.jpg",
+          "width": 879,
+          "height": 1666,
+          "blurhash": "UMG8}]x^M|-:~VIUofRj?bxujYxuNG%MxuV@",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046379.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046379.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 37,
+          "url": "https://media.propertypal.com/large/p/928608/36046380.jpg",
+          "width": 904,
+          "height": 1666,
+          "blurhash": "UIHB_8%MI9R-~pbcRQMxNIoJM|Mxfkt7WBWB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/928608/36046380.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/928608/36046380.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": [
+        {
+          "pricePrefix": "Price",
+          "priceSuffix": null,
+          "difference": null,
+          "previousPrice": null,
+          "previousPublished": false,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": true,
+          "publishedOnAwpChange": true,
+          "differencePercentage": null,
+          "previousStatus": null,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 245000,
+          "timeModified": "2024-02-08T17:55:26+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        }
+      ],
+      "agents": [
+        {
+          "accountNumber": "ST0619216",
+          "organisation": "REA Brady (Carrick-on-Shannon)",
+          "organisationBranch": "",
+          "displayAddress": "1 Castlequay House, Carrick-On-Shannon, N41 DE48",
+          "officePhone": {
+            "national": "(071) 962 2444",
+            "uk": "+353 71 962 2444",
+            "displayNumber": "(071) 962 2444",
+            "international": "+353 71 962 2444",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "002457",
+          "websiteUrl": "http://www.reabrady.ie",
+          "landingPageUrl": "/estate-agents/rea-brady-carrick-on-shannon",
+          "groupLandingPageUrl": null,
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": false,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+            "standardBackgroundColour": "#41525c",
+            "alternative": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+            "alternativeBackgroundColour": "#41525c",
+            "premier": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+            "premierBackgroundColour": "#41525c"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            },
+            {
+              "id": 31,
+              "label": "Society of Chartered Surveyors (SCSI)",
+              "textKey": "surveyor",
+              "url": "https://www.scsi.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/surveyor.png",
+              "type": "PREFERRED",
+              "tooltip": "The Society of Chartered Surveyors Ireland is the independent professional body for chartered surveyors working and practicing in Ireland. They act in the public interest: setting and maintaining the highest standards of competence and integrity among the"
+            }
+          ],
+          "missingAccreditations": null,
+          "propertypalAwards": [],
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:00:00+0000",
+              "closeTime": "2019-12-30T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:00:00+0000",
+              "closeTime": "2019-12-31T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:00:00+0000",
+              "closeTime": "2020-01-01T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:00:00+0000",
+              "closeTime": "2020-01-02T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:00:00+0000",
+              "closeTime": "2020-01-03T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-04T00:00:00+0000",
+              "closeTime": "2020-01-04T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-29T00:00:00+0000",
+              "closeTime": "2019-12-29T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.859229&rlng=-7.993212&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3821811",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 53.859229,
+            "rlng": -7.993212,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 190000,
+            "maxPrice": 275000,
+            "currency": "GBP",
+            "term": [
+              "3821811"
+            ]
+          }
+        }
+      ],
+      "contacts": {
+        "showAllContactsOption": true,
+        "default": {
+          "accountNumber": "ST0619216",
+          "organisation": "REA Brady (Carrick-on-Shannon)",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "showAddress": true,
+          "phoneNumber": {
+            "national": "(071) 962 2444",
+            "uk": "+353 71 962 2444",
+            "displayNumber": "(071) 962 2444",
+            "international": "+353 71 962 2444",
+            "countryCode": 353
+          },
+          "displayAddress": "1 Castlequay House, Carrick-On-Shannon, N41 DE48",
+          "psrLicenceNumber": "002457",
+          "landingPageUrl": "/estate-agents/rea-brady-carrick-on-shannon",
+          "groupLandingPageUrl": null,
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+            "standardBackgroundColour": "#41525c",
+            "alternative": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+            "alternativeBackgroundColour": "#41525c",
+            "premier": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+            "premierBackgroundColour": "#41525c"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+              "width": 600,
+              "height": 378,
+              "backgroundColour": "#41525c",
+              "accountNumber": "ST0619216"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:00:00+0000",
+              "closeTime": "2019-12-30T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:00:00+0000",
+              "closeTime": "2019-12-31T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:00:00+0000",
+              "closeTime": "2020-01-01T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:00:00+0000",
+              "closeTime": "2020-01-02T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:00:00+0000",
+              "closeTime": "2020-01-03T17:30:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-04T00:00:00+0000",
+              "closeTime": "2020-01-04T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-29T00:00:00+0000",
+              "closeTime": "2019-12-29T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.859229&rlng=-7.993212&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3821811",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 53.859229,
+            "rlng": -7.993212,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 190000,
+            "maxPrice": 275000,
+            "currency": "GBP",
+            "term": [
+              "3821811"
+            ]
+          }
+        },
+        "all": [
+          {
+            "accountNumber": "ST0619216",
+            "organisation": "REA Brady (Carrick-on-Shannon)",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "showAddress": true,
+            "phoneNumber": {
+              "national": "(071) 962 2444",
+              "uk": "+353 71 962 2444",
+              "displayNumber": "(071) 962 2444",
+              "international": "+353 71 962 2444",
+              "countryCode": 353
+            },
+            "displayAddress": "1 Castlequay House, Carrick-On-Shannon, N41 DE48",
+            "psrLicenceNumber": "002457",
+            "landingPageUrl": "/estate-agents/rea-brady-carrick-on-shannon",
+            "groupLandingPageUrl": null,
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+              "standardBackgroundColour": "#41525c",
+              "alternative": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+              "alternativeBackgroundColour": "#41525c",
+              "premier": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+              "premierBackgroundColour": "#41525c"
+            },
+            "agentLogos": [
+              {
+                "logoType": "STANDARD",
+                "url": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+                "width": 600,
+                "height": 378,
+                "backgroundColour": "#41525c",
+                "accountNumber": "ST0619216"
+              },
+              {
+                "logoType": "ALTERNATIVE",
+                "url": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+                "width": 600,
+                "height": 378,
+                "backgroundColour": "#41525c",
+                "accountNumber": "ST0619216"
+              },
+              {
+                "logoType": "PREMIER",
+                "url": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+                "width": 600,
+                "height": 378,
+                "backgroundColour": "#41525c",
+                "accountNumber": "ST0619216"
+              }
+            ],
+            "colours": {
+              "secondary": "#353535",
+              "primary": "#FFFFFF"
+            },
+            "openingTimes": [
+              {
+                "openTime": "2019-12-30T09:00:00+0000",
+                "closeTime": "2019-12-30T17:30:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-31T09:00:00+0000",
+                "closeTime": "2019-12-31T17:30:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-01T09:00:00+0000",
+                "closeTime": "2020-01-01T17:30:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-02T09:00:00+0000",
+                "closeTime": "2020-01-02T17:30:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-03T09:00:00+0000",
+                "closeTime": "2020-01-03T17:30:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-04T00:00:00+0000",
+                "closeTime": "2020-01-04T00:00:00+0000",
+                "byAppointment": false,
+                "closed": true,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-29T00:00:00+0000",
+                "closeTime": "2019-12-29T00:00:00+0000",
+                "byAppointment": false,
+                "closed": true,
+                "lunchBreak": false
+              }
+            ],
+            "tier": "STANDARD",
+            "enhancedBranding": false,
+            "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.859229&rlng=-7.993212&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3821811",
+            "searchParams": {
+              "radius": 8.0467,
+              "runit": "km",
+              "rlat": 53.859229,
+              "rlng": -7.993212,
+              "status": [
+                "forSale"
+              ],
+              "saleType": [
+                "sale"
+              ],
+              "category": [
+                "residential"
+              ],
+              "minPrice": 190000,
+              "maxPrice": 275000,
+              "currency": "GBP",
+              "term": [
+                "3821811"
+              ]
+            }
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "3 Bed Detached House",
+      "description": "<h2>Features</h2><ul><li>Fabulous wooded setting with views over Lough Boderg</li><li>Patio area to side</li><li>Balcony off main bedroom</li><li>OFCH</li><li>Open fireplace</li><li>Mains water</li><li>Shared septic tank system on site</li><li>Close to Rooskey, Carrick on Shannnon.</li><li>Close to Lough Boderg and the River Shannon System.</li></ul>REA Brady are delighted to present this idyllic dream retreat overlooking Lough Boderg at Forest View, Rooskey, Co. Roscommon. Enjoying panoramic views over the lake (which is part of the Shannon) from an elevated location, the setting is private and tastefully presented. This stunning stone-faced home is a serene sanctuary, surrounded by the tranquil beauty of the adjoining forest. The residence has been designed to capture and appreciate the views. The stone facade exudes timeless elegance, while large windows invite the outdoors in. The key to this marvellous home is the very generous Dining &amp; Living area which has windows to three elevations and French doors leading to a patio area. Adjoining this is a generous kitchen and a small utility leading to the back door. Also on the ground floor is a double bedroom (which doubles as a home office) and adjoining WC. Upstairs there are two large double bedrooms (one with an ensuite) and a house bathroom. The larger bedrooms have well designed built in wardrobes and the master has a panoramic views from its French doors to the South East. To the rear of the residence is an enclosed area ideal for pets, and a storage shed for those garden toolsâ?¦ To the South East is a large side garden, tastefully dotted with mature trees and also enjoying great views over the lake. Forest view is a small &amp; friendly community of homes, some of which are used as holiday homes and some that are have permanent residents. Located near the village of Kilmore just 3.5km and Rooskey 6.2km local shops and pubs are nearby. For more facilities Carrick on Shannon is just 14.5km (17 min) away and the N4 Dublin/Sligo is just at Rooskey. It is a location that is easily suitable for both work and leisure. This residence overlooks Lough Boderg which is a large lake on the Shannon. Nearby are two Marinaâ??s, â??Carnadoe Bridgeâ? and the larger at Albert Lock. For those who enjoy boating or fishing this area is paradise. The site is large and there is ample off street parking at the property. Good Broadband is available in this area. Contact Celia in REA Brady to organise a viewing. <br/><br/><h2>Accommodation</h2><p>Entrance Hall<br/>4.78m x 2.13m Entrance hallway with wooden flooring, downstairs wc, window to front, power points, carpeted stairs to first floor.</p><p>Downstairs Bathroom<br/>2.23m x 0.87m Downstairs bathroom with tiled floor whb, wc, radiator, window.</p><p>Living Room<br/>6.15m x 4.52m Impressively large open plan living and dining area which is open and bright with wooden flooring, patio doors to side of house leading to patio area, stone surround open fireplace with a raised hearth, tv and power points, 2 windows to front with fabulous views to Lough Boderg and 2 to the rear, dining area and door leading to kitchen and hallway.</p><p>Kitchen<br/>3.90m x 2.62m Kitchen off the living and dining area which has fitted units, single drainer sink, tiled flooring with slate tiles, pull out breakfast counter, window to rear garden, power points, radiator, phone point, lots of storage space and door leading through to utility.</p><p>Utility Room<br/>2.17m x 1.10m Utility at rear with door to rear of house, plumbed for washer, shelving for storage, power points, tiled flooring.</p><p>Bedroom 1<br/>3.47m x 2.38m Double bedroom on the ground floor with wooden flooring, window, power points, radiator, built in wardrobe with chest of drawers.</p><p>Bedroom 2<br/>3.46m x 3.31m Double bedroom on first floor, laminated flooring, window to side, built in wardrobe, power point, radiator</p><p>Bathroom<br/>3.25m x 1.48m Bathroom with bath, whb, wc, velux window, radiator, tiled flooring, mirror and shaver light.</p><p>Landing<br/> Landing area with storage cupboard, access to attic, laminated flooring.</p><p>Bedroom 3<br/>3.70m x 3.45m Double bedroom with door to balcony on the side of the property that looks out onto the lake and surrounding area, laminated flooring, radiator, power points, phone point, built in wardrobe either side of bed, chest of drawers, tv point.</p><p>En-suite<br/>1.95m x 1.67m Ensuite with tiled flooring, electric shower with tiled surround, whb, wc, mirror and shaver light.</p><br/><br/><h2>Outside</h2>Car parking Garden to sides and rear Patio area Wooded setting<h2>Directions</h2><p>N41 F228</p><h2>BER Details</h2><p><strong>BER Rating:</strong> C3</p><p><strong>BER No.:</strong> 116444852</p><p><strong>Energy Performance Indicator:</strong> Not provided</p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": {
+        "alphanumericRating": "C3",
+        "energyPerformanceIndicator": null
+      },
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "€245,000",
+          "textHtml": "<span class=\"price-text\">€245,000</span>",
+          "subtext": "Est. £209,223",
+          "image": null,
+          "link": null,
+          "beforePrice": "",
+          "price": "€245,000",
+          "afterPrice": ""
+        },
+        {
+          "key": "RATES",
+          "name": "Rates",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STAMP_DUTY_SIMPLE",
+          "name": "Stamp Duty",
+          "text": "€2,450",
+          "textHtml": "€2,450",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "TENURE",
+          "name": "Tenure",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "Detached House",
+          "textHtml": "Detached House",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "2",
+          "textHtml": "2",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "C3",
+          "textHtml": "C3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 184,
+        "history": null
+      },
+      "shortlisted": false,
+      "featuredDevelopmentContent": null,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/carrick-on-shannon",
+          "label": "Carrick-on-Shannon"
+        },
+        {
+          "url": "/1-forest-view-rooskey-carrick-on-shannon/929808",
+          "label": "1 Forest View"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in N41F228": "/property-for-sale/n41f228",
+        "Property For Sale in N41": "/property-for-sale/n41",
+        "Property For Sale in County Roscommon": "/property-for-sale/county-roscommon",
+        "Property For Sale in Carrick-on-Shannon": "/property-for-sale/carrick-on-shannon",
+        "REA Brady (Carrick-on-Shannon)": "/estate-agents/rea-brady-carrick-on-shannon"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premiumListing": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2024-02-09T00:00:00+0000",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "coOwnershipEligible": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+          "standardBackgroundColour": "#41525c",
+          "alternative": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+          "alternativeBackgroundColour": "#41525c",
+          "premier": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+          "premierBackgroundColour": "#41525c"
+        }
+      ],
+      "agentLogos": [
+        {
+          "logoType": "STANDARD",
+          "url": "https://media.propertypal.com/logo/190605115229/400x400/ST0619216/master.png",
+          "width": 600,
+          "height": 378,
+          "backgroundColour": "#41525c",
+          "accountNumber": "ST0619216"
+        },
+        {
+          "logoType": "ALTERNATIVE",
+          "url": "https://media.propertypal.com/logo/190605115254/400x400/ST0619216/master_alt.png",
+          "width": 600,
+          "height": 378,
+          "backgroundColour": "#41525c",
+          "accountNumber": "ST0619216"
+        },
+        {
+          "logoType": "PREMIER",
+          "url": "https://media.propertypal.com/logo/190605115242/400x400/ST0619216/master_premier.png",
+          "width": 600,
+          "height": 378,
+          "backgroundColour": "#41525c",
+          "accountNumber": "ST0619216"
+        }
+      ],
+      "360Tours": [
+        {
+          "label": "3D Tour",
+          "insecure": false,
+          "type": "3d-tour",
+          "displayOrder": 1,
+          "url": "https://my.matterport.com/show/?m=LE7HF9AFhoi"
+        }
+      ],
+      "metaDescriptions": {
+        "title": "1 Forest View, Rooskey, Carrick-On-Shannon",
+        "description": "This 3 Bed Detached House Sale Is Located At 1 Forest View, Rooskey, Carrick-On-Shannon. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "€245,000",
+          "Details": "3 Bed Detached House"
+        }
+      },
+      "requestValuation": false,
+      "timeLastUnpublishedOnPP": null
+    },
+    "emailHashes": null,
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "expand": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null,
+          "coOwnership": false
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}
