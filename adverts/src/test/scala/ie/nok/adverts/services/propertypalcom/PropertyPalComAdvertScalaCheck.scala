@@ -15,6 +15,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
   url                  <- arbitrary[String]
   priceInEur           <- arbitrary[Option[Int]]
   address              <- arbitrary[String]
+  description          <- arbitrary[Option[String]]
   propertyType         <- arbitrary[PropertyType].map(Some(_))
   eircode              <- arbitrary[Option[Eircode]]
   coordinates          <- arbitrary[Option[Coordinates]]
@@ -31,6 +32,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
     url = url,
     priceInEur = priceInEur,
     address = address,
+    description = description,
     propertyType = propertyType,
     eircode = eircode,
     coordinates = coordinates,

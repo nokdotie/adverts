@@ -34,6 +34,7 @@ object Property {
       keyInfo: Option[List[ResponsePagePropsPropertyKeyInfo]],
       shareURL: Option[String],
       coordinate: Option[ResponsePagePropsPropertyCoordinate],
+      description: Option[String],
       ber: Option[ResponsePagePropsPropertyBer],
       account: Option[ResponsePagePropsPropertyAccount]
   )
@@ -183,6 +184,7 @@ object Property {
         url = url,
         priceInEur = price,
         address = address,
+        description = response.pageProps.property.description,
         propertyType = propertyType(response.pageProps.property),
         eircode = eircode,
         coordinates = coordinates,

@@ -89,6 +89,13 @@ class PropertyTest extends FunSuite {
     assertEquals(Option(expected), actual)
   }
 
+  test("Parse description") {
+    val expected =
+      "<h3>Ballykillowen, \u00a0Laghey,\u00a0South Donegal\u00a0F94 KXC2</h3><h3>\u00a0</h3><h3>Traditional Farm House on\u00a03.65\u00a0Acres</h3>"
+    val actual = parseProperty("scraper/src/test/resourses/propertypalcom/ballykillowen-laghey.json").description
+    assert(actual.exists(_.startsWith(expected)))
+  }
+
   private def parseProperty(resourcePath: String): PropertyPalComAdvert =
     resourcePath
       .pipe { readJsonLinesAs[Property.Response](_) }
