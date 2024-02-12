@@ -1,21 +1,22 @@
 package ie.nok.adverts.services.myhomeie
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, InformationSource}
-import ie.nok.hash.Hasher
+import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.geographic.Coordinates
+import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
+import zio.json.{DeriveJsonCodec, JsonCodec}
+
 import java.time.Instant
-import java.util.UUID
 import scala.util.chaining.scalaUtilChainingOps
-import zio.json.{JsonCodec, DeriveJsonCodec, EncoderOps}
 
 case class MyHomeIeAdvert(
     url: String,
     priceInEur: Option[Int],
     description: Option[String],
     address: String,
+    propertyType: Option[PropertyType],
     coordinates: Option[Coordinates],
     imageUrls: List[String],
     size: Option[Area],
@@ -34,7 +35,7 @@ object MyHomeIeAdvert {
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = self.description,
       propertyAddress = self.address,
-      propertyType = None,
+      propertyType = self.propertyType,
       propertyEircode = None,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = self.imageUrls,

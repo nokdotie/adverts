@@ -1,18 +1,21 @@
 package ie.nok.adverts.services.myhomeie
 
 import ie.nok.advertisers.{Advertiser, given}
-import org.scalacheck.{Arbitrary, Gen}
-import org.scalacheck.Arbitrary.arbitrary
-import java.time.Instant
+import ie.nok.adverts.{PropertyType, given}
 import ie.nok.ber.{Rating, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
+import org.scalacheck.Arbitrary.arbitrary
+import org.scalacheck.{Arbitrary, Gen}
+
+import java.time.Instant
 
 private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   url                  <- arbitrary[String]
   priceInEur           <- arbitrary[Option[Int]]
   description          <- arbitrary[Option[String]]
   address              <- arbitrary[String]
+  propertyType         <- arbitrary[PropertyType].map(Some(_))
   coordinates          <- arbitrary[Option[Coordinates]]
   imageUrls            <- arbitrary[List[String]]
   size                 <- arbitrary[Option[Area]]
@@ -26,6 +29,7 @@ private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
     priceInEur = priceInEur,
     description = description,
     address = address,
+    propertyType = propertyType,
     coordinates = coordinates,
     imageUrls = imageUrls,
     size = size,

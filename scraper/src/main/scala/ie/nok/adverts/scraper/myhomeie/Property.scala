@@ -3,37 +3,37 @@ package ie.nok.adverts.scraper.myhomeie
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.Advert
+import ie.nok.adverts.scraper.propertypalcom.Property.ResponsePagePropsProperty
 import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
 import ie.nok.ber.Rating
-import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.Schedule.{recurs, fixed}
-import zio.http.{Client => ZioClient}
+import zio.Schedule.{fixed, recurs}
+import zio.http.Client as ZioClient
 import zio.http.model.Headers
-import zio.json.{JsonDecoder, DeriveJsonDecoder}
+import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZPipeline
+import zio.{ZIO, durationInt}
+
+import java.time.Instant
 
 object Property {
-  private case class Response(Brochure: ResponseBrochure)
-  private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  protected[myhomeie] case class Response(Brochure: ResponseBrochure)
+  protected[myhomeie] given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
-  private case class ResponseBrochure(
+  protected[myhomeie] case class ResponseBrochure(
       Group: ResponseBrochureGroup,
       Property: ResponseBrochureProperty
   )
-  private given JsonDecoder[ResponseBrochure] = DeriveJsonDecoder.gen[ResponseBrochure]
+  protected[myhomeie] given JsonDecoder[ResponseBrochure] = DeriveJsonDecoder.gen[ResponseBrochure]
 
-  private case class ResponseBrochureGroup(
+  protected[myhomeie] case class ResponseBrochureGroup(
       SalesLicense: Option[String]
   )
-  private given JsonDecoder[ResponseBrochureGroup] = DeriveJsonDecoder.gen[ResponseBrochureGroup]
+  protected[myhomeie] given JsonDecoder[ResponseBrochureGroup] = DeriveJsonDecoder.gen[ResponseBrochureGroup]
 
-  private case class ResponseBrochureProperty(
+  protected[myhomeie] case class ResponseBrochureProperty(
       PropertyId: Int,
       DisplayAddress: String,
       Eircode: String,
@@ -44,21 +44,22 @@ object Property {
       SizeStringMeters: Option[BigDecimal],
       BerRating: Option[String],
       BrochureContent: List[ResponseBrochurePropertyBrochureContent],
-      BrochureMap: Option[ResponseBrochurePropertyBrochureMap]
+      BrochureMap: Option[ResponseBrochurePropertyBrochureMap],
+      PropertyType: Option[String]
   )
-  private given JsonDecoder[ResponseBrochureProperty] = DeriveJsonDecoder.gen[ResponseBrochureProperty]
+  protected[myhomeie] given JsonDecoder[ResponseBrochureProperty] = DeriveJsonDecoder.gen[ResponseBrochureProperty]
 
-  private case class ResponseBrochurePropertyBrochureContent(
+  protected[myhomeie] case class ResponseBrochurePropertyBrochureContent(
       ContentType: String,
       Content: String
   )
-  private given JsonDecoder[ResponseBrochurePropertyBrochureContent] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureContent]
+  protected[myhomeie] given JsonDecoder[ResponseBrochurePropertyBrochureContent] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureContent]
 
-  private case class ResponseBrochurePropertyBrochureMap(
+  protected[myhomeie] case class ResponseBrochurePropertyBrochureMap(
       longitude: BigDecimal,
       latitude: BigDecimal
   )
-  private given JsonDecoder[ResponseBrochurePropertyBrochureMap] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureMap]
+  protected[myhomeie] given JsonDecoder[ResponseBrochurePropertyBrochureMap] = DeriveJsonDecoder.gen[ResponseBrochurePropertyBrochureMap]
 
   private def getRequestUrl(apiKey: String, propertyId: Int): String =
     s"https://api.myhome.ie/brochure/$propertyId?ApiKey=$apiKey&format=json"
@@ -79,7 +80,7 @@ object Property {
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
     response.Brochure.Group.SalesLicense.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber }
 
-  private def toMyHomeIeAdvert(response: Response, advertiser: Option[Advertiser]): MyHomeIeAdvert = {
+  protected[myhomeie] def toMyHomeIeAdvert(response: Response, advertiser: Option[Advertiser]): MyHomeIeAdvert = {
     val url = s"https://www.myhome.ie/${response.Brochure.Property.PropertyId}"
     val price = response.Brochure.Property.PriceAsString
       //   .getOrElse("")
@@ -117,11 +118,18 @@ object Property {
     val buildingEnergyRating = response.Brochure.Property.BerRating
       .flatMap { Rating.tryFromString(_).toOption }
 
+    val propertyType: Option[ie.nok.adverts.PropertyType] =
+      response.Brochure.Property.PropertyType
+        .flatMap { propertyType =>
+          ie.nok.adverts.PropertyType.tryFromString(propertyType).toOption
+        }
+
     MyHomeIeAdvert(
       url = url,
       priceInEur = price,
       description = description,
       address = response.Brochure.Property.DisplayAddress,
+      propertyType = propertyType,
       coordinates = coordinates,
       imageUrls = response.Brochure.Property.Photos,
       size = size,
