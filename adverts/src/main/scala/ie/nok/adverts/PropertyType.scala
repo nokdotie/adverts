@@ -13,6 +13,7 @@ enum PropertyType {
   case House
   case SemiDetached
   case Site
+  case Studio
   case Terraced
 }
 
@@ -30,11 +31,21 @@ object PropertyType {
     case "Duplex"                     => Success(Duplex)
     case "End of Terrace"             => Success(EndOfTerrace)
     case "End-terrace House"          => Success(EndOfTerrace)
+    case "End of Terrace House"       => Success(EndOfTerrace)
+    case "Cottage"                    => Success(House)
+    case "Country House"              => Success(House)
+    case "Dormer"                     => Success(House)
     case "House and Land"             => Success(House)
+    case "Mews"                       => Success(House)
+    case "Townhouse"                  => Success(House)
     case "Semi-D"                     => Success(SemiDetached)
     case "Semi-detached House"        => Success(SemiDetached)
+    case "Semi-Detached House"        => Success(SemiDetached)
+    case "Farm"                       => Success(Site)
     case "Site"                       => Success(Site)
+    case "Studio"                     => Success(Studio)
     case "Terrace"                    => Success(Terraced)
+    case "Terraced House"             => Success(Terraced)
     case "Mid-terrace House"          => Success(Terraced)
     case unknown                      => Failure(Exception(s"Unknown propertyType: $unknown"))
   }

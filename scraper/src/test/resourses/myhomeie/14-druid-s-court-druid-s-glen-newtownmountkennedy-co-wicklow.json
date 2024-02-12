@@ -1,0 +1,561 @@
+{
+  "Brochure": {
+    "Property": {
+      "OrderedDisplayAddress": "14 druids court druids glen newtownmountkennedy co wicklow",
+      "GroupId": 287268,
+      "Address": "14 Druid's Court, Druid's Glen",
+      "SaleTypeId": 17,
+      "MainPhoto": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg",
+      "MainPhotoX": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_x.jpg",
+      "Photos": [
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0eb5306b-da0b-41cd-a509-f175f58e69bb_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5dca0dbf-fac6-475d-9f8e-67158138e4dd_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/723bfc4f-1d7b-4c54-a081-95aa0ca8f601_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/01abd901-16ca-417f-8d90-e47996228ceb_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/788761ac-d8e2-4ce3-aee9-baced035e53e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5b564f53-ab14-42ce-ad08-34a1ba13067b_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/3af916c0-0cdb-4fcf-ac6c-2cc001ed6399_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/873094de-0fe9-44cf-b7a6-a89bfbdc5191_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/635cbdb1-9b32-4d63-997e-8166a3a26d91_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/dd8e0f3d-c386-456a-a2d3-267c10791e3b_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/adb2dc43-4ee3-431d-a3a1-e6c22488bdef_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/8ab1dab9-4657-4860-bbef-f1364895b50c_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/86a5e665-1941-4b9f-a7b7-913ec9700293_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/c3d4d055-3f13-4ee9-9251-95d8a0d6494e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/e7ca5bb9-ed80-4c83-9f51-cc318f29fd30_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/1725c393-e750-460d-9638-82d8ae868057_l.jpg",
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/cbc77127-e598-46dd-96be-15dfa8de7f67_l.jpg"
+      ],
+      "DevelopmentLogo": "",
+      "Bathrooms": 3,
+      "MinSize": 111,
+      "MaxSize": 111,
+      "BerRating": "C3",
+      "OpenViewings": [],
+      "VirtualViewings": [],
+      "PropertyFeatureTypes": [],
+      "BrochureContent": [
+        {
+          "ContentType": "Description",
+          "SortOrder": 0,
+          "Content": "Rarely does an opportunity arise for one to reside in such an uber stylish apartment overlooking a picture perfect setting from ones very own front patio. This romantic setting features a beautiful lake and a stone cut bridge all set against a backdrop of infinite rolling countryside. The impressive Druids Glen Hotel and Golf resort stands proud at the end of the leafy driveway.  \r\nIt is here where scenic beauty and luxurious opulence effortlessly combine to create a haven of both exclusivity and tranquillity in equal measure. Once through the imposing stone entrance gates one instantly feels at home wrapped up in the maturity of the manicured golf courses. Imagine how one would feel knowing this special place was home….\r\nA truly unique and enviable lifestyle is on offer as the Druids Glen Hotel facilities include restaurants, bars, and a leisure centre complete with gym and swimming pool not to mention the golf courses and driving range. \r\nThe apartment itself will no doubt draw attention from those who recognise the fact that not many apartments come in this shape, size, specification, or form. The sprawling open plan living/dining/kitchen space is exceptionally bright with the help of a feature bay window to the front, an over generous use of windows and glass doors throughout all complimented by high ceilings.\r\nSuper sized bedrooms with matching large ensuites will impress especially as one will note the additional guest wc accessed from the utility room. The fully equipped modern kitchen with granite worktops and breakfast bar is positioned perfectly looking out towards the lake. The apartment’s large patio to the front is ideal for al fresco dining and fine weather lounging with a spacious side communal area. There is a designated car parking space.\r\nA second mention of the location is warranted here as one can benefit from the best of both worlds enjoying all the features of a countryside location whilst avoiding any hint of isolation as the county of Dublin is a 30 minute drive away. Greystones town, Delgany and Kilcoole villages are all only minutes drive away. \r\nGreystones with its unrivalled sense of community offers up a state of the art Marina, beaches, Cove and harbour. Greystones main street is full of award winning cafes, restaurants and cosy pubs. One can hop on the dart and take a trip to Dalkey, Dublin, Howth and all those places in between."
+        },
+        {
+          "ContentType": "Accommodation",
+          "SortOrder": 1,
+          "Content": "Porch area with glass front door and windows either side allows lots of natural light to enter this space. Inner glass door leads to:"
+        },
+        {
+          "ContentType": "Rooms",
+          "SortOrder": 2,
+          "Content": "Open plan living /dining/kitchen area - \r\nFeature large wrap around bay window. Solid oak flooring throughout this space. High ceilings with recessed lighting. Oak wall shelving. Attractive cream stone fireplace incorporating gas fire. Tv Point. Attractive ceiling coving.\r\n\r\nKitchen - \r\nModern high and low fitted units incorporating gas hob, Miele fitted oven and extractor hood and fan. Integrated Whirlpool dishwasher and fridge freezer. Tiled floor and Aurora glass tiled splashbacks. Recessed lighting. Lovely breakfast bar with granite worktops throughout the kitchen. Stainless steel sink unit with bronze mixer tap. Corner wine rack and display shelving.\r\n\r\nUtility room - \r\nTiled floor and Quartz tiled splashbacks. Storage and there is plumbing for a washing machine and provision for dryer. This area leads into:\r\n\r\nGuest Wc - \r\nTiled floor. Wc and suspended whb complete with mixer tap, towel rail and glass shelf.\r\n\r\nMaster bedroom - \r\nSuper sized proportions. This bedroom resembles that of a superior suite found in a five star hotel. Cherrywood modern fitted wardrobes. Large windows spanning width of the wall.\r\n\r\nEnsuite - \r\nTiled floor and partly tiled walls incorporating marble shelving. Step in tiled shower unit. Bath with shower connection. Recessed lighting. Wc and large ceramic whb complete with mixer tap, towel rail and glass shelving.\r\n\r\nBedroom 2 - \r\nCherrywood modern fitted wardrobes. French doors lead out to front patio area.\r\n\r\nEnsuite - \r\nTiled floor and partly tiled walls incorporating marble shelving. Step in tiled shower unit. Bath with shower connection. Recessed lighting. Wc and whb complete with mixer tap, towel rail and glass shelving.\r\n\r\nOUTSIDE - \r\nA spacious patio area to the front is bordered by stylish black planter boxes. This area leads out to an expansive communal lawn facing out towards the lake. Steps to the side lead up to the car park. One can enjoy the array of mature well stocked flower bed to the side with a stone boundary wall. There are also planted specimen trees on the lawn.\nSteps lead up to car park where there is a designated parking space.\r\n\r\n"
+        },
+        {
+          "ContentType": "Features",
+          "SortOrder": 3,
+          "Content": "Double glazed windows throughout\r\nGas fired central heating\r\nBeautifully designed front exterior showcasing lots of glass with a generous specification comprising over sized windows and doors \r\nAttractive wrap around bay window to the front\r\nLake views with south westerly orientated patio area\r\nFrench doors from one of the bedrooms leads out to patio area\r\nFeature stone fireplace incorporating gas fire.\r\nCherrywood internal doors, architraves and skirtings.\r\nHigh ceilings with attractive ceiling coving\r\nRecessed lighting throughout main open plan living/kitchen/dining area\r\nTwo super sized ensuites and a guest wc\r\nFully equipped kitchen with top of the range appliances.\r\nPolished granite worktops.\r\nUtility room plumbed for washing machine and provision for dryer\r\nDesignated parking space \r\nOne minute walk to Druids Glen Hotel\r\nGreystones town, Delgany and Kilcoole villages all nearby\r\nExcellent transport links are easily accessible, Greystones Dart station, Aircoach bus service to airport \r\nand local city bound bus links.\r\nFor drivers the N11 leading to the M50 motorway is only a five minute drive away."
+        },
+        {
+          "ContentType": "BER Details",
+          "SortOrder": 4,
+          "Content": "BER: C3 BER No.106836836"
+        },
+        {
+          "ContentType": "Directions",
+          "SortOrder": 5,
+          "Content": "From Dublin take the N11 route towards Wexford, through Kilmacanogue Village, onwards through Glen O' The Downs. Take a left turn off the N11 at Exit 12 signposted for Newtownmountkennedy, take the next left off the roundabout (signposted Druids Glen Hotel & Golf Resort) reaching a T Junction. Take a right here and another right at the next T Junction. Take the next left and follow the signs. As you enter through the gates of the resort one will see the three low rise apartment blocks on the left hand side. Take first turn left into the car park. The apartment is accessed via steps down to the lake side level."
+        }
+      ],
+      "PreSixtyThree": false,
+      "IsNewBuild": false,
+      "Floors": [],
+      "Rooms": [],
+      "NegotiatorId": 477048,
+      "MinEnergyRating": 70,
+      "MaxEnergyRating": 70,
+      "PremiumAdExpiresOn": "2024-02-27T23:59:59.0000000+00:00",
+      "CreatedOnDate": "2023-11-02T11:07:42.4200000+00:00",
+      "ModifiedOnDate": "2023-11-02T11:30:21.0630000+00:00",
+      "IsPremiumAd": true,
+      "ActivatedOn": "2023-11-02T11:30:33.2630000+00:00",
+      "RefreshedOn": "2024-02-12T08:42:18.5970000+00:00",
+      "IsTopSpot": false,
+      "IsPrivateLandlord": false,
+      "IsMappedAccurately": true,
+      "BrochureContactDetails": {
+        "FirstName": "",
+        "Phone": "",
+        "ShowPhoneNumber": false
+      },
+      "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/C3.png",
+      "IsTransact": false,
+      "PriceAsString": "€475,000",
+      "BathString": "3 baths",
+      "AuctionList": [],
+      "PropertyId": 4752060,
+      "BedsString": "2 beds",
+      "SizeStringMeters": 111,
+      "DisplayAddress": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow",
+      "Eircode": "A63 DY96",
+      "Name": "",
+      "PropertyClassId": 1,
+      "PropertyStatusId": 2,
+      "PropertyType": "Apartment",
+      "PropertyTypeId": 36,
+      "RegionId": 4011,
+      "RegionName": "Wicklow",
+      "LocalityId": 4043,
+      "LocalityName": "Newtownmountkennedy",
+      "Price": {
+        "MinPrice": 475000.0,
+        "MaxPrice": 475000.0,
+        "ShowPrice": true
+      },
+      "Images": [
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0eb5306b-da0b-41cd-a509-f175f58e69bb_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0eb5306b-da0b-41cd-a509-f175f58e69bb_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0eb5306b-da0b-41cd-a509-f175f58e69bb_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5dca0dbf-fac6-475d-9f8e-67158138e4dd_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5dca0dbf-fac6-475d-9f8e-67158138e4dd_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5dca0dbf-fac6-475d-9f8e-67158138e4dd_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/723bfc4f-1d7b-4c54-a081-95aa0ca8f601_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/723bfc4f-1d7b-4c54-a081-95aa0ca8f601_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/723bfc4f-1d7b-4c54-a081-95aa0ca8f601_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/01abd901-16ca-417f-8d90-e47996228ceb_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/01abd901-16ca-417f-8d90-e47996228ceb_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/01abd901-16ca-417f-8d90-e47996228ceb_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/788761ac-d8e2-4ce3-aee9-baced035e53e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/788761ac-d8e2-4ce3-aee9-baced035e53e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/788761ac-d8e2-4ce3-aee9-baced035e53e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5b564f53-ab14-42ce-ad08-34a1ba13067b_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5b564f53-ab14-42ce-ad08-34a1ba13067b_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/5b564f53-ab14-42ce-ad08-34a1ba13067b_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/3af916c0-0cdb-4fcf-ac6c-2cc001ed6399_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/3af916c0-0cdb-4fcf-ac6c-2cc001ed6399_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/3af916c0-0cdb-4fcf-ac6c-2cc001ed6399_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/873094de-0fe9-44cf-b7a6-a89bfbdc5191_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/873094de-0fe9-44cf-b7a6-a89bfbdc5191_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/873094de-0fe9-44cf-b7a6-a89bfbdc5191_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/635cbdb1-9b32-4d63-997e-8166a3a26d91_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/635cbdb1-9b32-4d63-997e-8166a3a26d91_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/635cbdb1-9b32-4d63-997e-8166a3a26d91_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/dd8e0f3d-c386-456a-a2d3-267c10791e3b_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/dd8e0f3d-c386-456a-a2d3-267c10791e3b_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/dd8e0f3d-c386-456a-a2d3-267c10791e3b_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/adb2dc43-4ee3-431d-a3a1-e6c22488bdef_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/adb2dc43-4ee3-431d-a3a1-e6c22488bdef_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/adb2dc43-4ee3-431d-a3a1-e6c22488bdef_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/8ab1dab9-4657-4860-bbef-f1364895b50c_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/8ab1dab9-4657-4860-bbef-f1364895b50c_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/8ab1dab9-4657-4860-bbef-f1364895b50c_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/86a5e665-1941-4b9f-a7b7-913ec9700293_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/86a5e665-1941-4b9f-a7b7-913ec9700293_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/86a5e665-1941-4b9f-a7b7-913ec9700293_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/c3d4d055-3f13-4ee9-9251-95d8a0d6494e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/c3d4d055-3f13-4ee9-9251-95d8a0d6494e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/c3d4d055-3f13-4ee9-9251-95d8a0d6494e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/e7ca5bb9-ed80-4c83-9f51-cc318f29fd30_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/e7ca5bb9-ed80-4c83-9f51-cc318f29fd30_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/e7ca5bb9-ed80-4c83-9f51-cc318f29fd30_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/1725c393-e750-460d-9638-82d8ae868057_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/1725c393-e750-460d-9638-82d8ae868057_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/1725c393-e750-460d-9638-82d8ae868057_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/cbc77127-e598-46dd-96be-15dfa8de7f67_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/cbc77127-e598-46dd-96be-15dfa8de7f67_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/cbc77127-e598-46dd-96be-15dfa8de7f67_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0c2997e6-be25-41d2-9008-eb1c8e966582_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0c2997e6-be25-41d2-9008-eb1c8e966582_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0c2997e6-be25-41d2-9008-eb1c8e966582_m.jpg"
+        }
+      ],
+      "BrochureMap": {
+        "longitude": -6.0766669,
+        "latitude": 53.092458
+      },
+      "CustomData": {
+        "RelatedPropertyIDs": [],
+        "PromotionalSnippet": "",
+        "IsMyHomePassport": false,
+        "DevelopmentLogoBgColour": ""
+      },
+      "PhotoCount": 18,
+      "Pdfs": [],
+      "FloorPlans": [
+        "https://photos-a.propertyimages.ie/media/0/6/0/4752060/0c2997e6-be25-41d2-9008-eb1c8e966582_l.jpg"
+      ],
+      "Vimeo": [],
+      "BrightCove": [],
+      "YouTube": [],
+      "YouTubeRotate": [],
+      "Matterport": [],
+      "VirtualTourEyeSpy": [],
+      "VirtualTourKuula": [],
+      "VirtualTourGiraffe360": [],
+      "VideoUrl": [],
+      "Viewett": []
+    },
+    "Group": {
+      "GroupId": 287268,
+      "Name": "O'Gorman Properties",
+      "DisplayPhone": "01 287 1144",
+      "Email": "info@ogormanproperties.com",
+      "OFFRGroupId": "",
+      "UrlSlugIdentifier": "ogorman-properties",
+      "SeoName": "ogorman-properties",
+      "Address": "Church Road, Greystones, Co. Wicklow",
+      "LogoUrl": "https://photos-a.propertyimages.ie/groups/8/6/2/287268/logo.jpg",
+      "SalesLicense": "004371",
+      "RentalLicense": "",
+      "IsPhoneRevealed": false
+    },
+    "AreaGuideSlug": "newtownmountkennedy/4043",
+    "JointGroup": {
+      "GroupId": 0,
+      "DisplayPhone": "",
+      "SeoName": "",
+      "Address": "",
+      "IsPhoneRevealed": false
+    },
+    "AgentProperties": [],
+    "PropertyHistories": [],
+    "PropertyPriceRegister": [
+      {
+        "PropertyPriceRegisterId": 1702483,
+        "DisplayAddress": "6 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "396475.77",
+        "SoldOn": "2024-01-30T00:00:00.0000000+00:00",
+        "SoldOnString": "30th Jan 24",
+        "Longitude": -6.1203609,
+        "Latitude": 53.0898462,
+        "SeoUrl": "/priceregister/6-glendarragh-newtownmountkennedy-co-wicklow-1702483"
+      },
+      {
+        "PropertyPriceRegisterId": 1701621,
+        "DisplayAddress": "5 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "414097",
+        "SoldOn": "2024-01-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Jan 24",
+        "Longitude": -6.120303,
+        "Latitude": 53.0897827,
+        "SeoUrl": "/priceregister/5-glendarragh-newtownmountkennedy-co-wicklow-1701621"
+      },
+      {
+        "PropertyPriceRegisterId": 1700912,
+        "DisplayAddress": "1 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "422907.48",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -6.1201057,
+        "Latitude": 53.0895379,
+        "SeoUrl": "/priceregister/1-glendarragh-newtownmountkennedy-co-wicklow-1700912"
+      },
+      {
+        "PropertyPriceRegisterId": 1701625,
+        "DisplayAddress": "11 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "396475.78",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -6.1206312,
+        "Latitude": 53.0901574,
+        "SeoUrl": "/priceregister/11-glendarragh-newtownmountkennedy-co-wicklow-1701625"
+      },
+      {
+        "PropertyPriceRegisterId": 1700920,
+        "DisplayAddress": "8 Glendarragh, Ww8684f  Ww23355f  Ww27998f, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "414096.92",
+        "SoldOn": "2024-01-15T00:00:00.0000000+00:00",
+        "SoldOnString": "15th Jan 24",
+        "Longitude": -6.1204459,
+        "Latitude": 53.0899502,
+        "SeoUrl": "/priceregister/8-glendarragh-ww8684f-ww23355f-ww27998f-newtownmountkennedy-co-wicklow-1700920"
+      },
+      {
+        "PropertyPriceRegisterId": 1701628,
+        "DisplayAddress": "62 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "414096",
+        "SoldOn": "2024-01-15T00:00:00.0000000+00:00",
+        "SoldOnString": "15th Jan 24",
+        "Longitude": -6.1198962,
+        "Latitude": 53.0890475,
+        "SeoUrl": "/priceregister/62-glendarragh-newtownmountkennedy-co-wicklow-1701628"
+      },
+      {
+        "PropertyPriceRegisterId": 1700289,
+        "DisplayAddress": "2 Rockfied Drive, Newtownmountkennedy, Co. Wicklow, A63nr28",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "522000",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.113075,
+        "Latitude": 53.0845514,
+        "SeoUrl": "/priceregister/2-rockfied-drive-newtownmountkennedy-co-wicklow-a63nr28-1700289"
+      },
+      {
+        "PropertyPriceRegisterId": 1700921,
+        "DisplayAddress": "62 Glendarragh, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "414096",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.1201439,
+        "Latitude": 53.0895889,
+        "SeoUrl": "/priceregister/62-glendarragh-newtownmountkennedy-co-wicklow-1700921"
+      },
+      {
+        "PropertyPriceRegisterId": 1697173,
+        "DisplayAddress": "18 Rockfield Drive, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "365638.77",
+        "SoldOn": "2023-11-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Nov 23",
+        "Longitude": -6.1143223,
+        "Latitude": 53.0840254,
+        "SeoUrl": "/priceregister/18-rockfield-drive-newtownmountkennedy-co-wicklow-1697173"
+      },
+      {
+        "PropertyPriceRegisterId": 1697174,
+        "DisplayAddress": "20 Rockfield Drive, Newtownmountkennedy, Co. Wicklow",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "418502",
+        "SoldOn": "2023-11-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Nov 23",
+        "Longitude": -6.1143316,
+        "Latitude": 53.0838816,
+        "SeoUrl": "/priceregister/20-rockfield-drive-newtownmountkennedy-co-wicklow-1697174"
+      }
+    ],
+    "PriceChanges": [],
+    "RelatedNewHomeProperties": [],
+    "SeoUrl": "/residential/brochure/14-druid-s-court-druid-s-glen-newtownmountkennedy-co-wicklow/4752060",
+    "Features": [],
+    "VirtualViewings": [],
+    "Negotiator": {
+      "NegotiatorId": 477048,
+      "Name": "Sonya O'Gorman",
+      "Phone": " 01 287 1144",
+      "ImageUrl": "https://photos-a.propertyimages.ie/users/8/4/0/477048/profile.jpg",
+      "Licence": ""
+    },
+    "IsFavourite": false,
+    "LatestPriceChangeString": "",
+    "HasVideos": false,
+    "HasWebP": true,
+    "IsTransact": false,
+    "BrochureTopAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 970,
+          "Height": 90
+        },
+        {
+          "Width": 728,
+          "Height": 90
+        },
+        {
+          "Width": 970,
+          "Height": 250
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Top"
+    },
+    "BrochureMortgageAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 800,
+          "Height": 420
+        }
+      ],
+      "Unit": "/2695176/MyHome/TESTINVENTORY_myhomeie_mortgage"
+    },
+    "BrochureWebBrokerAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 750,
+          "Height": 171
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Broker"
+    },
+    "AdTargetingValues": {
+      "MYH_GroupID": 287268,
+      "MYH_LocalityID": 4043,
+      "MYH_LocalityIDList": [],
+      "MYH_LocalityIDListString": "",
+      "MYH_RegionID": 4011,
+      "MYH_RegionIDList": [],
+      "MYH_RegionIDListString": "",
+      "MYH_PropertyFeatureIDList": [],
+      "MYH_PropertyFeatureIDListString": "",
+      "MYH_MaxPrice": 475000,
+      "MYH_MinBeds": 2,
+      "MYH_MinEnergyRating": 70,
+      "MYH_MinPrice": 475000,
+      "MYH_MinSize": 111,
+      "MYH_PropertyClassId": 1,
+      "MYH_PropertyID": 4752060,
+      "MYH_PropertyTypeID": 36
+    }
+  },
+  "SeoDetails": {
+    "Title": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow - O'Gorman Properties - 4752060 - MyHome.ie Residential",
+    "Description": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow, 2 Bed, asking price €475,000, brought to market by O'Gorman Properties, Residential - 4752060 (rated C3)",
+    "Keywords": "2 Bed, 14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow",
+    "PrevUrl": "",
+    "CanonicalUrl": "/residential/brochure/14-druid-s-court-druid-s-glen-newtownmountkennedy-co-wicklow/4752060",
+    "NextUrl": "",
+    "ClassUrl": "property-for-sale",
+    "RegionUrl": "newtownmountkennedy",
+    "DescriptionUrl": "property-for-sale-in-newtownmountkennedy",
+    "BreadCrumbs": [
+      {
+        "DisplayName": "Home",
+        "ShortDisplayName": "Home",
+        "Route": "/"
+      },
+      {
+        "DisplayName": "Residential property for sale in Ireland",
+        "ShortDisplayName": "Ireland",
+        "Route": "/residential/ireland/apartment-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Wicklow",
+        "ShortDisplayName": "Wicklow",
+        "Route": "/residential/wicklow/apartment-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Newtownmountkennedy",
+        "ShortDisplayName": "Newtownmountkennedy",
+        "Route": "/residential/wicklow/apartment-for-sale-in-newtownmountkennedy"
+      },
+      {
+        "DisplayName": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow",
+        "ShortDisplayName": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow",
+        "Route": ""
+      }
+    ],
+    "OpenGraphData": {
+      "Values": [
+        {
+          "Key": "og:url",
+          "Value": "https://myhome.ie/residential/brochure/14-druid-s-court-druid-s-glen-newtownmountkennedy-co-wicklow/4752060"
+        },
+        {
+          "Key": "og:title",
+          "Value": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow - O'Gorman Properties - 4752060 - MyHome.ie Residential"
+        },
+        {
+          "Key": "og:description",
+          "Value": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow, 2 Bed, asking price €475,000, brought to market by O'Gorman Properties, Residential - 4752060 (rated C3)"
+        },
+        {
+          "Key": "og:image",
+          "Value": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg"
+        },
+        {
+          "Key": "og:image:url",
+          "Value": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg"
+        },
+        {
+          "Key": "og:image:type",
+          "Value": "image/jpg"
+        },
+        {
+          "Key": "og:image:secure_url",
+          "Value": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg"
+        },
+        {
+          "Key": "og:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "og:image:height",
+          "Value": "630"
+        },
+        {
+          "Key": "twitter:card",
+          "Value": "summary"
+        },
+        {
+          "Key": "twitter:site",
+          "Value": "https://myhome.ie/residential/brochure/14-druid-s-court-druid-s-glen-newtownmountkennedy-co-wicklow/4752060"
+        },
+        {
+          "Key": "twitter:title",
+          "Value": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow - O'Gorman Properties - 4752060 - MyHome.ie Residential"
+        },
+        {
+          "Key": "twitter:image",
+          "Value": "https://photos-a.propertyimages.ie/media/0/6/0/4752060/f3b21fd1-e349-41b6-8214-be7e7911d0d7_l.jpg"
+        },
+        {
+          "Key": "twitter:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "twitter:image:height",
+          "Value": "675"
+        },
+        {
+          "Key": "twitter:description",
+          "Value": "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow, 2 Bed, asking price €475,000, brought to market by O'Gorman Properties, Residential - 4752060 (rated C3)"
+        }
+      ]
+    },
+    "NeighbourhoodLink": "",
+    "CustomDescription": ""
+  },
+  "Favourites": [],
+  "SavedSearches": [],
+  "RentalApplications": [],
+  "FavouriteCount": 0,
+  "SavedSearchesCount": 0,
+  "UserId": 0,
+  "Version": 1
+}

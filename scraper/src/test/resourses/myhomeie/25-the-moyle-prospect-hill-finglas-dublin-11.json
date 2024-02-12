@@ -1,0 +1,645 @@
+{
+  "Brochure": {
+    "Property": {
+      "OrderedDisplayAddress": "25 the moyle prospect hill finglas dublin 11",
+      "GroupId": 386630,
+      "Address": "25 The Moyle, Prospect Hill",
+      "SaleTypeId": 17,
+      "MainPhoto": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg",
+      "MainPhotoX": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_x.jpg",
+      "Photos": [
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1a6d4f8a-27c5-4961-8ed6-bbba05c4f36a_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/cbeaf3d4-bb43-47c3-858f-c4fbe209c574_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9aacfe80-7a97-4f63-ae65-7caed46fc7ff_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/f574efa2-e70c-4921-82fc-980b0274d0d6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/490a4414-61ff-4822-94b4-424cf1c2d5b4_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/88292302-419e-46f7-ae79-19c4a77caee7_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/99bc8437-fa29-4799-9877-8da3fd206c4e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4de59754-cf1a-43f0-a944-046e07c06270_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/20a69695-e90c-4042-b514-48e970d75562_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9e8188bd-b704-458a-8cb9-688385c8cbb9_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/40c8d07b-e3d0-4185-a102-f763d297ba48_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1999f739-1cad-45d8-8351-a77979b1df8f_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/55b4a413-0641-48f1-b930-c9ee822cc752_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/28df3cf9-35bf-47f4-a270-02435d35a2d8_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/d6cb6110-5bcb-4dd1-bbce-2d1ff1a2d56e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/5403c058-98fb-4c46-b924-953e8a95bc5f_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/2febfa94-6396-4c40-9e7d-b401ae482cbd_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4fbb9747-8bcf-4f49-9520-7167710b9bd8_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/aa0996dc-f2c1-4ada-90b7-6ff6dbfae3d1_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/54319a0c-28a7-4ee8-b64c-79d7f90d6085_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/e34bedec-4a7c-4395-af3b-08001467871c_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/66118eff-e51b-422c-b51f-92a25d87c91e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/21b2bd70-8c96-4a7b-bdd3-56ef5a03239d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/44ebb3e9-b2d9-46a7-ab9d-fa1cef9a392d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/80c9e091-7d04-491f-a60b-dd669e13744e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/5/2/4772257/39b5a272-9f2c-4934-9658-e62db171407a_l.jpg"
+      ],
+      "DevelopmentLogo": "",
+      "Bathrooms": 2,
+      "MinSize": 67,
+      "MaxSize": 67,
+      "BerRating": "C3",
+      "OpenViewings": [
+        {
+          "Id": 0,
+          "StartDate": "2024-02-14T18:40:00.0000000+00:00",
+          "EndDate": "2024-02-14T18:40:00.0000000+00:00",
+          "OpenViewingType": "OnViewing",
+          "StartDateFormatted": "Wed Feb 14, 6.40pm",
+          "EndDateFormatted": "Wed Feb 14, 6.40pm",
+          "FeaturedSpotId": 582411,
+          "ChannelId": 0,
+          "FormattedString": "Wed Feb 14, 6.40pm - 6.40pm"
+        }
+      ],
+      "VirtualViewings": [],
+      "PropertyFeatureTypes": [],
+      "BrochureContent": [
+        {
+          "ContentType": "Description",
+          "SortOrder": 0,
+          "Content": "RAY COOKE AUCTIONEERS are proud to present this superb, two-bedroom duplex to the market in the ever popular and sought-after development of Prospect Hill ideally located in Finglas, Dublin 11. Situated off the Finglas Road, this development is located close to the villages of Glasnevin, Phibsborough and Finglas. The property is close to a host of local amenities such as shopping at Charlestown Shopping Centre, schools, Dublin City University and Tolka Valley Park. The City Centre, M50, and Dublin Airport are all easily accessible and Dublin Bus run numerous routes which enable residents to access a number of different destinations across the Capital. There are esteemed primary and secondary schools in the area and also a newly opened creche within the development which are a huge advantage to this beautiful home. \nBright and spacious living accommodation of c. 67 sq.m comprises of entrance hallway, large open plan living/dining area with a fully fitted kitchen, two double bedrooms (one with EnSuite) and main family bathroom. No. 25 comes to the market in excellent condition throughout and boasts double-glazed windows, gas fired central heating, quality flooring throughout and a sunny balcony with a west facing orientation. An opportunity not to be missed: call Ray Cooke Auctioneers today for further information or to arrange viewing!!\n \nAdditional Features:\n- c. 67 sqm\n- BER C3\n- Management fees c.2300 p/a \n- 2 bed / 2 bath\n- Stunning duplex \n- Bright, spacious living/dining area\n- Designated underground parking space\n- High quality finish\n- Presented in excellent condition\n- Two double bedrooms\n- Built in wardrobes\n- Gas fired central heating system\n- Private west facing balcony \n- Double glazed windows throughout\n- Peaceful development\n- M50 Motorway within arm's reach\n- Bus routes and local shops on your doorstep\n- Early viewing highly advised!\n Directions:\nTravelling on Finglas Road towards the city centre, Turn right onto Tolka Valley Rd, The development is located on your right hand side.\n"
+        },
+        {
+          "ContentType": "Negotiator",
+          "SortOrder": 10,
+          "Content": "Northside Sales"
+        }
+      ],
+      "IsNewBuild": false,
+      "Floors": [],
+      "Rooms": [],
+      "NegotiatorId": 362948,
+      "MinEnergyRating": 70,
+      "MaxEnergyRating": 70,
+      "CreatedOnDate": "2024-02-09T12:16:50.3830000+00:00",
+      "ModifiedOnDate": "2024-02-09T13:21:52.6600000+00:00",
+      "IsPremiumAd": false,
+      "ActivatedOn": "2024-02-09T12:16:50.3830000+00:00",
+      "RefreshedOn": "2024-02-09T12:16:50.3830000+00:00",
+      "IsTopSpot": false,
+      "IsPrivateLandlord": false,
+      "IsMappedAccurately": true,
+      "BrochureContactDetails": {
+        "ShowPhoneNumber": false
+      },
+      "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/C3.png",
+      "IsTransact": false,
+      "PriceAsString": "€259,000",
+      "BathString": "2 baths",
+      "AuctionList": [],
+      "PropertyId": 4772257,
+      "BedsString": "2 beds",
+      "SizeStringMeters": 67,
+      "DisplayAddress": "25 The Moyle, Prospect Hill, Finglas, Dublin 11",
+      "Eircode": "D11 CD68",
+      "Name": "",
+      "PropertyClassId": 1,
+      "PropertyStatusId": 2,
+      "PropertyType": "Duplex",
+      "PropertyTypeId": 47,
+      "RegionId": 1452,
+      "RegionName": "Dublin 11",
+      "LocalityId": 1299,
+      "LocalityName": "Finglas",
+      "Price": {
+        "MinPrice": 259000.0,
+        "MaxPrice": 259000.0,
+        "ShowPrice": true
+      },
+      "Images": [
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1a6d4f8a-27c5-4961-8ed6-bbba05c4f36a_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1a6d4f8a-27c5-4961-8ed6-bbba05c4f36a_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1a6d4f8a-27c5-4961-8ed6-bbba05c4f36a_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/cbeaf3d4-bb43-47c3-858f-c4fbe209c574_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/cbeaf3d4-bb43-47c3-858f-c4fbe209c574_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/cbeaf3d4-bb43-47c3-858f-c4fbe209c574_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9aacfe80-7a97-4f63-ae65-7caed46fc7ff_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9aacfe80-7a97-4f63-ae65-7caed46fc7ff_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9aacfe80-7a97-4f63-ae65-7caed46fc7ff_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/f574efa2-e70c-4921-82fc-980b0274d0d6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/f574efa2-e70c-4921-82fc-980b0274d0d6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/f574efa2-e70c-4921-82fc-980b0274d0d6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/490a4414-61ff-4822-94b4-424cf1c2d5b4_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/490a4414-61ff-4822-94b4-424cf1c2d5b4_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/490a4414-61ff-4822-94b4-424cf1c2d5b4_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/88292302-419e-46f7-ae79-19c4a77caee7_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/88292302-419e-46f7-ae79-19c4a77caee7_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/88292302-419e-46f7-ae79-19c4a77caee7_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/99bc8437-fa29-4799-9877-8da3fd206c4e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/99bc8437-fa29-4799-9877-8da3fd206c4e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/99bc8437-fa29-4799-9877-8da3fd206c4e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4de59754-cf1a-43f0-a944-046e07c06270_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4de59754-cf1a-43f0-a944-046e07c06270_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4de59754-cf1a-43f0-a944-046e07c06270_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/20a69695-e90c-4042-b514-48e970d75562_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/20a69695-e90c-4042-b514-48e970d75562_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/20a69695-e90c-4042-b514-48e970d75562_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9e8188bd-b704-458a-8cb9-688385c8cbb9_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9e8188bd-b704-458a-8cb9-688385c8cbb9_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/9e8188bd-b704-458a-8cb9-688385c8cbb9_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/40c8d07b-e3d0-4185-a102-f763d297ba48_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/40c8d07b-e3d0-4185-a102-f763d297ba48_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/40c8d07b-e3d0-4185-a102-f763d297ba48_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1999f739-1cad-45d8-8351-a77979b1df8f_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1999f739-1cad-45d8-8351-a77979b1df8f_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/1999f739-1cad-45d8-8351-a77979b1df8f_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/55b4a413-0641-48f1-b930-c9ee822cc752_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/55b4a413-0641-48f1-b930-c9ee822cc752_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/55b4a413-0641-48f1-b930-c9ee822cc752_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/28df3cf9-35bf-47f4-a270-02435d35a2d8_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/28df3cf9-35bf-47f4-a270-02435d35a2d8_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/28df3cf9-35bf-47f4-a270-02435d35a2d8_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/d6cb6110-5bcb-4dd1-bbce-2d1ff1a2d56e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/d6cb6110-5bcb-4dd1-bbce-2d1ff1a2d56e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/d6cb6110-5bcb-4dd1-bbce-2d1ff1a2d56e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/5403c058-98fb-4c46-b924-953e8a95bc5f_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/5403c058-98fb-4c46-b924-953e8a95bc5f_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/5403c058-98fb-4c46-b924-953e8a95bc5f_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/2febfa94-6396-4c40-9e7d-b401ae482cbd_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/2febfa94-6396-4c40-9e7d-b401ae482cbd_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/2febfa94-6396-4c40-9e7d-b401ae482cbd_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4fbb9747-8bcf-4f49-9520-7167710b9bd8_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4fbb9747-8bcf-4f49-9520-7167710b9bd8_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/4fbb9747-8bcf-4f49-9520-7167710b9bd8_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/aa0996dc-f2c1-4ada-90b7-6ff6dbfae3d1_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/aa0996dc-f2c1-4ada-90b7-6ff6dbfae3d1_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/aa0996dc-f2c1-4ada-90b7-6ff6dbfae3d1_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/54319a0c-28a7-4ee8-b64c-79d7f90d6085_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/54319a0c-28a7-4ee8-b64c-79d7f90d6085_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/54319a0c-28a7-4ee8-b64c-79d7f90d6085_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/e34bedec-4a7c-4395-af3b-08001467871c_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/e34bedec-4a7c-4395-af3b-08001467871c_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/e34bedec-4a7c-4395-af3b-08001467871c_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/66118eff-e51b-422c-b51f-92a25d87c91e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/66118eff-e51b-422c-b51f-92a25d87c91e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/66118eff-e51b-422c-b51f-92a25d87c91e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/21b2bd70-8c96-4a7b-bdd3-56ef5a03239d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/21b2bd70-8c96-4a7b-bdd3-56ef5a03239d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/21b2bd70-8c96-4a7b-bdd3-56ef5a03239d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/44ebb3e9-b2d9-46a7-ab9d-fa1cef9a392d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/44ebb3e9-b2d9-46a7-ab9d-fa1cef9a392d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/44ebb3e9-b2d9-46a7-ab9d-fa1cef9a392d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/80c9e091-7d04-491f-a60b-dd669e13744e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/80c9e091-7d04-491f-a60b-dd669e13744e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/80c9e091-7d04-491f-a60b-dd669e13744e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/39b5a272-9f2c-4934-9658-e62db171407a_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/39b5a272-9f2c-4934-9658-e62db171407a_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/39b5a272-9f2c-4934-9658-e62db171407a_m.jpg"
+        }
+      ],
+      "BrochureMap": {
+        "longitude": -6.2908486,
+        "latitude": 53.3809923
+      },
+      "CustomData": {
+        "RelatedPropertyIDs": [],
+        "IsMyHomePassport": false
+      },
+      "PhotoCount": 27,
+      "Pdfs": [],
+      "FloorPlans": [],
+      "Vimeo": [],
+      "BrightCove": [],
+      "YouTube": [],
+      "YouTubeRotate": [],
+      "Matterport": [],
+      "VirtualTourEyeSpy": [],
+      "VirtualTourKuula": [],
+      "VirtualTourGiraffe360": [],
+      "VideoUrl": [],
+      "Viewett": []
+    },
+    "Group": {
+      "GroupId": 386630,
+      "Name": "Ray Cooke Auctioneers ",
+      "DisplayPhone": "01 541 1455",
+      "Email": "finglas@raycooke.ie",
+      "OFFRGroupId": "",
+      "UrlSlugIdentifier": "ray-cooke-auctioneers-finglas",
+      "SeoName": "ray-cooke-auctioneers-finglas",
+      "Address": "Unit FM10, Finglas Village Centre, Finglas, Dublin 11",
+      "LogoUrl": "https://photos-a.propertyimages.ie/groups/0/3/6/386630/logo.jpg",
+      "SalesLicense": "002307",
+      "RentalLicense": "002307",
+      "IsPhoneRevealed": false
+    },
+    "AreaGuideSlug": "finglas/1299",
+    "JointGroup": {
+      "GroupId": 0,
+      "DisplayPhone": "",
+      "SeoName": "",
+      "Address": "",
+      "IsPhoneRevealed": false
+    },
+    "AgentProperties": [],
+    "PropertyHistories": [],
+    "PropertyPriceRegister": [
+      {
+        "PropertyPriceRegisterId": 1701644,
+        "DisplayAddress": "130 Hampton Wood Rd, Finglas, Dublin 11, D11fx45",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "290000",
+        "SoldOn": "2024-01-26T00:00:00.0000000+00:00",
+        "SoldOnString": "26th Jan 24",
+        "Longitude": -6.2867254,
+        "Latitude": 53.4045389,
+        "SeoUrl": "/priceregister/130-hampton-wood-rd-finglas-dublin-11-d11fx45-1701644"
+      },
+      {
+        "PropertyPriceRegisterId": 1700949,
+        "DisplayAddress": "9 Hampton Wood Crescent, Finglas, Dublin 11, D11h3nn",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "325000",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -6.2906837,
+        "Latitude": 53.4051756,
+        "SeoUrl": "/priceregister/9-hampton-wood-crescent-finglas-dublin-11-d11h3nn-1700949"
+      },
+      {
+        "PropertyPriceRegisterId": 1700305,
+        "DisplayAddress": "Apt 107 Hampton Wood Ave, St Margaret's Road, Finglas, Dublin 11, D11h593",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "187000",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.2875993,
+        "Latitude": 53.4055059,
+        "SeoUrl": "/priceregister/apt-107-hampton-wood-ave-st-margaret-s-road-finglas-dublin-11-d11h593-1700305"
+      },
+      {
+        "PropertyPriceRegisterId": 1700306,
+        "DisplayAddress": "Apt 42 Block 4 The Moyle, Prospect Hill, Finglas, Dublin 11, D11y2r4",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "44426",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.2907642,
+        "Latitude": 53.3812549,
+        "SeoUrl": "/priceregister/apt-42-block-4-the-moyle-prospect-hill-finglas-dublin-11-d11y2r4-1700306"
+      },
+      {
+        "PropertyPriceRegisterId": 1701038,
+        "DisplayAddress": "Apt 7 Block 4 The Moyle, Prospect Hill, Finglas, Dublin 11, D11hy42",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "64584",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.2907642,
+        "Latitude": 53.3812549,
+        "SeoUrl": "/priceregister/apt-7-block-4-the-moyle-prospect-hill-finglas-dublin-11-d11hy42-1701038"
+      },
+      {
+        "PropertyPriceRegisterId": 1702688,
+        "DisplayAddress": "132 Ballygall Parade, Finglas, Dublin 11, D11r9x7",
+        "PropertyTypeId": 97,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "342000",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.2940507,
+        "Latitude": 53.3883983,
+        "SeoUrl": "/priceregister/132-ballygall-parade-finglas-dublin-11-d11r9x7-1702688"
+      },
+      {
+        "PropertyPriceRegisterId": 1701051,
+        "DisplayAddress": "Apt 12 Block 4 The Moyle, Prospect Hill, Finglas, Dublin 11",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "57031",
+        "SoldOn": "2024-01-11T00:00:00.0000000+00:00",
+        "SoldOnString": "11th Jan 24",
+        "Longitude": -6.290663,
+        "Latitude": 53.380481,
+        "SeoUrl": "/priceregister/apt-12-block-4-the-moyle-prospect-hill-finglas-dublin-11-1701051"
+      },
+      {
+        "PropertyPriceRegisterId": 1702698,
+        "DisplayAddress": "Apt 25 Block 4 The Moyle, Prospect Hill, Finglas, Dublin 11, D11cd68",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "51137",
+        "SoldOn": "2024-01-11T00:00:00.0000000+00:00",
+        "SoldOnString": "11th Jan 24",
+        "Longitude": -6.2907642,
+        "Latitude": 53.3812549,
+        "SeoUrl": "/priceregister/apt-25-block-4-the-moyle-prospect-hill-finglas-dublin-11-d11cd68-1702698"
+      },
+      {
+        "PropertyPriceRegisterId": 1700355,
+        "DisplayAddress": "41 Hampton Wood Cresent, Finglas, Dublin 11, D11de00",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "285000",
+        "SoldOn": "2024-01-08T00:00:00.0000000+00:00",
+        "SoldOnString": "8th Jan 24",
+        "Longitude": -6.2900305,
+        "Latitude": 53.406101,
+        "SeoUrl": "/priceregister/41-hampton-wood-cresent-finglas-dublin-11-d11de00-1700355"
+      },
+      {
+        "PropertyPriceRegisterId": 1695066,
+        "DisplayAddress": "192 Mckee Ave, Finglas, Dublin 11, D11w2t4",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "375000",
+        "SoldOn": "2023-11-28T00:00:00.0000000+00:00",
+        "SoldOnString": "28th Nov 23",
+        "Longitude": -6.3031754,
+        "Latitude": 53.3956629,
+        "SeoUrl": "/priceregister/192-mckee-ave-finglas-dublin-11-d11w2t4-1695066"
+      }
+    ],
+    "PriceChanges": [
+      {
+        "PropertyId": 4750830,
+        "Address": "199 Premier Square, Finglas, Dublin 11",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/0/3/8/4750830/ee906878-53b4-4ed6-8003-fd86b07c021d_t.jpg",
+        "HasWebP": false,
+        "Price": 250000.0,
+        "PrevPrice": 275000.0,
+        "PriceChangeDelta": -25000.0,
+        "PriceChangePercentage": -9.0909,
+        "Created": "31st Oct 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/D1.png",
+        "BerRating": "D1",
+        "SeoUrl": "/residential/brochure/199-premier-square-finglas-dublin-11/4750830",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4720239,
+        "Address": "16 Abbotstown Road, Finglas, Dublin 11",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/9/3/2/4720239/e2287bd6-bda4-42bc-9839-1fd61e05ec7c_t.jpg",
+        "HasWebP": false,
+        "Price": 150000.0,
+        "PrevPrice": 175000.0,
+        "PriceChangeDelta": -25000.0,
+        "PriceChangePercentage": -14.2857,
+        "Created": "31st Oct 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/E1.png",
+        "BerRating": "E1",
+        "SeoUrl": "/residential/brochure/16-abbotstown-road-finglas-dublin-11/4720239",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4744796,
+        "Address": "13 Heathfield Close, Finglas, Dublin 11",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/6/9/7/4744796/8d5e7a27-fbc2-4430-8d46-296a2948deec_t.jpg",
+        "HasWebP": false,
+        "Price": 395000.0,
+        "PrevPrice": 295000.0,
+        "PriceChangeDelta": 100000.0,
+        "PriceChangePercentage": 33.8983,
+        "Created": "2nd Oct 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "up",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/B2.png",
+        "BerRating": "B2",
+        "SeoUrl": "/residential/brochure/13-heathfield-close-finglas-dublin-11/4744796",
+        "IsActive": true
+      }
+    ],
+    "RelatedNewHomeProperties": [],
+    "SeoUrl": "/residential/brochure/25-the-moyle-prospect-hill-finglas-dublin-11/4772257",
+    "Features": [],
+    "VirtualViewings": [],
+    "IsFavourite": false,
+    "LatestPriceChangeString": "",
+    "HasVideos": false,
+    "HasWebP": false,
+    "IsTransact": false,
+    "BrochureTopAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 970,
+          "Height": 90
+        },
+        {
+          "Width": 728,
+          "Height": 90
+        },
+        {
+          "Width": 970,
+          "Height": 250
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Top"
+    },
+    "BrochureMortgageAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 800,
+          "Height": 420
+        }
+      ],
+      "Unit": "/2695176/MyHome/TESTINVENTORY_myhomeie_mortgage"
+    },
+    "BrochureWebBrokerAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 750,
+          "Height": 171
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Broker"
+    },
+    "AdTargetingValues": {
+      "MYH_GroupID": 386630,
+      "MYH_LocalityID": 1299,
+      "MYH_LocalityIDList": [],
+      "MYH_LocalityIDListString": "",
+      "MYH_RegionID": 1452,
+      "MYH_RegionIDList": [],
+      "MYH_RegionIDListString": "",
+      "MYH_PropertyFeatureIDList": [],
+      "MYH_PropertyFeatureIDListString": "",
+      "MYH_MaxPrice": 275000,
+      "MYH_MinBeds": 2,
+      "MYH_MinEnergyRating": 70,
+      "MYH_MinPrice": 275000,
+      "MYH_MinSize": 67,
+      "MYH_PropertyClassId": 1,
+      "MYH_PropertyID": 4772257,
+      "MYH_PropertyTypeID": 47
+    }
+  },
+  "SeoDetails": {
+    "Title": "25 The Moyle, Prospect Hill, Finglas, Dublin 11 - Ray Cooke Auctioneers  - 4772257 - MyHome.ie Residential",
+    "Description": "25 The Moyle, Prospect Hill, Finglas, Dublin 11, 2 Bed, asking price €259,000, brought to market by Ray Cooke Auctioneers , Residential - 4772257",
+    "Keywords": "2 Bed, 25 The Moyle, Prospect Hill, Finglas, Dublin 11",
+    "PrevUrl": "",
+    "CanonicalUrl": "/residential/brochure/25-the-moyle-prospect-hill-finglas-dublin-11/4772257",
+    "NextUrl": "",
+    "ClassUrl": "property-for-sale",
+    "RegionUrl": "finglas",
+    "DescriptionUrl": "property-for-sale-in-finglas",
+    "BreadCrumbs": [
+      {
+        "DisplayName": "Home",
+        "ShortDisplayName": "Home",
+        "Route": "/"
+      },
+      {
+        "DisplayName": "Residential property for sale in Ireland",
+        "ShortDisplayName": "Ireland",
+        "Route": "/residential/ireland/duplux-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin",
+        "ShortDisplayName": "Dublin",
+        "Route": "/residential/dublin/duplux-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin 11",
+        "ShortDisplayName": "Dublin 11",
+        "Route": "/residential/dublin-11/duplux-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Finglas",
+        "ShortDisplayName": "Finglas",
+        "Route": "/residential/dublin-11/duplux-for-sale-in-finglas"
+      },
+      {
+        "DisplayName": "25 The Moyle, Prospect Hill, Finglas, Dublin 11",
+        "ShortDisplayName": "25 The Moyle, Prospect Hill, Finglas, Dublin 11",
+        "Route": ""
+      }
+    ],
+    "OpenGraphData": {
+      "Values": [
+        {
+          "Key": "og:url",
+          "Value": "https://myhome.ie/residential/brochure/25-the-moyle-prospect-hill-finglas-dublin-11/4772257"
+        },
+        {
+          "Key": "og:title",
+          "Value": "25 The Moyle, Prospect Hill, Finglas, Dublin 11 - Ray Cooke Auctioneers  - 4772257 - MyHome.ie Residential"
+        },
+        {
+          "Key": "og:description",
+          "Value": "25 The Moyle, Prospect Hill, Finglas, Dublin 11, 2 Bed, asking price €259,000, brought to market by Ray Cooke Auctioneers , Residential - 4772257"
+        },
+        {
+          "Key": "og:image",
+          "Value": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg"
+        },
+        {
+          "Key": "og:image:url",
+          "Value": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg"
+        },
+        {
+          "Key": "og:image:type",
+          "Value": "image/jpg"
+        },
+        {
+          "Key": "og:image:secure_url",
+          "Value": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg"
+        },
+        {
+          "Key": "og:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "og:image:height",
+          "Value": "630"
+        },
+        {
+          "Key": "twitter:card",
+          "Value": "summary"
+        },
+        {
+          "Key": "twitter:site",
+          "Value": "https://myhome.ie/residential/brochure/25-the-moyle-prospect-hill-finglas-dublin-11/4772257"
+        },
+        {
+          "Key": "twitter:title",
+          "Value": "25 The Moyle, Prospect Hill, Finglas, Dublin 11 - Ray Cooke Auctioneers  - 4772257 - MyHome.ie Residential"
+        },
+        {
+          "Key": "twitter:image",
+          "Value": "https://photos-a.propertyimages.ie/media/7/5/2/4772257/8f9bdd7d-a69e-4ecb-ab6b-52366b1522d1_l.jpg"
+        },
+        {
+          "Key": "twitter:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "twitter:image:height",
+          "Value": "675"
+        },
+        {
+          "Key": "twitter:description",
+          "Value": "25 The Moyle, Prospect Hill, Finglas, Dublin 11, 2 Bed, asking price €259,000, brought to market by Ray Cooke Auctioneers , Residential - 4772257"
+        }
+      ]
+    },
+    "NeighbourhoodLink": "",
+    "CustomDescription": ""
+  },
+  "Favourites": [],
+  "SavedSearches": [],
+  "RentalApplications": [],
+  "FavouriteCount": 0,
+  "SavedSearchesCount": 0,
+  "UserId": 0,
+  "Version": 1
+}

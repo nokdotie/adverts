@@ -1,0 +1,659 @@
+{
+  "Brochure": {
+    "Property": {
+      "OrderedDisplayAddress": "27 coolgreena road beaumont dublin 9",
+      "GroupId": 387846,
+      "Address": "27, Coolgreena Road",
+      "SaleTypeId": 17,
+      "MainPhoto": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg",
+      "MainPhotoX": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_x.jpg",
+      "Photos": [
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1fe08061-4d2c-4c92-a7cd-128e33338fd0_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4ff3529a-43ac-43f3-893e-73bf5be5190e_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/72fa4b63-c6d1-47dc-ba1e-1c04edc74609_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f5846d7-9824-45ed-8597-f1b6043a5d82_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/2f8c0590-a81f-428f-80dd-85ee10acecc6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9d69a0fe-d648-4bd8-827e-a407db1b4dd2_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b0de8f7e-26c2-4e04-a090-80269a1d72e5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0d49ee46-0821-4cf8-bfac-6829f2cb0bcf_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5273f5f9-83f7-47a9-b4da-56d3ec881a29_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5381f19b-5e0a-4990-81a3-08986a28e590_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e7f9cec6-ad60-4f0f-88ea-2147efa911f5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/7a3a2e26-650e-471a-bc7b-d962c06c7dc5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4acd6910-02a1-459a-962b-c7cce268e5b3_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/720b6e47-a24d-469a-a2b7-c28b8e15fa69_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/330113c3-8e1d-44a8-a624-f5e27f1689d5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/baa64024-5d30-4c9b-bbef-163c152329ab_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/42e5bf19-3332-409b-828f-4ae3793e778a_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0a7617ee-8a85-4718-999d-73419ce99a96_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e5a0eeb7-a511-4d28-820c-3f3c5093f0de_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1211e971-cde0-4b83-ad04-996e74f06c16_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4d89c6f4-7f4f-48b8-b689-1d53417f2014_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4318011f-8a3c-48be-8a22-a0c3273205d5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f1285e5-c602-4bf2-b5b2-6bb0dba456bb_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/fa5b18b2-2187-4705-8a04-d13bae4399ce_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/191acc50-eb23-4ff6-801d-b3fc42c73f77_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4b39989a-d911-41b9-885b-a4ede65529f5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/13498c5f-56df-4b1b-ace8-23b869a0dfee_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/de05a082-eaee-412c-a4fe-4d21726aac02_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/ede21561-2bc4-49d6-9227-6624d7b96f1d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b9fbef5c-f28d-4133-94c8-22ac96ebd0e5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/946ffe3d-75f7-4950-b1f1-ad58791370d5_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/eb19b69f-2bc6-458f-8eba-80e667c33696_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/33117023-a640-420c-bc65-1e22fa5c568d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/77d5dda8-96b5-4ced-afd2-1a31f3b9d9fe_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/98de2dcc-7e22-477c-aea6-36090458e8d2_l.jpg",
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1897da65-7e07-4c9a-8d5b-6d1c4343f5cc_l.jpg"
+      ],
+      "DevelopmentLogo": "",
+      "Bathrooms": 2,
+      "MinSize": 145,
+      "MaxSize": 145,
+      "OpenViewings": [],
+      "VirtualViewings": [],
+      "PropertyFeatureTypes": [],
+      "BrochureContent": [
+        {
+          "ContentType": "Description",
+          "SortOrder": 0,
+          "Content": "Aidan Daly Auctioneers.... have great pleasure in welcoming you to No. 27, Coolgreena Road, Beaumont, Dublin 9. Wonderfully positioned with a superb address lies this impressive extended (132.20sq.m./1423 sq. ft.) 4-bedroom semi-detached family home with the added advantage of a large private garden and garage at rear with drive inside access. No. 27. is nestled in one of Beaumont's most convenient and mature roads where you can enjoy every conceivable amenity on your doorstep. Within walking distance of Beaumont Village (400 yards), Swords Road (Airport Road), Collins Avenue, DCU Campus and Beaumont Hospital. The M1/M50, Dublin Airport, and city centre are easily accessible. The area is well served with a wide selection of primary and secondary schools.\r\n\r\nThe accommodation comprises of a bright hallway leading to a spacious lounge and separate extended dining room with feature fireplace and log burner fire. Extended kitchen cum breakfast room with fitted units, cooker and hob. Four generous sized bedrooms each with sink and built in wardrobes. Impressive upstairs bathroom with walk in shower plus bath and ceramic wall and floor tiling. Showroom with new suite, walk in shower and ceramic floor and wall tiling. All exterior walls have had extra insulation applied. Double glazed windows and doors throughout. Gas fired radiator central heating. Private walled garden at rear with coble lock two car front driveway. New pvc fascia board and gutters. The attic space has been completely floored and insulated with stair access and rear velux window. Large block-built garage. Solidly built house with great living space. No. 27. is an ideal purchase for first time buyers or for those seeking a home and income property with its added double extension. This property would come under the heading a \"forever home\". Convenient and tranquil location viewing highly recommended."
+        },
+        {
+          "ContentType": "Accommodation",
+          "SortOrder": 1,
+          "Content": "GROUND FLOOR\r\n\r\nEntrance Hall:                             3.42m. x 1.69m.                                      wooden floor                   D/g pvc front door\r\n\r\nLounge:                                      3.86m. x 3.42m.                      wooden floor                  \r\n\r\nExtended Dining Room:             5.55m. x 4.23m.                      wooden floor                        feature fireplace  solid fuel burner.  connecting doors\r\n\r\nExt. Kitchen cum Breakfastroom:    5.55m. x 4.57m.                  fully fitted units      wooden floor          dg pvc door to rear garden      cooker hob                                                 \r\n\r\nFIRST FLOOR\r\n\r\nLanding                                             carpet                          hot press\r\n\r\nBedroom 1:                3.87m. x 3.00m.                         wooden floor                         built in wardrobe and sink\r\n\r\nBedroom 2:                3.78m. x 3.00m.                         wooden floor                          built in wardrobe and sink\r\n\r\nBedroom 3                 2.60m. x 2.51m.                         wooden floor                         built in wardrobe and sink                                                                   \r\n                                   \r\nBedroom 4:                 4.57m. x 2.53m.                         wooden floor                         built in wardrobe and sink\r\n\r\nBathroom:                   bath            walk in shower          w/c  whb                    ceramic floor & wall tiling                  \r\n\r\nShower Room:                               walk in shower          w/c whb                     ceramic floor & wall tiling\r\n\r\nAttic:                                     converted with stair access and rear velux window\r\n\r\nREAR GARDEN                  garage with side drive in access             walled"
+        },
+        {
+          "ContentType": "Features",
+          "SortOrder": 3,
+          "Content": "Exceptionally well positioned 4 bedroom semi detached with two storey extension and garage  with drive in side access.\r\nDouble glazed windoows and doors throughout.\r\nWithin walking distance of Beaumont Village (400 yards), Beaumont Hospital,Swords Road,Collins Avenue and DCU campus.\r\nGas fired radiator central heating.\r\nCoblelock  two car drive in at front.\r\nLarge private rear walled garden.\r\nStair access to converted attic.\r\nSolidly built house with great living space.\r\nThis property will suit many uses ."
+        },
+        {
+          "ContentType": "BER Details",
+          "SortOrder": 4,
+          "Content": "BER:"
+        }
+      ],
+      "PreSixtyThree": false,
+      "IsNewBuild": false,
+      "Floors": [],
+      "Rooms": [],
+      "CreatedOnDate": "2024-02-09T14:00:37.7630000+00:00",
+      "ModifiedOnDate": "2024-02-12T10:38:10.2300000+00:00",
+      "IsPremiumAd": false,
+      "ActivatedOn": "2024-02-12T10:38:22.2300000+00:00",
+      "RefreshedOn": "2024-02-12T10:38:22.2300000+00:00",
+      "IsTopSpot": false,
+      "IsPrivateLandlord": false,
+      "IsMappedAccurately": true,
+      "BrochureContactDetails": {
+        "FirstName": "",
+        "Phone": "",
+        "ShowPhoneNumber": false
+      },
+      "EnergyRatingMediaPath": "",
+      "IsTransact": false,
+      "PriceAsString": "€495,000",
+      "BathString": "2 baths",
+      "AuctionList": [],
+      "PropertyId": 4772287,
+      "BedsString": "4 beds",
+      "SizeStringMeters": 145,
+      "DisplayAddress": "27, Coolgreena Road, Beaumont, Dublin 9",
+      "Eircode": "D09C990",
+      "Name": "",
+      "PropertyClassId": 1,
+      "PropertyStatusId": 2,
+      "PropertyType": "Semi-Detached House",
+      "PropertyTypeId": 38,
+      "RegionId": 1450,
+      "RegionName": "Dublin 5",
+      "LocalityId": 1256,
+      "LocalityName": "Beaumont",
+      "Price": {
+        "MinPrice": 495000.0,
+        "MaxPrice": 495000.0,
+        "ShowPrice": true
+      },
+      "Images": [
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1fe08061-4d2c-4c92-a7cd-128e33338fd0_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1fe08061-4d2c-4c92-a7cd-128e33338fd0_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1fe08061-4d2c-4c92-a7cd-128e33338fd0_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4ff3529a-43ac-43f3-893e-73bf5be5190e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4ff3529a-43ac-43f3-893e-73bf5be5190e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4ff3529a-43ac-43f3-893e-73bf5be5190e_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/72fa4b63-c6d1-47dc-ba1e-1c04edc74609_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/72fa4b63-c6d1-47dc-ba1e-1c04edc74609_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/72fa4b63-c6d1-47dc-ba1e-1c04edc74609_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f5846d7-9824-45ed-8597-f1b6043a5d82_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f5846d7-9824-45ed-8597-f1b6043a5d82_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f5846d7-9824-45ed-8597-f1b6043a5d82_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/2f8c0590-a81f-428f-80dd-85ee10acecc6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/2f8c0590-a81f-428f-80dd-85ee10acecc6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/2f8c0590-a81f-428f-80dd-85ee10acecc6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9d69a0fe-d648-4bd8-827e-a407db1b4dd2_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9d69a0fe-d648-4bd8-827e-a407db1b4dd2_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9d69a0fe-d648-4bd8-827e-a407db1b4dd2_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b0de8f7e-26c2-4e04-a090-80269a1d72e5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b0de8f7e-26c2-4e04-a090-80269a1d72e5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b0de8f7e-26c2-4e04-a090-80269a1d72e5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0d49ee46-0821-4cf8-bfac-6829f2cb0bcf_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0d49ee46-0821-4cf8-bfac-6829f2cb0bcf_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0d49ee46-0821-4cf8-bfac-6829f2cb0bcf_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5273f5f9-83f7-47a9-b4da-56d3ec881a29_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5273f5f9-83f7-47a9-b4da-56d3ec881a29_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5273f5f9-83f7-47a9-b4da-56d3ec881a29_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5381f19b-5e0a-4990-81a3-08986a28e590_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5381f19b-5e0a-4990-81a3-08986a28e590_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/5381f19b-5e0a-4990-81a3-08986a28e590_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e7f9cec6-ad60-4f0f-88ea-2147efa911f5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e7f9cec6-ad60-4f0f-88ea-2147efa911f5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e7f9cec6-ad60-4f0f-88ea-2147efa911f5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/7a3a2e26-650e-471a-bc7b-d962c06c7dc5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/7a3a2e26-650e-471a-bc7b-d962c06c7dc5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/7a3a2e26-650e-471a-bc7b-d962c06c7dc5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4acd6910-02a1-459a-962b-c7cce268e5b3_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4acd6910-02a1-459a-962b-c7cce268e5b3_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4acd6910-02a1-459a-962b-c7cce268e5b3_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/720b6e47-a24d-469a-a2b7-c28b8e15fa69_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/720b6e47-a24d-469a-a2b7-c28b8e15fa69_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/720b6e47-a24d-469a-a2b7-c28b8e15fa69_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/330113c3-8e1d-44a8-a624-f5e27f1689d5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/330113c3-8e1d-44a8-a624-f5e27f1689d5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/330113c3-8e1d-44a8-a624-f5e27f1689d5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/baa64024-5d30-4c9b-bbef-163c152329ab_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/baa64024-5d30-4c9b-bbef-163c152329ab_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/baa64024-5d30-4c9b-bbef-163c152329ab_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/42e5bf19-3332-409b-828f-4ae3793e778a_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/42e5bf19-3332-409b-828f-4ae3793e778a_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/42e5bf19-3332-409b-828f-4ae3793e778a_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0a7617ee-8a85-4718-999d-73419ce99a96_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0a7617ee-8a85-4718-999d-73419ce99a96_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0a7617ee-8a85-4718-999d-73419ce99a96_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e5a0eeb7-a511-4d28-820c-3f3c5093f0de_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e5a0eeb7-a511-4d28-820c-3f3c5093f0de_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/e5a0eeb7-a511-4d28-820c-3f3c5093f0de_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1211e971-cde0-4b83-ad04-996e74f06c16_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1211e971-cde0-4b83-ad04-996e74f06c16_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1211e971-cde0-4b83-ad04-996e74f06c16_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4d89c6f4-7f4f-48b8-b689-1d53417f2014_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4d89c6f4-7f4f-48b8-b689-1d53417f2014_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4d89c6f4-7f4f-48b8-b689-1d53417f2014_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4318011f-8a3c-48be-8a22-a0c3273205d5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4318011f-8a3c-48be-8a22-a0c3273205d5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4318011f-8a3c-48be-8a22-a0c3273205d5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f1285e5-c602-4bf2-b5b2-6bb0dba456bb_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f1285e5-c602-4bf2-b5b2-6bb0dba456bb_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/0f1285e5-c602-4bf2-b5b2-6bb0dba456bb_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/fa5b18b2-2187-4705-8a04-d13bae4399ce_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/fa5b18b2-2187-4705-8a04-d13bae4399ce_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/fa5b18b2-2187-4705-8a04-d13bae4399ce_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/191acc50-eb23-4ff6-801d-b3fc42c73f77_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/191acc50-eb23-4ff6-801d-b3fc42c73f77_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/191acc50-eb23-4ff6-801d-b3fc42c73f77_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4b39989a-d911-41b9-885b-a4ede65529f5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4b39989a-d911-41b9-885b-a4ede65529f5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/4b39989a-d911-41b9-885b-a4ede65529f5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/13498c5f-56df-4b1b-ace8-23b869a0dfee_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/13498c5f-56df-4b1b-ace8-23b869a0dfee_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/13498c5f-56df-4b1b-ace8-23b869a0dfee_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/de05a082-eaee-412c-a4fe-4d21726aac02_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/de05a082-eaee-412c-a4fe-4d21726aac02_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/de05a082-eaee-412c-a4fe-4d21726aac02_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/ede21561-2bc4-49d6-9227-6624d7b96f1d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/ede21561-2bc4-49d6-9227-6624d7b96f1d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/ede21561-2bc4-49d6-9227-6624d7b96f1d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b9fbef5c-f28d-4133-94c8-22ac96ebd0e5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b9fbef5c-f28d-4133-94c8-22ac96ebd0e5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/b9fbef5c-f28d-4133-94c8-22ac96ebd0e5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/946ffe3d-75f7-4950-b1f1-ad58791370d5_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/946ffe3d-75f7-4950-b1f1-ad58791370d5_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/946ffe3d-75f7-4950-b1f1-ad58791370d5_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/eb19b69f-2bc6-458f-8eba-80e667c33696_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/eb19b69f-2bc6-458f-8eba-80e667c33696_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/eb19b69f-2bc6-458f-8eba-80e667c33696_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/33117023-a640-420c-bc65-1e22fa5c568d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/33117023-a640-420c-bc65-1e22fa5c568d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/33117023-a640-420c-bc65-1e22fa5c568d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/77d5dda8-96b5-4ced-afd2-1a31f3b9d9fe_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/77d5dda8-96b5-4ced-afd2-1a31f3b9d9fe_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/77d5dda8-96b5-4ced-afd2-1a31f3b9d9fe_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/98de2dcc-7e22-477c-aea6-36090458e8d2_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/98de2dcc-7e22-477c-aea6-36090458e8d2_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/98de2dcc-7e22-477c-aea6-36090458e8d2_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1897da65-7e07-4c9a-8d5b-6d1c4343f5cc_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1897da65-7e07-4c9a-8d5b-6d1c4343f5cc_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1897da65-7e07-4c9a-8d5b-6d1c4343f5cc_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9a4ecb10-da15-43ad-8a9e-f2b9d180515e_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9a4ecb10-da15-43ad-8a9e-f2b9d180515e_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9a4ecb10-da15-43ad-8a9e-f2b9d180515e_m.jpg"
+        }
+      ],
+      "BrochureMap": {
+        "longitude": -6.2312794,
+        "latitude": 53.3868501
+      },
+      "CustomData": {
+        "RelatedPropertyIDs": [],
+        "PromotionalSnippet": "",
+        "IsMyHomePassport": false,
+        "DevelopmentLogoBgColour": ""
+      },
+      "PhotoCount": 37,
+      "Pdfs": [],
+      "FloorPlans": [
+        "https://photos-a.propertyimages.ie/media/7/8/2/4772287/9a4ecb10-da15-43ad-8a9e-f2b9d180515e_l.jpg"
+      ],
+      "Vimeo": [],
+      "BrightCove": [],
+      "YouTube": [],
+      "YouTubeRotate": [],
+      "Matterport": [],
+      "VirtualTourEyeSpy": [],
+      "VirtualTourKuula": [],
+      "VirtualTourGiraffe360": [],
+      "VideoUrl": [],
+      "Viewett": []
+    },
+    "Group": {
+      "GroupId": 387846,
+      "Name": "Aidan Daly Auctioneers",
+      "DisplayPhone": "01 8375706 /086 2594889",
+      "Email": "info@aidandaly.ie",
+      "OFFRGroupId": "",
+      "UrlSlugIdentifier": "aidan-daly-auctioneers",
+      "SeoName": "aidan-daly-auctioneers",
+      "LogoUrl": "https://photos-a.propertyimages.ie/groups/6/4/8/387846/logo.jpg",
+      "SalesLicense": "004295",
+      "RentalLicense": "",
+      "IsPhoneRevealed": false
+    },
+    "AreaGuideSlug": "beaumont/1256",
+    "JointGroup": {
+      "GroupId": 0,
+      "DisplayPhone": "",
+      "SeoName": "",
+      "Address": "",
+      "IsPhoneRevealed": false
+    },
+    "AgentProperties": [],
+    "PropertyHistories": [],
+    "PropertyPriceRegister": [
+      {
+        "PropertyPriceRegisterId": 1702601,
+        "DisplayAddress": "4 Cooleen Ave, Beaumont, Dublin 9, D09t677",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "475000",
+        "SoldOn": "2024-01-26T00:00:00.0000000+00:00",
+        "SoldOnString": "26th Jan 24",
+        "Longitude": -6.2349671,
+        "Latitude": 53.3899316,
+        "SeoUrl": "/priceregister/4-cooleen-ave-beaumont-dublin-9-d09t677-1702601"
+      },
+      {
+        "PropertyPriceRegisterId": 1701786,
+        "DisplayAddress": "8 Drombawn Ave, Beaumont, Dublin 9, D09yh72",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "510000",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -6.2333841,
+        "Latitude": 53.3841,
+        "SeoUrl": "/priceregister/8-drombawn-ave-beaumont-dublin-9-d09yh72-1701786"
+      },
+      {
+        "PropertyPriceRegisterId": 1700956,
+        "DisplayAddress": "1A Elm Mount Ave, Beaumont, Dublin 9, D09vh31",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "410000",
+        "SoldOn": "2024-01-17T00:00:00.0000000+00:00",
+        "SoldOnString": "17th Jan 24",
+        "Longitude": -6.2277962,
+        "Latitude": 53.3833798,
+        "SeoUrl": "/priceregister/1a-elm-mount-ave-beaumont-dublin-9-d09vh31-1700956"
+      },
+      {
+        "PropertyPriceRegisterId": 1700327,
+        "DisplayAddress": "22 Beaumont Hall, Beaumont Woods, Beaumont, Dublin 5, D09xv07",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "340000",
+        "SoldOn": "2024-01-10T00:00:00.0000000+00:00",
+        "SoldOnString": "10th Jan 24",
+        "Longitude": -6.2293551,
+        "Latitude": 53.3861064,
+        "SeoUrl": "/priceregister/22-beaumont-hall-beaumont-woods-beaumont-dublin-5-d09xv07-1700327"
+      },
+      {
+        "PropertyPriceRegisterId": 1695682,
+        "DisplayAddress": "19 Elm Mount Rise, Beaumont, Dublin 9, D09tc60",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "460000",
+        "SoldOn": "2023-12-05T00:00:00.0000000+00:00",
+        "SoldOnString": "5th Dec 23",
+        "Longitude": -6.2253664,
+        "Latitude": 53.3826832,
+        "SeoUrl": "/priceregister/19-elm-mount-rise-beaumont-dublin-9-d09tc60-1695682"
+      },
+      {
+        "PropertyPriceRegisterId": 1695736,
+        "DisplayAddress": "28 Coolgreena Road, Beaumont, Dublin 9, D09ff95",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "570000",
+        "SoldOn": "2023-12-04T00:00:00.0000000+00:00",
+        "SoldOnString": "4th Dec 23",
+        "Longitude": -6.2319323,
+        "Latitude": 53.3870583,
+        "SeoUrl": "/priceregister/28-coolgreena-road-beaumont-dublin-9-d09ff95-1695736"
+      },
+      {
+        "PropertyPriceRegisterId": 1697293,
+        "DisplayAddress": "5 Elm Mount Cresent, Beaumont, Dublin 9, D09hx70",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "470000",
+        "SoldOn": "2023-11-28T00:00:00.0000000+00:00",
+        "SoldOnString": "28th Nov 23",
+        "Longitude": -6.2233835,
+        "Latitude": 53.3844291,
+        "SeoUrl": "/priceregister/5-elm-mount-cresent-beaumont-dublin-9-d09hx70-1697293"
+      },
+      {
+        "PropertyPriceRegisterId": 1693075,
+        "DisplayAddress": "39 Shantalla Rd, Beaumont, Dublin 9, D09cx99",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "450000",
+        "SoldOn": "2023-11-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Nov 23",
+        "Longitude": -6.2342914,
+        "Latitude": 53.3870005,
+        "SeoUrl": "/priceregister/39-shantalla-rd-beaumont-dublin-9-d09cx99-1693075"
+      },
+      {
+        "PropertyPriceRegisterId": 1693150,
+        "DisplayAddress": "37 Coolatree Park, Beaumont, Dublin 9, D09xk84",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "424000",
+        "SoldOn": "2023-11-17T00:00:00.0000000+00:00",
+        "SoldOnString": "17th Nov 23",
+        "Longitude": -6.2333422,
+        "Latitude": 53.3876672,
+        "SeoUrl": "/priceregister/37-coolatree-park-beaumont-dublin-9-d09xk84-1693150"
+      },
+      {
+        "PropertyPriceRegisterId": 1697417,
+        "DisplayAddress": "164 Beaumont Rd, Beaumont, Dublin 9, D09ca40",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "390000",
+        "SoldOn": "2023-11-15T00:00:00.0000000+00:00",
+        "SoldOnString": "15th Nov 23",
+        "Longitude": -6.2272878,
+        "Latitude": 53.3857238,
+        "SeoUrl": "/priceregister/164-beaumont-rd-beaumont-dublin-9-d09ca40-1697417"
+      }
+    ],
+    "PriceChanges": [],
+    "RelatedNewHomeProperties": [],
+    "SeoUrl": "/residential/brochure/27-coolgreena-road-beaumont-dublin-9/4772287",
+    "Features": [],
+    "VirtualViewings": [],
+    "IsFavourite": false,
+    "LatestPriceChangeString": "",
+    "HasVideos": false,
+    "HasWebP": true,
+    "IsTransact": false,
+    "BrochureTopAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 970,
+          "Height": 90
+        },
+        {
+          "Width": 728,
+          "Height": 90
+        },
+        {
+          "Width": 970,
+          "Height": 250
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Top"
+    },
+    "BrochureMortgageAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 800,
+          "Height": 420
+        }
+      ],
+      "Unit": "/2695176/MyHome/TESTINVENTORY_myhomeie_mortgage"
+    },
+    "BrochureWebBrokerAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 750,
+          "Height": 171
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Broker"
+    },
+    "AdTargetingValues": {
+      "MYH_GroupID": 387846,
+      "MYH_LocalityID": 1256,
+      "MYH_LocalityIDList": [],
+      "MYH_LocalityIDListString": "",
+      "MYH_RegionID": 1450,
+      "MYH_RegionIDList": [],
+      "MYH_RegionIDListString": "",
+      "MYH_PropertyFeatureIDList": [],
+      "MYH_PropertyFeatureIDListString": "",
+      "MYH_MaxPrice": 500000,
+      "MYH_MinBeds": 4,
+      "MYH_MinPrice": 500000,
+      "MYH_MinSize": 145,
+      "MYH_PropertyClassId": 1,
+      "MYH_PropertyID": 4772287,
+      "MYH_PropertyTypeID": 38
+    }
+  },
+  "SeoDetails": {
+    "Title": "27, Coolgreena Road, Beaumont, Dublin 9 - Aidan Daly Auctioneers - 4772287 - MyHome.ie Residential",
+    "Description": "27, Coolgreena Road, Beaumont, Dublin 9, 4 Bed, asking price €495,000, brought to market by Aidan Daly Auctioneers, Residential - 4772287",
+    "Keywords": "4 Bed, 27, Coolgreena Road, Beaumont, Dublin 9",
+    "PrevUrl": "",
+    "CanonicalUrl": "/residential/brochure/27-coolgreena-road-beaumont-dublin-9/4772287",
+    "NextUrl": "",
+    "ClassUrl": "property-for-sale",
+    "RegionUrl": "beaumont",
+    "DescriptionUrl": "property-for-sale-in-beaumont",
+    "BreadCrumbs": [
+      {
+        "DisplayName": "Home",
+        "ShortDisplayName": "Home",
+        "Route": "/"
+      },
+      {
+        "DisplayName": "Residential property for sale in Ireland",
+        "ShortDisplayName": "Ireland",
+        "Route": "/residential/ireland/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin",
+        "ShortDisplayName": "Dublin",
+        "Route": "/residential/dublin/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin 5",
+        "ShortDisplayName": "Dublin 5",
+        "Route": "/residential/dublin-5/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Beaumont",
+        "ShortDisplayName": "Beaumont",
+        "Route": "/residential/dublin-5/house-for-sale-in-beaumont"
+      },
+      {
+        "DisplayName": "27, Coolgreena Road, Beaumont, Dublin 9",
+        "ShortDisplayName": "27, Coolgreena Road, Beaumont, Dublin 9",
+        "Route": ""
+      }
+    ],
+    "OpenGraphData": {
+      "Values": [
+        {
+          "Key": "og:url",
+          "Value": "https://myhome.ie/residential/brochure/27-coolgreena-road-beaumont-dublin-9/4772287"
+        },
+        {
+          "Key": "og:title",
+          "Value": "27, Coolgreena Road, Beaumont, Dublin 9 - Aidan Daly Auctioneers - 4772287 - MyHome.ie Residential"
+        },
+        {
+          "Key": "og:description",
+          "Value": "27, Coolgreena Road, Beaumont, Dublin 9, 4 Bed, asking price €495,000, brought to market by Aidan Daly Auctioneers, Residential - 4772287"
+        },
+        {
+          "Key": "og:image",
+          "Value": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg"
+        },
+        {
+          "Key": "og:image:url",
+          "Value": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg"
+        },
+        {
+          "Key": "og:image:type",
+          "Value": "image/jpg"
+        },
+        {
+          "Key": "og:image:secure_url",
+          "Value": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg"
+        },
+        {
+          "Key": "og:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "og:image:height",
+          "Value": "630"
+        },
+        {
+          "Key": "twitter:card",
+          "Value": "summary"
+        },
+        {
+          "Key": "twitter:site",
+          "Value": "https://myhome.ie/residential/brochure/27-coolgreena-road-beaumont-dublin-9/4772287"
+        },
+        {
+          "Key": "twitter:title",
+          "Value": "27, Coolgreena Road, Beaumont, Dublin 9 - Aidan Daly Auctioneers - 4772287 - MyHome.ie Residential"
+        },
+        {
+          "Key": "twitter:image",
+          "Value": "https://photos-a.propertyimages.ie/media/7/8/2/4772287/1f18b32a-f83c-438c-b2cf-220d7d4a9df8_l.jpg"
+        },
+        {
+          "Key": "twitter:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "twitter:image:height",
+          "Value": "675"
+        },
+        {
+          "Key": "twitter:description",
+          "Value": "27, Coolgreena Road, Beaumont, Dublin 9, 4 Bed, asking price €495,000, brought to market by Aidan Daly Auctioneers, Residential - 4772287"
+        }
+      ]
+    },
+    "NeighbourhoodLink": "",
+    "CustomDescription": ""
+  },
+  "Favourites": [],
+  "SavedSearches": [],
+  "RentalApplications": [],
+  "FavouriteCount": 0,
+  "SavedSearchesCount": 0,
+  "UserId": 0,
+  "Version": 1
+}

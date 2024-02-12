@@ -1,0 +1,766 @@
+{
+  "Brochure": {
+    "Property": {
+      "OrderedDisplayAddress": "54 saint mochtas green clonsilla dublin",
+      "GroupId": 386986,
+      "Address": "54 Saint Mochta's Green",
+      "SaleTypeId": 17,
+      "MainPhoto": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg",
+      "MainPhotoX": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_x.jpg",
+      "Photos": [
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a76c6309-6b39-4b81-a889-ba6aaf74112b_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/557dbf2a-1950-47a8-85b4-794852fa6251_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/38ee0647-ebdd-4848-a81a-2cba93276655_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/af21b6a4-1bb6-49b4-a8b2-9589fd0bfa32_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/01c279d1-ea5b-4f3d-9838-8626810e53e7_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/52e663e9-675f-459d-aada-5553fa6ecd44_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1ec55dca-e9b0-4d2b-8127-521458864b95_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c5451b4d-2cf5-4d8e-a235-e73f7661913d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c7fb0cd1-febf-4962-b836-ffe40138b3ec_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/769e2cf5-7b70-4a01-a15e-2f994d709ef7_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/cb92f19a-4df8-45cf-8b39-749ef63c1f80_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7339b62a-4d17-4d97-8352-696042ac3323_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/eeee55bc-928f-45e6-a09e-778f6c94007a_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/e77a84fa-c12d-431b-8798-980a3c1be507_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1446cf2b-0ec8-4ccf-ac78-84e8a3a9da08_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/9cea5f33-72e3-4fcf-9acc-3902fb38cf92_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a77060ab-5ec6-45f5-9d5a-7dbdda7c8916_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/35446568-d555-4a41-8ebe-a1e0e7ede200_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/fc569cad-5911-42ef-ac68-2ef34ad9a000_l.jpg"
+      ],
+      "DevelopmentLogo": "",
+      "Bathrooms": 1,
+      "MinSize": 70,
+      "MaxSize": 70,
+      "BerRating": "B3",
+      "OpenViewings": [],
+      "VirtualViewings": [],
+      "PropertyFeatureTypes": [
+        {
+          "Id": 1,
+          "Name": "Parking",
+          "CreatedOn": "2018-03-20T10:17:11.2570000+00:00",
+          "IconName": "myh-icon-car",
+          "IsRequirement": false
+        },
+        {
+          "Id": 7,
+          "Name": "Central Heating",
+          "CreatedOn": "2018-03-20T10:20:02.9970000+00:00",
+          "IconName": "myh-icon-central-heating",
+          "IsRequirement": false
+        }
+      ],
+      "BrochureContent": [
+        {
+          "ContentType": "Description",
+          "SortOrder": 0,
+          "Content": "https://www.auctioneera.ie/property/54-saint-mochtas-green-clonsilla-dublin-d15-v8r6\r\nImportant note: Details of upcoming viewings and latest offers are available at the Auctioneera website link above. \r\n\r\n\r\nAuctioneera is delighted to present 54 Saint Mochta's Green, Clonsilla in Dublin.\r\n\r\nNestled in Clonsilla, 54 Saint Mochta's Green is a two-bedroom mid-terraced family home. Ideal as a blank canvas, it presents an excellent opportunity for an owner-occupier to infuse their unique style into the residence. The property boasts a charming and well-maintained exterior, providing an ideal dwelling for individuals in search of a stylish and comfortable living space.\r\n\r\nUpon entering the property, a warm and inviting hallway welcomes you, guiding you to various rooms. The ground floor features a spacious living room, generously illuminated by a large double door opening at the rear of the property. This well-lit space is perfect for both relaxation and entertainment, creating an ideal setting for family gatherings. \r\n\r\n The open-plan kitchen and dining area provide ample space for a dining table. Abundant natural light fills the room, thanks to a large window at one end, creating a bright and airy atmosphere. The kitchen is equipped with sleek cabinetry, offering generous storage, and features modern appliances that enhance the joy of cooking. \r\n\r\nThe backyard provides a secluded outdoor space perfect for relaxation and leisure. Featuring a patio area, it's ideal for dining or basking in the sunlight. Additionally, the lawn area offers a safe and private space for children to play. This garden is a great place for various activities, combining comfort and safety.\r\n\r\nAscending the stairs, you'll find two double bedrooms, each providing a comfortable and tranquil retreat. Large windows in both bedrooms flood the spaces with natural light, creating a bright and airy atmosphere. One of the bedrooms is equipped with fitted wardrobes, offering ample storage for clothing and personal belongings. The modern family bathroom on this floor adds a touch of convenience.\r\n\r\nAdditionally, the property boasts a private driveway, providing off-street parking,a convenient amenity for homeowners.\r\n\r\n54 Saint Mochta's Green is ideally located within proximity to a range of amenities. Clonsilla Village and the Blanchardstown Shopping Centre are just a short drive away, offering an array of shops, restaurants, and leisure facilities. Additionally, the property benefits from easy access to public transportation, with several bus routes and Clonsilla train station nearby, providing direct access to Dublin city centre.\r\n\r\n In summary, this exceptional property in Clonsilla, Dublin, provides a beautiful, contemporary, and comfortable living space, suitable for any family seeking modern conveniences and an attractive residential area."
+        },
+        {
+          "ContentType": "Features",
+          "SortOrder": 3,
+          "Content": "Close proximity to Coolmine train station (lane way at back of station court). Directly behind house\t\r\nParking available\t\r\nExcellent transport links\t\r\nSpacious Layout\t\r\nPrivate rear garden"
+        },
+        {
+          "ContentType": "BER Details",
+          "SortOrder": 4,
+          "Content": "BER: B3 BER No.117106476 Energy Performance Indicator:145.81 kWh/m²/yr"
+        }
+      ],
+      "IsNewBuild": false,
+      "Floors": [],
+      "Rooms": [],
+      "NegotiatorId": 354740,
+      "MinEnergyRating": 100,
+      "MaxEnergyRating": 100,
+      "CreatedOnDate": "2024-02-12T08:27:41.2700000+00:00",
+      "ModifiedOnDate": "2024-02-12T08:27:41.2630000+00:00",
+      "IsPremiumAd": false,
+      "ActivatedOn": "2024-02-12T09:02:16.7700000+00:00",
+      "RefreshedOn": "2024-02-12T09:02:16.7700000+00:00",
+      "IsTopSpot": false,
+      "IsPrivateLandlord": false,
+      "IsMappedAccurately": true,
+      "BrochureContactDetails": {
+        "FirstName": "",
+        "Phone": "",
+        "ShowPhoneNumber": false
+      },
+      "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/B3.png",
+      "IsTransact": false,
+      "PriceAsString": "€330,000",
+      "BathString": "1 bath",
+      "AuctionList": [],
+      "PropertyId": 4772425,
+      "BedsString": "2 beds",
+      "SizeStringMeters": 70,
+      "DisplayAddress": "54 Saint Mochta's Green, Clonsilla, Dublin",
+      "Eircode": "D15 V8R6",
+      "Name": "",
+      "PropertyClassId": 1,
+      "PropertyStatusId": 2,
+      "PropertyType": "Terraced House",
+      "PropertyTypeId": 37,
+      "RegionId": 1265,
+      "RegionName": "Dublin 15",
+      "LocalityId": 1277,
+      "LocalityName": "Clonsilla",
+      "Price": {
+        "MinPrice": 330000.0,
+        "MaxPrice": 330000.0,
+        "ShowPrice": true
+      },
+      "Images": [
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a76c6309-6b39-4b81-a889-ba6aaf74112b_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a76c6309-6b39-4b81-a889-ba6aaf74112b_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a76c6309-6b39-4b81-a889-ba6aaf74112b_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/557dbf2a-1950-47a8-85b4-794852fa6251_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/557dbf2a-1950-47a8-85b4-794852fa6251_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/557dbf2a-1950-47a8-85b4-794852fa6251_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/38ee0647-ebdd-4848-a81a-2cba93276655_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/38ee0647-ebdd-4848-a81a-2cba93276655_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/38ee0647-ebdd-4848-a81a-2cba93276655_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/af21b6a4-1bb6-49b4-a8b2-9589fd0bfa32_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/af21b6a4-1bb6-49b4-a8b2-9589fd0bfa32_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/af21b6a4-1bb6-49b4-a8b2-9589fd0bfa32_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/01c279d1-ea5b-4f3d-9838-8626810e53e7_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/01c279d1-ea5b-4f3d-9838-8626810e53e7_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/01c279d1-ea5b-4f3d-9838-8626810e53e7_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/52e663e9-675f-459d-aada-5553fa6ecd44_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/52e663e9-675f-459d-aada-5553fa6ecd44_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/52e663e9-675f-459d-aada-5553fa6ecd44_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1ec55dca-e9b0-4d2b-8127-521458864b95_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1ec55dca-e9b0-4d2b-8127-521458864b95_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1ec55dca-e9b0-4d2b-8127-521458864b95_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c5451b4d-2cf5-4d8e-a235-e73f7661913d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c5451b4d-2cf5-4d8e-a235-e73f7661913d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c5451b4d-2cf5-4d8e-a235-e73f7661913d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c7fb0cd1-febf-4962-b836-ffe40138b3ec_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c7fb0cd1-febf-4962-b836-ffe40138b3ec_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/c7fb0cd1-febf-4962-b836-ffe40138b3ec_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/769e2cf5-7b70-4a01-a15e-2f994d709ef7_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/769e2cf5-7b70-4a01-a15e-2f994d709ef7_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/769e2cf5-7b70-4a01-a15e-2f994d709ef7_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/cb92f19a-4df8-45cf-8b39-749ef63c1f80_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/cb92f19a-4df8-45cf-8b39-749ef63c1f80_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/cb92f19a-4df8-45cf-8b39-749ef63c1f80_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7339b62a-4d17-4d97-8352-696042ac3323_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7339b62a-4d17-4d97-8352-696042ac3323_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7339b62a-4d17-4d97-8352-696042ac3323_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/eeee55bc-928f-45e6-a09e-778f6c94007a_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/eeee55bc-928f-45e6-a09e-778f6c94007a_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/eeee55bc-928f-45e6-a09e-778f6c94007a_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/e77a84fa-c12d-431b-8798-980a3c1be507_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/e77a84fa-c12d-431b-8798-980a3c1be507_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/e77a84fa-c12d-431b-8798-980a3c1be507_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1446cf2b-0ec8-4ccf-ac78-84e8a3a9da08_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1446cf2b-0ec8-4ccf-ac78-84e8a3a9da08_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/1446cf2b-0ec8-4ccf-ac78-84e8a3a9da08_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/9cea5f33-72e3-4fcf-9acc-3902fb38cf92_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/9cea5f33-72e3-4fcf-9acc-3902fb38cf92_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/9cea5f33-72e3-4fcf-9acc-3902fb38cf92_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a77060ab-5ec6-45f5-9d5a-7dbdda7c8916_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a77060ab-5ec6-45f5-9d5a-7dbdda7c8916_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/a77060ab-5ec6-45f5-9d5a-7dbdda7c8916_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/35446568-d555-4a41-8ebe-a1e0e7ede200_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/35446568-d555-4a41-8ebe-a1e0e7ede200_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/35446568-d555-4a41-8ebe-a1e0e7ede200_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/fc569cad-5911-42ef-ac68-2ef34ad9a000_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/fc569cad-5911-42ef-ac68-2ef34ad9a000_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/fc569cad-5911-42ef-ac68-2ef34ad9a000_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7c49979a-72db-4b90-9b32-dd0691c97cf8_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7c49979a-72db-4b90-9b32-dd0691c97cf8_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7c49979a-72db-4b90-9b32-dd0691c97cf8_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/41949638-ec9e-4ef0-8e27-656ba880eac9_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/41949638-ec9e-4ef0-8e27-656ba880eac9_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/41949638-ec9e-4ef0-8e27-656ba880eac9_m.jpg"
+        }
+      ],
+      "BrochureMap": {
+        "longitude": -6.3958945,
+        "latitude": 53.3802549
+      },
+      "CustomData": {
+        "RelatedPropertyIDs": [],
+        "PromotionalSnippet": "",
+        "IsMyHomePassport": false,
+        "DevelopmentLogoBgColour": ""
+      },
+      "PhotoCount": 20,
+      "Pdfs": [],
+      "FloorPlans": [
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/7c49979a-72db-4b90-9b32-dd0691c97cf8_l.jpg",
+        "https://photos-a.propertyimages.ie/media/5/2/4/4772425/41949638-ec9e-4ef0-8e27-656ba880eac9_l.jpg"
+      ],
+      "Vimeo": [],
+      "BrightCove": [],
+      "YouTube": [],
+      "YouTubeRotate": [],
+      "Matterport": [],
+      "VirtualTourEyeSpy": [],
+      "VirtualTourKuula": [],
+      "VirtualTourGiraffe360": [],
+      "VideoUrl": [],
+      "Viewett": []
+    },
+    "Group": {
+      "GroupId": 386986,
+      "Name": "Auctioneera",
+      "DisplayPhone": "01 9038335",
+      "Email": "hello@auctioneera.ie",
+      "OFFRGroupId": "",
+      "UrlSlugIdentifier": "auctioneera",
+      "SeoName": "auctioneera",
+      "Address": "201 Q-House, Furze Road, Sandyford Industrial Estate, Dublin 18",
+      "LogoUrl": "https://photos-a.propertyimages.ie/groups/6/8/9/386986/logo.jpg",
+      "SalesLicense": "003912",
+      "RentalLicense": "",
+      "IsPhoneRevealed": false
+    },
+    "AreaGuideSlug": "clonsilla/1277",
+    "JointGroup": {
+      "GroupId": 0,
+      "DisplayPhone": "",
+      "SeoName": "",
+      "Address": "",
+      "IsPhoneRevealed": false
+    },
+    "AgentProperties": [
+      {
+        "PropertyId": 4772328,
+        "PropertyClassId": 1,
+        "DisplayAddress": "5 Carrigmore Park, Ballinlough, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/8/2/3/4772328/edd513fe-8c83-442f-b3e4-3582b6d9625d_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/5-carrigmore-park-ballinlough-cork/4772328"
+      },
+      {
+        "PropertyId": 4772291,
+        "PropertyClassId": 1,
+        "DisplayAddress": "124 Industry Place, Cork City, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/1/9/2/4772291/fdbd4918-a686-4c9f-832d-b0292cbe94a6_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/124-industry-place-cork-city-cork/4772291"
+      },
+      {
+        "PropertyId": 4772165,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 21 Carmanhall Court, Sandyford, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/6/1/4772165/3d192f8d-a6a5-462d-a2eb-10fdcd2d3073_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-21-carmanhall-court-sandyford-dublin/4772165"
+      },
+      {
+        "PropertyId": 4772062,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 135 Cowper Downs , Rathmines, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/2/6/0/4772062/fde0c0ce-23bc-4966-9f72-3d087e87a7b9_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-135-cowper-downs-rathmines-dublin/4772062"
+      },
+      {
+        "PropertyId": 4771988,
+        "PropertyClassId": 1,
+        "DisplayAddress": "20 Priory North, The Priory, Navan Road, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/8/8/9/4771988/0afdaacd-5b9d-41ee-ab3f-91fb02dbe237_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/20-priory-north-the-priory-navan-road-dublin/4771988"
+      },
+      {
+        "PropertyId": 4771708,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 6, Curragh Hall House, Curragh Hall Crescent , Tyrrelstown, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/8/0/7/4771708/0130b0b8-9cf1-4b54-9833-cd251f92be81_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-6-curragh-hall-house-curragh-hall-crescent-tyrrelstown-dublin/4771708"
+      },
+      {
+        "PropertyId": 4771704,
+        "PropertyClassId": 1,
+        "DisplayAddress": "9 The Cloisters, Ard Cashel, Watergrasshill, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/4/0/7/4771704/b4c766a0-9148-423d-bbe0-416b66e16b4d_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/9-the-cloisters-ard-cashel-watergrasshill-cork/4771704"
+      },
+      {
+        "PropertyId": 4771577,
+        "PropertyClassId": 1,
+        "DisplayAddress": "13 Heathfield Crescent, Finglas, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/7/7/5/4771577/8027996e-5d9a-433f-aafb-fe04b8f7841a_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/13-heathfield-crescent-finglas-dublin/4771577"
+      },
+      {
+        "PropertyId": 4771570,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 25 Kenmare House, 22/23 North Great George's Street, North City Centre, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/0/7/5/4771570/7899f87b-66b6-4401-9e67-945f9f7820d3_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-25-kenmare-house-22-23-north-great-george-s-street-north-city-centre-dublin/4771570"
+      },
+      {
+        "PropertyId": 4732838,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 71 Horizon Building, Royal Canal Park, Ashtown, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/8/3/8/4732838/53188781-6529-4629-a616-5aacbaf57a50_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-71-horizon-building-royal-canal-park-ashtown-dublin/4732838"
+      },
+      {
+        "PropertyId": 4771471,
+        "PropertyClassId": 1,
+        "DisplayAddress": "8 Mervue Lawn, Ballyvolane, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/1/7/4/4771471/89ccfc88-94b5-44b5-9bf5-19edaad9a5f1_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/8-mervue-lawn-ballyvolane-cork/4771471"
+      },
+      {
+        "PropertyId": 4771312,
+        "PropertyClassId": 1,
+        "DisplayAddress": "19 Forest Dale, River Valley, Swords, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/2/1/3/4771312/0712d517-fc47-44b1-908e-0962794f8086_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/19-forest-dale-river-valley-swords-dublin/4771312"
+      },
+      {
+        "PropertyId": 4771072,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 31 The Dargle, Prospect Hill, Finglas Road , Finglas, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/2/7/0/4771072/9c21be79-f838-4273-8ce5-2ebbda41198b_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-31-the-dargle-prospect-hill-finglas-road-finglas-dublin/4771072"
+      },
+      {
+        "PropertyId": 4771004,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 14 Anley Court, Esker Lane, Lucan, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/4/0/0/4771004/89e7981f-ef30-4863-9126-42a7dd3195b8_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-14-anley-court-esker-lane-lucan-dublin/4771004"
+      },
+      {
+        "PropertyId": 4770999,
+        "PropertyClassId": 1,
+        "DisplayAddress": "20 Portside Court, East Wall, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/9/9/9/4770999/896c35d6-fd5e-4468-a34c-a1fc183f4a5e_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/20-portside-court-east-wall-dublin/4770999"
+      },
+      {
+        "PropertyId": 4770700,
+        "PropertyClassId": 1,
+        "DisplayAddress": "2 Meadow Downs, Hartstown, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/0/0/7/4770700/d507f66c-c907-4fc0-b99d-e0f6e23fe308_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/2-meadow-downs-hartstown-dublin/4770700"
+      },
+      {
+        "PropertyId": 4770488,
+        "PropertyClassId": 1,
+        "DisplayAddress": "19 Merchants Road, East Wall, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/8/8/4/4770488/f190dfef-3975-4bdb-9a3d-8e37c61b9bb5_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/19-merchants-road-east-wall-dublin/4770488"
+      },
+      {
+        "PropertyId": 4762250,
+        "PropertyClassId": 1,
+        "DisplayAddress": "1 Hollyville, Curragh Road, Turners Cross, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/0/5/2/4762250/38c0939c-0e79-4820-b677-16fb5b92e364_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/1-hollyville-curragh-road-turners-cross-cork/4762250"
+      },
+      {
+        "PropertyId": 4770065,
+        "PropertyClassId": 1,
+        "DisplayAddress": "31 O'Neill Park, Newtownmountkennedy, Wicklow",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/6/0/4770065/0e8e9a31-d042-48de-b654-240c55b77f23_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/31-o-neill-park-newtownmountkennedy-wicklow/4770065"
+      },
+      {
+        "PropertyId": 4769870,
+        "PropertyClassId": 1,
+        "DisplayAddress": "Apartment 173 The Gallery, Turvey Walk, Donabate, Dublin",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/0/7/8/4769870/1c3341c8-916e-4434-a04f-ca8a3fcebf16_m.jpg",
+        "HasWebP": false,
+        "SeoUrl": "/residential/brochure/apartment-173-the-gallery-turvey-walk-donabate-dublin/4769870"
+      }
+    ],
+    "PropertyHistories": [],
+    "PropertyPriceRegister": [
+      {
+        "PropertyPriceRegisterId": 1702537,
+        "DisplayAddress": "88 Pinebrook Vale, Clonsilla, Dublin 15, D15hhe9",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "359000",
+        "SoldOn": "2024-01-31T00:00:00.0000000+00:00",
+        "SoldOnString": "31st Jan 24",
+        "Longitude": -6.413927,
+        "Latitude": 53.3988449,
+        "SeoUrl": "/priceregister/88-pinebrook-vale-clonsilla-dublin-15-d15hhe9-1702537"
+      },
+      {
+        "PropertyPriceRegisterId": 1702611,
+        "DisplayAddress": "65 Inglewood Rd, Clonsilla, Dublin 15, D15dp9k",
+        "PropertyTypeId": 97,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "426000",
+        "SoldOn": "2024-01-26T00:00:00.0000000+00:00",
+        "SoldOnString": "26th Jan 24",
+        "Longitude": -6.4098034,
+        "Latitude": 53.3893981,
+        "SeoUrl": "/priceregister/65-inglewood-rd-clonsilla-dublin-15-d15dp9k-1702611"
+      },
+      {
+        "PropertyPriceRegisterId": 1701699,
+        "DisplayAddress": "15 Portersfield, Clonsilla, Dublin 15, D15va02",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "360000",
+        "SoldOn": "2024-01-23T00:00:00.0000000+00:00",
+        "SoldOnString": "23rd Jan 24",
+        "Longitude": -6.3952096,
+        "Latitude": 53.3825089,
+        "SeoUrl": "/priceregister/15-portersfield-clonsilla-dublin-15-d15va02-1701699"
+      },
+      {
+        "PropertyPriceRegisterId": 1701717,
+        "DisplayAddress": "42 Phibblestown House, Clonsilla, Dublin 15, D15pt86",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "271000",
+        "SoldOn": "2024-01-23T00:00:00.0000000+00:00",
+        "SoldOnString": "23rd Jan 24",
+        "Longitude": -6.4360883,
+        "Latitude": 53.3993929,
+        "SeoUrl": "/priceregister/42-phibblestown-house-clonsilla-dublin-15-d15pt86-1701717"
+      },
+      {
+        "PropertyPriceRegisterId": 1701764,
+        "DisplayAddress": "7 St Mochtas Grove, Coolmine Lodge, Clonsilla, Dublin 15, D15f6k2",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "410000",
+        "SoldOn": "2024-01-19T00:00:00.0000000+00:00",
+        "SoldOnString": "19th Jan 24",
+        "Longitude": -6.3953703,
+        "Latitude": 53.3807957,
+        "SeoUrl": "/priceregister/7-st-mochtas-grove-coolmine-lodge-clonsilla-dublin-15-d15f6k2-1701764"
+      },
+      {
+        "PropertyPriceRegisterId": 1701777,
+        "DisplayAddress": "21 Linnetsfield Sq, Clonsilla, Dublin 15, D15r1w9",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "258000",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -6.4366948,
+        "Latitude": 53.4016484,
+        "SeoUrl": "/priceregister/21-linnetsfield-sq-clonsilla-dublin-15-d15r1w9-1701777"
+      },
+      {
+        "PropertyPriceRegisterId": 1702681,
+        "DisplayAddress": "14 Cherryfield Close, Hartstown, Clonsilla, Dublin 15, D15vkw2",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "402500",
+        "SoldOn": "2024-01-15T00:00:00.0000000+00:00",
+        "SoldOnString": "15th Jan 24",
+        "Longitude": -6.422464,
+        "Latitude": 53.3937363,
+        "SeoUrl": "/priceregister/14-cherryfield-close-hartstown-clonsilla-dublin-15-d15vkw2-1702681"
+      },
+      {
+        "PropertyPriceRegisterId": 1701023,
+        "DisplayAddress": "21 Ashmount, Clonsilla, Dublin 15, D15xc8h",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "345000",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.400119,
+        "Latitude": 53.4007637,
+        "SeoUrl": "/priceregister/21-ashmount-clonsilla-dublin-15-d15xc8h-1701023"
+      },
+      {
+        "PropertyPriceRegisterId": 1701028,
+        "DisplayAddress": "32 Mount Symon Crescent, Clonsilla, Dublin 15, D15x0fw",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "425000",
+        "SoldOn": "2024-01-12T00:00:00.0000000+00:00",
+        "SoldOnString": "12th Jan 24",
+        "Longitude": -6.4241139,
+        "Latitude": 53.3891074,
+        "SeoUrl": "/priceregister/32-mount-symon-crescent-clonsilla-dublin-15-d15x0fw-1701028"
+      },
+      {
+        "PropertyPriceRegisterId": 1701049,
+        "DisplayAddress": "5 Lohunda Rd, Clonsilla, Dublin 15, D15ny6r",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "375000",
+        "SoldOn": "2024-01-11T00:00:00.0000000+00:00",
+        "SoldOnString": "11th Jan 24",
+        "Longitude": -6.4058016,
+        "Latitude": 53.3866664,
+        "SeoUrl": "/priceregister/5-lohunda-rd-clonsilla-dublin-15-d15ny6r-1701049"
+      }
+    ],
+    "PriceChanges": [
+      {
+        "PropertyId": 4752635,
+        "Address": "14 Beechwood Downs, Clonsilla, Dublin 15",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/3/6/4752635/2db9e663-1ee6-492e-bf16-ea7dcd9683fc_t.jpg",
+        "HasWebP": false,
+        "Price": 285000.0,
+        "PrevPrice": 280000.0,
+        "PriceChangeDelta": 5000.0,
+        "PriceChangePercentage": 1.7857,
+        "Created": "17th Jan 24",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "up",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/D2.png",
+        "BerRating": "D2",
+        "SeoUrl": "/residential/brochure/14-beechwood-downs-clonsilla-dublin-15/4752635",
+        "IsActive": true
+      }
+    ],
+    "RelatedNewHomeProperties": [],
+    "SeoUrl": "/residential/brochure/54-saint-mochta-s-green-clonsilla-dublin/4772425",
+    "Features": [],
+    "VirtualViewings": [],
+    "Negotiator": {
+      "NegotiatorId": 354740,
+      "Name": "Dublin  Office",
+      "Phone": "01 903 8335",
+      "ImageUrl": "https://photos-a.propertyimages.ie/users/0/4/7/354740/profile.jpg"
+    },
+    "IsFavourite": false,
+    "LatestPriceChangeString": "",
+    "HasVideos": false,
+    "HasWebP": true,
+    "IsTransact": false,
+    "BrochureTopAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 970,
+          "Height": 90
+        },
+        {
+          "Width": 728,
+          "Height": 90
+        },
+        {
+          "Width": 970,
+          "Height": 250
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Top"
+    },
+    "BrochureMortgageAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 800,
+          "Height": 420
+        }
+      ],
+      "Unit": "/2695176/MyHome/TESTINVENTORY_myhomeie_mortgage"
+    },
+    "BrochureWebBrokerAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 750,
+          "Height": 171
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Broker"
+    },
+    "AdTargetingValues": {
+      "MYH_GroupID": 386986,
+      "MYH_LocalityID": 1277,
+      "MYH_LocalityIDList": [],
+      "MYH_LocalityIDListString": "",
+      "MYH_RegionID": 1265,
+      "MYH_RegionIDList": [],
+      "MYH_RegionIDListString": "",
+      "MYH_PropertyFeatureIDList": [
+        "Parking",
+        "Central Heating"
+      ],
+      "MYH_PropertyFeatureIDListString": "Parking,Central Heating",
+      "MYH_MaxPrice": 350000,
+      "MYH_MinBeds": 2,
+      "MYH_MinEnergyRating": 100,
+      "MYH_MinPrice": 350000,
+      "MYH_MinSize": 70,
+      "MYH_PropertyClassId": 1,
+      "MYH_PropertyID": 4772425,
+      "MYH_PropertyTypeID": 37
+    }
+  },
+  "SeoDetails": {
+    "Title": "54 Saint Mochta's Green, Clonsilla, Dublin - Auctioneera - 4772425 - MyHome.ie Residential",
+    "Description": "54 Saint Mochta's Green, Clonsilla, Dublin, 2 Bed, asking price €330,000, brought to market by Auctioneera, Residential - 4772425 (rated B3)",
+    "Keywords": "2 Bed, 54 Saint Mochta's Green, Clonsilla, Dublin",
+    "PrevUrl": "",
+    "CanonicalUrl": "/residential/brochure/54-saint-mochta-s-green-clonsilla-dublin/4772425",
+    "NextUrl": "",
+    "ClassUrl": "property-for-sale",
+    "RegionUrl": "clonsilla",
+    "DescriptionUrl": "property-for-sale-in-clonsilla",
+    "BreadCrumbs": [
+      {
+        "DisplayName": "Home",
+        "ShortDisplayName": "Home",
+        "Route": "/"
+      },
+      {
+        "DisplayName": "Residential property for sale in Ireland",
+        "ShortDisplayName": "Ireland",
+        "Route": "/residential/ireland/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin",
+        "ShortDisplayName": "Dublin",
+        "Route": "/residential/dublin/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Dublin 15",
+        "ShortDisplayName": "Dublin 15",
+        "Route": "/residential/dublin-15/house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Clonsilla",
+        "ShortDisplayName": "Clonsilla",
+        "Route": "/residential/dublin-15/house-for-sale-in-clonsilla"
+      },
+      {
+        "DisplayName": "54 Saint Mochta's Green, Clonsilla, Dublin",
+        "ShortDisplayName": "54 Saint Mochta's Green, Clonsilla, Dublin",
+        "Route": ""
+      }
+    ],
+    "OpenGraphData": {
+      "Values": [
+        {
+          "Key": "og:url",
+          "Value": "https://myhome.ie/residential/brochure/54-saint-mochta-s-green-clonsilla-dublin/4772425"
+        },
+        {
+          "Key": "og:title",
+          "Value": "54 Saint Mochta's Green, Clonsilla, Dublin - Auctioneera - 4772425 - MyHome.ie Residential"
+        },
+        {
+          "Key": "og:description",
+          "Value": "54 Saint Mochta's Green, Clonsilla, Dublin, 2 Bed, asking price €330,000, brought to market by Auctioneera, Residential - 4772425 (rated B3)"
+        },
+        {
+          "Key": "og:image",
+          "Value": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg"
+        },
+        {
+          "Key": "og:image:url",
+          "Value": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg"
+        },
+        {
+          "Key": "og:image:type",
+          "Value": "image/jpg"
+        },
+        {
+          "Key": "og:image:secure_url",
+          "Value": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg"
+        },
+        {
+          "Key": "og:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "og:image:height",
+          "Value": "630"
+        },
+        {
+          "Key": "twitter:card",
+          "Value": "summary"
+        },
+        {
+          "Key": "twitter:site",
+          "Value": "https://myhome.ie/residential/brochure/54-saint-mochta-s-green-clonsilla-dublin/4772425"
+        },
+        {
+          "Key": "twitter:title",
+          "Value": "54 Saint Mochta's Green, Clonsilla, Dublin - Auctioneera - 4772425 - MyHome.ie Residential"
+        },
+        {
+          "Key": "twitter:image",
+          "Value": "https://photos-a.propertyimages.ie/media/5/2/4/4772425/39805fc6-c9c4-4ea0-8b67-92167d1b9e25_l.jpg"
+        },
+        {
+          "Key": "twitter:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "twitter:image:height",
+          "Value": "675"
+        },
+        {
+          "Key": "twitter:description",
+          "Value": "54 Saint Mochta's Green, Clonsilla, Dublin, 2 Bed, asking price €330,000, brought to market by Auctioneera, Residential - 4772425 (rated B3)"
+        }
+      ]
+    },
+    "NeighbourhoodLink": "",
+    "CustomDescription": ""
+  },
+  "Favourites": [],
+  "SavedSearches": [],
+  "RentalApplications": [],
+  "FavouriteCount": 0,
+  "SavedSearchesCount": 0,
+  "UserId": 0,
+  "Version": 1
+}

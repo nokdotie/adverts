@@ -1,0 +1,739 @@
+{
+  "Brochure": {
+    "Property": {
+      "OrderedDisplayAddress": "ballinacurra house kinsale county cork",
+      "GroupId": 9077,
+      "Address": "Ballinacurra House",
+      "SaleTypeId": 17,
+      "MainPhoto": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg",
+      "MainPhotoX": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_x.jpg",
+      "Photos": [
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5a2ddce4-3a3b-4b31-a2f5-b7d47e0ec1e1_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/61432ed9-8fe1-4bc4-9870-29211b455d9f_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c7cb6e8b-52fd-483a-a708-580e10d5d5e2_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/24bdebf2-6e48-4825-9543-07e4c3dee534_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c4a76d34-53e2-463b-b1fa-2f56abb1a427_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9ed4bf2e-0843-4311-88ee-d8d3c3646a15_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d530c348-c5f5-4912-8b00-2a038434f5b2_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/2ba31bf4-c94f-4817-977c-39d22253d3b1_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5bb93a96-51a9-4f14-9bdf-9cdd7e718fe6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/53ea16b6-0956-4b2f-96e7-327dd431184c_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9d6b9920-84e5-4d1f-a6b5-6e18e231217f_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b7d83366-32a0-4431-a8b8-998a5125451f_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/43cbdac8-013c-4084-950e-7d43a116cebf_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/26d18ef0-9652-49b7-a421-035c978959f2_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ad83a908-5411-4abd-9d66-13a254917345_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/47ee0466-79f4-4b05-955e-07d5b5723ae6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/36f301c6-02cd-4de0-b0a8-9c6a8740156a_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/39721401-731d-43ae-9e8d-eda7f9f3e9e4_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d9cd9d79-df29-4598-8c22-13d4f2323441_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/40c0eee8-cfe7-49a1-8667-2ca10454dad6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/42b725fa-a254-4cb4-a50b-c0643f89cef6_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/070585d1-fba8-49de-a9c7-053c1b2be1fe_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/7cf86ada-1c85-44c3-8f0f-e8d1ea0dd22d_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d12fa970-908c-45d7-b914-82ba0ebb5955_l.jpg",
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b5b19df6-2c29-4f52-a858-8a577610849c_l.jpg"
+      ],
+      "DevelopmentLogo": "",
+      "Bathrooms": 14,
+      "MinSize": 1709,
+      "MaxSize": 1709,
+      "OpenViewings": [],
+      "VirtualViewings": [],
+      "PropertyFeatureTypes": [
+        {
+          "Id": 2,
+          "Name": "En-suite",
+          "CreatedOn": "2018-03-20T10:17:11.2570000+00:00",
+          "IconName": "myh-icon-en-suite",
+          "IsRequirement": false
+        },
+        {
+          "Id": 7,
+          "Name": "Central Heating",
+          "CreatedOn": "2018-03-20T10:20:02.9970000+00:00",
+          "IconName": "myh-icon-central-heating",
+          "IsRequirement": false
+        },
+        {
+          "Id": 10,
+          "Name": "Garden",
+          "CreatedOn": "2018-03-20T10:20:37.4500000+00:00",
+          "IconName": "myh-icon-garden",
+          "IsRequirement": false
+        },
+        {
+          "Id": 26,
+          "Name": "Garage",
+          "CreatedOn": "2018-09-11T10:20:02.6870000+01:00",
+          "IconName": "myh-icon-garage",
+          "IsRequirement": false
+        }
+      ],
+      "BrochureContent": [
+        {
+          "ContentType": "Description",
+          "SortOrder": 0,
+          "Content": "Ballinacurra House offers the unique combination of luxury living at its finest and the best of country lifestyle, as Kinsale is voted one of the top places in Ireland to live and work. Relax and enjoy in the beautiful private surroundings, or experience the endless opportunities for activity and adventure including world class golf, sailing and horse riding.\n\nThe property is a rare gem in a perfect setting and location, and combines the unique balance between an authentic Georgian period property and 21st century modernisation with a truly authentic country atmosphere. It is all about location! location! location!\" and the work has already been done with substantial investment in a high quality fit out that has evolved over 20 years of restoration and substantial investment. \n\nThe main house comprises 8 en-suite bedrooms, a country style kitchen, a family room, drawing room, dining room and other living spaces. The entertainment wing with 6 en-suite guest bedrooms and various entertainment rooms including a ballroom and a bar. There is also a commercial kitchen. Adjacent accommodation includes the fully converted Stone Cottage and Coach House. \n\nThe property is fronted by 16th century 12 foot high stone Famine walls along the Ballinacurra Road. You enter the property through high electric gates and wind your way down a tree-lined 0.5 kilometre avenue which brings you up to the front of the Mansion House. The property also has low stone walls around the boundary. There are approx. 20 acres consisting of manicured lawns, pond, streams, walled garden, horse riding arena, fields, stables and garages wrapping around the river with private jetty, fishing deck and more. What makes this property unique, is a combination of its location and the manageable size of its grounds. \n\nThe property enjoys private water frontage onto the Ballinacurra Creek and Whitecastle Creek, which feed into the Bandon River. There is a rebuilt jetty and fishing deck as well as road access to this picnic area, and the remains of a stone boat house (with development potential). Much of this area also has handmade stone walls which would have formed an old quay. We are told that the ships bringing supplies during the Kinsale Battle of 1601 used the Ballinacurra Quay.\n\nThe Estate includes Kippagh Wood an authentic Irish ancient forest which can be accessed by a bridge over the Ballinacurra Creek. There is a pathway through the woods for walking, jogging or horse riding and leads to the Gulley Bridge on the Bandon River. Within the grounds there is also a fenced sand riding arena, double garage, 2 stables and fenced paddocks for horses. And for those looking for convenience, the flat West Wing field has also been used to land up to 4 helicopters at any one time.\n\nIn addition to the main Mansion House, there are also additional houses that could be used for extended family use, live-in staff, onsite caretaker or security. These include the renovated 4 bedroom Stone Cottage and 4 bedroom Coach House. All of the Houses have been renovated and maintained to an exceptional standard and there is no further modernisation required. WiFi Broadband is available throughout the entire property, as well as commercial grade fire alarm systems, and a main switchboard telephone system linking all the Houses. The property is also on 3 phase power.\n\nIn addition the adjacent newly built 6 bedroom Lodge with a further 5 acres is available by negotiation.\n"
+        },
+        {
+          "ContentType": "Features",
+          "SortOrder": 3,
+          "Content": "<ul><li> Oil Fired Central Heating with Zoned Areas </li><li> Timber Sash Windows </li><li> 14 En-suite Bedrooms </li><li> Jetty and river rights to Whitecastle Creek and Bandon River </li><li> 20 Acres of Lawns,Fields, Walled Garden and Private Woodland </li><li> Stables, Double Garage, Horse Riding Arena and 2 Fenced Fields </li><li> Fully Converted Stone Cottages with En-Suite Bedrooms </li><li> Freehold Title</li></ul>"
+        },
+        {
+          "ContentType": "Negotiator",
+          "SortOrder": 10,
+          "Content": "Guy Craigie"
+        }
+      ],
+      "PreSixtyThree": false,
+      "IsNewBuild": false,
+      "Floors": [],
+      "Rooms": [],
+      "NegotiatorId": 305118,
+      "CreatedOnDate": "2021-03-18T20:41:17.7700000+00:00",
+      "ModifiedOnDate": "2023-10-17T11:06:03.5630000+01:00",
+      "IsPremiumAd": false,
+      "ActivatedOn": "2021-03-18T20:42:11.8870000+00:00",
+      "RefreshedOn": "2024-02-10T10:53:36.7300000+00:00",
+      "IsTopSpot": false,
+      "IsPrivateLandlord": false,
+      "IsMappedAccurately": true,
+      "BrochureContactDetails": {
+        "FirstName": "",
+        "Phone": "",
+        "ShowPhoneNumber": false
+      },
+      "EnergyRatingMediaPath": "",
+      "IsTransact": false,
+      "PriceAsString": "POA",
+      "BathString": "14 baths",
+      "AuctionList": [],
+      "PropertyId": 4489748,
+      "BedsString": "14 beds",
+      "SizeStringMeters": 1709,
+      "DisplayAddress": "Ballinacurra House, Kinsale, County Cork",
+      "Eircode": "P17 YF76",
+      "Name": "",
+      "PropertyClassId": 1,
+      "PropertyStatusId": 2,
+      "PropertyType": "Country House",
+      "PropertyTypeId": 42,
+      "RegionId": 737,
+      "RegionName": "West Cork",
+      "LocalityId": 831,
+      "LocalityName": "Kinsale",
+      "Price": {
+        "MinPrice": 5500000.0,
+        "MaxPrice": 5500000.0,
+        "ShowPrice": false
+      },
+      "Images": [
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5a2ddce4-3a3b-4b31-a2f5-b7d47e0ec1e1_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5a2ddce4-3a3b-4b31-a2f5-b7d47e0ec1e1_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5a2ddce4-3a3b-4b31-a2f5-b7d47e0ec1e1_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/61432ed9-8fe1-4bc4-9870-29211b455d9f_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/61432ed9-8fe1-4bc4-9870-29211b455d9f_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/61432ed9-8fe1-4bc4-9870-29211b455d9f_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c7cb6e8b-52fd-483a-a708-580e10d5d5e2_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c7cb6e8b-52fd-483a-a708-580e10d5d5e2_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c7cb6e8b-52fd-483a-a708-580e10d5d5e2_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/24bdebf2-6e48-4825-9543-07e4c3dee534_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/24bdebf2-6e48-4825-9543-07e4c3dee534_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/24bdebf2-6e48-4825-9543-07e4c3dee534_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c4a76d34-53e2-463b-b1fa-2f56abb1a427_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c4a76d34-53e2-463b-b1fa-2f56abb1a427_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/c4a76d34-53e2-463b-b1fa-2f56abb1a427_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9ed4bf2e-0843-4311-88ee-d8d3c3646a15_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9ed4bf2e-0843-4311-88ee-d8d3c3646a15_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9ed4bf2e-0843-4311-88ee-d8d3c3646a15_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d530c348-c5f5-4912-8b00-2a038434f5b2_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d530c348-c5f5-4912-8b00-2a038434f5b2_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d530c348-c5f5-4912-8b00-2a038434f5b2_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/2ba31bf4-c94f-4817-977c-39d22253d3b1_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/2ba31bf4-c94f-4817-977c-39d22253d3b1_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/2ba31bf4-c94f-4817-977c-39d22253d3b1_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5bb93a96-51a9-4f14-9bdf-9cdd7e718fe6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5bb93a96-51a9-4f14-9bdf-9cdd7e718fe6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/5bb93a96-51a9-4f14-9bdf-9cdd7e718fe6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/53ea16b6-0956-4b2f-96e7-327dd431184c_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/53ea16b6-0956-4b2f-96e7-327dd431184c_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/53ea16b6-0956-4b2f-96e7-327dd431184c_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9d6b9920-84e5-4d1f-a6b5-6e18e231217f_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9d6b9920-84e5-4d1f-a6b5-6e18e231217f_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/9d6b9920-84e5-4d1f-a6b5-6e18e231217f_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b7d83366-32a0-4431-a8b8-998a5125451f_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b7d83366-32a0-4431-a8b8-998a5125451f_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b7d83366-32a0-4431-a8b8-998a5125451f_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/43cbdac8-013c-4084-950e-7d43a116cebf_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/43cbdac8-013c-4084-950e-7d43a116cebf_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/43cbdac8-013c-4084-950e-7d43a116cebf_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/26d18ef0-9652-49b7-a421-035c978959f2_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/26d18ef0-9652-49b7-a421-035c978959f2_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/26d18ef0-9652-49b7-a421-035c978959f2_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ad83a908-5411-4abd-9d66-13a254917345_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ad83a908-5411-4abd-9d66-13a254917345_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ad83a908-5411-4abd-9d66-13a254917345_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/47ee0466-79f4-4b05-955e-07d5b5723ae6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/47ee0466-79f4-4b05-955e-07d5b5723ae6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/47ee0466-79f4-4b05-955e-07d5b5723ae6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/36f301c6-02cd-4de0-b0a8-9c6a8740156a_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/36f301c6-02cd-4de0-b0a8-9c6a8740156a_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/36f301c6-02cd-4de0-b0a8-9c6a8740156a_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/39721401-731d-43ae-9e8d-eda7f9f3e9e4_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/39721401-731d-43ae-9e8d-eda7f9f3e9e4_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/39721401-731d-43ae-9e8d-eda7f9f3e9e4_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d9cd9d79-df29-4598-8c22-13d4f2323441_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d9cd9d79-df29-4598-8c22-13d4f2323441_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d9cd9d79-df29-4598-8c22-13d4f2323441_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/40c0eee8-cfe7-49a1-8667-2ca10454dad6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/40c0eee8-cfe7-49a1-8667-2ca10454dad6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/40c0eee8-cfe7-49a1-8667-2ca10454dad6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/42b725fa-a254-4cb4-a50b-c0643f89cef6_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/42b725fa-a254-4cb4-a50b-c0643f89cef6_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/42b725fa-a254-4cb4-a50b-c0643f89cef6_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/070585d1-fba8-49de-a9c7-053c1b2be1fe_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/070585d1-fba8-49de-a9c7-053c1b2be1fe_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/070585d1-fba8-49de-a9c7-053c1b2be1fe_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/7cf86ada-1c85-44c3-8f0f-e8d1ea0dd22d_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/7cf86ada-1c85-44c3-8f0f-e8d1ea0dd22d_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/7cf86ada-1c85-44c3-8f0f-e8d1ea0dd22d_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d12fa970-908c-45d7-b914-82ba0ebb5955_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d12fa970-908c-45d7-b914-82ba0ebb5955_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/d12fa970-908c-45d7-b914-82ba0ebb5955_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b5b19df6-2c29-4f52-a858-8a577610849c_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b5b19df6-2c29-4f52-a858-8a577610849c_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/b5b19df6-2c29-4f52-a858-8a577610849c_m.jpg"
+        },
+        {
+          "Url": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ce3fd650-cd4d-4e23-b0d6-621e1e832f22_l.jpg",
+          "ThumbUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ce3fd650-cd4d-4e23-b0d6-621e1e832f22_t.jpg",
+          "MediumUrl": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ce3fd650-cd4d-4e23-b0d6-621e1e832f22_m.jpg"
+        }
+      ],
+      "BrochureMap": {
+        "longitude": -8.5545944,
+        "latitude": 51.7129647
+      },
+      "CustomData": {
+        "RelatedPropertyIDs": [],
+        "IsMyHomePassport": false
+      },
+      "PhotoCount": 26,
+      "Pdfs": [],
+      "FloorPlans": [
+        "https://photos-a.propertyimages.ie/media/8/4/7/4489748/ce3fd650-cd4d-4e23-b0d6-621e1e832f22_l.jpg"
+      ],
+      "Vimeo": [],
+      "BrightCove": [],
+      "YouTube": [
+        {
+          "Identifier": "2ff99df0-52b5-44f6-a5bc-ebd89eb356a4",
+          "Filename": "qRUZPZCO92w",
+          "Caption": "https://www.youtube.com/watch?v=qRUZPZCO92w",
+          "Type": "Video",
+          "Location": "YouTube"
+        }
+      ],
+      "YouTubeRotate": [],
+      "Matterport": [],
+      "VirtualTourEyeSpy": [],
+      "VirtualTourKuula": [],
+      "VirtualTourGiraffe360": [],
+      "VideoUrl": [],
+      "Viewett": []
+    },
+    "Group": {
+      "GroupId": 9077,
+      "Name": "Knight Frank",
+      "DisplayPhone": "01 634 2466",
+      "Email": "enquiries@ie.knightfrank.com",
+      "OFFRGroupId": "",
+      "UrlSlugIdentifier": "knight-frank",
+      "SeoName": "knight-frank",
+      "Address": "20-21 Upper Pembroke Street, Dublin 2",
+      "LogoUrl": "https://photos-a.propertyimages.ie/groups/7/7/0/9077/logo.jpg",
+      "SalesLicense": "001880",
+      "IsPhoneRevealed": false
+    },
+    "AreaGuideSlug": "kinsale/831",
+    "JointGroup": {
+      "GroupId": 0,
+      "DisplayPhone": "",
+      "SeoName": "",
+      "Address": "",
+      "IsPhoneRevealed": false
+    },
+    "AgentProperties": [],
+    "PropertyHistories": [],
+    "PropertyPriceRegister": [
+      {
+        "PropertyPriceRegisterId": 1702033,
+        "DisplayAddress": "7 Campion Avenue, Abbey Fort, Kinsale, Co. Cork",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "383259.91",
+        "SoldOn": "2024-01-29T00:00:00.0000000+00:00",
+        "SoldOnString": "29th Jan 24",
+        "Longitude": -8.5324082,
+        "Latitude": 51.7115792,
+        "SeoUrl": "/priceregister/7-campion-avenue-abbey-fort-kinsale-co-cork-1702033"
+      },
+      {
+        "PropertyPriceRegisterId": 1702037,
+        "DisplayAddress": "Seaspray, Scilly, Kinsale, Co. Cork, P17tw77",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "5500000",
+        "SoldOn": "2024-01-29T00:00:00.0000000+00:00",
+        "SoldOnString": "29th Jan 24",
+        "Longitude": -8.517973,
+        "Latitude": 51.7044023,
+        "SeoUrl": "/priceregister/seaspray-scilly-kinsale-co-cork-p17tw77-1702037"
+      },
+      {
+        "PropertyPriceRegisterId": 1701239,
+        "DisplayAddress": "23 The Orchards, Kinsale, Co. Cork, P17ey95",
+        "PropertyTypeId": 38,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "335000",
+        "SoldOn": "2024-01-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Jan 24",
+        "Longitude": -8.5300699,
+        "Latitude": 51.7020487,
+        "SeoUrl": "/priceregister/23-the-orchards-kinsale-co-cork-p17ey95-1701239"
+      },
+      {
+        "PropertyPriceRegisterId": 1701242,
+        "DisplayAddress": "Bandon Road, Kinsale, Co. Cork",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "150000",
+        "SoldOn": "2024-01-22T00:00:00.0000000+00:00",
+        "SoldOnString": "22nd Jan 24",
+        "Longitude": -8.5316626,
+        "Latitude": 51.708263,
+        "SeoUrl": "/priceregister/bandon-road-kinsale-co-cork-1701242"
+      },
+      {
+        "PropertyPriceRegisterId": 1700528,
+        "DisplayAddress": "15 Monastery Gardens, Kinsale, Co. Cork, P17w883",
+        "PropertyTypeId": 45,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "403000",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -8.5256643,
+        "Latitude": 51.7024174,
+        "SeoUrl": "/priceregister/15-monastery-gardens-kinsale-co-cork-p17w883-1700528"
+      },
+      {
+        "PropertyPriceRegisterId": 1700530,
+        "DisplayAddress": "4 The Orchards, Ballincubby, Kinsale, Co. Cork, P17r942",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "330000",
+        "SoldOn": "2024-01-18T00:00:00.0000000+00:00",
+        "SoldOnString": "18th Jan 24",
+        "Longitude": -8.5313236,
+        "Latitude": 51.7022431,
+        "SeoUrl": "/priceregister/4-the-orchards-ballincubby-kinsale-co-cork-p17r942-1700530"
+      },
+      {
+        "PropertyPriceRegisterId": 1700548,
+        "DisplayAddress": "33 Campion Avenue, Abbeyfort, Kinsale, Co. Cork",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "440528.63",
+        "SoldOn": "2024-01-15T00:00:00.0000000+00:00",
+        "SoldOnString": "15th Jan 24",
+        "Longitude": -8.5321787,
+        "Latitude": 51.7114645,
+        "SeoUrl": "/priceregister/33-campion-avenue-abbeyfort-kinsale-co-cork-1700548"
+      },
+      {
+        "PropertyPriceRegisterId": 1702086,
+        "DisplayAddress": "20 Rath More Green, Barrack Green, Kinsale, Co. Cork, P17c927",
+        "Description": "New Dwelling house /Apartment",
+        "Price": "497797",
+        "SoldOn": "2024-01-09T00:00:00.0000000+00:00",
+        "SoldOnString": "9th Jan 24",
+        "Longitude": -8.521926,
+        "Latitude": 51.7118497,
+        "SeoUrl": "/priceregister/20-rath-more-green-barrack-green-kinsale-co-cork-p17c927-1702086"
+      },
+      {
+        "PropertyPriceRegisterId": 1699940,
+        "DisplayAddress": "Sallyport, Kinsale, Co. Cork, P17tk73",
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "400000",
+        "SoldOn": "2024-01-04T00:00:00.0000000+00:00",
+        "SoldOnString": "4th Jan 24",
+        "Longitude": -8.4888812,
+        "Latitude": 51.6934984,
+        "SeoUrl": "/priceregister/sallyport-kinsale-co-cork-p17tk73-1699940"
+      },
+      {
+        "PropertyPriceRegisterId": 1693809,
+        "DisplayAddress": "21 Old Head View, Kinsale Manor, Kinsale, Co. Cork, P17cd71",
+        "PropertyTypeId": 39,
+        "Description": "Second-Hand Dwelling house /Apartment",
+        "Price": "714000",
+        "SoldOn": "2023-11-30T00:00:00.0000000+00:00",
+        "SoldOnString": "30th Nov 23",
+        "Longitude": -8.5269724,
+        "Latitude": 51.7108294,
+        "SeoUrl": "/priceregister/21-old-head-view-kinsale-manor-kinsale-co-cork-p17cd71-1693809"
+      }
+    ],
+    "PriceChanges": [
+      {
+        "PropertyId": 4696165,
+        "Address": "Ballinacurra House, Kinsale, West Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/6/1/4696165/135070b1-8751-4477-a681-c5de4d9b886b_t.jpg",
+        "HasWebP": false,
+        "Price": 5500000.0,
+        "PrevPrice": 6400000.0,
+        "PriceChangeDelta": -900000.0,
+        "PriceChangePercentage": -14.0625,
+        "Created": "30th Jan 24",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/EXEMPT.png",
+        "BerRating": "EXEMPT",
+        "SeoUrl": "/residential/brochure/ballinacurra-house-kinsale-west-cork/4696165",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4696165,
+        "Address": "Ballinacurra House, Kinsale, West Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/6/1/4696165/135070b1-8751-4477-a681-c5de4d9b886b_t.jpg",
+        "HasWebP": false,
+        "Price": 6400000.0,
+        "PrevPrice": 5500000.0,
+        "PriceChangeDelta": 900000.0,
+        "PriceChangePercentage": 16.3636,
+        "Created": "30th Jan 24",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "up",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/EXEMPT.png",
+        "BerRating": "EXEMPT",
+        "SeoUrl": "/residential/brochure/ballinacurra-house-kinsale-west-cork/4696165",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4766956,
+        "Address": "Joaney's Garden, compass Hill, Kinsale, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/6/5/9/4766956/e8eeb3d8-57a8-457e-962c-c43ffcd40d12_t.jpg",
+        "HasWebP": false,
+        "Price": 2600000.0,
+        "PrevPrice": 2500000.0,
+        "PriceChangeDelta": 100000.0,
+        "PriceChangePercentage": 4.0,
+        "Created": "15th Jan 24",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "up",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/C1.png",
+        "BerRating": "C1",
+        "SeoUrl": "/residential/brochure/joaney-s-garden-compass-hill-kinsale-cork/4766956",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4699642,
+        "Address": "L'Orien, Knocksmall, Dunderrow, Kinsale, Co Cork,, Kinsale, Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/2/4/6/4699642/ee6c54f3-a675-46ee-a655-680b81b5e1a5_t.jpg",
+        "HasWebP": false,
+        "Price": 595000.0,
+        "PrevPrice": 675000.0,
+        "PriceChangeDelta": -80000.0,
+        "PriceChangePercentage": -11.8519,
+        "Created": "14th Sep 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/C1.png",
+        "BerRating": "C1",
+        "SeoUrl": "/residential/brochure/l-orien-knocksmall-dunderrow-kinsale-co-cork-kinsale-cork/4699642",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4681655,
+        "Address": "The Anchorage, Summercove, Kinsale, West Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/5/5/6/4681655/34311508-b5df-46e5-8d18-519d3eaef087_t.jpg",
+        "HasWebP": false,
+        "Price": 1950000.0,
+        "PrevPrice": 2500000.0,
+        "PriceChangeDelta": -550000.0,
+        "PriceChangePercentage": -22.0,
+        "Created": "1st Sep 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "//photos-a.propertyimages.ie/static/images/energyRating/E1.png",
+        "BerRating": "E1",
+        "SeoUrl": "/residential/brochure/the-anchorage-summercove-kinsale-west-cork/4681655",
+        "IsActive": true
+      },
+      {
+        "PropertyId": 4668756,
+        "Address": "Site at Compass Hill, Kinsale, West Cork",
+        "ImageUrl": "https://photos-a.propertyimages.ie/media/6/5/7/4668756/0bc5b2f5-5a8d-4faa-a529-4346434c1173_t.jpg",
+        "HasWebP": false,
+        "Price": 800000.0,
+        "PrevPrice": 995000.0,
+        "PriceChangeDelta": -195000.0,
+        "PriceChangePercentage": -19.598,
+        "Created": "4th Aug 23",
+        "PropertyCreatedOn": "0001-01-01T00:00:00.0000000+00:00",
+        "CssClass": "down",
+        "EnergyRatingMediaPath": "",
+        "SeoUrl": "/residential/brochure/site-at-compass-hill-kinsale-west-cork/4668756",
+        "IsActive": true
+      }
+    ],
+    "RelatedNewHomeProperties": [],
+    "SeoUrl": "/residential/brochure/ballinacurra-house-kinsale-county-cork/4489748",
+    "Features": [],
+    "VirtualViewings": [],
+    "Negotiator": {
+      "NegotiatorId": 305118,
+      "Name": "Guy Craigie",
+      "JobTitle": "Director of Residential",
+      "Phone": "+353 86 142 4778",
+      "Email": "guy.craigie@ie.knightfrank.com",
+      "ImageUrl": "https://photos-a.propertyimages.ie/users/8/1/1/305118/profile.jpg"
+    },
+    "IsFavourite": false,
+    "LatestPriceChangeString": "",
+    "HasVideos": true,
+    "HasWebP": false,
+    "IsTransact": false,
+    "BrochureTopAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 970,
+          "Height": 90
+        },
+        {
+          "Width": 728,
+          "Height": 90
+        },
+        {
+          "Width": 970,
+          "Height": 250
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Top"
+    },
+    "BrochureMortgageAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 800,
+          "Height": 420
+        }
+      ],
+      "Unit": "/2695176/MyHome/TESTINVENTORY_myhomeie_mortgage"
+    },
+    "BrochureWebBrokerAdUnit": {
+      "AdSizes": [
+        {
+          "Width": 750,
+          "Height": 171
+        }
+      ],
+      "Unit": "/2695176/MyHome/Brochure_Web_Broker"
+    },
+    "AdTargetingValues": {
+      "MYH_GroupID": 9077,
+      "MYH_LocalityID": 831,
+      "MYH_LocalityIDList": [],
+      "MYH_LocalityIDListString": "",
+      "MYH_RegionID": 737,
+      "MYH_RegionIDList": [],
+      "MYH_RegionIDListString": "",
+      "MYH_PropertyFeatureIDList": [
+        "En-suite",
+        "Central Heating",
+        "Garden",
+        "Garage"
+      ],
+      "MYH_PropertyFeatureIDListString": "En-suite,Central Heating,Garden,Garage",
+      "MYH_MaxPrice": 5000000,
+      "MYH_MinBeds": 14,
+      "MYH_MinPrice": 5000000,
+      "MYH_MinSize": 1709,
+      "MYH_PropertyClassId": 1,
+      "MYH_PropertyID": 4489748,
+      "MYH_PropertyTypeID": 42
+    }
+  },
+  "SeoDetails": {
+    "Title": "Ballinacurra House, Kinsale, County Cork - Knight Frank - 4489748 - MyHome.ie Residential",
+    "Description": "Ballinacurra House, Kinsale, County Cork, 14 Bed, asking price POA, brought to market by Knight Frank, Residential - 4489748",
+    "Keywords": "14 Bed, Ballinacurra House, Kinsale, County Cork",
+    "PrevUrl": "",
+    "CanonicalUrl": "/residential/brochure/ballinacurra-house-kinsale-county-cork/4489748",
+    "NextUrl": "",
+    "ClassUrl": "property-for-sale",
+    "RegionUrl": "kinsale",
+    "DescriptionUrl": "property-for-sale-in-kinsale",
+    "BreadCrumbs": [
+      {
+        "DisplayName": "Home",
+        "ShortDisplayName": "Home",
+        "Route": "/"
+      },
+      {
+        "DisplayName": "Residential property for sale in Ireland",
+        "ShortDisplayName": "Ireland",
+        "Route": "/residential/ireland/country-house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Cork",
+        "ShortDisplayName": "Cork",
+        "Route": "/residential/cork/country-house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in West Cork",
+        "ShortDisplayName": "West Cork",
+        "Route": "/residential/cork-west/country-house-for-sale"
+      },
+      {
+        "DisplayName": "Residential property for sale in Kinsale",
+        "ShortDisplayName": "Kinsale",
+        "Route": "/residential/cork-west/country-house-for-sale-in-kinsale"
+      },
+      {
+        "DisplayName": "Ballinacurra House, Kinsale, County Cork",
+        "ShortDisplayName": "Ballinacurra House, Kinsale, County Cork",
+        "Route": ""
+      }
+    ],
+    "OpenGraphData": {
+      "Values": [
+        {
+          "Key": "og:url",
+          "Value": "https://myhome.ie/residential/brochure/ballinacurra-house-kinsale-county-cork/4489748"
+        },
+        {
+          "Key": "og:title",
+          "Value": "Ballinacurra House, Kinsale, County Cork - Knight Frank - 4489748 - MyHome.ie Residential"
+        },
+        {
+          "Key": "og:description",
+          "Value": "Ballinacurra House, Kinsale, County Cork, 14 Bed, asking price POA, brought to market by Knight Frank, Residential - 4489748"
+        },
+        {
+          "Key": "og:image",
+          "Value": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg"
+        },
+        {
+          "Key": "og:image:url",
+          "Value": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg"
+        },
+        {
+          "Key": "og:image:type",
+          "Value": "image/jpg"
+        },
+        {
+          "Key": "og:image:secure_url",
+          "Value": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg"
+        },
+        {
+          "Key": "og:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "og:image:height",
+          "Value": "630"
+        },
+        {
+          "Key": "twitter:card",
+          "Value": "summary"
+        },
+        {
+          "Key": "twitter:site",
+          "Value": "https://myhome.ie/residential/brochure/ballinacurra-house-kinsale-county-cork/4489748"
+        },
+        {
+          "Key": "twitter:title",
+          "Value": "Ballinacurra House, Kinsale, County Cork - Knight Frank - 4489748 - MyHome.ie Residential"
+        },
+        {
+          "Key": "twitter:image",
+          "Value": "https://photos-a.propertyimages.ie/media/8/4/7/4489748/3d26dbab-f3e1-4557-847b-8042a3bcfb66_l.jpg"
+        },
+        {
+          "Key": "twitter:image:width",
+          "Value": "1200"
+        },
+        {
+          "Key": "twitter:image:height",
+          "Value": "675"
+        },
+        {
+          "Key": "twitter:description",
+          "Value": "Ballinacurra House, Kinsale, County Cork, 14 Bed, asking price POA, brought to market by Knight Frank, Residential - 4489748"
+        }
+      ]
+    },
+    "NeighbourhoodLink": "",
+    "CustomDescription": ""
+  },
+  "Favourites": [],
+  "SavedSearches": [],
+  "RentalApplications": [],
+  "FavouriteCount": 0,
+  "SavedSearchesCount": 0,
+  "UserId": 0,
+  "Version": 1
+}
