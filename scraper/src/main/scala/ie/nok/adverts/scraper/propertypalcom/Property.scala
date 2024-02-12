@@ -2,21 +2,20 @@ package ie.nok.adverts.scraper.propertypalcom
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
-import ie.nok.adverts.Advert
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
+import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.Schedule.{recurs, fixed}
-import zio.http.{Body, Client => ZioClient}
-import zio.http.model.{Headers, Method}
-import zio.json.{JsonDecoder, DeriveJsonDecoder}
+import zio.Schedule.{fixed, recurs}
+import zio.http.{Body, Client as ZioClient}
+import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZPipeline
+import zio.{ZIO, durationInt}
+
+import java.time.Instant
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
@@ -35,6 +34,7 @@ object Property {
       keyInfo: Option[List[ResponsePagePropsPropertyKeyInfo]],
       shareURL: Option[String],
       coordinate: Option[ResponsePagePropsPropertyCoordinate],
+      description: Option[String],
       ber: Option[ResponsePagePropsPropertyBer],
       account: Option[ResponsePagePropsPropertyAccount]
   )
@@ -135,6 +135,17 @@ object Property {
         )
       }
 
+  protected[propertypalcom] def propertyType(
+      property: ResponsePagePropsProperty
+  ): Option[PropertyType] =
+    property.keyInfo
+      .getOrElse(List.empty)
+      .find { _.key == "STYLE" }
+      .flatMap { _.text }
+      .flatMap { text =>
+        PropertyType.tryFromString(text).toOption
+      }
+
   private def advertiser(
       response: Response
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
@@ -173,6 +184,8 @@ object Property {
         url = url,
         priceInEur = price,
         address = address,
+        description = response.pageProps.property.description,
+        propertyType = propertyType(response.pageProps.property),
         eircode = eircode,
         coordinates = coordinates,
         imageUrls = imageUrls,

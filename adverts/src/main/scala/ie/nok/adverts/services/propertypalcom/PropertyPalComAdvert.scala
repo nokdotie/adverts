@@ -1,21 +1,24 @@
 package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, InformationSource}
+import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.hash.Hasher
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
+
 import java.time.Instant
 import java.util.UUID
 import scala.util.chaining.scalaUtilChainingOps
-import zio.json.{JsonCodec, DeriveJsonCodec, EncoderOps}
+import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 
 case class PropertyPalComAdvert(
     url: String,
     priceInEur: Option[Int],
     address: String,
+    description: Option[String],
+    propertyType: Option[PropertyType],
     eircode: Option[Eircode],
     coordinates: Option[Coordinates],
     imageUrls: List[String],
@@ -34,8 +37,8 @@ object PropertyPalComAdvert {
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
-      propertyDescription = None,
-      propertyType = None,
+      propertyDescription = self.description,
+      propertyType = self.propertyType,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),

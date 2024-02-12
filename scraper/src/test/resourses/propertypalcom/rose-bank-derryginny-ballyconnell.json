@@ -1,0 +1,1799 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 912849,
+      "pathId": "914049",
+      "path": "/rose-bank-derryginny-ballyconnell/914049",
+      "shareURL": "https://www.propertypal.com/914049",
+      "account": {
+        "accountNumber": "ST1013208",
+        "organisation": "REA Donohoe Spring (Ballyconnell)",
+        "organisationBranch": "",
+        "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+        "officePhone": {
+          "national": "(049) 952 7560",
+          "uk": "+353 49 952 7560",
+          "displayNumber": "(049) 952 7560",
+          "international": "+353 49 952 7560",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "003483",
+        "websiteUrl": "http://www.peterdonohoe.ie",
+        "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+        "groupLandingPageUrl": null,
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": false,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        },
+        "agentLogos": [
+          {
+            "logoType": "STANDARD",
+            "url": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+            "width": 420,
+            "height": 284,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST1013208"
+          },
+          {
+            "logoType": "ALTERNATIVE",
+            "url": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+            "width": 420,
+            "height": 284,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST1013208"
+          },
+          {
+            "logoType": "PREMIER",
+            "url": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+            "width": 420,
+            "height": 284,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST1013208"
+          }
+        ],
+        "colours": {
+          "secondary": "#353535",
+          "primary": "#FFFFFF"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          }
+        ],
+        "missingAccreditations": null,
+        "propertypalAwards": [],
+        "openingTimes": [
+          {
+            "openTime": "2019-12-30T09:00:00+0000",
+            "closeTime": "2019-12-30T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-31T09:00:00+0000",
+            "closeTime": "2019-12-31T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-01T09:00:00+0000",
+            "closeTime": "2020-01-01T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-02T09:00:00+0000",
+            "closeTime": "2020-01-02T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-03T09:00:00+0000",
+            "closeTime": "2020-01-03T17:00:00+0000",
+            "byAppointment": false,
+            "closed": false,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2020-01-04T00:00:00+0000",
+            "closeTime": "2020-01-04T00:00:00+0000",
+            "byAppointment": false,
+            "closed": true,
+            "lunchBreak": false
+          },
+          {
+            "openTime": "2019-12-29T00:00:00+0000",
+            "closeTime": "2019-12-29T00:00:00+0000",
+            "byAppointment": false,
+            "closed": true,
+            "lunchBreak": false
+          }
+        ],
+        "tier": "STANDARD",
+        "enhancedBranding": false,
+        "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.1173928&rlng=-7.5890281&sta=forSale&st=sale&pt=residential&currency=GBP&term=641039",
+        "searchParams": {
+          "radius": 8.0467,
+          "runit": "km",
+          "rlat": 54.1173928,
+          "rlng": -7.5890281,
+          "status": [
+            "forSale"
+          ],
+          "saleType": [
+            "sale"
+          ],
+          "category": [
+            "residential"
+          ],
+          "currency": "GBP",
+          "term": [
+            "641039"
+          ]
+        }
+      },
+      "displayAddress": "Rose Bank, Derryginny, Ballyconnell, H14VY27",
+      "displayAddressLine1": "Rose Bank",
+      "displayAddressLine2": "Derryginny, Ballyconnell, H14VY27",
+      "addressLine1": "Rose Bank",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "",
+      "street": "Rose Bank",
+      "addressLine2": "Derryginny",
+      "town": "Ballyconnell",
+      "region": "Cavan",
+      "postcode": "H14VY27",
+      "countryCode": "IRL",
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "coordinate": {
+        "latitude": 54.1173928,
+        "longitude": -7.5890281,
+        "accuracy": "exactlyRight",
+        "mapZoomLevel": 15,
+        "showStreetView": true
+      },
+      "numBedrooms": 5,
+      "numBathrooms": 3,
+      "numReceptionRooms": 3,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "detachedHouseAndLand",
+        "text": "Detached House and Lands",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 1,
+          "key": "property",
+          "text": "Properties"
+        },
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 8,
+          "key": "detached",
+          "text": "Detached houses"
+        },
+        {
+          "id": 33,
+          "key": "detachedExBungalow",
+          "text": "Detached Houses"
+        },
+        {
+          "id": 43,
+          "key": "houseAndLand",
+          "text": "Houses and Land"
+        },
+        {
+          "id": 45,
+          "key": "housesExBungalow",
+          "text": "Houses (Ex. Bungalows)"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2023-10-12T15:55:22+0100",
+      "listingTime": null,
+      "activationTime": "2023-10-12T15:55:22+0100",
+      "listingUpdatedTime": "2024-02-06T10:22:33+0000",
+      "price": {
+        "priceType": "GUIDE_PRICE",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": null,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": true,
+        "pricePrefix": "",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": true
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/912849/35628499.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UGF?U9Mea8-.?[jUIIkCXB%VV|tOx[xnR:s:",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628499.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628499.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/912849/35628500.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "URGI[GRStJxt^nxtWTai%OjJRSofx[t5Wof$",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628500.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628500.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/912849/35628501.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "URH2xcH_s;x@?=MzRkoex@obV]kAtOovaet3",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628501.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628501.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/912849/35628502.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UJG97.-}.5Rk~qtLtPf6tRnmRRRks:RlX3W.",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628502.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628502.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/912849/35628503.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UsDc]}ogMwo#TOfmV?kDOIWZs,j]tTbcfPoe",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628503.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628503.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/912849/35628504.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "U-C7v*RiM_ogpMaeacbIS+kDs.axt8bcofjY",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628504.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628504.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/912849/35628505.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UsD0_:o~NGacTOkXbHadOHa#s:fltSjXWAbJ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628505.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628505.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/912849/35628506.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "U;DTr5sQs+oepMaJoHjZXAWBWAj?WBo#bIj?",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628506.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628506.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/912849/35628507.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UzEW8%tSWBskyGt9oeoINhogt7fkR.oIofbJ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628507.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628507.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/912849/35628508.jpg",
+          "width": 1024,
+          "height": 718,
+          "blurhash": "UuGSMsxuWXWB?dxua#WB_3ogWCoe?aofWBof",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628508.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628508.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/912849/35628509.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UuF$w;aHt3obKUM_obWAx_n}WAWBt8juWAay",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628509.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628509.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/912849/35628510.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UqGIo$M_V?xa?wD%acs:%NIURjayt6WBWYjZ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628510.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628510.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/912849/35628511.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UBD]VHRh01M#0o9HxvxZOh%I~VIVIc%1IV9a",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628511.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628511.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/912849/35628512.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UEGbR|_NAvjL0tW]WZp00#M|$%tm?IkBxWe=",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628512.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628512.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/912849/35628513.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UpEDF[M|bHxaKBjYR-a#XBaxt6WXs.j]axs:",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628513.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628513.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/912849/35628514.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UxD,ZkIoRNj?%jV@V=ayIxs,W9WDRpoIWUjs",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628514.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628514.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/912849/35628515.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UOGSJaxv9Zx[_4xuW9xa?at7s=WY-=%Logoz",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628515.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628515.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/912849/35628516.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UIGc0ew8y9NK^-tSRV%e-;%Ln-xt?aRoR-Rm",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628516.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628516.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 19,
+          "url": "https://media.propertypal.com/large/p/912849/35628517.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UYLXGEWC~qxu.8ofIraeITofV?ayxYj@s+of",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628517.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628517.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 20,
+          "url": "https://media.propertypal.com/large/p/912849/35628518.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UYK1Ex?FtlIt~9$%RkNGxWoeIUV@kXRkW?bI",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628518.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628518.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 21,
+          "url": "https://media.propertypal.com/large/p/912849/35628519.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "USHnmCIW9aoL~UaeNHn%MwozWFodrrW;R*W=",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628519.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628519.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 22,
+          "url": "https://media.propertypal.com/large/p/912849/35628520.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UCI}Y30001_N=._3IBbF9Z9F-;Mx.9e.M_-p",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628520.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628520.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 23,
+          "url": "https://media.propertypal.com/large/p/912849/35628521.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UGGuac~q00IAxTIUaKV@NHR-xuf5o#xtM{WA",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628521.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628521.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 24,
+          "url": "https://media.propertypal.com/large/p/912849/35628522.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "USGk{-DiRjWY~TV[M|bID*%Kaht6M_t7xtoe",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628522.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628522.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 25,
+          "url": "https://media.propertypal.com/large/p/912849/35628523.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UJFh-N={4nOZ_Mt3I9NInmogM{IVsBkCNHV@",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628523.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628523.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 26,
+          "url": "https://media.propertypal.com/large/p/912849/35628524.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UFHd=^?aKP_M?tx]M~x[Q,IUi_Div~iwR5IB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628524.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628524.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 27,
+          "url": "https://media.propertypal.com/large/p/912849/35628525.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UEGS16_300IT_NbbIAjF4mRO?bW?rqjYtlW;",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628525.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628525.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 28,
+          "url": "https://media.propertypal.com/large/p/912849/35628526.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UIG[KA004.u6.7aKogM{-V$|NHM}$*f+NGWC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628526.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628526.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 29,
+          "url": "https://media.propertypal.com/large/p/912849/35628527.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UKG[NE.TBDxu_MXnkCoIMxRRrWR5xuR-RjaK",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628527.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628527.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 30,
+          "url": "https://media.propertypal.com/large/p/912849/35628528.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UFHewW00.RIw},.7D+MvRj-4o3Ncx?ojjBt9",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628528.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628528.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 31,
+          "url": "https://media.propertypal.com/large/p/912849/35628529.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UbG+5Wr:ofS4~VxtM_X9WBofWBaeaefPozjZ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628529.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628529.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 32,
+          "url": "https://media.propertypal.com/large/p/912849/35628530.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UfI53$Oux]xu~VM|RiadRiV@axWXV@ayofkC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628530.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628530.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 33,
+          "url": "https://media.propertypal.com/large/p/912849/35628531.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UYHnNeSir:$z~WIqV?oIo#RkW;ofogazkCW=",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628531.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628531.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 34,
+          "url": "https://media.propertypal.com/large/p/912849/35628532.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UXK0.=wuxt$$~qt5Rjs:I^oIjYfko#WAoIoe",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628532.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628532.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 35,
+          "url": "https://media.propertypal.com/large/p/912849/35628533.jpg",
+          "width": 768,
+          "height": 1024,
+          "blurhash": "UHF=p-~B_MMxsmo~D$xuERX9xuadkCt7ozS3",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628533.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628533.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 36,
+          "url": "https://media.propertypal.com/large/p/912849/35628534.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "ULHxvg?wWBRQ-.RiM{%M9EMxofV@%M%NxvR+",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628534.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628534.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 37,
+          "url": "https://media.propertypal.com/large/p/912849/35628535.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UQJ7?myC_N%M^%x]M{V@9GD%MyIVxbxbxbog",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628535.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628535.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 38,
+          "url": "https://media.propertypal.com/large/p/912849/35628536.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "UVJRN-V??wWBxXxuD$ozRjbIoft7ofjss:of",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628536.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628536.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 39,
+          "url": "https://media.propertypal.com/large/p/912849/35628537.jpg",
+          "width": 1024,
+          "height": 768,
+          "blurhash": "ULFPKCo_%fWB.ANMbcoJXCRYN2V[s?R;X8bF",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/912849/35628537.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/912849/35628537.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": null,
+      "agents": [
+        {
+          "accountNumber": "ST1013208",
+          "organisation": "REA Donohoe Spring (Ballyconnell)",
+          "organisationBranch": "",
+          "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+          "officePhone": {
+            "national": "(049) 952 7560",
+            "uk": "+353 49 952 7560",
+            "displayNumber": "(049) 952 7560",
+            "international": "+353 49 952 7560",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "003483",
+          "websiteUrl": "http://www.peterdonohoe.ie",
+          "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+          "groupLandingPageUrl": null,
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": false,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            }
+          ],
+          "missingAccreditations": null,
+          "propertypalAwards": [],
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:00:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:00:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:00:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:00:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:00:00+0000",
+              "closeTime": "2020-01-03T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-04T00:00:00+0000",
+              "closeTime": "2020-01-04T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-29T00:00:00+0000",
+              "closeTime": "2019-12-29T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.1173928&rlng=-7.5890281&sta=forSale&st=sale&pt=residential&currency=GBP&term=641039",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 54.1173928,
+            "rlng": -7.5890281,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "currency": "GBP",
+            "term": [
+              "641039"
+            ]
+          }
+        }
+      ],
+      "contacts": {
+        "showAllContactsOption": true,
+        "default": {
+          "accountNumber": "ST1013208",
+          "organisation": "REA Donohoe Spring (Ballyconnell)",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "showAddress": true,
+          "phoneNumber": {
+            "national": "(049) 952 7560",
+            "uk": "+353 49 952 7560",
+            "displayNumber": "(049) 952 7560",
+            "international": "+353 49 952 7560",
+            "countryCode": 353
+          },
+          "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+          "psrLicenceNumber": "003483",
+          "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+          "groupLandingPageUrl": null,
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+              "width": 420,
+              "height": 284,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST1013208"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "openingTimes": [
+            {
+              "openTime": "2019-12-30T09:00:00+0000",
+              "closeTime": "2019-12-30T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-31T09:00:00+0000",
+              "closeTime": "2019-12-31T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-01T09:00:00+0000",
+              "closeTime": "2020-01-01T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-02T09:00:00+0000",
+              "closeTime": "2020-01-02T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-03T09:00:00+0000",
+              "closeTime": "2020-01-03T17:00:00+0000",
+              "byAppointment": false,
+              "closed": false,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2020-01-04T00:00:00+0000",
+              "closeTime": "2020-01-04T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            },
+            {
+              "openTime": "2019-12-29T00:00:00+0000",
+              "closeTime": "2019-12-29T00:00:00+0000",
+              "byAppointment": false,
+              "closed": true,
+              "lunchBreak": false
+            }
+          ],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.1173928&rlng=-7.5890281&sta=forSale&st=sale&pt=residential&currency=GBP&term=641039",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 54.1173928,
+            "rlng": -7.5890281,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "currency": "GBP",
+            "term": [
+              "641039"
+            ]
+          }
+        },
+        "all": [
+          {
+            "accountNumber": "ST1013208",
+            "organisation": "REA Donohoe Spring (Ballyconnell)",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "showAddress": true,
+            "phoneNumber": {
+              "national": "(049) 952 7560",
+              "uk": "+353 49 952 7560",
+              "displayNumber": "(049) 952 7560",
+              "international": "+353 49 952 7560",
+              "countryCode": 353
+            },
+            "displayAddress": "The Conall Building, Ballyconnell, H14 HP59",
+            "psrLicenceNumber": "003483",
+            "landingPageUrl": "/estate-agents/rea-donohoe-spring-ballyconnell",
+            "groupLandingPageUrl": null,
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+              "standardBackgroundColour": "#ffffff",
+              "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+              "alternativeBackgroundColour": "#ffffff",
+              "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+              "premierBackgroundColour": "#ffffff"
+            },
+            "agentLogos": [
+              {
+                "logoType": "STANDARD",
+                "url": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+                "width": 420,
+                "height": 284,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST1013208"
+              },
+              {
+                "logoType": "ALTERNATIVE",
+                "url": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+                "width": 420,
+                "height": 284,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST1013208"
+              },
+              {
+                "logoType": "PREMIER",
+                "url": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+                "width": 420,
+                "height": 284,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST1013208"
+              }
+            ],
+            "colours": {
+              "secondary": "#353535",
+              "primary": "#FFFFFF"
+            },
+            "openingTimes": [
+              {
+                "openTime": "2019-12-30T09:00:00+0000",
+                "closeTime": "2019-12-30T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-31T09:00:00+0000",
+                "closeTime": "2019-12-31T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-01T09:00:00+0000",
+                "closeTime": "2020-01-01T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-02T09:00:00+0000",
+                "closeTime": "2020-01-02T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-03T09:00:00+0000",
+                "closeTime": "2020-01-03T17:00:00+0000",
+                "byAppointment": false,
+                "closed": false,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2020-01-04T00:00:00+0000",
+                "closeTime": "2020-01-04T00:00:00+0000",
+                "byAppointment": false,
+                "closed": true,
+                "lunchBreak": false
+              },
+              {
+                "openTime": "2019-12-29T00:00:00+0000",
+                "closeTime": "2019-12-29T00:00:00+0000",
+                "byAppointment": false,
+                "closed": true,
+                "lunchBreak": false
+              }
+            ],
+            "tier": "STANDARD",
+            "enhancedBranding": false,
+            "searchUrl": "/search?radius=8.0467&runit=km&rlat=54.1173928&rlng=-7.5890281&sta=forSale&st=sale&pt=residential&currency=GBP&term=641039",
+            "searchParams": {
+              "radius": 8.0467,
+              "runit": "km",
+              "rlat": 54.1173928,
+              "rlng": -7.5890281,
+              "status": [
+                "forSale"
+              ],
+              "saleType": [
+                "sale"
+              ],
+              "category": [
+                "residential"
+              ],
+              "currency": "GBP",
+              "term": [
+                "641039"
+              ]
+            }
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "5 Bed Detached House and Land",
+      "description": "<p>Zoned C. 2.47 acre, Roadside Development Site with 5 Bed Period Residence & Outbuildings. Extensive Road Frontage onto N87 & Excellent Potential Subject to PP. Short Walking Distance to all Local Amenities. Folio CN7274F.</p><p>FOR SALE BY PRIVATE TREATY.</p><p> </p><p>Holding a prominent location within the busy town of Ballyconnell, 120 metres of road frontage onto the N87 & access to all mains services, this gently elevated parcel is zoned as residential under the current Town Development Plan.</p><p>Extending to 2.47 acres & conveniently laid out, there is excellent development potential (Subject to planning permission) along with options for the period residence as a separate entity.</p><p> </p><p>Pre-planning enquiries have been made to Cavan Co. Co. with a potential for at least 10 No. 2 storey houses along with redevelopment of the existing residence which has a separate road access. It can readily be split into 2 separate properties.</p><p> </p><p>With some connections in place, the site is adjacent & has access to; Mains water, Mains drainage, Mains sewage & Mains electrical connection. High Speed Broadband is also available.</p><p> </p><p>The impressive, stone built period house; “Rose Bank” is a protected structure & was constructed in C. 1812. It retains many original features & requires renovation throughout. BER Exempt. OFCH.</p><p> </p><p>This portion of the property is accessed by a private driveway leading to a yard with range of outbuildings and mature, private gardens.</p><p> </p><p>The living accommodation extends to C. 175 sqm & comprises:</p><p>Ground Floor:</p><p>Entrance Hall (5.6 x 2.1),</p><p>Dining room (5.4 x 4.1) with open fire place, bay windows & a serving window open to the kitchen,</p><p>Living room (4.2 x 4.0),</p><p>Shower room (1.4 x 4.6),</p><p>Sitting room (4.6 x 4.2),</p><p>Kitchen (4.9 x 3.1).</p><p> </p><p>First Floor:</p><p>Split level landing (5.7 x 2.1),</p><p>Hotpress (2.1 x 1.1),</p><p>Storage closet (1.3 x 1.1),</p><p>Bedroom 1 (3.7 x 4.2) with ensuite (1.9 x 1.9),</p><p>Bedroom 2 2.1 x 4.1),</p><p>Bedroom 3 (3.0 x 2.1),</p><p>Bedroom 4 (3.0 x 2.2),</p><p>Bedroom 5 (2.8 x 4.1),</p><p>Bathroom (2.3 x 1.8).</p><p> </p><p>Would qualify for both SEAI & Property Refurbishment Grants.</p><p>Ideally located on the N87 less than 5 minutes drive to Bawnboy & within walking distance from all amenities in Ballyconnell including; schools, crèche, shops, restaurants, pubs & the Shannon Erne Blueway with public marina. A short drive to the Slieve Russell Hotel & Golf Club & many fishing lakes in the locality. C. 30 minutes drive to Cavan & Enniskillen. GPS: 54.117374, -7.589077. Eircode: H14 VY27.</p><p> </p><p>Viewing By Appointment & Very Highly Recommended.                          </p><p> </p>",
+      "showHomeOpeningTime": null,
+      "berExempt": true,
+      "epc": null,
+      "ber": null,
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "POA",
+          "textHtml": "<span class=\"price-text\">POA</span>",
+          "subtext": null,
+          "image": null,
+          "link": null,
+          "beforePrice": "",
+          "price": "POA",
+          "afterPrice": ""
+        },
+        {
+          "key": "RATES",
+          "name": "Rates",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "TENURE",
+          "name": "Tenure",
+          "text": "Freehold",
+          "textHtml": "Freehold",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "Detached House and Land",
+          "textHtml": "Detached House and Land",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "5",
+          "textHtml": "5",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "RECEPTIONROOMS",
+          "name": "Receptions",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "HEATING_TYPE",
+          "name": "Heating",
+          "text": "Oil",
+          "textHtml": "Oil",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "Exempt",
+          "textHtml": "Exempt",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "SIZE",
+          "name": "Size",
+          "text": "175 sq. metres",
+          "textHtml": "175 sq. metres",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 2288,
+        "history": [
+          {
+            "date": "2024-02-08T00:00:00+0000",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-07T00:00:00+0000",
+            "totalUniqueViews": 17,
+            "totalViews": 17,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-06T00:00:00+0000",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-05T00:00:00+0000",
+            "totalUniqueViews": 15,
+            "totalViews": 15,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-04T00:00:00+0000",
+            "totalUniqueViews": 32,
+            "totalViews": 32,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-03T00:00:00+0000",
+            "totalUniqueViews": 31,
+            "totalViews": 31,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-02T00:00:00+0000",
+            "totalUniqueViews": 19,
+            "totalViews": 19,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-01T00:00:00+0000",
+            "totalUniqueViews": 16,
+            "totalViews": 16,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-31T00:00:00+0000",
+            "totalUniqueViews": 35,
+            "totalViews": 35,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-30T00:00:00+0000",
+            "totalUniqueViews": 17,
+            "totalViews": 17,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-29T00:00:00+0000",
+            "totalUniqueViews": 25,
+            "totalViews": 25,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-28T00:00:00+0000",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-27T00:00:00+0000",
+            "totalUniqueViews": 41,
+            "totalViews": 41,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-26T00:00:00+0000",
+            "totalUniqueViews": 22,
+            "totalViews": 22,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-25T00:00:00+0000",
+            "totalUniqueViews": 20,
+            "totalViews": 20,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-24T00:00:00+0000",
+            "totalUniqueViews": 26,
+            "totalViews": 26,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-23T00:00:00+0000",
+            "totalUniqueViews": 23,
+            "totalViews": 23,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-22T00:00:00+0000",
+            "totalUniqueViews": 14,
+            "totalViews": 14,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-21T00:00:00+0000",
+            "totalUniqueViews": 23,
+            "totalViews": 23,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-20T00:00:00+0000",
+            "totalUniqueViews": 24,
+            "totalViews": 24,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-19T00:00:00+0000",
+            "totalUniqueViews": 9,
+            "totalViews": 9,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-18T00:00:00+0000",
+            "totalUniqueViews": 22,
+            "totalViews": 22,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-17T00:00:00+0000",
+            "totalUniqueViews": 15,
+            "totalViews": 15,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-16T00:00:00+0000",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-15T00:00:00+0000",
+            "totalUniqueViews": 12,
+            "totalViews": 12,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-14T00:00:00+0000",
+            "totalUniqueViews": 37,
+            "totalViews": 37,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-13T00:00:00+0000",
+            "totalUniqueViews": 24,
+            "totalViews": 24,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-12T00:00:00+0000",
+            "totalUniqueViews": 16,
+            "totalViews": 16,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-11T00:00:00+0000",
+            "totalUniqueViews": 26,
+            "totalViews": 26,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-10T00:00:00+0000",
+            "totalUniqueViews": 9,
+            "totalViews": 9,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          }
+        ]
+      },
+      "shortlisted": false,
+      "featuredDevelopmentContent": null,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-cavan",
+          "label": "County Cavan"
+        },
+        {
+          "url": "/property-for-sale/ballyconnell-county-cavan",
+          "label": "Ballyconnell"
+        },
+        {
+          "url": "/rose-bank-derryginny-ballyconnell/914049",
+          "label": "Rose Bank"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in H14VY27": "/property-for-sale/h14vy27",
+        "Property For Sale in H14": "/property-for-sale/h14",
+        "Property For Sale in County Cavan": "/property-for-sale/county-cavan",
+        "Property For Sale in Ballyconnell, County Cavan": "/property-for-sale/ballyconnell-county-cavan",
+        "REA Donohoe Spring (Ballyconnell)": "/estate-agents/rea-donohoe-spring-ballyconnell"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premiumListing": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2024-02-09T00:00:00+0000",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "coOwnershipEligible": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        }
+      ],
+      "agentLogos": [
+        {
+          "logoType": "STANDARD",
+          "url": "https://media.propertypal.com/logo/220112161544/400x400/ST1013208/master.png",
+          "width": 420,
+          "height": 284,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST1013208"
+        },
+        {
+          "logoType": "ALTERNATIVE",
+          "url": "https://media.propertypal.com/logo/220112161626/400x400/ST1013208/master_alt.png",
+          "width": 420,
+          "height": 284,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST1013208"
+        },
+        {
+          "logoType": "PREMIER",
+          "url": "https://media.propertypal.com/logo/220112161605/400x400/ST1013208/master_premier.png",
+          "width": 420,
+          "height": 284,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST1013208"
+        }
+      ],
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "Rose Bank, Derryginny, Ballyconnell",
+        "description": "This 5 Bed Detached House And Land Sale Is Located At Rose Bank, Derryginny, Ballyconnell. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "POA",
+          "Details": "5 Bed Detached House and Land"
+        }
+      },
+      "requestValuation": false,
+      "timeLastUnpublishedOnPP": null
+    },
+    "emailHashes": null,
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "expand": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null,
+          "coOwnership": false
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}
