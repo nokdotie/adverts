@@ -1,0 +1,1863 @@
+{
+  "pageProps": {
+    "published": true,
+    "property": {
+      "id": 927209,
+      "pathId": "928409",
+      "path": "/shurock-castletown-geoghegan-mullingar/928409",
+      "shareURL": "https://www.propertypal.com/928409",
+      "account": {
+        "accountNumber": "ST0720201",
+        "organisation": "Sherry Fitzgerald Davitt & Davitt (Mullingar)",
+        "organisationBranch": "",
+        "displayAddress": "12/14 Dominick Street, Mullingar, N91 X52E",
+        "officePhone": {
+          "national": "(044) 934 0000",
+          "uk": "+353 44 934 0000",
+          "displayNumber": "(044) 934 0000",
+          "international": "+353 44 934 0000",
+          "countryCode": 353
+        },
+        "psrLicenceNumber": "001440",
+        "websiteUrl": null,
+        "landingPageUrl": "/estate-agents/sherry-fitzgerald-davitt-and-davitt-mullingar",
+        "groupLandingPageUrl": "/estate-agents/sherry-fitzgerald-irl",
+        "privateDeveloper": false,
+        "developerPrimaryContact": false,
+        "developer": false,
+        "agent": true,
+        "detailsEnabled": true,
+        "emailEnabled": true,
+        "showAddress": true,
+        "includeFeeCharges": true,
+        "logo": {
+          "standard": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        },
+        "agentLogos": [
+          {
+            "logoType": "STANDARD",
+            "url": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+            "width": 600,
+            "height": 600,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST0720201"
+          },
+          {
+            "logoType": "ALTERNATIVE",
+            "url": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+            "width": 600,
+            "height": 600,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST0720201"
+          },
+          {
+            "logoType": "PREMIER",
+            "url": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+            "width": 600,
+            "height": 600,
+            "backgroundColour": "#ffffff",
+            "accountNumber": "ST0720201"
+          }
+        ],
+        "colours": {
+          "secondary": "#353535",
+          "primary": "#FFFFFF"
+        },
+        "accreditations": [
+          {
+            "id": 26,
+            "label": "PSRA",
+            "textKey": "psra",
+            "url": "http://www.psr.ie",
+            "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+            "type": "ESSENTIAL",
+            "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+          }
+        ],
+        "missingAccreditations": null,
+        "propertypalAwards": [],
+        "openingTimes": null,
+        "tier": "STANDARD",
+        "enhancedBranding": false,
+        "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.4360718&rlng=-7.534935399999998&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3827289",
+        "searchParams": {
+          "radius": 8.0467,
+          "runit": "km",
+          "rlat": 53.4360718,
+          "rlng": -7.534935399999998,
+          "status": [
+            "forSale"
+          ],
+          "saleType": [
+            "sale"
+          ],
+          "category": [
+            "residential"
+          ],
+          "minPrice": 190000,
+          "maxPrice": 275000,
+          "currency": "GBP",
+          "term": [
+            "3827289"
+          ]
+        }
+      },
+      "displayAddress": "Shurock, Castletown Geoghegan, Mullingar, N91K220",
+      "displayAddressLine1": "Shurock",
+      "displayAddressLine2": "Castletown Geoghegan, Mullingar, N91K220",
+      "addressLine1": "Shurock",
+      "unitNumber": "",
+      "siteNumber": "",
+      "buildingName": "",
+      "houseNumber": "",
+      "street": "Shurock",
+      "addressLine2": "Castletown Geoghegan",
+      "town": "Mullingar",
+      "region": "Westmeath",
+      "postcode": "N91K220",
+      "countryCode": "IRL",
+      "country": {
+        "name": "Rep. Ireland",
+        "isoCode3": "IRL",
+        "isoCode2": "IE"
+      },
+      "coordinate": {
+        "latitude": 53.4360718,
+        "longitude": -7.534935399999998,
+        "accuracy": "generalArea",
+        "mapZoomLevel": 12,
+        "showStreetView": true
+      },
+      "numBedrooms": 3,
+      "numBathrooms": 3,
+      "numReceptionRooms": null,
+      "type": "property",
+      "propertyType": {
+        "key": "residential",
+        "text": "Residential"
+      },
+      "saleType": {
+        "key": "sale",
+        "text": "Sale"
+      },
+      "status": {
+        "key": "forSale",
+        "text": "For sale"
+      },
+      "comingSoon": false,
+      "comingSoonText": null,
+      "style": {
+        "key": "bungalow",
+        "text": "Bungalows",
+        "propertyType": "residential"
+      },
+      "styleGroups": [
+        {
+          "id": 2,
+          "key": "houses",
+          "text": "All Houses"
+        },
+        {
+          "id": 10,
+          "key": "bungalow",
+          "text": "Bungalows"
+        }
+      ],
+      "furnishedType": null,
+      "dateViewableFrom": null,
+      "dateAvailableFrom": null,
+      "timeActivatedOnMainWebsite": "2024-01-31T21:19:12+0000",
+      "listingTime": null,
+      "activationTime": "2024-01-31T21:19:12+0000",
+      "listingUpdatedTime": "2024-02-09T21:18:17+0000",
+      "price": {
+        "priceType": "ASKING_PRICE",
+        "currencyCode": "EUR",
+        "currencySymbol": "€",
+        "price": 245000,
+        "minPrice": null,
+        "maxPrice": null,
+        "priceOnApplication": false,
+        "pricePrefix": "Asking price",
+        "priceSuffix": null,
+        "hiddenPriceText": "POA",
+        "priceHidden": false
+      },
+      "openViewing": null,
+      "published": true,
+      "continuousRelisting": false,
+      "auction": null,
+      "priceTrackerAvailable": false,
+      "images": [
+        {
+          "imageType": "Photograph",
+          "displayOrder": 1,
+          "url": "https://media.propertypal.com/large/p/927209/36016631.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UhGI+PajR$ob-@k9V_s;S7axf6oeW.WDWAj?",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016631.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016631.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 2,
+          "url": "https://media.propertypal.com/large/p/927209/36016677.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UbM7JiVX~qRk%gx]%ftR%LazM{jvjbV@n$j]",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016677.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016677.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 3,
+          "url": "https://media.propertypal.com/large/p/927209/36016670.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UUJ@?+D%_NRi~qtRozofx]M{IUt6t7V@RPM{",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016670.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016670.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 4,
+          "url": "https://media.propertypal.com/large/p/927209/36016642.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UKJ@adRikCE2~V9aoeof-;NHE1xaIVbHs8s:",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016642.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016642.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 5,
+          "url": "https://media.propertypal.com/large/p/927209/36016648.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "USIN{i9FIuM_~WIUt7n~t7xuM|RkMybvjYWB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016648.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016648.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 6,
+          "url": "https://media.propertypal.com/large/p/927209/36016654.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "URL{^^T2$eb{~XxDt3xYNZWAIsjY-:bbRkWA",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016654.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016654.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 7,
+          "url": "https://media.propertypal.com/large/p/927209/36016660.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UJK]=Z?uAM-:^-NIX9Na^d%1J8xu4;Na-ot8",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016660.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016660.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 8,
+          "url": "https://media.propertypal.com/large/p/927209/36016666.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UEJ7H:0M9YIT~Ct8%1D$NLt6NIbc00xt^,x^",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016666.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016666.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 9,
+          "url": "https://media.propertypal.com/large/p/927209/36016773.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UDJQWY9Gn2-=akXT%Mx^~W?FXmWA00^*_3Mw",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016773.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016773.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 10,
+          "url": "https://media.propertypal.com/large/p/927209/36016777.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UKIq7Q?w%$^+9zXU?bX9?aWVNdR.DOMws8M{",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016777.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016777.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 11,
+          "url": "https://media.propertypal.com/large/p/927209/36016681.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UXJjMG~W%Ls8S*xvxaslxZWBWVbII9VsWCtR",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016681.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016681.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 12,
+          "url": "https://media.propertypal.com/large/p/927209/36016686.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "URI;6U_4%htmt-%h-=tRsqahIqt7smbc%Lof",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016686.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016686.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 13,
+          "url": "https://media.propertypal.com/large/p/927209/36016691.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UAINBe00X9kp?w0Jt7x^9F%M^jM{00OZEjxF",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016691.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016691.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 14,
+          "url": "https://media.propertypal.com/large/p/927209/36016696.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "URJ%a*~9^%?bt6%M%2WTWDkCRkjbD%xakDRP",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016696.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016696.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 15,
+          "url": "https://media.propertypal.com/large/p/927209/36016701.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UTJ7wIt8OsXB%%o~ngbw_4NGngofxvNGr=R*",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016701.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016701.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 16,
+          "url": "https://media.propertypal.com/large/p/927209/36016705.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UTLWt*I@NeI]~qn3%LkX-o%2Rja#aL%hs+RO",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016705.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016705.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 17,
+          "url": "https://media.propertypal.com/large/p/927209/36016708.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UOJ7,j9GEMRiyZM{s.WCVWoyNIjZkDxtM{j=",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016708.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016708.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 18,
+          "url": "https://media.propertypal.com/large/p/927209/36016711.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UMJap7?wD%%LtSnhR:IURPR-awt8xtMzD%t7",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016711.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016711.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 19,
+          "url": "https://media.propertypal.com/large/p/927209/36016714.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UMG[sDnLtRoz}=s+X9s.4;S6RkWBMJNfofR*",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016714.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016714.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 20,
+          "url": "https://media.propertypal.com/large/p/927209/36016717.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UGGuRIHX-:O[.mQ,x]$zH?TKShs-4oS%SiMx",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016717.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016717.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 21,
+          "url": "https://media.propertypal.com/large/p/927209/36016719.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UCHxf|-p?bo1@ECTKQIU0g*_+tyD0L=?ofnO",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016719.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016719.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 22,
+          "url": "https://media.propertypal.com/large/p/927209/36016721.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UKI;|w~VOZS5yZtS%Kxt^fV@D*WANIV@RjNG",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016721.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016721.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 23,
+          "url": "https://media.propertypal.com/large/p/927209/36016723.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U8I5D3x[00%hCAMw?aafHqNfIqIU4nxtx]M|",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016723.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016723.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 24,
+          "url": "https://media.propertypal.com/large/p/927209/36016725.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UIMs_.QlEg?^?cDhM|o#o#ocj[ae-:M_jYxt",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016725.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016725.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 25,
+          "url": "https://media.propertypal.com/large/p/927209/36016727.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UNN9|1%gtm-;_Nxtw]RP_NIVIpoJ%MMxxtbv",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016727.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016727.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 26,
+          "url": "https://media.propertypal.com/large/p/927209/36016729.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "URK^+$MvIoM_~p%1RPkCD*kXj?s-oeWBkDWY",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016729.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016729.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 27,
+          "url": "https://media.propertypal.com/large/p/927209/36016731.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UNIqcK~W57n#_Nxuaes--nW.NHjZt7t7WWae",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016731.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016731.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 28,
+          "url": "https://media.propertypal.com/large/p/927209/36016733.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "ULK1O700019Z%hxtV?IU~pIAShxvMcS5tSxt",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016733.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016733.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 29,
+          "url": "https://media.propertypal.com/large/p/927209/36016735.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UGHp3Ctl4.?H?^xu4nt7+Zt7IoNH_NIoM_oz",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016735.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016735.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 30,
+          "url": "https://media.propertypal.com/large/p/927209/36016737.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UQNmQE8__N_N-ptRj]RO~qRNIVW=x[R+n#t7",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016737.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016737.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 31,
+          "url": "https://media.propertypal.com/large/p/927209/36016739.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U_L;mdayWCs:~qj[j[j[-;t6WCa#j=oMayj[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016739.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016739.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 32,
+          "url": "https://media.propertypal.com/large/p/927209/36016740.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "U_K-nDj[ofay~qj[ayfQ-;a}WCofxuj[WBof",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016740.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016740.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 33,
+          "url": "https://media.propertypal.com/large/p/927209/36016742.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UeH_*lowbWox~qodjsof%hWEogof?IWEWFWC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016742.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016742.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 34,
+          "url": "https://media.propertypal.com/large/p/927209/36016745.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "U]KBO5j]t7t7~qj=oMof-;j]afj[%MofRjWB",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016745.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016745.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 35,
+          "url": "https://media.propertypal.com/large/p/927209/36016747.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~LXb{ofRkof~qoJWCofxuoLayj[V?bHj]j[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016747.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016747.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 36,
+          "url": "https://media.propertypal.com/large/p/927209/36016749.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~KnoAoyR+oz~qflWWofxvaxfPfQjEj?ayay",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016749.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016749.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 37,
+          "url": "https://media.propertypal.com/large/p/927209/36016751.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U|LEQYWANFof~qRkRjayxvWBayWBt7t7t7a}",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016751.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016751.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 38,
+          "url": "https://media.propertypal.com/large/p/927209/36016753.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~L}HKoNWBfP~qk9ayay%MWCf8ofoejuj?of",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016753.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016753.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 39,
+          "url": "https://media.propertypal.com/large/p/927209/36016754.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~L;plogRij[~qofj]ay%NWBj[kCobahj[oe",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016754.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016754.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 40,
+          "url": "https://media.propertypal.com/large/p/927209/36016755.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~NKFij;R+oz_4aiaxj[%Mogazaxoeoxoeaz",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016755.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016755.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 41,
+          "url": "https://media.propertypal.com/large/p/927209/36016756.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~MaU~j^Rjod~qoca#j]xuoMj]j[WAfioej[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016756.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016756.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 42,
+          "url": "https://media.propertypal.com/large/p/927209/36016757.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U:Lqe7xtRjxu_Nt8WCof%Na{j[WBxtWBjZax",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016757.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016757.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 43,
+          "url": "https://media.propertypal.com/large/p/927209/36016758.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "U~L}BDozRkj[~qoea#ofxvj?a}j[WAfQj[fQ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016758.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016758.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 44,
+          "url": "https://media.propertypal.com/large/p/927209/36016759.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UGHxo.RXEJ-W~of$xHtQj:s:xaNF%JWFR-RQ",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016759.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016759.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 45,
+          "url": "https://media.propertypal.com/large/p/927209/36016760.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UgF?9DWFR$oe.Ak9WDogbxaya#obfmWBWBWC",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016760.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016760.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 46,
+          "url": "https://media.propertypal.com/large/p/927209/36016761.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UjGSS~WURjof%joMWBoeXTj?azs:fAR%R%of",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016761.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016761.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 47,
+          "url": "https://media.propertypal.com/large/p/927209/36016762.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UjHLxTWCa$js-@odWBoKkqofV[t6xvafRjof",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016762.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016762.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 48,
+          "url": "https://media.propertypal.com/large/p/927209/36016763.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UhGI+PajR$ob-@k9V_s;S7axf6oeW.WDWAj?",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016763.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016763.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 49,
+          "url": "https://media.propertypal.com/large/p/927209/36016764.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "U8HLFg~04nNM_0ItRP%c01E3?I$_G4%KWHNH",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016764.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016764.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 50,
+          "url": "https://media.propertypal.com/large/p/927209/36016765.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "U8H-#e~K4nNM_0ItVs%c009]-=$_G4%LV}I;",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016765.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016765.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 51,
+          "url": "https://media.propertypal.com/large/p/927209/36016766.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UqGvIjW.Rkof-@juayoeNIazayoJR$WBWAj[",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016766.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016766.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 52,
+          "url": "https://media.propertypal.com/large/p/927209/36016767.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UjG]K#ayRlof%jj[a{oeIXj[aeoebpa#V@oL",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016767.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016767.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 53,
+          "url": "https://media.propertypal.com/large/p/927209/36016768.jpg",
+          "width": 1280,
+          "height": 853,
+          "blurhash": "UaG]5Xt6NGt7.AWCWCjYNNaxofs;WXWXRij=",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016768.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016768.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 54,
+          "url": "https://media.propertypal.com/large/p/927209/36016769.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UMG+KjaloJt6~os;R%od%Ms;xuWYtSt7aQof",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016769.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016769.jpg"
+          }
+        },
+        {
+          "imageType": "Photograph",
+          "displayOrder": 55,
+          "url": "https://media.propertypal.com/large/p/927209/36016770.jpg",
+          "width": 1280,
+          "height": 720,
+          "blurhash": "UKIE,lN3I--W~mr^W,RkR%kBo5NGx@R:WGe.",
+          "urls": {
+            "hd": "https://media.propertypal.com/hd/p/927209/36016770.jpg",
+            "580x425:FILL_CROP": "https://media.propertypal.com/024401a900050074a0/p/927209/36016770.jpg"
+          }
+        }
+      ],
+      "brochures": [],
+      "videos": [],
+      "history": [
+        {
+          "pricePrefix": "Asking price",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "difference": 0,
+          "previousPrice": 245000,
+          "previousPublished": true,
+          "statusChange": false,
+          "priceChange": false,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "differencePercentage": 0,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 245000,
+          "timeModified": "2024-02-09T21:18:17+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Price",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "difference": 0,
+          "previousPrice": 245000,
+          "previousPublished": true,
+          "statusChange": false,
+          "priceChange": false,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "differencePercentage": 0,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 245000,
+          "timeModified": "2024-02-03T21:21:10+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Asking price",
+          "priceSuffix": null,
+          "previousStatus": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "difference": 0,
+          "previousPrice": 245000,
+          "previousPublished": true,
+          "statusChange": false,
+          "priceChange": false,
+          "publishedChange": false,
+          "publishedOnAwpChange": false,
+          "differencePercentage": 0,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 245000,
+          "timeModified": "2024-02-02T21:21:07+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        },
+        {
+          "pricePrefix": "Price",
+          "priceSuffix": null,
+          "previousStatus": null,
+          "difference": null,
+          "previousPrice": null,
+          "previousPublished": false,
+          "statusChange": true,
+          "priceChange": false,
+          "publishedChange": true,
+          "publishedOnAwpChange": true,
+          "differencePercentage": null,
+          "status": {
+            "key": "forSale",
+            "text": "For sale"
+          },
+          "published": true,
+          "price": 245000,
+          "timeModified": "2024-01-31T21:19:12+0000",
+          "priceOnApplication": false,
+          "publishedOnAwp": true
+        }
+      ],
+      "agents": [
+        {
+          "accountNumber": "ST0720201",
+          "organisation": "Sherry Fitzgerald Davitt & Davitt (Mullingar)",
+          "organisationBranch": "",
+          "displayAddress": "12/14 Dominick Street, Mullingar, N91 X52E",
+          "officePhone": {
+            "national": "(044) 934 0000",
+            "uk": "+353 44 934 0000",
+            "displayNumber": "(044) 934 0000",
+            "international": "+353 44 934 0000",
+            "countryCode": 353
+          },
+          "psrLicenceNumber": "001440",
+          "websiteUrl": null,
+          "landingPageUrl": "/estate-agents/sherry-fitzgerald-davitt-and-davitt-mullingar",
+          "groupLandingPageUrl": "/estate-agents/sherry-fitzgerald-irl",
+          "privateDeveloper": false,
+          "developerPrimaryContact": false,
+          "developer": false,
+          "agent": true,
+          "detailsEnabled": true,
+          "emailEnabled": true,
+          "showAddress": true,
+          "includeFeeCharges": true,
+          "logo": {
+            "standard": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "accreditations": [
+            {
+              "id": 26,
+              "label": "PSRA",
+              "textKey": "psra",
+              "url": "http://www.psr.ie",
+              "imageUrl": "https://www.propertypal.com/accreditations/psra.png",
+              "type": "ESSENTIAL",
+              "tooltip": "The Property Services Regulatory Authority (PSRA) is the statutory body with responsibility for licensing and regulating the property services sector in Ireland."
+            }
+          ],
+          "missingAccreditations": null,
+          "propertypalAwards": [],
+          "openingTimes": null,
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.4360718&rlng=-7.534935399999998&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3827289",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 53.4360718,
+            "rlng": -7.534935399999998,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 190000,
+            "maxPrice": 275000,
+            "currency": "GBP",
+            "term": [
+              "3827289"
+            ]
+          }
+        }
+      ],
+      "contacts": {
+        "showAllContactsOption": true,
+        "default": {
+          "accountNumber": "ST0720201",
+          "organisation": "Sherry Fitzgerald Davitt & Davitt (Mullingar)",
+          "phone": true,
+          "email": true,
+          "agent": true,
+          "developer": false,
+          "showAddress": true,
+          "phoneNumber": {
+            "national": "(044) 934 0000",
+            "uk": "+353 44 934 0000",
+            "displayNumber": "(044) 934 0000",
+            "international": "+353 44 934 0000",
+            "countryCode": 353
+          },
+          "displayAddress": "12/14 Dominick Street, Mullingar, N91 X52E",
+          "psrLicenceNumber": "001440",
+          "landingPageUrl": "/estate-agents/sherry-fitzgerald-davitt-and-davitt-mullingar",
+          "groupLandingPageUrl": "/estate-agents/sherry-fitzgerald-irl",
+          "propertypalAwards": [],
+          "logos": {
+            "standard": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+            "standardBackgroundColour": "#ffffff",
+            "alternative": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+            "alternativeBackgroundColour": "#ffffff",
+            "premier": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+            "premierBackgroundColour": "#ffffff"
+          },
+          "agentLogos": [
+            {
+              "logoType": "STANDARD",
+              "url": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            },
+            {
+              "logoType": "ALTERNATIVE",
+              "url": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            },
+            {
+              "logoType": "PREMIER",
+              "url": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+              "width": 600,
+              "height": 600,
+              "backgroundColour": "#ffffff",
+              "accountNumber": "ST0720201"
+            }
+          ],
+          "colours": {
+            "secondary": "#353535",
+            "primary": "#FFFFFF"
+          },
+          "openingTimes": [],
+          "tier": "STANDARD",
+          "enhancedBranding": false,
+          "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.4360718&rlng=-7.534935399999998&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3827289",
+          "searchParams": {
+            "radius": 8.0467,
+            "runit": "km",
+            "rlat": 53.4360718,
+            "rlng": -7.534935399999998,
+            "status": [
+              "forSale"
+            ],
+            "saleType": [
+              "sale"
+            ],
+            "category": [
+              "residential"
+            ],
+            "minPrice": 190000,
+            "maxPrice": 275000,
+            "currency": "GBP",
+            "term": [
+              "3827289"
+            ]
+          }
+        },
+        "all": [
+          {
+            "accountNumber": "ST0720201",
+            "organisation": "Sherry Fitzgerald Davitt & Davitt (Mullingar)",
+            "phone": true,
+            "email": true,
+            "agent": true,
+            "developer": false,
+            "showAddress": true,
+            "phoneNumber": {
+              "national": "(044) 934 0000",
+              "uk": "+353 44 934 0000",
+              "displayNumber": "(044) 934 0000",
+              "international": "+353 44 934 0000",
+              "countryCode": 353
+            },
+            "displayAddress": "12/14 Dominick Street, Mullingar, N91 X52E",
+            "psrLicenceNumber": "001440",
+            "landingPageUrl": "/estate-agents/sherry-fitzgerald-davitt-and-davitt-mullingar",
+            "groupLandingPageUrl": "/estate-agents/sherry-fitzgerald-irl",
+            "propertypalAwards": [],
+            "logos": {
+              "standard": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+              "standardBackgroundColour": "#ffffff",
+              "alternative": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+              "alternativeBackgroundColour": "#ffffff",
+              "premier": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+              "premierBackgroundColour": "#ffffff"
+            },
+            "agentLogos": [
+              {
+                "logoType": "STANDARD",
+                "url": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+                "width": 600,
+                "height": 600,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST0720201"
+              },
+              {
+                "logoType": "ALTERNATIVE",
+                "url": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+                "width": 600,
+                "height": 600,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST0720201"
+              },
+              {
+                "logoType": "PREMIER",
+                "url": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+                "width": 600,
+                "height": 600,
+                "backgroundColour": "#ffffff",
+                "accountNumber": "ST0720201"
+              }
+            ],
+            "colours": {
+              "secondary": "#353535",
+              "primary": "#FFFFFF"
+            },
+            "openingTimes": [],
+            "tier": "STANDARD",
+            "enhancedBranding": false,
+            "searchUrl": "/search?radius=8.0467&runit=km&rlat=53.4360718&rlng=-7.534935399999998&sta=forSale&st=sale&pt=residential&min=190000&max=275000&currency=GBP&term=3827289",
+            "searchParams": {
+              "radius": 8.0467,
+              "runit": "km",
+              "rlat": 53.4360718,
+              "rlng": -7.534935399999998,
+              "status": [
+                "forSale"
+              ],
+              "saleType": [
+                "sale"
+              ],
+              "category": [
+                "residential"
+              ],
+              "minPrice": 190000,
+              "maxPrice": 275000,
+              "currency": "GBP",
+              "term": [
+                "3827289"
+              ]
+            }
+          }
+        ]
+      },
+      "tagLine": "",
+      "briefText": "3 Bed Bungalow",
+      "description": "<h2>Features</h2><ul><li>Included;</li><li>Curtains</li><li>Blinds</li><li>Light fittings</li><li>Fixtures fittings</li><li>Features:</li><li>OFCH</li><li>SFCH</li><li>Private well water</li><li>Septic tank</li><li>Site approx 1.97 acres</li><li>Attic converted</li><li>Large multi purpose workshop on site</li><li>Castletown village approx 4km drive</li><li>Streamstown national school short drive</li><li>Mullingar 19km</li><li>Tullamore 20km</li><li>West facing garden</li><li>Ideal family home</li><li>Hardcore yard</li><li>Dual entrance</li><li>PVC Double glazed windows doors</li><li>Garage space</li><li>Large secluded site</li><li>Endless potential</li><li>Dog run</li><li>Potential for home businness/ workshop</li><li>Detached property</li></ul>Spacious three bed bungalow situated on c 1.97 acre site with large detached multipurpose workshop, large west facing garden with mature shrubbery border offering privacy and seclusion close to the village of Castletown Geoghegan while also offering easy access to Mullingar, Athlone, Kinnegad and the M6 motorway. <br/> The accommodation consists of an entrance with tiled floor leading to the living room with carpet flooring and electric fire insert with cast iron surround. Fully fitted kitchen with tiled flooring, wood panel ceiling and solid fuel stove with back boiler. Off the kitchen is a utility room with tiled floor, extra storage units and a rear porch. A second family room with solid wood floors and cast-iron open fireplace. <br/> The hallway also gives access to the three bedrooms, two with solid wood, fitted wardrobes and one with laminate floors while the primary comes en-suite. The main family bathroom has tiled flooring complete with a three piece suite. <br/> This is an ideal family home for anyone looking for privacy and space while also giving easy access to local schools and all amenities offered by Castletown Geoghegan and Mullingar. <br/> Viewing on this exceptional property comes highly recommended. <strong>Entrance Hall</strong> 4.84m x 1.78m Tiled floor, coving.<br/> <strong>Hallway</strong> 1.27m x 10.75m Tiled floor, coving, spotlights, hot press.<br/> <strong>Living Room</strong> 4.86m x 3.48m Carpet, coving, centre piece with feature lighting, TV point, electric fire insert with cast iron fire surround.<br/> <strong>Bedroom One</strong> 3.57m x 4.75m Solid wood floor.<br/> <strong>Bedroom Two</strong> 3.47m x 4.88m Laminate floor, fitted wardrobe.<br/> <strong>Bedroom Three</strong> 3.55m x 4.53m Solid wood floor, fitted wardrobe, ensuite.<br/> <strong>Ensuite</strong> 1.10m x 3.57m Tiled floor, WC, wash hand basin, electric shower.<br/> <strong>Bathroom</strong> 1.75m x 1.75m Lino flooring, WC, wash hand basin, bath, velux.<br/> <strong>Utility Room</strong> 3.03m x 3.48m Tiled floor, fitted storage units, plumbed for washer & drier, worktop counter with sink.<br/> <strong>Rear Porch</strong> 2.77m x 1.25m Tiled floor, stira to attic, door to rear garden.<br/> <strong>Kitchen Dining Room</strong> 6.53m x 3.55m Tiled floor, fully fitted kitchen, wood panell ceiling, spotlights, solid fuel stove with back boiler & brick surround.<br/> <strong>Family Room</strong> 4.33m x 4.83m Solid wood floor, cast iron open fireplace, wood panelling, TV point, double doors to garden.<br/> <strong>Landing</strong> 9.47m x 4.40m Laminate floor, spotlights, velux windows, attic access.<br/> <strong>Storage Room One</strong> 3.19m x 2.09m Laminate floor, TV point, velux.<br/> <strong>Storage Room Two</strong> 4.38m x 3.00m Laminate floor, velux.<br/> <strong>BER:</strong> C2 <br/> <strong>BER Number:</strong> 106146053 <br/> <strong>Energy Performance Indicator:</strong> 187.09 <p>Mullingar is a busy town in Westmeath. It has a number of supermarkets and chain stores, as well as branches of the major banks. There are also several industrial estates, including the National Science Park. The town recently won a €25m Lidl Warehouse and distribution center which will employ between 100 and 150.</p><p>Mullingar lies near the national primary route N4, the main Dublin – Sligo road, 79 km (49 mi) from the capital. The N52 also connects Mullingar to the Galway-Dublin M6 motorway. The town is served by Bus Éireann, and Mullingar station provides commuter services to Dublin and InterCity trains to/from Sligo. The town has several primary schools and secondary schools.</p><p></p><h2>BER Details</h2><p><strong>BER Rating:</strong> C2</p><p><strong>BER No.:</strong> 106146053</p><p><strong>Energy Performance Indicator:</strong> 187.09 kWh/m&#178;/yr</p>",
+      "showHomeOpeningTime": null,
+      "berExempt": false,
+      "epc": null,
+      "ber": {
+        "alphanumericRating": "C2",
+        "energyPerformanceIndicator": 187.09
+      },
+      "keyInfo": [
+        {
+          "key": "PRICE",
+          "name": "Price",
+          "text": "Asking price €245,000",
+          "textHtml": "<span class=\"price-prefix\">Asking price</span> <span class=\"price-text\">€245,000</span>",
+          "subtext": "Est. Asking price £209,223",
+          "image": null,
+          "link": null,
+          "beforePrice": "Asking price",
+          "price": "€245,000",
+          "afterPrice": ""
+        },
+        {
+          "key": "RATES",
+          "name": "Rates",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STAMP_DUTY_SIMPLE",
+          "name": "Stamp Duty",
+          "text": "€2,450",
+          "textHtml": "€2,450",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "TENURE",
+          "name": "Tenure",
+          "text": "Not Provided",
+          "textHtml": "Not Provided",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STYLE",
+          "name": "Style",
+          "text": "Bungalow",
+          "textHtml": "Bungalow",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BEDROOMS",
+          "name": "Bedrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BATHROOMS",
+          "name": "Bathrooms",
+          "text": "3",
+          "textHtml": "3",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "BER",
+          "name": "BER Rating",
+          "text": "C2",
+          "textHtml": "C2",
+          "subtext": null,
+          "image": null,
+          "link": null
+        },
+        {
+          "key": "STATUS",
+          "name": "Status",
+          "text": "For sale",
+          "textHtml": "For sale",
+          "subtext": null,
+          "image": null,
+          "link": null
+        }
+      ],
+      "includeFeeCharges": false,
+      "stats": {
+        "ranking": null,
+        "totalViews": 170,
+        "history": [
+          {
+            "date": "2024-02-08T00:00:00+0000",
+            "totalUniqueViews": 5,
+            "totalViews": 5,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-07T00:00:00+0000",
+            "totalUniqueViews": 3,
+            "totalViews": 3,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-06T00:00:00+0000",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-05T00:00:00+0000",
+            "totalUniqueViews": 6,
+            "totalViews": 6,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-04T00:00:00+0000",
+            "totalUniqueViews": 13,
+            "totalViews": 13,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-03T00:00:00+0000",
+            "totalUniqueViews": 17,
+            "totalViews": 17,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-02T00:00:00+0000",
+            "totalUniqueViews": 13,
+            "totalViews": 13,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-02-01T00:00:00+0000",
+            "totalUniqueViews": 81,
+            "totalViews": 81,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-31T00:00:00+0000",
+            "totalUniqueViews": 26,
+            "totalViews": 26,
+            "featured": false,
+            "bumped": false,
+            "published": true
+          },
+          {
+            "date": "2024-01-30T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-29T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-28T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-27T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-26T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-25T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-24T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-23T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-22T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-21T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-20T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-19T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-18T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-17T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-16T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-15T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-14T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-13T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-12T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-11T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          },
+          {
+            "date": "2024-01-10T00:00:00+0000",
+            "totalUniqueViews": 0,
+            "totalViews": 0,
+            "featured": false,
+            "bumped": false,
+            "published": false
+          }
+        ]
+      },
+      "shortlisted": false,
+      "featuredDevelopmentContent": null,
+      "breadcrumbs": [
+        {
+          "url": "/property-for-sale",
+          "label": "Property For Sale"
+        },
+        {
+          "url": "/property-for-sale/republic-of-ireland",
+          "label": "Republic of Ireland"
+        },
+        {
+          "url": "/property-for-sale/county-westmeath",
+          "label": "County Westmeath"
+        },
+        {
+          "url": "/property-for-sale/mullingar",
+          "label": "Mullingar"
+        },
+        {
+          "url": "/shurock-castletown-geoghegan-mullingar/928409",
+          "label": "Shurock"
+        }
+      ],
+      "relatedSearches": {
+        "Property For Sale in N91K220": "/property-for-sale/n91k220",
+        "Property For Sale in N91": "/property-for-sale/n91",
+        "Property For Sale in Castletown Geoghegan": "/property-for-sale/castletown-geoghegan",
+        "Property For Sale in County Westmeath": "/property-for-sale/county-westmeath",
+        "Property For Sale in Mullingar": "/property-for-sale/mullingar",
+        "Sherry Fitzgerald Davitt & Davitt (Mullingar)": "/estate-agents/sherry-fitzgerald-davitt-and-davitt-mullingar"
+      },
+      "brokers": [],
+      "featurable": false,
+      "premiumListing": false,
+      "premierAvailable": false,
+      "premierAvailableFrom": "2024-02-09T00:00:00+0000",
+      "premierAvailableTimePeriod": "1 days",
+      "propertypalAwards": [],
+      "registerInterest": false,
+      "ofcomBroadband": null,
+      "coOwnershipEligible": false,
+      "listingLogos": [
+        {
+          "standard": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+          "standardBackgroundColour": "#ffffff",
+          "alternative": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+          "alternativeBackgroundColour": "#ffffff",
+          "premier": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+          "premierBackgroundColour": "#ffffff"
+        }
+      ],
+      "agentLogos": [
+        {
+          "logoType": "STANDARD",
+          "url": "https://media.propertypal.com/logo/200701115013/400x400/ST0720201/master.png",
+          "width": 600,
+          "height": 600,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST0720201"
+        },
+        {
+          "logoType": "ALTERNATIVE",
+          "url": "https://media.propertypal.com/logo/200701115047/400x400/ST0720201/master_alt.png",
+          "width": 600,
+          "height": 600,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST0720201"
+        },
+        {
+          "logoType": "PREMIER",
+          "url": "https://media.propertypal.com/logo/200701115030/400x400/ST0720201/master_premier.png",
+          "width": 600,
+          "height": 600,
+          "backgroundColour": "#ffffff",
+          "accountNumber": "ST0720201"
+        }
+      ],
+      "360Tours": null,
+      "metaDescriptions": {
+        "title": "Shurock, Castletown Geoghegan, Mullingar",
+        "description": "This 3 Bed Bungalow Sale Is Located At Shurock, Castletown Geoghegan, Mullingar. Find Out More Inside.",
+        "twitterExtraData": {
+          "Price": "Asking price €245,000",
+          "Details": "3 Bed Bungalow"
+        }
+      },
+      "requestValuation": false,
+      "timeLastUnpublishedOnPP": null
+    },
+    "emailHashes": null,
+    "initialState": {
+      "notes": {
+        "loading": true,
+        "data": {
+          "content": [],
+          "totalOtherGroups": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalResults": 0,
+          "totalPages": 0,
+          "first": false,
+          "last": false
+        }
+      },
+      "enquiries": {
+        "endReached": true,
+        "page": 0,
+        "loading": true,
+        "data": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalPages": 0,
+          "totalResults": 0
+        }
+      },
+      "properties": {
+        "endReached": false,
+        "loading": false,
+        "page": 0
+      },
+      "map": {
+        "loading": false,
+        "savable": false
+      },
+      "favourites": {
+        "stats": {
+          "totalResults": 0,
+          "totalGroups": 0,
+          "totalPersonalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "results": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "search": {
+        "text": "",
+        "asTypedPristine": null,
+        "view": "list",
+        "useOnLaunch": false,
+        "filters": {
+          "radius": "",
+          "expand": "",
+          "category": "residential",
+          "currency": "",
+          "sortOrder": "",
+          "minPrice": "",
+          "maxPrice": "",
+          "minBeds": "",
+          "maxBeds": "",
+          "filter": [],
+          "includeGone": false,
+          "includeAgreed": false,
+          "excludePoa": false,
+          "excludeBuildingSites": false,
+          "excludeStudentLettings": false,
+          "unfurnished": false,
+          "furnished": false,
+          "partiallyFurnished": false,
+          "optionalFurnished": false,
+          "saleType": "sale",
+          "styles": [],
+          "lat": null,
+          "lng": null,
+          "polyIds": [],
+          "term": "",
+          "heatingType": [],
+          "epc": "",
+          "includePotentialEpc": false,
+          "yearBuilt": "",
+          "minInternalArea": "",
+          "broadband": "",
+          "garage": false,
+          "largeGarage": false,
+          "garageSize": null,
+          "tags": null,
+          "excludeTags": null,
+          "coOwnership": false
+        },
+        "savedStats": {
+          "totalPersonalGroups": 0,
+          "totalGroups": 0,
+          "totalOtherGroups": 0
+        },
+        "saved": {
+          "PERSONAL": {
+            "loading": false
+          },
+          "FULL": {
+            "loading": false
+          },
+          "FRIENDS": {
+            "loading": false
+          }
+        }
+      },
+      "pals": {
+        "loading": false
+      },
+      "user": {
+        "loggedIn": false,
+        "customAvatar": false,
+        "details": {
+          "buyingStatus": "",
+          "name": "",
+          "email": "",
+          "phoneNumber": "",
+          "firstName": "",
+          "lastName": ""
+        }
+      },
+      "affordability": {
+        "numberOfApplicants": 1,
+        "buyerType": "",
+        "incomePerson1": 0,
+        "originalIncomePerson1": "",
+        "originalIncomePerson2": "",
+        "currencyIncomePerson1": "GBP",
+        "currencyIncomePerson2": "GBP",
+        "incomePerson2": 0
+      },
+      "preapproval": {
+        "currentAddress": null,
+        "loading": false
+      },
+      "loquate": {
+        "error": null,
+        "Items": null,
+        "PopulatedItems": null,
+        "PropertyPalItem": null
+      },
+      "appointments": {
+        "loading": false
+      },
+      "timeline": {
+        "summary": {
+          "totalEnquiries": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalSearches": 0
+        },
+        "results": {
+          "content": [],
+          "first": true,
+          "last": true,
+          "totalEvents": 0,
+          "totalFavourites": 0,
+          "totalNotes": 0,
+          "totalPages": 0,
+          "totalResults": 0
+        },
+        "loading": {
+          "timeline": true,
+          "summary": true
+        }
+      },
+      "byb": {
+        "buyerType": "",
+        "bankSelect": "",
+        "homeValue": null,
+        "depositValue": null,
+        "mortgageTermYears": "25",
+        "mortgageTermMonths": "0"
+      },
+      "auctions": {
+        "loading": true
+      },
+      "viewings": {
+        "loading": true,
+        "saleType": 1
+      }
+    },
+    "cfIpCountry": "IE"
+  },
+  "__N_SSP": true
+}

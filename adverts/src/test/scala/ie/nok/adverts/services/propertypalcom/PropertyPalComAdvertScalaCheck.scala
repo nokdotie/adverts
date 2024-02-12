@@ -1,18 +1,21 @@
 package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.{Advertiser, given}
-import org.scalacheck.{Arbitrary, Gen}
-import org.scalacheck.Arbitrary.arbitrary
-import java.time.Instant
+import ie.nok.adverts.{PropertyType, given}
 import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
+import org.scalacheck.Arbitrary.arbitrary
+import org.scalacheck.{Arbitrary, Gen}
+
+import java.time.Instant
 
 private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
   url                  <- arbitrary[String]
   priceInEur           <- arbitrary[Option[Int]]
   address              <- arbitrary[String]
+  propertyType         <- arbitrary[PropertyType].map(Some(_))
   eircode              <- arbitrary[Option[Eircode]]
   coordinates          <- arbitrary[Option[Coordinates]]
   imageUrls            <- arbitrary[List[String]]
@@ -28,6 +31,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
     url = url,
     priceInEur = priceInEur,
     address = address,
+    propertyType = propertyType,
     eircode = eircode,
     coordinates = coordinates,
     imageUrls = imageUrls,
