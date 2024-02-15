@@ -2,6 +2,7 @@ package ie.nok.adverts.scraper.propertypalcom
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
+import ie.nok.adverts.scraper.common.ScraperUtils
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
 import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.ber.Rating
@@ -9,13 +10,16 @@ import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
+import org.jsoup.Jsoup
+import org.jsoup.nodes.{Document, Element, TextNode}
 import zio.Schedule.{fixed, recurs}
-import zio.http.{Body, Client as ZioClient}
+import zio.http.Client as ZioClient
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
 import zio.stream.ZPipeline
 import zio.{ZIO, durationInt}
 
 import java.time.Instant
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
@@ -179,12 +183,14 @@ object Property {
 
     val (address, eircode) = Eircode.unzip(response.pageProps.property.displayAddress)
 
+    val descriptionClean = response.pageProps.property.description.map(ScraperUtils.htmlToPlainText)
+
     response.pageProps.property.shareURL.map { url =>
       PropertyPalComAdvert(
         url = url,
         priceInEur = price,
         address = address,
-        description = response.pageProps.property.description,
+        description = descriptionClean,
         propertyType = propertyType(response.pageProps.property),
         eircode = eircode,
         coordinates = coordinates,

@@ -35,6 +35,31 @@ class PropertyTest extends FunSuite {
     assertEquals(Option(expected), actual)
   }
 
+  test("Parse description - Apartment") {
+    val actual = parseProperty("scraper/src/test/resourses/propertypalcom/57-block-b-aras-na-cluaine-clondalkin-dublin.json").description
+    assert(actual.exists(_.startsWith("""RAY COOKE AUCTIONEERS are delighted""".stripMargin)))
+  }
+
+  test("Parse description - EndOfTerrace") {
+    val actual = parseProperty("scraper/src/test/resourses/propertypalcom/223a-eagle-valley-sarsfield-road-wilton-cork.json").description
+    assert(actual.exists(_.startsWith("""Features
+                                        |- Wilton
+                                        |- Cork
+                                        |- C1
+                                        |Description""".stripMargin)))
+  }
+
+  test("Parse description - SemiDetached") {
+    val actual = parseProperty("scraper/src/test/resourses/propertypalcom/8-glenside-ballycarnane-woods-tramore.json").description
+    println(actual.get)
+    assert(actual.exists(_.startsWith(""".
+                                        |
+                                        |
+                                        |
+                                        |
+                                        |Ground Floor:""".stripMargin)))
+  }
+
   test("Parse property type - Apartment") {
     val expected = PropertyType.Apartment
     val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/57-block-b-aras-na-cluaine-clondalkin-dublin.json").propertyType
@@ -90,9 +115,9 @@ class PropertyTest extends FunSuite {
   }
 
   test("Parse description") {
-    val expected =
-      "<h3>Ballykillowen, \u00a0Laghey,\u00a0South Donegal\u00a0F94 KXC2</h3><h3>\u00a0</h3><h3>Traditional Farm House on\u00a03.65\u00a0Acres</h3>"
-    val actual = parseProperty("scraper/src/test/resourses/propertypalcom/ballykillowen-laghey.json").description
+    val expected = "Ballykillowen, Laghey, South Donegal F94 KXC2 Traditional Farm House on 3.65 Acres Requires Refurbishment"
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/ballykillowen-laghey.json").description
+    println(actual)
     assert(actual.exists(_.startsWith(expected)))
   }
 
