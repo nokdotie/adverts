@@ -1,20 +1,23 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
 import ie.nok.adverts.Advert
+import ie.nok.adverts.scraper.common.ScraperUtils
 import ie.nok.adverts.services.sherryfitzie.SherryFitzIeAdvert
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
+
 import java.time.Instant
 import org.jsoup.nodes.Document
-import scala.jdk.CollectionConverters._
+
+import scala.jdk.CollectionConverters.*
 import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.Schedule.{recurs, fixed}
-import zio.http.{Client => ZioClient}
+import zio.{ZIO, durationInt}
+import zio.Schedule.{fixed, recurs}
+import zio.http.Client as ZioClient
 import zio.stream.ZPipeline
 
 object Property {
@@ -96,14 +99,8 @@ object Property {
   ): SherryFitzIeAdvert = {
     val description = html
       .select(".property-description")
-      .tap { _.select("br").before("\\n") }
-      .tap { _.select("p").before("\\n") }
-      .text
-      .replaceAll("\\\\n", "\n")
+      .pipe { v => ScraperUtils.htmlToPlainText(v) }
       .replace("*** Please register on www.mysherryfitz.ie to bid on this property***", "")
-      .linesIterator
-      .mkString("\n")
-      .trim
 
     val imageUrls = html
       .select(".property-image-element img")
