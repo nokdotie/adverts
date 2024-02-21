@@ -1,15 +1,12 @@
 package ie.nok.adverts.scraper
 
-import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.advertisers.stores.{AdvertiserStore, AdvertiserStoreInMemory}
 import ie.nok.adverts.stores.AdvertStoreImpl.encodeAndWriteForService
+import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.gcp.storage.Storage
-import java.time.Instant
-import scala.util.chaining.scalaUtilChainingOps
-import scala.util.Random
-import zio.{Scope, Console, ZIO, ZIOAppArgs, ZIOAppDefault, ZLayer}
 import zio.http.Client
 import zio.stream.ZStream
+import zio.{Scope, ZIO, ZIOAppArgs, ZIOAppDefault, ZLayer}
 
 object Main extends ZIOAppDefault {
 
@@ -31,7 +28,7 @@ object Main extends ZIOAppDefault {
       case AdvertService.MaherPropertyIe => maherpropertyie.advertStream
     }
 
-  def run = for {
+  def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] = for {
     advertService <- getAdvertService
     advertStream = getAdvertStream(advertService)
     _ <- encodeAndWriteForService(advertService, advertStream)

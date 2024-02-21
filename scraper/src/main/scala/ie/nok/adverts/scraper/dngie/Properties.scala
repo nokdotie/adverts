@@ -1,34 +1,36 @@
 package ie.nok.adverts.scraper.dngie
 
-import ie.nok.adverts.Advert
 import ie.nok.adverts.services.dngie.DngIeAdvert
+import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
+import zio.Schedule.{fixed, recurs}
+import zio.http.model.{Headers, Method}
+import zio.http.{Body, Client as ZioClient}
+import zio.json.ast.Json
+import zio.json.{DeriveJsonDecoder, JsonDecoder}
+import zio.stream.ZStream
+import zio.{ZIO, durationInt}
+
 import java.time.Instant
 import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
-import zio.{durationInt, ZIO}
-import zio.json.{DeriveJsonDecoder, JsonDecoder}
-import zio.json.ast.Json
-import zio.http.{Body, Client => ZioClient}
-import zio.http.model.{Headers, Method}
-import zio.stream.ZStream
-import zio.Schedule.{recurs, fixed}
 
 object Properties {
 
-  private case class Response(data: ResponseData)
-  private given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
+  protected[dngie] case class Response(data: ResponseData)
+  protected[dngie] given JsonDecoder[Response] = DeriveJsonDecoder.gen[Response]
 
-  private case class ResponseData(
+  protected[dngie] case class ResponseData(
       properties: List[Option[ResponseDataProperty]]
   )
-  private given JsonDecoder[ResponseData] = DeriveJsonDecoder.gen[ResponseData]
+  protected[dngie] given JsonDecoder[ResponseData] = DeriveJsonDecoder.gen[ResponseData]
 
-  private case class ResponseDataProperty(
+  protected[dngie] case class ResponseDataProperty(
+      id: String,
       description: String,
       bathroom: Option[Int],
       bedroom: Option[Int],
@@ -41,31 +43,32 @@ object Properties {
       property_url: String,
       latitude: BigDecimal,
       longitude: BigDecimal,
-      extras: Option[ResponseDataPropertyExtras]
+      extras: Option[ResponseDataPropertyExtras],
+      building: List[String]
   )
-  private given JsonDecoder[ResponseDataProperty] =
+  protected[dngie] given JsonDecoder[ResponseDataProperty] =
     DeriveJsonDecoder.gen[ResponseDataProperty]
 
-  private case class ResponseDataPropertyImage(
+  protected[dngie] case class ResponseDataPropertyImage(
       url: Option[String],
       srcUrl: Option[String],
       order: Option[Int]
   )
-  private given JsonDecoder[ResponseDataPropertyImage] =
+  protected[dngie] given JsonDecoder[ResponseDataPropertyImage] =
     DeriveJsonDecoder.gen[ResponseDataPropertyImage]
 
-  private case class ResponseDataPropertyExtras(
+  protected[dngie] case class ResponseDataPropertyExtras(
       extrasField: Option[ResponseDataPropertyExtrasField]
   )
-  private given JsonDecoder[ResponseDataPropertyExtras] =
+  protected[dngie] given JsonDecoder[ResponseDataPropertyExtras] =
     DeriveJsonDecoder.gen[ResponseDataPropertyExtras]
 
-  private case class ResponseDataPropertyExtrasField(
+  protected[dngie] case class ResponseDataPropertyExtrasField(
       pBERNumber: Option[Json],
       pBERRating: Option[String],
       pEPI: Option[Json]
   )
-  private given JsonDecoder[ResponseDataPropertyExtrasField] =
+  protected[dngie] given JsonDecoder[ResponseDataPropertyExtrasField] =
     DeriveJsonDecoder.gen[ResponseDataPropertyExtrasField]
 
   private def getRequestQuery(start: Int, limit: Int): String =
@@ -91,6 +94,7 @@ object Properties {
         latitude
         longitude
         extras
+        building
       }
     }"}""".replaceAll("\n", " ")
 
@@ -161,7 +165,7 @@ object Properties {
         (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
       }
 
-  private def toDngIeAdvert(
+  protected[dngie] def toDngIeAdvert(
       property: ResponseDataProperty
   ): DngIeAdvert = {
     val description = property.description.linesIterator
@@ -184,6 +188,7 @@ object Properties {
 
     val eircode                     = property.post_code.flatMap { Eircode.findFirstIn }
     val (address, eircodeInAddress) = Eircode.unzip(property.display_address)
+    val propertyType                = PropertyType.tryFromString(property.building.headOption.getOrElse("")).toOption
 
     DngIeAdvert(
       url = property.property_url,
@@ -192,6 +197,7 @@ object Properties {
       eircode = eircode.orElse(eircodeInAddress),
       coordinates = coordinates,
       description = description,
+      propertyType = propertyType,
       imageUrls = imageUrls,
       size = size(property),
       bedroomsCount = property.bedroom,
