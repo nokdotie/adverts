@@ -15,7 +15,6 @@ class BuildIdTest extends FunSuite {
         .pipe { unsafeRun }
         .getOrElse { _ => fail("Unsafe run failed") }
 
-    println(latestBuildId)
     assert(latestBuildId.nonEmpty)
   }
 }
