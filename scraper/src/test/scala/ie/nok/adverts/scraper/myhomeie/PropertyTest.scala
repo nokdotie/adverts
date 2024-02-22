@@ -90,6 +90,14 @@ class PropertyTest extends FunSuite {
     assertEquals(result.propertyType, Some(PropertyType.House))
   }
 
+  test("Parse property - House") {
+    val result = parseProperty("scraper/src/test/resourses/myhomeie/10-glebe-way-newcastle-co-dublin.json")
+
+    assertEquals(result.address, "10 Glebe way, Newcastle, Co. Dublin")
+    assert(result.description.nonEmpty)
+    assertEquals(result.propertyType, Some(PropertyType.House))
+  }
+
   private def parseProperty(resourcePath: String): MyHomeIeAdvert =
     resourcePath
       .pipe { readJsonLinesAs[Property.Response](_) }

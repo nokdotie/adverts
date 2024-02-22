@@ -35,6 +35,7 @@ object PropertyType {
     case "Cottage"                    => Success(House)
     case "Country House"              => Success(House)
     case "Dormer"                     => Success(House)
+    case "House"                      => Success(House)
     case "House and Land"             => Success(House)
     case "Mews"                       => Success(House)
     case "Townhouse"                  => Success(House)
