@@ -30,7 +30,6 @@ object Properties {
   protected[dngie] given JsonDecoder[ResponseData] = DeriveJsonDecoder.gen[ResponseData]
 
   protected[dngie] case class ResponseDataProperty(
-      id: String,
       description: String,
       bathroom: Option[Int],
       bedroom: Option[Int],
@@ -44,8 +43,13 @@ object Properties {
       latitude: BigDecimal,
       longitude: BigDecimal,
       extras: Option[ResponseDataPropertyExtras],
-      building: List[String]
+      building: String | List[String]
   )
+
+  // TODO: generic decoder should be in standard library
+  protected[dngie] given JsonDecoder[String | List[String]] =
+    JsonDecoder[String].orElse(JsonDecoder[List[String]].widen[String | List[String]])
+
   protected[dngie] given JsonDecoder[ResponseDataProperty] =
     DeriveJsonDecoder.gen[ResponseDataProperty]
 
@@ -188,7 +192,13 @@ object Properties {
 
     val eircode                     = property.post_code.flatMap { Eircode.findFirstIn }
     val (address, eircodeInAddress) = Eircode.unzip(property.display_address)
-    val propertyType                = PropertyType.tryFromString(property.building.headOption.getOrElse("")).toOption
+    val propertyType = property.building
+      .pipe {
+        case string: String     => string
+        case list: List[String] => list.headOption.getOrElse("")
+      }
+      .pipe(PropertyType.tryFromString)
+      .toOption
 
     DngIeAdvert(
       url = property.property_url,
