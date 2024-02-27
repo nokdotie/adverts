@@ -1,6 +1,6 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.adverts.scraper.common.ScraperUtils
 import ie.nok.adverts.services.sherryfitzie.SherryFitzIeAdvert
 import ie.nok.ber.Rating
@@ -92,7 +92,7 @@ object Property {
     }
   }
 
-  private def toSherryFitzIeAdvert(
+  protected[sherryfitzie] def toSherryFitzIeAdvert(
       url: String,
       coordinates: Coordinates,
       html: Document
@@ -112,10 +112,17 @@ object Property {
 
     val (address, eircode) = addressAndEircode(html)
 
+    val propertyType: Option[PropertyType] = url
+      .replace("https://www.sherryfitz.ie/buy/", "")
+      .split("/")
+      .headOption
+      .flatMap(propertyType => PropertyType.tryFromString(propertyType.capitalize).toOption)
+
     SherryFitzIeAdvert(
       url = url,
       priceInEur = documentToIntOption(html, ".property-price"),
       description = description,
+      propertyType = propertyType,
       address = address,
       eircode = eircode,
       coordinates = coordinates,
