@@ -1,21 +1,21 @@
 package ie.nok.adverts.services.sherryfitzie
 
-import ie.nok.adverts.{Advert, InformationSource}
+import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.hash.Hasher
 import ie.nok.unit.{Area, AreaUnit}
-import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
+import zio.json.{DeriveJsonCodec, JsonCodec}
 
 import java.time.Instant
-import java.util.UUID
 import scala.util.chaining.scalaUtilChainingOps
 
 case class SherryFitzIeAdvert(
     url: String,
     priceInEur: Option[Int],
     description: String,
+    propertyType: Option[PropertyType],
     address: String,
     eircode: Option[Eircode],
     coordinates: Coordinates,
@@ -36,7 +36,7 @@ object SherryFitzIeAdvert {
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hasher.hash },
       propertyDescription = Option(self.description),
-      propertyType = None,
+      propertyType = self.propertyType,
       propertyAddress = self.address,
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates,
