@@ -1,8 +1,9 @@
 package ie.nok.adverts.lists.stores
 
 import ie.nok.adverts.lists.AdvertList
-import ie.nok.adverts.stores.{AdvertFilter, IntFilter}
-import ie.nok.hash.Hasher
+import ie.nok.adverts.stores.AdvertFilter
+import ie.nok.codec.hash.Hash
+import ie.nok.filter.IntFilter
 import java.time.{LocalDate, ZoneOffset}
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.Random
@@ -20,7 +21,7 @@ object AdvertListStoreInMemory {
     List(
       ("1 Beds", AdvertFilter.PropertyBedroomsCount(IntFilter.Equals(1)))
     )
-      .map { (label, filter) => AdvertList(Hasher.hash(label), label, filter) }
+      .map { (label, filter) => AdvertList(Hash.encode(label), label, filter) }
       .pipe { randomWithDayOfYearSeed.shuffle(_) }
       .pipe { new AdvertListStoreInMemory(_) }
       .pipe { ZLayer.succeed }

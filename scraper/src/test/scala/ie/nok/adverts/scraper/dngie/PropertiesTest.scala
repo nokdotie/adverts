@@ -20,7 +20,6 @@ class PropertiesTest extends FunSuite {
         .map { DngIeAdvert.toAdvert }
         .runCollect
         .pipe { unsafeRun }
-        .getOrElse { _ => fail("Unsafe run failed") }
 
     assertEquals(result.size, 100)
     assertEquals(result.count(_.propertyType.exists(_ == PropertyType.Site)), 56)

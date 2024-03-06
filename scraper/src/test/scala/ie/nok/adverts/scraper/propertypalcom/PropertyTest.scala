@@ -127,5 +127,4 @@ class PropertyTest extends FunSuite {
       .map { Property.toPropertyPalComAdvertOption(_, None) }
       .someOrFailException
       .pipe { unsafeRun }
-      .getOrElse { _ => fail("Unsafe run failed") }
 }

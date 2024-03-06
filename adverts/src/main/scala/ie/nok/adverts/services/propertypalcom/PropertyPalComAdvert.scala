@@ -2,7 +2,7 @@ package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.adverts.{Advert, InformationSource, PropertyType}
-import ie.nok.hash.Hasher
+import ie.nok.codec.hash.Hash
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -36,7 +36,7 @@ object PropertyPalComAdvert {
     Advert(
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
-      propertyIdentifier = self.address.pipe { Hasher.hash },
+      propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = self.description,
       propertyType = self.propertyType,
       propertyAddress = self.address,
