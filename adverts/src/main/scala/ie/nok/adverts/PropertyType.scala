@@ -53,7 +53,7 @@ object PropertyType {
     case "Terrace"                    => Success(Terraced)
     case "Terraced House"             => Success(Terraced)
     case "Mid-terrace House"          => Success(Terraced)
-    case unknown                      =>
+    case unknown =>
       val message = s"Unknown PropertyType: $unknown"
       println(message)
 
