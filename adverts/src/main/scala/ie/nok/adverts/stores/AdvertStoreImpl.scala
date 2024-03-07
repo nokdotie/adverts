@@ -33,7 +33,7 @@ object AdvertStoreImpl {
       List(
         (StorageConvention.bucketName, blobNameLatest),
         (StorageConvention.bucketName, blobNameAggregatedLatest),
-        (StorageConvention.bucketName, blobNameAggregatedVersioned),
+        (StorageConvention.bucketName, blobNameAggregatedVersioned)
       ),
       stream
     )
