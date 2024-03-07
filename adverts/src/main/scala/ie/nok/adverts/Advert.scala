@@ -4,7 +4,6 @@ import ie.nok.advertisers.Advertiser
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.geographic.geojson.Feature
 import ie.nok.unit.Area
 import java.time.Instant
 import zio.json.{DeriveJsonCodec, JsonCodec}

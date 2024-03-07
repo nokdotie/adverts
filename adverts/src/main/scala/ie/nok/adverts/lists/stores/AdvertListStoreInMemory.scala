@@ -2,8 +2,8 @@ package ie.nok.adverts.lists.stores
 
 import ie.nok.adverts.lists.AdvertList
 import ie.nok.adverts.stores.AdvertFilter
-import ie.nok.codec.hash.Hash
-import ie.nok.filter.IntFilter
+import ie.nok.codecs.hash.Hash
+import ie.nok.stores.filters.IntFilter
 import java.time.{LocalDate, ZoneOffset}
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.Random

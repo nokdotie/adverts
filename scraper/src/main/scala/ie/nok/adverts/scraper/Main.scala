@@ -6,8 +6,7 @@ import ie.nok.adverts.{Advert, AdvertService}
 import zio.http.Client
 import zio.stream.ZStream
 import zio.{Scope, ZIO, ZIOAppArgs, ZIOAppDefault, ZLayer}
-import ie.nok.file.ZFileServiceImpl
-import ie.nok.gcp.storage.ZStorageServiceImpl
+import ie.nok.stores.compose.{ZFileAndGoogleStorageStore, ZFileAndGoogleStorageStoreImpl}
 
 object Main extends ZIOAppDefault {
 
@@ -35,8 +34,7 @@ object Main extends ZIOAppDefault {
     _ <- encodeAndWriteForService(advertService, advertStream)
       .provide(
         Client.default,
-        ZFileServiceImpl.layer[Advert],
-        ZStorageServiceImpl.layer,
+        ZFileAndGoogleStorageStoreImpl.layer[Advert],
         AdvertiserStoreInMemory.live
       )
   } yield ()

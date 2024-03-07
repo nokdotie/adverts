@@ -5,7 +5,7 @@ import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.Advert
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.codec.hash.Hash
+import ie.nok.codecs.hash.Hash
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
 import org.jsoup.nodes.{Document, Element}

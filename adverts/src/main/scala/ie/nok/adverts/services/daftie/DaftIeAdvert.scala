@@ -5,7 +5,7 @@ import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.codec.hash.Hash
+import ie.nok.codecs.hash.Hash
 import ie.nok.unit.{Area, AreaUnit}
 
 import java.time.Instant

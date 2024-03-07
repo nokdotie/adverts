@@ -4,7 +4,7 @@ import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.ber.CertificateNumber
 import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
-import ie.nok.gcp.firestore.Firestore
+import ie.nok.google.firestore.Firestore
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.Area
 import zio.stream.ZStream
@@ -13,11 +13,10 @@ import zio.{Scope, ZIO, ZIOAppDefault}
 import java.time.Instant
 import scala.util.Random
 import scala.util.chaining.scalaUtilChainingOps
-import ie.nok.file.{ZFileService, ZFileServiceImpl}
-import ie.nok.gcp.storage.{ZStorageService, ZStorageServiceImpl}
+import ie.nok.stores.compose.{ZFileAndGoogleStorageStore, ZFileAndGoogleStorageStoreImpl}
 
 object Main extends ZIOAppDefault {
-  private val latest: ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] =
+  private val latest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
     AdvertService.values.toList
       .map { AdvertStoreImpl.readAndDecodeLatestForService }
       .pipe { ZIO.collectAll }
@@ -111,7 +110,6 @@ object Main extends ZIOAppDefault {
         Firestore.live,
         GoogleFirestoreCertificateStore.layer,
         Scope.default,
-        ZFileServiceImpl.layer[Advert],
-        ZStorageServiceImpl.layer
+        ZFileAndGoogleStorageStoreImpl.layer[Advert]
       )
 }

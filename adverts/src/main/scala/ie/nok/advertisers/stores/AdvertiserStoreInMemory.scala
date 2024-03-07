@@ -4,7 +4,7 @@ import ie.nok.advertisers.Advertiser
 import scala.util.chaining.scalaUtilChainingOps
 import zio.ZLayer
 import zio.ZIO
-import ie.nok.codec.hash.Hash
+import ie.nok.codecs.hash.Hash
 
 object AdvertiserStoreInMemory {
 

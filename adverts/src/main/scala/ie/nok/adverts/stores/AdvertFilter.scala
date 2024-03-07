@@ -3,7 +3,7 @@ package ie.nok.adverts.stores
 import ie.nok.adverts.Advert
 import ie.nok.geographic.{Coordinates, CoordinatesFilter}
 import zio.json.{DeriveJsonCodec, JsonCodec}
-import ie.nok.filter.{IntFilter, StringFilter}
+import ie.nok.stores.filters.{IntFilter, StringFilter}
 
 enum AdvertFilter {
   case Empty

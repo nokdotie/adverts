@@ -1,8 +1,8 @@
 package ie.nok.adverts.stores
 
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.file.ZFileService
-import ie.nok.gcp.storage.{StorageConvention, ZStorageService}
+import ie.nok.stores.compose.ZFileAndGoogleStorageStore
+import ie.nok.stores.google.storage.StorageConvention
 import java.time.{Instant}
 import scala.util.chaining.scalaUtilChainingOps
 import zio.stream.ZStream
@@ -18,50 +18,44 @@ object AdvertStoreImpl {
   private def blobNameVersionedForService(service: AdvertService): String =
     StorageConvention.blobNameVersioned(s"adverts/${service.host}", Instant.now, ".jsonl")
 
-  private def encodeAndWrite[R](
-      stream: ZStream[R, Throwable, Advert],
-      blobNames: List[String]
-  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] = for {
-    file <- ZFileService.write[R, Advert](stream)
-    _ <- blobNames
-      .map { blobName =>
-        ZStorageService.write(StorageConvention.bucketName, blobName, file)
-      }
-      .pipe { ZIO.collectAll }
-  } yield ()
-
   protected[adverts] def encodeAndWriteLatest[R](
       stream: ZStream[R, Throwable, Advert]
-  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] =
-    encodeAndWrite(stream, List(blobNameLatest))
+  ): ZIO[R & ZFileAndGoogleStorageStore[Advert], Throwable, Unit] =
+    ZFileAndGoogleStorageStore.write[R, Advert](
+      StorageConvention.bucketName,
+      blobNameLatest,
+      stream
+    )
 
   protected[adverts] def encodeAndWriteForService[R](
       service: AdvertService,
       stream: ZStream[R, Throwable, Advert]
-  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] = {
-    val latest    = blobNameLatestForService(service)
-    val versioned = blobNameVersionedForService(service)
-
-    encodeAndWrite(stream, List(latest, versioned))
-  }
+  ): ZIO[R & ZFileAndGoogleStorageStore[Advert], Throwable, Unit] =
+    ZFileAndGoogleStorageStore.write[R, Advert](
+      List(
+        (StorageConvention.bucketName, blobNameLatestForService(service)),
+        (StorageConvention.bucketName, blobNameVersionedForService(service))
+      ),
+      stream
+    )
 
   private def readAndDecode(
       blobName: String
-  ): ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] = for {
-    file   <- ZStorageService.read(StorageConvention.bucketName, blobName)
-    stream <- ZFileService.read[Advert](file).runCollect
-    list = stream.toList
-  } yield list
+  ): ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
+    ZFileAndGoogleStorageStore
+      .read[Advert](StorageConvention.bucketName, blobName)
+      .runCollect
+      .map { _.toList }
 
-  protected[adverts] val readAndDecodeLatest: ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] =
+  protected[adverts] val readAndDecodeLatest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
     readAndDecode(blobNameLatest)
 
   protected[adverts] def readAndDecodeLatestForService(
       service: AdvertService
-  ): ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] =
+  ): ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
     readAndDecode(blobNameLatestForService(service))
 
-  val live: ZLayer[ZFileService[Advert] & ZStorageService, Throwable, AdvertStore] =
+  val live: ZLayer[ZFileAndGoogleStorageStore[Advert], Throwable, AdvertStore] =
     readAndDecodeLatest
       .map { new AdvertStoreImpl(_) }
       .pipe { ZLayer.fromZIO }
