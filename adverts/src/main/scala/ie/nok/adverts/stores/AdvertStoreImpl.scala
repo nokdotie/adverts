@@ -12,6 +12,13 @@ object AdvertStoreImpl {
   private val blobNameLatest: String =
     StorageConvention.blobNameLatest("adverts", ".jsonl")
 
+  private val blobNameAggregatedPrefix = "adverts/aggregated"
+  private val blobNameAggregatedLatest: String =
+    StorageConvention.blobNameLatest(blobNameAggregatedPrefix, ".jsonl")
+
+  private val blobNameAggregatedVersioned: String =
+    StorageConvention.blobNameVersioned(blobNameAggregatedPrefix, Instant.now, ".jsonl")
+
   private def blobNameLatestForService(service: AdvertService): String =
     StorageConvention.blobNameLatest(s"adverts/${service.host}", ".jsonl")
 
@@ -22,8 +29,11 @@ object AdvertStoreImpl {
       stream: ZStream[R, Throwable, Advert]
   ): ZIO[R & ZFileAndGoogleStorageStore[Advert], Throwable, Unit] =
     ZFileAndGoogleStorageStore.write[R, Advert](
-      StorageConvention.bucketName,
-      blobNameLatest,
+      List(
+        (StorageConvention.bucketName, blobNameLatest),
+        (StorageConvention.bucketName, blobNameAggregatedLatest),
+        (StorageConvention.bucketName, blobNameAggregatedVersioned),
+      ),
       stream
     )
 
