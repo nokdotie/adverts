@@ -53,7 +53,12 @@ object PropertyType {
     case "Terrace"                    => Success(Terraced)
     case "Terraced House"             => Success(Terraced)
     case "Mid-terrace House"          => Success(Terraced)
-    case unknown                      => Failure(Exception(s"Unknown propertyType: $unknown"))
+    case unknown =>
+      val message = s"Unknown PropertyType: $unknown"
+      println(message)
+
+      Failure(Exception(message))
   }
+
   given JsonCodec[PropertyType] = DeriveJsonCodec.gen[PropertyType]
 }

@@ -3,10 +3,11 @@ package ie.nok.adverts.scraper
 import ie.nok.advertisers.stores.{AdvertiserStore, AdvertiserStoreInMemory}
 import ie.nok.adverts.stores.AdvertStoreImpl.encodeAndWriteForService
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.gcp.storage.Storage
 import zio.http.Client
 import zio.stream.ZStream
 import zio.{Scope, ZIO, ZIOAppArgs, ZIOAppDefault, ZLayer}
+import ie.nok.file.ZFileServiceImpl
+import ie.nok.gcp.storage.ZStorageServiceImpl
 
 object Main extends ZIOAppDefault {
 
@@ -34,8 +35,8 @@ object Main extends ZIOAppDefault {
     _ <- encodeAndWriteForService(advertService, advertStream)
       .provide(
         Client.default,
-        Scope.default,
-        Storage.live,
+        ZFileServiceImpl.layer[Advert],
+        ZStorageServiceImpl.layer,
         AdvertiserStoreInMemory.live
       )
   } yield ()

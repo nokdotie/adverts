@@ -81,5 +81,4 @@ class PropertyTest extends FunSuite {
       .map { _.get }
       .map { Property.toDaftIeAdvert(_, None) }
       .pipe { unsafeRun }
-      .getOrElse { _ => fail("Unsafe run failed") }
 }

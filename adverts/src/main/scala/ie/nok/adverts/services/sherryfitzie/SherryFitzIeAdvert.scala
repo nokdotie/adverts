@@ -4,7 +4,7 @@ import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.hash.Hasher
+import ie.nok.codec.hash.Hash
 import ie.nok.unit.{Area, AreaUnit}
 import zio.json.{DeriveJsonCodec, JsonCodec}
 
@@ -34,7 +34,7 @@ object SherryFitzIeAdvert {
     Advert(
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
-      propertyIdentifier = self.address.pipe { Hasher.hash },
+      propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = Option(self.description),
       propertyType = self.propertyType,
       propertyAddress = self.address,

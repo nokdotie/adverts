@@ -1,60 +1,44 @@
 package ie.nok.adverts.stores
 
-import com.google.cloud.storage.BlobInfo
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.env.Environment
-import ie.nok.gcp.storage.{Storage, createFrom, readAllBytes}
-import ie.nok.json.JsonDecoder
-import zio.json.writeJsonLinesAs
-import zio.nio.file.Files
-import zio.stream.ZStream
-import zio.{Scope, ZIO, ZLayer}
-
-import java.time.format.DateTimeFormatter
-import java.time.{Instant, ZoneOffset}
+import ie.nok.file.ZFileService
+import ie.nok.gcp.storage.{StorageConvention, ZStorageService}
+import java.time.{Instant}
 import scala.util.chaining.scalaUtilChainingOps
+import zio.stream.ZStream
+import zio.{ZIO, ZLayer}
 
 object AdvertStoreImpl {
-  private val bucket: ZIO[Any, Throwable, String] =
-    Environment.get
-      .map {
-        case Environment.Production => "nok-ie"
-        case Environment.Other      => "nok-ie-dev"
-      }
+  private val blobNameLatest: String =
+    StorageConvention.blobNameLatest("adverts", ".jsonl")
 
-  private val blobNameLatest: String = "adverts/latest.jsonl"
   private def blobNameLatestForService(service: AdvertService): String =
-    s"adverts/${service.host}/latest.jsonl"
+    StorageConvention.blobNameLatest(s"adverts/${service.host}", ".jsonl")
+
   private def blobNameVersionedForService(service: AdvertService): String =
-    DateTimeFormatter
-      .ofPattern("yyyyMMddHHmmss")
-      .withZone(ZoneOffset.UTC)
-      .format(Instant.now)
-      .pipe { timestamp => s"adverts/${service.host}/$timestamp.jsonl" }
+    StorageConvention.blobNameVersioned(s"adverts/${service.host}", Instant.now, ".jsonl")
 
   private def encodeAndWrite[R](
       stream: ZStream[R, Throwable, Advert],
       blobNames: List[String]
-  ): ZIO[R & Scope & Storage, Throwable, Unit] = for {
-    path <- Files.createTempFileScoped()
-    _    <- writeJsonLinesAs(path.toFile, stream)
-
-    bucket <- bucket
+  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] = for {
+    file <- ZFileService.write[R, Advert](stream)
     _ <- blobNames
-      .map { BlobInfo.newBuilder(bucket, _).build }
-      .map { createFrom(_, path.toFile.toPath, List.empty) }
+      .map { blobName =>
+        ZStorageService.write(StorageConvention.bucketName, blobName, file)
+      }
       .pipe { ZIO.collectAll }
   } yield ()
 
   protected[adverts] def encodeAndWriteLatest[R](
       stream: ZStream[R, Throwable, Advert]
-  ): ZIO[R & Scope & Storage, Throwable, Unit] =
+  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] =
     encodeAndWrite(stream, List(blobNameLatest))
 
   protected[adverts] def encodeAndWriteForService[R](
       service: AdvertService,
       stream: ZStream[R, Throwable, Advert]
-  ): ZIO[R & Scope & Storage, Throwable, Unit] = {
+  ): ZIO[R & ZFileService[Advert] & ZStorageService, Throwable, Unit] = {
     val latest    = blobNameLatestForService(service)
     val versioned = blobNameVersionedForService(service)
 
@@ -63,26 +47,21 @@ object AdvertStoreImpl {
 
   private def readAndDecode(
       blobName: String
-  ): ZIO[Storage, Throwable, List[Advert]] = for {
-    bucket   <- bucket
-    allBytes <- readAllBytes(bucket, blobName, List.empty)
-    all <- allBytes
-      .pipe { new String(_) }
-      .linesIterator
-      .map { JsonDecoder.decode[Advert] }
-      .toList
-      .pipe { ZIO.collectAll }
-  } yield all
+  ): ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] = for {
+    file   <- ZStorageService.read(StorageConvention.bucketName, blobName)
+    stream <- ZFileService.read[Advert](file).runCollect
+    list = stream.toList
+  } yield list
 
-  protected[adverts] val readAndDecodeLatest: ZIO[Storage, Throwable, List[Advert]] =
+  protected[adverts] val readAndDecodeLatest: ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] =
     readAndDecode(blobNameLatest)
 
   protected[adverts] def readAndDecodeLatestForService(
       service: AdvertService
-  ): ZIO[Storage, Throwable, List[Advert]] =
+  ): ZIO[ZFileService[Advert] & ZStorageService, Throwable, List[Advert]] =
     readAndDecode(blobNameLatestForService(service))
 
-  val live: ZLayer[Storage, Throwable, AdvertStore] =
+  val live: ZLayer[ZFileService[Advert] & ZStorageService, Throwable, AdvertStore] =
     readAndDecodeLatest
       .map { new AdvertStoreImpl(_) }
       .pipe { ZLayer.fromZIO }

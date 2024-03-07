@@ -5,7 +5,7 @@ import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.Advert
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.hash.Hasher
+import ie.nok.codec.hash.Hash
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
 import org.jsoup.nodes.{Document, Element}
@@ -101,7 +101,7 @@ object Properties {
     Advert(
       advertUrl = url,
       advertPriceInEur = price,
-      propertyIdentifier = Hasher.hash(address),
+      propertyIdentifier = Hash.encode(address),
       propertyDescription = Some(description),
       propertyType = None,
       propertyAddress = address,

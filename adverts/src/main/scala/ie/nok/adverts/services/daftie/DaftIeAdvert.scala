@@ -5,7 +5,7 @@ import ie.nok.adverts.{Advert, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.hash.Hasher
+import ie.nok.codec.hash.Hash
 import ie.nok.unit.{Area, AreaUnit}
 
 import java.time.Instant
@@ -36,7 +36,7 @@ object DaftIeAdvert {
     Advert(
       advertUrl = self.url,
       advertPriceInEur = self.priceInEur.getOrElse(0),
-      propertyIdentifier = self.address.pipe { Hasher.hash },
+      propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = Some(self.description),
       propertyType = self.propertyType,
       propertyAddress = self.address,

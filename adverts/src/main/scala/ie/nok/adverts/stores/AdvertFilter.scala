@@ -1,8 +1,9 @@
 package ie.nok.adverts.stores
 
 import ie.nok.adverts.Advert
-import ie.nok.geographic.Coordinates
+import ie.nok.geographic.{Coordinates, CoordinatesFilter}
 import zio.json.{DeriveJsonCodec, JsonCodec}
+import ie.nok.filter.{IntFilter, StringFilter}
 
 enum AdvertFilter {
   case Empty
@@ -36,84 +37,4 @@ enum AdvertFilter {
 
 object AdvertFilter {
   given JsonCodec[AdvertFilter] = DeriveJsonCodec.gen[AdvertFilter]
-}
-
-enum StringFilter {
-  case Empty
-  case And(head: StringFilter, tail: StringFilter*)
-  case Or(head: StringFilter, tail: StringFilter*)
-
-  case Equals(filter: String)
-  case ContainsCaseInsensitive(filter: String)
-  case StartsWithCaseInsensitive(filter: String)
-
-  def filter(value: String): Boolean = this match {
-    case Empty            => true
-    case And(head, tail*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
-
-    case Equals(filter) => value == filter
-    case ContainsCaseInsensitive(filter) =>
-      value.toLowerCase().contains(filter.toLowerCase())
-    case StartsWithCaseInsensitive(filter) =>
-      value.toLowerCase().startsWith(filter.toLowerCase())
-  }
-}
-
-object StringFilter {
-  given JsonCodec[StringFilter] = DeriveJsonCodec.gen[StringFilter]
-}
-
-enum IntFilter {
-  case Empty
-  case And(head: IntFilter, tail: IntFilter*)
-  case Or(head: IntFilter, tail: IntFilter*)
-
-  case Equals(filter: Int)
-  case GreaterThan(filter: Int)
-  case LessThan(filter: Int)
-
-  def filter(value: Int): Boolean = this match {
-    case Empty            => true
-    case And(head, tail*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
-
-    case Equals(filter)      => value == filter
-    case GreaterThan(filter) => value > filter
-    case LessThan(filter)    => value < filter
-  }
-}
-
-object IntFilter {
-  given JsonCodec[IntFilter] = DeriveJsonCodec.gen[IntFilter]
-
-  def GreaterThanOrEqual(filter: Int): IntFilter =
-    IntFilter.Or(
-      IntFilter.GreaterThan(filter),
-      IntFilter.Equals(filter)
-    )
-  def LessThanOrEqual(filter: Int): IntFilter = IntFilter
-    .Or(IntFilter.LessThan(filter), IntFilter.Equals(filter))
-}
-
-enum CoordinatesFilter {
-  case Empty
-  case And(head: CoordinatesFilter, tail: CoordinatesFilter*)
-  case Or(head: CoordinatesFilter, tail: CoordinatesFilter*)
-
-  case WithinRectangle(northEast: Coordinates, southWest: Coordinates)
-
-  def filter(value: Coordinates): Boolean = this match {
-    case Empty            => true
-    case And(head, tail*) => (head +: tail).forall(_.filter(value))
-    case Or(head, tail*)  => (head +: tail).exists(_.filter(value))
-
-    case WithinRectangle(northEast, southWest) =>
-      value.latitude <= northEast.latitude && value.latitude >= southWest.latitude &&
-      value.longitude <= northEast.longitude && value.longitude >= southWest.longitude
-  }
-}
-
-object CoordinatesFilter {
-  given JsonCodec[CoordinatesFilter] = DeriveJsonCodec.gen[CoordinatesFilter]
 }

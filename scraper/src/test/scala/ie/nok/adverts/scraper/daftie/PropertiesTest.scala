@@ -15,7 +15,6 @@ class PropertiesTest extends FunSuite {
         .map { _.listing.id }
         .runCollect
         .pipe { unsafeRun }
-        .getOrElse { _ => fail("Unsafe run failed") }
 
     assertEquals(result.size, 20)
   }
