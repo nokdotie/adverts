@@ -73,3 +73,33 @@ jobs:
           ENV: ${{ env.ENV }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+
+  seo:
+    if: ${{ always() }}
+    needs: aggregate
+
+    name: Search Engine Optimization
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: sbt
+
+      - name: Set environment to production
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "ENV=production" >> $GITHUB_ENV
+
+      - name: Run
+        run: sbt -v seo/run
+        env:
+          ENV: ${{ env.ENV }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
