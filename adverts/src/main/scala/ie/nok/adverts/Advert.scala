@@ -1,7 +1,7 @@
 package ie.nok.adverts
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.ber.Rating
+import ie.nok.ber.{Rating, Certificate}
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.unit.Area
