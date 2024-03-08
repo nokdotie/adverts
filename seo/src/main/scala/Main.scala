@@ -13,12 +13,14 @@ object Main extends ZIOAppDefault {
 
   def run = (for {
     today <- AdvertStoreImpl.readAndDecodeLatest
-    _     <- Console.printLine(s"Today: ${today.size}")
+    todayUrl = today.map(url)
+    _ <- Console.printLine(s"Today: ${today.size}")
 
     yesterday <- AdvertStoreImpl.readAndDecodeYesterday
-    _         <- Console.printLine(s"Yesterday: ${yesterday.size}")
+    yesterdayUrl = yesterday.map(url)
+    _ <- Console.printLine(s"Yesterday: ${yesterday.size}")
 
-    added = today.diff(yesterday).map(url)
+    added = todayUrl.diff(yesterdayUrl)
     _ <- ZStream
       .fromIterable(added)
       .mapZIOParUnordered(5) { url =>
@@ -28,7 +30,7 @@ object Main extends ZIOAppDefault {
       .runDrain
     _ <- Console.printLine(s"Added: ${added.size}")
 
-    deleted = yesterday.diff(today).map(url)
+    deleted = yesterdayUrl.diff(todayUrl)
     _ <- ZStream
       .fromIterable(deleted)
       .mapZIOParUnordered(5) { url =>
