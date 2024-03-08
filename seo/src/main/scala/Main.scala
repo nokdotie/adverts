@@ -1,6 +1,6 @@
 package ie.nok.adverts.seo
 
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertUrl}
 import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.google.search.ZIndexingService
 import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
@@ -8,16 +8,13 @@ import zio.{Console, ZIOAppDefault}
 import zio.stream.ZStream
 
 object Main extends ZIOAppDefault {
-  def url(advert: Advert): String =
-    s"https://nok.ie/properties/${advert.propertyIdentifier}"
-
   def run = (for {
     today <- AdvertStoreImpl.readAndDecodeLatest
-    todayUrl = today.map(url)
+    todayUrl = today.map(AdvertUrl.fromAdvert)
     _ <- Console.printLine(s"Today: ${today.size}")
 
     yesterday <- AdvertStoreImpl.readAndDecodeYesterday
-    yesterdayUrl = yesterday.map(url)
+    yesterdayUrl = yesterday.map(AdvertUrl.fromAdvert)
     _ <- Console.printLine(s"Yesterday: ${yesterday.size}")
 
     added = todayUrl.diff(yesterdayUrl)

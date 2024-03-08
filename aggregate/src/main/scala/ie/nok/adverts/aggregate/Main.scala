@@ -1,19 +1,19 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.stores.AdvertStoreImpl
 import ie.nok.adverts.{Advert, AdvertService, InformationSource}
-import ie.nok.ber.CertificateNumber
-import ie.nok.ber.stores.{CertificateStore, GoogleFirestoreCertificateStore}
+import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
+import ie.nok.adverts.stores.AdvertStoreImpl
+import ie.nok.ber.Certificate
+import ie.nok.ber.stores.{GoogleFirestoreCertificateStore}
 import ie.nok.google.firestore.Firestore
 import ie.nok.geographic.Coordinates
+import ie.nok.stores.compose.{ZFileAndGoogleStorageStore, ZFileAndGoogleStorageStoreImpl}
 import ie.nok.unit.Area
-import zio.stream.ZStream
-import zio.{Scope, ZIO, ZIOAppDefault}
-
 import java.time.Instant
 import scala.util.Random
 import scala.util.chaining.scalaUtilChainingOps
-import ie.nok.stores.compose.{ZFileAndGoogleStorageStore, ZFileAndGoogleStorageStoreImpl}
+import zio.stream.ZStream
+import zio.{Scope, ZIO, ZIOAppDefault}
 
 object Main extends ZIOAppDefault {
   private val latest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
@@ -22,11 +22,15 @@ object Main extends ZIOAppDefault {
       .pipe { ZIO.collectAll }
       .map { _.flatten }
 
-  def merge(adverts: List[Advert]): Iterable[Advert] =
+  private def groupByProperty(adverts: List[Advert]): List[List[Advert]] =
     adverts
       .groupBy { _.propertyAddress }
       .values
-      .map {
+      .toList
+
+  private def mergeAdverts(adverts: List[Advert]): Advert =
+    adverts
+      .pipe {
         case Nil           => ???
         case advert :: Nil => advert
         case adverts =>
@@ -66,50 +70,37 @@ object Main extends ZIOAppDefault {
           )
       }
 
-  def appendBuildingEnergyRating(
-      adverts: Advert
-  ): ZIO[CertificateStore, Throwable, Advert] =
-    adverts.sources
-      .flatMap {
-        case InformationSource.DaftIeAdvert(daftIeAdvert) =>
-          daftIeAdvert.buildingEnergyRatingCertificateNumber
-        case InformationSource.DngIeAdvert(dngIeAdvert) =>
-          dngIeAdvert.buildingEnergyRatingCertificateNumber
-        case InformationSource.SherryFitzIeAdvert(sherryFitzIeAdvert) =>
-          sherryFitzIeAdvert.buildingEnergyRatingCertificateNumber
-        case InformationSource.MyHomeIeAdvert(_) | InformationSource.PropertyPalComAdvert(_) | InformationSource.BuildingEnergyRatingCertificate(_) =>
-          None
-      }
-      .distinct
-      .map { CertificateNumber.apply }
-      .map { CertificateStore.getByNumber }
-      .pipe { ZIO.collectAll }
-      .map { _.flatten }
-      .map { certificates =>
-        val certificatesAsSources = certificates
-          .map { InformationSource.BuildingEnergyRatingCertificate.apply }
+  def appendBuildingEnergyRating(advert: Advert, certificates: List[Certificate]): Advert = {
+    val latestCertificate = certificates.maxByOption { _.issuedOn }
+    val certificatesAsSources = certificates
+      .map { InformationSource.BuildingEnergyRatingCertificate.apply }
 
-        adverts.copy(
-          propertyBuildingEnergyRating = certificates.headOption.map(_.rating),
-          propertyBuildingEnergyRatingCertificateNumber = certificates.headOption.map(_.number.value),
-          propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = certificates.headOption
-            .map(_.energyRating.value)
-            .map(BigDecimal(_)),
-          sources = adverts.sources ++ certificatesAsSources
-        )
-      }
+    advert.copy(
+      propertyBuildingEnergyRating = latestCertificate.map(_.rating).orElse(advert.propertyBuildingEnergyRating),
+      propertyBuildingEnergyRatingCertificateNumber = latestCertificate.map(_.number.value).orElse(advert.propertyBuildingEnergyRatingCertificateNumber),
+      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
+        latestCertificate.map(_.energyRating.value).map(BigDecimal(_)).orElse(advert.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear),
+      sources = advert.sources ++ certificatesAsSources
+    )
+  }
 
-  def run =
-    latest
-      .map { merge }
-      .map { Random.shuffle }
-      .pipe { ZStream.fromIterableZIO }
-      .mapZIOParUnordered(5) { appendBuildingEnergyRating }
-      .pipe { AdvertStoreImpl.encodeAndWriteLatest }
-      .provide(
-        Firestore.live,
-        GoogleFirestoreCertificateStore.layer,
-        Scope.default,
-        ZFileAndGoogleStorageStoreImpl.layer[Advert]
-      )
+  def run = latest
+    .map { groupByProperty }
+    .map { Random.shuffle }
+    .pipe { ZStream.fromIterableZIO }
+    .mapZIOParUnordered(5) { adverts =>
+      ZCertificateStore
+        .getAll(adverts)
+        .map { (adverts, _) }
+    }
+    .map { (adverts, certificates) => (mergeAdverts(adverts), certificates) }
+    .map { (advert, certificates) => appendBuildingEnergyRating(advert, certificates) }
+    .pipe { AdvertStoreImpl.encodeAndWriteLatest }
+    .provide(
+      Firestore.live,
+      GoogleFirestoreCertificateStore.layer,
+      Scope.default,
+      ZFileAndGoogleStorageStoreImpl.layer[Advert],
+      ZCertificateStoreImpl.layer
+    )
 }
