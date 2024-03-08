@@ -18,7 +18,7 @@ object Main extends ZIOAppDefault {
     yesterday <- AdvertStoreImpl.readAndDecodeYesterday
     _         <- Console.printLine(s"Yesterday: ${yesterday.size}")
 
-    added = today.diff(yesterday).map(url)
+    added = today.map(url).diff(yesterday)
     _ <- ZStream
       .fromIterable(added)
       .mapZIOParUnordered(5) { url =>
@@ -28,7 +28,7 @@ object Main extends ZIOAppDefault {
       .runDrain
     _ <- Console.printLine(s"Added: ${added.size}")
 
-    deleted = yesterday.diff(today).map(url)
+    deleted = yesterday.map(url).diff(today)
     _ <- ZStream
       .fromIterable(deleted)
       .mapZIOParUnordered(5) { url =>
