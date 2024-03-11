@@ -5,6 +5,7 @@ import ie.nok.ber.stores.CertificateStore
 import ie.nok.adverts.{Advert, AdvertUrl}
 import scala.util.chaining.scalaUtilChainingOps
 import zio.{ZIO, ZLayer}
+import zio.json.EncoderOps
 
 trait ZCertificateStore {
   def getAll(adverts: List[Advert]): ZIO[Any, Throwable, List[Certificate]]
@@ -44,7 +45,11 @@ class ZCertificateStoreImpl(
         (byEircode ++ byCertificateNumber).distinct
           .tap {
             case certificates if certificates.size > 1 =>
-              println(s"More than one certificate found for adverts: ${AdvertUrl.fromAdvert(adverts.head)}, $certificates}")
+              println(s"""
+              | More than one certificate found for adverts:
+              | - ${AdvertUrl.fromAdvert(adverts.head)}
+              | - ${certificates.map { _.toJson }.mkString("\n - ")}
+              """.stripMargin.trim)
             case _ => ()
           }
       }
