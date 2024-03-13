@@ -2,7 +2,7 @@ package ie.nok.adverts.seo
 
 import ie.nok.adverts.{Advert, AdvertUrl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.google.search.ZIndexingService
+import ie.nok.google.search.{ZIndexingService, ZIndexingServiceImpl}
 import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
 import zio.{Console, ZIOAppDefault}
 import zio.stream.ZStream
@@ -20,25 +20,19 @@ object Main extends ZIOAppDefault {
     added = todayUrl.diff(yesterdayUrl)
     _ <- ZStream
       .fromIterable(added)
-      .mapZIOParUnordered(5) { url =>
-        // ZIndexingService.update(url)
-        Console.printLine(s"Add: $url")
-      }
+      .mapZIOParUnordered(5) { ZIndexingService.update }
       .runDrain
     _ <- Console.printLine(s"Added: ${added.size}")
 
     deleted = yesterdayUrl.diff(todayUrl)
     _ <- ZStream
       .fromIterable(deleted)
-      .mapZIOParUnordered(5) { url =>
-        // ZIndexingService.delete(url)
-        Console.printLine(s"Delete: $url")
-      }
+      .mapZIOParUnordered(5) { ZIndexingService.delete }
       .runDrain
     _ <- Console.printLine(s"Deleted: ${deleted.size}")
   } yield ())
     .provide(
-      ZFileAndGoogleStorageStoreImpl.layer[Advert]
-      // ZIndexingService.layer
+      ZFileAndGoogleStorageStoreImpl.layer[Advert],
+      ZIndexingServiceImpl.layer
     )
 }
