@@ -2,10 +2,10 @@ package ie.nok.adverts.seo
 
 import ie.nok.adverts.{Advert, AdvertUrl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.google.search.{ZIndexingService, ZIndexingServiceImpl}
+import ie.nok.seo.indexnow.ZIndexNowServiceImpl
+import ie.nok.seo.google.search.ZIndexingServiceImpl
 import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
 import zio.{Console, ZIOAppDefault}
-import zio.stream.ZStream
 
 object Main extends ZIOAppDefault {
   def run = (for {
@@ -18,21 +18,17 @@ object Main extends ZIOAppDefault {
     _ <- Console.printLine(s"Yesterday: ${yesterday.size}")
 
     added = todayUrl.diff(yesterdayUrl)
-    _ <- ZStream
-      .fromIterable(added)
-      .mapZIOParUnordered(5) { ZIndexingService.update }
-      .runDrain
     _ <- Console.printLine(s"Added: ${added.size}")
 
     deleted = yesterdayUrl.diff(todayUrl)
-    _ <- ZStream
-      .fromIterable(deleted)
-      .mapZIOParUnordered(5) { ZIndexingService.delete }
-      .runDrain
     _ <- Console.printLine(s"Deleted: ${deleted.size}")
+
+    _ <- services.Google.notify(added, deleted)
+    _ <- services.IndexNow.inform(added ++ deleted)
   } yield ())
     .provide(
       ZFileAndGoogleStorageStoreImpl.layer[Advert],
-      ZIndexingServiceImpl.layer
+      ZIndexingServiceImpl.layer,
+      ZIndexNowServiceImpl.layer
     )
 }
