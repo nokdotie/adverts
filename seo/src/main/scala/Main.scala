@@ -23,8 +23,12 @@ object Main extends ZIOAppDefault {
     deleted = yesterdayUrl.diff(todayUrl)
     _ <- Console.printLine(s"Deleted: ${deleted.size}")
 
-    _ <- services.Google.notify(added, deleted)
-    _ <- services.IndexNow.inform(added ++ deleted)
+    _ <- services.Google
+      .notify(added, deleted)
+      .flatMapError { e => Console.printLineError(s"Google: ${e.getMessage}").orDie }
+    _ <- services.IndexNow
+      .inform(added ++ deleted)
+      .flatMapError { e => Console.printLineError(s"IndexNow: ${e.getMessage}").orDie }
   } yield ())
     .provide(
       ZFileAndGoogleStorageStoreImpl.layer[Advert],
