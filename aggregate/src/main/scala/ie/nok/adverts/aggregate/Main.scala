@@ -1,19 +1,20 @@
 package ie.nok.adverts.aggregate
 
-import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
 import ie.nok.adverts.stores.AdvertStoreImpl
+import ie.nok.adverts.{Advert, AdvertService, InformationSource}
 import ie.nok.ber.Certificate
-import ie.nok.ber.stores.{GoogleFirestoreCertificateStore}
-import ie.nok.google.firestore.Firestore
+import ie.nok.ber.stores.GoogleFirestoreCertificateStore
 import ie.nok.geographic.Coordinates
+import ie.nok.google.firestore.Firestore
 import ie.nok.stores.compose.{ZFileAndGoogleStorageStore, ZFileAndGoogleStorageStoreImpl}
 import ie.nok.unit.Area
+import zio.stream.ZStream
+import zio.{Scope, ZIO, ZIOAppDefault}
+
 import java.time.Instant
 import scala.util.Random
 import scala.util.chaining.scalaUtilChainingOps
-import zio.stream.ZStream
-import zio.{Scope, ZIO, ZIOAppDefault}
 
 object Main extends ZIOAppDefault {
   private val latest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =

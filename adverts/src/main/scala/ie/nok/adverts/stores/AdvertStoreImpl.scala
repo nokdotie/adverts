@@ -3,11 +3,12 @@ package ie.nok.adverts.stores
 import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.stores.compose.ZFileAndGoogleStorageStore
 import ie.nok.stores.google.storage.StorageConvention
-import java.time.{Instant}
-import java.time.temporal.ChronoUnit
-import scala.util.chaining.scalaUtilChainingOps
 import zio.stream.ZStream
 import zio.{ZIO, ZLayer}
+
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+import scala.util.chaining.scalaUtilChainingOps
 
 object AdvertStoreImpl {
   private val blobNameLatest: String =
