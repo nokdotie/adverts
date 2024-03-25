@@ -3,6 +3,7 @@ package ie.nok.adverts.stores
 import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.stores.compose.ZFileAndGoogleStorageStore
 import ie.nok.stores.google.storage.StorageConvention
+import ie.nok.stores.pagination.Page
 import zio.stream.ZStream
 import zio.{ZIO, ZLayer}
 
@@ -93,10 +94,19 @@ class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
       filter: AdvertFilter,
       first: Int,
       after: AdvertStoreCursor
-  ): ZIO[Any, Throwable, List[Advert]] =
-    all
-      .filter(filter.filter)
-      .slice(after.index, after.index + first)
-      .pipe { ZIO.succeed }
+  ): ZIO[Any, Throwable, Page[Advert]] = {
+    val filtered = all.filter(filter.filter)
+
+    val hasPreviousPage = after.index > 0
+    val hasNextPage     = filtered.sizeIs > after.index + first
+
+    val page = Page(
+      filtered.slice(after.index, after.index + first),
+      hasPreviousPage,
+      hasNextPage
+    )
+
+    ZIO.succeed(page)
+  }
 
 }
