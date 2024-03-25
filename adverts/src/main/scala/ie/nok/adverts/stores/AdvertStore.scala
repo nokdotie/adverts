@@ -6,6 +6,10 @@ import java.time.Instant
 import zio.{ZIO, ZLayer}
 
 case class AdvertStoreCursor(index: Int)
+object AdvertStoreCursor {
+  val Zero: AdvertStoreCursor = AdvertStoreCursor(0)
+}
+
 trait AdvertStore {
   def getPage(
       filter: AdvertFilter,
