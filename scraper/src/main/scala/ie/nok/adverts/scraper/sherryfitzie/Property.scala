@@ -22,7 +22,7 @@ import scala.util.chaining.scalaUtilChainingOps
 object Property {
 
   private def getRequestUrl(link: String): String =
-    s"https://www.sherryfitz.ie/$link"
+    s"https://www.sherryfitz.ie$link"
 
   private def getResponse(
       url: String
