@@ -1,29 +1,28 @@
 package ie.nok.adverts.scraper.sherryfitzie
 
-import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.adverts.scraper.common.ScraperUtils
 import ie.nok.adverts.services.sherryfitzie.SherryFitzIeAdvert
+import ie.nok.adverts.{Advert, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
-import ie.nok.http.Client
 import ie.nok.geographic.Coordinates
+import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-
-import java.time.Instant
 import org.jsoup.nodes.Document
-
-import scala.jdk.CollectionConverters.*
-import scala.util.Try
-import scala.util.chaining.scalaUtilChainingOps
-import zio.{ZIO, durationInt}
 import zio.Schedule.{fixed, recurs}
 import zio.http.Client as ZioClient
 import zio.stream.ZPipeline
+import zio.{ZIO, durationInt}
+
+import java.time.Instant
+import scala.jdk.CollectionConverters.*
+import scala.util.Try
+import scala.util.chaining.scalaUtilChainingOps
 
 object Property {
 
   private def getRequestUrl(link: String): String =
-    s"https://www.sherryfitz.ie/$link"
+    s"https://www.sherryfitz.ie$link"
 
   private def getResponse(
       url: String
@@ -54,14 +53,17 @@ object Property {
       .mkString(", ")
       .pipe(Eircode.unzip)
 
-  private def size(html: Document): Option[Area] =
-    html
-      .select(".property-stat:contains(sqm)")
-      .text
-      .filter(_.isDigit)
-      .toIntOption
-      .map { BigDecimal.apply }
-      .map { Area(_, AreaUnit.SquareMetres) }
+  private def size(html: Document): Option[Area] = {
+    val areaText     = html.select(".property-stat:contains(sqm),.property-stat:contains(Acres)").text()
+    val valueAndUnit = areaText.split(" ").filter(_.nonEmpty)
+    val value        = valueAndUnit.headOption.map { BigDecimal(_) }
+    val unit = valueAndUnit.lastOption.map {
+      case "sqm"   => AreaUnit.SquareMetres
+      case "Acres" => AreaUnit.Acres
+      case other   => throw new Exception(s"Unknown unit: $other")
+    }
+    value.zip(unit).map { Area(_, _) }
+  }
 
   private val ber: Document => (Option[Rating], Option[Int], Option[BigDecimal]) = {
     val cssQuery =

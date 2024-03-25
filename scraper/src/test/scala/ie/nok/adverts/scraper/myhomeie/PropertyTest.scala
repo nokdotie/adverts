@@ -2,6 +2,7 @@ package ie.nok.adverts.scraper.myhomeie
 
 import ie.nok.adverts.PropertyType
 import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
+import ie.nok.unit.{Area, AreaUnit}
 import ie.nok.zio.ZIOOps.unsafeRun
 import munit.FunSuite
 import zio.json.readJsonLinesAs
@@ -15,6 +16,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Bedrock Giltspur Lane, Southern Cross Road, Bray, Co. Wicklow")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(325, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Detached))
   }
 
@@ -23,6 +25,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "14 Druid's Court, Druid's Glen, Newtownmountkennedy, Co. Wicklow")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(111, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Apartment))
   }
 
@@ -31,6 +34,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "17 The Poplars, Forest Park, Portlaoise, Laois")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(82.44, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Bungalow))
   }
 
@@ -39,6 +43,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "27, Coolgreena Road, Beaumont, Dublin 9")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(145, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.SemiDetached))
   }
 
@@ -47,6 +52,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "54 Saint Mochta's Green, Clonsilla, Dublin")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(70, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Terraced))
   }
 
@@ -55,6 +61,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "1 Rosbeg Court, Sutton, Dublin 13")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(89, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.EndOfTerrace))
   }
 
@@ -63,6 +70,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "25 The Moyle, Prospect Hill, Finglas, Dublin 11")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(67, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Duplex))
   }
 
@@ -71,6 +79,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Árd Na Glaise, Stillorgan, County Dublin")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(43.71, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Studio))
   }
 
@@ -79,6 +88,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Site At Illerton, Killiney Hill Road, Killiney, Co. Dublin")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, None)
     assertEquals(result.propertyType, Some(PropertyType.Site))
   }
 
@@ -87,6 +97,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Ballinacurra House, Kinsale, County Cork")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(1709, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.House))
   }
 
@@ -95,7 +106,17 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "10 Glebe way, Newcastle, Co. Dublin")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(120, AreaUnit.SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.House))
+  }
+
+  test("Parse property - Detached House Size test") {
+    val result = parseProperty("scraper/src/test/resourses/myhomeie/3-the-sidings-station-road-shankill-co-dublin.json")
+
+    assertEquals(result.address, "3 The Sidings, Station Road, Shankill, Co.Dublin")
+    assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(167.2, AreaUnit.SquareMetres)))
+    assertEquals(result.propertyType, Some(PropertyType.Detached))
   }
 
   private def parseProperty(resourcePath: String): MyHomeIeAdvert =

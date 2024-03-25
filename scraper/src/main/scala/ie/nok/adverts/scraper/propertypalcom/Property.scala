@@ -10,8 +10,6 @@ import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
-import org.jsoup.Jsoup
-import org.jsoup.nodes.{Document, Element, TextNode}
 import zio.Schedule.{fixed, recurs}
 import zio.http.Client as ZioClient
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
@@ -19,7 +17,6 @@ import zio.stream.ZPipeline
 import zio.{ZIO, durationInt}
 
 import java.time.Instant
-import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 object Property {
   protected[propertypalcom] case class Response(pageProps: ResponsePageProps)
@@ -118,14 +115,10 @@ object Property {
       }
       .map { found => (found.group(1), found.group(2)) }
       .map {
-        case (value, "sq. metres") =>
-          Area(BigDecimal(value), AreaUnit.SquareMetres)
-        case (value, "sq. feet") => Area(BigDecimal(value), AreaUnit.SquareFeet)
-        case (value, "acres")    => Area(BigDecimal(value), AreaUnit.Acres)
-        case (value, other) =>
-          throw new Exception(
-            s"Unknown unit: $other, ${property.shareURL}"
-          )
+        case (value, "sq. metres") => Area(BigDecimal(value), AreaUnit.SquareMetres)
+        case (value, "sq. feet")   => Area(BigDecimal(value), AreaUnit.SquareFeet)
+        case (value, "acres")      => Area(BigDecimal(value), AreaUnit.Acres)
+        case (value, other)        => throw new Exception(s"Unknown unit: $other, ${property.shareURL}")
       }
 
   protected[propertypalcom] def ber(

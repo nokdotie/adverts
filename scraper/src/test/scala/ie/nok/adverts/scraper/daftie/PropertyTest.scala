@@ -2,6 +2,8 @@ package ie.nok.adverts.scraper.daftie
 
 import ie.nok.adverts.PropertyType
 import ie.nok.adverts.services.daftie.DaftIeAdvert
+import ie.nok.unit.Area
+import ie.nok.unit.AreaUnit.{Acres, SquareMetres}
 import ie.nok.zio.ZIOOps.unsafeRun
 import munit.FunSuite
 import zio.json.readJsonLinesAs
@@ -15,6 +17,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "16 Elm Park, Coolcotts, Wexford Town, Co. Wexford")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(63, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Apartment))
   }
 
@@ -23,6 +26,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Fortnaven View, Ballindrumlea, Castlerea, Co. Roscommon")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, None)
     assertEquals(result.propertyType, Some(PropertyType.Bungalow))
   }
 
@@ -31,6 +35,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Facefield, Ballynamaul, Kinsale, Co. Cork")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(521, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Detached))
   }
 
@@ -39,6 +44,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Three Bedroom Town House, Arcadin, Arcadin, Athlone, Co. Westmeath")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(128, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Duplex))
   }
 
@@ -47,6 +53,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "121 The Laurels, Tullow Road, Carlow Town, Co. Carlow")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(76, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.EndOfTerrace))
   }
 
@@ -55,6 +62,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "22 Dorrins Strand, Strandhill, Co. Sligo")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(104, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.SemiDetached))
   }
 
@@ -63,6 +71,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "Cloondace, Knock, Co. Mayo")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(7.7, Acres)))
     assertEquals(result.propertyType, Some(PropertyType.Site))
   }
 
@@ -71,6 +80,7 @@ class PropertyTest extends FunSuite {
 
     assertEquals(result.address, "9B Liam Mellows Street, Tuam, Co. Galway")
     assert(result.description.nonEmpty)
+    assertEquals(result.size, Some(Area(89, SquareMetres)))
     assertEquals(result.propertyType, Some(PropertyType.Terraced))
   }
 

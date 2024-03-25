@@ -43,7 +43,7 @@ object PropertyPalComAdvert {
       propertyEircode = self.eircode,
       propertyCoordinates = self.coordinates.getOrElse(Coordinates.zero),
       propertyImageUrls = self.imageUrls,
-      propertySize = self.size.getOrElse(Area(0, AreaUnit.SquareMetres)),
+      propertySize = self.size.getOrElse(Area.zero),
       propertySizeInSqtMtr = self.size
         .map { Area.toSquareMetres }
         .fold(BigDecimal(0)) { _.value },

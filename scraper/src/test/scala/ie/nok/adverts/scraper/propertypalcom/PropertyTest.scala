@@ -2,7 +2,8 @@ package ie.nok.adverts.scraper.propertypalcom
 
 import ie.nok.adverts.PropertyType
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
-import ie.nok.unit.Area
+import ie.nok.unit.AreaUnit.{Acres, SquareMetres}
+import ie.nok.unit.{Area, AreaUnit}
 import ie.nok.zio.ZIOOps.unsafeRun
 import munit.FunSuite
 import zio.json.readJsonLinesAs
@@ -61,56 +62,65 @@ class PropertyTest extends FunSuite {
 
   test("Parse property type - Apartment") {
     val expected = PropertyType.Apartment
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/57-block-b-aras-na-cluaine-clondalkin-dublin.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/57-block-b-aras-na-cluaine-clondalkin-dublin.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(57, SquareMetres)))
   }
 
   test("Parse property type - Bungalow") {
     val expected = PropertyType.Bungalow
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/shurock-castletown-geoghegan-mullingar.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/shurock-castletown-geoghegan-mullingar.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, None)
   }
 
   test("Parse property type - Detached") {
     val expected = PropertyType.Detached
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/1-forest-view-rooskey-carrick-on-shannon.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/1-forest-view-rooskey-carrick-on-shannon.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, None)
   }
 
   test("Parse property type - SemiDetached") {
     val expected = PropertyType.SemiDetached
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/8-glenside-ballycarnane-woods-tramore.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/8-glenside-ballycarnane-woods-tramore.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, None)
   }
 
   test("Parse property type - Terraced") {
     val expected = PropertyType.Terraced
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/16-crosforge-saggart-dublin.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/16-crosforge-saggart-dublin.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(166, SquareMetres)))
   }
 
   test("Parse property type - EndOfTerrace") {
     val expected = PropertyType.EndOfTerrace
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/223a-eagle-valley-sarsfield-road-wilton-cork.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/223a-eagle-valley-sarsfield-road-wilton-cork.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(104, SquareMetres)))
   }
 
   test("Parse property type - Detached and Land") {
     val expected = PropertyType.Detached
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/rose-bank-derryginny-ballyconnell.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/rose-bank-derryginny-ballyconnell.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(175, SquareMetres)))
   }
 
   test("Parse property type - Bungalow and Land") {
     val expected = PropertyType.Bungalow
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/aughaweena-ardlougher-ballyconnell.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(78, Acres)))
   }
 
   test("Parse property type - House and Land") {
     val expected = PropertyType.House
-    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/ballykillowen-laghey.json").propertyType
-    assertEquals(Option(expected), actual)
+    val actual   = parseProperty("scraper/src/test/resourses/propertypalcom/ballykillowen-laghey.json")
+    assertEquals(Option(expected), actual.propertyType)
+    assertEquals(actual.size, Some(Area(98.42, SquareMetres)))
   }
 
   test("Parse description") {

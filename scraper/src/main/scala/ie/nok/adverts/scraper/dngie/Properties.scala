@@ -35,7 +35,7 @@ object Properties {
       bedroom: Option[Int],
       display_address: String,
       post_code: Option[String],
-      floorarea_min: Float,
+      floorarea_min: Double,
       floorarea_type: Option[String],
       images: Option[List[ResponseDataPropertyImage]],
       price: Option[Int],
@@ -126,8 +126,10 @@ object Properties {
         case "squareMetres" => Option(AreaUnit.SquareMetres)
         case "squareFeet"   => Option(AreaUnit.SquareFeet)
         case "Acres"        => Option(AreaUnit.Acres)
+        case "4"            => Option(AreaUnit.Acres)
         case "Hectares"     => Option(AreaUnit.Hectares)
-        case "" | "3" | "4" => Option.empty
+        case "3"            => Option(AreaUnit.Hectares)
+        case ""             => Option.empty
         case other =>
           throw new Exception(
             s"Unknown floorarea_type: $other, ${property.property_url}"
