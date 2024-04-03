@@ -4,12 +4,13 @@ import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.scraper.common.ScraperUtils
 import ie.nok.adverts.services.propertypalcom.PropertyPalComAdvert
-import ie.nok.adverts.{Advert, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
+import scala.util.chaining.scalaUtilChainingOps
 import zio.Schedule.{fixed, recurs}
 import zio.http.Client as ZioClient
 import zio.json.{DeriveJsonDecoder, JsonDecoder}
@@ -37,7 +38,8 @@ object Property {
       coordinate: Option[ResponsePagePropsPropertyCoordinate],
       description: Option[String],
       ber: Option[ResponsePagePropsPropertyBer],
-      account: Option[ResponsePagePropsPropertyAccount]
+      account: Option[ResponsePagePropsPropertyAccount],
+      status: Option[ResponsePagePropsPropertyStatus]
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsProperty] =
     DeriveJsonDecoder.gen[ResponsePagePropsProperty]
@@ -78,6 +80,12 @@ object Property {
   )
   protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyAccount] =
     DeriveJsonDecoder.gen[ResponsePagePropsPropertyAccount]
+
+  protected[propertypalcom] case class ResponsePagePropsPropertyStatus(
+      key: String
+  )
+  protected[propertypalcom] given JsonDecoder[ResponsePagePropsPropertyStatus] =
+    DeriveJsonDecoder.gen[ResponsePagePropsPropertyStatus]
 
   protected[propertypalcom] def getApiRequestUrl(
       buildId: String,
@@ -178,9 +186,18 @@ object Property {
 
     val descriptionClean = response.pageProps.property.description.map(ScraperUtils.htmlToPlainText)
 
+    val saleStatus = response.pageProps.property.status.map { _.key }.fold(AdvertSaleStatus.ForSale) {
+      case "forSale"    => AdvertSaleStatus.ForSale
+      case "comingSoon" => AdvertSaleStatus.ForSale
+      case "saleAgreed" => AdvertSaleStatus.SaleAgreed
+      case "underOffer" => AdvertSaleStatus.SaleAgreed
+      case other        => throw new Exception(s"Unknown status: $other")
+    }
+
     response.pageProps.property.shareURL.map { url =>
       PropertyPalComAdvert(
         url = url,
+        saleStatus = saleStatus,
         priceInEur = price,
         address = address,
         description = descriptionClean,

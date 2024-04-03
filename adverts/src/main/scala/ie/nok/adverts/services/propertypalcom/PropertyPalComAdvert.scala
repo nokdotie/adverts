@@ -15,6 +15,7 @@ import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 
 case class PropertyPalComAdvert(
     url: String,
+    saleStatus: AdvertSaleStatus,
     priceInEur: Option[Int],
     address: String,
     description: Option[String],
@@ -35,7 +36,7 @@ object PropertyPalComAdvert {
   def toAdvert(self: PropertyPalComAdvert): Advert =
     Advert(
       advertUrl = self.url,
-      advertSaleStatus = AdvertSaleStatus.ForSale,
+      advertSaleStatus = self.saleStatus,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = self.description,
