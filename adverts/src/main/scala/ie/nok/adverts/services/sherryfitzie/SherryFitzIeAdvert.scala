@@ -1,6 +1,6 @@
 package ie.nok.adverts.services.sherryfitzie
 
-import ie.nok.adverts.{Advert, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -33,6 +33,7 @@ object SherryFitzIeAdvert {
   def toAdvert(self: SherryFitzIeAdvert): Advert =
     Advert(
       advertUrl = self.url,
+      advertSaleStatus = AdvertSaleStatus.ForSale,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = Option(self.description),

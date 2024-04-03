@@ -10,6 +10,7 @@ import zio.json.{DeriveJsonCodec, JsonCodec}
 
 case class Advert(
     advertUrl: String,
+    advertSaleStatus: AdvertSaleStatus,
     advertPriceInEur: Int,
     propertyIdentifier: String,
     propertyDescription: Option[String],

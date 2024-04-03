@@ -2,7 +2,7 @@ package ie.nok.adverts.aggregate
 
 import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.adverts.{Advert, AdvertService, InformationSource}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, AdvertService, InformationSource}
 import ie.nok.ber.Certificate
 import ie.nok.ber.stores.GoogleFirestoreCertificateStore
 import ie.nok.geographic.Coordinates
@@ -41,6 +41,7 @@ object Main extends ZIOAppDefault {
 
           Advert(
             advertUrl = adverts.head.advertUrl,
+            advertSaleStatus = AdvertSaleStatus.ForSale,
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyIdentifier = adverts.head.propertyIdentifier,
             propertyDescription = adverts.flatMap { _.propertyDescription }.headOption,
