@@ -9,6 +9,7 @@ enum InformationSource {
   case MyHomeIeAdvert(value: services.myhomeie.MyHomeIeAdvert)
   case PropertyPalComAdvert(value: services.propertypalcom.PropertyPalComAdvert)
   case SherryFitzIeAdvert(value: services.sherryfitzie.SherryFitzIeAdvert)
+  case MaherPropertyIeAdvert(value: services.maherpropertyie.MaherPropertyIeAdvert)
   case BuildingEnergyRatingCertificate(value: Certificate)
 }
 

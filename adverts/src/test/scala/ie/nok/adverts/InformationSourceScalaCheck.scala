@@ -4,10 +4,12 @@ import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 import ie.nok.adverts.services.daftie.{DaftIeAdvert, given}
 import ie.nok.adverts.services.dngie.{DngIeAdvert, given}
+import ie.nok.adverts.services.maherpropertyie.{MaherPropertyIeAdvert, given}
 import ie.nok.adverts.services.myhomeie.{MyHomeIeAdvert, given}
 import ie.nok.adverts.services.propertypalcom.{PropertyPalComAdvert, given}
 import ie.nok.adverts.services.sherryfitzie.{SherryFitzIeAdvert, given}
 import ie.nok.ber.{Certificate, given}
+import services.maherpropertyie.given
 
 private val genInformationSource: Gen[InformationSource] = Gen.oneOf(
   arbitrary[DaftIeAdvert].map { InformationSource.DaftIeAdvert(_) },
@@ -17,6 +19,9 @@ private val genInformationSource: Gen[InformationSource] = Gen.oneOf(
     InformationSource.PropertyPalComAdvert(_)
   },
   arbitrary[SherryFitzIeAdvert].map { InformationSource.SherryFitzIeAdvert(_) },
+  arbitrary[MaherPropertyIeAdvert].map {
+    InformationSource.MaherPropertyIeAdvert(_)
+  },
   arbitrary[Certificate].map {
     InformationSource.BuildingEnergyRatingCertificate(_)
   }
