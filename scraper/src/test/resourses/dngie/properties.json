@@ -144,7 +144,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e954d2bf4cff88ae1486",
@@ -224,7 +225,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e972d2bf4cff88ae14dc",
@@ -317,7 +319,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e992d2bf4cff88ae14f6",
@@ -389,7 +392,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e9a9d2bf4cff88ae1510",
@@ -507,7 +511,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e9bcd2bf4cff88ae1528",
@@ -751,7 +756,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e9ccd2bf4cff88ae152a",
@@ -918,7 +924,8 @@
         },
         "building": [
           "Terraced House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321e9dad2bf4cff88ae152c",
@@ -1212,7 +1219,8 @@
         },
         "building": [
           ""
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea12d2bf4cff88ae1530",
@@ -1303,7 +1311,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea21d2bf4cff88ae1533",
@@ -1365,7 +1374,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea2ed2bf4cff88ae153e",
@@ -1427,7 +1437,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea30d2bf4cff88ae153f",
@@ -1509,7 +1520,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea7cd2bf4cff88ae156e",
@@ -1571,7 +1583,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea86d2bf4cff88ae1574",
@@ -1987,7 +2000,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ea86d2bf4cff88ae1576",
@@ -2087,7 +2101,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eaa7d2bf4cff88ae1580",
@@ -2191,7 +2206,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eaadd2bf4cff88ae1581",
@@ -2277,7 +2293,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eabfd2bf4cff88ae158e",
@@ -2359,7 +2376,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eac9d2bf4cff88ae1591",
@@ -2445,7 +2463,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ead4d2bf4cff88ae15a3",
@@ -2546,7 +2565,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb16d2bf4cff88ae15b0",
@@ -2647,7 +2667,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb3dd2bf4cff88ae15b4",
@@ -2760,7 +2781,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb84d2bf4cff88ae15d3",
@@ -2855,7 +2877,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb8ad2bf4cff88ae15d5",
@@ -3335,7 +3358,8 @@
         },
         "building": [
           "Pubs & Restaurants"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb8ad2bf4cff88ae15d6",
@@ -3540,7 +3564,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eb9ad2bf4cff88ae15e0",
@@ -3751,7 +3776,8 @@
         },
         "building": [
           "Townhouse"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ebe7d2bf4cff88ae15f0",
@@ -3860,7 +3886,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ec6dd2bf4cff88ae161a",
@@ -3955,7 +3982,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eca0d2bf4cff88ae1620",
@@ -4068,7 +4096,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eca5d2bf4cff88ae1623",
@@ -4130,7 +4159,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ecc9d2bf4cff88ae162d",
@@ -4221,7 +4251,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ecced2bf4cff88ae1631",
@@ -4317,7 +4348,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ecd4d2bf4cff88ae1636",
@@ -4493,7 +4525,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ecdad2bf4cff88ae1638",
@@ -4606,7 +4639,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ecdfd2bf4cff88ae1639",
@@ -5242,7 +5276,8 @@
         },
         "building": [
           "Live-Work Unit"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eceed2bf4cff88ae163a",
@@ -5866,7 +5901,8 @@
         },
         "building": [
           "Pubs & Restaurants"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ed20d2bf4cff88ae163c",
@@ -5999,7 +6035,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ed4dd2bf4cff88ae1640",
@@ -6148,7 +6185,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ed52d2bf4cff88ae1642",
@@ -6320,7 +6358,8 @@
         },
         "building": [
           "Retail"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ed7fd2bf4cff88ae1648",
@@ -6392,7 +6431,8 @@
         },
         "building": [
           "Industrial"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ed83d2bf4cff88ae164b",
@@ -6483,7 +6523,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321eddbd2bf4cff88ae1664",
@@ -6668,7 +6709,8 @@
         },
         "building": [
           "Bungalow"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ede9d2bf4cff88ae166d",
@@ -6806,7 +6848,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ee36d2bf4cff88ae167a",
@@ -6911,7 +6954,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ee49d2bf4cff88ae167c",
@@ -6973,7 +7017,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ee5cd2bf4cff88ae167f",
@@ -7122,7 +7167,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ef51d2bf4cff88ae16a0",
@@ -7198,7 +7244,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ef60d2bf4cff88ae16a5",
@@ -7260,7 +7307,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321ef9bd2bf4cff88ae16b2",
@@ -7359,7 +7407,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f006d2bf4cff88ae16c5",
@@ -7454,7 +7503,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f028d2bf4cff88ae16c7",
@@ -7498,7 +7548,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f046d2bf4cff88ae16cd",
@@ -8178,7 +8229,8 @@
         },
         "building": [
           "Pubs & Restaurants"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f05dd2bf4cff88ae16cf",
@@ -8417,7 +8469,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f0b9d2bf4cff88ae16dd",
@@ -8746,7 +8799,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f0e8d2bf4cff88ae16e5",
@@ -8832,7 +8886,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f110d2bf4cff88ae16e9",
@@ -8967,7 +9022,8 @@
         },
         "building": [
           "Hotels & B+Bs"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f1a5d2bf4cff88ae16fd",
@@ -9011,7 +9067,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f1d7d2bf4cff88ae1701",
@@ -9215,7 +9272,8 @@
         },
         "building": [
           ""
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f1f3d2bf4cff88ae1705",
@@ -9327,7 +9385,8 @@
         },
         "building": [
           ""
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f228d2bf4cff88ae1709",
@@ -9444,7 +9503,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f268d2bf4cff88ae1710",
@@ -9524,7 +9584,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f2c9d2bf4cff88ae171a",
@@ -9655,7 +9716,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f2e2d2bf4cff88ae171f",
@@ -9863,7 +9925,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f2ecd2bf4cff88ae1720",
@@ -9992,7 +10055,8 @@
         },
         "building": [
           "Farm"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f327d2bf4cff88ae1726",
@@ -10285,7 +10349,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f3b6d2bf4cff88ae1734",
@@ -10376,7 +10441,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f3dfd2bf4cff88ae1737",
@@ -10606,7 +10672,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f3fcd2bf4cff88ae173a",
@@ -10800,7 +10867,8 @@
         },
         "building": [
           "Terraced House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f435d2bf4cff88ae173d",
@@ -11037,7 +11105,8 @@
         },
         "building": [
           "Investment"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f5ccd2bf4cff88ae1754",
@@ -11192,7 +11261,8 @@
         },
         "building": [
           "Bungalow"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f699d2bf4cff88ae175c",
@@ -11570,7 +11640,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f6c1d2bf4cff88ae175e",
@@ -12041,7 +12112,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f719d2bf4cff88ae1762",
@@ -12499,7 +12571,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f71fd2bf4cff88ae1764",
@@ -12603,7 +12676,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f78bd2bf4cff88ae176f",
@@ -12914,7 +12988,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f7f5d2bf4cff88ae1779",
@@ -13025,7 +13100,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f818d2bf4cff88ae177f",
@@ -13107,7 +13183,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f893d2bf4cff88ae178c",
@@ -13251,7 +13328,8 @@
         },
         "building": [
           "Investment"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f8a8d2bf4cff88ae178f",
@@ -13317,7 +13395,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f8fed2bf4cff88ae179a",
@@ -13574,7 +13653,8 @@
         },
         "building": [
           "Apartment"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f90ad2bf4cff88ae179b",
@@ -13819,7 +13899,8 @@
         },
         "building": [
           "Retail"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f93bd2bf4cff88ae179e",
@@ -14080,7 +14161,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f9d2d2bf4cff88ae17b6",
@@ -14156,7 +14238,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321f9f2d2bf4cff88ae17bb",
@@ -14238,7 +14321,8 @@
         },
         "building": [
           "Farm Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fa45d2bf4cff88ae17c9",
@@ -14314,7 +14398,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fa79d2bf4cff88ae17cf",
@@ -14509,7 +14594,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fb36d2bf4cff88ae17e1",
@@ -14649,7 +14735,8 @@
         },
         "building": [
           "Terraced House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fb88d2bf4cff88ae17eb",
@@ -14712,7 +14799,8 @@
         },
         "building": [
           "Development Land"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fbf6d2bf4cff88ae17f8",
@@ -15087,7 +15175,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fc19d2bf4cff88ae17fa",
@@ -15416,7 +15505,8 @@
         },
         "building": [
           "Semi-Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fc2bd2bf4cff88ae17fc",
@@ -15630,7 +15720,8 @@
         },
         "building": [
           "Detached House"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fc65d2bf4cff88ae17fe",
@@ -16031,7 +16122,8 @@
         },
         "building": [
           "Bungalow"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fcaed2bf4cff88ae1819",
@@ -16093,7 +16185,8 @@
         },
         "building": [
           ""
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fcb0d2bf4cff88ae181c",
@@ -16184,7 +16277,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fcbcd2bf4cff88ae181e",
@@ -16246,7 +16340,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fccbd2bf4cff88ae183c",
@@ -16408,7 +16503,8 @@
         },
         "building": [
           "Investment"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fd19d2bf4cff88ae1881",
@@ -16512,7 +16608,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fd58d2bf4cff88ae18a2",
@@ -16594,7 +16691,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fd91d2bf4cff88ae18ef",
@@ -16676,7 +16774,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "For Sale"
       },
       {
         "id": "6321fdacd2bf4cff88ae18f7",
@@ -16755,7 +16854,8 @@
         },
         "building": [
           "Site"
-        ]
+        ],
+        "status": "Sale Agreed"
       }
     ]
   }

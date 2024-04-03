@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.myhomeie
 
 import ie.nok.advertisers.{Advertiser, given}
-import ie.nok.adverts.{PropertyType, given}
+import ie.nok.adverts.{AdvertSaleStatus, PropertyType, given}
 import ie.nok.ber.{Rating, given}
 import ie.nok.geographic.{Coordinates, given}
 import ie.nok.unit.{Area, given}
@@ -12,6 +12,7 @@ import java.time.Instant
 
 private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   url                  <- arbitrary[String]
+  saleStatus           <- arbitrary[AdvertSaleStatus]
   priceInEur           <- arbitrary[Option[Int]]
   description          <- arbitrary[Option[String]]
   address              <- arbitrary[String]
@@ -26,6 +27,7 @@ private val genMyHomeIeAdvert: Gen[MyHomeIeAdvert] = for {
   createdAt            <- arbitrary[Instant]
   myHomeIeAdvert = MyHomeIeAdvert(
     url = url,
+    saleStatus = saleStatus,
     priceInEur = priceInEur,
     description = description,
     address = address,

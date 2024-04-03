@@ -13,6 +13,7 @@ import java.time.Instant
 
 private val genAdvert: Gen[Advert] = for {
   advertUrl           <- arbitrary[String]
+  advertSaleStatus    <- arbitrary[AdvertSaleStatus]
   advertPriceInEur    <- arbitrary[Int]
   propertyIdentifier  <- arbitrary[String]
   propertyDescription <- arbitrary[Option[String]]
@@ -34,6 +35,7 @@ private val genAdvert: Gen[Advert] = for {
   createdAt  <- arbitrary[Instant]
   advert = Advert(
     advertUrl = advertUrl,
+    advertSaleStatus = advertSaleStatus,
     advertPriceInEur = advertPriceInEur,
     propertyIdentifier = propertyIdentifier,
     propertyDescription = propertyDescription,

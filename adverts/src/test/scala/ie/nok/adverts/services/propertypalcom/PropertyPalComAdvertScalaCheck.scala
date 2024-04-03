@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.{Advertiser, given}
-import ie.nok.adverts.{PropertyType, given}
+import ie.nok.adverts.{AdvertSaleStatus, PropertyType, given}
 import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
@@ -13,6 +13,7 @@ import java.time.Instant
 
 private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
   url                  <- arbitrary[String]
+  saleStatus           <- arbitrary[AdvertSaleStatus]
   priceInEur           <- arbitrary[Option[Int]]
   address              <- arbitrary[String]
   description          <- arbitrary[Option[String]]
@@ -30,6 +31,7 @@ private val genPropertyPalComAdvert: Gen[PropertyPalComAdvert] = for {
   createdAt  <- arbitrary[Instant]
   propertyPalComAdvert = PropertyPalComAdvert(
     url = url,
+    saleStatus = saleStatus,
     priceInEur = priceInEur,
     address = address,
     description = description,

@@ -2,29 +2,29 @@ package ie.nok.adverts.scraper.maherpropertyie
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertSaleStatus}
+import ie.nok.adverts.services.maherpropertyie.MaherPropertyIeAdvert
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.codecs.hash.Hash
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
+import java.time.Instant
 import org.jsoup.nodes.{Document, Element}
+import scala.jdk.CollectionConverters.*
+import scala.util.chaining.scalaUtilChainingOps
 import zio.Schedule.{fixed, recurs}
 import zio.http.Client as ZioClient
 import zio.stream.ZStream
 import zio.{Console, ZIO, durationInt}
-
-import java.time.Instant
-import scala.jdk.CollectionConverters.*
-import scala.util.chaining.scalaUtilChainingOps
 
 object Properties {
   private val getUrls: ZStream[Any, Nothing, String] =
     ZStream
       .iterate(1)(_ + 1)
       .map {
-        case 1    => "https://maherproperty.ie/property-search/"
-        case page => s"https://maherproperty.ie/property-search/page/$page/"
+        case 1    => "https://maherproperty.ie/property-search/?type=residential"
+        case page => s"https://maherproperty.ie/property-search/page/$page/?type=residential"
       }
 
   private def getResponse(url: String): ZIO[ZioClient, Throwable, Document] =
@@ -38,20 +38,27 @@ object Properties {
       .asScala
       .toList
 
-  private def selectAdvertUrls(element: Element): Option[String] = {
-    val figCation = element.selectFirst("figure figcaption").text
-    val url       = element.selectFirst(".detail a.more-details").attr("href")
+  private def selectAdvertUrls(element: Element): String =
+    element.selectFirst(".detail a.more-details").attr("href")
 
-    Option.when(figCation == "Residential Sales")(url)
-  }
+  private def selectAdvert(url: String, document: Document): MaherPropertyIeAdvert = {
+    val saleStatus = document
+      .selectFirst(".status-label")
+      .text
+      .pipe {
+        case "Residential Sales"              => AdvertSaleStatus.ForSale
+        case "Residential Sales, Sale Agreed" => AdvertSaleStatus.SaleAgreed
+        case "Residential Sales, Sold"        => AdvertSaleStatus.Sold
+        case "Sale Agreed"                    => AdvertSaleStatus.SaleAgreed
+        case "Sold"                           => AdvertSaleStatus.Sold
+        case other                            => throw new Exception(s"Unknown status: $other")
+      }
 
-  private def selectAdvert(url: String, document: Document, advertiser: Option[Advertiser]): Advert = {
     val price = document
       .selectFirst(".price-and-type")
       .pipe { Option(_) }
       .map { _.text.filter(_.isDigit) }
       .flatMap { _.toIntOption }
-      .getOrElse(0)
 
     val description = document
       .selectFirst(".property-item .content")
@@ -80,7 +87,6 @@ object Properties {
       .fold("") { _.text }
       .filter(_.isDigit)
       .pipe { _.toIntOption }
-      .getOrElse(0)
 
     val bedroomsCount = document
       .selectFirst(".property-meta-bedrooms")
@@ -88,7 +94,6 @@ object Properties {
       .fold("") { _.text }
       .filter(_.isDigit)
       .pipe { _.toIntOption }
-      .getOrElse(0)
 
     val bathroomsCount = document
       .selectFirst(".property-meta-bath")
@@ -96,47 +101,31 @@ object Properties {
       .fold("") { _.text }
       .filter(_.isDigit)
       .pipe { _.toIntOption }
-      .getOrElse(0)
 
-    Advert(
-      advertUrl = url,
-      advertPriceInEur = price,
-      propertyIdentifier = Hash.encode(address),
-      propertyDescription = Some(description),
-      propertyType = None,
-      propertyAddress = address,
-      propertyEircode = eircode,
-      propertyCoordinates = Coordinates.zero,
-      propertyImageUrls = imageUrls,
-      propertySize = Area(propertySizeInSqtMtr, AreaUnit.SquareMetres),
-      propertySizeInSqtMtr = propertySizeInSqtMtr,
-      propertyBedroomsCount = bedroomsCount,
-      propertyBathroomsCount = bathroomsCount,
-      propertyBuildingEnergyRating = Option.empty,
-      propertyBuildingEnergyRatingCertificateNumber = Option.empty,
-      propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Option.empty,
-      sources = List.empty,
-      advertiser = advertiser,
+    MaherPropertyIeAdvert(
+      url = url,
+      saleStatus = saleStatus,
+      priceInEur = price,
+      description = description,
+      address = address,
+      eircode = eircode,
+      imageUrls = imageUrls,
+      sizeInSqtMtr = propertySizeInSqtMtr,
+      bedroomsCount = bedroomsCount,
+      bathroomsCount = bathroomsCount,
       createdAt = Instant.now()
     )
   }
 
-  val advertiser: ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
-    AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber("003837")
-
-  val stream: ZStream[ZioClient & AdvertiserStore, Throwable, Advert] =
-    ZStream
-      .fromZIO(advertiser)
-      .flatMap { advertiser =>
-        getUrls
-          .mapZIOPar(5) { getResponse }
-          .map { selectAdvertElements }
-          .takeWhile { _.nonEmpty }
-          .flattenIterables
-          .map { selectAdvertUrls }
-          .collectSome
-          .mapZIOParUnordered(5) { url =>
-            getResponse(url).map { selectAdvert(url, _, advertiser) }
-          }
+  val stream: ZStream[ZioClient, Throwable, Advert] =
+    getUrls
+      .mapZIOPar(5) { getResponse }
+      .map { selectAdvertElements }
+      .takeWhile { _.nonEmpty }
+      .flattenIterables
+      .map { selectAdvertUrls }
+      .mapZIOParUnordered(5) { url =>
+        getResponse(url).map { selectAdvert(url, _) }
       }
+      .map { MaherPropertyIeAdvert.toAdvert }
 }

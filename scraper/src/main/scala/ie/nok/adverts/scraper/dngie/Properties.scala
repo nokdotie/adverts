@@ -1,7 +1,7 @@
 package ie.nok.adverts.scraper.dngie
 
 import ie.nok.adverts.services.dngie.DngIeAdvert
-import ie.nok.adverts.{Advert, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -43,7 +43,8 @@ object Properties {
       latitude: BigDecimal,
       longitude: BigDecimal,
       extras: Option[ResponseDataPropertyExtras],
-      building: String | List[String]
+      building: String | List[String],
+      status: String
   )
 
   // TODO: generic decoder should be in standard library
@@ -79,7 +80,8 @@ object Properties {
     s"""{ "query": "query {
       properties (
         where: {
-          status: \\"For Sale\\",
+          department: \\"residential\\",
+          search_type: \\"sales\\",
           publish: true
         },
         start: $start,
@@ -99,6 +101,7 @@ object Properties {
         longitude
         extras
         building
+        status
       }
     }"}""".replaceAll("\n", " ")
 
@@ -171,6 +174,14 @@ object Properties {
         (rating, certificateNumber, energyRatingInKWhPerSqtMtrPerYear)
       }
 
+  private def status(property: ResponseDataProperty): AdvertSaleStatus =
+    property.status.pipe {
+      case "For Sale"    => AdvertSaleStatus.ForSale
+      case "Sale Agreed" => AdvertSaleStatus.SaleAgreed
+      case "Sold"        => AdvertSaleStatus.Sold
+      case other         => throw Throwable(s"Unexpected status: $other")
+    }
+
   protected[dngie] def toDngIeAdvert(
       property: ResponseDataProperty
   ): DngIeAdvert = {
@@ -204,6 +215,7 @@ object Properties {
 
     DngIeAdvert(
       url = property.property_url,
+      saleStatus = status(property),
       priceInEur = property.price,
       address = address,
       eircode = eircode.orElse(eircodeInAddress),

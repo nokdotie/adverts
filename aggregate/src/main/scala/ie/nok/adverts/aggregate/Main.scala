@@ -2,7 +2,7 @@ package ie.nok.adverts.aggregate
 
 import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.adverts.{Advert, AdvertService, InformationSource}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, AdvertService, InformationSource}
 import ie.nok.ber.Certificate
 import ie.nok.ber.stores.GoogleFirestoreCertificateStore
 import ie.nok.geographic.Coordinates
@@ -29,6 +29,9 @@ object Main extends ZIOAppDefault {
       .values
       .toList
 
+  private def forSale(adverts: List[Advert]): Boolean =
+    adverts.forall { _.advertSaleStatus == AdvertSaleStatus.ForSale }
+
   private def mergeAdverts(adverts: List[Advert]): Advert =
     adverts
       .pipe {
@@ -41,6 +44,7 @@ object Main extends ZIOAppDefault {
 
           Advert(
             advertUrl = adverts.head.advertUrl,
+            advertSaleStatus = AdvertSaleStatus.ForSale,
             advertPriceInEur = adverts.map { _.advertPriceInEur }.max,
             propertyIdentifier = adverts.head.propertyIdentifier,
             propertyDescription = adverts.flatMap { _.propertyDescription }.headOption,
@@ -89,6 +93,7 @@ object Main extends ZIOAppDefault {
     .map { groupByProperty }
     .map { Random.shuffle }
     .pipe { ZStream.fromIterableZIO }
+    .filter { forSale }
     .mapZIOParUnordered(5) { adverts =>
       ZCertificateStore
         .getAll(adverts)

@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.myhomeie
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertSaleStatus}
 import ie.nok.adverts.scraper.propertypalcom.Property.ResponsePagePropsProperty
 import ie.nok.adverts.services.myhomeie.MyHomeIeAdvert
 import ie.nok.ber.Rating
@@ -45,7 +45,8 @@ object Property {
       BerRating: Option[String],
       BrochureContent: List[ResponseBrochurePropertyBrochureContent],
       BrochureMap: Option[ResponseBrochurePropertyBrochureMap],
-      PropertyType: Option[String]
+      PropertyType: Option[String],
+      AgreedOn: Option[String]
   )
   protected[myhomeie] given JsonDecoder[ResponseBrochureProperty] = DeriveJsonDecoder.gen[ResponseBrochureProperty]
 
@@ -83,7 +84,6 @@ object Property {
   protected[myhomeie] def toMyHomeIeAdvert(response: Response, advertiser: Option[Advertiser]): MyHomeIeAdvert = {
     val url = s"https://www.myhome.ie/${response.Brochure.Property.PropertyId}"
     val price = response.Brochure.Property.PriceAsString
-      //   .getOrElse("")
       .filter(_.isDigit)
       .toIntOption
 
@@ -124,8 +124,11 @@ object Property {
           ie.nok.adverts.PropertyType.tryFromString(propertyType).toOption
         }
 
+    val saleStatus = response.Brochure.Property.AgreedOn.fold(AdvertSaleStatus.ForSale)(_ => AdvertSaleStatus.SaleAgreed)
+
     MyHomeIeAdvert(
       url = url,
+      saleStatus = saleStatus,
       priceInEur = price,
       description = description,
       address = response.Brochure.Property.DisplayAddress,

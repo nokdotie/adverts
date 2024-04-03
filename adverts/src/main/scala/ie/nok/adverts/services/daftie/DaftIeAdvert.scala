@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.daftie
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -14,6 +14,7 @@ import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 
 case class DaftIeAdvert(
     url: String,
+    saleStatus: AdvertSaleStatus,
     priceInEur: Option[Int],
     description: String,
     propertyType: Option[PropertyType],
@@ -35,6 +36,7 @@ object DaftIeAdvert {
   def toAdvert(self: DaftIeAdvert): Advert =
     Advert(
       advertUrl = self.url,
+      advertSaleStatus = self.saleStatus,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = Some(self.description),

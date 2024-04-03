@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.daftie
 
 import ie.nok.advertisers.{Advertiser, given}
-import ie.nok.adverts.{PropertyType, given}
+import ie.nok.adverts.{AdvertSaleStatus, PropertyType, given}
 import ie.nok.ber.{Rating, given}
 import ie.nok.ecad.{Eircode, given}
 import ie.nok.geographic.{Coordinates, given}
@@ -13,6 +13,7 @@ import java.time.Instant
 
 private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   url                                   <- arbitrary[String]
+  saleStatus                            <- arbitrary[AdvertSaleStatus]
   priceInEur                            <- arbitrary[Option[Int]]
   description                           <- arbitrary[String]
   propertyType                          <- arbitrary[PropertyType].map(Some(_))
@@ -32,6 +33,7 @@ private val genDaftIeAdvert: Gen[DaftIeAdvert] = for {
   createdAt  <- arbitrary[Instant]
   daftIeAdvert = DaftIeAdvert(
     url = url,
+    saleStatus = saleStatus,
     priceInEur = priceInEur,
     description = description,
     propertyType = propertyType,

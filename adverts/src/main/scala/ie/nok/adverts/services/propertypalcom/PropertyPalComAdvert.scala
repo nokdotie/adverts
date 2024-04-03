@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
 import ie.nok.codecs.hash.Hash
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
@@ -15,6 +15,7 @@ import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
 
 case class PropertyPalComAdvert(
     url: String,
+    saleStatus: AdvertSaleStatus,
     priceInEur: Option[Int],
     address: String,
     description: Option[String],
@@ -35,6 +36,7 @@ object PropertyPalComAdvert {
   def toAdvert(self: PropertyPalComAdvert): Advert =
     Advert(
       advertUrl = self.url,
+      advertSaleStatus = self.saleStatus,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = self.description,
