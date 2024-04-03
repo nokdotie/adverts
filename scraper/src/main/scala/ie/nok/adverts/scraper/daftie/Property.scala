@@ -3,12 +3,13 @@ package ie.nok.adverts.scraper.daftie
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
 import ie.nok.adverts.services.daftie.DaftIeAdvert
-import ie.nok.adverts.{Advert, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.http.Client
 import ie.nok.unit.{Area, AreaUnit}
+import scala.util.chaining.scalaUtilChainingOps
 import zio.Schedule.{fixed, recurs}
 import zio.http.Client as ZioClient
 import zio.http.model.Headers
@@ -40,7 +41,8 @@ object Property {
       point: ResponsePagePropsListingPoint,
       description: String,
       propertyType: String,
-      seller: ResponsePagePropsListingSeller
+      seller: ResponsePagePropsListingSeller,
+      state: String
   )
   protected[daftie] given JsonDecoder[ResponsePagePropsListing] = DeriveJsonDecoder.gen[ResponsePagePropsListing]
 
@@ -124,6 +126,13 @@ object Property {
   ): ZIO[AdvertiserStore, Throwable, Option[Advertiser]] =
     response.pageProps.listing.seller.licenceNumber.fold(ZIO.succeed(None)) { AdvertiserStore.getByPropertyServicesRegulatoryAuthorityLicenceNumber(_) }
 
+  private def status(response: Response): AdvertSaleStatus =
+    response.pageProps.listing.state.pipe {
+      case "PUBLISHED"   => AdvertSaleStatus.ForSale
+      case "SALE_AGREED" => AdvertSaleStatus.SaleAgreed
+      case other         => throw new Exception(s"Unknown state: $other")
+    }
+
   protected[daftie] def toDaftIeAdvert(response: Response, advertiser: Option[Advertiser]): DaftIeAdvert = {
     val price = response.pageProps.listing.price.filter(_.isDigit).toIntOption
 
@@ -158,6 +167,7 @@ object Property {
 
     DaftIeAdvert(
       url = response.pageProps.canonicalUrl,
+      saleStatus = status(response),
       priceInEur = price,
       description = description,
       propertyType = propertyType,
