@@ -80,7 +80,8 @@ object Properties {
     s"""{ "query": "query {
       properties (
         where: {
-          status: \\"For Sale\\",
+          department: \\"residential\\",
+          search_type: \\"sales\\",
           publish: true
         },
         start: $start,
@@ -177,6 +178,7 @@ object Properties {
     property.status.pipe {
       case "For Sale"    => AdvertSaleStatus.ForSale
       case "Sale Agreed" => AdvertSaleStatus.SaleAgreed
+      case "Sold"        => AdvertSaleStatus.Sold
       case other         => throw Throwable(s"Unexpected status: $other")
     }
 
