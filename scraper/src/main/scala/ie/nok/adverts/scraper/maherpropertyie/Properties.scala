@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.maherpropertyie
 
 import ie.nok.advertisers.Advertiser
 import ie.nok.advertisers.stores.AdvertiserStore
-import ie.nok.adverts.Advert
+import ie.nok.adverts.{Advert, AdvertSaleStatus}
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
 import ie.nok.codecs.hash.Hash
@@ -100,6 +100,7 @@ object Properties {
 
     Advert(
       advertUrl = url,
+      advertSaleStatus = AdvertSaleStatus.ForSale,
       advertPriceInEur = price,
       propertyIdentifier = Hash.encode(address),
       propertyDescription = Some(description),

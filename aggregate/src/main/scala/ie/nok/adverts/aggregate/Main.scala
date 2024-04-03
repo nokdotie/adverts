@@ -29,6 +29,9 @@ object Main extends ZIOAppDefault {
       .values
       .toList
 
+  private def forSale(adverts: List[Advert]): Boolean =
+    adverts.forall { _.advertSaleStatus == AdvertSaleStatus.ForSale }
+
   private def mergeAdverts(adverts: List[Advert]): Advert =
     adverts
       .pipe {
@@ -90,6 +93,7 @@ object Main extends ZIOAppDefault {
     .map { groupByProperty }
     .map { Random.shuffle }
     .pipe { ZStream.fromIterableZIO }
+    .filter { forSale }
     .mapZIOParUnordered(5) { adverts =>
       ZCertificateStore
         .getAll(adverts)
