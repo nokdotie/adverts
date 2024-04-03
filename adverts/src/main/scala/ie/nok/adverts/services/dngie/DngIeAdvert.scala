@@ -13,6 +13,7 @@ import scala.util.chaining.scalaUtilChainingOps
 
 case class DngIeAdvert(
     url: String,
+    saleStatus: AdvertSaleStatus,
     priceInEur: Option[Int],
     description: String,
     propertyType: Option[PropertyType],
@@ -33,7 +34,7 @@ object DngIeAdvert {
   def toAdvert(self: DngIeAdvert): Advert =
     Advert(
       advertUrl = self.url,
-      advertSaleStatus = AdvertSaleStatus.ForSale,
+      advertSaleStatus = self.saleStatus,
       advertPriceInEur = self.priceInEur.getOrElse(0),
       propertyIdentifier = self.address.pipe { Hash.encode },
       propertyDescription = Option(self.description),
