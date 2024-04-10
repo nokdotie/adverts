@@ -14,6 +14,7 @@ lazy val root = project
     adverts,
     aggregate,
     scraper,
+    scraper2,
     seo
   )
 
@@ -40,6 +41,9 @@ lazy val aggregate = project
   .dependsOn(adverts % "compile->compile;test->test")
 
 lazy val scraper = project
+  .dependsOn(adverts % "compile->compile;test->test")
+
+lazy val scraper2 = project
   .dependsOn(adverts % "compile->compile;test->test")
 
 lazy val seo = project
