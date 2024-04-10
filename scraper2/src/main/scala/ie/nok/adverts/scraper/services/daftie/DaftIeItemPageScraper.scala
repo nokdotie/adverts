@@ -25,24 +25,27 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getPriceInEur(document: Document): Int =
     JsoupHelper
       .findInt(document, "[data-testid=price]")
-      .getOrElse(0)
+      .getOrElse { throw new Exception(s"Price not found: ${document.baseUri}") }
 
   override def getDescription(document: Document): Option[String] =
-    JsoupHelper.findStringKeepLineBreaks(document, "[data-testid=description] [data-testid=description]")
+    JsoupHelper
+      .findStringKeepLineBreaks(document, "[data-testid=description] [data-testid=description]")
+      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
       .findString(document, "[data-testid=property-type]")
-      .flatMap {
-        case "Apartment" => Some(PropertyType.Apartment)
-        case "Terrace"   => Some(PropertyType.Terraced)
-        case other =>
-          println(s"Unknown property type: $other, ${document.baseUri}")
-          None
+      .map {
+        case "Apartment" => PropertyType.Apartment
+        case "Terrace"   => PropertyType.Terraced
+        case other       => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
       }
 
   override def getAddress(document: Document): String =
-    JsoupHelper.findString(document, "[data-testid=address]").fold("") { Eircode.unzip(_)._1 }
+    JsoupHelper
+      .findString(document, "[data-testid=address]")
+      .map { Eircode.unzip(_)._1 }
+      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
 
   override def getEircode(document: Document): Option[Eircode] =
     JsoupHelper.findString(document, "[data-testid=address]").flatMap { Eircode.unzip(_)._2 }
@@ -58,7 +61,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
 
         Coordinates(latitude = latitude, longitude = longitude)
       }
-      .getOrElse(Coordinates.zero)
+      .getOrElse { throw new Exception(s"Coordinates not found: ${document.baseUri}") }
 
   override def getImageUrls(document: Document): List[String] =
     JsoupHelper.filterAttributesSrc(document, "[data-testid=main-header-image], [data-testid^=extra-header-image-]")
@@ -66,20 +69,24 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getSize(document: Document): Area =
     JsoupHelper
       .findInt(document, "[data-testid=floor-area]")
-      .fold(Area.zero) { Area(_, AreaUnit.SquareMetres) }
+      .map { Area(_, AreaUnit.SquareMetres) }
+      .getOrElse { throw new Exception(s"Size not found: ${document.baseUri}") }
 
   override def getBedroomsCount(document: Document): Int =
     JsoupHelper
       .findInt(document, "[data-testid=beds]")
-      .getOrElse(0)
+      .getOrElse { throw new Exception(s"Bedrooms not found: ${document.baseUri}") }
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
       .findInt(document, "[data-testid=baths]")
-      .getOrElse(0)
+      .getOrElse { throw new Exception(s"Bathrooms not found: ${document.baseUri}") }
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
-    JsoupHelper.findAttributeAlt(document, "[data-testid=ber] > img").flatMap { Rating.tryFromString(_).toOption }
+    JsoupHelper
+      .findAttributeAlt(document, "[data-testid=ber] > img")
+      .flatMap { Rating.tryFromString(_).toOption }
+      .orElse { throw new Exception(s"Building Energy Rating not found: ${document.baseUri}") }
 
   override def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int] =
     JsoupHelper
