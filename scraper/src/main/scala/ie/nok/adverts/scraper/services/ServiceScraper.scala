@@ -1,12 +1,19 @@
 package ie.nok.adverts.scraper.services
 
+import ie.nok.adverts.AdvertService
+import ie.nok.adverts.scraper.services.daftie.DaftIeScraper
 import java.net.URL
-import org.jsoup.nodes.Document
 
 trait ServiceScraper {
+  def getService(): AdvertService
 
-  def getInitialServiceListPageUrl(): URL
-  def getServiceListPageScraper(document: Document): ServiceListPageScraper
-  def getServiceItemPageScraper(document: Document): ServiceItemPageScraper
+  def getInitialListPageUrl(): URL
+  def getListPageScraper(): ServiceListPageScraper
+  def getItemPageScraper(): ServiceItemPageScraper
+}
 
+object ServiceScraper {
+  val all = List(
+    DaftIeScraper
+  )
 }

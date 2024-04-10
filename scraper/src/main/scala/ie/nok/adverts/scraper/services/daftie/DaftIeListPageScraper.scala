@@ -12,7 +12,7 @@ object DaftIeListPageScraper extends ServiceListPageScraper {
     val nextPage = document
       .selectFirst("a[rel=next]")
       .absUrl("href")
-      .pipe { new URL(_) }
+      .pipe { URL(_) }
 
     val nextPageZero = nextPage.getQuery().contains("from=0")
 
@@ -24,5 +24,5 @@ object DaftIeListPageScraper extends ServiceListPageScraper {
       .select("ul[data-testid=results]>li[data-testid^=result-]>a")
       .asScala
       .map { _.absUrl("href") }
-      .map { new URL(_) }
+      .map { URL(_) }
 }
