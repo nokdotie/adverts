@@ -49,7 +49,8 @@ object Main extends ZIOAppDefault {
   ): ZPipeline[ZioClient, Throwable, URL, Advert] =
     ZPipeline
       .mapZIOPar(5)(getDocument)
-      .map(itemPageScraper.getAdvert)
+      .filter { itemPageScraper.filter }
+      .map { itemPageScraper.getAdvert }
 
   def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] =
     getService

@@ -13,6 +13,11 @@ import scala.util.chaining.scalaUtilChainingOps
 
 object DaftIeItemPageScraper extends ServiceItemPageScraper {
 
+  override def filter(document: Document): Boolean =
+    JsoupHelper
+      .findString(document, "[data-testid=back-button]")
+      .nonEmpty
+
   override def getSaleStatus(document: Document): AdvertSaleStatus =
     JsoupHelper
       .findString(document, "[data-testid=price]")
@@ -24,8 +29,9 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
 
   override def getPriceInEur(document: Document): Int =
     JsoupHelper
-      .findInt(document, "[data-testid=price]")
-      .getOrElse { throw new Exception(s"Price not found: ${document.baseUri}") }
+      .findRegex(document, "[data-testid=price]", raw"€([\d,]+)".r)
+      .flatMap(_.group(1).filter(_.isDigit).toIntOption)
+      .getOrElse(0)
 
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
@@ -35,15 +41,27 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
       .findString(document, "[data-testid=property-type]")
-      .map {
-        case "Apartment" => PropertyType.Apartment
-        case "Terrace"   => PropertyType.Terraced
-        case other       => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
+      .flatMap {
+        case "Apartment"      => Some(PropertyType.Apartment)
+        case "Bungalow"       => Some(PropertyType.Bungalow)
+        case "Detached"       => Some(PropertyType.Detached)
+        case "Duplex"         => Some(PropertyType.Duplex)
+        case "End of Terrace" => Some(PropertyType.EndOfTerrace)
+        case "House"          => Some(PropertyType.House)
+        case "Houses"         => Some(PropertyType.House)
+        case "Property"       => None
+        case "Semi-D"         => Some(PropertyType.SemiDetached)
+        case "Site"           => Some(PropertyType.Site)
+        case "Studio"         => Some(PropertyType.Studio)
+        case "Terrace"        => Some(PropertyType.Terraced)
+        case "Townhouse"      => Some(PropertyType.House)
+        case other            => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
       }
 
   override def getAddress(document: Document): String =
     JsoupHelper
       .findString(document, "[data-testid=address]")
+      .orElse(JsoupHelper.findString(document, "[data-testid=alt-title]"))
       .map { Eircode.unzip(_)._1 }
       .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
 
@@ -66,37 +84,55 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getImageUrls(document: Document): List[String] =
     JsoupHelper.filterAttributesSrc(document, "[data-testid=main-header-image], [data-testid^=extra-header-image-]")
 
+  private val sizeAcresRegex  = raw"([\d\.]+) ac".r
+  private val sizeSqrMtrRegex = raw"([\d\.]+) m²".r
   override def getSize(document: Document): Area =
     JsoupHelper
-      .findInt(document, "[data-testid=floor-area]")
-      .map { Area(_, AreaUnit.SquareMetres) }
-      .getOrElse { throw new Exception(s"Size not found: ${document.baseUri}") }
+      .findString(document, "[data-testid=floor-area]")
+      .map {
+        case sizeAcresRegex(size)  => Area(BigDecimal(size), AreaUnit.Acres)
+        case sizeSqrMtrRegex(size) => Area(BigDecimal(size), AreaUnit.SquareMetres)
+        case other                 => throw new Exception(s"Unknown size: $other, ${document.baseUri}")
+      }
+      .getOrElse(Area.zero)
 
   override def getBedroomsCount(document: Document): Int =
     JsoupHelper
-      .findInt(document, "[data-testid=beds]")
-      .getOrElse { throw new Exception(s"Bedrooms not found: ${document.baseUri}") }
+      .findRegex(document, "[data-testid=beds]", raw"(\d+) Bed".r)
+      .flatMap { _.group(1).toIntOption }
+      .getOrElse(0)
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
-      .findInt(document, "[data-testid=baths]")
-      .getOrElse { throw new Exception(s"Bathrooms not found: ${document.baseUri}") }
+      .findRegex(document, "[data-testid=baths]", raw"(\d+) Bath".r)
+      .flatMap { _.group(1).toIntOption }
+      .getOrElse(0)
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
     JsoupHelper
       .findAttributeAlt(document, "[data-testid=ber] > img")
-      .flatMap { Rating.tryFromString(_).toOption }
-      .orElse { throw new Exception(s"Building Energy Rating not found: ${document.baseUri}") }
+      .flatMap {
+        case ""       => None
+        case "NA"     => None
+        case "SI_666" => None
+        case other =>
+          Rating
+            .tryFromString(other)
+            .toOption
+            .orElse {
+              println(s"Unknown BER rating: $other, ${document.baseUri}")
+              None
+            }
+      }
 
   override def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int] =
     JsoupHelper
-      .findInt(document, "[data-testid=ber-code]")
+      .findRegex(document, "[data-testid=ber-code]", raw"BER No: (\d+)".r)
+      .flatMap { _.group(1).toIntOption }
 
-  private val berEnergyRatingRegex = raw"(\d+\.?\d*) kWh/m2/yr".r
   override def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal] =
     JsoupHelper
-      .findString(document, "[data-testid=ber-epi] > span:nth-child(2)")
-      .flatMap { berEnergyRatingRegex.findFirstMatchIn }
+      .findRegex(document, "[data-testid=ber-epi] > span:nth-child(2)", raw"(\d+\.?\d*) kWh/m2/yr".r)
       .map { _.group(1) }
       .map { BigDecimal(_) }
 
