@@ -12,6 +12,8 @@ import java.time.Instant
 
 trait ServiceItemPageScraper {
 
+  def filter(document: Document): Boolean
+
   def getSaleStatus(document: Document): AdvertSaleStatus
   def getPriceInEur(document: Document): Int
   def getDescription(document: Document): Option[String]

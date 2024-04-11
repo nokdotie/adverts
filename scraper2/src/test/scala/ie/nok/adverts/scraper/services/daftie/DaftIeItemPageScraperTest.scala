@@ -202,4 +202,74 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
       )
     )
   }
+
+  test("5590770 - property type") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5590770.html",
+      "https://www.daft.ie/for-sale/-/5590770"
+    )
+
+    val propertyType = DaftIeItemPageScraper.getPropertyType(document)
+    assertEquals(propertyType, Some(PropertyType.Detached))
+  }
+
+  test("5350705 - price") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5350705.html",
+      "https://www.daft.ie/for-sale/-/5350705"
+    )
+
+    val price = DaftIeItemPageScraper.getPriceInEur(document)
+    assertEquals(price, 0)
+  }
+
+  test("5350705 - size") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5350705.html",
+      "https://www.daft.ie/for-sale/-/5350705"
+    )
+
+    val size = DaftIeItemPageScraper.getSize(document)
+    assertEquals(size, Area(1.56, AreaUnit.Acres))
+  }
+
+  test("5645812 - ber") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5645812.html",
+      "https://www.daft.ie/for-sale/-/5645812"
+    )
+
+    val ber = DaftIeItemPageScraper.getBuildingEnergyRating(document)
+    assertEquals(ber, None)
+  }
+
+  test("5508432 - address") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5508432.html",
+      "https://www.daft.ie/for-sale/-/5508432"
+    )
+
+    val address = DaftIeItemPageScraper.getAddress(document)
+    assertEquals(address, "Chandos Lane, Chandos Lane, Road, Dundrum, Co. Dublin")
+  }
+
+  test("4715649 - ber") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/4715649.html",
+      "https://www.daft.ie/for-sale/-/4715649"
+    )
+
+    val ber = DaftIeItemPageScraper.getBuildingEnergyRating(document)
+    assertEquals(ber, Some(Rating.B2))
+  }
+
+  test("5291883 - filter") {
+    val document = ScraperHelper.getDocument(
+      "services/daftie/items/5291883.html",
+      "https://www.daft.ie/for-sale/-/5291883"
+    )
+
+    val filter = DaftIeItemPageScraper.filter(document)
+    assertEquals(filter, false)
+  }
 }

@@ -6,6 +6,7 @@ import org.jsoup.safety.Safelist
 import scala.jdk.CollectionConverters.*
 import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
+import scala.util.matching.Regex
 
 object JsoupHelper {
   def find(document: Document, cssQuery: String): Option[Element] =
@@ -32,8 +33,10 @@ object JsoupHelper {
       .map { Jsoup.clean(_, "", Safelist.none(), prettyPrintOff) }
   }
 
-  def findInt(document: Document, cssQuery: String): Option[Int] =
-    findString(document, cssQuery).flatMap { _.filter { _.isDigit }.toIntOption }
+  def findRegex(document: Document, cssQuery: String, regex: Regex): Option[Regex.Match] =
+    find(document, cssQuery)
+      .map { _.text }
+      .flatMap { regex.findFirstMatchIn }
 
   private def findAttribute(document: Document, cssQuery: String, attributeKey: String): Option[String] =
     find(document, cssQuery)
