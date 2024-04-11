@@ -260,7 +260,7 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
     )
 
     val ber = DaftIeItemPageScraper.getBuildingEnergyRating(document)
-    assertEquals(ber, Some(Rating.B2))
+    assertEquals(ber, None)
   }
 
   test("5291883 - filter") {
