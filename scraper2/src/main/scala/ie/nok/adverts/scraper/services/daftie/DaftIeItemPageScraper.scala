@@ -71,14 +71,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   private val coordinatesRegex = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
   override def getCoordinates(document: Document): Coordinates =
     JsoupHelper
-      .findAttributeHref(document, "[data-testid=streetview-button]")
-      .flatMap { coordinatesRegex.findFirstMatchIn }
-      .map { coordinates =>
-        val latitude  = coordinates.group(1).pipe { BigDecimal(_) }
-        val longitude = coordinates.group(2).pipe { BigDecimal(_) }
-
-        Coordinates(latitude = latitude, longitude = longitude)
-      }
+      .findGoogleMapsCoordinates(document)
       .getOrElse { throw new Exception(s"Coordinates not found: ${document.baseUri}") }
 
   override def getImageUrls(document: Document): List[String] =

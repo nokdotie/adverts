@@ -7,6 +7,7 @@ import scala.jdk.CollectionConverters.*
 import scala.util.Try
 import scala.util.chaining.scalaUtilChainingOps
 import scala.util.matching.Regex
+import ie.nok.geographic.Coordinates
 
 object JsoupHelper {
   def find(document: Document, cssQuery: String): Option[Element] =
@@ -34,8 +35,7 @@ object JsoupHelper {
   }
 
   def findRegex(document: Document, cssQuery: String, regex: Regex): Option[Regex.Match] =
-    find(document, cssQuery)
-      .map { _.text }
+    findString(document, cssQuery)
       .flatMap { regex.findFirstMatchIn }
 
   private def findAttribute(document: Document, cssQuery: String, attributeKey: String): Option[String] =
@@ -48,10 +48,35 @@ object JsoupHelper {
   def findAttributeAlt(document: Document, cssQuery: String): Option[String] =
     findAttribute(document, cssQuery, "alt")
 
+  def filterStrings(document: Document, cssQuery: String): List[String] =
+    document
+      .select(cssQuery)
+      .asScala
+      .map { _.text }
+      .toList
+
+  def filterRegex(document: Document, cssQuery: String, regex: Regex): List[Regex.Match] =
+    filterStrings(document, cssQuery)
+      .flatMap { regex.findAllMatchIn }
+
   def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
     document
       .select(cssQuery)
       .asScala
       .map { _.attr("src") }
       .toList
+
+  private val googleMapsCssQuery = "a[href^=https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=]"
+  private val googleMapsRegex    = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
+  def findGoogleMapsCoordinates(document: Document): Option[Coordinates] =
+    JsoupHelper
+      .findAttributeHref(document, googleMapsCssQuery)
+      .flatMap { googleMapsRegex.findFirstMatchIn }
+      .map { coordinates =>
+        val latitude  = coordinates.group(1).pipe { BigDecimal(_) }
+        val longitude = coordinates.group(2).pipe { BigDecimal(_) }
+
+        Coordinates(latitude = latitude, longitude = longitude)
+      }
+
 }

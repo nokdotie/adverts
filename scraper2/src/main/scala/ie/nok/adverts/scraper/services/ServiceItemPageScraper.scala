@@ -35,7 +35,7 @@ trait ServiceItemPageScraper {
     val size    = getSize(document)
 
     Advert(
-      advertUrl = document.baseUri(),
+      advertUrl = document.location(),
       advertSaleStatus = getSaleStatus(document),
       advertPriceInEur = getPriceInEur(document),
       propertyIdentifier = Hash.encode(address),
