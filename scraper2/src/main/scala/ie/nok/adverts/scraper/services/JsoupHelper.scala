@@ -42,11 +42,15 @@ object JsoupHelper {
     find(document, cssQuery)
       .map { _.attr(attributeKey) }
 
-  def findAttributeHref(document: Document, cssQuery: String): Option[String] =
-    findAttribute(document, cssQuery, "href")
-
   def findAttributeAlt(document: Document, cssQuery: String): Option[String] =
     findAttribute(document, cssQuery, "alt")
+
+  private def findAttributeUrl(document: Document, cssQuery: String, attributeKey: String): Option[String] =
+    find(document, cssQuery)
+      .map { _.absUrl(attributeKey) }
+
+  def findAttributeHref(document: Document, cssQuery: String): Option[String] =
+    findAttributeUrl(document, cssQuery, "href")
 
   def filterStrings(document: Document, cssQuery: String): List[String] =
     document
@@ -59,12 +63,18 @@ object JsoupHelper {
     filterStrings(document, cssQuery)
       .flatMap { regex.findAllMatchIn }
 
-  def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
+  private def filterAttributesUrls(document: Document, cssQuery: String, attributeKey: String): List[String] =
     document
       .select(cssQuery)
       .asScala
-      .map { _.attr("src") }
+      .map { _.absUrl(attributeKey) }
       .toList
+
+  def filterAttributesHref(document: Document, cssQuery: String): List[String] =
+    filterAttributesUrls(document, cssQuery, "href")
+
+  def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
+    filterAttributesUrls(document, cssQuery, "src")
 
   private val googleMapsCssQuery = "a[href^=https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=]"
   private val googleMapsRegex    = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
