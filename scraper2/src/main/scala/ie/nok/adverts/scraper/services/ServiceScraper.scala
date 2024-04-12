@@ -2,6 +2,7 @@ package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.AdvertService
 import ie.nok.adverts.scraper.services.daftie.DaftIeScraper
+import ie.nok.adverts.scraper.services.maherpropertyie.MaherPropertyIeScraper
 import java.net.URL
 
 trait ServiceScraper {
@@ -14,6 +15,7 @@ trait ServiceScraper {
 
 object ServiceScraper {
   val all = List(
-    DaftIeScraper
+    DaftIeScraper,
+    MaherPropertyIeScraper
   )
 }
