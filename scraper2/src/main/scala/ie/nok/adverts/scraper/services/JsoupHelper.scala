@@ -42,16 +42,26 @@ object JsoupHelper {
     find(document, cssQuery)
       .map { _.attr(attributeKey) }
 
-  def findAttributeHref(document: Document, cssQuery: String): Option[String] =
-    findAttribute(document, cssQuery, "href")
-
   def findAttributeAlt(document: Document, cssQuery: String): Option[String] =
     findAttribute(document, cssQuery, "alt")
 
-  def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
+  private def findAttributeUrl(document: Document, cssQuery: String, attributeKey: String): Option[String] =
+    find(document, cssQuery)
+      .map { _.absUrl(attributeKey) }
+
+  def findAttributeHref(document: Document, cssQuery: String): Option[String] =
+    findAttributeUrl(document, cssQuery, "href")
+
+  private def filterAttributesUrls(document: Document, cssQuery: String, attributeKey: String): List[String] =
     document
       .select(cssQuery)
       .asScala
-      .map { _.attr("src") }
+      .map { _.absUrl(attributeKey) }
       .toList
+
+  def filterAttributesHref(document: Document, cssQuery: String): List[String] =
+    filterAttributesUrls(document, cssQuery, "href")
+
+  def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
+    filterAttributesUrls(document, cssQuery, "src")
 }
