@@ -1,4 +1,4 @@
-package ie.nok.adverts.scraper.services
+package ie.nok.adverts.scraper.jsoup
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.{Document, Element}
@@ -75,18 +75,5 @@ object JsoupHelper {
 
   def filterAttributesSrc(document: Document, cssQuery: String): List[String] =
     filterAttributesUrls(document, cssQuery, "src")
-
-  private val googleMapsCssQuery = "a[href^=https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=]"
-  private val googleMapsRegex    = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
-  def findGoogleMapsCoordinates(document: Document): Option[Coordinates] =
-    JsoupHelper
-      .findAttributeHref(document, googleMapsCssQuery)
-      .flatMap { googleMapsRegex.findFirstMatchIn }
-      .map { coordinates =>
-        val latitude  = coordinates.group(1).pipe { BigDecimal(_) }
-        val longitude = coordinates.group(2).pipe { BigDecimal(_) }
-
-        Coordinates(latitude = latitude, longitude = longitude)
-      }
 
 }

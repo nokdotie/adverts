@@ -1,15 +1,15 @@
-package ie.nok.adverts.scraper.services.myhomeie
+package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.scraper.services.ScraperHelper
 import java.net.URL
 
-class MyHomeIeListPageScraperTest extends munit.FunSuite {
+class SitemapListPageScraperTest extends munit.FunSuite {
 
   test("sitemap") {
     ScraperHelper.assertListPageScraperResults(
-      "services/myhomeie/lists/sitemap.xml",
+      "services/lists/sitemap.xml",
       "https://www.myhome.ie/sitemaps/residentialforsale_sitemap.xml",
-      MyHomeIeListPageScraper,
+      SitemapListPageScraper,
       None,
       List(
         URL("https://www.myhome.ie/residential/brochure/59-new-road-clondalkin-dublin-22/4785119"),

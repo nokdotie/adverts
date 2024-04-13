@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper.services.daftie
 
 import org.jsoup.nodes.Document
 import ie.nok.adverts.PropertyType
-import ie.nok.adverts.scraper.services.JsoupHelper
+import ie.nok.adverts.scraper.jsoup.JsoupHelper
 import ie.nok.adverts.scraper.services.ServiceItemPageScraper
 import ie.nok.adverts.AdvertSaleStatus
 import ie.nok.ecad.Eircode
@@ -70,8 +70,8 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
 
   private val coordinatesRegex = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
   override def getCoordinates(document: Document): Coordinates =
-    JsoupHelper
-      .findGoogleMapsCoordinates(document)
+    ServiceItemPageScraper
+      .googleMapsCoordinates(document)
       .getOrElse { throw new Exception(s"Coordinates not found: ${document.baseUri}") }
 
   override def getImageUrls(document: Document): List[String] =
