@@ -1,7 +1,7 @@
 package ie.nok.adverts.scraper.services
 
-import ie.nok.adverts.scraper.services.ScraperHelper
 import java.net.URL
+import org.jsoup.nodes.Document
 
 class SitemapListPageScraperTest extends munit.FunSuite {
 
@@ -9,7 +9,9 @@ class SitemapListPageScraperTest extends munit.FunSuite {
     ScraperHelper.assertListPageScraperResults(
       "services/lists/sitemap.xml",
       "https://www.myhome.ie/sitemaps/residentialforsale_sitemap.xml",
-      SitemapListPageScraper,
+      new SitemapListPageScraper {
+        override def getNextPageUrl(document: Document): Option[URL] = None
+      },
       None,
       List(
         URL("https://www.myhome.ie/residential/brochure/59-new-road-clondalkin-dublin-22/4785119"),
