@@ -5,10 +5,9 @@ import ie.nok.adverts.AdvertService
 import ie.nok.adverts.scraper.services.{ServiceScraper, SitemapListPageScraper}
 
 object PropertyPalComScraper extends ServiceScraper {
-  override def getService() = AdvertService.MyHomeIe
+  override def getService() = AdvertService.PropertyPalCom
 
   override def getInitialListPageUrl() = PropertyPalComListPageScraper.getUrls().head
   override def getListPageScraper()    = PropertyPalComListPageScraper
-
-  override def getItemPageScraper() = ???
+  override def getItemPageScraper()    = PropertyPalComItemPageScraper
 }

@@ -32,11 +32,11 @@ object JsoupHelper {
           .replaceAll("\\\\n", "\n")
       }
       .map { Jsoup.clean(_, "", Safelist.none(), prettyPrintOff) }
+      .map { _.trim }
   }
 
   def findRegex(document: Document, cssQuery: String, regex: Regex): Option[Regex.Match] =
-    findString(document, cssQuery)
-      .flatMap { regex.findFirstMatchIn }
+    filterRegex(document, cssQuery, regex).headOption
 
   private def findAttribute(document: Document, cssQuery: String, attributeKey: String): Option[String] =
     find(document, cssQuery)

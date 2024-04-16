@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document
 
 class SelectedListPageScraperTest extends munit.FunSuite {
 
-  test("selectde") {
+  test("selected") {
     val scraper = new SelectedListPageScraper {
 
       override def getItemPageUrls(document: Document) = Iterable.empty

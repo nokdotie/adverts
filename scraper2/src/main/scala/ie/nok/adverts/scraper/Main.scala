@@ -20,16 +20,16 @@ object Main extends ZIOAppDefault {
       .map { _.headOption }
       .someOrFail(new Throwable("No advert service provided"))
       .flatMap { arg => ZIO.attempt { AdvertService.valueOf(arg) } }
-      .map { service => ServiceScraper.all.find { _.getService() == service }.get }
+      .map { service =>
+        ServiceScraper.all
+          .find { _.getService() == service }
+          .getOrElse { throw new Throwable(s"Advert service not found: $service") }
+      }
 
   def getDocument(url: URL): ZIO[ZioClient, Throwable, Document] =
     Client
       .requestBodyAsHtml(url.toString())
       .retry(recurs(3) && fixed(1.second))
-      .map { document =>
-        document.setBaseUri(url.toString())
-        document
-      }
 
   def getItemPageUrls(initialListPageUrl: URL, listPageScraper: ServiceListPageScraper): ZStream[ZioClient, Throwable, URL] =
     ZStream
