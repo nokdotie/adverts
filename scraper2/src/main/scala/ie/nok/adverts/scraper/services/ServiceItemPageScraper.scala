@@ -1,14 +1,16 @@
 package ie.nok.adverts.scraper.services
 
-import java.net.URL
-import org.jsoup.nodes.Document
 import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
+import ie.nok.adverts.scraper.jsoup.JsoupHelper
+import ie.nok.ber.Rating
+import ie.nok.codecs.hash.Hash
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
-import ie.nok.ber.Rating
 import ie.nok.unit.Area
-import ie.nok.codecs.hash.Hash
+import java.net.URL
 import java.time.Instant
+import org.jsoup.nodes.Document
+import scala.util.chaining.scalaUtilChainingOps
 
 trait ServiceItemPageScraper {
 
@@ -35,7 +37,7 @@ trait ServiceItemPageScraper {
     val size    = getSize(document)
 
     Advert(
-      advertUrl = document.baseUri(),
+      advertUrl = document.location(),
       advertSaleStatus = getSaleStatus(document),
       advertPriceInEur = getPriceInEur(document),
       propertyIdentifier = Hash.encode(address),
@@ -58,4 +60,21 @@ trait ServiceItemPageScraper {
     )
   }
 
+}
+
+object ServiceItemPageScraper {
+
+  private val googleMapsCssQuery = "a[href^=https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=]"
+  private val googleMapsRegex    = raw"https:\/\/www\.google\.com\/maps\/@\?api=1&map_action=pano&viewpoint=(-?\d+\.?\d+),(-?\d+\.?\d+)".r
+
+  def googleMapsCoordinates(document: Document): Option[Coordinates] =
+    JsoupHelper
+      .findAttributeHref(document, googleMapsCssQuery)
+      .flatMap { googleMapsRegex.findFirstMatchIn }
+      .map { coordinates =>
+        val latitude  = coordinates.group(1).pipe { BigDecimal(_) }
+        val longitude = coordinates.group(2).pipe { BigDecimal(_) }
+
+        Coordinates(latitude = latitude, longitude = longitude)
+      }
 }
