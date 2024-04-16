@@ -194,7 +194,7 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         |BER Rating: C2
         |BER No.: 106839228
         |Energy Performance Indicator: Not provided""".stripMargin.trim),
-        propertyType = Some(PropertyType.Duplex),
+        propertyType = Some(PropertyType.Apartment),
         propertyAddress = "Investment Property, 14 Clayton Court, Staplestown Road, Carlow Town",
         propertyEircode = None,
         propertyCoordinates = Coordinates.zero,

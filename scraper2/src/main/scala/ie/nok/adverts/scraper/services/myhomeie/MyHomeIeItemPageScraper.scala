@@ -13,7 +13,7 @@ import scala.util.chaining.scalaUtilChainingOps
 
 object MyHomeIeItemPageScraper extends ServiceItemPageScraper {
 
-  override def filter(document: Document): Boolean = false
+  override def filter(document: Document): Boolean = true
 
   override def getSaleStatus(document: Document): AdvertSaleStatus =
     JsoupHelper
