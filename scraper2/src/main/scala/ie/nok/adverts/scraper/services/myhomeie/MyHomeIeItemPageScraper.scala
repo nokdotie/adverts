@@ -13,7 +13,10 @@ import scala.util.chaining.scalaUtilChainingOps
 
 object MyHomeIeItemPageScraper extends ServiceItemPageScraper {
 
-  override def filter(document: Document): Boolean = true
+  override def filter(document: Document): Boolean =
+    JsoupHelper
+      .findString(document, ".brochure__price")
+      .exists { _.nonEmpty }
 
   override def getSaleStatus(document: Document): AdvertSaleStatus =
     JsoupHelper
@@ -33,7 +36,7 @@ object MyHomeIeItemPageScraper extends ServiceItemPageScraper {
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
       .findStringKeepLineBreaks(document, ".brochure__details--description-content")
-      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Description not found: ${document.location}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     None
@@ -41,7 +44,7 @@ object MyHomeIeItemPageScraper extends ServiceItemPageScraper {
   override def getAddress(document: Document): String =
     JsoupHelper
       .findString(document, "h4")
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
   override def getEircode(document: Document): Option[Eircode] =
     JsoupHelper
@@ -52,51 +55,52 @@ object MyHomeIeItemPageScraper extends ServiceItemPageScraper {
   override def getCoordinates(document: Document): Coordinates =
     ServiceItemPageScraper
       .googleMapsCoordinates(document)
-      .getOrElse { throw new Exception(s"Coordinates not found: ${document.baseUri}") }
+      .getOrElse(Coordinates.zero)
 
   override def getImageUrls(document: Document): List[String] =
     JsoupHelper.filterAttributesSrc(document, ".gallery img").distinct
 
   override def getSize(document: Document): Area =
     JsoupHelper
-      .filterRegex(document, ".info-strip--divider", raw"([\d\.]+) m2".r)
-      .headOption
+      .findRegex(document, ".info-strip--divider", raw"([\d\.]+) m2".r)
       .map { _.group(1) }
-      .map { size => Area(BigDecimal(size), AreaUnit.SquareMetres) }
-      .getOrElse { throw new Exception(s"Size not found: ${document.baseUri}") }
+      .fold(Area.zero) { size => Area(BigDecimal(size), AreaUnit.SquareMetres) }
 
   override def getBedroomsCount(document: Document): Int =
     JsoupHelper
-      .filterRegex(document, ".info-strip--divider", raw"([\d\.]+) beds".r)
-      .headOption
+      .findRegex(document, ".info-strip--divider", raw"(\d+) beds".r)
       .flatMap { _.group(1).toIntOption }
-      .getOrElse { throw new Exception(s"Bedrooms count not found: ${document.baseUri}") }
+      .getOrElse(0)
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
-      .filterRegex(document, ".info-strip--divider", raw"([\d\.]+) baths".r)
-      .headOption
+      .findRegex(document, ".info-strip--divider", raw"(\d+) baths".r)
       .flatMap { _.group(1).toIntOption }
       .getOrElse(0)
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
     JsoupHelper
-      .findRegex(document, ".brochure__details--description-content", raw"BER: (\w+)".r)
+      .findRegex(document, "h4 + .brochure__details--description-content", raw"^BER: (\w+)".r)
       .map { _.group(1) }
-      .flatMap { value =>
-        Rating
-          .tryFromString(value)
-          .toOption
-          .orElse { throw new Exception(s"Unknown rating: $value, ${document.baseUri}") }
+      .flatMap {
+        case "Exempt" => None
+        case other =>
+          Rating
+            .tryFromString(other)
+            .toOption
+            .orElse {
+              println(s"Unknown BER rating: $other, ${document.location}")
+              None
+            }
       }
 
   override def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int] = JsoupHelper
-    .findRegex(document, ".brochure__details--description-content", raw"BER No: (\d+)".r)
+    .findRegex(document, "h4 + .brochure__details--description-content", raw"BER No: (\d+)".r)
     .flatMap { _.group(1).toIntOption }
 
   override def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal] =
     JsoupHelper
-      .findRegex(document, ".brochure__details--description-content", raw"Energy Performance Indicator: (\d+)".r)
+      .findRegex(document, "h4 + .brochure__details--description-content", raw"Energy Performance Indicator: (\d+)".r)
       .map { _.group(1) }
       .map { BigDecimal(_) }
 
