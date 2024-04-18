@@ -148,4 +148,37 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
       )
     )
   }
+
+  test("4786237 - size") {
+    val document = ScraperHelper.getDocument(
+      "services/myhomeie/items/4786237.html",
+      "https://www.myhome.ie/residential/brochure/_/4786237"
+    )
+
+    val size = MyHomeIeItemPageScraper.getSize(document)
+    assertEquals(size, Area(234, AreaUnit.SquareMetres))
+  }
+
+  test("4752283 - ber") {
+    val document = ScraperHelper.getDocument(
+      "services/myhomeie/items/4752283.html",
+      "https://www.myhome.ie/residential/brochure/_/4752283"
+    )
+
+    val rating = MyHomeIeItemPageScraper.getBuildingEnergyRating(document)
+    assertEquals(rating, Some(Rating.C3))
+
+    val certificateNumber = MyHomeIeItemPageScraper.getBuildingEnergyRatingCertificateNumber(document)
+    assertEquals(certificateNumber, Some(116936360))
+  }
+
+  test("4786284 - filter") {
+    val document = ScraperHelper.getDocument(
+      "services/myhomeie/items/4786284.html",
+      "https://www.myhome.ie/residential/brochure/_/4786284"
+    )
+
+    val filter = MyHomeIeItemPageScraper.filter(document)
+    assertEquals(filter, false)
+  }
 }

@@ -11,22 +11,22 @@ import scala.util.chaining.scalaUtilChainingOps
 
 object ScraperHelper {
 
-  def getDocument(resourcePath: String, baseUri: String): Document = {
+  def getDocument(resourcePath: String, location: String): Document = {
     val resource = Source.fromResource(resourcePath)
     val html     = Using.resource(resource) { _.mkString }
-    val document = Jsoup.parse(html, baseUri)
+    val document = Jsoup.parse(html, location)
 
     document
   }
 
   def assertListPageScraperResults(
       resourcePath: String,
-      baseUri: String,
+      location: String,
       listPageScraper: ServiceListPageScraper,
       expectedNextPageUrl: Option[URL],
       expectedItemPageUrls: List[URL]
   ): Unit = {
-    val document = getDocument(resourcePath, baseUri)
+    val document = getDocument(resourcePath, location)
 
     val obtainedNextPageUrl = listPageScraper.getNextPageUrl(document)
     assertEquals(obtainedNextPageUrl, expectedNextPageUrl)
@@ -37,11 +37,11 @@ object ScraperHelper {
 
   def assertItemPageScraperResults(
       resourcePath: String,
-      baseUri: String,
+      location: String,
       itemPageScraper: ServiceItemPageScraper,
       expectedAdvert: Advert
   ): Unit = {
-    val document = getDocument(resourcePath, baseUri)
+    val document = getDocument(resourcePath, location)
 
     val obtainedAdvert = itemPageScraper
       .getAdvert(document)

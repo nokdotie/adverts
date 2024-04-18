@@ -53,13 +53,13 @@ object PropertyPalComItemPageScraper extends ServiceItemPageScraper {
         case "Mid Townhouse"                            => PropertyType.House
         case "Retirement Home"                          => PropertyType.House
         case "Townhouse"                                => PropertyType.House
-        case other                                      => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
+        case other                                      => throw new Exception(s"Unknown property type: $other, ${document.location}")
       }
 
   override def getAddress(document: Document): String = {
     val address = JsoupHelper
       .findString(document, "h1")
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
     val county = JsoupHelper
       .findString(document, "h1 + p")
@@ -90,14 +90,14 @@ object PropertyPalComItemPageScraper extends ServiceItemPageScraper {
 
   override def getBedroomsCount(document: Document): Int =
     JsoupHelper
-      .findRegex(document, ".pp-key-info-row", raw"Bedrooms ([\d]+)".r)
+      .findRegex(document, ".pp-key-info-row", raw"Bedrooms (\d+)".r)
       .headOption
       .flatMap { _.group(1).toIntOption }
       .getOrElse(0)
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
-      .findRegex(document, ".pp-key-info-row", raw"Bathrooms ([\d]+)".r)
+      .findRegex(document, ".pp-key-info-row", raw"Bathrooms (\d+)".r)
       .headOption
       .flatMap { _.group(1).toIntOption }
       .getOrElse(0)
@@ -111,7 +111,7 @@ object PropertyPalComItemPageScraper extends ServiceItemPageScraper {
         Rating
           .tryFromString(value)
           .toOption
-          .orElse { throw new Exception(s"Unknown rating: $value, ${document.baseUri}") }
+          .orElse { throw new Exception(s"Unknown rating: $value, ${document.location}") }
       }
 
   override def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int] =

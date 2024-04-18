@@ -36,7 +36,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
       .findStringKeepLineBreaks(document, "[data-testid=description] [data-testid=description]")
-      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Description not found: ${document.location}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
@@ -55,7 +55,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
         case "Studio"         => Some(PropertyType.Studio)
         case "Terrace"        => Some(PropertyType.Terraced)
         case "Townhouse"      => Some(PropertyType.House)
-        case other            => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
+        case other            => throw new Exception(s"Unknown property type: $other, ${document.location}")
       }
 
   override def getAddress(document: Document): String =
@@ -63,7 +63,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
       .findString(document, "[data-testid=address]")
       .orElse(JsoupHelper.findString(document, "[data-testid=alt-title]"))
       .map { Eircode.unzip(_)._1 }
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
   override def getEircode(document: Document): Option[Eircode] =
     JsoupHelper.findString(document, "[data-testid=address]").flatMap { Eircode.unzip(_)._2 }
@@ -72,7 +72,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
   override def getCoordinates(document: Document): Coordinates =
     ServiceItemPageScraper
       .googleMapsCoordinates(document)
-      .getOrElse { throw new Exception(s"Coordinates not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Coordinates not found: ${document.location}") }
 
   override def getImageUrls(document: Document): List[String] =
     JsoupHelper.filterAttributesSrc(document, "[data-testid=main-header-image], [data-testid^=extra-header-image-]")
@@ -85,7 +85,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
       .map {
         case sizeAcresRegex(size)  => Area(BigDecimal(size), AreaUnit.Acres)
         case sizeSqrMtrRegex(size) => Area(BigDecimal(size), AreaUnit.SquareMetres)
-        case other                 => throw new Exception(s"Unknown size: $other, ${document.baseUri}")
+        case other                 => throw new Exception(s"Unknown size: $other, ${document.location}")
       }
       .getOrElse(Area.zero)
 
@@ -113,7 +113,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
             .tryFromString(other)
             .toOption
             .orElse {
-              println(s"Unknown BER rating: $other, ${document.baseUri}")
+              println(s"Unknown BER rating: $other, ${document.location}")
               None
             }
       }

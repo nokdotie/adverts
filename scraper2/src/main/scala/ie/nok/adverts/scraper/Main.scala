@@ -8,7 +8,7 @@ import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
 import java.net.URL
 import org.jsoup.nodes.Document
 import scala.util.chaining.scalaUtilChainingOps
-import zio.{Scope, ZIO, ZIOAppArgs, ZIOAppDefault, durationInt}
+import zio.{Console, Scope, ZIO, ZIOAppArgs, ZIOAppDefault, durationInt}
 import zio.http.Client as ZioClient
 import zio.stream.{ZPipeline, ZStream}
 import zio.Schedule.{fixed, recurs}
@@ -29,12 +29,16 @@ object Main extends ZIOAppDefault {
   def getDocument(url: URL): ZIO[ZioClient, Throwable, Document] =
     Client
       .requestBodyAsHtml(url.toString())
-      .retry(recurs(3) && fixed(1.second))
+      .delay(250.millis)
+      // MyHome.ie fails unexpectedly with 500 errors
+      .filterOrFail { _.title != "Error" } { new Throwable(s"Error getting document: $url") }
+      .retry(recurs(3) && fixed(3.second))
 
   def getItemPageUrls(initialListPageUrl: URL, listPageScraper: ServiceListPageScraper): ZStream[ZioClient, Throwable, URL] =
     ZStream
       .paginateZIO(initialListPageUrl) { url =>
         getDocument(url)
+          .tap { _ => Console.printLine(s"Got list: $url") }
           .map { document =>
             val nextPageUrl  = listPageScraper.getNextPageUrl(document)
             val itemPageUrls = listPageScraper.getItemPageUrls(document)
@@ -48,7 +52,10 @@ object Main extends ZIOAppDefault {
       itemPageScraper: ServiceItemPageScraper
   ): ZPipeline[ZioClient, Throwable, URL, Advert] =
     ZPipeline
-      .mapZIOPar(5)(getDocument)
+      .mapZIOPar(5) { case url: URL =>
+        getDocument(url)
+          .tap { _ => Console.printLine(s"Got item: $url") }
+      }
       .filter { itemPageScraper.filter }
       .map { itemPageScraper.getAdvert }
 
