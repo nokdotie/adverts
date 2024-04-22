@@ -160,33 +160,33 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyDescription = Some("""
         |For sale by Carlow Property via the iamsold Bidding Platform
         |
-        | Please note this property will be offered by online auction (unless sold prior). For auction date and time please visit iamsold.ie. Vendors may decide to accept pre-auction bids so please register your interest with us to avoid disappointment.
+        |Please note this property will be offered by online auction (unless sold prior). For auction date and time please visit iamsold.ie. Vendors may decide to accept pre-auction bids so please register your interest with us to avoid disappointment.
         |
-        | We are delighted to present this beautiful three-bedroom duplex apartment in Clayton Court, an esteemed residential estate in the desirable area of Carlow Town.
+        |We are delighted to present this beautiful three-bedroom duplex apartment in Clayton Court, an esteemed residential estate in the desirable area of Carlow Town.
         |
-        | Clayton Court offers a peaceful and secure environment with private access via electric gates, while conveniently providing easy access to all the amenities of the town within walking distance.
+        |Clayton Court offers a peaceful and secure environment with private access via electric gates, while conveniently providing easy access to all the amenities of the town within walking distance.
         |
-        | This property is a perfect combination of comfort and convenience, making it an ideal choice for families seeking a beautiful home in Carlow Town.
+        |This property is a perfect combination of comfort and convenience, making it an ideal choice for families seeking a beautiful home in Carlow Town.
         |
-        | Additionally, the purchaser will have the option to acquire the property as seen, inclusive of all furnishings and white goods, with the details of this arrangement open to negotiation at a later stage.
+        |Additionally, the purchaser will have the option to acquire the property as seen, inclusive of all furnishings and white goods, with the details of this arrangement open to negotiation at a later stage.
         |
-        | The property's ground floor comprises of a beautiful, tiled entrance hallway that gives way to the welcoming, spacious living room brightly lit via large windows.
+        |The property's ground floor comprises of a beautiful, tiled entrance hallway that gives way to the welcoming, spacious living room brightly lit via large windows.
         |
-        | Rounding off the ground floor is the accommodating, fully fitted kitchen it also benefits from a substantial balcony area. The first floor of the property features two spacious bedrooms, both equipped with built-in wardrobes, and one of which in ensuite.
+        |Rounding off the ground floor is the accommodating, fully fitted kitchen it also benefits from a substantial balcony area. The first floor of the property features two spacious bedrooms, both equipped with built-in wardrobes, and one of which in ensuite.
         |
-        | Additionally, there is a smaller bedroom ideally sized for a home office. Completing the first floor is a tiled family bathroom, offering the convenience of both a Triton shower and a bath.
+        |Additionally, there is a smaller bedroom ideally sized for a home office. Completing the first floor is a tiled family bathroom, offering the convenience of both a Triton shower and a bath.
         |
-        | The property is being sold subject to an ongoing tenancy.
+        |The property is being sold subject to an ongoing tenancy.
         |
-        | Features
-        | GFCH
-        | Large Private Balcony
-        | Sought After Estate
-        | Private Gated Complex
-        | Walking Distance To All Amenities
-        | BER C2 / BER No. 106839228
+        |Features
+        |GFCH
+        |Large Private Balcony
+        |Sought After Estate
+        |Private Gated Complex
+        |Walking Distance To All Amenities
+        |BER C2 / BER No. 106839228
         |
-        | TO VIEW OR MAKE BID Contact Carlow Propertry or iamsold, www.iamsold.ieStarting Bid and Reserve Price
+        |TO VIEW OR MAKE BID Contact Carlow Propertry or iamsold, www.iamsold.ieStarting Bid and Reserve Price
         |*Please note all properties are subject to a starting bids price and an undisclosed reserve. Both the starting bid and reserve price may be subject to change. Terms and conditions apply to the auction, which is powered by IAM Sold Property Auctions.Auctioneer's Comments
         |This property is offered for sale by unconditional auction. The successful bidder is required to pay a 10% deposit and contracts are signed immediately on acceptance of a bid. Please note this property is subject to an undisclosed reserve price. Terms and conditions apply to this sale.Building Energy Rating (BERs)
         |Building Energy Ratings (BERs) give information on how to make your property more energy efficient and reduce your energy costs. All properties bought, sold or rented require an BER. BERs carry ratings that compare the current energy efficiency and estimated costs of energy use with potential figures that your property could achieve. Potential figures are calculated by estimating what the energy efficiency and energy costs could be if energy saving measures were put in place. The rating measures the energy efficiency of your home using a grade from ‘A’ to ‘G’. An ‘A’ rating is the most efficient, while ‘G’ is the least efficient. The average efficiency grade to date is ‘D’. All properties are measured using the same calculations, so you can compare the energy efficiency of different properties.Property Particulars
