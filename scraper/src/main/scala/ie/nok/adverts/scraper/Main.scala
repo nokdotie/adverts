@@ -26,6 +26,7 @@ object Main extends ZIOAppDefault {
       case AdvertService.PropertyPalCom  => propertypalcom.advertStream
       case AdvertService.SherryFitzIe    => sherryfitzie.advertStream
       case AdvertService.MaherPropertyIe => maherpropertyie.advertStream
+      case _                             => throw new Throwable("Advert service not supported")
     }
 
   def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] = for {

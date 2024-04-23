@@ -9,6 +9,7 @@ enum AdvertService(val host: String) {
   case PropertyPalCom  extends AdvertService("propertypal.com")
   case SherryFitzIe    extends AdvertService("sherryfitz.ie")
   case MaherPropertyIe extends AdvertService("maherproperty.ie")
+  case FiveSIe         extends AdvertService("5s.ie")
 }
 
 object AdvertService {

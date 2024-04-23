@@ -21,19 +21,27 @@ object JsoupHelper {
     .OutputSettings()
     .prettyPrint(false)
   def findStringKeepLineBreaks(document: Document, cssQuery: String): Option[String] = {
-    val prettyPrintOff = Document.OutputSettings().prettyPrint(false)
+    val newLinePlaceholder = "NEW_LINE_PLACEHOLDER"
+    val prettyPrintOff     = Document.OutputSettings().prettyPrint(false)
 
     find(document.outputSettings(prettyPrintOff), cssQuery)
       .map {
-        _.tap { _.select("br").before("\\n") }
-          .tap { _.select("p").before("\\n") }
-          .tap { _.select("li").before("\\n- ") }
+        _.tap { _.select("br").after(newLinePlaceholder) }
+          .tap { _.select("div").after(newLinePlaceholder) }
+          .tap { _.select("p").after(newLinePlaceholder) }
+          .tap { _.select("li").before("- ").after(newLinePlaceholder) }
           .html
-          .replaceAll("\\\\n", "\n")
-          .replaceAll("\\n\\n\\n+", "\n\n\n")
+          .replaceAll(newLinePlaceholder, "\n")
+          .replaceAll("&nbsp;", " ")
+          .replaceAll(" +", " ")
       }
       .map { Jsoup.clean(_, "", Safelist.none(), prettyPrintOff) }
-      .map { _.linesIterator.map { _.trim }.mkString("\n") }
+      .map {
+        _.linesIterator
+          .map { _.trim }
+          .mkString("\n")
+          .replaceAll("\\n\\n\\n+", "\n\n\n")
+      }
       .map { _.trim }
   }
 
@@ -64,6 +72,20 @@ object JsoupHelper {
   def filterRegex(document: Document, cssQuery: String, regex: Regex): List[Regex.Match] =
     filterStrings(document, cssQuery)
       .flatMap { regex.findAllMatchIn }
+
+  private def filterAttributes(document: Document, cssQuery: String, attributeKey: String): List[String] =
+    document
+      .select(cssQuery)
+      .asScala
+      .map { _.attr(attributeKey) }
+      .toList
+
+  def filterAttributesStyleBackgroundImage(document: Document, cssQuery: String): List[String] =
+    filterAttributes(document, cssQuery, "style")
+      .flatMap {
+        case s"background-image: url($url)" => Some(url)
+        case _                              => None
+      }
 
   private def filterAttributesUrls(document: Document, cssQuery: String, attributeKey: String): List[String] =
     document
