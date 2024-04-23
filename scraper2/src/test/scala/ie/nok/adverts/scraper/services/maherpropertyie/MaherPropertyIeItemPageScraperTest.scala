@@ -25,7 +25,7 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyDescription = Some("""
         |Three bed end of bed terrace house for sale located on Chaff Street in Graiguecullen, Carlow. Originally constructed in 1997, the property measures 94 sqm (1011 sq. ft.), and is located across the road from St Claire’s Church. The property is within walking distance to the Barrow Track/Trail, Lazy River Café, Crèches, Schools, Swimming Pool, Soccer &amp;GAA pitches, and is a few minutes walk to Carlow Town Centre.
         |
-        |The property comprises hallway, sitting room, large dining area and kitchen with access to private laneway. Upstairs comprises single bedroom to the front, double bedroom to the front, large family bathroom and master bedroom with ensuite. &nbsp;The property would benefit from re-decoration throughout.
+        |The property comprises hallway, sitting room, large dining area and kitchen with access to private laneway. Upstairs comprises single bedroom to the front, double bedroom to the front, large family bathroom and master bedroom with ensuite. The property would benefit from re-decoration throughout.
         |
         |The complex has an active management company and service fees are €1,300 per annum which includes. building/block insurance, fire alarms, security, household refuse collection &amp;upkeep of common areas.
         |
