@@ -30,8 +30,10 @@ object JsoupHelper {
           .tap { _.select("li").before("\\n- ") }
           .html
           .replaceAll("\\\\n", "\n")
+          .replaceAll("\\n\\n\\n+", "\n\n\n")
       }
       .map { Jsoup.clean(_, "", Safelist.none(), prettyPrintOff) }
+      .map { _.linesIterator.map { _.trim }.mkString("\n") }
       .map { _.trim }
   }
 
