@@ -7,4 +7,5 @@ object FiveSIeListPageScraper extends SitemapListPageScraper with SelectedListPa
   override def getUrls() = List(
     URL("https://www.5s.ie/property-sitemap.xml")
   )
+
 }

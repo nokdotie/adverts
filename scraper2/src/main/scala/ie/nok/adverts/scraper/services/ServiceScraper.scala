@@ -6,6 +6,7 @@ import ie.nok.adverts.scraper.services.maherpropertyie.MaherPropertyIeScraper
 import ie.nok.adverts.scraper.services.myhomeie.MyHomeIeScraper
 import ie.nok.adverts.scraper.services.propertypalcom.PropertyPalComScraper
 import java.net.URL
+import ie.nok.adverts.scraper.services.fivesie.FiveSIeScraper
 
 trait ServiceScraper {
   def getService(): AdvertService
@@ -18,6 +19,7 @@ trait ServiceScraper {
 object ServiceScraper {
   val all = List(
     DaftIeScraper,
+    FiveSIeScraper,
     MaherPropertyIeScraper,
     MyHomeIeScraper,
     PropertyPalComScraper

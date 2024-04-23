@@ -72,7 +72,7 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
           |
           |Original features: Gas fireplace, double glazed windows &amp; doors, breakfast bar, floor to ceiling windows in living room, spacious foyer, floor to ceiling wardrobes, vast waterfront views, high ceilings. Super bright.
         """.stripMargin.trim),
-        propertyType = Some(PropertyType.Apartment),
+        propertyType = None,
         propertyAddress = "9 Tobar Na Mban, Lough Atalia., Galway",
         propertyEircode = Some(Eircode("H91P3K2")),
         propertyCoordinates = Coordinates.zero,
@@ -144,7 +144,7 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
           |
           |Please Note: These particulars are not to be considered a formal offer. They are for information only and give a general idea of the property. They are not to be taken as forming any part of a resulting contract, nor to be relied upon as statements or representations of fact. Whilst every care is taken in their preparation, neither 5S nor the vendor accept any liability as to their accuracy. Intending purchasers must satisfy themselves by personal inspection or otherwise as to the correctness of these particulars. No person in the employment of 5S has any authority to make or give any representation or warranty whatever in relation to this property.
           """.stripMargin.trim),
-        propertyType = Some(PropertyType.Apartment),
+        propertyType = None,
         propertyAddress = "6 college gate, lower newcastle road, galway",
         propertyEircode = None,
         propertyCoordinates = Coordinates.zero,
@@ -180,6 +180,104 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
         createdAt = Instant.now()
       )
     )
+  }
+
+  test("H91E6EF") {
+    ScraperHelper.assertItemPageScraperResults(
+      "services/fivesie/items/H91E6EF.html",
+      "https://www.5s.ie/property/11-rian-oisin-cois-cuain-salthill/",
+      FiveSIeItemPageScraper,
+      Advert(
+        advertUrl = "https://www.5s.ie/property/11-rian-oisin-cois-cuain-salthill/",
+        advertSaleStatus = AdvertSaleStatus.ForSale,
+        advertPriceInEur = 450000,
+        propertyIdentifier = Hash.encode("11 Rian Oisin, Cois Cuain, Salthill"),
+        propertyDescription = Some("""
+          |Description
+          |
+          |
+          |5S Real Estate are delighted to bring to the market this super three bedroom townhouse in Salthill.
+          |
+          |The location of the development provides convenience, privacy &amp; security. This property is presented in turnkey condition throughout.
+          |
+          |Rian Oisin is within walking distance of shops, restaurants, bars and cafes in Salthill Village and Galway City. There is an abundance of leisure and sporting facilities within easy reach. The impressive Rian Oisin development is situated off the promenade in Salthill and the adjacent Grattan beach.
+          |
+          |In brief, the accommodation is laid out with an impressive, light filled, entrance hallway with guest w/c. The bright and airy modern kitchen is positioned to the front of the house and overlooks the meticulously landscaped gardens, complete with its very own pond and water fountain. The large living/dining room extends out onto the private rear garden patio area which houses a generous sized garden shed. There is rear access from the garden leading to the communal car park.
+          |
+          |Upstairs there are three spacious bedrooms and the main bathroom which has a pump shower and bathtub.
+          |
+          |Features
+          |
+          |Electric heating
+          |
+          |Gas fireplace
+          |
+          |Double glazed windows
+          |
+          |Large garden shed
+          |
+          |Parking
+          |
+          |Downstairs toilet
+          |
+          |Modern finish
+          |
+          |Manicured communal gardens
+          |
+          |The agent for the sale is Alan O’Dowd who anticipates a high volume of enquires due to it’s turnkey condition and location. “Rian Oisin is a beautifully maintained developement close to all the amenities that Salthill &amp; Galway City have to offer. Viewing is highly recommended &amp; guaranteed to impress.
+          |
+          |For a list of similar type properties for sale in the area, please click here
+          |
+          |If you are considering selling your property, please feel free to contact one of our licensed agents for your free, no obligation valuation
+          |
+          |Continuing with our commitment to customer care, we have produced some handy booklets to help guide you through the selling process, renting process &amp; block management service. A comprehensive list of services provided can be also be viewed online or request a hard copy by emailing or calling us.
+          """.stripMargin.trim),
+        propertyType = None,
+        propertyAddress = "11 Rian Oisin, Cois Cuain, Salthill",
+        propertyEircode = None,
+        propertyCoordinates = Coordinates.zero,
+        propertyImageUrls = List(
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5447-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5446-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5445-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5435-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5424-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5420-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5419-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5411-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5407-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5402-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5400-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5398-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5390-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5388-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5385-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5368-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5370-1170x600.jpg",
+          "https://www.5s.ie/wp-content/uploads/2021/10/IMG_5281-1170x600.jpg"
+        ),
+        propertySize = Area(900, AreaUnit.SquareFeet),
+        propertySizeInSqtMtr = BigDecimal(83.6127),
+        propertyBedroomsCount = 3,
+        propertyBathroomsCount = 2,
+        propertyBuildingEnergyRating = None,
+        propertyBuildingEnergyRatingCertificateNumber = None,
+        propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
+        sources = List.empty,
+        advertiser = None,
+        createdAt = Instant.now()
+      )
+    )
+  }
+
+  test("H91T6X5 - size") {
+    val document = ScraperHelper.getDocument(
+      "services/fivesie/items/H91T6X5.html",
+      "https://www.5s.ie/property/galway-city-waterfront-apartment-luxury-2-bedroom-2-bath-10-tobar-na-mban-lough-atalia-road/"
+    )
+
+    val size = FiveSIeItemPageScraper.getSize(document)
+    assertEquals(size, Area(140, AreaUnit.SquareMetres))
   }
 
 }
