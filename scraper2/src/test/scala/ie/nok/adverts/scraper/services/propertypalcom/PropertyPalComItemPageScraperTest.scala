@@ -9,6 +9,7 @@ import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.net.URL
 import java.time.Instant
+import ie.nok.adverts.AdvertFacet
 
 class PropertyPalComItemPageScraperTest extends munit.FunSuite {
 
@@ -77,6 +78,7 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.propertypal.com/four-winds-tullow-road-carlow/841658")),
         advertiser = None,
         createdAt = Instant.now()
       )
@@ -141,6 +143,7 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.propertypal.com/granite-cottge-link-road-chapelstown-carlow/912502")),
         advertiser = None,
         createdAt = Instant.now()
       )
@@ -212,6 +215,7 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.propertypal.com/investment-property-14-clayton-court-staplestown-road-carlow-town/939428")),
         advertiser = None,
         createdAt = Instant.now()
       )

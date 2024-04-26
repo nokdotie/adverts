@@ -2,7 +2,7 @@ package ie.nok.adverts.aggregate
 
 import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.adverts.{Advert, AdvertSaleStatus, AdvertService, InformationSource}
+import ie.nok.adverts.{Advert, AdvertFacet, AdvertSaleStatus, AdvertService, InformationSource}
 import ie.nok.ber.Certificate
 import ie.nok.ber.stores.GoogleFirestoreCertificateStore
 import ie.nok.geographic.Coordinates
@@ -93,7 +93,8 @@ object Main extends ZIOAppDefault {
       propertyBuildingEnergyRatingCertificateNumber = latestCertificate.map(_.number.value).orElse(advert.propertyBuildingEnergyRatingCertificateNumber),
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
         latestCertificate.map(_.energyRating.value).map(BigDecimal(_)).orElse(advert.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear),
-      sources = advert.sources ++ certificatesAsSources
+      sources = advert.sources ++ certificatesAsSources,
+      facets = (advert.facets ++ certificates.map { c => AdvertFacet(c.url) }).sortBy(_.url)
     )
   }
 

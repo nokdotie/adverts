@@ -31,6 +31,7 @@ private val genAdvert: Gen[Advert] = for {
   propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear <-
     arbitrary[Option[BigDecimal]]
   sources    <- arbitrary[List[InformationSource]]
+  facets     <- arbitrary[List[AdvertFacet]]
   advertiser <- arbitrary[Option[Advertiser]]
   createdAt  <- arbitrary[Instant]
   advert = Advert(
@@ -52,6 +53,7 @@ private val genAdvert: Gen[Advert] = for {
     propertyBuildingEnergyRatingCertificateNumber = propertyBuildingEnergyRatingCertificateNumber,
     propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
     sources = sources,
+    facets = facets,
     advertiser = advertiser,
     createdAt = createdAt
   )

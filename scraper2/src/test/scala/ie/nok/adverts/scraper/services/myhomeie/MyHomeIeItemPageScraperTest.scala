@@ -9,6 +9,7 @@ import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.net.URL
 import java.time.Instant
+import ie.nok.adverts.AdvertFacet
 
 class MyHomeIeItemPageScraperTest extends munit.FunSuite {
 
@@ -49,6 +50,7 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4785119")),
         advertiser = None,
         createdAt = Instant.now()
       )
@@ -96,6 +98,7 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4784321")),
         advertiser = None,
         createdAt = Instant.now()
       )
@@ -143,6 +146,7 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4785390")),
         advertiser = None,
         createdAt = Instant.now()
       )
