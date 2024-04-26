@@ -9,6 +9,7 @@ import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.net.URL
 import java.time.Instant
+import ie.nok.adverts.AdvertFacet
 
 class DaftIeItemPageScraperTest extends munit.FunSuite {
 
@@ -62,6 +63,7 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.daft.ie/for-sale/-/5611174")),
         advertiser = None,
         createdAt = Instant.now()
       )
@@ -197,6 +199,7 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = Some(109536789),
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Some(160.59),
         sources = List.empty,
+        facets = List(AdvertFacet("https://www.daft.ie/for-sale/-/5545956")),
         advertiser = None,
         createdAt = Instant.now()
       )

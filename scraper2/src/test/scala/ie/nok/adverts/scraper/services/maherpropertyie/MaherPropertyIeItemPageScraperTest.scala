@@ -9,6 +9,8 @@ import ie.nok.geographic.Coordinates
 import ie.nok.unit.{Area, AreaUnit}
 import java.net.URL
 import java.time.Instant
+import ie.nok.adverts.AdvertFacet
+import ie.nok.advertisers.stores.AdvertiserStoreInMemory
 
 class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
 
@@ -85,7 +87,8 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
-        advertiser = None,
+        facets = List(AdvertFacet("https://maherproperty.ie/property/18-millbrook-mill-lane-carlow-town-co-carlow/")),
+        advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()
       )
     )
@@ -164,7 +167,8 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Some(198.41),
         sources = List.empty,
-        advertiser = None,
+        facets = List(AdvertFacet("https://maherproperty.ie/property/21-beech-road-rivercourt-carlow-town-co-carlow-r93fp29/")),
+        advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()
       )
     )
@@ -251,7 +255,8 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         sources = List.empty,
-        advertiser = None,
+        facets = List(AdvertFacet("https://maherproperty.ie/property/67-ashfield-blackbog-road-carlow-r93-x8c4/")),
+        advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()
       )
     )

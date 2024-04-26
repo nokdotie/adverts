@@ -129,7 +129,7 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
       .map { _.group(1) }
       .map { BigDecimal(_) }
 
-  override def getPropertyServicesProviderLicenceNumber(document: Document): Option[String] =
+  override def getPropertyServicesRegulatoryAuthorityLicenceNumber(document: Document): Option[String] =
     None
 
 }

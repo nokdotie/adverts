@@ -2,6 +2,8 @@ package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.adverts.scraper.jsoup.JsoupHelper
+import ie.nok.advertisers.Advertiser
+import ie.nok.advertisers.stores.AdvertiserStoreInMemory
 import ie.nok.ber.Rating
 import ie.nok.codecs.hash.Hash
 import ie.nok.ecad.Eircode
@@ -11,26 +13,34 @@ import java.net.URL
 import java.time.Instant
 import org.jsoup.nodes.Document
 import scala.util.chaining.scalaUtilChainingOps
+import ie.nok.adverts.AdvertFacet
 
 trait ServiceItemPageScraper {
 
   def filter(document: Document): Boolean
 
-  def getSaleStatus(document: Document): AdvertSaleStatus
-  def getPriceInEur(document: Document): Int
-  def getDescription(document: Document): Option[String]
-  def getPropertyType(document: Document): Option[PropertyType]
-  def getAddress(document: Document): String
-  def getEircode(document: Document): Option[Eircode]
-  def getCoordinates(document: Document): Coordinates
-  def getImageUrls(document: Document): List[String]
-  def getSize(document: Document): Area
-  def getBedroomsCount(document: Document): Int
-  def getBathroomsCount(document: Document): Int
-  def getBuildingEnergyRating(document: Document): Option[Rating]
-  def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int]
-  def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal]
-  def getPropertyServicesProviderLicenceNumber(document: Document): Option[String]
+  protected def getSaleStatus(document: Document): AdvertSaleStatus
+  protected def getPriceInEur(document: Document): Int
+  protected def getDescription(document: Document): Option[String]
+  protected def getPropertyType(document: Document): Option[PropertyType]
+  protected def getAddress(document: Document): String
+  protected def getEircode(document: Document): Option[Eircode]
+  protected def getCoordinates(document: Document): Coordinates
+  protected def getImageUrls(document: Document): List[String]
+  protected def getSize(document: Document): Area
+  protected def getBedroomsCount(document: Document): Int
+  protected def getBathroomsCount(document: Document): Int
+  protected def getBuildingEnergyRating(document: Document): Option[Rating]
+  protected def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int]
+  protected def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal]
+  protected def getPropertyServicesRegulatoryAuthorityLicenceNumber(document: Document): Option[String]
+
+  private def getAdvertiser(document: Document): Option[Advertiser] =
+    getPropertyServicesRegulatoryAuthorityLicenceNumber(document)
+      .flatMap { propertyServicesRegulatoryAuthorityLicenceNumber =>
+        AdvertiserStoreInMemory.all
+          .find { _.propertyServicesRegulatoryAuthorityLicenceNumber == propertyServicesRegulatoryAuthorityLicenceNumber }
+      }
 
   def getAdvert(document: Document): Advert = {
     val address = getAddress(document)
@@ -55,7 +65,8 @@ trait ServiceItemPageScraper {
       propertyBuildingEnergyRatingCertificateNumber = getBuildingEnergyRatingCertificateNumber(document),
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document),
       sources = List(),
-      advertiser = None,
+      facets = List(AdvertFacet(document.location())),
+      advertiser = getAdvertiser(document),
       createdAt = Instant.now()
     )
   }

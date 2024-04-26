@@ -120,7 +120,7 @@ object PropertyPalComItemPageScraper extends ServiceItemPageScraper {
   override def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal] =
     None
 
-  override def getPropertyServicesProviderLicenceNumber(document: Document): Option[String] =
+  override def getPropertyServicesRegulatoryAuthorityLicenceNumber(document: Document): Option[String] =
     None
 
 }
