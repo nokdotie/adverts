@@ -107,7 +107,7 @@ object Property {
     val imageUrls = html
       .select(".property-image-element img")
       .asScala
-      .map { _.attr("src") }
+      .map { _.absUrl("src") }
       .toList
 
     val (rating, certificateNumber, energyRating) = ber(html)
