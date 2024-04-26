@@ -13,13 +13,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project:
-          - DaftIe
-          - DngIe
-          - MyHomeIe
-          - PropertyPalCom
-          - SherryFitzIe
-          - MaherPropertyIe
+        run:
+          - scraper/run DaftIe
+          - scraper/run DngIe
+          - scraper/run MyHomeIe
+          - scraper/run PropertyPalCom
+          - scraper/run SherryFitzIe
+          - scraper/run MaherPropertyIe
+
+          - scraper2/run FiveSIe
 
     steps:
       - name: Checkout
@@ -38,7 +40,7 @@ jobs:
           echo "ENV=production" >> $GITHUB_ENV
 
       - name: Run
-        run: sbt -v "scraper/run ${{ matrix.project }}"
+        run: sbt -v "${{ matrix.run }}"
         env:
           ENV: ${{ env.ENV }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_READ_PACKAGES }}
