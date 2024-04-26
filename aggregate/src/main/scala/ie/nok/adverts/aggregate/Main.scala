@@ -18,9 +18,7 @@ import scala.util.chaining.scalaUtilChainingOps
 
 object Main extends ZIOAppDefault {
   private val latest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
-    AdvertService
-      .values
-      .toList
+    AdvertService.values.toList
       .map { AdvertStoreImpl.readAndDecodeLatestForService }
       .pipe { ZIO.collectAll }
       .map { _.flatten }
