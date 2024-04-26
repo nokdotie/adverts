@@ -75,6 +75,7 @@ object Main extends ZIOAppDefault {
               _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
             }.headOption,
             sources = adverts.flatMap { _.sources }.distinct,
+            facets = adverts.flatMap { _.facets }.distinct.sortBy { _.url },
             advertiser = adverts
               .flatMap(_.advertiser)
               .headOption,

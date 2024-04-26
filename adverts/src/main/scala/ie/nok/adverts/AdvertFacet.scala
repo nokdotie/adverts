@@ -3,7 +3,7 @@ package ie.nok.adverts
 import zio.json.{DeriveJsonCodec, JsonCodec}
 
 case class AdvertFacet(
-    url: String,
+    url: String
 )
 
 object AdvertFacet {

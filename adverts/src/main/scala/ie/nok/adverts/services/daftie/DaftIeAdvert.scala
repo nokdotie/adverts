@@ -11,6 +11,7 @@ import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.json.{DeriveJsonCodec, EncoderOps, JsonCodec}
+import ie.nok.adverts.AdvertFacet
 
 case class DaftIeAdvert(
     url: String,
@@ -55,6 +56,7 @@ object DaftIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.DaftIeAdvert(self)),
+      facets = List(AdvertFacet(self.url)),
       advertiser = self.advertiser,
       createdAt = self.createdAt
     )

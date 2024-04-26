@@ -10,6 +10,7 @@ import ie.nok.unit.{Area, AreaUnit}
 import java.time.Instant
 import scala.util.chaining.scalaUtilChainingOps
 import zio.json.{DeriveJsonCodec, JsonCodec}
+import ie.nok.adverts.AdvertFacet
 
 case class MaherPropertyIeAdvert(
     url: String,
@@ -46,6 +47,7 @@ object MaherPropertyIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
       sources = List(InformationSource.MaherPropertyIeAdvert(self)),
+      facets = List(AdvertFacet(self.url)),
       advertiser = Option(AdvertiserStoreInMemory.maherPropertyIe),
       createdAt = self.createdAt
     )

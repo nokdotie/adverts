@@ -1,6 +1,6 @@
 package ie.nok.adverts.services.sherryfitzie
 
-import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
+import ie.nok.adverts._
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -52,6 +52,7 @@ object SherryFitzIeAdvert {
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
       sources = List(InformationSource.SherryFitzIeAdvert(self)),
+      facets = List(AdvertFacet(self.url)),
       advertiser = None,
       createdAt = self.createdAt
     )

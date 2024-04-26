@@ -2,6 +2,8 @@ package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.adverts.scraper.jsoup.JsoupHelper
+import ie.nok.advertisers.Advertiser
+import ie.nok.advertisers.stores.AdvertiserStoreInMemory
 import ie.nok.ber.Rating
 import ie.nok.codecs.hash.Hash
 import ie.nok.ecad.Eircode
@@ -55,7 +57,8 @@ trait ServiceItemPageScraper {
       propertyBuildingEnergyRatingCertificateNumber = getBuildingEnergyRatingCertificateNumber(document),
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document),
       sources = List(),
-      advertiser = None,
+      facets = List(AdvertFacet(document.location())),
+      advertiser = getAdvertiser(document),
       createdAt = Instant.now()
     )
   }
