@@ -30,11 +30,13 @@ object AdvertiserStoreInMemory {
     propertyServicesRegulatoryAuthorityLicenceNumber = "003837"
   )
 
+  val all: List[Advertiser] = List(
+    franGrincellPropertiesIe,
+    maherPropertyIe
+  )
+
   val live: ZLayer[Any, Nothing, AdvertiserStore] =
-    List(
-      franGrincellPropertiesIe,
-      maherPropertyIe
-    )
+    all
       .pipe { new AdvertiserStoreInMemory(_) }
       .pipe { ZLayer.succeed }
 }
