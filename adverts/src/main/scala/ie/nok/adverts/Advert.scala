@@ -29,6 +29,7 @@ case class Advert(
       BigDecimal
     ],
     sources: List[InformationSource],
+    facets: List[AdvertFacet],
     advertiser: Option[Advertiser],
     createdAt: Instant
 )
