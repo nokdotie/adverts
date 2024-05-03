@@ -1,5 +1,7 @@
 package ie.nok.adverts.scraper.services
 
+import java.io.File
+import java.nio.file.Files
 import java.net.URL
 import ie.nok.adverts.Advert
 import munit.Assertions.assertEquals
@@ -12,11 +14,30 @@ import scala.util.chaining.scalaUtilChainingOps
 object ScraperHelper {
 
   def getDocument(resourcePath: String, location: String): Document = {
-    val resource = Source.fromResource(resourcePath)
-    val html     = Using.resource(resource) { _.mkString }
-    val document = Jsoup.parse(html, location)
+    def download(): Unit = {
+      val resourcePathFromRoot = s"scraper2/src/test/resources/$resourcePath"
+      val file                 = File(resourcePathFromRoot)
 
-    document
+      if (!file.exists()) {
+        val response = Jsoup.connect(location).execute()
+        val bytes    = response.bodyAsBytes()
+
+        file.getParentFile().mkdirs()
+        file.createNewFile()
+        Files.write(file.toPath(), bytes)
+      }
+    }
+
+    def parse(): Document = {
+      val resource = Source.fromResource(resourcePath)
+      val html     = Using.resource(resource) { _.mkString }
+      val document = Jsoup.parse(html, location)
+
+      document
+    }
+
+    download()
+    parse()
   }
 
   def assertListPageScraperResults(
