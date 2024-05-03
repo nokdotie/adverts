@@ -1,6 +1,7 @@
 package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.AdvertService
+import ie.nok.adverts.scraper.services.abbeypropertysalescom.AbbeyPropertySalesComScraper
 import ie.nok.adverts.scraper.services.amoveie.AmoveIeScraper
 import ie.nok.adverts.scraper.services.daftie.DaftIeScraper
 import ie.nok.adverts.scraper.services.fivesie.FiveSIeScraper
@@ -19,6 +20,7 @@ trait ServiceScraper {
 
 object ServiceScraper {
   val all = List(
+    AbbeyPropertySalesComScraper,
     AmoveIeScraper,
     DaftIeScraper,
     FiveSIeScraper,
