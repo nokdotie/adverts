@@ -7,7 +7,6 @@ import ie.nok.adverts.scraper.services.ServiceScraper
 object AbbeyPropertySalesComScraper extends ServiceScraper {
   override def getService() = AdvertService.AbbeyPropertySalesCom
 
-  override def getInitialListPageUrl() = AbbeyPropertySalesComListPageScraper.getUrls().head
-  override def getListPageScraper()    = AbbeyPropertySalesComListPageScraper
-  override def getItemPageScraper()    = AbbeyPropertySalesComItemPageScraper
+  override def getListPageScraper() = AbbeyPropertySalesComListPageScraper
+  override def getItemPageScraper() = AbbeyPropertySalesComItemPageScraper
 }

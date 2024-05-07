@@ -13,7 +13,6 @@ import java.net.URL
 trait ServiceScraper {
   def getService(): AdvertService
 
-  def getInitialListPageUrl(): URL
   def getListPageScraper(): ServiceListPageScraper
   def getItemPageScraper(): ServiceItemPageScraper
 }

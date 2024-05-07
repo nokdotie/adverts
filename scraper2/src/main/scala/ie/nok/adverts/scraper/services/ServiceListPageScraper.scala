@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document
 
 trait ServiceListPageScraper {
 
+  def getFirstPageUrl(): URL
   def getNextPageUrl(document: Document): Option[URL]
   def getItemPageUrls(document: Document): Iterable[URL]
 

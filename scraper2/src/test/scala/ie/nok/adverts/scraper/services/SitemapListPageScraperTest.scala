@@ -10,6 +10,7 @@ class SitemapListPageScraperTest extends munit.FunSuite {
       "services/lists/sitemap.xml",
       "https://www.myhome.ie/sitemaps/residentialforsale_sitemap.xml",
       new SitemapListPageScraper {
+        override def getFirstPageUrl(): URL = URL("https://www.myhome.ie/sitemaps/residentialforsale_sitemap.xml")
         override def getNextPageUrl(document: Document): Option[URL] = None
       },
       None,

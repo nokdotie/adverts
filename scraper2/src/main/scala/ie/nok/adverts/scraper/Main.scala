@@ -51,9 +51,9 @@ object Main extends ZIOAppDefault {
       .filterOrFail { _.title != "Error" } { new Throwable(s"Error getting document: $url") }
       .retry(recurs(3) && fixed(3.second))
 
-  def getItemPageUrls(initialListPageUrl: URL, listPageScraper: ServiceListPageScraper): ZStream[ZioClient, Throwable, URL] =
+  def getItemPageUrls(listPageScraper: ServiceListPageScraper): ZStream[ZioClient, Throwable, URL] =
     ZStream
-      .paginateZIO(initialListPageUrl) { url =>
+      .paginateZIO(listPageScraper.getFirstPageUrl()) { url =>
         getDocument(url)
           .tap { _ => Console.printLine(s"Got list: $url") }
           .map { document =>
@@ -79,7 +79,7 @@ object Main extends ZIOAppDefault {
   def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] =
     getService
       .flatMap { serviceScraper =>
-        getItemPageUrls(serviceScraper.getInitialListPageUrl(), serviceScraper.getListPageScraper())
+        getItemPageUrls(serviceScraper.getListPageScraper())
           .via(getAdvert(serviceScraper.getItemPageScraper()))
           .pipe { encodeAndWriteForService(serviceScraper.getService(), _) }
           .provide(ZioClient.default, ZFileAndGoogleStorageStoreImpl.layer[Advert])
