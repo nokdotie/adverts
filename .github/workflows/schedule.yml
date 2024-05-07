@@ -22,6 +22,7 @@ jobs:
           - scraper/run MaherPropertyIe
 
           - scraper2/run AbbeyPropertySalesCom
+          - scraper2/run AlanBrowneEstatesIe
           - scraper2/run AmoveIe
           - scraper2/run FiveSIe
 
