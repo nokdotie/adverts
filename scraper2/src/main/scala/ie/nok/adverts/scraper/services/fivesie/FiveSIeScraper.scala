@@ -7,7 +7,6 @@ import ie.nok.adverts.scraper.services.ServiceScraper
 object FiveSIeScraper extends ServiceScraper {
   override def getService() = AdvertService.FiveSIe
 
-  override def getInitialListPageUrl() = FiveSIeListPageScraper.getUrls().head
-  override def getListPageScraper()    = FiveSIeListPageScraper
-  override def getItemPageScraper()    = FiveSIeItemPageScraper
+  override def getListPageScraper() = FiveSIeListPageScraper
+  override def getItemPageScraper() = FiveSIeItemPageScraper
 }

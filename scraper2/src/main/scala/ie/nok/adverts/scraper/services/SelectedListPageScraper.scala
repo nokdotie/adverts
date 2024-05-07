@@ -13,6 +13,7 @@ trait SelectedListPageScraper extends ServiceListPageScraper {
     .collect { case current :: next :: Nil => (current, next) }
     .toList
 
+  override def getFirstPageUrl(): URL = getUrls().head
   override def getNextPageUrl(document: Document): Option[URL] = {
     val currentUrl = document.location().pipe { URL(_) }
     getUrlsZipWithNext()

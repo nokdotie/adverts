@@ -7,6 +7,8 @@ import org.jsoup.nodes.Document
 
 object DaftIeListPageScraper extends ServiceListPageScraper {
 
+  override def getFirstPageUrl() = URL("https://www.daft.ie/property-for-sale/ireland")
+
   override def getNextPageUrl(document: Document): Option[URL] = {
     val nextPage = JsoupHelper
       .findAttributeHref(document, "a[rel=next]")

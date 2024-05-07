@@ -26,18 +26,18 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
         case "Residential Sales, Sale Agreed" => AdvertSaleStatus.SaleAgreed
         case "Residential Sales, Sold"        => AdvertSaleStatus.Sold
       }
-      .getOrElse { throw new Exception(s"Status not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Status not found: ${document.location}") }
 
   override def getPriceInEur(document: Document): Int =
     JsoupHelper
       .findRegex(document, ".price", raw"€([\d,]+)".r)
       .flatMap(_.group(1).filter(_.isDigit).toIntOption)
-      .getOrElse { throw new Exception(s"Price not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Price not found: ${document.location}") }
 
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
       .findStringKeepLineBreaks(document, ".property-item .content")
-      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Description not found: ${document.location}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
@@ -48,16 +48,16 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
         case "Detached"     => PropertyType.Detached
         case "EndofTerrace" => PropertyType.EndOfTerrace
         case "SemiDetached" => PropertyType.SemiDetached
-        case other          => throw new Exception(s"Unknown property type: $other, ${document.baseUri}")
+        case other          => throw new Exception(s"Unknown property type: $other, ${document.location}")
       }
-      .orElse { throw new Exception(s"Property type not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Property type not found: ${document.location}") }
 
   private def getAddressAndEircode(document: Document): (String, Option[Eircode]) =
     JsoupHelper
       .findString(document, ".property-meta-id")
       .orElse(JsoupHelper.findString(document, ".title"))
       .map { Eircode.unzip(_) }
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
   override def getAddress(document: Document): String =
     getAddressAndEircode(document)._1
@@ -92,7 +92,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
 
         value
           .map { Area(_, unit) }
-          .getOrElse { throw new Exception(s"Size not found: ${document.baseUri}") }
+          .getOrElse { throw new Exception(s"Size not found: ${document.location}") }
       }
 
   override def getBedroomsCount(document: Document): Int =
@@ -101,7 +101,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
       .map { _.group(1) }
       .orElse(JsoupHelper.findString(document, ".prop_bedrooms .figure"))
       .flatMap { _.toIntOption }
-      .getOrElse { throw new Exception(s"Bedrooms count not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Bedrooms count not found: ${document.location}") }
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
@@ -109,7 +109,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
       .map { _.group(1) }
       .orElse(JsoupHelper.findString(document, ".prop_bathrooms .figure"))
       .flatMap { _.toIntOption }
-      .getOrElse { throw new Exception(s"Bathrooms count not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Bathrooms count not found: ${document.location}") }
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
     JsoupHelper
@@ -117,7 +117,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
       .map { alt =>
         Rating
           .tryFromString(alt)
-          .getOrElse { throw new Exception(s"Unknown BER rating: $alt, ${document.baseUri}") }
+          .getOrElse { throw new Exception(s"Unknown BER rating: $alt, ${document.location}") }
       }
 
   override def getBuildingEnergyRatingCertificateNumber(document: Document): Option[Int] =

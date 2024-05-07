@@ -65,6 +65,9 @@ object JsoupHelper {
   def findAttributeHref(document: Document, cssQuery: String): Option[String] =
     findAttributeUrl(document, cssQuery, "href")
 
+  def findAttributeClass(document: Document, cssQuery: String): Option[String] =
+    findAttribute(document, cssQuery, "class")
+
   def filterStrings(document: Document, cssQuery: String): List[String] =
     document
       .select(cssQuery)

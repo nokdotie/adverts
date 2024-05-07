@@ -7,7 +7,6 @@ import ie.nok.adverts.scraper.services.{ServiceScraper, SitemapListPageScraper}
 object MyHomeIeScraper extends ServiceScraper {
   override def getService() = AdvertService.MyHomeIe
 
-  override def getInitialListPageUrl() = MyHomeIeListPageScraper.getUrls().head
-  override def getListPageScraper()    = MyHomeIeListPageScraper
-  override def getItemPageScraper()    = MyHomeIeItemPageScraper
+  override def getListPageScraper() = MyHomeIeListPageScraper
+  override def getItemPageScraper() = MyHomeIeItemPageScraper
 }

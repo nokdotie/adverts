@@ -4,6 +4,7 @@ import zio.json.{JsonCodec, DeriveJsonCodec}
 
 enum AdvertService(val host: String) {
   case AbbeyPropertySalesCom extends AdvertService("abbeypropertysales.com")
+  case AlanBrowneEstatesIe   extends AdvertService("alanbrowneestates.ie")
   case AmoveIe               extends AdvertService("amove.ie")
   case DaftIe                extends AdvertService("daft.ie")
   case DngIe                 extends AdvertService("dng.ie")

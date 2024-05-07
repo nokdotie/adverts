@@ -33,13 +33,13 @@ object AmoveIeItemPageScraper extends ServiceItemPageScraper {
       .findString(document, ".listing-price-value")
       .flatMap { _.filter(_.isDigit).toIntOption }
       .orElse { JsoupHelper.findString(document, ".listing-price-on-request").map { _ => 0 } }
-      .getOrElse { throw new Exception(s"Price not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Price not found: ${document.location}") }
 
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
       .findStringKeepLineBreaks(document, "div[itemprop=description]")
       .map { _.linesIterator.drop(1).mkString("\n") }
-      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Description not found: ${document.location}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     None
@@ -49,7 +49,7 @@ object AmoveIeItemPageScraper extends ServiceItemPageScraper {
       .findString(document, "h1")
       .map { _.replaceAll("SALE AGREED", "").replaceAll("SOLD", "").trim() }
       .map { Eircode.unzip(_) }
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
   override def getAddress(document: Document): String =
     getAddressAndEircode(document)._1

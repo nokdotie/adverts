@@ -2,6 +2,7 @@ package ie.nok.adverts.scraper.services
 
 import ie.nok.adverts.AdvertService
 import ie.nok.adverts.scraper.services.abbeypropertysalescom.AbbeyPropertySalesComScraper
+import ie.nok.adverts.scraper.services.alanbrowneestatesie.AlanBrowneEstatesIeScraper
 import ie.nok.adverts.scraper.services.amoveie.AmoveIeScraper
 import ie.nok.adverts.scraper.services.daftie.DaftIeScraper
 import ie.nok.adverts.scraper.services.fivesie.FiveSIeScraper
@@ -13,7 +14,6 @@ import java.net.URL
 trait ServiceScraper {
   def getService(): AdvertService
 
-  def getInitialListPageUrl(): URL
   def getListPageScraper(): ServiceListPageScraper
   def getItemPageScraper(): ServiceItemPageScraper
 }
@@ -21,6 +21,7 @@ trait ServiceScraper {
 object ServiceScraper {
   val all = List(
     AbbeyPropertySalesComScraper,
+    AlanBrowneEstatesIeScraper,
     AmoveIeScraper,
     DaftIeScraper,
     FiveSIeScraper,
