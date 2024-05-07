@@ -31,12 +31,12 @@ object FiveSIeItemPageScraper extends ServiceItemPageScraper {
     JsoupHelper
       .findRegex(document, ".item-price", raw"€([\d,]+)".r)
       .flatMap(_.group(1).filter(_.isDigit).toIntOption)
-      .getOrElse { throw new Exception(s"Price not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Price not found: ${document.location}") }
 
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
       .findStringKeepLineBreaks(document, "#description")
-      .orElse { throw new Exception(s"Description not found: ${document.baseUri}") }
+      .orElse { throw new Exception(s"Description not found: ${document.location}") }
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     None
@@ -45,7 +45,7 @@ object FiveSIeItemPageScraper extends ServiceItemPageScraper {
     val address = JsoupHelper
       .findString(document, ".property-address")
       .orElse(JsoupHelper.findString(document, "h1"))
-      .getOrElse { throw new Exception(s"Address not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
     val detailAddressPart = JsoupHelper
       .findRegex(document, "#address .detail-address", raw"Address: (.+)".r)
@@ -86,7 +86,7 @@ object FiveSIeItemPageScraper extends ServiceItemPageScraper {
           case "sq m"                                         => AreaUnit.SquareMetres
           case "sqft"                                         => AreaUnit.SquareFeet
           case otherValue if otherValue.toIntOption.isDefined => AreaUnit.SquareMetres
-          case other                                          => throw new Exception(s"Unknown size unit: $other, ${document.baseUri}")
+          case other                                          => throw new Exception(s"Unknown size unit: $other, ${document.location}")
         }
 
         Area(value, unit)
@@ -97,14 +97,14 @@ object FiveSIeItemPageScraper extends ServiceItemPageScraper {
       .findRegex(document, "#detail li", raw"Bedrooms: (\d+)".r)
       .map { _.group(1) }
       .flatMap { _.toIntOption }
-      .getOrElse { throw new Exception(s"Bedrooms count not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Bedrooms count not found: ${document.location}") }
 
   override def getBathroomsCount(document: Document): Int =
     JsoupHelper
       .findRegex(document, "#detail li", raw"Bathrooms: (\d+)".r)
       .map { _.group(1) }
       .flatMap { _.toIntOption }
-      .getOrElse { throw new Exception(s"Bathrooms count not found: ${document.baseUri}") }
+      .getOrElse { throw new Exception(s"Bathrooms count not found: ${document.location}") }
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
     None
