@@ -2,7 +2,7 @@ package ie.nok.adverts.aggregate
 
 import ie.nok.adverts.ber.{ZCertificateStore, ZCertificateStoreImpl}
 import ie.nok.adverts.stores.AdvertStoreImpl
-import ie.nok.adverts.{Advert, AdvertFacet, AdvertSaleStatus, AdvertService, InformationSource}
+import ie.nok.adverts.{Advert, AdvertFacet, AdvertSaleStatus, AdvertService}
 import ie.nok.ber.Certificate
 import ie.nok.ber.stores.GoogleFirestoreCertificateStore
 import ie.nok.geographic.Coordinates
@@ -67,7 +67,6 @@ object Main extends ZIOAppDefault {
             propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = adverts.flatMap {
               _.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear
             }.headOption,
-            sources = adverts.flatMap { _.sources }.distinct,
             facets = adverts.flatMap { _.facets }.distinct.sortBy { _.url },
             advertiser = adverts
               .flatMap(_.advertiser)
@@ -78,15 +77,12 @@ object Main extends ZIOAppDefault {
 
   def appendBuildingEnergyRating(advert: Advert, certificates: List[Certificate]): Advert = {
     val latestCertificate = certificates.maxByOption { _.issuedOn }
-    val certificatesAsSources = certificates
-      .map { InformationSource.BuildingEnergyRatingCertificate.apply }
 
     advert.copy(
       propertyBuildingEnergyRating = latestCertificate.map(_.rating).orElse(advert.propertyBuildingEnergyRating),
       propertyBuildingEnergyRatingCertificateNumber = latestCertificate.map(_.number.value).orElse(advert.propertyBuildingEnergyRatingCertificateNumber),
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear =
         latestCertificate.map(_.energyRating.value).map(BigDecimal(_)).orElse(advert.propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear),
-      sources = advert.sources ++ certificatesAsSources,
       facets = (advert.facets ++ certificates.map { c => AdvertFacet(c.url) }).sortBy(_.url)
     )
   }

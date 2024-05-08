@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.myhomeie
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.geographic.Coordinates
 import ie.nok.codecs.hash.Hash
@@ -51,7 +51,6 @@ object MyHomeIeAdvert {
       propertyBuildingEnergyRating = self.buildingEnergyRating,
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-      sources = List(InformationSource.MyHomeIeAdvert(self)),
       facets = List(AdvertFacet(self.url)),
       advertiser = self.advertiser,
       createdAt = self.createdAt

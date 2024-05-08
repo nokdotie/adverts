@@ -77,7 +77,6 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C3),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.propertypal.com/four-winds-tullow-road-carlow/841658")),
         advertiser = None,
         createdAt = Instant.now()
@@ -142,7 +141,6 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C1),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.propertypal.com/granite-cottge-link-road-chapelstown-carlow/912502")),
         advertiser = None,
         createdAt = Instant.now()
@@ -214,7 +212,6 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C2),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.propertypal.com/investment-property-14-clayton-court-staplestown-road-carlow-town/939428")),
         advertiser = None,
         createdAt = Instant.now()

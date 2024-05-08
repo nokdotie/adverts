@@ -153,7 +153,6 @@ class AbbeyPropertySalesComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.abbeypropertysales.com/properties/38-river-meadow-dromod-co-leitrim-n41h427/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -392,7 +391,6 @@ class AbbeyPropertySalesComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.abbeypropertysales.com/properties/aughamore-mohill-co-leitrim-n41y634/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -528,7 +526,6 @@ class AbbeyPropertySalesComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.abbeypropertysales.com/properties/old-station-house-corramahan-ballinamore-co-leitrim-n41w778/")),
         advertiser = None,
         createdAt = Instant.now()

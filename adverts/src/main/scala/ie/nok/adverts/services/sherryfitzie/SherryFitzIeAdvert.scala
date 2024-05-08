@@ -51,7 +51,6 @@ object SherryFitzIeAdvert {
       propertyBuildingEnergyRating = self.buildingEnergyRating,
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-      sources = List(InformationSource.SherryFitzIeAdvert(self)),
       facets = List(AdvertFacet(self.url)),
       advertiser = None,
       createdAt = self.createdAt

@@ -28,7 +28,6 @@ case class Advert(
     propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear: Option[
       BigDecimal
     ],
-    sources: List[InformationSource],
     facets: List[AdvertFacet],
     advertiser: Option[Advertiser],
     createdAt: Instant

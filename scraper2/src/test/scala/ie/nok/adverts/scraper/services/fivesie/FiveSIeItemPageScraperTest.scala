@@ -101,7 +101,6 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.5s.ie/property/for-sale-lakeview-apartment-galway-city/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -177,7 +176,6 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.5s.ie/property/for-sale-6-college-gate-lower-newcastle-road-galway/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -266,7 +264,6 @@ class FiveSIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.5s.ie/property/11-rian-oisin-cois-cuain-salthill/")),
         advertiser = None,
         createdAt = Instant.now()

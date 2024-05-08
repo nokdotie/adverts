@@ -49,7 +49,6 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4785119")),
         advertiser = None,
         createdAt = Instant.now()
@@ -97,7 +96,6 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C1),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4784321")),
         advertiser = None,
         createdAt = Instant.now()
@@ -145,7 +143,6 @@ class MyHomeIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C1),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.myhome.ie/residential/brochure/_/4785390")),
         advertiser = None,
         createdAt = Instant.now()

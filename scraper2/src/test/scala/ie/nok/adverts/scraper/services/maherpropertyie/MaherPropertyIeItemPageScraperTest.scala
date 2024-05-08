@@ -86,7 +86,6 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://maherproperty.ie/property/18-millbrook-mill-lane-carlow-town-co-carlow/")),
         advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()
@@ -166,7 +165,6 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Some(198.41),
-        sources = List.empty,
         facets = List(AdvertFacet("https://maherproperty.ie/property/21-beech-road-rivercourt-carlow-town-co-carlow-r93fp29/")),
         advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()
@@ -254,7 +252,6 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://maherproperty.ie/property/67-ashfield-blackbog-road-carlow-r93-x8c4/")),
         advertiser = Some(AdvertiserStoreInMemory.maherPropertyIe),
         createdAt = Instant.now()

@@ -142,7 +142,6 @@ class AmoveIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C2),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://amove.ie/listing/1-white-abbey-lawns-kildare-co-kildare/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -260,7 +259,6 @@ class AmoveIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C2),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://amove.ie/listing/apartment-56-station-house-sallins-co-kildare-2/")),
         advertiser = None,
         createdAt = Instant.now()
@@ -401,7 +399,6 @@ class AmoveIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.B3),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://amove.ie/listing/137-branswood-athy-co-kildare/")),
         advertiser = None,
         createdAt = Instant.now()

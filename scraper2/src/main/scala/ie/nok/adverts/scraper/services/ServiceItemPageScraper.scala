@@ -64,7 +64,6 @@ trait ServiceItemPageScraper {
       propertyBuildingEnergyRating = getBuildingEnergyRating(document),
       propertyBuildingEnergyRatingCertificateNumber = getBuildingEnergyRatingCertificateNumber(document),
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document),
-      sources = List(),
       facets = List(AdvertFacet(document.location())),
       advertiser = getAdvertiser(document),
       createdAt = Instant.now()
