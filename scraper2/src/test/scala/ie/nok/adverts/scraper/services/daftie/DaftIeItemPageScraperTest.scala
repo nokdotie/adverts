@@ -62,7 +62,6 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C3),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.daft.ie/for-sale/-/5611174")),
         advertiser = None,
         createdAt = Instant.now()
@@ -198,7 +197,6 @@ class DaftIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C1),
         propertyBuildingEnergyRatingCertificateNumber = Some(109536789),
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = Some(160.59),
-        sources = List.empty,
         facets = List(AdvertFacet("https://www.daft.ie/for-sale/-/5545956")),
         advertiser = None,
         createdAt = Instant.now()

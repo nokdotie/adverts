@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.daftie
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -55,7 +55,6 @@ object DaftIeAdvert {
       propertyBuildingEnergyRating = self.buildingEnergyRating,
       propertyBuildingEnergyRatingCertificateNumber = self.buildingEnergyRatingCertificateNumber,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-      sources = List(InformationSource.DaftIeAdvert(self)),
       facets = List(AdvertFacet(self.url)),
       advertiser = self.advertiser,
       createdAt = self.createdAt

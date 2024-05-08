@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.propertypalcom
 
 import ie.nok.advertisers.Advertiser
-import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.codecs.hash.Hash
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
@@ -55,7 +55,6 @@ object PropertyPalComAdvert {
       propertyBuildingEnergyRating = self.buildingEnergyRating,
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = self.buildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear,
-      sources = List(InformationSource.PropertyPalComAdvert(self)),
       facets = List(AdvertFacet(self.url)),
       advertiser = self.advertiser,
       createdAt = self.createdAt

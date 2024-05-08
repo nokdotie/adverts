@@ -137,7 +137,6 @@ class AlanBrowneEstatesIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.E1),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://alanbrowneestates.ie/property.php?property=T12%20V4K3")),
         advertiser = None,
         createdAt = Instant.now()
@@ -284,7 +283,6 @@ class AlanBrowneEstatesIeItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRating = Some(Rating.C2),
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-        sources = List.empty,
         facets = List(AdvertFacet("https://alanbrowneestates.ie/property.php?property=T12%20C4HF")),
         advertiser = None,
         createdAt = Instant.now()

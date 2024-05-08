@@ -1,7 +1,7 @@
 package ie.nok.adverts.services.maherpropertyie
 
 import ie.nok.advertisers.stores.AdvertiserStoreInMemory
-import ie.nok.adverts.{Advert, AdvertSaleStatus, InformationSource, PropertyType}
+import ie.nok.adverts.{Advert, AdvertSaleStatus, PropertyType}
 import ie.nok.ber.Rating
 import ie.nok.ecad.Eircode
 import ie.nok.geographic.Coordinates
@@ -46,7 +46,6 @@ object MaherPropertyIeAdvert {
       propertyBuildingEnergyRating = None,
       propertyBuildingEnergyRatingCertificateNumber = None,
       propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
-      sources = List(InformationSource.MaherPropertyIeAdvert(self)),
       facets = List(AdvertFacet(self.url)),
       advertiser = Option(AdvertiserStoreInMemory.maherPropertyIe),
       createdAt = self.createdAt
