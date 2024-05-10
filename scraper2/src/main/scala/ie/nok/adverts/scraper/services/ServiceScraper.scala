@@ -3,6 +3,7 @@ package ie.nok.adverts.scraper.services
 import ie.nok.adverts.AdvertService
 import ie.nok.adverts.scraper.services.abbeypropertysalescom.AbbeyPropertySalesComScraper
 import ie.nok.adverts.scraper.services.alanbrowneestatesie.AlanBrowneEstatesIeScraper
+import ie.nok.adverts.scraper.services.allenandjacobsie.AllenAndJacobsIeScraper
 import ie.nok.adverts.scraper.services.amoveie.AmoveIeScraper
 import ie.nok.adverts.scraper.services.daftie.DaftIeScraper
 import ie.nok.adverts.scraper.services.fivesie.FiveSIeScraper
@@ -22,6 +23,7 @@ object ServiceScraper {
   val all = List(
     AbbeyPropertySalesComScraper,
     AlanBrowneEstatesIeScraper,
+    AllenAndJacobsIeScraper,
     AmoveIeScraper,
     DaftIeScraper,
     FiveSIeScraper,
