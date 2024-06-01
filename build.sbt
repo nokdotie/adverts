@@ -24,7 +24,7 @@ lazy val adverts = project
     githubRepository := "adverts",
     resolvers += Resolver.githubPackages("nokdotie"),
     libraryDependencies ++= List(
-      "dev.zio"       %% "zio"                      % "2.0.21",
+      "dev.zio"       %% "zio"                      % "2.0.22",
       "dev.zio"       %% "zio-http"                 % "0.0.5",
       "dev.zio"       %% "zio-nio"                  % "2.0.2",
       "dev.zio"       %% "zio-streams"              % "2.0.21",
