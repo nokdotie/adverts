@@ -32,7 +32,7 @@ lazy val adverts = project
       "ie.nok"        %% "building-energy-rating"   % "20240416.095216.870755440" % "compile->compile;test->test",
       "ie.nok"        %% "eircode-address-database" % "20240307.163929.558029779" % "compile->compile;test->test",
       "org.jsoup"      % "jsoup"                    % "1.17.2",
-      "org.scalameta" %% "munit"                    % "0.7.29"                    % Test,
+      "org.scalameta" %% "munit"                    % "1.0.0"                     % Test,
       "org.scalameta" %% "munit-scalacheck"         % "0.7.29"                    % Test
     )
   )
