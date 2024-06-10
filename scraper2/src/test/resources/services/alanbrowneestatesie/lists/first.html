@@ -15,6 +15,9 @@
 <script src="https://kit.fontawesome.com/9b9cdce75a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="loading-screen">
+<div class="spinner"></div>
+</div>
 <div id="background"></div>
 <div id="top">
 <img src="img/burger.png" id="burger">
@@ -31,149 +34,21 @@
 <div id="mobileNav">
 <div id="mobileButtons">
 <a href="index.php">Home</a>
-<a href="properties.php">*Properties</a>
+<a href="properties.php">Properties</a>
 <a href="contact.php">Contact</a>
 <a href="about.html">About Us</a>
 </div>
 </div>
 <div id="propertyPage">
 <div id="search">
-<form method="post" action="properties.php">
-<label>Property Type<br>
-<select name="propType" id="propType">
-<option value="any">Select...</option>
-<option value="rb">Residential To Buy</option>
-<option value="cb">Commmercial To Buy</option>
-<option value="rl">Residential To Let</option>
-<option value="cl">Commmercial To Let</option>
-<option value="site">Site</option>
-</select>
-</label>
-<br>
-<br>
-<label>Location<br>
-<select name="loc" id="loc">
-<option value="any">Select...</option>
-<option value="Glen of Aherlow">Glen of Aherlow</option><option value="Cork">Cork</option><option value="Garryvoe">Garryvoe</option><option value="Ovens">Ovens</option><option value="Youghal">Youghal</option><option value="Mitchelstown">Mitchelstown</option><option value="Courtmacsherry">Courtmacsherry</option><option value="Blackrock">Blackrock</option><option value="Cork city ">Cork city </option><option value="Victoria Road, Cork city">Victoria Road, Cork city</option><option value="Glasheen">Glasheen</option><option value="Douglas">Douglas</option><option value="Frankfield">Frankfield</option><option value="Ballyphehane">Ballyphehane</option><option value="Rochestown">Rochestown</option><option value="Blackrock Road">Blackrock Road</option><option value="Magazine Road">Magazine Road</option><option value="Ballinlough">Ballinlough</option><option value="Ballintemple">Ballintemple</option><option value="Montenotte">Montenotte</option><option value="Little Island">Little Island</option><option value="Glanmire">Glanmire</option><option value="Carrigtwohill">Carrigtwohill</option> </select>
-</label>
-<br>
-<br>
-<label class="range">
-Beds<br>
-<select name="bedMin" id="bedMin">
-<option value="0">Min...</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="9999">5+</option>
-</select><select name="bedMax" id="bedMax">
-<option value="9999">Max...</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="9999">5+</option>
-</select>
-</label>
-<br>
-<br>
-<label class="range">
-Price<br>
-<select name="priceMin" id="priceMin">
-<option value="0">Min...</option>
-<option value="50000">€50,000</option>
-<option value="75000">€75,000</option>
-<option value="100000">€100,000</option>
-<option value="125000">€125,000</option>
-<option value="150000">€150,000</option>
-<option value="175000">€175,000</option>
-<option value="200000">€200,000</option>
-<option value="225000">€225,000</option>
-<option value="250000">€250,000</option>
-<option value="275000">€275,000</option>
-<option value="300000">€300,000</option>
-<option value="325000">€325,000</option>
-<option value="350000">€350,000</option>
-<option value="375000">€375,000</option>
-<option value="400000">€400,000</option>
-<option value="425000">€425,000</option>
-<option value="450000">€450,000</option>
-<option value="475000">€475,000</option>
-<option value="500000">€500,000</option>
-<option value="525000">€525,000</option>
-<option value="550000">€550,000</option>
-<option value="575000">€575,000</option>
-<option value="600000">€600,000</option>
-<option value="625000">€625,000</option>
-<option value="650000">€650,000</option>
-<option value="675000">€675,000</option>
-<option value="700000">€700,000</option>
-<option value="725000">€725,000</option>
-<option value="750000">€750,000</option>
-<option value="775000">€775,000</option>
-<option value="800000">€800,000</option>
-<option value="825000">€825,000</option>
-<option value="850000">€850,000</option>
-<option value="875000">€875,000</option>
-<option value="900000">€900,000</option>
-<option value="925000">€925,000</option>
-<option value="950000">€950,000</option>
-<option value="975000">€975,000</option>
-<option value="1000000">€1,000,000</option>
-</select><select name="priceMax" id="priceMax">
-<option value="999999999">Max...</option>
-<option value="50000">€50,000</option>
-<option value="75000">€75,000</option>
-<option value="100000">€100,000</option>
-<option value="125000">€125,000</option>
-<option value="150000">€150,000</option>
-<option value="175000">€175,000</option>
-<option value="200000">€200,000</option>
-<option value="225000">€225,000</option>
-<option value="250000">€250,000</option>
-<option value="275000">€275,000</option>
-<option value="300000">€300,000</option>
-<option value="325000">€325,000</option>
-<option value="350000">€350,000</option>
-<option value="375000">€375,000</option>
-<option value="400000">€400,000</option>
-<option value="425000">€425,000</option>
-<option value="450000">€450,000</option>
-<option value="475000">€475,000</option>
-<option value="500000">€500,000</option>
-<option value="525000">€525,000</option>
-<option value="550000">€550,000</option>
-<option value="575000">€575,000</option>
-<option value="600000">€600,000</option>
-<option value="625000">€625,000</option>
-<option value="650000">€650,000</option>
-<option value="675000">€675,000</option>
-<option value="700000">€700,000</option>
-<option value="725000">€725,000</option>
-<option value="750000">€750,000</option>
-<option value="775000">€775,000</option>
-<option value="800000">€800,000</option>
-<option value="825000">€825,000</option>
-<option value="850000">€850,000</option>
-<option value="875000">€875,000</option>
-<option value="900000">€900,000</option>
-<option value="925000">€925,000</option>
-<option value="950000">€950,000</option>
-<option value="975000">€975,000</option>
-<option value="1000000">€1,000,000</option>
-</select>
-</label>
-<br>
-<br>
-<input type="submit" value="Search">
-</form>
-<br>
-<a href="properties.php"><button>Reset</button></a>
 </div>
 <div id="properties">
+<div id="pagination">
+<a href="properties.php?page=1"><<</a><a href="properties.php?page=1" class="disabled"><</a><a href="properties.php?page=1" class="active">1</a><a href="properties.php?page=2">2</a><a href="properties.php?page=3">3</a><a href="properties.php?page=2">></a><a href="properties.php?page=3">>></a> </div>
 <div id="recent">
-<div class="card"> <a href="property.php?property=T12 V4K3"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 V4K3/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E1"> </span></div> <div class="address">2 Ardfallen Road, Douglas, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 105m&sup2</span></i><span style="float:right;">€425,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 C4HF"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 C4HF/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C2"> </span></div> <div class="address">20 Ashleigh Drive, Blackrock, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 140m&sup2</span></i><span style="float:right;">€525,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 DH79"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 DH79/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E2"> </span></div> <div class="address">1 Rosefield Terrace, Victoria Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 3</span><span> | </span><i class="fa-solid fa-expand"></i><span> 130m&sup2</span></i><span style="float:right;">€340,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12RRF6"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12RRF6/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address">13 Welwyn Road, Maryborough Woods, Douglas Cork </div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 3</span><span> | </span><i class="fa-solid fa-expand"></i><span> 110m&sup2</span></i><span style="float:right;">€360,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T23 A2YP"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T23 A2YP/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating F"> </span></div> <div class="address">8 Ashburton Hill, Montenotte, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 95m&sup2</span></i><span style="float:right;">€250,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=SiteCMAC"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/SiteCMAC/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating None"> </span></div> <div class="address">Fuchsia Hill Courtmacsherry Co.Cork</div><div class="stats"><i class="fa-solid fa-expand"></i><span> 0.79 Acres</span><span style="float:right;">Contact for Pricing</span></div> </a> </div><div class="card"> <a href="property.php?property=T45 CK11"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T45 CK11/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating D1"> </span></div> <div class="address"> Apartment 63, Castlejane Court, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 70m&sup2</span></i><span style="float:right;">€210,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 K0H6"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 K0H6/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating D2"> </span></div> <div class="address">7 Hillside Lawn, Glasheen, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 107m&sup2</span></i><span style="float:right;">€375,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 RP7Y"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 RP7Y/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C2"> </span></div> <div class="address">1 Ardfield Mews, Grange, Douglas, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 100m&sup2</span></i><span style="float:right;">€315,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12KP04"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12KP04/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address">13 Elderwood Park, Boreenmanna Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 75m&sup2</span></i><span style="float:right;">€250,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T23 NXK0"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T23 NXK0/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating G"> </span></div> <div class="address">19 Shandon Street Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 1</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 80m&sup2</span></i><span style="float:right;">€180,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T45 YE84"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T45 YE84/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating C1"> </span></div> <div class="address">25 Oakbrook, Castlelake, Carrigtwohill, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 108m&sup2</span></i><span style="float:right;">€270,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T45 PF90"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T45 PF90/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating D1"> </span></div> <div class="address"> Apartment 55, Castlejane Court, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 70m&sup2</span></i><span style="float:right;">€210,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=E34 Y236"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/E34 Y236/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating B3"> </span></div> <div class="address">16 The Lodges, Aherlow House Hotel, Aherlow, Co. Tipperary</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 3</span><span> | </span><i class="fa-solid fa-expand"></i><span> 120m&sup2</span></i><span style="float:right;">€175,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 YY2H"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 YY2H/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating None"> </span></div> <div class="address">The Orchard, Rochestown, Cork</div><div class="stats"><i class="fa-solid fa-expand"></i><span> 0.185 Acres</span><span style="float:right;">Contact for Pricing</span></div> </a> </div><div class="card"> <a href="property.php?property=P36 YC64"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P36 YC64/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating C1"> </span></div> <div class="address">33 Bayview Grove, Youghal, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 84m&sup2</span></i><span style="float:right;">€230,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 YD5C"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 YD5C/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating D2"> </span></div> <div class="address">Coolavin, 1 Rockboro Avenue, Old Blackrock Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 100m&sup2</span></i><span style="float:right;">€300,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 CY9Y"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 CY9Y/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating D1"> </span></div> <div class="address">1 Ann&#039;s Villas, Friars Walk, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 100m&sup2</span></i><span style="float:right;">€295,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 HHN7"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 HHN7/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating D2"> </span></div> <div class="address">58 Tower Street Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 90m&sup2</span></i><span style="float:right;">€275,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 V098"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 V098/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address"> 7 College Court, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 70m&sup2</span></i><span style="float:right;">€200,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 K521"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 K521/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating C3"> </span></div> <div class="address"> 1 College Court, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 80m&sup2</span></i><span style="float:right;">€215,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P51 H0VY"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P51 H0VY/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating F"> </span></div> <div class="address"> 2 The Fair Field, Dromagh, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 72m&sup2</span></i><span style="float:right;">€85,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 PH04"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 PH04/cover/front.jpg&quot;)"> <span class="status">Available</span> <span class="berRating C3"> </span></div> <div class="address"> 13 College Lawn, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 85m&sup2</span></i><span style="float:right;">€225,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 FK75"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 FK75/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C2"> </span></div> <div class="address"> 17 College Lawn, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 87m&sup2</span></i><span style="float:right;">€225,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 RT29"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 RT29/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address"> 26 College Avenue, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 72m&sup2</span></i><span style="float:right;">€185,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 Y049"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 Y049/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address"> 18 College Lawn, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 87m&sup2</span></i><span style="float:right;">€220,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P24 Y296"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P24 Y296/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C3"> </span></div> <div class="address"> 1 College View, College Manor, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 80m&sup2</span></i><span style="float:right;">€215,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=P51 XKR8"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/P51 XKR8/cover/front.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating E2"> </span></div> <div class="address"> 1 The Fair Field, Dromagh, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 72m&sup2</span></i><span style="float:right;">€100,000</span> </div> </a> </div> </div>
+<div class="card"> <a href="property.php?property=T12A9K5"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12A9K5/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E1"> </span></div> <div class="address">Bethany, Well Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 130m&sup2</span></i><span style="float:right;">€525,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T45 CX38"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T45 CX38/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating C1"> </span></div> <div class="address">23 Elmgrove, Sallybrook, Glanmire, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 3</span><span> | </span><i class="fa-solid fa-expand"></i><span> 105m&sup2</span></i><span style="float:right;">€330,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T23 X9T7"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T23 X9T7/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E2"> </span></div> <div class="address">220 Old Youghal Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 45m&sup2</span></i><span style="float:right;">€195,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 V4K3"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 V4K3/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E1"> </span></div> <div class="address">2 Ardfallen Road, Douglas, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 105m&sup2</span></i><span style="float:right;">€425,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 C4HF"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 C4HF/cover/front_resized.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C2"> </span></div> <div class="address">20 Ashleigh Drive, Blackrock, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 140m&sup2</span></i><span style="float:right;">€525,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 DH79"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 DH79/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating E2"> </span></div> <div class="address">1 Rosefield Terrace, Victoria Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 4</span><span> | </span><i class="fa-solid fa-bath"></i><span> 3</span><span> | </span><i class="fa-solid fa-expand"></i><span> 130m&sup2</span></i><span style="float:right;">€340,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T23 A2YP"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T23 A2YP/cover/front_resized.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating F"> </span></div> <div class="address">8 Ashburton Hill, Montenotte, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 95m&sup2</span></i><span style="float:right;">€250,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=SiteCMAC"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/SiteCMAC/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating None"> </span></div> <div class="address">Fuchsia Hill Courtmacsherry Co.Cork</div><div class="stats"><i class="fa-solid fa-expand"></i><span> 0.79 Acres</span><span style="float:right;">Contact for Pricing</span></div> </a> </div><div class="card"> <a href="property.php?property=T45 CK11"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T45 CK11/cover/front_resized.jpg&quot;)"> <span class="status">Available</span> <span class="berRating D1"> </span></div> <div class="address"> Apartment 63, Castlejane Court, Co. Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 70m&sup2</span></i><span style="float:right;">€210,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 K0H6"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 K0H6/cover/front_resized.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating D2"> </span></div> <div class="address">7 Hillside Lawn, Glasheen, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 1</span><span> | </span><i class="fa-solid fa-expand"></i><span> 107m&sup2</span></i><span style="float:right;">€375,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12 RP7Y"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12 RP7Y/cover/front_resized.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C2"> </span></div> <div class="address">1 Ardfield Mews, Grange, Douglas, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 3</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 100m&sup2</span></i><span style="float:right;">€315,000</span> </div> </a> </div><div class="card"> <a href="property.php?property=T12KP04"> <span class="info"><i class="fa-solid fa-magnifying-glass"></i>Learn More</span> <div class="media" style="background-image: url(&quot;img/prop/T12KP04/cover/front_resized.jpg&quot;)"> <span class="status">Sale Agreed</span> <span class="berRating C1"> </span></div> <div class="address">13 Elderwood Park, Boreenmanna Road, Cork</div><div class="stats"><i class="fa-solid fa-bed"></i><span> 2</span><span> | </span><i class="fa-solid fa-bath"></i><span> 2</span><span> | </span><i class="fa-solid fa-expand"></i><span> 75m&sup2</span></i><span style="float:right;">€250,000</span> </div> </a> </div> </div>
+<div id="pagination">
+<a href="properties.php?page=1"><<</a><a href="properties.php?page=1" class="disabled"><</a><a href="properties.php?page=1" class="active">1</a><a href="properties.php?page=2">2</a><a href="properties.php?page=3">3</a><a href="properties.php?page=2">></a><a href="properties.php?page=3">>></a> </div>
 </div>
 </div>
 </body>
@@ -208,4 +83,10 @@ Price<br>
 <span class="sold-text">Previously Sold Properties</span>
 </div>
 </a>
+<script>
+  window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
+  });
+</script>
 </html> 
