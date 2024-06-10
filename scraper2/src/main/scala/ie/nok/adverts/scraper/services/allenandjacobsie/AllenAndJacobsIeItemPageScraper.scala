@@ -123,7 +123,7 @@ object AllenAndJacobsIeItemPageScraper extends ServiceItemPageScraper {
 
   override def getBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear(document: Document): Option[BigDecimal] =
     JsoupHelper
-      .findRegex(document, "p", raw"EPI: ([\d.]+) kWh/m2/yr".r)
+      .findRegex(document, "p", raw"EPI: ([\d+\.?\d*]+) kWh/m2/yr".r)
       .map { _.group(1) }
       .filter { _ != "0" }
       .map { BigDecimal(_) }
