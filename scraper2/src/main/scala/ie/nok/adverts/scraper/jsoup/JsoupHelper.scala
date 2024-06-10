@@ -58,6 +58,9 @@ object JsoupHelper {
   def findAttributeContent(document: Document, cssQuery: String): Option[String] =
     findAttribute(document, cssQuery, "content")
 
+  def findAttributeValue(document: Document, cssQuery: String): Option[String] =
+    findAttribute(document, cssQuery, "value")
+
   private def findAttributeUrl(document: Document, cssQuery: String, attributeKey: String): Option[String] =
     find(document, cssQuery)
       .map { _.absUrl(attributeKey) }
