@@ -11,6 +11,7 @@ import ie.nok.adverts.scraper.services.maherpropertyie.MaherPropertyIeScraper
 import ie.nok.adverts.scraper.services.myhomeie.MyHomeIeScraper
 import ie.nok.adverts.scraper.services.propertypalcom.PropertyPalComScraper
 import ie.nok.adverts.scraper.services.propertypartnersie.PropertyPartnersIeScraper
+import ie.nok.adverts.scraper.services.realestateallianceie.RealEstateAllianceIeScraper
 import java.net.URL
 
 trait ServiceScraper {
@@ -31,6 +32,7 @@ object ServiceScraper {
     MaherPropertyIeScraper,
     MyHomeIeScraper,
     PropertyPalComScraper,
-    PropertyPartnersIeScraper
+    PropertyPartnersIeScraper,
+    RealEstateAllianceIeScraper
   )
 }
