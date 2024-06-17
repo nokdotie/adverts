@@ -27,6 +27,7 @@ jobs:
           - scraper2/run AmoveIe
           - scraper2/run FiveSIe
           - scraper2/run PropertyPartnersIe
+          - scraper2/run RealEstateAllianceIe
 
     steps:
       - name: Checkout
