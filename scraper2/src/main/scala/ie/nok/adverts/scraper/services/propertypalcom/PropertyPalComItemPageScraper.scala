@@ -31,29 +31,20 @@ object PropertyPalComItemPageScraper extends ServiceItemPageScraper {
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
       .findRegex(document, ".pp-key-info-row", raw"Style (.+)".r)
-      .map { _.group(1) }
-      .map {
-        case style if style.startsWith("Detached")      => PropertyType.Detached
-        case style if style.startsWith("Terrace")       => PropertyType.Terraced
-        case style if style.startsWith("End-terrace")   => PropertyType.Terraced
-        case style if style.startsWith("Mid-terrace")   => PropertyType.Terraced
-        case style if style.startsWith("Link-detached") => PropertyType.SemiDetached
-        case style if style.startsWith("Semi-detached") => PropertyType.SemiDetached
-        case style if style.contains("Apartment")       => PropertyType.Apartment
-        case "Bungalow"                                 => PropertyType.Bungalow
-        case "Chalet"                                   => PropertyType.House
-        case "Chalet Bungalow"                          => PropertyType.Bungalow
-        case "Cottage"                                  => PropertyType.House
-        case "Country Estate"                           => PropertyType.House
-        case "Country House"                            => PropertyType.House
-        case "Flat"                                     => PropertyType.Apartment
-        case "Holiday Home"                             => PropertyType.House
-        case "House"                                    => PropertyType.House
-        case "House and Land"                           => PropertyType.House
-        case "Mid Townhouse"                            => PropertyType.House
-        case "Retirement Home"                          => PropertyType.House
-        case "Townhouse"                                => PropertyType.House
-        case other                                      => throw new Exception(s"Unknown property type: $other, ${document.location}")
+      .map { _.group(1).toLowerCase }
+      .flatMap {
+        case style if style.contains("end-terrace")   => Some(PropertyType.EndOfTerrace)
+        case style if style.contains("terrace")       => Some(PropertyType.Terraced)
+        case style if style.contains("link-detached") => Some(PropertyType.SemiDetached)
+        case style if style.contains("semi-detached") => Some(PropertyType.SemiDetached)
+        case style if style.contains("detached")      => Some(PropertyType.Detached)
+        case style if style.contains("apartment")     => Some(PropertyType.Apartment)
+        case style if style.contains("townhouse")     => Some(PropertyType.House)
+        case style if style.contains("bungalow")      => Some(PropertyType.Bungalow)
+        case style if style.contains("house")         => Some(PropertyType.House)
+        case other =>
+          println(s"Unknown property type: $other, ${document.location}")
+          None
       }
 
   override def getAddress(document: Document): String = {

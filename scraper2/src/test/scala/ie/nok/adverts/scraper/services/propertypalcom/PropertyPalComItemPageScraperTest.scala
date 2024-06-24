@@ -125,7 +125,7 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         |Private setting
         |Good condition throughout
         """.stripMargin.trim),
-        propertyType = Some(PropertyType.House),
+        propertyType = None,
         propertyAddress = "Granite Cottge, Link Road, Chapelstown, Carlow",
         propertyEircode = Some(Eircode("R93EY05")),
         propertyCoordinates = Coordinates.zero,
@@ -213,6 +213,65 @@ class PropertyPalComItemPageScraperTest extends munit.FunSuite {
         propertyBuildingEnergyRatingCertificateNumber = None,
         propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
         facets = List(AdvertFacet("https://www.propertypal.com/investment-property-14-clayton-court-staplestown-road-carlow-town/939428")),
+        advertiser = None,
+        createdAt = Instant.now()
+      )
+    )
+  }
+
+  test("875435") {
+    ScraperHelper.assertItemPageScraperResults(
+      "services/propertypalcom/items/875435.html",
+      "https://www.propertypal.com/2-ballyoliver-rathvilly/875435",
+      PropertyPalComItemPageScraper,
+      Advert(
+        advertUrl = "https://www.propertypal.com/2-ballyoliver-rathvilly/875435",
+        advertSaleStatus = AdvertSaleStatus.ForSale,
+        advertPriceInEur = 185000,
+        propertyIdentifier = Hash.encode("2 Ballyoliver, Rathvilly"),
+        propertyDescription = Some("""
+          |FOR SALE BY ONLINE AUCTION ON FRIDAY JUNE 28TH at 2 PM
+          |Log on to www.bidnow.ie to register.
+          |
+          |A very well presented detached single storey residence situated on a large site on the outskirts of Rathvilly village. The property comes to the market in need of some internal modernization, however, owing to its large site size offers excellent potential for expansion or development subject to the necessary planning consent from local authority.
+          |The Accommodation Comprises:
+          |Entrance Porch leading to Inner Hallway
+          |Sitting Room: 3.4 x 4.5 with tiled fireplace
+          |Kitchen: 4.2 x 3.1 with fitted wall and floor units
+          |Bedroom No. 1: 2.0 x 4.4 with solid fuel insert stove
+          |Bedroom No. 2: 2.6 x 2.9
+          |Bedroom No. 3: 3.6 x 2.3 with cast iron fireplace
+          |Bathroom: 1.8 x 1.7 with separate wc
+          |Outside:
+          |Garage
+          |Greenhouse
+          |Selection of small garden sheds
+          |Large site extending to circa 0.24 hectare
+          |Services:
+          |All main services are connected to the property
+          |Directions:
+          |From Rathvilly village centre, take the Tullow road for approximately 500m, the property is located on the left hand side opposite the entrance to Kevin Barry Road.
+          |BER DetailsBER Rating: F
+          |BER No.: 113251425
+          |Energy Performance Indicator: 444.21 kWh/m²/yr
+        """.stripMargin.trim),
+        propertyType = Some(PropertyType.Detached),
+        propertyAddress = "2 Ballyoliver, Rathvilly",
+        propertyEircode = Some(Eircode("R93YP74")),
+        propertyCoordinates = Coordinates.zero,
+        propertyImageUrls = List(
+          "https://media.propertypal.com/hd/p/874235/35207453.jpg",
+          "https://media.propertypal.com/hd/p/874235/35207454.jpg",
+          "https://media.propertypal.com/hd/p/874235/35207455.jpg"
+        ),
+        propertySize = Area.zero,
+        propertySizeInSqtMtr = 0,
+        propertyBedroomsCount = 3,
+        propertyBathroomsCount = 1,
+        propertyBuildingEnergyRating = Some(Rating.F),
+        propertyBuildingEnergyRatingCertificateNumber = None,
+        propertyBuildingEnergyRatingEnergyRatingInKWhPerSqtMtrPerYear = None,
+        facets = List(AdvertFacet("https://www.propertypal.com/2-ballyoliver-rathvilly/875435")),
         advertiser = None,
         createdAt = Instant.now()
       )

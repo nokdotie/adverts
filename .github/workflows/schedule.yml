@@ -28,6 +28,7 @@ jobs:
           - scraper2/run FiveSIe
           - scraper2/run MaherPropertyIe
           - scraper2/run MyHomeIe
+          - scraper2/run PropertyPalCom
           - scraper2/run PropertyPartnersIe
           - scraper2/run RealEstateAllianceIe
 
