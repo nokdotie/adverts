@@ -14,7 +14,6 @@ jobs:
       fail-fast: false
       matrix:
         run:
-          - scraper/run DaftIe
           - scraper/run DngIe
           - scraper/run SherryFitzIe
 
@@ -22,6 +21,7 @@ jobs:
           - scraper2/run AlanBrowneEstatesIe
           - scraper2/run AllenAndJacobsIe
           - scraper2/run AmoveIe
+          - scraper2/run DaftIe
           - scraper2/run FiveSIe
           - scraper2/run MaherPropertyIe
           - scraper2/run MyHomeIe

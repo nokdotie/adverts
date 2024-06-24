@@ -20,7 +20,6 @@ object Main extends ZIOAppDefault {
       advertService: AdvertService
   ): ZStream[Client & AdvertiserStore, Throwable, Advert] =
     advertService match {
-      case AdvertService.DaftIe       => daftie.advertStream
       case AdvertService.DngIe        => dngie.advertStream
       case AdvertService.SherryFitzIe => sherryfitzie.advertStream
       case _                          => throw new Throwable("Advert service not supported")
