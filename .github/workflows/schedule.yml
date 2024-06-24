@@ -16,10 +16,7 @@ jobs:
         run:
           - scraper/run DaftIe
           - scraper/run DngIe
-          - scraper/run MyHomeIe
-          - scraper/run PropertyPalCom
           - scraper/run SherryFitzIe
-          - scraper/run MaherPropertyIe
 
           - scraper2/run AbbeyPropertySalesCom
           - scraper2/run AlanBrowneEstatesIe
