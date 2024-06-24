@@ -46,7 +46,7 @@ object Main extends ZIOAppDefault {
         url.toString(),
         headers = userAgentHeader
       )
-      .delay(250.millis)
+      .delay(100.millis)
       // MyHome.ie fails unexpectedly with 500 errors
       .filterOrFail { _.title != "Error" } { new Throwable(s"Error getting document: $url") }
       .retry(recurs(3) && fixed(3.second))

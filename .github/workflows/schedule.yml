@@ -14,18 +14,18 @@ jobs:
       fail-fast: false
       matrix:
         run:
-          - scraper/run DaftIe
           - scraper/run DngIe
-          - scraper/run MyHomeIe
-          - scraper/run PropertyPalCom
           - scraper/run SherryFitzIe
-          - scraper/run MaherPropertyIe
 
           - scraper2/run AbbeyPropertySalesCom
           - scraper2/run AlanBrowneEstatesIe
           - scraper2/run AllenAndJacobsIe
           - scraper2/run AmoveIe
+          - scraper2/run DaftIe
           - scraper2/run FiveSIe
+          - scraper2/run MaherPropertyIe
+          - scraper2/run MyHomeIe
+          - scraper2/run PropertyPalCom
           - scraper2/run PropertyPartnersIe
           - scraper2/run RealEstateAllianceIe
 

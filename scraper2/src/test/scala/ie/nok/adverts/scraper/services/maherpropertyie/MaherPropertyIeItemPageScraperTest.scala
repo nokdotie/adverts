@@ -22,66 +22,63 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
       Advert(
         advertUrl = "https://maherproperty.ie/property/18-millbrook-mill-lane-carlow-town-co-carlow/",
         advertSaleStatus = AdvertSaleStatus.Sold,
-        advertPriceInEur = 150000,
-        propertyIdentifier = Hash.encode("4 Chaff Street, Graiguecullen, Carlow Town, Carlow"),
+        advertPriceInEur = 165000,
+        propertyIdentifier = Hash.encode("18 Millbrook, Mill Lane, Carlow Town, Co. Carlow"),
         propertyDescription = Some("""
-        |Three bed end of bed terrace house for sale located on Chaff Street in Graiguecullen, Carlow. Originally constructed in 1997, the property measures 94 sqm (1011 sq. ft.), and is located across the road from St Claire’s Church. The property is within walking distance to the Barrow Track/Trail, Lazy River Café, Crèches, Schools, Swimming Pool, Soccer &amp;GAA pitches, and is a few minutes walk to Carlow Town Centre.
-        |
-        |The property comprises hallway, sitting room, large dining area and kitchen with access to private laneway. Upstairs comprises single bedroom to the front, double bedroom to the front, large family bathroom and master bedroom with ensuite. The property would benefit from re-decoration throughout.
-        |
-        |The complex has an active management company and service fees are €1,300 per annum which includes. building/block insurance, fire alarms, security, household refuse collection &amp;upkeep of common areas.
-        |
-        |Viewing is highly recommended and strictly by appointment only.
+        |Well maintained four-bedroom ground floor apartment comes to the market in good condition. Located in the heart of Carlow Town adjacent to Carlow Castle. Located within walking distance to all Carlow’s amenities, the apartment is located in a predominantly student complex. The property comprises of four large bedrooms, shower room, family bathroom and a generously sized open-plan Kitchen living area which comes fully fitted. . This is an excellent investment opportunity for any investor. The property is generally rented out on a Fixed-term 9-month contract yielding €14,400 with revisionary potential, and currently represents a return of 8.7% Management fees are a discounted payment structure of €1,650 per annum, if paid within the financial year, further information available on request. Viewings come highly recommended and by appointment only.
         |
         |
-        |Entrance Hallway: L: 4.238m x W: 1.832m Lino flooring, under stairs storage
-        |
-        |Sitting Room: L: 3.901m x W: 3.071 Lino flooring, Gas fireplace
-        |
-        |Kitchen/ Dining area: lino, floor and wall units, white goods, access to private laneway
-        |
-        |Bathroom: L: 3.062m x W: 1.674m Lino flooring, partly tiled walls, WC, WHB, Bath, shower
-        |
-        |Landing: L: 2.639m x W: 0.934m Carpeted flooring &amp;stairs, hot press room
-        |
-        |Bedroom 1: L: 3.727m x W: 3.007m Carpeted flooring, fitted wardrobe
-        |
-        |En-Suite: L: 2.613m x W: 1.007m Lino Flooring, WC, WHB, power shower
-        |
-        |Bedroom 2: L: 3.658m W: 2.592m Carpeted flooring
-        |Bedroom 3: L: 2.220m x L: 2.801m Carpet Flooring
+        |Property Features
         |
         |
-        |Disclaimer: The above particulars are issued by Maher Property Advisors on the understanding that all negotiations are conducted through them. Please note that we have not tested any apparatus, fixtures, fittings, or services. Interested parties must undertake their own investigation into the working order of these items. All measurements are approximate and photographs provided for guidance only.
+        |- Excellent investment opportunity
         |
-        |BER: E1 BER No.105122188
+        |
+        |- Gas fired central heating
+        |
+        |
+        |- PVC double glazed windows
+        |
+        |
+        |- Ground floor apartment
+        |
+        |
+        |- Management fees €1650 discounted
+        |
+        |
+        |- Great location &amp; close too many local amenities
+        |
+        |
+        |BER No: 116188590
+        |
+        |
+        |Energy Performance Indicator: 158.63 kWh/m2/yr
         """.stripMargin.trim),
-        propertyType = Some(PropertyType.EndOfTerrace),
-        propertyAddress = "4 Chaff Street, Graiguecullen, Carlow Town, Carlow",
-        propertyEircode = Some(Eircode("R93Y327")),
-        propertyCoordinates = Coordinates.zero,
-        propertyImageUrls = List(
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2686-1-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2514-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2515-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2530-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2532-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2518-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2520-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2528-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2551-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2549-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2536-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2542-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2537-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2540-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2543-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2552-scaled.jpg",
-          "https://maherproperty.ie/wp-content/uploads/2022/10/IMG_2555-scaled.jpg"
+        propertyType = Some(PropertyType.Apartment),
+        propertyAddress = "18 Millbrook, Mill Lane, Carlow Town, Co. Carlow",
+        propertyEircode = None,
+        propertyCoordinates = Coordinates(
+          latitude = 52.835504556363,
+          longitude = -6.9367289543152
         ),
-        propertySize = Area(94, AreaUnit.SquareMetres),
-        propertySizeInSqtMtr = 94,
-        propertyBedroomsCount = 3,
+        propertyImageUrls = List(
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG_4791-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG_4793-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-2724-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-2453-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4271-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4266-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4267-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4270-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4269-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-4265-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-2721-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-2456-scaled.jpg",
+          "https://maherproperty.ie/wp-content/uploads/2023/02/IMG-2454-scaled.jpg"
+        ),
+        propertySize = Area.zero,
+        propertySizeInSqtMtr = 0,
+        propertyBedroomsCount = 4,
         propertyBathroomsCount = 2,
         propertyBuildingEnergyRating = None,
         propertyBuildingEnergyRatingCertificateNumber = None,
@@ -102,7 +99,7 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
         advertUrl = "https://maherproperty.ie/property/21-beech-road-rivercourt-carlow-town-co-carlow-r93fp29/",
         advertSaleStatus = AdvertSaleStatus.SaleAgreed,
         advertPriceInEur = 175000,
-        propertyIdentifier = Hash.encode("Maher Properties,Asset House, 3 Lr. Staplestown Road,, Carlow"),
+        propertyIdentifier = Hash.encode("21 Beech Road, Rivercourt, Carlow Town, Co. Carlow"),
         propertyDescription = Some("""
           |Well presented two bed ground floor apartment located in Rivercourt just off O’Brien Road. The property uniquely has the added benefit of small private garden to the rear with side access. The property is within walking distance to Fairgreen Shopping Centre, creches, primary and secondary schools, and is adjacent to Eire Óg GAA Grounds. Carlow has all local amenities all in close proximity including a Tesco, Aldi, Lidl. There is also local transport nearby with Carlow Town bus stop a few minutes walk, Carlow bus station is 15 minutes away and Carlow train station is a 25 minute walk from the property.
           |
@@ -134,8 +131,8 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
           |Disclaimer: The above particulars are issued by Maher Property Advisors on the understanding that all negotiations are conducted through them. Please note that we have not tested any apparatus, fixtures, fittings, or services. Interested parties must undertake their own investigation into the working order of these items. All measurements are approximate and photographs provided for guidance only
         """.stripMargin.trim),
         propertyType = Some(PropertyType.Apartment),
-        propertyAddress = "Maher Properties,Asset House, 3 Lr. Staplestown Road,, Carlow",
-        propertyEircode = None,
+        propertyAddress = "21 Beech Road, Rivercourt, Carlow Town, Co. Carlow",
+        propertyEircode = Some(Eircode("R93FP29")),
         propertyCoordinates = Coordinates.zero,
         propertyImageUrls = List(
           "https://maherproperty.ie/wp-content/uploads/2023/11/IMG_8671-scaled.jpg",
@@ -179,7 +176,7 @@ class MaherPropertyIeItemPageScraperTest extends munit.FunSuite {
       MaherPropertyIeItemPageScraper,
       Advert(
         advertUrl = "https://maherproperty.ie/property/67-ashfield-blackbog-road-carlow-r93-x8c4/",
-        advertSaleStatus = AdvertSaleStatus.ForSale,
+        advertSaleStatus = AdvertSaleStatus.SaleAgreed,
         advertPriceInEur = 265000,
         propertyIdentifier = Hash.encode("67 Ashfield, Blackbog Road, Carlow"),
         propertyDescription = Some("""

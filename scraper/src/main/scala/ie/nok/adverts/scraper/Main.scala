@@ -20,13 +20,9 @@ object Main extends ZIOAppDefault {
       advertService: AdvertService
   ): ZStream[Client & AdvertiserStore, Throwable, Advert] =
     advertService match {
-      case AdvertService.DaftIe          => daftie.advertStream
-      case AdvertService.DngIe           => dngie.advertStream
-      case AdvertService.MyHomeIe        => myhomeie.advertStream
-      case AdvertService.PropertyPalCom  => propertypalcom.advertStream
-      case AdvertService.SherryFitzIe    => sherryfitzie.advertStream
-      case AdvertService.MaherPropertyIe => maherpropertyie.advertStream
-      case _                             => throw new Throwable("Advert service not supported")
+      case AdvertService.DngIe        => dngie.advertStream
+      case AdvertService.SherryFitzIe => sherryfitzie.advertStream
+      case _                          => throw new Throwable("Advert service not supported")
     }
 
   def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] = for {
