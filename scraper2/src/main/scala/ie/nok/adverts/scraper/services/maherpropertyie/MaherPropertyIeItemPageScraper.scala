@@ -20,7 +20,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
 
   override def getSaleStatus(document: Document): AdvertSaleStatus =
     JsoupHelper
-      .findString(document, ".status, .status-label")
+      .findString(document, ".rh_page__property_price .status")
       .collect {
         case "Residential Sales"              => AdvertSaleStatus.ForSale
         case "Residential Sales, Sale Agreed" => AdvertSaleStatus.SaleAgreed
@@ -36,8 +36,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
 
   override def getDescription(document: Document): Option[String] =
     JsoupHelper
-      .findStringKeepLineBreaks(document, ".property-item .content")
-      .orElse { throw new Exception(s"Description not found: ${document.location}") }
+      .findStringKeepLineBreaks(document, "#property-content-section-content .rh_content")
 
   override def getPropertyType(document: Document): Option[PropertyType] =
     JsoupHelper
@@ -45,6 +44,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
       .map { _.replace("Residential", "").replace("Sale Agreed", "").filter(_.isLetter) }
       .map {
         case "Apartment"    => PropertyType.Apartment
+        case "Bungalow"     => PropertyType.Bungalow
         case "Detached"     => PropertyType.Detached
         case "EndofTerrace" => PropertyType.EndOfTerrace
         case "SemiDetached" => PropertyType.SemiDetached
@@ -54,8 +54,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
 
   private def getAddressAndEircode(document: Document): (String, Option[Eircode]) =
     JsoupHelper
-      .findString(document, ".property-meta-id")
-      .orElse(JsoupHelper.findString(document, ".title"))
+      .findString(document, "h1")
       .map { Eircode.unzip(_) }
       .getOrElse { throw new Exception(s"Address not found: ${document.location}") }
 
@@ -82,18 +81,9 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
 
   override def getSize(document: Document): Area =
     JsoupHelper
-      .findRegex(document, ".property-meta-size", raw"(\d+) (sqm.|sq m|sq.m.|sq ft)".r)
-      .fold(Area.zero) { m =>
-        val value = m.group(1).toIntOption
-        val unit = m.group(2).pipe {
-          case "sqm." | "sq m" | "sq.m." => AreaUnit.SquareMetres
-          case "sq ft"                   => AreaUnit.SquareFeet
-        }
-
-        value
-          .map { Area(_, unit) }
-          .getOrElse { throw new Exception(s"Size not found: ${document.location}") }
-      }
+      .findString(document, ".prop_area .figure")
+      .flatMap { _.trim.toIntOption }
+      .fold(Area.zero) { Area(_, AreaUnit.SquareMetres) }
 
   override def getBedroomsCount(document: Document): Int =
     JsoupHelper

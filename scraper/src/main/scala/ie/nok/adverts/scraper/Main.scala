@@ -24,7 +24,6 @@ object Main extends ZIOAppDefault {
       case AdvertService.DngIe           => dngie.advertStream
       case AdvertService.PropertyPalCom  => propertypalcom.advertStream
       case AdvertService.SherryFitzIe    => sherryfitzie.advertStream
-      case AdvertService.MaherPropertyIe => maherpropertyie.advertStream
       case _                             => throw new Throwable("Advert service not supported")
     }
 
