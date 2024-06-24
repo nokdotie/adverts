@@ -65,6 +65,9 @@ object JsoupHelper {
     find(document, cssQuery)
       .map { _.absUrl(attributeKey) }
 
+  def findAttributeSrc(document: Document, cssQuery: String): Option[String] =
+    findAttributeUrl(document, cssQuery, "src")
+
   def findAttributeHref(document: Document, cssQuery: String): Option[String] =
     findAttributeUrl(document, cssQuery, "href")
 

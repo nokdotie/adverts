@@ -22,7 +22,6 @@ object Main extends ZIOAppDefault {
     advertService match {
       case AdvertService.DaftIe          => daftie.advertStream
       case AdvertService.DngIe           => dngie.advertStream
-      case AdvertService.MyHomeIe        => myhomeie.advertStream
       case AdvertService.PropertyPalCom  => propertypalcom.advertStream
       case AdvertService.SherryFitzIe    => sherryfitzie.advertStream
       case AdvertService.MaherPropertyIe => maherpropertyie.advertStream

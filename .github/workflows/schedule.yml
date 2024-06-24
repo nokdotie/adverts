@@ -26,6 +26,7 @@ jobs:
           - scraper2/run AllenAndJacobsIe
           - scraper2/run AmoveIe
           - scraper2/run FiveSIe
+          - scraper2/run MyHomeIe
           - scraper2/run PropertyPartnersIe
           - scraper2/run RealEstateAllianceIe
 
