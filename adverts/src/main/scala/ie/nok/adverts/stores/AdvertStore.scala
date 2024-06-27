@@ -2,27 +2,23 @@ package ie.nok.adverts.stores
 
 import ie.nok.adverts.Advert
 import ie.nok.stores.pagination.Page
-import java.time.Instant
-import zio.{ZIO, ZLayer}
-
-case class AdvertStoreCursor(index: Int)
-object AdvertStoreCursor {
-  val Zero: AdvertStoreCursor = AdvertStoreCursor(0)
-}
+import zio.ZIO
 
 trait AdvertStore {
   def getPage(
       filter: AdvertFilter,
+      sort: AdvertSort,
       first: Int,
-      after: AdvertStoreCursor
-  ): ZIO[Any, Throwable, Page[Advert]]
+      after: AdvertCursor
+  ): ZIO[Any, Throwable, Page[(Advert, AdvertCursor)]]
 }
 
 object AdvertStore {
   def getPage(
       filter: AdvertFilter,
+      sort: AdvertSort,
       first: Int,
-      after: AdvertStoreCursor
-  ): ZIO[AdvertStore, Throwable, Page[Advert]] =
-    ZIO.serviceWithZIO[AdvertStore](_.getPage(filter, first, after))
+      after: AdvertCursor
+  ): ZIO[AdvertStore, Throwable, Page[(Advert, AdvertCursor)]] =
+    ZIO.serviceWithZIO[AdvertStore](_.getPage(filter, sort, first, after))
 }
