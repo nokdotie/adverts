@@ -2,7 +2,7 @@ package ie.nok.adverts.scraper
 
 import ie.nok.adverts.{Advert, AdvertService}
 import ie.nok.adverts.stores.AdvertStoreImpl.encodeAndWriteForService
-import ie.nok.adverts.scraper.services.{ServiceScraper, ServiceListPageScraper, ServiceItemPageScraper}
+import ie.nok.adverts.scraper.services.{ServiceScraper, ServiceScraperCoverage, ServiceListPageScraper, ServiceItemPageScraper}
 import ie.nok.http.Client
 import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
 import java.net.URL
@@ -11,6 +11,7 @@ import scala.util.chaining.scalaUtilChainingOps
 import zio.{Console, Scope, ZIO, ZIOAppArgs, ZIOAppDefault, durationInt}
 import zio.http.Client as ZioClient
 import zio.http.model.Headers
+import zio.json.EncoderOps
 import zio.stream.{ZPipeline, ZStream}
 import zio.Schedule.{fixed, recurs}
 import scala.util.Random
@@ -76,12 +77,32 @@ object Main extends ZIOAppDefault {
       .filter { itemPageScraper.filter }
       .map { itemPageScraper.getAdvert }
 
+  def computeAndWriteCoverage(stream: ZStream[Any, Throwable, Advert]): ZIO[Any, Throwable, Unit] =
+    ServiceScraperCoverage
+      .fromAdverts(stream)
+      .tap { coverage =>
+        Console.printLine(s"""
+        |####################################
+        |# Coverage
+        |####################################
+        |${coverage.toJsonPretty}
+        """.trim.stripMargin)
+      }
+      .unit
+
   def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] =
     getService
       .flatMap { serviceScraper =>
         getItemPageUrls(serviceScraper.getListPageScraper())
           .via(getAdvert(serviceScraper.getItemPageScraper()))
-          .pipe { encodeAndWriteForService(serviceScraper.getService(), _) }
-          .provide(ZioClient.default, ZFileAndGoogleStorageStoreImpl.layer[Advert])
+          .broadcast(2, 5)
+          .flatMap { streams =>
+            val coverage = computeAndWriteCoverage(streams(0))
+            val file     = encodeAndWriteForService(serviceScraper.getService(), streams(1))
+
+            coverage.zipPar(file)
+          }
+          .unit
+          .provide(Scope.default, ZioClient.default, ZFileAndGoogleStorageStoreImpl.layer[Advert])
       }
 }
