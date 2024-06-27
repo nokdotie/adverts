@@ -1,15 +1,16 @@
 package ie.nok.adverts.stores
 
 import ie.nok.adverts.{Advert, AdvertService}
+import ie.nok.unit.Direction
 import ie.nok.stores.compose.ZFileAndGoogleStorageStore
 import ie.nok.stores.google.storage.StorageConvention
 import ie.nok.stores.pagination.{Page, PageInfo}
-import zio.stream.ZStream
-import zio.{ZIO, ZLayer}
-
 import java.time.Instant
 import java.time.temporal.ChronoUnit
+import scala.math.Ordered.orderingToOrdered
 import scala.util.chaining.scalaUtilChainingOps
+import zio.stream.ZStream
+import zio.{ZIO, ZLayer}
 
 object AdvertStoreImpl {
   private val blobNameLatest: String =
@@ -92,17 +93,31 @@ object AdvertStoreImpl {
 class AdvertStoreImpl(all: List[Advert]) extends AdvertStore {
   def getPage(
       filter: AdvertFilter,
+      sort: AdvertSort,
       first: Int,
-      after: AdvertStoreCursor
-  ): ZIO[Any, Throwable, Page[Advert]] = {
-    val filtered = all.filter(filter.filter)
+      after: AdvertCursor
+  ): ZIO[Any, Throwable, Page[(Advert, AdvertCursor)]] = {
+    val filteredAndSorted = all
+      .filter(filter.filter)
+      .sorted(sort.sort)
+      .map { advert => (advert, AdvertCursor.from(advert, sort.field)) }
 
-    val hasPreviousPage = after.index > 0
-    val hasNextPage     = filtered.sizeIs > after.index + first
+    val sliced = filteredAndSorted
+      .dropWhile { advert =>
+        (after, sort.direction) match {
+          case (AdvertCursor.Empty, _)       => false
+          case (after, Direction.Ascending)  => advert._2 <= after
+          case (after, Direction.Descending) => advert._2 >= after
+        }
+      }
+      .take(first)
 
     val page = Page(
-      filtered.slice(after.index, after.index + first),
-      PageInfo(hasPreviousPage = hasPreviousPage, hasNextPage = hasNextPage)
+      items = sliced,
+      PageInfo(
+        hasPreviousPage = filteredAndSorted.headOption != sliced.headOption,
+        hasNextPage = filteredAndSorted.lastOption != sliced.lastOption
+      )
     )
 
     ZIO.succeed(page)
