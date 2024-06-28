@@ -23,11 +23,14 @@ object AdvertStoreImpl {
   private val blobNameAggregatedVersioned: String =
     StorageConvention.blobNameVersioned(blobNameAggregatedPrefix, Instant.now, ".jsonl")
 
+  private def blobNameServicePrefix(service: AdvertService) =
+    s"adverts/${service.host}"
+
   private def blobNameLatestForService(service: AdvertService): String =
-    StorageConvention.blobNameLatest(s"adverts/${service.host}", ".jsonl")
+    StorageConvention.blobNameLatest(blobNameServicePrefix(service), ".jsonl")
 
   private def blobNameVersionedForService(service: AdvertService): String =
-    StorageConvention.blobNameVersioned(s"adverts/${service.host}", Instant.now, ".jsonl")
+    StorageConvention.blobNameVersioned(blobNameServicePrefix(service), Instant.now, ".jsonl")
 
   protected[adverts] def encodeAndWriteLatest[R](
       stream: ZStream[R, Throwable, Advert]
@@ -61,10 +64,10 @@ object AdvertStoreImpl {
       .runCollect
       .map { _.toList }
 
-  protected[adverts] val readAndDecodeYesterday: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] = {
+  private def readAndDecodeYesterday(prefix: String): ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] = {
     val yesterday = Instant.now.minus(1, ChronoUnit.DAYS)
     val blobNameGlob = StorageConvention
-      .blobNameVersionedGlobPatternForDay(blobNameAggregatedPrefix, yesterday, ".jsonl")
+      .blobNameVersionedGlobPatternForDay(prefix, yesterday, ".jsonl")
 
     ZFileAndGoogleStorageStore
       .listBlobNames[Advert](StorageConvention.bucketName, blobNameGlob)
@@ -75,6 +78,14 @@ object AdvertStoreImpl {
         case None           => ZIO.succeed(List.empty)
       }
   }
+
+  protected[adverts] val readAndDecodeYesterday: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
+    readAndDecodeYesterday(blobNameAggregatedPrefix)
+
+  protected[adverts] def readAndDecodeYesterdayForService(
+      service: AdvertService
+  ): ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
+    readAndDecodeYesterday(blobNameServicePrefix(service))
 
   protected[adverts] val readAndDecodeLatest: ZIO[ZFileAndGoogleStorageStore[Advert], Throwable, List[Advert]] =
     readAndDecode(blobNameLatest)
