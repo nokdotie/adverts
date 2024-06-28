@@ -1,7 +1,7 @@
 package ie.nok.adverts.scraper
 
 import ie.nok.adverts.{Advert, AdvertService}
-import ie.nok.adverts.stores.AdvertStoreImpl.encodeAndWriteForService
+import ie.nok.adverts.stores.AdvertStoreImpl.{encodeAndWriteForService, readAndDecodeYesterdayForService}
 import ie.nok.adverts.scraper.services.{ServiceScraper, ServiceScraperCoverage, ServiceListPageScraper, ServiceItemPageScraper}
 import ie.nok.http.Client
 import ie.nok.stores.compose.ZFileAndGoogleStorageStoreImpl
@@ -77,6 +77,14 @@ object Main extends ZIOAppDefault {
       .filter { itemPageScraper.filter }
       .map { itemPageScraper.getAdvert }
 
+  def updateAdvertCreatedAt(yesterday: List[Advert]): ZPipeline[Any, Throwable, Advert, Advert] =
+    ZPipeline
+      .map { advert =>
+        yesterday
+          .find { _.propertyIdentifier == advert.propertyIdentifier }
+          .fold(advert) { yesterday => advert.copy(createdAt = yesterday.createdAt) }
+      }
+
   def computeAndWriteCoverage(stream: ZStream[Any, Throwable, Advert]): ZIO[Any, Throwable, Unit] =
     ServiceScraperCoverage
       .fromAdverts(stream)
@@ -90,19 +98,22 @@ object Main extends ZIOAppDefault {
       }
       .unit
 
-  def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] =
-    getService
-      .flatMap { serviceScraper =>
-        getItemPageUrls(serviceScraper.getListPageScraper())
-          .via(getAdvert(serviceScraper.getItemPageScraper()))
-          .broadcast(2, 5)
-          .flatMap { streams =>
-            val coverage = computeAndWriteCoverage(streams(0))
-            val file     = encodeAndWriteForService(serviceScraper.getService(), streams(1))
+  def run: ZIO[ZIOAppArgs with Scope, Throwable, Unit] = for {
+    serviceScraper <- getService
+    yesterday <- readAndDecodeYesterdayForService(serviceScraper.getService())
+      .catchAll(_ => ZIO.succeed(List.empty))
+      .provide(ZFileAndGoogleStorageStoreImpl.layer[Advert])
+    _ <- getItemPageUrls(serviceScraper.getListPageScraper())
+      .via(getAdvert(serviceScraper.getItemPageScraper()))
+      .via(updateAdvertCreatedAt(yesterday))
+      .broadcast(2, 5)
+      .flatMap { streams =>
+        val coverage = computeAndWriteCoverage(streams(0))
+        val file     = encodeAndWriteForService(serviceScraper.getService(), streams(1))
 
-            coverage.zipPar(file)
-          }
-          .unit
-          .provide(Scope.default, ZioClient.default, ZFileAndGoogleStorageStoreImpl.layer[Advert])
+        coverage.zipPar(file)
       }
+      .provide(Scope.default, ZioClient.default, ZFileAndGoogleStorageStoreImpl.layer[Advert])
+
+  } yield ()
 }
