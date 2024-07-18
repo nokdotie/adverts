@@ -50,12 +50,15 @@ object DaftIeItemPageScraper extends ServiceItemPageScraper {
         case "House"          => Some(PropertyType.House)
         case "Houses"         => Some(PropertyType.House)
         case "Property"       => None
+        case "Residential"    => None
         case "Semi-D"         => Some(PropertyType.SemiDetached)
         case "Site"           => Some(PropertyType.Site)
         case "Studio"         => Some(PropertyType.Studio)
         case "Terrace"        => Some(PropertyType.Terraced)
         case "Townhouse"      => Some(PropertyType.House)
-        case other            => throw new Exception(s"Unknown property type: $other, ${document.location}")
+        case other =>
+          println(s"Unknown property type: $other, ${document.location}")
+          None
       }
 
   override def getAddress(document: Document): String =
