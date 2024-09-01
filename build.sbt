@@ -24,15 +24,15 @@ lazy val adverts = project
     githubRepository := "adverts",
     resolvers += Resolver.githubPackages("nokdotie"),
     libraryDependencies ++= List(
-      "dev.zio"       %% "zio"                      % "2.0.22",
+      "dev.zio"       %% "zio"                      % "2.1.9",
       "dev.zio"       %% "zio-http"                 % "0.0.5",
       "dev.zio"       %% "zio-nio"                  % "2.0.2",
-      "dev.zio"       %% "zio-streams"              % "2.0.22",
+      "dev.zio"       %% "zio-streams"              % "2.1.9",
       "ie.nok"        %% "scala-libraries"          % "20240627.143942.92337699"  % "compile->compile;test->test",
       "ie.nok"        %% "building-energy-rating"   % "20240416.095216.870755440" % "compile->compile;test->test",
       "ie.nok"        %% "eircode-address-database" % "20240307.163929.558029779" % "compile->compile;test->test",
-      "org.jsoup"      % "jsoup"                    % "1.17.2",
-      "org.scalameta" %% "munit"                    % "1.0.0"                     % Test,
+      "org.jsoup"      % "jsoup"                    % "1.18.1",
+      "org.scalameta" %% "munit"                    % "1.0.1"                     % Test,
       "org.scalameta" %% "munit-scalacheck"         % "1.0.0"                     % Test
     )
   )
