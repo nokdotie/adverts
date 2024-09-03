@@ -42,15 +42,16 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
     JsoupHelper
       .findString(document, ".price-and-type > small, .property-breadcrumbs li:last-of-type a")
       .map { _.replace("Residential", "").replace("Sale Agreed", "").filter(_.isLetter) }
-      .map {
-        case "Apartment"    => PropertyType.Apartment
-        case "Bungalow"     => PropertyType.Bungalow
-        case "Detached"     => PropertyType.Detached
-        case "EndofTerrace" => PropertyType.EndOfTerrace
-        case "SemiDetached" => PropertyType.SemiDetached
-        case other          => throw new Exception(s"Unknown property type: $other, ${document.location}")
+      .pipe {
+        case Some("")             => None
+        case Some("Apartment")    => Some(PropertyType.Apartment)
+        case Some("Bungalow")     => Some(PropertyType.Bungalow)
+        case Some("Detached")     => Some(PropertyType.Detached)
+        case Some("Duplex")       => Some(PropertyType.Duplex)
+        case Some("EndofTerrace") => Some(PropertyType.EndOfTerrace)
+        case Some("SemiDetached") => Some(PropertyType.SemiDetached)
+        case other                => throw new Exception(s"Unknown property type: $other, ${document.location}")
       }
-      .orElse { throw new Exception(s"Property type not found: ${document.location}") }
 
   private def getAddressAndEircode(document: Document): (String, Option[Eircode]) =
     JsoupHelper
@@ -99,7 +100,7 @@ object MaherPropertyIeItemPageScraper extends ServiceItemPageScraper {
       .map { _.group(1) }
       .orElse(JsoupHelper.findString(document, ".prop_bathrooms .figure"))
       .flatMap { _.toIntOption }
-      .getOrElse { throw new Exception(s"Bathrooms count not found: ${document.location}") }
+      .getOrElse(0)
 
   override def getBuildingEnergyRating(document: Document): Option[Rating] =
     JsoupHelper
